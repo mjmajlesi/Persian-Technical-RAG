@@ -1,0 +1,30 @@
+{
+  "snapshot": "2026-09-20",
+  "notes": "Frozen corpus snapshot manifest (skeleton for T003). Each entry follows the CorpusSource entity in specs/001-persian-c-qa/data-model.md. Real source paths/URLs are filled during corpus freezing; entries below are structural samples, one per kind.",
+  "sources": [
+    {
+      "source_id": "fa-notes-sample",
+      "title": "جزوه فارسی نمونه — نمونه ساختاری",
+      "kind": "persian-notes",
+      "origin": "data/corpus/samples/fa-notes-sample.md",
+      "snapshot": "2026-09-20",
+      "license": "owner-authored study notes (project owner)"
+    },
+    {
+      "source_id": "cppref-sample",
+      "title": "cppreference — sample C page (structural sample)",
+      "kind": "cppreference",
+      "origin": "https://en.cppreference.com/w/c/sample",
+      "snapshot": "2026-09-20",
+      "license": "CC-BY-SA-3.0"
+    },
+    {
+      "source_id": "glibc-sample",
+      "title": "GNU C Library manual — sample chapter (structural sample)",
+      "kind": "glibc",
+      "origin": "https://www.gnu.org/software/libc/manual/sample",
+      "snapshot": "2026-09-20",
+      "license": "GFDL (see manual front matter)"
+    }
+  ]
+}

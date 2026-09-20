@@ -36,15 +36,15 @@
 
 **Purpose**: Project initialization and basic structure
 
-- [ ] T001 Create project directory skeleton per plan.md (src/ingest, src/index, src/qa, src/eval, src/web, data/corpus, data/index, data/eval, data/eval/reports, tests/contract, tests/integration, tests/unit) with empty `__init__.py` files
+- [X] T001 Create project directory skeleton per plan.md (src/ingest, src/index, src/qa, src/eval, src/web, data/corpus, data/index, data/eval, data/eval/reports, tests/contract, tests/integration, tests/unit) with empty `__init__.py` files
   - CHECKPOINT: STOP → report created tree → wait for explicit approval before T002.
-- [ ] T002 Create pinned Python dependencies in requirements.txt (python 3.11 target: sentence-transformers, faiss-cpu, fastapi, uvicorn, pydantic, pytest) with exact pinned versions that install cleanly
+- [X] T002 Create pinned Python dependencies in requirements.txt (python 3.11 target: sentence-transformers, faiss-cpu, fastapi, uvicorn, pydantic, pytest) with exact pinned versions that install cleanly
   - CHECKPOINT: STOP → report `pip install -r requirements.txt` result → wait for explicit approval before T003.
-- [ ] T003 [P] Write corpus manifest skeleton in data/corpus/manifest.json with one sample entry per kind (persian-notes, cppreference, glibc) carrying all CorpusSource fields from data-model.md (source_id unique lowercase-hyphenated, title non-empty, kind enum, origin non-empty, snapshot date YYYY-MM-DD, license non-empty, CC-BY-SA-3.0 on the cppreference entry)
+- [X] T003 [P] Write corpus manifest skeleton in data/corpus/manifest.json with one sample entry per kind (persian-notes, cppreference, glibc) carrying all CorpusSource fields from data-model.md (source_id unique lowercase-hyphenated, title non-empty, kind enum, origin non-empty, snapshot date YYYY-MM-DD, license non-empty, CC-BY-SA-3.0 on the cppreference entry)
   - CHECKPOINT: STOP → report manifest content → wait for explicit approval before T004.
-- [ ] T004 [P] Add three dev fixture sources in data/corpus/samples/ (one small Persian Markdown note with headings + code block, one cppreference C excerpt with section heading, one glibc excerpt with section heading) referenced only for development, not the frozen snapshot
+- [X] T004 [P] Add three dev fixture sources in data/corpus/samples/ (one small Persian Markdown note with headings + code block, one cppreference C excerpt with section heading, one glibc excerpt with section heading) referenced only for development, not the frozen snapshot
   - CHECKPOINT: STOP → report fixture files → wait for explicit approval before T005.
-- [ ] T005 [P] Configure pytest in pytest.ini (or pyproject) with testpaths tests/ and add passing smoke test in tests/unit/test_smoke.py asserting the src/ package imports
+- [X] T005 [P] Configure pytest in pytest.ini (or pyproject) with testpaths tests/ and add passing smoke test in tests/unit/test_smoke.py asserting the src/ package imports
   - CHECKPOINT: STOP → report `pytest tests/unit/test_smoke.py` result → wait for explicit approval before T006.
 
 ---
@@ -64,7 +64,9 @@
 - [ ] T009 Implement FAISS index build/query module in src/index/faiss_store.py (build from chunk embeddings, persist to data/index/faiss.index, query returning top-k chunk_ids with scores)
   - CHECKPOINT: STOP → report build+query round-trip on fixtures → wait for explicit approval before T010.
 - [ ] T010 Wire ingest CLI in src/ingest/__main__.py and index build in src/index/__main__.py so `python -m src.ingest --manifest data/corpus/manifest.json` then `python -m src.index build --manifest data/corpus/manifest.json` produce data/index/faiss.index + data/index/chunks.jsonl and print chunk count and per-source counts
-  - CHECKPOINT: STOP → report CLI run output on fixtures → wait for explicit approval before T011.
+  - CHECKPOINT: STOP → report CLI run output on fixtures → wait for explicit approval before T010b.
+- [ ] T010b Populate data/corpus/full/ with the real, complete corpus — all finished chapters of the owner's Persian C study notes plus the real selected cppreference and glibc pages per the spec's corpus scope — replace the skeleton data/corpus/manifest.json with the frozen snapshot entries (real origins, snapshot dates, licenses), and run the real ingest + index build (`python -m src.ingest` then `python -m src.index build`) replacing the dev-fixture-only index (depends on T010; blocks T011 and T030). Do NOT invent corpus content: request any missing note files or page selections from the user before starting.
+  - CHECKPOINT: STOP → report corpus inventory (source list + chunk counts per source) → wait for explicit approval before T011.
 - [ ] T011 Implement LLM provider interface in src/qa/provider.py (`generate(prompt, context) -> text`, provider key read from LLM_API_KEY env, model id from config) with one concrete API-backed provider
   - CHECKPOINT: STOP → report interface + provider wiring (no real call needed) → wait for explicit approval before T012.
 - [ ] T012 Implement top-k retrieval orchestration in src/qa/retriever.py (embed question, FAISS top-k default 5, return chunk_ids with scores)
@@ -167,7 +169,7 @@
 
 ### Implementation for User Story 4
 
-- [ ] T030 [US4] Author versioned eval set in data/eval/eval-set.v1.json (30 items in 20/5/5 split per contracts/eval-set-schema.md: item_id, Persian question, qtype enum, expected_source_ids resolving to real chunk_ids — empty for out-of-corpus, expected_answer_summary one-line Persian gist)
+- [ ] T030 [US4] Author versioned eval set in data/eval/eval-set.v1.json (30 items in 20/5/5 split per contracts/eval-set-schema.md: item_id, Persian question, qtype enum, expected_source_ids resolving to real chunk_ids — empty for out-of-corpus, expected_answer_summary one-line Persian gist) (depends on T010b — expected_source_ids must resolve to chunk_ids from the real T010b index, not fixtures)
   - CHECKPOINT: STOP → report item counts per qtype + source-ID validity → wait for explicit approval before T031.
 - [ ] T031 [US4] Implement eval runner + scorer in src/eval/run.py writing JSON + Markdown summary to data/eval/reports/ per contracts/eval-set-schema.md (hit_rate_at_5, citation_precision, abstention_correct target 5/5, mixed_slice parity)
   - CHECKPOINT: STOP → report scorer output on the v1 set → wait for explicit approval before T032.
@@ -190,7 +192,7 @@
 ### Phase Dependencies
 
 - **Setup (Phase 1)**: No dependencies — starts immediately. Tasks T001→T002→T003/T004/T005 (T003, T004, T005 parallel after T002).
-- **Foundational (Phase 2)**: Depends on Setup — BLOCKS all user stories. Order: T006 → T007 → T008 → T009 → T010 → T011 → T012 → T013 → T014 → T015.
+- **Foundational (Phase 2)**: Depends on Setup — BLOCKS all user stories. Order: T006 → T007 → T008 → T009 → T010 → T010b (real corpus + real index) → T011 → T012 → T013 → T014 → T015.
 - **User Stories (Phases 3–6)**: All depend on Foundational completion; run sequentially US1 → US2 → US3 → US4 in priority order (Recommended: strictly sequential with per-task approvals, no parallel story work).
 - **Polish (Phase 7)**: Depends on all user stories complete.
 

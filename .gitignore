@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+dist/
+build/
+*.egg-info/
+.eggs/
+
+# Environment & secrets
+.env
+.env.*
+*.key
+
+# Test & coverage artifacts
+.pytest_cache/
+.coverage
+htmlcov/
+*.log
+
+# Data artifacts (large/regenerable; manifest + eval set stay tracked)
+data/index/faiss.index
+data/index/chunks.jsonl
+data/eval/reports/*.json
+!data/eval/reports/.gitkeep
+
+# OS / editors
+.DS_Store
+Thumbs.db
+*.tmp
+*.swp
+.vscode/
+.idea/

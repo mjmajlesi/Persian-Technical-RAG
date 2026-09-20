@@ -1,0 +1,17 @@
+# Pinned runtime + test dependencies (Python 3.11 target).
+# Transitive deps (torch, transformers, numpy, …) are intentionally left
+# unpinned so pip resolves a consistent set; direct deps below are exact.
+# Reproduce: python -m venv .venv && .venv\Scripts\pip install -r requirements.txt
+
+sentence-transformers==3.3.1  # multilingual-e5-large embeddings (research.md §1)
+faiss-cpu==1.10.0             # local vector index (research.md §2)
+fastapi==0.115.6              # demo web API (research.md §7)
+uvicorn[standard]==0.34.0     # ASGI server for the FastAPI app
+pydantic==2.10.4              # schema validation (request/response contracts)
+pytest==8.3.4                 # contract + integration + unit tests
+
+# Install status (2026-09-20, venv .venv, Python 3.11.15):
+# - All six pins installed + import-verified: sentence-transformers 3.3.1
+#   (torch 2.14.0+cpu), faiss-cpu 1.10.0, fastapi 0.115.6, pydantic 2.10.4,
+#   pytest 8.3.4, uvicorn[standard] 0.34.0.
+# Reproduce: python -m venv .venv && .venv\Scripts\pip install -r requirements.txt
