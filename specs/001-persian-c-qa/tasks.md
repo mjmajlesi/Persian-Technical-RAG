@@ -55,9 +55,9 @@
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T006 Implement section-aware chunker in src/ingest/chunker.py splitting on Markdown headings/reference sections, target ~512 tokens with ~64-token overlap, never splitting mid-code-block, emitting fields (chunk_id deterministic source+section+ordinal, source_id, doc_title, section_heading non-empty, text non-empty, lang enum fa|en|mixed)
+- [X] T006 Implement section-aware chunker in src/ingest/chunker.py splitting on Markdown headings/reference sections, target ~512 tokens with ~64-token overlap, never splitting mid-code-block, emitting fields (chunk_id deterministic source+section+ordinal, source_id, doc_title, section_heading non-empty, text non-empty, lang enum fa|en|mixed)
   - CHECKPOINT: STOP → report chunker behavior on fixtures + unit run → wait for explicit approval before T007.
-- [ ] T007 [P] Implement chunk writer + JSONL schema validation in src/ingest/writer.py writing data/index/chunks.jsonl with chunk_id uniqueness enforced and every source_id existing in data/corpus/manifest.json
+- [X] T007 [P] Implement chunk writer + JSONL schema validation in src/ingest/writer.py writing data/index/chunks.jsonl with chunk_id uniqueness enforced and every source_id existing in data/corpus/manifest.json
   - CHECKPOINT: STOP → report writer validation behavior → wait for explicit approval before T008.
 - [ ] T008 Implement embedding module in src/index/embed.py using intfloat/multilingual-e5-large via sentence-transformers with query/passage prefixes per model card
   - CHECKPOINT: STOP → report embed smoke output dims on a Persian + an English sample → wait for explicit approval before T009.
