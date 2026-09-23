@@ -32,7 +32,13 @@ per bounded-complexity principle).
 
 **Storage**: Files on disk — `data/corpus/` (frozen sources + manifest),
 `data/index/` (FAISS index + chunk metadata JSONL), `data/eval/` (versioned
-question set + run reports). No database server (single-user demo).
+question set + run reports). No database server (single-user demo). The
+`data/corpus/` snapshot is populated in two stages: an initial dev-fixture
+subset (small samples, used to validate the pipeline during Setup/Foundational
+phases) is later replaced by the full frozen snapshot — all completed chapters
+of the owner's Persian C notes plus the named cppreference/glibc sections per
+spec.md's corpus scope — before the evaluation set (FR-007) is authored, since
+eval items require real, resolvable chunk IDs.
 
 **Testing**: `pytest` — contract tests (citation traceability), integration
 tests (ingest → ask → eval), eval-set scoring script with JSON report.
