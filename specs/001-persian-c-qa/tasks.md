@@ -67,7 +67,7 @@
   - CHECKPOINT: STOP → report CLI run output on fixtures → wait for explicit approval before T010b.
 - [X] T010b Populate data/corpus/full/ with the real, complete corpus — all finished chapters of the owner's Persian C study notes plus the real selected cppreference and glibc pages per the spec's corpus scope — replace the skeleton data/corpus/manifest.json with the frozen snapshot entries (real origins, snapshot dates, licenses), and run the real ingest + index build (`python -m src.ingest` then `python -m src.index build`) replacing the dev-fixture-only index (depends on T010; blocks T011 and T030). Do NOT invent corpus content: request any missing note files or page selections from the user before starting.
   - CHECKPOINT: STOP → report corpus inventory (source list + chunk counts per source) → wait for explicit approval before T011.
-- [ ] T011 Implement LLM provider interface in src/qa/provider.py (`generate(prompt, context) -> text`, provider key read from LLM_API_KEY env, model id from config) with one concrete API-backed provider
+- [X] T011 Implement LLM provider interface in src/qa/provider.py (`generate(prompt, context) -> text`, provider key read from LLM_API_KEY env, model id from config) with one concrete API-backed provider
   - CHECKPOINT: STOP → report interface + provider wiring (no real call needed) → wait for explicit approval before T012.
 - [ ] T012 Implement top-k retrieval orchestration in src/qa/retriever.py (embed question, FAISS top-k default 5, return chunk_ids with scores)
   - CHECKPOINT: STOP → report retrieval on a sample Persian question → wait for explicit approval before T013.
