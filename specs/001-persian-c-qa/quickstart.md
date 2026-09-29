@@ -28,7 +28,7 @@ chunk count and per-source counts print to console.
 ## 3. Ask a question (demo UI)
 
 ```powershell
-uvicorn src.web:app --port 8000
+uvicorn src.web.app:app --port 8000
 ```
 
 Open `http://localhost:8000`, submit a Persian C question, and confirm: the

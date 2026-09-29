@@ -69,13 +69,13 @@
   - CHECKPOINT: STOP → report corpus inventory (source list + chunk counts per source) → wait for explicit approval before T011.
 - [X] T011 Implement LLM provider interface in src/qa/provider.py (`generate(prompt, context) -> text`, provider key read from LLM_API_KEY env, model id from config) with one concrete API-backed provider
   - CHECKPOINT: STOP → report interface + provider wiring (no real call needed) → wait for explicit approval before T012.
-- [ ] T012 Implement top-k retrieval orchestration in src/qa/retriever.py (embed question, FAISS top-k default 5, return chunk_ids with scores)
+- [X] T012 Implement top-k retrieval orchestration in src/qa/retriever.py (embed question, FAISS top-k default 5, return chunk_ids with scores)
   - CHECKPOINT: STOP → report retrieval on a sample Persian question → wait for explicit approval before T013.
-- [ ] T013 Implement grounded prompt builder + answer composer in src/qa/answer.py (Persian-only instruction, per-claim chunk-ID citations, cited IDs must be a subset of retrieved IDs)
+- [X] T013 Implement grounded prompt builder + answer composer in src/qa/answer.py (Persian-only instruction, per-claim chunk-ID citations, cited IDs must be a subset of retrieved IDs)
   - CHECKPOINT: STOP → report prompt template + subset rule enforcement → wait for explicit approval before T014.
-- [ ] T014 Implement abstention module in src/qa/abstain.py (similarity-threshold check + LLM-insufficiency signal → AbstentionResponse with fixed-form Persian message, 1–3 suggested_topics each existing in the corpus, citations always empty)
+- [X] T014 Implement abstention module in src/qa/abstain.py (similarity-threshold check + LLM-insufficiency signal → AbstentionResponse with fixed-form Persian message, 1–3 suggested_topics each existing in the corpus, citations always empty)
   - CHECKPOINT: STOP → report abstention trigger logic → wait for explicit approval before T015.
-- [ ] T015 Create FastAPI app skeleton in src/web/app.py with POST /api/ask request validation per contracts/ask-api.md (question required non-empty after trim, top_k optional integer 1–10 default 5, empty question → 422 with Persian error message)
+- [X] T015 Create FastAPI app skeleton in src/web/app.py with POST /api/ask request validation per contracts/ask-api.md (question required non-empty after trim, top_k optional integer 1–10 default 5, empty question → 422 with Persian error message)
   - CHECKPOINT: STOP → report skeleton + validation behavior → wait for explicit approval before T016. **Foundation ready — user story implementation can now begin.**
 
 ---
@@ -90,7 +90,7 @@
 
 > **NOTE: Write these tests FIRST, ensure they FAIL before implementation**
 
-- [ ] T016 [P] [US1] Contract test for citation traceability in tests/contract/test_citations.py (answer type has ≥1 citation; every chunk_id exists in data/index/chunks.jsonl; cited IDs ⊆ retrieved_chunk_ids; excerpt equals stored chunk text)
+- [X] T016 [P] [US1] Contract test for citation traceability in tests/contract/test_citations.py (answer type has ≥1 citation; every chunk_id exists in data/index/chunks.jsonl; cited IDs ⊆ retrieved_chunk_ids; excerpt equals stored chunk text)
   - CHECKPOINT: STOP → report test run showing FAIL (no implementation yet) → wait for explicit approval before T017.
 - [ ] T017 [P] [US1] Integration test for ingest→ask→cite journey in tests/integration/test_answer_flow.py (ingest fixtures, ask an in-corpus question, assert Persian answer with traceable citation)
   - CHECKPOINT: STOP → report test run showing FAIL → wait for explicit approval before T018.
