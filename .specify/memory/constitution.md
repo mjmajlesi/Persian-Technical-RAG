@@ -1,14 +1,11 @@
 <!--
 Sync Impact Report
-- Version change: (none) -> 1.0.0 (initial adoption)
-- Modified principles: template placeholders [PRINCIPLE_1..5] replaced with 7 project-specific principles (I-VII)
-- Added sections:
-  - Core Principles expanded from 5 slots to 7 per user input
-  - Technology Preferences & Constraints (maps SECTION_2 slot)
-  - Non-Goals and Scope Boundaries (maps SECTION_3 slot, split for clarity)
-  - Development Workflow and Quality Gates (additional section)
-- Removed sections: generic template examples/comments
-- Follow-up TODOs: none; all placeholders resolved
+- Version change: 1.0.0 -> 1.1.0 (MINOR: new principle + materially expanded scope guidance; no removals or redefinitions)
+- Modified principles: VII. Honest Scope (C-only corpus -> per-language LanguagePacks for C/C++/Python/Java; prototype constraint retained)
+- Added principles: VIII. Per-Language Isolation (separate index per language; cross-language citations prohibited; per-language evaluation)
+- Modified sections: Technology Preferences & Constraints (corpus bullet -> per-language packs with stated composition rule)
+- Removed sections: none
+- Follow-up TODOs: none; feature 002 spec (specs/002-multi-language-dashboard/spec.md) is the normative detail source
 -->
 
 # Persian Technical RAG Constitution
@@ -65,7 +62,8 @@ The system MUST include a way to measure retrieval quality and answer quality:
 a small, versioned evaluation question set with expected sources/answers, plus
 scriptable scoring (e.g. retrieval hit-rate/recall, citation precision, groundedness
 checks). Design decisions and improvements MUST be justified with evaluation
-evidence rather than intuition.
+evidence rather than intuition. Where multiple languages are supported, quality
+MUST be measured and reported per language, never only as a blended score.
 
 Rationale: without measurement, iteration is anecdote; a thesis requires evidence.
 
@@ -81,14 +79,31 @@ depends on another engineer being able to run it.
 
 ### VII. Honest Scope
 
-The system is a focused prototype/demo, NOT a production-scale product. Corpus
-size and domain MUST be intentionally bounded and explicitly stated (curated
-technical documentation, fixed snapshot). Scope creep into multi-tenant
-deployment, authentication, horizontal scaling, or unbounded/arbitrary corpora
-is prohibited unless this constitution is amended.
+The system is a focused prototype/demo, NOT a production-scale product. Each
+supported programming language is a bounded LanguagePack: launch set is C,
+C++, Python, and Java, each with an explicitly stated, frozen corpus snapshot
+(C/C++ reuse the owner-authored Persian notes plus English references;
+Python/Java use English reference corpora only, per the accepted and
+documented tradeoff that they need no exam-style Persian terminology).
+Adding a language means adding its pack (corpus + eval set) without changing
+existing packs. Scope creep into multi-tenant deployment, authentication,
+horizontal scaling, or unbounded/arbitrary corpora is prohibited unless this
+constitution is amended.
 
 Rationale: honest, bounded scope is what makes the project defensible and
 completable as a bachelor's thesis and portfolio piece.
+
+### VIII. Per-Language Isolation (NON-NEGOTIABLE)
+
+Retrieval and generation for a selected language MUST use only that
+language's index and corpus. Cross-language retrieval or citation (answering
+from another language's sources) is prohibited and treated as fabrication
+under Principles I and II. The default implementation is a separate index per
+language, so isolation holds by construction rather than by filter discipline.
+
+Rationale: a shared-index leak would silently violate groundedness while
+looking correct; physical isolation makes the guarantee reviewable by an
+examiner.
 
 ## Technology Preferences & Constraints
 
@@ -100,8 +115,9 @@ piece demonstrating current AI engineering practice.
   open model, mainstream LLM API or local LLM) is REQUIRED; custom embedding
   models or LLMs built from scratch are explicitly out of scope.
 - All dependencies MUST be pinned and installable via script.
-- Corpus MUST be curated, bounded, Persian-relevant technical sources with
-  recorded provenance and licensing notes.
+- Corpus MUST be organized as per-language packs (LanguagePack per supported
+  programming language), each curated, bounded, frozen, and with recorded
+  provenance and licensing notes.
 
 ## Non-Goals and Scope Boundaries
 
@@ -111,7 +127,8 @@ constitution:
 - Real-time/streaming ingestion of new sources.
 - Multi-user or production deployment concerns (auth, multi-tenancy, scaling).
 - Support for languages other than Persian (English terms embedded in Persian
-  text excepted).
+  text excepted). Note: this concerns the query/answer/UI language, not the
+  programming languages covered — those are governed by Principle VII.
 - Building a custom embedding model or LLM from scratch.
 
 Any proposal touching these items MUST be rejected or require a constitution
@@ -143,4 +160,4 @@ preferences for Persian Technical RAG.
 - Runtime guidance: dependent templates and commands read this file at runtime;
   this document itself is the sole governance source — templates are not edited here.
 
-**Version**: 1.0.0 | **Ratified**: 2026-09-19 | **Last Amended**: 2026-09-19
+**Version**: 1.1.0 | **Ratified**: 2026-09-19 | **Last Amended**: 2026-10-07
