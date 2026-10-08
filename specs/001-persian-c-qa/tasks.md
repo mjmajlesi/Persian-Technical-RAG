@@ -92,17 +92,19 @@
 
 - [X] T016 [P] [US1] Contract test for citation traceability in tests/contract/test_citations.py (answer type has ≥1 citation; every chunk_id exists in data/index/chunks.jsonl; cited IDs ⊆ retrieved_chunk_ids; excerpt equals stored chunk text)
   - CHECKPOINT: STOP → report test run showing FAIL (no implementation yet) → wait for explicit approval before T017.
-- [ ] T017 [P] [US1] Integration test for ingest→ask→cite journey in tests/integration/test_answer_flow.py (ingest fixtures, ask an in-corpus question, assert Persian answer with traceable citation)
+- [X] T017 [P] [US1] Integration test for ingest→ask→cite journey in tests/integration/test_answer_flow.py (ingest fixtures, ask an in-corpus question, assert Persian answer with traceable citation)
   - CHECKPOINT: STOP → report test run showing FAIL → wait for explicit approval before T018.
 
 ### Implementation for User Story 1
 
-- [ ] T018 [US1] Wire answer path into POST /api/ask in src/web/app.py (retriever → answer composer → response shape `type: answer` per contracts/ask-api.md) (depends on T016, T017 passing after implementation)
+- [X] T018 [US1] Wire answer path into POST /api/ask in src/web/app.py (retriever → answer composer → response shape `type: answer` per contracts/ask-api.md) (depends on T016, T017 passing after implementation)
   - CHECKPOINT: STOP → report endpoint response on a fixture question → wait for explicit approval before T019.
-- [ ] T019 [US1] Build demo answer pane in src/web/templates/index.html (or inline page) showing Persian answer with citation chips carrying doc_title + section_heading
+- [X] T019 [US1] Build demo answer pane in src/web/templates/index.html (or inline page) showing Persian answer with citation chips carrying doc_title + section_heading
   - CHECKPOINT: STOP → report rendered pane (screenshot or HTML dump) → wait for explicit approval before T020.
-- [ ] T020 [US1] Implement citation click-reveal in src/web/static/app.js (click shows source title + section heading + full chunk excerpt in place, per clarification decision)
-  - CHECKPOINT: STOP → report click behavior → wait for explicit approval before T021. **Checkpoint: User Story 1 fully functional and testable independently.**
+- [X] T020 [US1] Implement citation click-reveal in src/web/static/app.js (click shows source title + section heading + full chunk excerpt in place, per clarification decision)
+  - CHECKPOINT: STOP → report click behavior → wait for explicit approval before T020b. **Checkpoint: User Story 1 fully functional and testable independently.**
+- [X] T020b [US1] Implement ambiguous-question clarify path in src/web/app.py (detect very short questions — fewer than 3 words after trim, constant AMBIGUOUS_MIN_WORDS — and return `type: clarify` with one targeted Persian follow-up question echoing the short question per contracts/ask-api.md, WITHOUT attempting retrieval/answer and WITHOUT spending an LLM call; depends on T018; blocks T021)
+  - CHECKPOINT: STOP → report clarify probing (1-word, 2-word, and normal questions) → wait for explicit approval before T021.
 
 ---
 
@@ -242,7 +244,7 @@ Task: "Configure pytest with smoke test in tests/unit/test_smoke.py"
 
 1. Complete Phase 1: Setup (T001–T005, approving each)
 2. Complete Phase 2: Foundational (T006–T015, approving each — CRITICAL, blocks all stories)
-3. Complete Phase 3: User Story 1 (T016–T020)
+3. Complete Phase 3: User Story 1 (T016–T020b)
 4. **STOP and VALIDATE**: independently test US1 per its Independent Test
 5. Demo if ready (in-corpus Persian Q&A with click-through citations)
 
