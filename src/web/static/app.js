@@ -35,8 +35,22 @@
   cites.after(reveal);
 
   // T020: click a chip to reveal its source title + section + full excerpt.
+  // T025: suggested topics render as clickable chips; clicking one fills
+  // the question box (no auto-submit) so the student can ask about it.
+  function topicChip(topic) {
+    const el = document.createElement("span");
+    el.className = "topic-chip";
+    el.textContent = topic;
+    return el;
+  }
+
   cites.addEventListener("click", (ev) => {
-    const chipEl = ev.target.closest(".cite-chip");
+    const topicEl = ev.target.closest(".topic-chip");
+    if (topicEl) {
+      box.value = "درباره " + topicEl.textContent + " توضیح بده";
+      box.focus();
+      return;
+    }
     if (!chipEl) return;
     reveal.innerHTML = buildReveal({
       doc_title: chipEl.dataset.docTitle || chipEl.textContent,
@@ -75,6 +89,7 @@
       pane.textContent = "";
       reveal.innerHTML = "";
       message.textContent = body.message;
+      (body.suggested_topics || []).forEach((t) => cites.appendChild(topicChip(t)));
     } else {
       message.textContent = "خطای غیرمنتظره: " + JSON.stringify(body).slice(0, 200);
     }

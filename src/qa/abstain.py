@@ -15,11 +15,12 @@ formally on the versioned evaluation set.
 
 from __future__ import annotations
 
-DEFAULT_THRESHOLD = 0.80
-# Provisional value from two probes on the v1 index (2026-09-23):
-# out-of-domain ("پایتخت فرانسه کجاست؟") scored 0.737,
-# in-domain ("تفاوت malloc و calloc چیست؟") scored 0.866.
-# Dense scores run high across the board, so this is a rough separator only.
+DEFAULT_THRESHOLD = 0.81
+# Calibrated in T024 (src/eval/calibrate.py) on 12 probes against the frozen
+# 503-chunk v1 index: max(out-of-domain top-1) = 0.775, min(in-domain top-1)
+# = 0.849; threshold = gap midpoint, maximizing the margin on both sides.
+# Re-validate on the versioned 30-question eval set (T030+): if
+# abstention_correct < 5/5 or in-domain answers start gating, re-calibrate.
 
 MESSAGE_TEMPLATE = (
     "در منابع موجود پاسخی برای این سوال پیدا نکردم. "

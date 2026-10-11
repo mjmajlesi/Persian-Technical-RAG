@@ -76,11 +76,22 @@ def ask(request: AskRequest) -> dict:
             "message": CLARIFY_MESSAGE_TEMPLATE.format(question=question),
             "citations": [],
         }
+    # T023: retrieve FIRST (local, free), then gate on the similarity
+    # threshold BEFORE touching the LLM: low scores abstain immediately,
+    # so out-of-domain questions cost zero LLM calls/credit.
+    chunks = get_retriever().retrieve(question, k=request.top_k)
+    if not chunks:
+        payload = abstain.decide([], 0.0, llm_insufficient=True)
+        return {"type": "abstain", **payload}
+    gated = abstain.decide(
+        chunks, top_score=chunks[0]["score"], llm_insufficient=False
+    )
+    if gated is not None:
+        return {"type": "abstain", **gated}
     try:
         provider = get_provider()
     except ProviderError:
         raise HTTPException(status_code=500, detail=LLM_NOT_CONFIGURED_MESSAGE)
-    chunks = get_retriever().retrieve(question, k=request.top_k)
     try:
         result = compose_answer(question, chunks, provider)
     except AnswerError:

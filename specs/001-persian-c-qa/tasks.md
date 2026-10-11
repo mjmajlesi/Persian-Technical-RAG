@@ -118,18 +118,18 @@
 
 > **NOTE: Write these tests FIRST, ensure they FAIL before implementation**
 
-- [ ] T021 [P] [US2] Contract test for abstention purity in tests/contract/test_abstention.py (abstain type, citations == [], every suggested_topic exists in corpus manifest/sections)
+- [X] T021 [P] [US2] Contract test for abstention purity in tests/contract/test_abstention.py (abstain type, citations == [], every suggested_topic exists in corpus manifest/sections)
   - CHECKPOINT: STOP → report test run showing FAIL → wait for explicit approval before T022.
-- [ ] T022 [P] [US2] Integration test for out-of-corpus→abstain journey in tests/integration/test_abstain_flow.py (irrelevant-question input yields abstain, no factual claims)
+- [X] T022 [P] [US2] Integration test for out-of-corpus→abstain journey in tests/integration/test_abstain_flow.py (irrelevant-question input yields abstain, no factual claims)
   - CHECKPOINT: STOP → report test run showing FAIL → wait for explicit approval before T023.
 
 ### Implementation for User Story 2
 
-- [ ] T023 [US2] Wire abstention path into POST /api/ask in src/web/app.py using src/qa/abstain.py (threshold + insufficiency signal → `type: abstain` shape per contracts/ask-api.md)
+- [X] T023 [US2] Wire abstention path into POST /api/ask in src/web/app.py using src/qa/abstain.py (threshold + insufficiency signal → `type: abstain` shape per contracts/ask-api.md)
   - CHECKPOINT: STOP → report abstain response on an out-of-domain probe → wait for explicit approval before T024.
-- [ ] T024 [US2] Calibrate similarity threshold on fixtures in src/eval/calibrate.py (or documented script) recording the chosen threshold value and its rationale in the file header
+- [X] T024 [US2] Calibrate similarity threshold on fixtures in src/eval/calibrate.py (or documented script) recording the chosen threshold value and its rationale in the file header
   - CHECKPOINT: STOP → report threshold value + calibration evidence → wait for explicit approval before T025.
-- [ ] T025 [US2] Render abstention state in the demo UI in src/web/templates/index.html (Persian redirect message + clickable suggested topics, no citation chips)
+- [X] T025 [US2] Render abstention state in the demo UI in src/web/templates/index.html (Persian redirect message + clickable suggested topics, no citation chips)
   - CHECKPOINT: STOP → report rendered abstain state → wait for explicit approval before T026. **Checkpoint: User Stories 1 AND 2 both work independently.**
 
 ---
