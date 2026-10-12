@@ -166,16 +166,16 @@
 
 > **NOTE: Write these tests FIRST, ensure they FAIL before implementation**
 
-- [ ] T029 [P] [US4] Unit tests for scoring helpers in tests/unit/test_scoring.py (hit_rate_at_5, citation_precision, abstention_correct, mixed slice — including empty-expected-sources and phantom-citation edge cases)
+- [X] T029 [P] [US4] Unit tests for scoring helpers in tests/unit/test_scoring.py (hit_rate_at_5, citation_precision, abstention_correct, mixed slice — including empty-expected-sources and phantom-citation edge cases)
   - CHECKPOINT: STOP → report test run showing FAIL → wait for explicit approval before T030.
 
 ### Implementation for User Story 4
 
-- [ ] T030 [US4] Author versioned eval set in data/eval/eval-set.v1.json (30 items in 20/5/5 split per contracts/eval-set-schema.md: item_id, Persian question, qtype enum, expected_source_ids resolving to real chunk_ids — empty for out-of-corpus, expected_answer_summary one-line Persian gist) (depends on T010b — expected_source_ids must resolve to chunk_ids from the real T010b index, not fixtures)
+- [X] T030 [US4] Author versioned eval set in data/eval/eval-set.v1.json (30 items in 20/5/5 split per contracts/eval-set-schema.md: item_id, Persian question, qtype enum, expected_source_ids resolving to real chunk_ids — empty for out-of-corpus, expected_answer_summary one-line Persian gist) (depends on T010b — expected_source_ids must resolve to chunk_ids from the real T010b index, not fixtures)
   - CHECKPOINT: STOP → report item counts per qtype + source-ID validity → wait for explicit approval before T031.
-- [ ] T031 [US4] Implement eval runner + scorer in src/eval/run.py writing JSON + Markdown summary to data/eval/reports/ per contracts/eval-set-schema.md (hit_rate_at_5, citation_precision, abstention_correct target 5/5, mixed_slice parity)
+- [X] T031 [US4] Implement eval runner + scorer in src/eval/run.py writing JSON + Markdown summary to data/eval/reports/ per contracts/eval-set-schema.md (hit_rate_at_5, citation_precision, abstention_correct target 5/5, mixed_slice parity)
   - CHECKPOINT: STOP → report scorer output on the v1 set → wait for explicit approval before T032.
-- [ ] T032 [US4] Document examiner reproduction path in README.md (install → ingest → ask → eval commands from quickstart.md; corpus snapshot + set version recorded)
+- [X] T032 [US4] Document examiner reproduction path in README.md (install → ingest → ask → eval commands from quickstart.md; corpus snapshot + set version recorded)
   - CHECKPOINT: STOP → report README section → wait for explicit approval before T033. **Checkpoint: full evaluation loop independently runnable.**
 
 ---
@@ -184,7 +184,7 @@
 
 **Purpose**: Final verification that the whole thesis demo holds together
 
-- [ ] T033 Run full quickstart.md validation end-to-end (fresh data/index rebuild, demo probes for answer/abstain/clarify/mixed, pytest tests/, eval run) and fix only defects found, in docs/QUICKSTART-RESULTS.md
+- [X] T033 Run full quickstart.md validation end-to-end (fresh data/index rebuild, demo probes for answer/abstain/clarify/mixed, pytest tests/, eval run) and fix only defects found, in docs/QUICKSTART-RESULTS.md
   - CHECKPOINT: STOP → report full validation log → wait for explicit approval. **All work complete.**
 
 ---
