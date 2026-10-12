@@ -8,12 +8,26 @@ cosine score first), each carrying its citation metadata.
 from __future__ import annotations
 
 import json
+import logging
 from pathlib import Path
+
 from src.index import faiss_store
 from src.index.embed import embed_queries
 
-
 DEFAULT_TOP_K = 5
+
+logger = logging.getLogger(__name__)
+
+
+def detect_query_lang(text: str) -> str:
+    """Return 'mixed' when Persian text embeds Latin identifiers, else 'fa'.
+
+    Detection only — the question text is NEVER modified before embedding,
+    so Latin identifiers reach retrieval verbatim.
+    """
+    has_fa = any("؀" <= ch <= "ۿ" for ch in text)
+    has_latin = any("A" <= ch <= "Z" or "a" <= ch <= "z" for ch in text)
+    return "mixed" if (has_fa and has_latin) else "fa"
 
 
 class Retriever:
@@ -40,7 +54,10 @@ class Retriever:
         """
         if not question or not question.strip():
             raise ValueError("question must be non-empty")
-        query_vec = embed_queries([question.strip()])[0]
+        question = question.strip()
+        lang_hint = detect_query_lang(question)
+        logger.info("retrieve lang_hint=%s question=%s", lang_hint, question[:60])
+        query_vec = embed_queries([question])[0]
         hits = faiss_store.search(self._index, self._ids, query_vec, k)
         results = []
         for chunk_id, score in hits:

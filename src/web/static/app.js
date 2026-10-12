@@ -19,9 +19,33 @@
     );
   }
 
+  // Pure helper (node-testable): bidi-safe rendering of mixed
+  // Persian/English answer text. Latin/code runs get dir="auto" spans so
+  // identifiers and numbers don't jump around inside RTL paragraphs.
+  // Dots/dashes join only *inside* a run (stdio.h stays whole) so
+  // sentence-ending periods are never swallowed into the span.
+  // Order matters: split the RAW text first, escape each part, then wrap —
+  // escaping first would shred the &lt;/&amp; entities into spans.
+  const CODE_RUN_RE = /([A-Za-z0-9_#+]+(?:[.\-][A-Za-z0-9_#+]+)*)/g;
+  function renderBidi(text) {
+    return String(text)
+      .split(CODE_RUN_RE)
+      .map((part, i) =>
+        i % 2 === 1
+          ? "<span dir=\"auto\">" + escapeHtml(part) + "</span>"
+          : escapeHtml(part)
+      )
+      .join("")
+      .replace(/\n/g, "<br>");
+  }
+
   // Export for node-based verification; browsers ignore this branch.
   if (typeof module !== "undefined" && module.exports) {
-    module.exports = { escapeHtml: escapeHtml, buildReveal: buildReveal };
+    module.exports = {
+      escapeHtml: escapeHtml,
+      buildReveal: buildReveal,
+      renderBidi: renderBidi,
+    };
     return;
   }
 
@@ -83,7 +107,7 @@
     });
     const body = await res.json();
     if (body.type === "answer") {
-      pane.textContent = body.answer_text;
+      pane.innerHTML = renderBidi(body.answer_text);
       body.citations.forEach((c) => cites.appendChild(chip(c)));
     } else if (body.type === "abstain" || body.type === "clarify") {
       pane.textContent = "";

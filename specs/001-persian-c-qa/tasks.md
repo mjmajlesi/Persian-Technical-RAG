@@ -144,14 +144,14 @@
 
 > **NOTE: Write these tests FIRST, ensure they FAIL before implementation**
 
-- [ ] T026 [P] [US3] Integration test for mixed-language queries in tests/integration/test_mixed_flow.py (Persian+`malloc`-style probes → grounded cited answers; identifiers preserved verbatim, not translated)
+- [X] T026 [P] [US3] Integration test for mixed-language queries in tests/integration/test_mixed_flow.py (Persian+`malloc`-style probes → grounded cited answers; identifiers preserved verbatim, not translated)
   - CHECKPOINT: STOP → report test run showing FAIL → wait for explicit approval before T027.
 
 ### Implementation for User Story 3
 
-- [ ] T027 [US3] Add mixed-query handling in src/qa/retriever.py + src/qa/answer.py (Latin identifiers preserved verbatim into retrieval and prompt; lang_hint fa|mixed detected and logged)
+- [X] T027 [US3] Add mixed-query handling in src/qa/retriever.py + src/qa/answer.py (Latin identifiers preserved verbatim into retrieval and prompt; lang_hint fa|mixed detected and logged)
   - CHECKPOINT: STOP → report mixed-query answer vs pure-Persian parity → wait for explicit approval before T028.
-- [ ] T028 [US3] Apply bidi-safe rendering in src/web/templates/index.html (RTL layout with `dir="auto"` on mixed-language spans so English identifiers display correctly inside Persian text)
+- [X] T028 [US3] Apply bidi-safe rendering in src/web/templates/index.html (RTL layout with `dir="auto"` on mixed-language spans so English identifiers display correctly inside Persian text)
   - CHECKPOINT: STOP → report rendering check → wait for explicit approval before T029. **Checkpoint: all question-answering stories independently functional.**
 
 ---

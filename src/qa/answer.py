@@ -11,7 +11,12 @@ IDs — anything else raises AnswerError instead of silently fabricating.
 
 from __future__ import annotations
 
+import logging
 import re
+
+from src.qa.retriever import detect_query_lang
+
+logger = logging.getLogger(__name__)
 
 INSUFFICIENT = "CANNOT_ANSWER"
 
@@ -24,6 +29,7 @@ PROMPT_TEMPLATE = """شما یک دستیار آموزشی زبان C هستید
 ۲. هر ادعای واقعی (factual claim) را بلافاصله با شناسه همان چانک داخل کروشه استناد بده، مثلاً [fa-pointers#s02-c01].
 ۳. شناسه‌ای که در فهرست زمینه نیست هرگز ننویس.
 ۴. اگر متن‌های زمینه برای پاسخ کافی نیستند، بدون هیچ توضیح اضافه دقیقاً بنویس: CANNOT_ANSWER
+۵. شناسه‌ها و نام‌های انگلیسی (تابع‌ها، کتابخانه‌ها، پیام‌های خطا) را عیناً و بدون ترجمه یا نویسه‌گردانی نگه دار.
 
 سوال:
 {question}
@@ -58,6 +64,7 @@ def compose_answer(question: str, chunks: list[dict], provider) -> dict:
     "insufficient"}. Raises AnswerError on phantom citations.
     """
     retrieved_ids = [c["chunk_id"] for c in chunks]
+    logger.info("compose lang_hint=%s", detect_query_lang(question))
     answer_text = provider.generate(
         build_prompt(question, chunks),
         "",  # context is already embedded in the prompt
