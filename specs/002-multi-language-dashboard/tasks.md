@@ -37,11 +37,11 @@
 
 **Purpose**: Move the validated C snapshot into the pack layout and thread language selection through existing CLIs
 
-- [ ] T001 Migrate the C pack to per-language layout: move `data/corpus/full/*` to `data/corpus/c/`, rewrite `data/corpus/manifest.json` as `data/corpus/manifest.c.json` (add `language_id: "c"`, `display_name`, `eval_set_version: "v1"` header fields; origins rewritten to `data/corpus/c/`), move `data/index/*` to `data/index/c/`, and delete the old flat paths
+- [X] T001 Migrate the C pack to per-language layout: move `data/corpus/full/*` to `data/corpus/c/`, rewrite `data/corpus/manifest.json` as `data/corpus/manifest.c.json` (add `language_id: "c"`, `display_name`, `eval_set_version: "v1"` header fields; origins rewritten to `data/corpus/c/`), move `data/index/*` to `data/index/c/`, and delete the old flat paths
   - CHECKPOINT: STOP → report moved paths + manifest diff → wait for explicit approval before T002.
-- [ ] T002 Thread a `--lang` flag (default `"c"`) through `src/ingest/__main__.py` and `src/index/__main__.py` so manifest/index paths resolve to `data/corpus/manifest.<lang>.json` and `data/index/<lang>/`; re-run both CLIs with `--lang c` and confirm byte-identical outputs to the migrated C index
+- [X] T002 Thread a `--lang` flag (default `"c"`) through `src/ingest/__main__.py` and `src/index/__main__.py` so manifest/index paths resolve to `data/corpus/manifest.<lang>.json` and `data/index/<lang>/`; re-run both CLIs with `--lang c` and confirm byte-identical outputs to the migrated C index
   - CHECKPOINT: STOP → report CLI runs + byte comparison → wait for explicit approval before T003.
-- [ ] T003 Implement the pack registry in `src/web/packs.py` reading all `data/corpus/manifest.<lang>.json` files into LanguagePack descriptors (`language_id` enum c|cpp|python|java unique, `display_name` non-empty, `status` ready|empty enum with `empty` when the index dir is absent) with `default = "c"`
+- [X] T003 Implement the pack registry in `src/web/packs.py` reading all `data/corpus/manifest.<lang>.json` files into LanguagePack descriptors (`language_id` enum c|cpp|python|java unique, `display_name` non-empty, `status` ready|empty enum with `empty` when the index dir is absent) with `default = "c"`
   - CHECKPOINT: STOP → report registry output on the C-only state → wait for explicit approval before T004.
 
 ---
@@ -91,7 +91,13 @@
 - [ ] T014 [US1] Wire language-scoped retrieval in `src/web/app.py` (per-pack `Retriever` instances from the registry keyed by `language_id`, selected pack opened only) reusing the 001 composer/answer path
   - CHECKPOINT: STOP → report scoped answers per language → wait for explicit approval before T015.
 - [ ] T015 [US1] Integration test for select-and-ask per language in `tests/integration/test_scoped_ask_flow.py` (each ready pack: select → in-corpus question → pack-internal citations)
-  - CHECKPOINT: STOP → report test run passing → wait for explicit approval before T016. **Checkpoint: User Story 1 fully functional and testable independently.**
+  - CHECKPOINT: STOP → report test run passing → wait for explicit approval before T015b.
+- [ ] T015b [US1] Presentation-grade dashboard styling: new `src/web/static/dashboard.css` (RTL polish, project header, styled language sidebar with active-pack state and ready/empty badges, responsive single column, footer with per-pack corpus snapshot info) linked from `src/web/templates/index.html`; no backend changes, no new dependencies
+  - CHECKPOINT: STOP → report styled dashboard (screenshot or HTML dump) → wait for explicit approval before T015c.
+- [ ] T015c [US1] Welcome pane + demo sample questions in `src/web/templates/index.html` and `src/web/static/app.js` (Persian welcome text explaining grounded answers/citations, 3 curated sample questions per ready language as clickable chips that fill AND submit the question for one-click live-demo flow — intentional, documented exception to the no-auto-submit rule, which applies to abstention topics only)
+  - CHECKPOINT: STOP → report welcome/demo flow (sample click → full answer) → wait for explicit approval before T015d.
+- [ ] T015d [US1] Dashboard states polish in `src/web/templates/index.html` and `src/web/static/app.js` (loading indicator during ask, explicit "corpus not available" empty-pack state per contracts/languages-api.md, friendly Persian error display for 422/500 — all RTL-consistent)
+  - CHECKPOINT: STOP → report each state rendering → wait for explicit approval before T016. **Checkpoint: User Story 1 fully functional and testable independently.**
 
 ---
 
@@ -212,7 +218,7 @@ Task: "Build the Java corpus in data/corpus/java/"
 1. Complete Phase 1: Setup (T001–T003, approving each)
 2. Complete Phase 2: Foundational (T004–T010, approving each — CRITICAL, blocks all stories)
 3. Confirm 001's answer path (T018+) is complete
-4. Complete Phase 3: User Story 1 (T011–T015)
+4. Complete Phase 3: User Story 1 (T011–T015d)
 5. **STOP and VALIDATE**: independently test US1 per its Independent Test
 6. Demo if ready (sidebar + scoped cited answers per language)
 

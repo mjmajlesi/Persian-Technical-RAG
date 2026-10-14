@@ -36,10 +36,16 @@ def resolve_origin(source: dict, samples_dir: Path) -> Path | None:
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Ingest corpus manifest to chunks.")
-    parser.add_argument("--manifest", default="data/corpus/manifest.json")
-    parser.add_argument("--out", default="data/index/chunks.jsonl")
+    parser.add_argument("--lang", default="c",
+                        help="language pack id (paths derive from it unless overridden)")
+    parser.add_argument("--manifest", default=None)
+    parser.add_argument("--out", default=None)
     parser.add_argument("--samples-dir", default="data/corpus/samples")
     args = parser.parse_args(argv)
+    if args.manifest is None:
+        args.manifest = f"data/corpus/manifest.{args.lang}.json"
+    if args.out is None:
+        args.out = f"data/index/{args.lang}/chunks.jsonl"
 
     manifest = json.loads(Path(args.manifest).read_text(encoding="utf-8"))
     samples_dir = Path(args.samples_dir)

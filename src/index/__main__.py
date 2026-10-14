@@ -18,10 +18,18 @@ from src.ingest.writer import load_manifest_ids
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Build FAISS index from chunks.")
     parser.add_argument("command", choices=["build"])
-    parser.add_argument("--manifest", default="data/corpus/manifest.json")
-    parser.add_argument("--chunks", default="data/index/chunks.jsonl")
-    parser.add_argument("--index-dir", default="data/index")
+    parser.add_argument("--lang", default="c",
+                        help="language pack id (paths derive from it unless overridden)")
+    parser.add_argument("--manifest", default=None)
+    parser.add_argument("--chunks", default=None)
+    parser.add_argument("--index-dir", default=None)
     args = parser.parse_args(argv)
+    if args.manifest is None:
+        args.manifest = f"data/corpus/manifest.{args.lang}.json"
+    if args.chunks is None:
+        args.chunks = f"data/index/{args.lang}/chunks.jsonl"
+    if args.index_dir is None:
+        args.index_dir = f"data/index/{args.lang}"
 
     manifest_ids = load_manifest_ids(args.manifest)
     records = [

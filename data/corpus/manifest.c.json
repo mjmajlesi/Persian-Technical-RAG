@@ -6,7 +6,7 @@
       "source_id": "fa-vars-types-operators",
       "title": "فصل ۴: متغیرها، انواع داده و عملگرها",
       "kind": "persian-notes",
-      "origin": "data/corpus/full/c-notes-ch01-variables-types-operators.md",
+      "origin": "data/corpus/c/c-notes-ch01-variables-types-operators.md",
       "snapshot": "2026-09-23",
       "license": "owner-authored study notes (project owner)"
     },
@@ -14,7 +14,7 @@
       "source_id": "fa-io-formatting",
       "title": "فصل ۵: قالب‌بندی ورودی و خروجی",
       "kind": "persian-notes",
-      "origin": "data/corpus/full/c-notes-ch02-io-formatting.md",
+      "origin": "data/corpus/c/c-notes-ch02-io-formatting.md",
       "snapshot": "2026-09-23",
       "license": "owner-authored study notes (project owner)"
     },
@@ -22,7 +22,7 @@
       "source_id": "fa-selection-iteration",
       "title": "فصل ۶: دستورهای انتخاب و تکرار",
       "kind": "persian-notes",
-      "origin": "data/corpus/full/c-notes-ch03-selection-iteration.md",
+      "origin": "data/corpus/c/c-notes-ch03-selection-iteration.md",
       "snapshot": "2026-09-23",
       "license": "owner-authored study notes (project owner)"
     },
@@ -30,7 +30,7 @@
       "source_id": "fa-functions",
       "title": "فصل ۷: توابع",
       "kind": "persian-notes",
-      "origin": "data/corpus/full/c-notes-ch04-functions.md",
+      "origin": "data/corpus/c/c-notes-ch04-functions.md",
       "snapshot": "2026-09-23",
       "license": "owner-authored study notes (project owner)"
     },
@@ -38,7 +38,7 @@
       "source_id": "fa-arrays",
       "title": "فصل ۸: آرایه‌ها",
       "kind": "persian-notes",
-      "origin": "data/corpus/full/c-notes-ch05-arrays.md",
+      "origin": "data/corpus/c/c-notes-ch05-arrays.md",
       "snapshot": "2026-09-23",
       "license": "owner-authored study notes (project owner)"
     },
@@ -46,7 +46,7 @@
       "source_id": "fa-pointers",
       "title": "فصل ۹: اشاره‌گرها",
       "kind": "persian-notes",
-      "origin": "data/corpus/full/c-notes-ch06-pointers.md",
+      "origin": "data/corpus/c/c-notes-ch06-pointers.md",
       "snapshot": "2026-09-23",
       "license": "owner-authored study notes (project owner)"
     },
@@ -54,7 +54,7 @@
       "source_id": "fa-strings",
       "title": "فصل ۱۰: کاراکترها و رشته‌ها",
       "kind": "persian-notes",
-      "origin": "data/corpus/full/c-notes-ch07-characters-strings.md",
+      "origin": "data/corpus/c/c-notes-ch07-characters-strings.md",
       "snapshot": "2026-09-23",
       "license": "owner-authored study notes (project owner)"
     },
@@ -62,7 +62,7 @@
       "source_id": "fa-structs-unions-enums",
       "title": "فصل ۱۱: ساختارها، union و enum",
       "kind": "persian-notes",
-      "origin": "data/corpus/full/c-notes-ch08-structs-unions-enums.md",
+      "origin": "data/corpus/c/c-notes-ch08-structs-unions-enums.md",
       "snapshot": "2026-09-23",
       "license": "owner-authored study notes (project owner)"
     },
@@ -70,7 +70,7 @@
       "source_id": "fa-files",
       "title": "فصل ۱۳: پرونده‌ها (فایل)",
       "kind": "persian-notes",
-      "origin": "data/corpus/full/c-notes-ch10-files.md",
+      "origin": "data/corpus/c/c-notes-ch10-files.md",
       "snapshot": "2026-09-23",
       "license": "owner-authored study notes (project owner)"
     },
@@ -78,7 +78,7 @@
       "source_id": "fa-dynamic-memory",
       "title": "فصل ۱۴: حافظه پویا و لیست پیوندی",
       "kind": "persian-notes",
-      "origin": "data/corpus/full/c-notes-ch11-dynamic-memory-linked-lists.md",
+      "origin": "data/corpus/c/c-notes-ch11-dynamic-memory-linked-lists.md",
       "snapshot": "2026-09-23",
       "license": "owner-authored study notes (project owner)"
     },
@@ -86,7 +86,7 @@
       "source_id": "fa-preprocessor",
       "title": "فصل ۱۵: پیش‌پردازنده کامل",
       "kind": "persian-notes",
-      "origin": "data/corpus/full/c-notes-ch12-preprocessor.md",
+      "origin": "data/corpus/c/c-notes-ch12-preprocessor.md",
       "snapshot": "2026-09-23",
       "license": "owner-authored study notes (project owner)"
     },
@@ -94,7 +94,7 @@
       "source_id": "fa-appendix-numbers",
       "title": "پیوست الف: نمایش اعداد در حافظه (مکمل دو)",
       "kind": "persian-notes",
-      "origin": "data/corpus/full/c-notes-appendix-numbers.md",
+      "origin": "data/corpus/c/c-notes-appendix-numbers.md",
       "snapshot": "2026-09-23",
       "license": "owner-authored study notes (project owner)"
     },
@@ -102,7 +102,7 @@
       "source_id": "cppref-malloc",
       "title": "cppreference — malloc",
       "kind": "cppreference",
-      "origin": "data/corpus/full/ref-cppref-malloc.md",
+      "origin": "data/corpus/c/ref-cppref-malloc.md",
       "snapshot": "2026-09-23",
       "license": "CC-BY-SA (cppreference.com)"
     },
@@ -110,7 +110,7 @@
       "source_id": "cppref-free",
       "title": "cppreference — free",
       "kind": "cppreference",
-      "origin": "data/corpus/full/ref-cppref-free.md",
+      "origin": "data/corpus/c/ref-cppref-free.md",
       "snapshot": "2026-09-23",
       "license": "CC-BY-SA (cppreference.com)"
     },
@@ -118,7 +118,7 @@
       "source_id": "cppref-calloc",
       "title": "cppreference — calloc",
       "kind": "cppreference",
-      "origin": "data/corpus/full/ref-cppref-calloc.md",
+      "origin": "data/corpus/c/ref-cppref-calloc.md",
       "snapshot": "2026-09-23",
       "license": "CC-BY-SA (cppreference.com)"
     },
@@ -126,7 +126,7 @@
       "source_id": "cppref-realloc",
       "title": "cppreference — realloc",
       "kind": "cppreference",
-      "origin": "data/corpus/full/ref-cppref-realloc.md",
+      "origin": "data/corpus/c/ref-cppref-realloc.md",
       "snapshot": "2026-09-23",
       "license": "CC-BY-SA (cppreference.com)"
     },
@@ -134,7 +134,7 @@
       "source_id": "cppref-strlen",
       "title": "cppreference — strlen",
       "kind": "cppreference",
-      "origin": "data/corpus/full/ref-cppref-strlen.md",
+      "origin": "data/corpus/c/ref-cppref-strlen.md",
       "snapshot": "2026-09-23",
       "license": "CC-BY-SA (cppreference.com)"
     },
@@ -142,7 +142,7 @@
       "source_id": "cppref-strcpy",
       "title": "cppreference — strcpy",
       "kind": "cppreference",
-      "origin": "data/corpus/full/ref-cppref-strcpy.md",
+      "origin": "data/corpus/c/ref-cppref-strcpy.md",
       "snapshot": "2026-09-23",
       "license": "CC-BY-SA (cppreference.com)"
     },
@@ -150,7 +150,7 @@
       "source_id": "cppref-strcat",
       "title": "cppreference — strcat",
       "kind": "cppreference",
-      "origin": "data/corpus/full/ref-cppref-strcat.md",
+      "origin": "data/corpus/c/ref-cppref-strcat.md",
       "snapshot": "2026-09-23",
       "license": "CC-BY-SA (cppreference.com)"
     },
@@ -158,7 +158,7 @@
       "source_id": "cppref-strcmp",
       "title": "cppreference — strcmp",
       "kind": "cppreference",
-      "origin": "data/corpus/full/ref-cppref-strcmp.md",
+      "origin": "data/corpus/c/ref-cppref-strcmp.md",
       "snapshot": "2026-09-23",
       "license": "CC-BY-SA (cppreference.com)"
     },
@@ -166,7 +166,7 @@
       "source_id": "cppref-strstr",
       "title": "cppreference — strstr",
       "kind": "cppreference",
-      "origin": "data/corpus/full/ref-cppref-strstr.md",
+      "origin": "data/corpus/c/ref-cppref-strstr.md",
       "snapshot": "2026-09-23",
       "license": "CC-BY-SA (cppreference.com)"
     },
@@ -174,7 +174,7 @@
       "source_id": "cppref-memcpy",
       "title": "cppreference — memcpy",
       "kind": "cppreference",
-      "origin": "data/corpus/full/ref-cppref-memcpy.md",
+      "origin": "data/corpus/c/ref-cppref-memcpy.md",
       "snapshot": "2026-09-23",
       "license": "CC-BY-SA (cppreference.com)"
     },
@@ -182,7 +182,7 @@
       "source_id": "cppref-memset",
       "title": "cppreference — memset",
       "kind": "cppreference",
-      "origin": "data/corpus/full/ref-cppref-memset.md",
+      "origin": "data/corpus/c/ref-cppref-memset.md",
       "snapshot": "2026-09-23",
       "license": "CC-BY-SA (cppreference.com)"
     },
@@ -190,7 +190,7 @@
       "source_id": "cppref-printf",
       "title": "cppreference — printf",
       "kind": "cppreference",
-      "origin": "data/corpus/full/ref-cppref-printf.md",
+      "origin": "data/corpus/c/ref-cppref-printf.md",
       "snapshot": "2026-09-23",
       "license": "CC-BY-SA (cppreference.com)"
     },
@@ -198,7 +198,7 @@
       "source_id": "cppref-scanf",
       "title": "cppreference — scanf",
       "kind": "cppreference",
-      "origin": "data/corpus/full/ref-cppref-scanf.md",
+      "origin": "data/corpus/c/ref-cppref-scanf.md",
       "snapshot": "2026-09-23",
       "license": "CC-BY-SA (cppreference.com)"
     },
@@ -206,7 +206,7 @@
       "source_id": "cppref-fopen",
       "title": "cppreference — fopen",
       "kind": "cppreference",
-      "origin": "data/corpus/full/ref-cppref-fopen.md",
+      "origin": "data/corpus/c/ref-cppref-fopen.md",
       "snapshot": "2026-09-23",
       "license": "CC-BY-SA (cppreference.com)"
     },
@@ -214,7 +214,7 @@
       "source_id": "cppref-fclose",
       "title": "cppreference — fclose",
       "kind": "cppreference",
-      "origin": "data/corpus/full/ref-cppref-fclose.md",
+      "origin": "data/corpus/c/ref-cppref-fclose.md",
       "snapshot": "2026-09-23",
       "license": "CC-BY-SA (cppreference.com)"
     },
@@ -222,7 +222,7 @@
       "source_id": "cppref-fread",
       "title": "cppreference — fread",
       "kind": "cppreference",
-      "origin": "data/corpus/full/ref-cppref-fread.md",
+      "origin": "data/corpus/c/ref-cppref-fread.md",
       "snapshot": "2026-09-23",
       "license": "CC-BY-SA (cppreference.com)"
     },
@@ -230,7 +230,7 @@
       "source_id": "cppref-fwrite",
       "title": "cppreference — fwrite",
       "kind": "cppreference",
-      "origin": "data/corpus/full/ref-cppref-fwrite.md",
+      "origin": "data/corpus/c/ref-cppref-fwrite.md",
       "snapshot": "2026-09-23",
       "license": "CC-BY-SA (cppreference.com)"
     },
@@ -238,7 +238,7 @@
       "source_id": "cppref-fgets",
       "title": "cppreference — fgets",
       "kind": "cppreference",
-      "origin": "data/corpus/full/ref-cppref-fgets.md",
+      "origin": "data/corpus/c/ref-cppref-fgets.md",
       "snapshot": "2026-09-23",
       "license": "CC-BY-SA (cppreference.com)"
     },
@@ -246,7 +246,7 @@
       "source_id": "cppref-qsort",
       "title": "cppreference — qsort",
       "kind": "cppreference",
-      "origin": "data/corpus/full/ref-cppref-qsort.md",
+      "origin": "data/corpus/c/ref-cppref-qsort.md",
       "snapshot": "2026-09-23",
       "license": "CC-BY-SA (cppreference.com)"
     },
@@ -254,7 +254,7 @@
       "source_id": "cppref-rand",
       "title": "cppreference — rand",
       "kind": "cppreference",
-      "origin": "data/corpus/full/ref-cppref-rand.md",
+      "origin": "data/corpus/c/ref-cppref-rand.md",
       "snapshot": "2026-09-23",
       "license": "CC-BY-SA (cppreference.com)"
     },
@@ -262,7 +262,7 @@
       "source_id": "cppref-pointer",
       "title": "cppreference — Pointer declaration",
       "kind": "cppreference",
-      "origin": "data/corpus/full/ref-cppref-pointer.md",
+      "origin": "data/corpus/c/ref-cppref-pointer.md",
       "snapshot": "2026-09-23",
       "license": "CC-BY-SA (cppreference.com)"
     },
@@ -270,7 +270,7 @@
       "source_id": "glibc-unconstrained-allocation",
       "title": "glibc manual — Unconstrained Allocation",
       "kind": "glibc",
-      "origin": "data/corpus/full/ref-glibc-unconstrained-allocation.md",
+      "origin": "data/corpus/c/ref-glibc-unconstrained-allocation.md",
       "snapshot": "2026-09-23",
       "license": "GFDL (GNU C Library manual)"
     },
@@ -278,7 +278,7 @@
       "source_id": "glibc-basic-allocation",
       "title": "glibc manual — Basic Allocation",
       "kind": "glibc",
-      "origin": "data/corpus/full/ref-glibc-basic-allocation.md",
+      "origin": "data/corpus/c/ref-glibc-basic-allocation.md",
       "snapshot": "2026-09-23",
       "license": "GFDL (GNU C Library manual)"
     },
@@ -286,7 +286,7 @@
       "source_id": "glibc-malloc-examples",
       "title": "glibc manual — Malloc Examples",
       "kind": "glibc",
-      "origin": "data/corpus/full/ref-glibc-malloc-examples.md",
+      "origin": "data/corpus/c/ref-glibc-malloc-examples.md",
       "snapshot": "2026-09-23",
       "license": "GFDL (GNU C Library manual)"
     },
@@ -294,7 +294,7 @@
       "source_id": "glibc-standard-streams",
       "title": "glibc manual — Standard Streams",
       "kind": "glibc",
-      "origin": "data/corpus/full/ref-glibc-standard-streams.md",
+      "origin": "data/corpus/c/ref-glibc-standard-streams.md",
       "snapshot": "2026-09-23",
       "license": "GFDL (GNU C Library manual)"
     },
@@ -302,7 +302,7 @@
       "source_id": "glibc-formatted-output",
       "title": "glibc manual — Formatted Output",
       "kind": "glibc",
-      "origin": "data/corpus/full/ref-glibc-formatted-output.md",
+      "origin": "data/corpus/c/ref-glibc-formatted-output.md",
       "snapshot": "2026-09-23",
       "license": "GFDL (GNU C Library manual)"
     },
@@ -310,7 +310,7 @@
       "source_id": "cppref-arithmetic-types",
       "title": "cppreference — Fundamental arithmetic types",
       "kind": "cppreference",
-      "origin": "data/corpus/full/ref-cppref-arithmetic-types.md",
+      "origin": "data/corpus/c/ref-cppref-arithmetic-types.md",
       "snapshot": "2026-09-23",
       "license": "CC-BY-SA (cppreference.com)"
     },
@@ -318,7 +318,7 @@
       "source_id": "cppref-sizeof",
       "title": "cppreference — sizeof operator",
       "kind": "cppreference",
-      "origin": "data/corpus/full/ref-cppref-sizeof.md",
+      "origin": "data/corpus/c/ref-cppref-sizeof.md",
       "snapshot": "2026-09-23",
       "license": "CC-BY-SA (cppreference.com)"
     },
@@ -326,7 +326,7 @@
       "source_id": "cppref-if",
       "title": "cppreference — if statement",
       "kind": "cppreference",
-      "origin": "data/corpus/full/ref-cppref-if.md",
+      "origin": "data/corpus/c/ref-cppref-if.md",
       "snapshot": "2026-09-23",
       "license": "CC-BY-SA (cppreference.com)"
     },
@@ -334,7 +334,7 @@
       "source_id": "cppref-switch",
       "title": "cppreference — switch statement",
       "kind": "cppreference",
-      "origin": "data/corpus/full/ref-cppref-switch.md",
+      "origin": "data/corpus/c/ref-cppref-switch.md",
       "snapshot": "2026-09-23",
       "license": "CC-BY-SA (cppreference.com)"
     },
@@ -342,7 +342,7 @@
       "source_id": "cppref-for",
       "title": "cppreference — for loop",
       "kind": "cppreference",
-      "origin": "data/corpus/full/ref-cppref-for.md",
+      "origin": "data/corpus/c/ref-cppref-for.md",
       "snapshot": "2026-09-23",
       "license": "CC-BY-SA (cppreference.com)"
     },
@@ -350,7 +350,7 @@
       "source_id": "cppref-struct",
       "title": "cppreference — Struct declaration",
       "kind": "cppreference",
-      "origin": "data/corpus/full/ref-cppref-struct.md",
+      "origin": "data/corpus/c/ref-cppref-struct.md",
       "snapshot": "2026-09-23",
       "license": "CC-BY-SA (cppreference.com)"
     },
@@ -358,7 +358,7 @@
       "source_id": "cppref-byte-strings",
       "title": "cppreference — Null-terminated byte strings",
       "kind": "cppreference",
-      "origin": "data/corpus/full/ref-cppref-byte-strings.md",
+      "origin": "data/corpus/c/ref-cppref-byte-strings.md",
       "snapshot": "2026-09-23",
       "license": "CC-BY-SA (cppreference.com)"
     },
@@ -366,7 +366,7 @@
       "source_id": "cppref-conditional",
       "title": "cppreference — Conditional inclusion",
       "kind": "cppreference",
-      "origin": "data/corpus/full/ref-cppref-conditional.md",
+      "origin": "data/corpus/c/ref-cppref-conditional.md",
       "snapshot": "2026-09-23",
       "license": "CC-BY-SA (cppreference.com)"
     },
@@ -374,7 +374,7 @@
       "source_id": "cppref-isalpha",
       "title": "cppreference — isalpha",
       "kind": "cppreference",
-      "origin": "data/corpus/full/ref-cppref-isalpha.md",
+      "origin": "data/corpus/c/ref-cppref-isalpha.md",
       "snapshot": "2026-09-23",
       "license": "CC-BY-SA (cppreference.com)"
     },
@@ -382,7 +382,7 @@
       "source_id": "cppref-fseek",
       "title": "cppreference — fseek",
       "kind": "cppreference",
-      "origin": "data/corpus/full/ref-cppref-fseek.md",
+      "origin": "data/corpus/c/ref-cppref-fseek.md",
       "snapshot": "2026-09-23",
       "license": "CC-BY-SA (cppreference.com)"
     },
@@ -390,7 +390,7 @@
       "source_id": "cppref-bsearch",
       "title": "cppreference — bsearch",
       "kind": "cppreference",
-      "origin": "data/corpus/full/ref-cppref-bsearch.md",
+      "origin": "data/corpus/c/ref-cppref-bsearch.md",
       "snapshot": "2026-09-23",
       "license": "CC-BY-SA (cppreference.com)"
     },
@@ -398,7 +398,7 @@
       "source_id": "cppref-atoi",
       "title": "cppreference — atoi",
       "kind": "cppreference",
-      "origin": "data/corpus/full/ref-cppref-atoi.md",
+      "origin": "data/corpus/c/ref-cppref-atoi.md",
       "snapshot": "2026-09-23",
       "license": "CC-BY-SA (cppreference.com)"
     },
@@ -406,7 +406,7 @@
       "source_id": "cppref-replace",
       "title": "cppreference — Replacing text macros",
       "kind": "cppreference",
-      "origin": "data/corpus/full/ref-cppref-replace.md",
+      "origin": "data/corpus/c/ref-cppref-replace.md",
       "snapshot": "2026-09-23",
       "license": "CC-BY-SA (cppreference.com)"
     },
@@ -414,9 +414,12 @@
       "source_id": "cppref-operator-precedence",
       "title": "cppreference — C Operator Precedence",
       "kind": "cppreference",
-      "origin": "data/corpus/full/ref-cppref-operator-precedence.md",
+      "origin": "data/corpus/c/ref-cppref-operator-precedence.md",
       "snapshot": "2026-09-23",
       "license": "CC-BY-SA (cppreference.com)"
     }
-  ]
+  ],
+  "language_id": "c",
+  "display_name": "C / سی",
+  "eval_set_version": "v1"
 }
