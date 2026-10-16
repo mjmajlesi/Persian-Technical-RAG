@@ -16,8 +16,11 @@ from src.qa import abstain
 from src.qa.answer import AnswerError, compose_answer
 from src.qa.provider import LLMProvider, ProviderConfig, ProviderError
 from src.qa.retriever import Retriever
+from src.web import packs as pack_registry
 
 EMPTY_QUESTION_MESSAGE = "سوال نمی‌تواند خالی باشد."
+UNKNOWN_LANGUAGE_MESSAGE = "زبان نامشخص است."
+CORPUS_UNAVAILABLE_MESSAGE = "کورپوس این زبان هنوز آماده نیست."
 ANSWER_FAILED_MESSAGE = "خطای داخلی در تولید پاسخ grounded."
 LLM_NOT_CONFIGURED_MESSAGE = (
     "سرویس مدل زبانی پیکربندی نشده است (LLM_API_KEY/LLM_MODEL)."
@@ -34,6 +37,7 @@ CLARIFY_MESSAGE_TEMPLATE = (
 class AskRequest(BaseModel):
     question: str
     top_k: int = Field(default=5, ge=1, le=10)
+    language: str = Field(default="c")
 
 
 app = FastAPI(title="Persian Technical RAG (demo)")
@@ -44,16 +48,33 @@ app.mount("/static", StaticFiles(directory="src/web/static"), name="static")
 def index() -> FileResponse:
     return FileResponse("src/web/templates/index.html", media_type="text/html")
 
-_retriever: Retriever | None = None
+
+@app.get("/api/languages")
+def list_languages() -> dict:
+    """Pack descriptors read live from the manifests (002-T007)."""
+    return {
+        "default": pack_registry.DEFAULT_LANGUAGE,
+        "languages": [
+            {
+                "language_id": p.language_id,
+                "display_name": p.display_name,
+                "status": p.status,
+                "snapshot": p.snapshot,
+                "eval_set_version": p.eval_set_version,
+            }
+            for p in pack_registry.load_packs()
+        ],
+    }
+
+_retrievers: dict[str, Retriever] = {}
 _provider: LLMProvider | None = None
 
 
-def get_retriever() -> Retriever:
-    """Lazily build (once) the shared Retriever over the frozen index."""
-    global _retriever
-    if _retriever is None:
-        _retriever = Retriever("data/index")
-    return _retriever
+def get_retriever(language: str = "c") -> Retriever:
+    """Lazily build (once per language) the Retriever for a pack's index."""
+    if language not in _retrievers:
+        _retrievers[language] = Retriever(f"data/index/{language}")
+    return _retrievers[language]
 
 
 def get_provider() -> LLMProvider:
@@ -69,17 +90,30 @@ def ask(request: AskRequest) -> dict:
     if not request.question.strip():
         raise HTTPException(status_code=422, detail=EMPTY_QUESTION_MESSAGE)
     question = request.question.strip()
+    try:
+        pack = pack_registry.get_pack(request.language)
+    except pack_registry.PackError:
+        raise HTTPException(status_code=422, detail=UNKNOWN_LANGUAGE_MESSAGE)
+    if pack.status == "empty":
+        # T008: listed but not ingested — explicit state, never an attempt.
+        return {
+            "type": "unavailable",
+            "message": CORPUS_UNAVAILABLE_MESSAGE,
+            "language_id": pack.language_id,
+            "citations": [],
+        }
     if len(question.split()) < AMBIGUOUS_MIN_WORDS:
         # T020b: no retrieval, no LLM call, no answer attempt.
         return {
             "type": "clarify",
             "message": CLARIFY_MESSAGE_TEMPLATE.format(question=question),
+            "language_id": pack.language_id,
             "citations": [],
         }
     # T023: retrieve FIRST (local, free), then gate on the similarity
     # threshold BEFORE touching the LLM: low scores abstain immediately,
     # so out-of-domain questions cost zero LLM calls/credit.
-    chunks = get_retriever().retrieve(question, k=request.top_k)
+    chunks = get_retriever(pack.language_id).retrieve(question, k=request.top_k)
     if not chunks:
         payload = abstain.decide([], 0.0, llm_insufficient=True)
         return {"type": "abstain", **payload}
@@ -87,7 +121,7 @@ def ask(request: AskRequest) -> dict:
         chunks, top_score=chunks[0]["score"], llm_insufficient=False
     )
     if gated is not None:
-        return {"type": "abstain", **gated}
+        return {"type": "abstain", "language_id": pack.language_id, **gated}
     try:
         provider = get_provider()
     except ProviderError:
@@ -102,9 +136,10 @@ def ask(request: AskRequest) -> dict:
         payload = abstain.decide(
             chunks, top_score=chunks[0]["score"], llm_insufficient=True
         )
-        return {"type": "abstain", **payload}
+        return {"type": "abstain", "language_id": pack.language_id, **payload}
     return {
         "type": "answer",
+        "language_id": pack.language_id,
         "answer_text": result["answer_text"],
         "citations": result["citations"],
         "retrieved_chunk_ids": result["retrieved_chunk_ids"],

@@ -52,15 +52,15 @@
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T004 Build the C++ corpus in `data/corpus/cpp/`: move the on-disk `c-notes-ch09-cpp-intro.md` there, fetch ~10–15 cppreference C++ pages with the T010b stdlib method and cleaning rules (URL/date/CC-BY-SA headers), write `data/corpus/manifest.cpp.json` (pack header fields + unique source_ids + licenses), and run ingest + index build with `--lang cpp`
+- [X] T004 Build the C++ corpus in `data/corpus/cpp/`: move the on-disk `c-notes-ch09-cpp-intro.md` there, fetch ~10–15 cppreference C++ pages with the T010b stdlib method and cleaning rules (URL/date/CC-BY-SA headers), write `data/corpus/manifest.cpp.json` (pack header fields + unique source_ids + licenses), and run ingest + index build with `--lang cpp`
   - CHECKPOINT: STOP → report source list + per-source chunk counts → wait for explicit approval before T005.
-- [ ] T005 Build the Python corpus in `data/corpus/python/`: fetch a named docs.python.org subset (tutorial + library sections for student-level questions) with the T010b method, write `data/corpus/manifest.python.json` (English-reference-only composition noted), and run ingest + index build with `--lang python`
+- [X] T005 Build the Python corpus in `data/corpus/python/`: fetch a named docs.python.org subset (tutorial + library sections for student-level questions) with the T010b method, write `data/corpus/manifest.python.json` (English-reference-only composition noted), and run ingest + index build with `--lang python`
   - CHECKPOINT: STOP → report source list + per-source chunk counts → wait for explicit approval before T006.
-- [ ] T006 Build the Java corpus in `data/corpus/java/`: fetch a named official-Java-docs subset (language basics + core library) with the T010b method, write `data/corpus/manifest.java.json` (English-reference-only composition noted), and run ingest + index build with `--lang java`
+- [X] T006 Build the Java corpus in `data/corpus/java/`: fetch a named official-Java-docs subset (language basics + core library) with the T010b method, write `data/corpus/manifest.java.json` (English-reference-only composition noted), and run ingest + index build with `--lang java`
   - CHECKPOINT: STOP → report source list + per-source chunk counts → wait for explicit approval before T007.
-- [ ] T007 Implement `GET /api/languages` in `src/web/app.py` serving pack descriptors from the registry per `contracts/languages-api.md` (one entry per manifest file, `empty` status without index dir, `default: "c"`)
+- [X] T007 Implement `GET /api/languages` in `src/web/app.py` serving pack descriptors from the registry per `contracts/languages-api.md` (one entry per manifest file, `empty` status without index dir, `default: "c"`)
   - CHECKPOINT: STOP → report endpoint JSON on 4-pack state → wait for explicit approval before T008.
-- [ ] T008 Add the `language` field (default `"c"`) to `POST /api/ask` in `src/web/app.py` per `contracts/languages-api.md`: unknown language → `422` Persian error; `empty`-pack language → `200` `type: unavailable` with Persian message and zero citations, never an answer attempt
+- [X] T008 Add the `language` field (default `"c"`) to `POST /api/ask` in `src/web/app.py` per `contracts/languages-api.md`: unknown language → `422` Persian error; `empty`-pack language → `200` `type: unavailable` with Persian message and zero citations, never an answer attempt
   - CHECKPOINT: STOP → report 422/unavailable probing → wait for explicit approval before T009.
 - [ ] T009 Store a per-pack abstention similarity threshold in each pack's config (`src/qa/pack_config.py`, default from T014's provisional value until calibrated) and thread it through `src/qa/abstain.py` `decide()` so each language applies its own threshold
   - CHECKPOINT: STOP → report config + threaded behavior → wait for explicit approval before T010.

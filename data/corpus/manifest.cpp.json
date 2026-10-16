@@ -1,0 +1,113 @@
+{
+  "language_id": "cpp",
+  "display_name": "C++ / سی‌پلاس‌پلاس",
+  "snapshot": "2026-10-16",
+  "eval_set_version": "v1",
+  "notes": "Frozen C++ pack v1. Owner-authored Persian intro notes (ch09, moved from the C staging area) plus a named cppreference.com C++ subset (CC-BY-SA), saved locally with source URL + retrieval date headers.",
+  "sources": [
+    {
+      "source_id": "cpp-notes-intro",
+      "title": "فصل ۱۲: آشنایی با ++C",
+      "kind": "persian-notes",
+      "origin": "data/corpus/cpp/c-notes-ch09-cpp-intro.md",
+      "snapshot": "2026-10-16",
+      "license": "owner-authored study notes (project owner)"
+    },
+    {
+      "source_id": "cppref-cpp-vector",
+      "title": "cppreference — std::vector",
+      "kind": "cppreference",
+      "origin": "data/corpus/cpp/ref-cppref-cpp-vector.md",
+      "snapshot": "2026-10-16",
+      "license": "CC-BY-SA (cppreference.com)"
+    },
+    {
+      "source_id": "cppref-cpp-string",
+      "title": "cppreference — std::basic_string",
+      "kind": "cppreference",
+      "origin": "data/corpus/cpp/ref-cppref-cpp-string.md",
+      "snapshot": "2026-10-16",
+      "license": "CC-BY-SA (cppreference.com)"
+    },
+    {
+      "source_id": "cppref-cpp-cout",
+      "title": "cppreference — std::cout",
+      "kind": "cppreference",
+      "origin": "data/corpus/cpp/ref-cppref-cpp-cout.md",
+      "snapshot": "2026-10-16",
+      "license": "CC-BY-SA (cppreference.com)"
+    },
+    {
+      "source_id": "cppref-cpp-class",
+      "title": "cppreference — Class declaration",
+      "kind": "cppreference",
+      "origin": "data/corpus/cpp/ref-cppref-cpp-class.md",
+      "snapshot": "2026-10-16",
+      "license": "CC-BY-SA (cppreference.com)"
+    },
+    {
+      "source_id": "cppref-cpp-constructor",
+      "title": "cppreference — Constructors",
+      "kind": "cppreference",
+      "origin": "data/corpus/cpp/ref-cppref-cpp-constructor.md",
+      "snapshot": "2026-10-16",
+      "license": "CC-BY-SA (cppreference.com)"
+    },
+    {
+      "source_id": "cppref-cpp-namespace",
+      "title": "cppreference — Namespaces",
+      "kind": "cppreference",
+      "origin": "data/corpus/cpp/ref-cppref-cpp-namespace.md",
+      "snapshot": "2026-10-16",
+      "license": "CC-BY-SA (cppreference.com)"
+    },
+    {
+      "source_id": "cppref-cpp-reference",
+      "title": "cppreference — Reference declaration",
+      "kind": "cppreference",
+      "origin": "data/corpus/cpp/ref-cppref-cpp-reference.md",
+      "snapshot": "2026-10-16",
+      "license": "CC-BY-SA (cppreference.com)"
+    },
+    {
+      "source_id": "cppref-cpp-function",
+      "title": "cppreference — Function declaration",
+      "kind": "cppreference",
+      "origin": "data/corpus/cpp/ref-cppref-cpp-function.md",
+      "snapshot": "2026-10-16",
+      "license": "CC-BY-SA (cppreference.com)"
+    },
+    {
+      "source_id": "cppref-cpp-operators",
+      "title": "cppreference — Operator overloading",
+      "kind": "cppreference",
+      "origin": "data/corpus/cpp/ref-cppref-cpp-operators.md",
+      "snapshot": "2026-10-16",
+      "license": "CC-BY-SA (cppreference.com)"
+    },
+    {
+      "source_id": "cppref-cpp-auto",
+      "title": "cppreference — auto specifier",
+      "kind": "cppreference",
+      "origin": "data/corpus/cpp/ref-cppref-cpp-auto.md",
+      "snapshot": "2026-10-16",
+      "license": "CC-BY-SA (cppreference.com)"
+    },
+    {
+      "source_id": "cppref-cpp-range-for",
+      "title": "cppreference — Range-based for loop",
+      "kind": "cppreference",
+      "origin": "data/corpus/cpp/ref-cppref-cpp-range-for.md",
+      "snapshot": "2026-10-16",
+      "license": "CC-BY-SA (cppreference.com)"
+    },
+    {
+      "source_id": "cppref-cpp-overload",
+      "title": "cppreference — Overload resolution",
+      "kind": "cppreference",
+      "origin": "data/corpus/cpp/ref-cppref-cpp-overload.md",
+      "snapshot": "2026-10-16",
+      "license": "CC-BY-SA (cppreference.com)"
+    }
+  ]
+}

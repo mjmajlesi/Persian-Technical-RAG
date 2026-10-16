@@ -1,0 +1,81 @@
+{
+  "language_id": "python",
+  "display_name": "Python / پایتون",
+  "snapshot": "2026-10-16",
+  "eval_set_version": "v1",
+  "notes": "Frozen Python pack v1. English-reference-only composition (accepted FR-007 tradeoff: no exam-style Persian terminology needed; docs.python.org is strong). Named docs.python.org subset (tutorial + library), saved locally with source URL + retrieval date headers.",
+  "sources": [
+    {
+      "source_id": "pyref-tutorial-introduction",
+      "title": "Python tutorial — An Informal Introduction",
+      "kind": "python-docs",
+      "origin": "data/corpus/python/ref-pyref-tutorial-introduction.md",
+      "snapshot": "2026-10-16",
+      "license": "PSF License (docs.python.org)"
+    },
+    {
+      "source_id": "pyref-tutorial-controlflow",
+      "title": "Python tutorial — More Control Flow Tools",
+      "kind": "python-docs",
+      "origin": "data/corpus/python/ref-pyref-tutorial-controlflow.md",
+      "snapshot": "2026-10-16",
+      "license": "PSF License (docs.python.org)"
+    },
+    {
+      "source_id": "pyref-tutorial-datastructures",
+      "title": "Python tutorial — Data Structures",
+      "kind": "python-docs",
+      "origin": "data/corpus/python/ref-pyref-tutorial-datastructures.md",
+      "snapshot": "2026-10-16",
+      "license": "PSF License (docs.python.org)"
+    },
+    {
+      "source_id": "pyref-tutorial-classes",
+      "title": "Python tutorial — Classes",
+      "kind": "python-docs",
+      "origin": "data/corpus/python/ref-pyref-tutorial-classes.md",
+      "snapshot": "2026-10-16",
+      "license": "PSF License (docs.python.org)"
+    },
+    {
+      "source_id": "pyref-tutorial-errors",
+      "title": "Python tutorial — Errors and Exceptions",
+      "kind": "python-docs",
+      "origin": "data/corpus/python/ref-pyref-tutorial-errors.md",
+      "snapshot": "2026-10-16",
+      "license": "PSF License (docs.python.org)"
+    },
+    {
+      "source_id": "pyref-tutorial-inputoutput",
+      "title": "Python tutorial — Input and output",
+      "kind": "python-docs",
+      "origin": "data/corpus/python/ref-pyref-tutorial-inputoutput.md",
+      "snapshot": "2026-10-16",
+      "license": "PSF License (docs.python.org)"
+    },
+    {
+      "source_id": "pyref-library-functions",
+      "title": "Python library — Built-in functions",
+      "kind": "python-docs",
+      "origin": "data/corpus/python/ref-pyref-library-functions.md",
+      "snapshot": "2026-10-16",
+      "license": "PSF License (docs.python.org)"
+    },
+    {
+      "source_id": "pyref-library-stdtypes",
+      "title": "Python library — Built-in Types",
+      "kind": "python-docs",
+      "origin": "data/corpus/python/ref-pyref-library-stdtypes.md",
+      "snapshot": "2026-10-16",
+      "license": "PSF License (docs.python.org)"
+    },
+    {
+      "source_id": "pyref-library-exceptions",
+      "title": "Python library — Built-in Exceptions",
+      "kind": "python-docs",
+      "origin": "data/corpus/python/ref-pyref-library-exceptions.md",
+      "snapshot": "2026-10-16",
+      "license": "PSF License (docs.python.org)"
+    }
+  ]
+}

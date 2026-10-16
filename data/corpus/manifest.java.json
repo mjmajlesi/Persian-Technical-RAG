@@ -1,0 +1,137 @@
+{
+  "language_id": "java",
+  "display_name": "Java / جاوا",
+  "snapshot": "2026-10-16",
+  "eval_set_version": "v1",
+  "notes": "Frozen Java pack v1. English-reference-only composition (accepted FR-007 tradeoff). Named Oracle Java Tutorials subset (language basics + OOP + exceptions + IO + collections), saved locally with source URL + retrieval date headers. The thin control-flow overview page was excluded in favor of the if/for lesson pages.",
+  "sources": [
+    {
+      "source_id": "javaref-variables",
+      "title": "Java Tutorials — Variables",
+      "kind": "java-docs",
+      "origin": "data/corpus/java/ref-javaref-variables.md",
+      "snapshot": "2026-10-16",
+      "license": "Oracle tutorial (see docs.oracle.com terms)"
+    },
+    {
+      "source_id": "javaref-operators",
+      "title": "Java Tutorials — Operators",
+      "kind": "java-docs",
+      "origin": "data/corpus/java/ref-javaref-operators.md",
+      "snapshot": "2026-10-16",
+      "license": "Oracle tutorial (see docs.oracle.com terms)"
+    },
+    {
+      "source_id": "javaref-arrays",
+      "title": "Java Tutorials — Arrays",
+      "kind": "java-docs",
+      "origin": "data/corpus/java/ref-javaref-arrays.md",
+      "snapshot": "2026-10-16",
+      "license": "Oracle tutorial (see docs.oracle.com terms)"
+    },
+    {
+      "source_id": "javaref-if",
+      "title": "Java Tutorials — if-then statements",
+      "kind": "java-docs",
+      "origin": "data/corpus/java/ref-javaref-if.md",
+      "snapshot": "2026-10-16",
+      "license": "Oracle tutorial (see docs.oracle.com terms)"
+    },
+    {
+      "source_id": "javaref-for",
+      "title": "Java Tutorials — The for Statement",
+      "kind": "java-docs",
+      "origin": "data/corpus/java/ref-javaref-for.md",
+      "snapshot": "2026-10-16",
+      "license": "Oracle tutorial (see docs.oracle.com terms)"
+    },
+    {
+      "source_id": "javaref-oop-concepts",
+      "title": "Java Tutorials — OOP Concepts",
+      "kind": "java-docs",
+      "origin": "data/corpus/java/ref-javaref-oop-concepts.md",
+      "snapshot": "2026-10-16",
+      "license": "Oracle tutorial (see docs.oracle.com terms)"
+    },
+    {
+      "source_id": "javaref-classes",
+      "title": "Java Tutorials — Classes",
+      "kind": "java-docs",
+      "origin": "data/corpus/java/ref-javaref-classes.md",
+      "snapshot": "2026-10-16",
+      "license": "Oracle tutorial (see docs.oracle.com terms)"
+    },
+    {
+      "source_id": "javaref-objects",
+      "title": "Java Tutorials — Objects",
+      "kind": "java-docs",
+      "origin": "data/corpus/java/ref-javaref-objects.md",
+      "snapshot": "2026-10-16",
+      "license": "Oracle tutorial (see docs.oracle.com terms)"
+    },
+    {
+      "source_id": "javaref-subclasses",
+      "title": "Java Tutorials — Inheritance",
+      "kind": "java-docs",
+      "origin": "data/corpus/java/ref-javaref-subclasses.md",
+      "snapshot": "2026-10-16",
+      "license": "Oracle tutorial (see docs.oracle.com terms)"
+    },
+    {
+      "source_id": "javaref-override",
+      "title": "Java Tutorials — Overriding Methods",
+      "kind": "java-docs",
+      "origin": "data/corpus/java/ref-javaref-override.md",
+      "snapshot": "2026-10-16",
+      "license": "Oracle tutorial (see docs.oracle.com terms)"
+    },
+    {
+      "source_id": "javaref-interface-def",
+      "title": "Java Tutorials — Defining an Interface",
+      "kind": "java-docs",
+      "origin": "data/corpus/java/ref-javaref-interface-def.md",
+      "snapshot": "2026-10-16",
+      "license": "Oracle tutorial (see docs.oracle.com terms)"
+    },
+    {
+      "source_id": "javaref-strings",
+      "title": "Java Tutorials — Strings",
+      "kind": "java-docs",
+      "origin": "data/corpus/java/ref-javaref-strings.md",
+      "snapshot": "2026-10-16",
+      "license": "Oracle tutorial (see docs.oracle.com terms)"
+    },
+    {
+      "source_id": "javaref-exceptions",
+      "title": "Java Tutorials — What Is an Exception",
+      "kind": "java-docs",
+      "origin": "data/corpus/java/ref-javaref-exceptions.md",
+      "snapshot": "2026-10-16",
+      "license": "Oracle tutorial (see docs.oracle.com terms)"
+    },
+    {
+      "source_id": "javaref-exceptions-handling",
+      "title": "Java Tutorials — Catching and Handling Exceptions",
+      "kind": "java-docs",
+      "origin": "data/corpus/java/ref-javaref-exceptions-handling.md",
+      "snapshot": "2026-10-16",
+      "license": "Oracle tutorial (see docs.oracle.com terms)"
+    },
+    {
+      "source_id": "javaref-fileio",
+      "title": "Java Tutorials — Reading and Writing Files",
+      "kind": "java-docs",
+      "origin": "data/corpus/java/ref-javaref-fileio.md",
+      "snapshot": "2026-10-16",
+      "license": "Oracle tutorial (see docs.oracle.com terms)"
+    },
+    {
+      "source_id": "javaref-collections-intro",
+      "title": "Java Tutorials — Introduction to Collections",
+      "kind": "java-docs",
+      "origin": "data/corpus/java/ref-javaref-collections-intro.md",
+      "snapshot": "2026-10-16",
+      "license": "Oracle tutorial (see docs.oracle.com terms)"
+    }
+  ]
+}
