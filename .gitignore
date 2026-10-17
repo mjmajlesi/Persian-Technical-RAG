@@ -24,7 +24,7 @@ htmlcov/
 # Data artifacts (large/regenerable; manifests + eval sets + ids.json stay tracked)
 data/index/*/faiss.index
 data/index/*/chunks.jsonl
-data/eval/reports/*.json
+data/eval/**/reports/*.json
 !data/eval/reports/.gitkeep
 
 # OS / editors

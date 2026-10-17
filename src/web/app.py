@@ -13,6 +13,7 @@ from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
 from src.qa import abstain
+from src.qa import pack_config
 from src.qa.answer import AnswerError, compose_answer
 from src.qa.provider import LLMProvider, ProviderConfig, ProviderError
 from src.qa.retriever import Retriever
@@ -112,13 +113,16 @@ def ask(request: AskRequest) -> dict:
         }
     # T023: retrieve FIRST (local, free), then gate on the similarity
     # threshold BEFORE touching the LLM: low scores abstain immediately,
-    # so out-of-domain questions cost zero LLM calls/credit.
+    # so out-of-domain questions cost zero LLM calls/credit. 002-T009: the
+    # gate value is per-pack (pack_config) after the language resolves.
+    threshold = pack_config.threshold_for(pack.language_id)
     chunks = get_retriever(pack.language_id).retrieve(question, k=request.top_k)
     if not chunks:
-        payload = abstain.decide([], 0.0, llm_insufficient=True)
+        payload = abstain.decide([], 0.0, llm_insufficient=True, threshold=threshold)
         return {"type": "abstain", **payload}
     gated = abstain.decide(
-        chunks, top_score=chunks[0]["score"], llm_insufficient=False
+        chunks, top_score=chunks[0]["score"], llm_insufficient=False,
+        threshold=threshold,
     )
     if gated is not None:
         return {"type": "abstain", "language_id": pack.language_id, **gated}
@@ -134,7 +138,8 @@ def ask(request: AskRequest) -> dict:
         # Insufficiency fallback only; the threshold-gated abstention path
         # (skipping the LLM call) is wired in T023.
         payload = abstain.decide(
-            chunks, top_score=chunks[0]["score"], llm_insufficient=True
+            chunks, top_score=chunks[0]["score"], llm_insufficient=True,
+            threshold=threshold,
         )
         return {"type": "abstain", "language_id": pack.language_id, **payload}
     return {

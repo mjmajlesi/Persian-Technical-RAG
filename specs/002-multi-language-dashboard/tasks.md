@@ -62,9 +62,9 @@
   - CHECKPOINT: STOP → report endpoint JSON on 4-pack state → wait for explicit approval before T008.
 - [X] T008 Add the `language` field (default `"c"`) to `POST /api/ask` in `src/web/app.py` per `contracts/languages-api.md`: unknown language → `422` Persian error; `empty`-pack language → `200` `type: unavailable` with Persian message and zero citations, never an answer attempt
   - CHECKPOINT: STOP → report 422/unavailable probing → wait for explicit approval before T009.
-- [ ] T009 Store a per-pack abstention similarity threshold in each pack's config (`src/qa/pack_config.py`, default from T014's provisional value until calibrated) and thread it through `src/qa/abstain.py` `decide()` so each language applies its own threshold
+- [X] T009 Store a per-pack abstention similarity threshold in each pack's config (`src/qa/pack_config.py`, default from T014's provisional value until calibrated) and thread it through `src/qa/abstain.py` `decide()` so each language applies its own threshold
   - CHECKPOINT: STOP → report config + threaded behavior → wait for explicit approval before T010.
-- [ ] T010 Add `--lang` to the eval runner in `src/eval/run.py` so scoring runs against one pack's set and writes JSON + Markdown reports to `data/eval/<lang>/reports/` per pack (no blended headline figure)
+- [X] T010 Add `--lang` to the eval runner in `src/eval/run.py` so scoring runs against one pack's set and writes JSON + Markdown reports to `data/eval/<lang>/reports/` per pack (no blended headline figure)
   - CHECKPOINT: STOP → report `--lang c` run reproducing 001 figures → wait for explicit approval before T011. **Foundation ready — user story implementation can now begin (after 001 T018+ is complete).**
 
 ---
@@ -79,7 +79,7 @@
 
 > **NOTE: Write these tests FIRST, ensure they FAIL before implementation**
 
-- [ ] T011 [P] [US1] Contract test for `GET /api/languages` in `tests/contract/test_languages.py` (4 packs, correct statuses, `default == "c"`)
+- [X] T011 [P] [US1] Contract test for `GET /api/languages` in `tests/contract/test_languages.py` (4 packs, correct statuses, `default == "c"`)
   - CHECKPOINT: STOP → report test run showing FAIL → wait for explicit approval before T012.
 - [ ] T012 [P] [US1] Contract test for scoped-answer citations in `tests/contract/test_scoped_citations.py` (per ready language: answer citations all resolve inside that pack's index, cited ⊆ retrieved)
   - CHECKPOINT: STOP → report test run showing FAIL → wait for explicit approval before T013.

@@ -5,6 +5,13 @@ REAL endpoint logic (src.web.app.ask: retrieve -> gate -> compose), the
 response (answer citations / abstention purity). Writes a JSON report plus a
 Markdown summary under data/eval/reports/.
 
+002-T010: `--lang <pack>` scores ONE pack against its own set and writes
+both reports under data/eval/<lang>/reports/ (no blended headline figure);
+the report carries language_id. Default set/index/report paths resolve
+per pack. Until T020 authors data/eval/c/eval-set.c.v1.json, a `--lang c`
+run falls back to the 001 flat set data/eval/eval-set.v1.json (same items),
+so the figures remain directly comparable.
+
 Cost note: answerable items each spend one LLM call; gated out-of-corpus
 items spend none.
 """
@@ -24,9 +31,21 @@ from src.eval.scoring import (
 )
 from src.qa.retriever import Retriever
 from src.web.app import AskRequest, ask
+from src.web.packs import DEFAULT_LANGUAGE, SUPPORTED_LANGUAGES
 
 
-def run_eval(set_path: str, index_dir: str, report_dir: str, top_k: int = 5) -> dict:
+def default_set_path(lang: str) -> str:
+    """Resolve the pack's eval-set path (001 flat fallback for C pre-T020)."""
+    per_pack = f"data/eval/{lang}/eval-set.{lang}.v1.json"
+    if Path(per_pack).is_file():
+        return per_pack
+    if lang == DEFAULT_LANGUAGE:
+        return "data/eval/eval-set.v1.json"
+    raise SystemExit(f"eval set not found for language: {lang}")
+
+
+def run_eval(set_path: str, index_dir: str, report_dir: str, top_k: int = 5,
+             language: str = DEFAULT_LANGUAGE) -> dict:
     spec = json.loads(Path(set_path).read_text(encoding="utf-8"))
     items = spec["items"]
     retriever = Retriever(index_dir)
@@ -40,7 +59,8 @@ def run_eval(set_path: str, index_dir: str, report_dir: str, top_k: int = 5) -> 
         retrieved = [h["chunk_id"] for h in hits]
         hit = hit_rate_at_5(expected, retrieved)
         try:
-            response = ask(AskRequest(question=question, top_k=top_k))
+            response = ask(AskRequest(question=question, top_k=top_k,
+                                      language=language))
         except Exception as exc:  # noqa: BLE001 - recorded, not fatal
             response = {"type": "error", "citations": [], "error": str(exc)[:200]}
         cited = [c["chunk_id"] for c in response.get("citations", [])]
@@ -69,6 +89,7 @@ def run_eval(set_path: str, index_dir: str, report_dir: str, top_k: int = 5) -> 
         for r in rows if r["qtype"] == "mixed"
     ]
     report = {
+        "language_id": language,
         "eval_set_version": spec["version"],
         "index_snapshot": date.today().isoformat(),
         "n_items": len(rows),
@@ -129,13 +150,22 @@ def write_reports(report: dict, report_dir: str) -> tuple[str, str]:
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Run the versioned eval set.")
     parser.add_argument("command", choices=["run"])
-    parser.add_argument("--set", default="data/eval/eval-set.v1.json")
-    parser.add_argument("--index-dir", default="data/index")
-    parser.add_argument("--report-dir", default="data/eval/reports")
+    parser.add_argument("--lang", default=DEFAULT_LANGUAGE,
+                        choices=SUPPORTED_LANGUAGES,
+                        help="pack to score (per-pack set, index, reports)")
+    parser.add_argument("--set", default=None,
+                        help="defaults to data/eval/<lang>/eval-set.<lang>.v1.json")
+    parser.add_argument("--index-dir", default=None,
+                        help="defaults to data/index/<lang>")
+    parser.add_argument("--report-dir", default=None,
+                        help="defaults to data/eval/<lang>/reports")
     parser.add_argument("--top-k", type=int, default=5)
     args = parser.parse_args(argv)
-    report = run_eval(args.set, args.index_dir, args.report_dir, args.top_k)
-    json_path, md_path = write_reports(report, args.report_dir)
+    set_path = args.set or default_set_path(args.lang)
+    index_dir = args.index_dir or f"data/index/{args.lang}"
+    report_dir = args.report_dir or f"data/eval/{args.lang}/reports"
+    report = run_eval(set_path, index_dir, report_dir, args.top_k, args.lang)
+    json_path, md_path = write_reports(report, report_dir)
     print(f"hit_rate_at_5={report['hit_rate_at_5']:.3f} "
           f"precision={report['citation_precision']:.3f} "
           f"coverage={report['citation_coverage']:.3f} "
