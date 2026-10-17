@@ -14,9 +14,12 @@ import subprocess
 import time
 import urllib.request
 
+from src.web.packs import get_pack
+
 PORT = 8129
-INDEX_DIR = "data/index"
-MANIFEST = "data/corpus/manifest.json"
+_DEFAULT_PACK = get_pack("c")
+INDEX_DIR = _DEFAULT_PACK.index_dir
+MANIFEST = _DEFAULT_PACK.manifest_path
 
 
 def _serve():
