@@ -81,7 +81,7 @@
 
 - [X] T011 [P] [US1] Contract test for `GET /api/languages` in `tests/contract/test_languages.py` (4 packs, correct statuses, `default == "c"`)
   - CHECKPOINT: STOP → report test run showing FAIL → wait for explicit approval before T012.
-- [ ] T012 [P] [US1] Contract test for scoped-answer citations in `tests/contract/test_scoped_citations.py` (per ready language: answer citations all resolve inside that pack's index, cited ⊆ retrieved)
+- [X] T012 [P] [US1] Contract test for scoped-answer citations in `tests/contract/test_scoped_citations.py` (per ready language: answer citations all resolve inside that pack's index, cited ⊆ retrieved)
   - CHECKPOINT: STOP → report test run showing FAIL → wait for explicit approval before T013.
 
 ### Implementation for User Story 1
