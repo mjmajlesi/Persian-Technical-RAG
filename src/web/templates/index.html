@@ -3,28 +3,41 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>پرسش‌وجوی فنی فارسی C</title>
-<style>
-  body { font-family: Tahoma, sans-serif; max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
-  #answer-pane { border: 1px solid #ccc; padding: 1rem; margin-top: 1rem; min-height: 4rem; }
-  .cite-chip { display: inline-block; border: 1px solid #468; border-radius: 1rem;
-               padding: 0.1rem 0.7rem; margin: 0.2rem; cursor: pointer; font-size: 0.85rem; }
-  .topic-chip { display: inline-block; border: 1px dashed #484; border-radius: 1rem;
-               padding: 0.1rem 0.7rem; margin: 0.2rem; cursor: pointer; font-size: 0.85rem; }
-  #message { color: #a00; margin-top: 1rem; }
-  textarea { width: 100%; min-height: 4rem; }
-</style>
+<link rel="stylesheet" href="/static/dashboard.css">
+<title>پرسش‌وجوی فنی فارسی چندزبانه</title>
 </head>
 <body>
-<h1>پرسش‌وجوی فنی فارسی C</h1>
-<form id="ask-form">
-  <textarea id="question-box" placeholder="سوال فنی C را به فارسی بنویسید…"></textarea>
-  <br>
-  <button type="submit">بپرس</button>
-</form>
-<div id="message"></div>
-<div id="answer-pane"></div>
-<div id="citations"></div>
+<header id="site-header" class="site-header">
+  <h1>پرسش‌وجوی فنی فارسی</h1>
+  <p class="tagline">پاسخ‌های مستند به منابع — برای هر ادعا، استناد قابل‌راستی‌آزمایی</p>
+</header>
+<div id="dashboard">
+  <aside id="language-sidebar">
+    <h2>زبان برنامه‌نویسی</h2>
+    <ul id="lang-list"></ul>
+  </aside>
+  <main id="qa-view">
+    <form id="ask-form">
+      <textarea id="question-box" placeholder="سوال فنی C را به فارسی بنویسید…"></textarea>
+      <button type="submit" id="ask-btn">بپرس</button>
+    </form>
+    <div id="welcome-pane">
+      <p id="welcome-text">
+        به پرسش‌وجوی فنی فارسی خوش آمدید! پاسخ‌ها فقط از کورپوس زبانِ انتخابی شما
+        تولید می‌شوند و هر ادعا با استناد قابل‌راستی‌آزمایی همراه است — روی چیپ
+        استناد کلیک کنید تا متنِ اصلی منبع را ببینید.
+      </p>
+      <div id="sample-block">
+        <span id="sample-label">سوال‌های نمونه‌ی <b id="sample-lang-name">C</b> — با یک کلیک بپرسید:</span>
+        <div id="sample-questions"></div>
+      </div>
+    </div>
+    <div id="message" aria-live="polite"></div>
+    <div id="answer-pane"></div>
+    <div id="citations"></div>
+  </main>
+</div>
+<footer id="pack-footer" aria-label="اسنپ‌شات کورپوس هر زبان"></footer>
 <script src="/static/app.js"></script>
 </body>
 </html>

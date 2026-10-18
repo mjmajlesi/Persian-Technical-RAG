@@ -86,17 +86,17 @@
 
 ### Implementation for User Story 1
 
-- [ ] T013 [US1] Build the dashboard sidebar in `src/web/templates/index.html` (persistent RTL language list from `GET /api/languages`, C preselected, ready/empty states shown) with view-state reset on switch (depends on T011, T012 passing after implementation)
+- [X] T013 [US1] Build the dashboard sidebar in `src/web/templates/index.html` (persistent RTL language list from `GET /api/languages`, C preselected, ready/empty states shown) with view-state reset on switch (depends on T011, T012 passing after implementation)
   - CHECKPOINT: STOP → report rendered sidebar → wait for explicit approval before T014.
-- [ ] T014 [US1] Wire language-scoped retrieval in `src/web/app.py` (per-pack `Retriever` instances from the registry keyed by `language_id`, selected pack opened only) reusing the 001 composer/answer path
+- [X] T014 [US1] Wire language-scoped retrieval in `src/web/app.py` (per-pack `Retriever` instances from the registry keyed by `language_id`, selected pack opened only) reusing the 001 composer/answer path
   - CHECKPOINT: STOP → report scoped answers per language → wait for explicit approval before T015.
-- [ ] T015 [US1] Integration test for select-and-ask per language in `tests/integration/test_scoped_ask_flow.py` (each ready pack: select → in-corpus question → pack-internal citations)
+- [X] T015 [US1] Integration test for select-and-ask per language in `tests/integration/test_scoped_ask_flow.py` (each ready pack: select → in-corpus question → pack-internal citations)
   - CHECKPOINT: STOP → report test run passing → wait for explicit approval before T015b.
-- [ ] T015b [US1] Presentation-grade dashboard styling: new `src/web/static/dashboard.css` (RTL polish, project header, styled language sidebar with active-pack state and ready/empty badges, responsive single column, footer with per-pack corpus snapshot info) linked from `src/web/templates/index.html`; no backend changes, no new dependencies
+- [X] T015b [US1] Presentation-grade dashboard styling: new `src/web/static/dashboard.css` (RTL polish, project header, styled language sidebar with active-pack state and ready/empty badges, responsive single column, footer with per-pack corpus snapshot info) linked from `src/web/templates/index.html`; no backend changes, no new dependencies
   - CHECKPOINT: STOP → report styled dashboard (screenshot or HTML dump) → wait for explicit approval before T015c.
-- [ ] T015c [US1] Welcome pane + demo sample questions in `src/web/templates/index.html` and `src/web/static/app.js` (Persian welcome text explaining grounded answers/citations, 3 curated sample questions per ready language as clickable chips that fill AND submit the question for one-click live-demo flow — intentional, documented exception to the no-auto-submit rule, which applies to abstention topics only)
+- [X] T015c [US1] Welcome pane + demo sample questions in `src/web/templates/index.html` and `src/web/static/app.js` (Persian welcome text explaining grounded answers/citations, 3 curated sample questions per ready language as clickable chips that fill AND submit the question for one-click live-demo flow — intentional, documented exception to the no-auto-submit rule, which applies to abstention topics only)
   - CHECKPOINT: STOP → report welcome/demo flow (sample click → full answer) → wait for explicit approval before T015d.
-- [ ] T015d [US1] Dashboard states polish in `src/web/templates/index.html` and `src/web/static/app.js` (loading indicator during ask, explicit "corpus not available" empty-pack state per contracts/languages-api.md, friendly Persian error display for 422/500 — all RTL-consistent)
+- [X] T015d [US1] Dashboard states polish in `src/web/templates/index.html` and `src/web/static/app.js` (loading indicator during ask, explicit "corpus not available" empty-pack state per contracts/languages-api.md, friendly Persian error display for 422/500 — all RTL-consistent) — plus owner-requested extras folded in during this checkpoint window: self-hosted Vazirmatn font (OFL license kept in fonts/), markdown answer renderer (headings/lists/inline-code/fenced blocks, fully escaped), soft-blue solid palette, roomier answer padding, header id fix. Verified live: font loaded via document.fonts, loading spinner visible on ask, 422 empty-question Persian detail shown as-is, pydantic-array detail falls back to generic Persian error, unavailable state renders from body.message.
   - CHECKPOINT: STOP → report each state rendering → wait for explicit approval before T016. **Checkpoint: User Story 1 fully functional and testable independently.**
 
 ---

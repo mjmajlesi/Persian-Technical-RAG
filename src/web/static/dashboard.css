@@ -1,0 +1,362 @@
+/* ============================================================================
+   Dashboard presentation styling (002-T015b solid, 002-T015c modernized,
+   softened-blue palette per owner request at the T015c checkpoint).
+   RTL-first, no frameworks, no webfonts (offline-safe): system font stack.
+   Soft-blue light theme: mild blue accents on a calm canvas, floating cards,
+   subtle motion. Contrast pairs kept WCAG-AA.
+   ============================================================================ */
+
+:root {
+  --ink: #17203a;
+  --muted: #47506a;
+  --faint: #6b7280;
+  --line: #dde5f0;
+  --card: #ffffff;
+  --canvas: #f6f9fd;
+  --accent: #3b82f6;      /* mild blue */
+  --accent-2: #7cb0f9;    /* lighter blue for soft gradients */
+  --accent-soft: #eaf2fe;
+  --accent-ink: #1d4ed8;
+  --ok: #16a34a;
+  --bad: #dc2626;
+  --shadow: 0 1px 2px rgba(23, 32, 58, 0.05), 0 8px 24px rgba(23, 32, 58, 0.07);
+  --shadow-accent: 0 6px 16px rgba(59, 130, 246, 0.25);
+  --radius: 16px;
+}
+
+/* Vazirmatn — silently included in fonts/ (SIL OFL 1.1; fetched from the
+   official npm package vazirmatn@33.0.3, license text in fonts/LICENSE-OFL.txt).
+   font-display: swap keeps first paint instant, offline fallback is Tahoma. */
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("/static/fonts/Vazirmatn-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("/static/fonts/Vazirmatn-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: "Vazirmatn", "Segoe UI", Tahoma, sans-serif;
+  color: var(--ink);
+  background: var(--canvas);
+  margin: 0 auto;
+  padding: 1.75rem 1.25rem 2.25rem;
+  max-width: 1000px;
+  line-height: 1.8;
+  position: relative;
+}
+
+/* ambient soft-blue glows (fixed, behind content) */
+body::before, body::after {
+  content: "";
+  position: fixed;
+  width: 420px; height: 420px;
+  border-radius: 50%;
+  filter: blur(95px);
+  opacity: 0.14;
+  pointer-events: none;
+  z-index: 0;
+}
+body::before { background: #7cb0f9; top: -140px; right: -120px; }
+body::after  { background: #a5cdfb; bottom: -180px; left: -140px; }
+
+header#site-header, main#qa-view, aside#language-sidebar,
+#pack-footer, #welcome-pane {
+  position: relative;
+  z-index: 1;
+}
+
+/* --- Project header --- */
+#site-header { margin-bottom: 1.5rem; text-align: right; }
+#site-header h1 {
+  margin: 0 0 0.3rem;
+  font-size: 1.65rem;
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  color: var(--accent-ink);   /* owner request: solid blue, no gradient */
+  width: fit-content;
+}
+#site-header .tagline { margin: 0; color: var(--muted); font-size: 0.88rem; }
+
+/* --- Layout: sidebar (RTL right side) + main view --- */
+#dashboard { display: flex; gap: 1.25rem; align-items: flex-start; }
+
+#language-sidebar {
+  flex: 0 0 230px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1rem 0.85rem;
+  position: sticky;
+  top: 1.25rem;
+}
+
+#language-sidebar h2 {
+  margin: 0 0 0.75rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--faint);
+  letter-spacing: 0.03em;
+}
+
+#lang-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.4rem; }
+
+#lang-list li {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #ffffff;
+  cursor: pointer;
+  transition: transform 130ms ease, box-shadow 130ms ease,
+              border-color 130ms ease, background 130ms ease;
+}
+#lang-list li:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.14);
+  border-color: #bfd8fb;
+}
+
+#lang-list li.active {
+  background: var(--accent);   /* owner request: solid blue, no gradient */
+  border-color: transparent;
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: var(--shadow-accent);
+}
+
+/* ready/empty badges: colored dot + word */
+.lang-status {
+  display: inline-flex; align-items: center; gap: 0.3rem;
+  font-size: 0.7rem; font-weight: 400; color: var(--muted);
+  white-space: nowrap;
+}
+.lang-status::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--ok); }
+li.active .lang-status { color: rgba(255, 255, 255, 0.85); }
+li.active .lang-status::before { background: #a7f3d0; }
+li.empty .lang-status::before { background: var(--bad); }
+li.empty { color: var(--faint); }
+li.empty .lang-status { color: #b91c1c; }
+li.active.empty .lang-status { color: rgba(255, 255, 255, 0.9); }
+li.active.empty .lang-status::before { background: #fecaca; }
+
+/* --- Main Q&A view --- */
+#qa-view { flex: 1 1 auto; min-width: 0; }
+#qa-view h1 { display: none; } /* title lives in the header now */
+
+#ask-form {
+  display: flex; flex-direction: column; gap: 0.65rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1rem;
+}
+
+#question-box {
+  width: 100%;
+  min-height: 5.5rem;
+  border: none;
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 1rem;
+  resize: vertical;
+  background: transparent;
+}
+#question-box:focus { outline: none; }
+#ask-form:focus-within { border-color: #a9cbfc; }
+
+#ask-btn {
+  align-self: flex-start;
+  background: var(--accent);   /* owner request: solid blue, no gradient */
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  padding: 0.55rem 1.9rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: var(--shadow-accent);
+  transition: transform 130ms ease, box-shadow 130ms ease, filter 130ms ease;
+}
+#ask-btn:hover { transform: translateY(-1px); filter: brightness(1.06); box-shadow: 0 8px 22px rgba(59, 130, 246, 0.35); }
+#ask-btn:active { transform: translateY(0); }
+#ask-btn:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+
+/* --- Welcome pane + one-click demo questions (002-T015c) --- */
+#welcome-pane {
+  background: var(--card);
+  border: 1px dashed #c3d3ea;
+  border-radius: var(--radius);
+  padding: 0.9rem 1.1rem;
+  margin-top: 0.9rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+#welcome-pane.hidden { display: none; }
+#welcome-text { margin: 0 0 0.6rem; }
+#welcome-text.hidden { display: none; }
+#sample-label { font-size: 0.8rem; color: var(--faint); }
+#sample-label b { color: var(--accent-ink); }
+
+#sample-questions { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.5rem; }
+
+.sample-chip {
+  background: var(--accent-soft);
+  border: 1px solid #c4dafa;
+  border-radius: 999px;
+  padding: 0.3rem 0.9rem;
+  font-family: inherit;
+  font-size: 0.82rem;
+  color: var(--accent-ink);
+  cursor: pointer;
+  transition: background 130ms ease, transform 130ms ease, box-shadow 130ms ease;
+}
+.sample-chip:hover {
+  background: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.20);
+}
+.sample-chip::before { content: "↩"; margin-inline-end: 0.35rem; opacity: 0.65; }
+
+#message { color: var(--danger, var(--bad)); margin-top: 0.9rem; }
+#message:empty { margin: 0; }
+
+#answer-pane {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem 1.75rem;      /* owner request: roomier answer padding */
+  margin-top: 1rem;
+  min-height: 4rem;
+  border-inline-start: 4px solid var(--accent);
+  animation: rise 260ms ease;
+  font-size: 0.95rem;
+}
+#answer-pane:empty { visibility: hidden; }
+@keyframes rise {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* --- Markdown rendering inside the answer (002-T015d pre-work) --- */
+#answer-pane .md-head { margin: 1.1rem 0 0.35rem; font-weight: 700; color: var(--ink); line-height: 1.55; }
+#answer-pane .md-head:first-child { margin-top: 0; }
+#answer-pane h3.md-head { font-size: 1.08rem; padding-bottom: 0.25rem; border-bottom: 1px solid var(--accent-soft); }
+#answer-pane h4.md-head { font-size: 0.98rem; color: var(--accent-ink); }
+#answer-pane h5.md-head { font-size: 0.92rem; color: var(--muted); }
+#answer-pane p { margin: 0.45rem 0; }
+#answer-pane .md-list { margin: 0.4rem 0; padding-inline-start: 1.35rem; }
+#answer-pane .md-list li { margin-bottom: 0.3rem; }
+#answer-pane ul, #answer-pane ol { list-style: disc; }
+#answer-pane strong { color: var(--ink); }
+#answer-pane code, #answer-pane .md-code {
+  background: #eef3fb;
+  border: 1px solid #dde7f5;
+  border-radius: 6px;
+  padding: 0.02rem 0.35rem;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.85em;
+  color: #173a80;
+}
+#answer-pane .md-code-block {
+  display: block;
+  background: #eef3fb;
+  border: 1px solid #dde7f5;
+  border-radius: 10px;
+  padding: 0.75rem 0.9rem;
+  margin: 0.5rem 0;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.85em;
+  color: #1c2f55;
+  white-space: pre;
+  overflow-x: auto;
+  text-align: left;
+}
+
+/* loading state (002-T015d): spinner row + disabled ask button */
+#answer-pane.loading .loading-row {
+  display: flex; align-items: center; gap: 0.5rem;
+  color: var(--muted);
+}
+.spinner {
+  width: 16px; height: 16px;
+  border: 2px solid var(--accent-soft);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 800ms linear infinite;
+  flex: none;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+#ask-btn:disabled { opacity: 0.6; cursor: progress; transform: none; }
+#question-box:disabled { opacity: 0.55; }
+
+/* citation chips + revealed source */
+#citations { margin-top: 0.7rem; }
+
+.cite-chip, .topic-chip {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 0.18rem 0.85rem;
+  margin: 0.2rem 0;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: background 130ms ease, transform 130ms ease;
+}
+.cite-chip { background: var(--accent-soft); border: 1px solid #b3d0f8; color: var(--accent-ink); }
+.cite-chip:hover { background: #ffffff; transform: translateY(-1px); }
+.cite-chip::before { content: "📄 "; font-size: 0.75rem; }
+.topic-chip { background: #f0f8f2; border: 1px dashed var(--ok); color: #15803d; }
+.topic-chip:hover { background: #ffffff; transform: translateY(-1px); }
+
+#cite-reveal-pane {
+  margin-top: 0.8rem;
+  background: #fbfcfe;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+}
+#cite-reveal-pane h4 { margin: 0 0 0.2rem; font-size: 0.95rem; color: var(--ink); }
+#cite-reveal-pane .cite-section { color: var(--muted); font-size: 0.8rem; margin-bottom: 0.5rem; }
+#cite-reveal-pane pre {
+  white-space: pre-wrap;
+  background: #f0f3f9;
+  border-radius: 8px;
+  padding: 0.7rem 0.9rem;
+  font-size: 0.84rem;
+  overflow-x: auto;
+}
+
+/* --- Footer: per-pack corpus snapshot info --- */
+#pack-footer {
+  margin-top: 2rem;
+  border-top: 1px solid var(--line);
+  padding-top: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.4rem;
+  color: var(--faint);
+  font-size: 0.74rem;
+}
+
+/* --- Responsive: single column on narrow screens --- */
+@media (max-width: 720px) {
+  body { padding: 1rem 0.9rem 1.75rem; }
+  #dashboard { flex-direction: column; }
+  #language-sidebar { position: static; flex: none; width: 100%; }
+  #lang-list { grid-template-columns: 1fr 1fr; }
+  #pack-footer { flex-direction: column; }
+}
