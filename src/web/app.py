@@ -72,9 +72,17 @@ _provider: LLMProvider | None = None
 
 
 def get_retriever(language: str = "c") -> Retriever:
-    """Lazily build (once per language) the Retriever for a pack's index."""
+    """Lazily build (once per language) the Retriever for a pack's index.
+
+    002-T014: pack descriptors come from the registry (single source of
+    truth for index locations), and only the SELECTED pack's index is ever
+    opened — isolation by construction (constitution Principle VIII). The
+    001 composer/answer path is reused unchanged on top.
+    """
     if language not in _retrievers:
-        _retrievers[language] = Retriever(f"data/index/{language}")
+        _retrievers[language] = Retriever(
+            pack_registry.get_pack(language).index_dir
+        )
     return _retrievers[language]
 
 
