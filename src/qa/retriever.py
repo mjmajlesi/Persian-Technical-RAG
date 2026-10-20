@@ -46,6 +46,10 @@ class Retriever:
         if missing:
             raise ValueError(f"index ids missing from chunks.jsonl: {missing[:3]}")
 
+    def has_chunk(self, chunk_id: str) -> bool:
+        """Pack membership check (002-T017): is this id in THIS index?"""
+        return chunk_id in self._by_id
+
     def retrieve(self, question: str, k: int = DEFAULT_TOP_K) -> list[dict]:
         """Return top-k chunk records for a Persian question.
 

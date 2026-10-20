@@ -22,7 +22,6 @@ from src.web import packs as pack_registry
 EMPTY_QUESTION_MESSAGE = "سوال نمی‌تواند خالی باشد."
 UNKNOWN_LANGUAGE_MESSAGE = "زبان نامشخص است."
 CORPUS_UNAVAILABLE_MESSAGE = "کورپوس این زبان هنوز آماده نیست."
-ANSWER_FAILED_MESSAGE = "خطای داخلی در تولید پاسخ grounded."
 LLM_NOT_CONFIGURED_MESSAGE = (
     "سرویس مدل زبانی پیکربندی نشده است (LLM_API_KEY/LLM_MODEL)."
 )
@@ -94,6 +93,16 @@ def get_provider() -> LLMProvider:
     return _provider
 
 
+def _fabrication_abstain(pack, chunks, threshold: float) -> dict:
+    """002-T017: treating fabrication as insufficiency — the Persian
+    abstain/redirect response instead of an answer or an HTTP 500."""
+    payload = abstain.decide(
+        chunks, top_score=chunks[0]["score"], llm_insufficient=True,
+        threshold=threshold,
+    )
+    return {"type": "abstain", "language_id": pack.language_id, **payload}
+
+
 @app.post("/api/ask")
 def ask(request: AskRequest) -> dict:
     if not request.question.strip():
@@ -139,9 +148,20 @@ def ask(request: AskRequest) -> dict:
     except ProviderError:
         raise HTTPException(status_code=500, detail=LLM_NOT_CONFIGURED_MESSAGE)
     try:
+        # 002-T017: pack-scoped citation validation wraps the whole answer
+        # path. compose_answer already rejects ids absent from the RECEIVED
+        # chunks (AnswerError = fabrication); here a fabricator that slips
+        # past that layer still cannot cite anything outside the SELECTED
+        # pack's index — foreign ids abstain instead of answering.
+        retriever = get_retriever(pack.language_id)
         result = compose_answer(question, chunks, provider)
+        cited = [c["chunk_id"] for c in result.get("citations", [])]
+        if cited and not all(retriever.has_chunk(cid) for cid in cited):
+            return _fabrication_abstain(pack, chunks, threshold)
     except AnswerError:
-        raise HTTPException(status_code=500, detail=ANSWER_FAILED_MESSAGE)
+        # Fabrication (model cited an unknown chunk id) → abstain, never
+        # a fabricated answer and never a 500.
+        return _fabrication_abstain(pack, chunks, threshold)
     if result["insufficient"]:
         # Insufficiency fallback only; the threshold-gated abstention path
         # (skipping the LLM call) is wired in T023.
