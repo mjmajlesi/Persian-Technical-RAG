@@ -111,14 +111,14 @@
 
 > **NOTE: Write these tests FIRST, ensure they FAIL before implementation**
 
-- [ ] T016 [P] [US2] Contamination contract test in `tests/contract/test_no_cross_language_citations.py` (B-only questions under pack A → `type: abstain`, citations == [], no chunk_id from any other pack)
+- [X] T016 [P] [US2] Contamination contract test in `tests/contract/test_no_cross_language_citations.py` (B-only questions under pack A → `type: abstain`, citations == [], no chunk_id from any other pack) — PASS on first run (post-hoc authorship like T011-T015, documented in header: the pre-LLM score gate from T023 already abstains every single-domain cross-probe; the FAIL-first gate belongs to T017's answer-branch validation). Probes are deliberately single-domain per pack (range→python-only under c, interface→java-only under cpp, malloc→c-only under python, template→cpp-only under java) so semantic adjacency cannot lift them over the per-pack gate; zero LLM credit spent. Verified: 4/4 packs abstained with language_id correctly attributed and no 001-style chunk id anywhere in the payloads.
   - CHECKPOINT: STOP → report test run showing FAIL → wait for explicit approval before T017.
 
 ### Implementation for User Story 2
 
-- [ ] T017 [US2] Enforce pack-scoped citation validation in the answer path in `src/web/app.py` (every cited chunk_id MUST exist in the selected pack's index; any foreign id → abstain instead of answering, treated as fabrication)
+- [X] T017 [US2] Enforce pack-scoped citation validation in the answer path in `src/web/app.py` (every cited chunk_id MUST exist in the selected pack's index; any foreign id → abstain instead of answering, treated as fabrication) — probe-first: injection test showed the pre-fix gap (stubbed compose returning a python chunk id under pack C returned `type: answer` untouched). Post-fix, two-layer guard: `compose_answer` AnswerError (unknown id) → Persian abstain `_fabrication_abstain` (was HTTP 500), plus an in-app check that every cited id exists in the pack's own index via the new `Retriever.has_chunk()`. Positive control kept: valid in-pack citation still answers. ANSWER_FAILED_MESSAGE constant dropped (no longer reachable). Verified: foreign-citation probe → abstain/citations []/language_id c; full suite 20 passed.
   - CHECKPOINT: STOP → report enforcement probing (foreign-id injection → abstain) → wait for explicit approval before T018.
-- [ ] T018 [US2] Integration test for wrong-language questions in `tests/integration/test_contamination_flow.py` (each pack asked another pack's questions → abstain, Persian redirect, zero citations)
+- [X] T018 [US2] Integration test for wrong-language questions in `tests/integration/test_contamination_flow.py` (each pack asked another pack's questions → abstain, Persian redirect, zero citations) — passed on first run: all 12 ordered cross-pairs (each ready pack asked every other ready pack's canonical question) abstained through the pre-LLM score gate with a non-empty Persian redirect message, zero citations, and language_id correctly attributed to the asked pack. Zero LLM credit spent by construction. US1 + US2 both independently working per the task plan.
   - CHECKPOINT: STOP → report test run passing → wait for explicit approval before T019. **Checkpoint: User Stories 1 AND 2 both work independently.**
 
 ---
