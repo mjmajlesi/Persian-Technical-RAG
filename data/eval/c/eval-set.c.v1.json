@@ -1,0 +1,266 @@
+{
+  "version": "c-v1",
+  "notes": "C pack eval set, migrated verbatim from the 001 flat v1 set (T020): 30 items in the 20/5/5 split (in-corpus/mixed/out-of-corpus). Expected source ids resolve to real chunk_ids of the migrated C pack index (data/index/c) - validated in T020; empty for out-of-corpus items. Item ids unchanged so the pre/post-migration comparison (T026) stays row-aligned.",
+  "items": [
+    {
+      "item_id": "C-001",
+      "question": "تفاوت malloc و calloc چیست؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "fa-dynamic-memory#s06-c01"
+      ],
+      "expected_answer_summary": "calloc تعداد×اندازه می‌گیرد و صفر می‌کند؛ malloc بایت خام با محتوای نامشخص می‌دهد."
+    },
+    {
+      "item_id": "C-002",
+      "question": "چرا تقسیم ۷ بر ۲ در C عدد ۳ می‌دهد نه ۳٫۵؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "fa-vars-types-operators#s12-c01"
+      ],
+      "expected_answer_summary": "هر دو عملوند int باشند تقسیم صحیح انجام می‌شود و بخش اعشاری دور ریخته می‌شود."
+    },
+    {
+      "item_id": "C-003",
+      "question": "فرق scanf با f و lf برای double چیست؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "fa-io-formatting#s04-c01"
+      ],
+      "expected_answer_summary": "در printf هر دو با f چاپ می‌شوند ولی در scanf متغیر double حتماً lf می‌خواهد."
+    },
+    {
+      "item_id": "C-004",
+      "question": "رفتار fall-through در switch چیست؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "fa-selection-iteration#s09-c01"
+      ],
+      "expected_answer_summary": "بدون break اجرا از case منطبق به caseهای بعدی ادامه می‌یابد."
+    },
+    {
+      "item_id": "C-005",
+      "question": "چرا else به نزدیک‌ترین if قبلی می‌چسبد؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "fa-selection-iteration#s05-c01"
+      ],
+      "expected_answer_summary": "قاعده dangling else: هر else متعلق به نزدیک‌ترین if بدون else قبلی است."
+    },
+    {
+      "item_id": "C-006",
+      "question": "تفاوت فراخوانی با مقدار و با آدرس در تابع چیست؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "fa-pointers#s06-c01"
+      ],
+      "expected_answer_summary": "با مقدار فقط کپی تغییر می‌کند؛ با ارسال آدرس تابع از طریق dereference اصلی را تغییر می‌دهد."
+    },
+    {
+      "item_id": "C-007",
+      "question": "متغیر static محلی چه فرقی با متغیر auto دارد؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "fa-functions#s09-c01"
+      ],
+      "expected_answer_summary": "static محلی طول عمر کل برنامه و مقدار اولیه صفر دارد و بین فراخوانی‌ها حفظ می‌شود؛ auto پشته‌ای و garbage است."
+    },
+    {
+      "item_id": "C-008",
+      "question": "چرا sizeof آرایه داخل تابع اندازه اشاره‌گر می‌دهد؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "fa-arrays#s07-c01"
+      ],
+      "expected_answer_summary": "آرایه با آدرس عنصر اول ارسال می‌شود پس sizeof داخل تابع اندازه اشاره‌گر است نه کل آرایه."
+    },
+    {
+      "item_id": "C-009",
+      "question": "شرط لازم برای جستجوی دودویی چیست؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "fa-arrays#s09-c01"
+      ],
+      "expected_answer_summary": "آرایه باید مرتب باشد؛ پیچیدگی لگاریتمی و شرط حلقه low کوچک‌ترمساوی high است."
+    },
+    {
+      "item_id": "C-010",
+      "question": "تفاوت a[i] با ستاره a+i در آرایه چیست؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "fa-pointers#s08-c01"
+      ],
+      "expected_answer_summary": "هیچ؛ کامپایلر a[i] را به همان ستاره a+i تبدیل می‌کند (قانون decay)."
+    },
+    {
+      "item_id": "C-011",
+      "question": "چرا جمع دو اشاره‌گر در C غیرمجاز است؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "fa-pointers#s10-c01"
+      ],
+      "expected_answer_summary": "جمع/ضرب/تقسیم اشاره‌گر معنا ندارد؛ فقط جمع‌وتفریق با عدد و تفریق دو اشاره‌گر مجاز است."
+    },
+    {
+      "item_id": "C-012",
+      "question": "چهار حالت ترکیب const با اشاره‌گر کدام‌اند؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "fa-pointers#s14-c01"
+      ],
+      "expected_answer_summary": "اشاره‌گر ساده، اشاره‌گر به ثابت، اشاره‌گر ثابت، و هر دو ثابت."
+    },
+    {
+      "item_id": "C-013",
+      "question": "چرا مقایسه رشته‌ها با مساوی مساوی غلط است؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "fa-strings#s08-c01"
+      ],
+      "expected_answer_summary": "مساوی‌مساوی آدرس‌ها را مقایسه می‌کند نه محتوا را؛ باید از strcmp استفاده کرد."
+    },
+    {
+      "item_id": "C-014",
+      "question": "تفاوت strlen و sizeof روی آرایه کاراکتری چیست؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "fa-strings#s09-c01"
+      ],
+      "expected_answer_summary": "strlen طول منطقی بدون پایانه و sizeof کل بایت‌های آرایه را می‌دهد."
+    },
+    {
+      "item_id": "C-015",
+      "question": "چرا اندازه struct از جمع اعضای آن بیشتر می‌شود؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "fa-structs-unions-enums#s07-c01"
+      ],
+      "expected_answer_summary": "به‌خاطر padding برای تراز حافظه؛ ترتیب اعضا هم اندازه نهایی را عوض می‌کند."
+    },
+    {
+      "item_id": "C-016",
+      "question": "تفاوت struct و union در مصرف حافظه چیست؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "fa-structs-unions-enums#s11-c01"
+      ],
+      "expected_answer_summary": "struct جمع اعضا با padding و union فقط به اندازه بزرگ‌ترین عضو حافظه می‌گیرد."
+    },
+    {
+      "item_id": "C-017",
+      "question": "تفاوت حالت w و a در باز کردن فایل چیست؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "fa-files#s04-c01"
+      ],
+      "expected_answer_summary": "حالت w محتوای موجود را پاک می‌کند ولی a حفظ کرده و به انتها اضافه می‌کند."
+    },
+    {
+      "item_id": "C-018",
+      "question": "چرا الگوی while با feof برای خواندن فایل غلط است؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "fa-files#s09-c01"
+      ],
+      "expected_answer_summary": "چون feof فقط بعد از تلاش ناموفق خواندن true می‌شود و آخرین داده دوبار پردازش می‌شود."
+    },
+    {
+      "item_id": "C-019",
+      "question": "دام realloc در انتساب مستقیم به همان اشاره‌گر چیست؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "fa-dynamic-memory#s06-c01"
+      ],
+      "expected_answer_summary": "اگر realloc شکست بخورد و مستقیم در همان متغیر بریزیم، بلوک قبلی گم و نشتی می‌دهد؛ اول در tmp بریزید."
+    },
+    {
+      "item_id": "C-020",
+      "question": "فرق define با const برای ثابت‌ها چیست؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "fa-vars-types-operators#s09-c01"
+      ],
+      "expected_answer_summary": "define جایگذاری متنی پیش‌پردازنده بدون نوع است و const متغیر واقعی فقط‌خواندنی با نوع در کامپایل است."
+    },
+    {
+      "item_id": "C-M01",
+      "question": "تابع malloc چگونه حافظه تخصیص می‌دهد؟",
+      "qtype": "mixed",
+      "expected_source_ids": [
+        "fa-dynamic-memory#s03-c01"
+      ],
+      "expected_answer_summary": "تعداد بایت خواسته‌شده از هیپ می‌دهد با محتوای نامشخص و در شکست NULL برمی‌گرداند."
+    },
+    {
+      "item_id": "C-M02",
+      "question": "تفاوت printf و scanf در فرمت lf چیست؟",
+      "qtype": "mixed",
+      "expected_source_ids": [
+        "fa-io-formatting#s04-c01"
+      ],
+      "expected_answer_summary": "در printf هر دو f و lf برای double کار می‌کنند ولی scanf برای double حتماً lf می‌خواهد."
+    },
+    {
+      "item_id": "C-M03",
+      "question": "کاربرد qsort در کتابخانه stdlib چیست؟",
+      "qtype": "mixed",
+      "expected_source_ids": [
+        "cppref-qsort#s02-c01"
+      ],
+      "expected_answer_summary": "مرتب‌سازی عمومی آرایه با تابع مقایسه callback که کاربر می‌دهد."
+    },
+    {
+      "item_id": "C-M04",
+      "question": "تابع strlen طول رشته را چگونه حساب می‌کند؟",
+      "qtype": "mixed",
+      "expected_source_ids": [
+        "fa-strings#s09-c01"
+      ],
+      "expected_answer_summary": "تا رسیدن به کاراکتر پایانه می‌شمارد و خود پایانه را حساب نمی‌کند."
+    },
+    {
+      "item_id": "C-M05",
+      "question": "خطای double free در C به چه معناست؟",
+      "qtype": "mixed",
+      "expected_source_ids": [
+        "fa-dynamic-memory#s07-c01"
+      ],
+      "expected_answer_summary": "دو بار آزاد کردن یک بلوک رفتار تعریف‌نشده است؛ بعد از free اشاره‌گر را NULL کنید."
+    },
+    {
+      "item_id": "C-O01",
+      "question": "پایتخت فرانسه کجاست؟",
+      "qtype": "out-of-corpus",
+      "expected_source_ids": [],
+      "expected_answer_summary": "بیرون‌دامنه: باید abstain با صفر استناد."
+    },
+    {
+      "item_id": "C-O02",
+      "question": "دستور پخت قرمه‌سبزی چیست؟",
+      "qtype": "out-of-corpus",
+      "expected_source_ids": [],
+      "expected_answer_summary": "بیرون‌دامنه: باید abstain با صفر استناد."
+    },
+    {
+      "item_id": "C-O03",
+      "question": "قهرمان جام جهانی فوتبال چه تیمی است؟",
+      "qtype": "out-of-corpus",
+      "expected_source_ids": [],
+      "expected_answer_summary": "بیرون‌دامنه: باید abstain با صفر استناد."
+    },
+    {
+      "item_id": "C-O04",
+      "question": "علائم سرماخوردگی و درمان آن چیست؟",
+      "qtype": "out-of-corpus",
+      "expected_source_ids": [],
+      "expected_answer_summary": "بیرون‌دامنه: باید abstain با صفر استناد."
+    },
+    {
+      "item_id": "C-O05",
+      "question": "بهترین راه یادگیری زبان انگلیسی چیست؟",
+      "qtype": "out-of-corpus",
+      "expected_source_ids": [],
+      "expected_answer_summary": "بیرون‌دامنه: باید abstain با صفر استناد."
+    }
+  ]
+}

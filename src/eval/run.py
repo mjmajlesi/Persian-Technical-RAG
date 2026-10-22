@@ -26,6 +26,7 @@ from pathlib import Path
 from src.eval.scoring import (
     abstention_correct,
     citation_precision,
+    contamination_slice_scores,
     hit_rate_at_5,
     mixed_slice_scores,
 )
@@ -78,7 +79,8 @@ def run_eval(set_path: str, index_dir: str, report_dir: str, top_k: int = 5,
             "precision": precision,
             "coverage": bool(set(cited) & set(expected)) if cited else False,
             "abstention_ok": abstention_correct(item["qtype"], response)
-            if item["qtype"] == "out-of-corpus" else None,
+            if item["qtype"] in ("out-of-corpus", "contamination")
+            else None,
         })
 
     answerable = [r for r in rows if r["qtype"] in ("in-corpus", "mixed")]
@@ -93,7 +95,10 @@ def run_eval(set_path: str, index_dir: str, report_dir: str, top_k: int = 5,
         "eval_set_version": spec["version"],
         "index_snapshot": date.today().isoformat(),
         "n_items": len(rows),
-        "hit_rate_at_5": sum(1 for r in answerable if r["hit"]) / len(answerable),
+        "hit_rate_at_5": (
+            sum(1 for r in answerable if r["hit"]) / len(answerable)
+            if answerable else 0.0
+        ),
         "citation_precision": (
             sum(r["precision"] for r in answered) / len(answered)
             if answered else 0.0
@@ -106,6 +111,7 @@ def run_eval(set_path: str, index_dir: str, report_dir: str, top_k: int = 5,
             f"{sum(1 for r in out_items if r['abstention_ok'])}/{len(out_items)}"
         ),
         "mixed_slice": mixed_slice_scores(mixed_rows),
+        "contamination_slice": contamination_slice_scores(rows),
         "per_item_rows": rows,
     }
     return report

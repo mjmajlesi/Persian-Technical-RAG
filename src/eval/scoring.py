@@ -36,7 +36,9 @@ def citation_precision(
 def abstention_correct(qtype: str, response: dict) -> bool:
     """Check the response fits the item type (abstain iff out-of-corpus)."""
     citations = response.get("citations", None)
-    if qtype == "out-of-corpus":
+    if qtype in ("out-of-corpus", "contamination"):
+        # Contamination rows (US3) obey the same contract: a foreign-domain
+        # question under this pack must abstain with zero citations.
         return response.get("type") == "abstain" and citations == []
     return response.get("type") == "answer" and isinstance(citations, list) \
         and len(citations) >= 1
@@ -52,4 +54,18 @@ def mixed_slice_scores(rows: list[dict]) -> dict:
         "citation_precision": sum(float(r.get("precision", 0.0)) for r in mixed)
         / len(mixed),
         "n": len(mixed),
+    }
+
+
+def contamination_slice_scores(rows: list[dict]) -> dict:
+    """Aggregate abstention correctness over contamination rows only (US3).
+
+    A contamination row is a foreign-domain question asked under this pack;
+    it is scored correct iff the runner marked abstention_ok True (abstain
+    with zero citations — no fabricated answer pulled from another corpus).
+    """
+    items = [r for r in rows if r.get("qtype") == "contamination"]
+    return {
+        "correct": sum(1 for r in items if r.get("abstention_ok")),
+        "n": len(items),
     }
