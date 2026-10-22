@@ -1,0 +1,271 @@
+{
+  "version": "python-v1",
+  "notes": "Python pack eval set (authored in T022): 30 items in the 20/5/5 split (in-corpus/mixed/out-of-corpus) with Persian questions. Expected source ids resolve to real chunk_ids of the python pack index (docs.python.org tutorial + library pages; reference-only corpus documented tradeoff per FR-007). Out-of-corpus ids empty; those items must abstain. Validated at authoring time in T022.",
+  "items": [
+    {
+      "item_id": "PY-001",
+      "question": "تابع range در پایتون چگونه کار می‌کند؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "pyref-tutorial-controlflow#s05-c01"
+      ],
+      "expected_answer_summary": "تولید دنبالهٔ اعداد با range(start, stop, step) برای پیمایش."
+    },
+    {
+      "item_id": "PY-002",
+      "question": "حلقه for در پایتون چه تفاوتی با حلقه سنتی زبان‌های دیگر دارد؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "pyref-tutorial-controlflow#s04-c01"
+      ],
+      "expected_answer_summary": "for روی عناصر دنبالهٔ پیمایش‌پذیر می‌گردد، نه شمارندهٔ عددی."
+    },
+    {
+      "item_id": "PY-003",
+      "question": "دستور break و continue در حلقه‌های پایتون چه می‌کنند؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "pyref-tutorial-controlflow#s06-c01"
+      ],
+      "expected_answer_summary": "break از درونی‌ترین حلقه خارج می‌شود؛ continue به تکرار بعدی می‌پرد."
+    },
+    {
+      "item_id": "PY-004",
+      "question": "بند else روی حلقه‌های for و while در پایتون کی اجرا می‌شود؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "pyref-tutorial-controlflow#s07-c01"
+      ],
+      "expected_answer_summary": "بند else اجرا می‌شود وقتی حلقه با break تمام نشده باشد."
+    },
+    {
+      "item_id": "PY-005",
+      "question": "دستور match در پایتون چگونه کار می‌کند؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "pyref-tutorial-controlflow#s09-c01"
+      ],
+      "expected_answer_summary": "مقایسهٔ مقدار با الگوهای case و گرفتن مقدار از الگو."
+    },
+    {
+      "item_id": "PY-006",
+      "question": "مقدار پیش‌فرض پارامتر در توابع پایتون چگونه تعریف می‌شود؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "pyref-tutorial-controlflow#s12-c01"
+      ],
+      "expected_answer_summary": "پارامتر با مقدار پیش‌فرض در امضای تابع؛ در هر فراخوانی بدون آرگومان."
+    },
+    {
+      "item_id": "PY-007",
+      "question": "فراخوانی با keyword arguments در پایتون چگونه است؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "pyref-tutorial-controlflow#s13-c01"
+      ],
+      "expected_answer_summary": "ارسال آرگومان با form key=value در فراخوانی تابع."
+    },
+    {
+      "item_id": "PY-008",
+      "question": "lambda در پایتون چیست و کی به کار می‌رود؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "pyref-tutorial-controlflow#s22-c01"
+      ],
+      "expected_answer_summary": "تابع ناشناس با بدنه expression تک؛ مثلاً به‌عنوان کلید مرتب‌سازی."
+    },
+    {
+      "item_id": "PY-009",
+      "question": "قواعد docstring در پایتون چیست؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "pyref-tutorial-controlflow#s23-c01"
+      ],
+      "expected_answer_summary": "خط اول خلاصه، خط جداکننده، سپس شرح بیشتر؛ نگهداری در __doc__."
+    },
+    {
+      "item_id": "PY-010",
+      "question": "لیست کامپریهِنسیون در پایتون چگونه می‌سازد؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "pyref-tutorial-datastructures#s06-c01"
+      ],
+      "expected_answer_summary": "ساخت لیست فشرده از expression + for + if اختیاری."
+    },
+    {
+      "item_id": "PY-011",
+      "question": "چگونه از لیست به‌عنوان پشته (stack) در پایتون استفاده کنیم؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "pyref-tutorial-datastructures#s04-c01"
+      ],
+      "expected_answer_summary": "push با append و pop با pop."
+    },
+    {
+      "item_id": "PY-012",
+      "question": "دیکشنری در پایتون چیست و چگونه می‌سازیم؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "pyref-tutorial-datastructures#s12-c01"
+      ],
+      "expected_answer_summary": "کلید→مقدار با {key: value}؛ کلیدها نامتعارف و یکتا."
+    },
+    {
+      "item_id": "PY-013",
+      "question": "پیمایش همزمان key و value در دیکشنری پایتون چگونه است؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "pyref-tutorial-datastructures#s13-c01"
+      ],
+      "expected_answer_summary": "با items() روی dict به‌صورت key, value."
+    },
+    {
+      "item_id": "PY-014",
+      "question": "دستور del در پایتون چه می‌کند؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "pyref-tutorial-datastructures#s09-c01"
+      ],
+      "expected_answer_summary": "حذف آیتم با اندیس حتی برش یک بازه از لیست."
+    },
+    {
+      "item_id": "PY-015",
+      "question": "وراثت (inheritance) در پایتون چگونه کار می‌کند؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "pyref-tutorial-classes#s13-c01"
+      ],
+      "expected_answer_summary": "کلاس فرزند(Base) همهٔ روش‌ها و ویژگی‌ها را به ارث می‌برد."
+    },
+    {
+      "item_id": "PY-016",
+      "question": "چرا متدها به‌صورت x.f() به شیء bind می‌شوند در پایتون؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "pyref-tutorial-classes#s10-c01"
+      ],
+      "expected_answer_summary": "متد شیء، مستقل‌از فراخوانی، bound شده به شیء برای x.f()."
+    },
+    {
+      "item_id": "PY-017",
+      "question": "تفاوت متغیر کلاس و متغیر نمونه در پایتون چیست؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "pyref-tutorial-classes#s11-c01"
+      ],
+      "expected_answer_summary": "متغیر کلاس بین همهٔ نمونه‌ها مقاوم و از نمونهٔ هر شیء منحصر فرد است."
+    },
+    {
+      "item_id": "PY-018",
+      "question": "چگونه استثنائات (exceptions) را در پایتون بگیریم؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "pyref-tutorial-errors#s05-c01"
+      ],
+      "expected_answer_summary": "try/except برای گرفتن استثنائات و اجرای کد مقاوم."
+    },
+    {
+      "item_id": "PY-019",
+      "question": "دستور raise در پایتون چه می‌کند؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "pyref-tutorial-errors#s06-c01"
+      ],
+      "expected_answer_summary": "اجبار پرت دادن استثنای مشخص، مثل raise NameError('HiThere')."
+    },
+    {
+      "item_id": "PY-020",
+      "question": "f-string در پایتون چیست و چگونه کار می‌کند؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "pyref-tutorial-inputoutput#s04-c01"
+      ],
+      "expected_answer_summary": "فرمت رشته با literal پیش‌وند f و درونریزی {expr}."
+    },
+    {
+      "item_id": "PY-M01",
+      "question": "range در پایتون چندهٔ دنبالهٔ بی‌تغییر است؟ چه عملیات‌های دنباله‌ای را پشتیبانی می‌کند؟",
+      "qtype": "mixed",
+      "expected_source_ids": [
+        "pyref-tutorial-controlflow#s05-c01",
+        "pyref-library-stdtypes#s19-c01"
+      ],
+      "expected_answer_summary": "range به‌عنوان نوع دنباله immutable با عملیات‌های دنباله‌ای مشترک."
+    },
+    {
+      "item_id": "PY-M02",
+      "question": "گرفتن استثنائات خاص در پایتون چگونه است (مثل ValueError)؟",
+      "qtype": "mixed",
+      "expected_source_ids": [
+        "pyref-tutorial-errors#s05-c01",
+        "pyref-library-exceptions#s06-c01"
+      ],
+      "expected_answer_summary": "except برای نوع استثنای خاص از سلسله‌مراتب stitching استاندارد."
+    },
+    {
+      "item_id": "PY-M03",
+      "question": "مرتب‌سازی با کلید سفارشی در پایتون چگونه است (sorted و key=lambda)؟",
+      "qtype": "mixed",
+      "expected_source_ids": [
+        "pyref-library-functions#s02-c25",
+        "pyref-tutorial-controlflow#s22-c01"
+      ],
+      "expected_answer_summary": "sorted بر مبنای reflected شکل __gt__() با key=lambda برای ترتیب سفارشی."
+    },
+    {
+      "item_id": "PY-M04",
+      "question": "فرمت رشته با % در برابر str.format() در پایتون چگونه فرق دارد؟",
+      "qtype": "mixed",
+      "expected_source_ids": [
+        "pyref-tutorial-inputoutput#s07-c01",
+        "pyref-library-stdtypes#s34-c01"
+      ],
+      "expected_answer_summary": "ولی % (operator) قدیمی‌تر و format() روش امروزی با تاجریت‌های قوی‌تر."
+    },
+    {
+      "item_id": "PY-M05",
+      "question": "کلاس در پایتون با متد و متغیر کلاسین چه تفاوت‌هایی با نمونه مستقل دارد؟",
+      "qtype": "mixed",
+      "expected_source_ids": [
+        "pyref-tutorial-classes#s10-c01",
+        "pyref-tutorial-classes#s11-c01"
+      ],
+      "expected_answer_summary": "Method objects برای bind شدن؛ متغیر کلاس vs متغیر نمونه، منحصرفرد."
+    },
+    {
+      "item_id": "PY-O01",
+      "question": "چگونه با NumPy آرایهٔ چندبعدی بسازیم؟",
+      "qtype": "out-of-corpus",
+      "expected_source_ids": [],
+      "expected_answer_summary": "خارج از کورپوس: انتظار abstain."
+    },
+    {
+      "item_id": "PY-O02",
+      "question": "چگونه در Flask یک وب‌سرویس ساده بسازیم؟",
+      "qtype": "out-of-corpus",
+      "expected_source_ids": [],
+      "expected_answer_summary": "خارج از کورپوس: انتظار abstain."
+    },
+    {
+      "item_id": "PY-O03",
+      "question": "الگوریتم مرتب‌سازی سریع و پایدار چه تفاوتی دارند؟",
+      "qtype": "out-of-corpus",
+      "expected_source_ids": [],
+      "expected_answer_summary": "خارج از کورپوس: انتظار abstain."
+    },
+    {
+      "item_id": "PY-O04",
+      "question": "چگونه با scikit-learn مدل یادگیری ماشین آموزش بدهیم؟",
+      "qtype": "out-of-corpus",
+      "expected_source_ids": [],
+      "expected_answer_summary": "خارج از کورپوس: انتظار abstain."
+    },
+    {
+      "item_id": "PY-O05",
+      "question": "کیک شکلاتی چگونه پف می‌کند؟",
+      "qtype": "out-of-corpus",
+      "expected_source_ids": [],
+      "expected_answer_summary": "خارج از کورپوس: انتظار abstain."
+    }
+  ]
+}
