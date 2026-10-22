@@ -97,6 +97,46 @@ def test_contamination_item_scored_in_report(tmp_path):
     assert report["contamination_slice"] == {"correct": 1, "n": 1}
 
 
+def test_dedicated_contamination_set_keeps_main_metrics_separate(tmp_path, monkeypatch):
+    """The 20/5/5 pack set stays intact; cross-pack probes get their own slice."""
+    import src.eval.run as runner
+
+    monkeypatch.setattr(runner, "ask", lambda request: {
+        "type": "abstain", "citations": [],
+    })
+    set_path = _write_set(tmp_path, [])
+    report = run_eval(set_path, "data/index/c", str(tmp_path / "reports"),
+                      contamination_set_path="data/eval/contamination.v1.json")
+    assert report["n_items"] == 3
+    assert report["contamination_set_version"] == "contamination-v1"
+    assert report["error_count"] == 0
+    assert report["contamination_slice"] == {"correct": 3, "n": 3}
+    assert report["hit_rate_at_5"] == 0.0
+    assert report["citation_precision"] == 0.0
+    assert {r["item_id"] for r in report["per_item_rows"]} == {
+        "C-X-CPP", "C-X-PY", "C-X-JV",
+    }
+
+
+def test_model_errors_mark_report_incomplete(tmp_path, monkeypatch):
+    import src.eval.run as runner
+
+    def broken_ask(request):
+        raise RuntimeError("model unavailable")
+
+    monkeypatch.setattr(runner, "ask", broken_ask)
+    set_path = _write_set(tmp_path, [
+        {"item_id": "C-ERR", "qtype": "in-corpus",
+         "question": "تفاوت malloc و calloc چیست؟", "expected_source_ids": []},
+    ])
+    report = run_eval(set_path, "data/index/c", str(tmp_path / "reports"))
+    assert report["error_count"] == 1
+    _, md_path = runner.write_reports(report, str(tmp_path / "reports"))
+    assert "Status: INCOMPLETE (1 model errors)" in open(
+        md_path, encoding="utf-8"
+    ).read()
+
+
 # ---------------------------------------------------------------------------
 # Regression insurance: existing per-pack plumbing keeps its shape
 # ---------------------------------------------------------------------------

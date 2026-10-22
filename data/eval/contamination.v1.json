@@ -1,0 +1,17 @@
+{
+  "version": "contamination-v1",
+  "items": [
+    {"item_id": "C-X-CPP", "language_id": "c", "source_language_id": "cpp", "qtype": "contamination", "question": "چگونه در ++C متد تعریف کنیم؟", "expected_source_ids": []},
+    {"item_id": "C-X-PY", "language_id": "c", "source_language_id": "python", "qtype": "contamination", "question": "تابع range در پایتون چگونه کار می‌کند؟", "expected_source_ids": []},
+    {"item_id": "C-X-JV", "language_id": "c", "source_language_id": "java", "qtype": "contamination", "question": "وراثت (inheritance) در جاوا چگونه کار می‌کند؟", "expected_source_ids": []},
+    {"item_id": "CPP-X-C", "language_id": "cpp", "source_language_id": "c", "qtype": "contamination", "question": "تفاوت malloc و calloc چیست؟", "expected_source_ids": []},
+    {"item_id": "CPP-X-PY", "language_id": "cpp", "source_language_id": "python", "qtype": "contamination", "question": "تابع range در پایتون چگونه کار می‌کند؟", "expected_source_ids": []},
+    {"item_id": "CPP-X-JV", "language_id": "cpp", "source_language_id": "java", "qtype": "contamination", "question": "وراثت (inheritance) در جاوا چگونه کار می‌کند؟", "expected_source_ids": []},
+    {"item_id": "PY-X-C", "language_id": "python", "source_language_id": "c", "qtype": "contamination", "question": "تفاوت malloc و calloc چیست؟", "expected_source_ids": []},
+    {"item_id": "PY-X-CPP", "language_id": "python", "source_language_id": "cpp", "qtype": "contamination", "question": "چگونه در ++C متد تعریف کنیم؟", "expected_source_ids": []},
+    {"item_id": "PY-X-JV", "language_id": "python", "source_language_id": "java", "qtype": "contamination", "question": "وراثت (inheritance) در جاوا چگونه کار می‌کند؟", "expected_source_ids": []},
+    {"item_id": "JV-X-C", "language_id": "java", "source_language_id": "c", "qtype": "contamination", "question": "تفاوت malloc و calloc چیست؟", "expected_source_ids": []},
+    {"item_id": "JV-X-CPP", "language_id": "java", "source_language_id": "cpp", "qtype": "contamination", "question": "چگونه در ++C متد تعریف کنیم؟", "expected_source_ids": []},
+    {"item_id": "JV-X-PY", "language_id": "java", "source_language_id": "python", "qtype": "contamination", "question": "تابع range در پایتون چگونه کار می‌کند؟", "expected_source_ids": []}
+  ]
+}

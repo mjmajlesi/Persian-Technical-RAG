@@ -46,9 +46,18 @@ def default_set_path(lang: str) -> str:
 
 
 def run_eval(set_path: str, index_dir: str, report_dir: str, top_k: int = 5,
-             language: str = DEFAULT_LANGUAGE) -> dict:
+             language: str = DEFAULT_LANGUAGE,
+             contamination_set_path: str | None = None) -> dict:
     spec = json.loads(Path(set_path).read_text(encoding="utf-8"))
-    items = spec["items"]
+    items = list(spec["items"])
+    contamination_version = None
+    if contamination_set_path:
+        contamination = json.loads(
+            Path(contamination_set_path).read_text(encoding="utf-8")
+        )
+        contamination_version = contamination["version"]
+        items.extend(item for item in contamination["items"]
+                     if item["language_id"] == language)
     retriever = Retriever(index_dir)
     index_ids = set(retriever._by_id)
 
@@ -76,6 +85,7 @@ def run_eval(set_path: str, index_dir: str, report_dir: str, top_k: int = 5,
             "top1_score": round(hits[0]["score"], 3),
             "hit": hit,
             "response_type": response.get("type"),
+            "error": response.get("error"),
             "precision": precision,
             "coverage": bool(set(cited) & set(expected)) if cited else False,
             "abstention_ok": abstention_correct(item["qtype"], response)
@@ -84,7 +94,7 @@ def run_eval(set_path: str, index_dir: str, report_dir: str, top_k: int = 5,
         })
 
     answerable = [r for r in rows if r["qtype"] in ("in-corpus", "mixed")]
-    answered = [r for r in rows if r["response_type"] == "answer"]
+    answered = [r for r in answerable if r["response_type"] == "answer"]
     out_items = [r for r in rows if r["qtype"] == "out-of-corpus"]
     mixed_rows = [
         {"qtype": "mixed", "hit": r["hit"], "precision": r["precision"] or 0.0}
@@ -93,8 +103,10 @@ def run_eval(set_path: str, index_dir: str, report_dir: str, top_k: int = 5,
     report = {
         "language_id": language,
         "eval_set_version": spec["version"],
+        "contamination_set_version": contamination_version,
         "index_snapshot": date.today().isoformat(),
         "n_items": len(rows),
+        "error_count": sum(r["response_type"] == "error" for r in rows),
         "hit_rate_at_5": (
             sum(1 for r in answerable if r["hit"]) / len(answerable)
             if answerable else 0.0
@@ -130,11 +142,16 @@ def write_reports(report: dict, report_dir: str) -> tuple[str, str]:
     lines = [
         f"# Eval Report {stamp}",
         "",
+        f"- Status: {'INCOMPLETE' if report['error_count'] else 'complete'} "
+        f"({report['error_count']} model errors)",
         f"- Items: {report['n_items']}",
+        f"- Contamination set: {report['contamination_set_version'] or 'none'}",
         f"- Hit-rate@5 (answerable): {report['hit_rate_at_5']:.3f}",
         f"- Citation precision (answered): {report['citation_precision']:.3f}",
         f"- Citation coverage (answered): {report['citation_coverage']:.3f}",
         f"- Abstention correct: {report['abstention_correct']}",
+        f"- Contamination slice: {report['contamination_slice']['correct']}/"
+        f"{report['contamination_slice']['n']}",
         f"- Mixed slice: hit {report['mixed_slice']['hit_rate_at_5']:.3f}, "
         f"precision {report['mixed_slice']['citation_precision']:.3f} "
         f"(n={report['mixed_slice']['n']})",
@@ -166,18 +183,22 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--report-dir", default=None,
                         help="defaults to data/eval/<lang>/reports")
     parser.add_argument("--top-k", type=int, default=5)
+    parser.add_argument("--contamination-set",
+                        default="data/eval/contamination.v1.json",
+                        help="dedicated cross-pack probes, scored separately")
     args = parser.parse_args(argv)
     set_path = args.set or default_set_path(args.lang)
     index_dir = args.index_dir or f"data/index/{args.lang}"
     report_dir = args.report_dir or f"data/eval/{args.lang}/reports"
-    report = run_eval(set_path, index_dir, report_dir, args.top_k, args.lang)
+    report = run_eval(set_path, index_dir, report_dir, args.top_k, args.lang,
+                      args.contamination_set)
     json_path, md_path = write_reports(report, report_dir)
     print(f"hit_rate_at_5={report['hit_rate_at_5']:.3f} "
           f"precision={report['citation_precision']:.3f} "
           f"coverage={report['citation_coverage']:.3f} "
           f"abstention={report['abstention_correct']}")
     print(f"reports: {json_path} {md_path}")
-    return 0
+    return 1 if report["error_count"] else 0
 
 
 if __name__ == "__main__":

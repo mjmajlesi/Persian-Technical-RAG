@@ -78,6 +78,7 @@ class LLMProvider:
         user_content = prompt if not context else f"{prompt}\n\n{context}"
         payload = {
             "model": self._config.model,
+            "stream": False,
             "messages": [
                 {
                     "role": "system",
@@ -100,10 +101,20 @@ class LLMProvider:
         )
         try:
             with urllib.request.urlopen(request, timeout=REQUEST_TIMEOUT) as resp:
-                body = json.loads(resp.read().decode("utf-8"))
+                raw = resp.read().decode("utf-8")
         except Exception as exc:  # noqa: BLE001 - mapped to ProviderError
             raise ProviderError(f"LLM request failed: {exc}") from exc
         try:
-            return body["choices"][0]["message"]["content"]
-        except (KeyError, IndexError, TypeError) as exc:
-            raise ProviderError(f"unexpected LLM response shape: {body!r}") from exc
+            if raw.lstrip().startswith("data:"):
+                parts = []
+                for line in raw.splitlines():
+                    if not line.startswith("data:") or line.strip() == "data: [DONE]":
+                        continue
+                    choice = json.loads(line[5:].strip())["choices"][0]
+                    parts.append(choice.get("delta", {}).get("content") or "")
+                if not "".join(parts).strip():
+                    raise ValueError("no streamed content")
+                return "".join(parts)
+            return json.loads(raw)["choices"][0]["message"]["content"]
+        except (KeyError, IndexError, TypeError, ValueError) as exc:
+            raise ProviderError("unexpected LLM response shape") from exc
