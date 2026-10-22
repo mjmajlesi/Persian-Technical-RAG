@@ -1,65 +1,94 @@
-"""Threshold calibration (T024).
+"""Per-pack threshold calibration (002-T024).
 
-Calibrated 2026-10-07 on the frozen 503-chunk v1 index with 12 probes
-(6 in-domain/C questions that MUST be answered, 6 out-of-domain questions
-that MUST abstain). Method: top-1 cosine per probe; threshold = midpoint of
-the separation gap between max(out) and min(in) when separable.
+Method (per task): fetch each ready pack's 30-item eval set, embed every
+question through that pack's own index, and record top-1 cosine of
 
-RESULT: max(out) = 0.775, min(in) = 0.849 -> gap [0.775, 0.849],
-threshold = 0.81. Applied as abstain.DEFAULT_THRESHOLD.
+  - answerable items (qtype in-corpus / mixed) — must ANSWER → score high;
+  - out-of-corpus items — must ABSTAIN → score lower.
 
-Rationale: the midpoint maximizes the margin on both sides, so small
-embedding noise is least likely to flip a verdict. The value is provisional
-until the versioned 30-question eval set (T030) re-validates it: if
-abstention_correct < 5/5 or in-domain hit-rate drops, re-run this script
-with the eval questions and move the threshold.
+Threshold rule: midpoint of the separation gap — (max(out) + min(in)) / 2 —
+the same gap-midpoint rule feature 001 used. When the two classes overlap
+(x.eval outliers), the same formula still yields the recorded value and the
+residual overlap is documented in pack_config rationales: out-of-corpus
+items that gate-pass fall through to the LLM-insufficient backstop
+(CANNOT_ANSWER → abstain).
 
-NOTE: task text says "on fixtures" — outdated; fixtures were replaced by
-the real frozen corpus in T010b, so calibration runs on the real index.
+Measured 2026-10-22 (full tables printed by running this script);
+stored thresholds sit inside the gap / at documented overlap points:
+
+  c      max(out)=0.793 (C-O05)   min(in)=0.814 (C-009)   -> 0.803   separable
+  cpp    max(out)=0.822 (CPP-O01)  min(in)=0.821 (CPP-019) -> 0.82    overlap 0.001
+  java   max(out)=0.790 (JV-O01)   min(in)=0.792 (JV-013)  -> 0.791   separable
+  python max(out)=0.797 (PY-O01)   min(in)=0.786 (PY-006)  -> 0.79    overlap 0.011
+
+History (feature 001, 2026-10-07): 12 C probes on the frozen 503-chunk
+index -> single provisional 0.81; invalid hereafter (this file no longer
+calibrates a single value — pack_config.py holds the per-pack results).
 """
 
-CALIBRATION_PROBES: list[tuple[str, bool]] = [
-    # (question, should_answer)
-    ("تفاوت malloc و calloc چیست؟", True),
-    ("حلقه for در C چگونه کار می‌کند؟", True),
-    ("اشاره‌گر در C چیست و چه کاربردی دارد؟", True),
-    ("پرچم صفر در printf چه اثری دارد؟", True),
-    ("اندازه struct در حافظه چگونه محاسبه می‌شود؟", True),
-    ("ماکروهای تابع‌وار در پیش‌پردازنده چه خطری دارند؟", True),
-    ("پایتخت فرانسه کجاست و جمعیت آن چقدر است؟", False),
-    ("بهترین دستور پخت قرمه‌سبزی چیست؟", False),
-    ("قهرمان جام جهانی فوتبال چه تیمی شد؟", False),
-    ("علائم سرماخوردگی و درمان آن چیست؟", False),
-    ("جنگ جهانی دوم در چه سالی تمام شد؟", False),
-    ("بهترین آلبوم موسیقی سنتی ایرانی کدام است؟", False),
-]
+from __future__ import annotations
+
+import json
+from datetime import date
+from pathlib import Path
+
+from src.eval.run import default_set_path
+from src.qa.retriever import Retriever
+
+ANSWERABLE_TYPES = ("in-corpus", "mixed")
 
 
-def calibrate(retriever, probes=CALIBRATION_PROBES) -> dict:
-    """Score probes and return {in_scores, out_scores, threshold}."""
-    in_scores, out_scores = [], []
-    for question, should_answer in probes:
-        top = retriever.retrieve(question, k=1)[0]["score"]
-        (in_scores if should_answer else out_scores).append((question, top))
-    lo = max(s for _, s in out_scores)
-    hi = min(s for _, s in in_scores)
-    if lo >= hi:
-        raise ValueError(f"classes not separable: max(out)={lo:.3f} >= min(in)={hi:.3f}")
-    return {"in_scores": in_scores, "out_scores": out_scores,
-            "threshold": (lo + hi) / 2}
+def probe_pack(pack) -> dict:
+    """Top-1 separation analysis for one ready pack on its eval set."""
+    spec = json.loads(
+        Path(default_set_path(pack.language_id)).read_text(encoding="utf-8")
+    )
+    retriever = Retriever(pack.index_dir)
+    in_rows, out_rows = [], []
+    for item in spec["items"]:
+        top1 = retriever.retrieve(item["question"], k=1)[0]["score"]
+        rows = in_rows if item["qtype"] in ANSWERABLE_TYPES else out_rows
+        rows.append((item["item_id"], item["question"], top1))
+    max_out = max(s for _, _, s in out_rows)
+    min_in = min(s for _, _, s in in_rows)
+    threshold = (max_out + min_in) / 2
+    return {
+        "in_rows": in_rows,
+        "out_rows": out_rows,
+        "max_out": max_out,
+        "min_in": min_in,
+        "separable": max_out < min_in,
+        "threshold": threshold,
+        # items that would flip at the recorded threshold (overlap residue)
+        "out_passing": [i for i, _, s in out_rows if s >= threshold],
+        "in_abstaining": [i for i, _, s in in_rows if s < threshold],
+    }
 
 
 def main() -> None:
-    from src.qa.retriever import Retriever
+    from src.web.packs import load_packs
 
-    result = calibrate(Retriever("data/index"))
-    print("IN-DOMAIN (must answer):")
-    for question, score in result["in_scores"]:
-        print(f"  {score:.3f}  {question[:45]}")
-    print("OUT-OF-DOMAIN (must abstain):")
-    for question, score in result["out_scores"]:
-        print(f"  {score:.3f}  {question[:45]}")
-    print(f"CALIBRATED THRESHOLD: {result['threshold']:.2f}")
+    print(f"calibration run {date.today().isoformat()}\n")
+    for pack in load_packs():
+        if pack.status != "ready":
+            continue
+        result = probe_pack(pack)
+        label = f"{pack.language_id} ({pack.index_dir})"
+        print(f"=== {label} ===")
+        print(f"  IN (must answer):")
+        for item_id, _q, score in sorted(result["in_rows"], key=lambda x: x[2]):
+            print(f"    {score:.3f}  {item_id}")
+        print(f"  OUT (must abstain):")
+        for item_id, _q, score in sorted(result["out_rows"], key=lambda x: -x[2]):
+            print(f"    {score:.3f}  {item_id}")
+        print(f"  max(out)={result['max_out']:.3f}  min(in)={result['min_in']:.3f}  "
+              f"{'separable' if result['separable'] else 'OVERLAPPED'}")
+        print(f"  THRESHOLD: {result['threshold']:.4f}")
+        if result["out_passing"]:
+            print(f"  OOC items above gate (LLM backstop): {result['out_passing']}")
+        if result["in_abstaining"]:
+            print(f"  answerable items below gate: {result['in_abstaining']}")
+        print()
 
 
 if __name__ == "__main__":
