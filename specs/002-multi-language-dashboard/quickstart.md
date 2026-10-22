@@ -2,65 +2,38 @@
 
 **Feature**: [spec.md](./spec.md) | **Plan**: [plan.md](./plan.md)
 
-## Prerequisites
+Run from the repository root with Python 3.11 and the pinned `.venv` (`pip install -r requirements.txt`). Copy `.env.example` to `.env` and supply `LLM_API_KEY`, `LLM_BASE_URL` and `LLM_MODEL` for end-to-end answers/evaluation; no credentials belong in git. Frozen source manifests are in `data/corpus/manifest.<lang>.json`.
 
-- Feature 001's answer path complete (T018+); Python 3.11 `.venv` from 001.
-- New corpora frozen per pack (cpp notes + English refs for cpp/python/java).
+## 1. Rebuild each ready pack
 
-## 1. Migrate the C pack (one time)
-
-```powershell
-# manifest.json -> manifest.c.json, full/* -> c/, index/* -> index/c/
-python scripts/migrate_c_pack.py
-.\.venv\Scripts\python -m src.eval run --lang c --set data/eval/c/eval-set.c.v1.json
-```
-
-Expected: C eval figures identical to pre-migration (SC-004 for the first pack).
-
-## 2. Ingest a new pack (example: cpp)
+The one-time C migration is already complete. **Do not rerun a migration script:** the old flat corpus/index paths do not exist. See [migration results](../../docs/MIGRATION-RESULTS.md) for the 001 vs 002 comparison.
 
 ```powershell
-.\.venv\Scripts\python -m src.ingest --lang cpp --manifest data/corpus/manifest.cpp.json
-.\.venv\Scripts\python -m src.index build --lang cpp --manifest data/corpus/manifest.cpp.json
+foreach ($lang in 'c', 'cpp', 'python', 'java') {
+    .\.venv\Scripts\python -m src.ingest --lang $lang
+    .\.venv\Scripts\python -m src.index build --lang $lang
+}
 ```
 
-Expected: `data/index/cpp/` holds `faiss.index` + `ids.json` + `chunks.jsonl`;
-per-pack counts print to console; other packs untouched.
+Expected chunk counts: C **503**, C++ **201**, Python **253**, Java **73** (embedding dimension 1024). Each `data/index/<lang>/` holds `chunks.jsonl`, `ids.json` and `faiss.index`. Repeat the commands without deleting files; on the frozen snapshot, these three files are byte-identical to the previous build for every pack (T027 validation, 2026-10-22). Pack sources and license notes stay in their manifests.
 
-## 3. Dashboard check
+## 2. Dashboard and API probes
 
 ```powershell
-uvicorn src.web.app:app --port 8000
+.\.venv\Scripts\python -m uvicorn src.web.app:app --port 8000
 ```
 
-Open `http://localhost:8000`: sidebar lists C (preselected), C++, Python,
-Java with ready/empty states. Select C++, ask an in-corpus question, and
-confirm: Persian answer, citations resolving inside the cpp pack only,
-click-reveal unchanged. Select a pack whose question belongs to another
-pack and confirm abstention with zero foreign citations.
+Open `http://localhost:8000`: four-pack RTL sidebar, C preselected, answer with pack-internal clickable citations. `GET /api/languages` returns four ready packs; an unknown language on `POST /api/ask` returns 422. For **each** pack, ask one in-corpus question (Persian answer + pack-internal citations), one out-of-corpus question (abstain, zero citations), and a short ambiguous question such as «اشاره‌گر؟» (clarify). An unindexed listed pack responds `unavailable` with zero citations; all four shipped packs are currently ready, so validating this branch requires a controlled mocked empty-pack status, **not moving or deleting an existing index**. Switching languages clears the Q&A view state.
 
-Validation probes (contract: [languages-api.md](./contracts/languages-api.md)):
-
-- `GET /api/languages` → 4 packs with correct statuses.
-- `POST /api/ask` without `language` → behaves as 001 (C).
-- `POST /api/ask` with unknown language → `422` Persian error.
-- `POST /api/ask` for an `empty` pack → `type: unavailable`, zero citations.
-
-## 4. Per-language evaluation
+## 3. Tests and per-language evaluation
 
 ```powershell
-pytest tests/ -k "cpp or contamination"
-.\.venv\Scripts\python -m src.eval run --lang cpp --set data/eval/cpp/eval-set.cpp.v1.json
-.\.venv\Scripts\python -m src.eval run --lang python --set data/eval/python/eval-set.python.v1.json
-.\.venv\Scripts\python -m src.eval run --lang java --set data/eval/java/eval-set.java.v1.json
+.\.venv\Scripts\python -m pytest tests/ -q
+foreach ($lang in 'c', 'cpp', 'python', 'java') {
+    .\.venv\Scripts\python -m src.eval run --lang $lang
+}
 ```
 
-Expected: per-language JSON + Markdown reports under `data/eval/<lang>/reports/`
-(hit-rate@5, citation precision, abstention correctness, contamination slice);
-no blended score is the headline figure.
+Each run writes JSON (gitignored) and Markdown under `data/eval/<lang>/reports/`. Read **four independent reports**, never a blended score: 20 in-corpus + 5 mixed + 5 out-of-corpus questions per pack, plus 3 separate cross-language contamination probes (`data/eval/contamination.v1.json`). Check `error_count=0` / Markdown `Status: complete` before quoting figures; a rate-limited/unavailable model can otherwise produce incomplete reports. Retrieval and frozen index bytes are deterministic; LLM answer/citation selection can vary between runs, so an exact citation-precision match is **not** a reproducibility requirement. The C migration comparison and its limits are in `docs/MIGRATION-RESULTS.md`.
 
-## 5. Examiner reproduction
-
-Delete `data/index/<lang>/` for any language and re-run steps 2–4 for that
-language only. Same snapshot + same set version must yield the same retrieval
-rows and abstention verdicts, with other packs untouched.
+Dashboard state regression check: type a question in one pack and switch packs; the input must clear. Submit a question and switch before the response arrives; the previous pack's delayed answer must not appear under the newly selected pack.

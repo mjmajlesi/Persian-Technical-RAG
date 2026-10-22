@@ -167,6 +167,7 @@
     const pack = packs.filter((p) => p.language_id === langId)[0];
     const name = (pack ? pack.display_name.split("/")[0] : langId).trim();
     box.placeholder = "سوال فنی " + name + " را به فارسی بنویسید…";
+    box.value = "";
     clearViewState();
     if (pack && pack.status !== "ready") {
       box.placeholder = name + ": کورپوس در دسترس نیست…";
@@ -313,15 +314,17 @@
     const welcomeText = document.getElementById("welcome-text");
     if (welcomeText) welcomeText.classList.add("hidden");
     setLoading(true);
+    const askedLanguage = currentLanguage || "c";
     try {
       const res = await fetch("/api/ask", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ question: box.value,
-                               language: currentLanguage || "c" }),
+                               language: askedLanguage }),
       });
       let body = {};
       try { body = await res.json(); } catch (_) { /* non-JSON body */ }
+      if (currentLanguage !== askedLanguage) return;
       if (!res.ok) {
         // T015d: friendly Persian error tree. Our backend 422/500s carry a
         // plain Persian string in `detail` (HTTPException); a pydantic-style
@@ -347,6 +350,7 @@
         message.textContent = "خطای غیرمنتظره: " + JSON.stringify(body).slice(0, 200);
       }
     } catch (err) {
+      if (currentLanguage !== askedLanguage) return;
       // T015d: network/server failure → same friendly Persian error.
       message.textContent = ERR_MESSAGE;
       pane.textContent = "";

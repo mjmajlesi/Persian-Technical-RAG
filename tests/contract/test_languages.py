@@ -16,6 +16,7 @@ import json
 import subprocess
 import time
 import urllib.request
+from pathlib import Path
 
 PORT = 8134
 SUPPORTED = {"c", "cpp", "python", "java"}  # exact members, order-free
@@ -69,5 +70,10 @@ def test_languages_matches_pack_contract():
             for field in ("display_name", "snapshot", "eval_set_version"):
                 assert isinstance(pack[field], str) and pack[field].strip(), \
                     f"{lid}: {field} must be a non-empty string"
+            eval_set = json.loads(
+                Path(f"data/eval/{lid}/eval-set.{lid}.v1.json").read_text(
+                    encoding="utf-8"))
+            assert pack["eval_set_version"] == eval_set["version"], \
+                f"{lid}: manifest points to a different eval-set version"
     finally:
         proc.terminate()

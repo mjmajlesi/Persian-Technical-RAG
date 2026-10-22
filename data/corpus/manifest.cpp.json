@@ -2,7 +2,7 @@
   "language_id": "cpp",
   "display_name": "C++ / سی‌پلاس‌پلاس",
   "snapshot": "2026-10-16",
-  "eval_set_version": "v1",
+  "eval_set_version": "cpp-v1",
   "notes": "Frozen C++ pack v1. Owner-authored Persian intro notes (ch09, moved from the C staging area) plus a named cppreference.com C++ subset (CC-BY-SA), saved locally with source URL + retrieval date headers.",
   "sources": [
     {

@@ -2,7 +2,7 @@
   "language_id": "java",
   "display_name": "Java / جاوا",
   "snapshot": "2026-10-16",
-  "eval_set_version": "v1",
+  "eval_set_version": "java-v1",
   "notes": "Frozen Java pack v1. English-reference-only composition (accepted FR-007 tradeoff). Named Oracle Java Tutorials subset (language basics + OOP + exceptions + IO + collections), saved locally with source URL + retrieval date headers. The thin control-flow overview page was excluded in favor of the if/for lesson pages.",
   "sources": [
     {
