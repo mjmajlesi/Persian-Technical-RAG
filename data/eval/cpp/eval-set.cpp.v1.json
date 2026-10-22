@@ -1,0 +1,271 @@
+{
+  "version": "cpp-v1",
+  "notes": "C++ pack eval set (authored in T021): 30 items in the 20/5/5 split (in-corpus/mixed/out-of-corpus) with Persian questions. Expected source ids resolve to real chunk_ids of the cpp pack index (cpp-notes-intro Persian chapter notes + cppreference reference-only pages - reference-only corpus documented tradeoff per FR-007). Out-of-corpus ids empty; those items must abstain. Validated at authoring time in T021.",
+  "items": [
+    {
+      "item_id": "CPP-001",
+      "question": "چگونه در ++C به جای printf و scanf از cin و cout استفاده می‌شود؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "cpp-notes-intro#s02-c01"
+      ],
+      "expected_answer_summary": "cin/cout جایگزین I/O استاندارد C با سرآیندهای <iostream> و عملگرهای >> و <<."
+    },
+    {
+      "item_id": "CPP-002",
+      "question": "فضای نام (namespace) در ++C چیست و چه مشکلی را حل می‌کند؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "cpp-notes-intro#s03-c01"
+      ],
+      "expected_answer_summary": "گروه‌بندی شناسه‌ها برای جلوگیری از تداخل نام‌ها در پروژه‌های بزرگ."
+    },
+    {
+      "item_id": "CPP-003",
+      "question": "ارجاع (reference) در ++C چیست و چگونه تعریف می‌شود؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "cpp-notes-intro#s04-c01"
+      ],
+      "expected_answer_summary": "نام مستعار متغیر موجود با & در تعریف؛ پس از اتصال تغییرناپذیر است."
+    },
+    {
+      "item_id": "CPP-004",
+      "question": "توابع درون‌خطی (inline) در ++C چه می‌کنند؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "cpp-notes-intro#s05-c01"
+      ],
+      "expected_answer_summary": "پیشنهاد درج بدنه در محل فراخوانی و حذف سربار فراخوانی."
+    },
+    {
+      "item_id": "CPP-005",
+      "question": "آرگومان‌های پیش‌فرض (default arguments) در ++C چگونه کار می‌کنند؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "cpp-notes-intro#s06-c01"
+      ],
+      "expected_answer_summary": "پارامتر مقدار پیش‌فرض دارد؛ اگر فراخواننده نفرستد، مقدار پیش‌فرض استفاده می‌شود."
+    },
+    {
+      "item_id": "CPP-006",
+      "question": "سربارگذاری توابع (function overloading) در ++C یعنی چه؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "cpp-notes-intro#s07-c01"
+      ],
+      "expected_answer_summary": "چند تابع همنام با پارامترهای متفاوت؛ کامپایلر از روی آرگومان‌ها انتخاب می‌کند."
+    },
+    {
+      "item_id": "CPP-007",
+      "question": "کلاس در ++C چیست و چه چیزی را به C اضافه می‌کند؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "cpp-notes-intro#s08-c01"
+      ],
+      "expected_answer_summary": "ساختار + توابع عضو + کنترل دسترسی؛ پایه شیءگرایی."
+    },
+    {
+      "item_id": "CPP-008",
+      "question": "سازنده (constructor) در ++C چیست و کی اجرا می‌شود؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "cpp-notes-intro#s09-c01"
+      ],
+      "expected_answer_summary": "تابع ویژه همنام کلاس که هنگام ساخته شدن شیء خودکار اجرا می‌شود."
+    },
+    {
+      "item_id": "CPP-009",
+      "question": "std::vector در ++C چیست و در کدام سرآیند تعریف می‌شود؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "cppref-cpp-vector#s02-c01"
+      ],
+      "expected_answer_summary": "کانتینر دنباله آرایه‌ای پویا؛ تعریف در سرآیند <vector>."
+    },
+    {
+      "item_id": "CPP-010",
+      "question": "توابع عضو کلاس std::vector کدام‌ها هستند و چه کاری انجام می‌دهند؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "cppref-cpp-vector#s07-c01"
+      ],
+      "expected_answer_summary": "مثل push_back برای افزودن انتها و erase برای حذف، plus سازنده و دسترسی عناصر."
+    },
+    {
+      "item_id": "CPP-011",
+      "question": "چه عملیاتی در std::vector باعث بی‌اعتباری (invalidation) iteratorها می‌شوند؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "cppref-cpp-vector#s05-c01"
+      ],
+      "expected_answer_summary": "جدول عملیات و موارد بی‌اعتبارسازی: درج/حذف انجام‌دهنده، هیچ‌گز swap نه."
+    },
+    {
+      "item_id": "CPP-012",
+      "question": "مقدار ثابت std::string::npos در ++C چیست؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "cppref-cpp-string#s06-c01"
+      ],
+      "expected_answer_summary": "npos همانی size_type(-1) است؛ مقدار ویژه برای عدم پیدا شدن جستجو."
+    },
+    {
+      "item_id": "CPP-013",
+      "question": "operator+ در std::string چه می‌کند؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "cppref-cpp-string#s08-c01"
+      ],
+      "expected_answer_summary": "الحاق دو رشته، رشته و حرف، یا رشته و رشته C."
+    },
+    {
+      "item_id": "CPP-014",
+      "question": "چرا نام std::cout حرف c را در خود دارد و چه معنایی دارد؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "cppref-cpp-cout#s03-c01"
+      ],
+      "expected_answer_summary": "c برای character است؛ cout یعنی خروجی کاراکتری."
+    },
+    {
+      "item_id": "CPP-015",
+      "question": "تعریف پیش‌روید (forward declaration) کلاس در ++C چیست و کی به‌کار می‌رود؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "cppref-cpp-class#s04-c01"
+      ],
+      "expected_answer_summary": "اعلام نام کلاس بدون تعریف بدنه برای اشاره‌گر/مرجع پیش از تعریف کامل."
+    },
+    {
+      "item_id": "CPP-016",
+      "question": "کلیدواژه auto در تعریف متغیر در ++C چگونه نوع را استنباط می‌کند؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "cppref-cpp-auto#s07-c01"
+      ],
+      "expected_answer_summary": "نوع از مقداردهنده استنباط می‌شود (بدنه قواعد deduced از initializer)."
+    },
+    {
+      "item_id": "CPP-017",
+      "question": "حلقه range-based for در ++C چه سینتکسی دارد؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "cppref-cpp-range-for#s03-c01"
+      ],
+      "expected_answer_summary": "for (init-statement اختیاری؛ item-declaration : range-expression)."
+    },
+    {
+      "item_id": "CPP-018",
+      "question": "operator= (عملگر انتساب) در ++C چه ویژگی‌های خاصی دارد؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "cppref-cpp-operators#s08-c01"
+      ],
+      "expected_answer_summary": "قواعد ویژه انتساب — ارجاع به صفحه copy assignment برای جزئیات."
+    },
+    {
+      "item_id": "CPP-019",
+      "question": "سربارگذاری operator<< برای چاپ نوع سفارشی روی استریم چگونه است؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "cppref-cpp-operators#s09-c01"
+      ],
+      "expected_answer_summary": "سربارهای operator<< با std::ostream& برای درج در استریم خروجی."
+    },
+    {
+      "item_id": "CPP-020",
+      "question": "سازنده یک‌جانشین (delegating constructor) در ++C چیست؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "cppref-cpp-constructor#s07-c01"
+      ],
+      "expected_answer_summary": "سازنده‌ای که سازنده دیگری از همان کلاس را به نام کلاس فراخوانی می‌کند (since C++11)."
+    },
+    {
+      "item_id": "CPP-M01",
+      "question": "سربارگذاری توابع در ++C چگونه با قانون بهترین تابع (overload resolution) به بهترین فراخوانی می‌رسد؟",
+      "qtype": "mixed",
+      "expected_source_ids": [
+        "cpp-notes-intro#s07-c01",
+        "cppref-cpp-overload#s02-c01"
+      ],
+      "expected_answer_summary": "از تاکتیک همنامی به قواعد نامزد/زیبای نهایی در overload resolution."
+    },
+    {
+      "item_id": "CPP-M02",
+      "question": "چگونه برای نوع سفارشی operator<< بنویسیم تا با std::cout چاپ شود؟",
+      "qtype": "mixed",
+      "expected_source_ids": [
+        "cppref-cpp-cout#s02-c01",
+        "cppref-cpp-operators#s09-c01"
+      ],
+      "expected_answer_summary": "cout یک ostream است؛ سربار operator<< با std::ostream& برای نوع سفارشی."
+    },
+    {
+      "item_id": "CPP-M03",
+      "question": "کلاس در ++C با سازنده و فهرست مقداردهی اعضا (member initializer list) چگونه تعریف و مقداردهی می‌شود؟",
+      "qtype": "mixed",
+      "expected_source_ids": [
+        "cpp-notes-intro#s08-c01",
+        "cppref-cpp-constructor#s04-c01"
+      ],
+      "expected_answer_summary": "بدنه کلاس + سازنده با فهرست مقداردهی اعضا پیش از ورود به بدنه."
+    },
+    {
+      "item_id": "CPP-M04",
+      "question": "پیمایش std::vector با حلقه range-based for در ++C چگونه است؟",
+      "qtype": "mixed",
+      "expected_source_ids": [
+        "cppref-cpp-vector#s02-c01",
+        "cppref-cpp-range-for#s08-c01"
+      ],
+      "expected_answer_summary": "vector کانتینر پیمایش‌پذیر است و نمونه range-for روی vector برای چاپ عناصر."
+    },
+    {
+      "item_id": "CPP-M05",
+      "question": "تفاوت ارجاع (reference) در ++C و اشاره‌گر (pointer) در C چیست؟",
+      "qtype": "mixed",
+      "expected_source_ids": [
+        "cpp-notes-intro#s04-c01",
+        "cppref-cpp-reference#s02-c01"
+      ],
+      "expected_answer_summary": "مرجع نام مستعار بدون ری‌اتصال، بر خلاف اشاره‌گر آزاد C."
+    },
+    {
+      "item_id": "CPP-O01",
+      "question": "چگونه در پایتون دو دیکشنری را ادغام کنیم؟",
+      "qtype": "out-of-corpus",
+      "expected_source_ids": [],
+      "expected_answer_summary": "خارج از کورپوس: انتظار abstain."
+    },
+    {
+      "item_id": "CPP-O02",
+      "question": "بهترین مسیر سفر از تهران به شیراز با قطار کدام است؟",
+      "qtype": "out-of-corpus",
+      "expected_source_ids": [],
+      "expected_answer_summary": "خارج از کورپوس: انتظار abstain."
+    },
+    {
+      "item_id": "CPP-O03",
+      "question": "چگونه در تصادفی‌سازی وزن‌ها به برآیند احتمال شرطی برسیم؟",
+      "qtype": "out-of-corpus",
+      "expected_source_ids": [],
+      "expected_answer_summary": "خارج از کورپوس: انتظار abstain."
+    },
+    {
+      "item_id": "CPP-O04",
+      "question": "چگونه با Flask یک رابط وب در پایتون کامل کنیم؟",
+      "qtype": "out-of-corpus",
+      "expected_source_ids": [],
+      "expected_answer_summary": "خارج از کورپوس: انتظار abstain."
+    },
+    {
+      "item_id": "CPP-O05",
+      "question": "الگوریتم RSA و قواعد امضای دیجیتال چیست؟",
+      "qtype": "out-of-corpus",
+      "expected_source_ids": [],
+      "expected_answer_summary": "خارج از کورپوس: انتظار abstain."
+    }
+  ]
+}
