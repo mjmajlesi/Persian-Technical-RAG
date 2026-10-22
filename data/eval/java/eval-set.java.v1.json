@@ -1,0 +1,271 @@
+{
+  "version": "java-v1",
+  "notes": "Java pack eval set (authored in T023): 30 items in the 20/5/5 split (in-corpus/mixed/out-of-corpus) with Persian questions. Expected source ids resolve to real chunk_ids of the java pack index (Oracle Java Tutorials; reference-only corpus documented tradeoff per FR-007). Out-of-corpus ids empty; those items must abstain. Validated at authoring time in T023.",
+  "items": [
+    {
+      "item_id": "JV-001",
+      "question": "قواعد نام‌گذاری متغیرها در جاوا چیست؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "javaref-variables#s03-c01"
+      ],
+      "expected_answer_summary": "قواعد نام‌گذاری و توافق‌نامه‌های رایج در جاوا."
+    },
+    {
+      "item_id": "JV-002",
+      "question": "عملگرهای جاوا کدام‌ها هستند و چگونه استفاده می‌شوند؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "javaref-operators#s02-c01"
+      ],
+      "expected_answer_summary": "عملگرهای حسابی/منطقی و تقدم آن‌ها در عبارات."
+    },
+    {
+      "item_id": "JV-003",
+      "question": "آرایه در جاوا چیست؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "javaref-arrays#s02-c01"
+      ],
+      "expected_answer_summary": "شیء نگهدارندهٔ تعداد ثابتی از مقادیر هم‌نوع."
+    },
+    {
+      "item_id": "JV-004",
+      "question": "چگونه در جاوا با new آرایه بسازیم و به عناصر آن دسترسی بگیریم؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "javaref-arrays#s04-c01"
+      ],
+      "expected_answer_summary": "ساخت با new + اندیس‌گیری از ۰ تا length-1."
+    },
+    {
+      "item_id": "JV-005",
+      "question": "کپی آرایه در جاوا چگونه انجام می‌شود (arraycopy)؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "javaref-arrays#s05-c01"
+      ],
+      "expected_answer_summary": "System.arraycopy برای کپی کارآمد بین آرایه‌ها."
+    },
+    {
+      "item_id": "JV-006",
+      "question": "دستور if-then-else در جاوا چگونه کار می‌کند؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "javaref-if#s03-c01"
+      ],
+      "expected_answer_summary": "مسیر ثانویهٔ اجرا وقتی شرط برقرار نباشد."
+    },
+    {
+      "item_id": "JV-007",
+      "question": "حلقه for در جاوا چگونه کار می‌کند؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "javaref-for#s02-c01"
+      ],
+      "expected_answer_summary": "«کمپکت» برای پیمایش بازهٔ مقادیر؛ init/condition/update."
+    },
+    {
+      "item_id": "JV-008",
+      "question": "شیء (object) در جاوا چیست؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "javaref-oop-concepts#s03-c01"
+      ],
+      "expected_answer_summary": "بستهٔ نرم‌افزاری از حالت (state) و رفتار (behavior)."
+    },
+    {
+      "item_id": "JV-009",
+      "question": "کلاس در جاوا چیست؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "javaref-oop-concepts#s04-c01"
+      ],
+      "expected_answer_summary": "نقشهٔ اولیه/پروتوتایپ ساخت اشیاء."
+    },
+    {
+      "item_id": "JV-010",
+      "question": "مفهوم وراثت (inheritance) در جاوا چیست؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "javaref-oop-concepts#s05-c01"
+      ],
+      "expected_answer_summary": "سازوکار سازمان‌دهی کلاس‌ها بر پایهٔ پدر-فرزند و باز استفاده."
+    },
+    {
+      "item_id": "JV-011",
+      "question": "interface در جاوا چیست؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "javaref-oop-concepts#s06-c01"
+      ],
+      "expected_answer_summary": "قرارداد بین کلاس و دنیای بیرون — روش‌های انتزاعی."
+    },
+    {
+      "item_id": "JV-012",
+      "question": "package در جاوا چیست؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "javaref-oop-concepts#s07-c01"
+      ],
+      "expected_answer_summary": "فضای نام سازمان‌دهی کلاس‌ها و interfaceها."
+    },
+    {
+      "item_id": "JV-013",
+      "question": "بدنهٔ تعریف کلاس در جاوا چه اشکالی دارد؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "javaref-classes#s02-c01"
+      ],
+      "expected_answer_summary": "بخش‌های متغیرها/سازنده/متد داخل براکت کلاس."
+    },
+    {
+      "item_id": "JV-014",
+      "question": "زیر کلاس در جاوا چه اعضایی را به ارث می‌برد؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "javaref-subclasses#s05-c01"
+      ],
+      "expected_answer_summary": "همهٔ public و protected کلاس والد هم‌پک."
+    },
+    {
+      "item_id": "JV-015",
+      "question": "اعضای private در کلاس والد و وراثت در جاوا چگونه رفتار می‌کنند؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "javaref-subclasses#s06-c01"
+      ],
+      "expected_answer_summary": "فرزند به private والد دسترسی ندارد، حتی با ارث."
+    },
+    {
+      "item_id": "JV-016",
+      "question": "casting اشیاء در جاوا چگونه کار می‌کند؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "javaref-subclasses#s07-c01"
+      ],
+      "expected_answer_summary": "تبدیل نوع صریح/ضمنی بین سوپکلاس و زیرکلاس (+ ClassCastException)."
+    },
+    {
+      "item_id": "JV-017",
+      "question": "override متد نمونه (instance) در جاوا یعنی چه؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "javaref-override#s02-c01"
+      ],
+      "expected_answer_summary": "متد زیرکلاس با همان هم‌امضا روش والد را بازتعریف می‌کند."
+    },
+    {
+      "item_id": "JV-018",
+      "question": "رشته‌ها در جاوا چگونه ساخته می‌شوند و طولشان چگونه گرفته می‌شود؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "javaref-strings#s04-c01"
+      ],
+      "expected_answer_summary": "ساخت String و روش length() برای گرفتن طول رشته."
+    },
+    {
+      "item_id": "JV-019",
+      "question": "چسباندن رشته‌ها در جاوا چگونه انجام می‌شود؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "javaref-strings#s05-c01"
+      ],
+      "expected_answer_summary": "متد concat و عملگر + برای Additive رشته‌ها."
+    },
+    {
+      "item_id": "JV-020",
+      "question": "چارچوب Collections در جاوا چیست؟",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "javaref-collections-intro#s03-c01"
+      ],
+      "expected_answer_summary": "معماری یکپارچهٔ نمایش و دست‌کاری collectionها."
+    },
+    {
+      "item_id": "JV-M01",
+      "question": "استثنا در جاوا چیست و چگونه با try/catch گرفته می‌شود؟",
+      "qtype": "mixed",
+      "expected_source_ids": [
+        "javaref-exceptions#s02-c01",
+        "javaref-exceptions-handling#s02-c01"
+      ],
+      "expected_answer_summary": "استثنا = رویداد استثنایی؛ سه جزء handler: try/catch/finally."
+    },
+    {
+      "item_id": "JV-M02",
+      "question": "خواندن کامل فایل در جاوا چگونه است (ReadAllLines و newBufferedReader)؟",
+      "qtype": "mixed",
+      "expected_source_ids": [
+        "javaref-fileio#s04-c01",
+        "javaref-fileio#s07-c01"
+      ],
+      "expected_answer_summary": "Files.readAllLines برای فایل کوچک؛ buffered stream برای اندازه‌های بزرگ."
+    },
+    {
+      "item_id": "JV-M03",
+      "question": "تعریف یک interface در جاوا چگونه است و متدهای آن چگونه inherit می‌شوند؟",
+      "qtype": "mixed",
+      "expected_source_ids": [
+        "javaref-interface-def#s02-c01",
+        "javaref-override#s04-c01"
+      ],
+      "expected_answer_summary": "شناسه‌ها + interface؛ ارث متدهای abstract/default و کاربرد super."
+    },
+    {
+      "item_id": "JV-M04",
+      "question": "ساخت و فرمت رشته‌ها در جاوا چگونه است (String و printf/format)؟",
+      "qtype": "mixed",
+      "expected_source_ids": [
+        "javaref-strings#s02-c01",
+        "javaref-strings#s06-c01"
+      ],
+      "expected_answer_summary": "String دنبالهٔ کاراکترهاش؛ printf() و format() برای ساخت رشتهٔ فرمت‌شده."
+    },
+    {
+      "item_id": "JV-M05",
+      "question": "وراثت در جاوا کی بکار می‌رود و زیر کلاس دقیقاً چه انجام می‌دهد؟",
+      "qtype": "mixed",
+      "expected_source_ids": [
+        "javaref-oop-concepts#s05-c01",
+        "javaref-subclasses#s05-c01"
+      ],
+      "expected_answer_summary": "هیئت سازمان‌دهی کلاس‌ها؛ چیزی که فرزند به ارث می‌برد و می‌تواند انجام دهد."
+    },
+    {
+      "item_id": "JV-O01",
+      "question": "چگونه در جاوا با JPA به دیتابیس وصل شویم؟",
+      "qtype": "out-of-corpus",
+      "expected_source_ids": [],
+      "expected_answer_summary": "خارج از کورپوس: انتظار abstain."
+    },
+    {
+      "item_id": "JV-O02",
+      "question": "چگونه در Spring Boot یک رابط وب بسازیم؟",
+      "qtype": "out-of-corpus",
+      "expected_source_ids": [],
+      "expected_answer_summary": "خارج از کورپوس: انتظار abstain."
+    },
+    {
+      "item_id": "JV-O03",
+      "question": "چگونه با Maven وابستگی‌های پروژه را مدیریت کنیم؟",
+      "qtype": "out-of-corpus",
+      "expected_source_ids": [],
+      "expected_answer_summary": "خارج از کورپوس: انتظار abstain."
+    },
+    {
+      "item_id": "JV-O04",
+      "question": "قواعد دیفرانسیل و انتگرال چیست؟",
+      "qtype": "out-of-corpus",
+      "expected_source_ids": [],
+      "expected_answer_summary": "خارج از کورپوس: انتظار abstain."
+    },
+    {
+      "item_id": "JV-O05",
+      "question": "دستور درست کردن کیک شکلاتی چیست؟",
+      "qtype": "out-of-corpus",
+      "expected_source_ids": [],
+      "expected_answer_summary": "خارج از کورپوس: انتظار abstain."
+    }
+  ]
+}
