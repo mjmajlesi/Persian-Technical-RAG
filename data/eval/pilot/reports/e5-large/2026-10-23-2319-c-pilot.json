@@ -1,0 +1,155 @@
+{
+  "model_key": "e5-large",
+  "language_id": "c",
+  "eval_set_version": "c-pilot",
+  "mode": "retrieval-only",
+  "calibration": {
+    "threshold": 0.808958888053894,
+    "v1_hashes": {
+      "c": "55a69ac80a2e7bc1db11aae2ded7c346b5372ebeba9619f7e9cfd181b3083e88",
+      "cpp": "087cf8a163563bfa9765b769e939b08622d10efed43f825646ba67291a01f533",
+      "python": "a4b364891578dd9023a70994d2e351fce5c83b0eb5fe7f2b7ef7a388b2b3f22a",
+      "java": "60d015014299f3d29d8e42cda61d78b5aa3a560a1881799aff7dafbd3ded3725"
+    }
+  },
+  "retrieval": {
+    "status": "complete",
+    "error_count": 0,
+    "rows": [
+      {
+        "item_id": "C-P01",
+        "qtype": "in-corpus",
+        "top1_score": 0.8470026254653931,
+        "top5_ids": [
+          "fa-preprocessor#s08-c01",
+          "fa-functions#s14-c01",
+          "fa-preprocessor#s02-c01",
+          "fa-preprocessor#s12-c01",
+          "fa-arrays#s07-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "C-P02",
+        "qtype": "in-corpus",
+        "top1_score": 0.8632177114486694,
+        "top5_ids": [
+          "fa-functions#s05-c01",
+          "fa-functions#s06-c01",
+          "fa-functions#s18-c01",
+          "fa-io-formatting#s07-c01",
+          "fa-pointers#s06-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "C-P03",
+        "qtype": "in-corpus",
+        "top1_score": 0.8319582343101501,
+        "top5_ids": [
+          "fa-arrays#s03-c01",
+          "fa-structs-unions-enums#s13-c01",
+          "fa-structs-unions-enums#s07-c01",
+          "fa-vars-types-operators#s10-c01",
+          "fa-vars-types-operators#s23-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "C-P04",
+        "qtype": "in-corpus",
+        "top1_score": 0.851311206817627,
+        "top5_ids": [
+          "fa-appendix-numbers#s06-c01",
+          "fa-appendix-numbers#s05-c01",
+          "fa-strings#s08-c01",
+          "fa-vars-types-operators#s05-c01",
+          "fa-preprocessor#s07-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "C-P05",
+        "qtype": "in-corpus",
+        "top1_score": 0.8634533882141113,
+        "top5_ids": [
+          "fa-functions#s18-c01",
+          "fa-selection-iteration#s08-c01",
+          "fa-selection-iteration#s09-c01",
+          "fa-functions#s08-c01",
+          "fa-selection-iteration#s17-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "C-P06",
+        "qtype": "mixed",
+        "top1_score": 0.8559512495994568,
+        "top5_ids": [
+          "fa-functions#s19-c01",
+          "fa-io-formatting#s14-c01",
+          "fa-pointers#s10-c01",
+          "fa-files#s11-c01",
+          "fa-arrays#s07-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "C-P07",
+        "qtype": "mixed",
+        "top1_score": 0.881554365158081,
+        "top5_ids": [
+          "cppref-fseek#s02-c01",
+          "cppref-fseek#s03-c01",
+          "fa-files#s10-c01",
+          "fa-files#s09-c01",
+          "cppref-fseek#s05-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "C-P08",
+        "qtype": "out-of-corpus",
+        "top1_score": 0.8140697479248047,
+        "top5_ids": [
+          "fa-dynamic-memory#s03-c01",
+          "fa-dynamic-memory#s08-c01",
+          "fa-vars-types-operators#s10-c01",
+          "fa-vars-types-operators#s15-c01",
+          "fa-functions#s09-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "C-P09",
+        "qtype": "out-of-corpus",
+        "top1_score": 0.8051322102546692,
+        "top5_ids": [
+          "fa-io-formatting#s10-c01",
+          "fa-functions#s14-c01",
+          "fa-dynamic-memory#s14-c01",
+          "fa-selection-iteration#s05-c01",
+          "fa-functions#s07-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": true
+      }
+    ]
+  },
+  "end_to_end": {
+    "status": "not_run",
+    "error_count": 0,
+    "rows": [],
+    "reasons": [],
+    "expected_response_model": null
+  },
+  "error_count": 0
+}

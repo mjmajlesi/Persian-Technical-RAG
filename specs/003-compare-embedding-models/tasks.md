@@ -57,7 +57,7 @@
   - CHECKPOINT: STOP → report both modes and unchanged student-facing flow → wait for explicit «تایید» before T017.
 - [X] T017 Author exactly **9 new C pilot questions** for `e5-large` in `data/eval/pilot/eval-set.c.pilot.json` (5 in-corpus, 2 mixed, 2 out-of-corpus). Do not copy chunk/v1 wording. Give every answerable item real `expected_source_ids`, a grounded answer summary, source/license provenance; OOC items need empty IDs and an abstention reason. Exclude pilot items from both v2 and calibration.
   - CHECKPOINT: STOP → report 9 IDs, 5/2/2 counts, source validity, and non-copied examples for user review → wait for explicit «تایید» before T018.
-- [ ] T018 Run the full `e5-large × c` pilot in retrieval-only and E2E modes on `data/eval/pilot/eval-set.c.pilot.json`. Record index/cache, pooled-v1 gate, hit@5, gate decision, pack-internal citations, LLM metadata, time/cost, and errors in `specs/003-compare-embedding-models/pilot-results.md`. If E2E is incomplete due to identity/temperature/rate limit, **STOP before authoring 180 questions** and request user direction; never use pilot for v2/calibration.
+- [X] T018 Run the full `e5-large × c` pilot in retrieval-only and E2E modes on `data/eval/pilot/eval-set.c.pilot.json`. Record index/cache, pooled-v1 gate, hit@5, gate decision, pack-internal citations, LLM metadata, time/cost, and errors in `specs/003-compare-embedding-models/pilot-results.md`. If E2E is incomplete due to identity/temperature/rate limit, **STOP before authoring 180 questions** and request user direction; never use pilot for v2/calibration.
   - CHECKPOINT: STOP → report all 9 rows and an explicit healthy/blocked pilot verdict → wait for explicit «تایید» before T019. **No v2 questions before this approval.**
 
 ---
