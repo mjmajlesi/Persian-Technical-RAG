@@ -22,7 +22,7 @@
   - CHECKPOINT: STOP → report contract/quickstart changes and link/consistency checks → wait for explicit «تایید» before T003.
 - [X] T003 Write FAIL-first `ModelCandidate` contract tests in `tests/unit/test_model_config.py`: three pinned SHA/license/model-card entries; dimensions 1024/768/1024; E5 prefixes vs instruction-free BGE-M3; normalization and max_tokens 512/512/8192. Reject unknown models and floating revisions. Run only these tests and record failures caused by missing implementation.
   - CHECKPOINT: STOP → report test cases and expected failures → wait for explicit «تایید» before T004.
-- [ ] T004 Add the pinned registry in `data/eval/model-comparison/models.json` and minimal loading/validation in `src/index/model_config.py`. Keep `e5-large` as the default; verify the SHAs, MIT licenses, prefixes, normalization, dimensions, and max_tokens against [the contract](./contracts/model-config.md). Never load a floating `main` revision. Make T003 pass. Principles III/VI.
+- [X] T004 Add the pinned registry in `data/eval/model-comparison/models.json` and minimal loading/validation in `src/index/model_config.py`. Keep `e5-large` as the default; verify the SHAs, MIT licenses, prefixes, normalization, dimensions, and max_tokens against [the contract](./contracts/model-config.md). Never load a floating `main` revision. Make T003 pass. Principles III/VI.
   - CHECKPOINT: STOP → report registry contents and passing T003 tests → wait for explicit «تایید» before T005.
 
 ---

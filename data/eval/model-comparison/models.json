@@ -1,0 +1,40 @@
+{
+  "models": [
+    {
+      "model_key": "e5-large",
+      "repository": "intfloat/multilingual-e5-large",
+      "revision_sha": "3d7cfbdacd47fdda877c5cd8a79fbcc4f2a574f3",
+      "license": "MIT",
+      "model_card_url": "https://huggingface.co/intfloat/multilingual-e5-large",
+      "dimension": 1024,
+      "query_prefix": "query: ",
+      "passage_prefix": "passage: ",
+      "normalize": true,
+      "max_tokens": 512
+    },
+    {
+      "model_key": "e5-base",
+      "repository": "intfloat/multilingual-e5-base",
+      "revision_sha": "d128750597153bb5987e10b1c3493a34e5a4502a",
+      "license": "MIT",
+      "model_card_url": "https://huggingface.co/intfloat/multilingual-e5-base",
+      "dimension": 768,
+      "query_prefix": "query: ",
+      "passage_prefix": "passage: ",
+      "normalize": true,
+      "max_tokens": 512
+    },
+    {
+      "model_key": "bge-m3",
+      "repository": "BAAI/bge-m3",
+      "revision_sha": "5617a9f61b028005a4858fdac845db406aefb181",
+      "license": "MIT",
+      "model_card_url": "https://huggingface.co/BAAI/bge-m3",
+      "dimension": 1024,
+      "query_prefix": "",
+      "passage_prefix": "",
+      "normalize": true,
+      "max_tokens": 8192
+    }
+  ]
+}
