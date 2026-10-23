@@ -6,7 +6,7 @@
 
 ## Mandatory execution protocol: checkpoint after EVERY task
 
-> After completing one `Txxx`: **STOP**. **REPORT IN PERSIAN** the files created/changed, verification command and result, errors/deviations, and constitutional impact. Then **WAIT** for the user's explicit «تایید» before starting the next task—even one marked `[P]`. If the pilot or E2E run is incomplete because of LLM identity, temperature, rate limiting, or another error, do not claim success; stop and ask the user how to proceed. Commit each task after its approval; push only on explicit request. Before a commit, inspect staged files and scan for `.env`, credentials, embedding caches, and FAISS binaries.
+> After completing one `Txxx`: **STOP**. **REPORT IN PERSIAN** the files created/changed, verification command and result, errors/deviations, and constitutional impact. Then **WAIT** for the user's explicit «تایید» before starting the next task—even one marked `[P]`. If the pilot or E2E run is incomplete because of LLM identity, temperature, rate limiting, or another error, do not claim success; stop and ask the user how to proceed. Commit each task after its approval; push only on explicit request. Before a commit, inspect staged files and scan for `.env`, credentials, embedding caches, and FAISS binaries. **Every file—especially Persian JSON—must be written with `encoding="utf-8"` and then read back and verified before the task is reported complete.**
 
 **Format**: `- [ ] Txxx [P?] [US?] Action with exact file path`. `[P]` denotes technical independence, **not** permission to bypass the checkpoint. Complete and verify one task per turn; split a task further only with user approval.
 
