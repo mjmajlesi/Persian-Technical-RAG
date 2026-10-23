@@ -92,6 +92,10 @@ def test_retrieval_only_zero_llm_and_same_research_top5_as_e2e(tmp_path, monkeyp
     assert e2e["end_to_end"]["rows"][1]["response_type"] == "abstain"
     assert e2e["end_to_end"]["rows"][2]["response_type"] == "abstain"
     assert e2e["end_to_end"]["rows"][0]["response_type"] == "answer"
+    assert e2e["end_to_end"]["rows"][1]["llm_metadata"] is None
+    meta = e2e["end_to_end"]["rows"][0]["llm_metadata"]
+    assert meta["model"] == "response-model-2026" and meta["temperature"] == 0
+    assert len(meta["prompt_sha256"]) == 64
     assert len(calls["llm"]) == 2  # gate stops the marginal item before provider
     assert e2e["calibration"]["threshold"] == GATE
 
@@ -104,6 +108,34 @@ def test_provider_identity_failure_keeps_retrieval_but_not_e2e(tmp_path, monkeyp
     assert result["end_to_end"]["status"] == "incomplete"
     assert result["end_to_end"]["error_count"] > 0
     assert not result["end_to_end"].get("final_metrics")
+
+
+def test_missing_pre_registered_id_never_calls_provider(tmp_path, monkeypatch):
+    path, calls = _fixture(tmp_path, monkeypatch)
+    monkeypatch.delenv("LLM_EXPECTED_RESPONSE_MODEL")
+    monkeypatch.setattr(run, "load_dotenv", lambda: None)
+    result = _research(path, "end-to-end")
+    assert result["retrieval"]["status"] == "complete"
+    assert result["end_to_end"]["status"] == "incomplete"
+    assert result["end_to_end"]["error_count"] > 0
+    assert calls["llm"] == []
+
+
+def test_incomplete_official_report_keeps_retrieval_and_reasons(tmp_path, monkeypatch):
+    path, _ = _fixture(tmp_path, monkeypatch, identity_ok=False)
+    result = _research(path, "end-to-end")
+    json_path, _ = run.write_reports(result, str(tmp_path / "reports"))
+    official = json.loads(Path(json_path).read_text(encoding="utf-8"))
+    assert len(official["retrieval"]["rows"]) == 3
+    assert official["end_to_end"]["status"] == "incomplete"
+    assert official["end_to_end"]["error_count"] > 0
+    assert official["end_to_end"]["reasons"]
+    assert "rows" not in official["end_to_end"]
+    assert "final_metrics" not in official["end_to_end"]
+    diagnostics = json.loads(next((tmp_path / "reports").glob("*.diagnostics.json"))
+                             .read_text(encoding="utf-8"))
+    assert diagnostics["status"] == "diagnostics-only"
+    assert diagnostics["end_to_end_rows"] == result["end_to_end"]["rows"]
 
 
 def test_research_cli_selects_model_pack_and_retrieval_mode(tmp_path, monkeypatch):

@@ -105,6 +105,13 @@ def _fabrication_abstain(pack, chunks, threshold: float) -> dict:
 
 @app.post("/api/ask")
 def ask(request: AskRequest) -> dict:
+    return _ask(request)
+
+
+def _ask(request: AskRequest, *, retriever: Retriever | None = None,
+         threshold: float | None = None, provider: LLMProvider | None = None,
+         retrieved_chunks: list[dict] | None = None) -> dict:
+    """Shared student/research answer path; defaults preserve the web behavior."""
     if not request.question.strip():
         raise HTTPException(status_code=422, detail=EMPTY_QUESTION_MESSAGE)
     question = request.question.strip()
@@ -132,8 +139,12 @@ def ask(request: AskRequest) -> dict:
     # threshold BEFORE touching the LLM: low scores abstain immediately,
     # so out-of-domain questions cost zero LLM calls/credit. 002-T009: the
     # gate value is per-pack (pack_config) after the language resolves.
-    threshold = pack_config.threshold_for(pack.language_id)
-    chunks = get_retriever(pack.language_id).retrieve(question, k=request.top_k)
+    if threshold is None:
+        threshold = pack_config.threshold_for(pack.language_id)
+    if retriever is None:
+        retriever = get_retriever(pack.language_id)
+    chunks = (retrieved_chunks if retrieved_chunks is not None else
+              retriever.retrieve(question, k=request.top_k))
     if not chunks:
         payload = abstain.decide([], 0.0, llm_insufficient=True, threshold=threshold)
         return {"type": "abstain", **payload}
@@ -143,17 +154,17 @@ def ask(request: AskRequest) -> dict:
     )
     if gated is not None:
         return {"type": "abstain", "language_id": pack.language_id, **gated}
-    try:
-        provider = get_provider()
-    except ProviderError:
-        raise HTTPException(status_code=500, detail=LLM_NOT_CONFIGURED_MESSAGE)
+    if provider is None:
+        try:
+            provider = get_provider()
+        except ProviderError:
+            raise HTTPException(status_code=500, detail=LLM_NOT_CONFIGURED_MESSAGE)
     try:
         # 002-T017: pack-scoped citation validation wraps the whole answer
         # path. compose_answer already rejects ids absent from the RECEIVED
         # chunks (AnswerError = fabrication); here a fabricator that slips
         # past that layer still cannot cite anything outside the SELECTED
         # pack's index — foreign ids abstain instead of answering.
-        retriever = get_retriever(pack.language_id)
         result = compose_answer(question, chunks, provider)
         cited = [c["chunk_id"] for c in result.get("citations", [])]
         if cited and not all(retriever.has_chunk(cid) for cid in cited):
