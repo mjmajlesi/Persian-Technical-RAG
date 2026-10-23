@@ -1,0 +1,850 @@
+{
+  "version": "c-v2",
+  "pack_id": "c",
+  "snapshot": "2026-09-23",
+  "notes": "Incomplete draft: 28 new in-corpus questions only. Pending user review; 10 mixed and 7 OOC items are T022. Never score as a complete v2 set.",
+  "items": [
+    {
+      "item_id": "C2-001",
+      "question": "در نام‌گذاری متغیرهای سی، آیا نامی که با رقم شروع می‌شود پذیرفته است و تغییر بزرگیِ حروف چه اثری بر شناسه دارد؟",
+      "expected_answer_summary": "شناسه نمی‌تواند با رقم آغاز شود؛ حروف بزرگ و کوچک متمایزند، پس دو نام که فقط در بزرگی حرف فرق دارند شناسه‌های جدا هستند.",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "fa-vars-types-operators#s02-c01"
+      ],
+      "evidence_language": "mixed",
+      "provenance": [
+        {
+          "source_id": "fa-vars-types-operators",
+          "chunk_id": "fa-vars-types-operators#s02-c01",
+          "section_heading": "۴.۱ — شناسه‌ها (Identifiers) و قواعد نام‌گذاری",
+          "title": "فصل ۴: متغیرها، انواع داده و عملگرها",
+          "origin": "data/corpus/c/c-notes-ch01-variables-types-operators.md",
+          "snapshot": "2026-09-23",
+          "license": "owner-authored study notes (project owner)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-23",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_id": "c",
+      "version": "c-v2"
+    },
+    {
+      "item_id": "C2-002",
+      "question": "اگر شمارنده در آغاز ۸ باشد و نتیجهٔ افزایشِ پسوندی را در متغیر دیگری بریزیم، مقدار هر کدام پس از این دستور چیست؟",
+      "expected_answer_summary": "افزایش پسوندی مقدار قدیمی ۸ را به متغیر دوم می‌دهد و سپس شمارنده به ۹ افزایش می‌یابد؛ از ترکیب چند تغییر همان متغیر در یک عبارت باید پرهیز کرد.",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "fa-vars-types-operators#s14-c01"
+      ],
+      "evidence_language": "mixed",
+      "provenance": [
+        {
+          "source_id": "fa-vars-types-operators",
+          "chunk_id": "fa-vars-types-operators#s14-c01",
+          "section_heading": "++ و −− : پیشوند vs پسوند ⭐⭐",
+          "title": "فصل ۴: متغیرها، انواع داده و عملگرها",
+          "origin": "data/corpus/c/c-notes-ch01-variables-types-operators.md",
+          "snapshot": "2026-09-23",
+          "license": "owner-authored study notes (project owner)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-23",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_id": "c",
+      "version": "c-v2"
+    },
+    {
+      "item_id": "C2-003",
+      "question": "وقتی سوی نخستِ «و منطقی» نادرست باشد، آیا سوی دوم که شمارنده‌ای را تغییر می‌دهد اجرا خواهد شد؟",
+      "expected_answer_summary": "خیر؛ در ارزیابی اتصال‌کوتاهِ و منطقی، با نادرست بودن عملوند نخست، عملوند دوم اصلاً ارزیابی نمی‌شود و شمارنده تغییر نمی‌کند.",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "fa-vars-types-operators#s17-c01"
+      ],
+      "evidence_language": "mixed",
+      "provenance": [
+        {
+          "source_id": "fa-vars-types-operators",
+          "chunk_id": "fa-vars-types-operators#s17-c01",
+          "section_heading": "ارزیابی اتصال‌کوتاه (Short-Circuit Evaluation) ⭐⭐⭐",
+          "title": "فصل ۴: متغیرها، انواع داده و عملگرها",
+          "origin": "data/corpus/c/c-notes-ch01-variables-types-operators.md",
+          "snapshot": "2026-09-23",
+          "license": "owner-authored study notes (project owner)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-23",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_id": "c",
+      "version": "c-v2"
+    },
+    {
+      "item_id": "C2-004",
+      "question": "تبدیل صریحِ مقدار اعشاریِ منفیِ ۸٫۹ به عدد صحیح در سی چه نتیجه‌ای می‌دهد و جهتِ حذفِ کسر کدام است؟",
+      "expected_answer_summary": "نتیجه منفیِ ۸ است؛ تبدیل اعشاری به صحیح بخش کسری را به‌سمت صفر حذف می‌کند و مانند گرد کردن به نزدیک‌ترین عدد نیست.",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "fa-vars-types-operators#s19-c01"
+      ],
+      "evidence_language": "mixed",
+      "provenance": [
+        {
+          "source_id": "fa-vars-types-operators",
+          "chunk_id": "fa-vars-types-operators#s19-c01",
+          "section_heading": "ب) تبدیل صریح (Explicit — Cast)",
+          "title": "فصل ۴: متغیرها، انواع داده و عملگرها",
+          "origin": "data/corpus/c/c-notes-ch01-variables-types-operators.md",
+          "snapshot": "2026-09-23",
+          "license": "owner-authored study notes (project owner)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-23",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_id": "c",
+      "version": "c-v2"
+    },
+    {
+      "item_id": "C2-005",
+      "question": "برای چاپ عددی چهاررقمی در میدانی با عرض حداقل دو خانه، آیا رقم‌های اضافه بریده می‌شوند یا عدد کامل نمایش داده می‌شود؟",
+      "expected_answer_summary": "عرض میدان حداقل فضا را تعیین می‌کند، نه سقف خروجی؛ عدد چهاررقمی کامل چاپ می‌شود و هیچ رقمی برش نمی‌خورد.",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "fa-io-formatting#s05-c01"
+      ],
+      "evidence_language": "mixed",
+      "provenance": [
+        {
+          "source_id": "fa-io-formatting",
+          "chunk_id": "fa-io-formatting#s05-c01",
+          "section_heading": "۵.۲ — عرض میدان (Field Width)",
+          "title": "فصل ۵: قالب‌بندی ورودی و خروجی",
+          "origin": "data/corpus/c/c-notes-ch02-io-formatting.md",
+          "snapshot": "2026-09-23",
+          "license": "owner-authored study notes (project owner)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-23",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_id": "c",
+      "version": "c-v2"
+    },
+    {
+      "item_id": "C2-006",
+      "question": "در قالب‌بندی خروجی، دقتِ سه‌تایی برای یک رشتهٔ بلند چه می‌کند و معنای آن نسبت به دقتِ عدد اعشاری چه فرقی دارد؟",
+      "expected_answer_summary": "برای رشته حداکثر سه نویسهٔ نخست چاپ می‌شود؛ برای مقدار اعشاری، دقت تعداد رقم‌های پس از ممیز را مشخص می‌کند و گرد کردن می‌تواند رخ دهد.",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "fa-io-formatting#s06-c01"
+      ],
+      "evidence_language": "mixed",
+      "provenance": [
+        {
+          "source_id": "fa-io-formatting",
+          "chunk_id": "fa-io-formatting#s06-c01",
+          "section_heading": "۵.۳ — دقت (Precision)",
+          "title": "فصل ۵: قالب‌بندی ورودی و خروجی",
+          "origin": "data/corpus/c/c-notes-ch02-io-formatting.md",
+          "snapshot": "2026-09-23",
+          "license": "owner-authored study notes (project owner)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-23",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_id": "c",
+      "version": "c-v2"
+    },
+    {
+      "item_id": "C2-007",
+      "question": "اگر چاپ موفقِ هفت حرف با یک نویسهٔ پایان خط همراه شود، مقدار بازگشتی تابعِ چاپ چند است و چرا؟",
+      "expected_answer_summary": "هشت است؛ تابع تعداد همهٔ نویسه‌های واقعاً چاپ‌شده را برمی‌گرداند و پایان خط هم یک نویسه شمرده می‌شود.",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "fa-io-formatting#s09-c01"
+      ],
+      "evidence_language": "mixed",
+      "provenance": [
+        {
+          "source_id": "fa-io-formatting",
+          "chunk_id": "fa-io-formatting#s09-c01",
+          "section_heading": "۵.۵ — مقدار برگشتی printf",
+          "title": "فصل ۵: قالب‌بندی ورودی و خروجی",
+          "origin": "data/corpus/c/c-notes-ch02-io-formatting.md",
+          "snapshot": "2026-09-23",
+          "license": "owner-authored study notes (project owner)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-23",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_id": "c",
+      "version": "c-v2"
+    },
+    {
+      "item_id": "C2-008",
+      "question": "اگر در قالب خواندن ورودی، عددِ اول را با مهارِ انتساب کنار بگذاریم، آن عدد در متغیری ذخیره می‌شود یا فقط از ورودی مصرف می‌شود؟",
+      "expected_answer_summary": "عدد اول خوانده و مصرف می‌شود ولی به متغیری انتساب نمی‌یابد؛ مشخص‌کنندهٔ بعدی می‌تواند مقدار بعدی ورودی را ذخیره کند.",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "fa-io-formatting#s12-c01"
+      ],
+      "evidence_language": "mixed",
+      "provenance": [
+        {
+          "source_id": "fa-io-formatting",
+          "chunk_id": "fa-io-formatting#s12-c01",
+          "section_heading": "عرض میدان و مهار انتساب",
+          "title": "فصل ۵: قالب‌بندی ورودی و خروجی",
+          "origin": "data/corpus/c/c-notes-ch02-io-formatting.md",
+          "snapshot": "2026-09-23",
+          "license": "owner-authored study notes (project owner)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-23",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_id": "c",
+      "version": "c-v2"
+    },
+    {
+      "item_id": "C2-009",
+      "question": "در خواندن دو عدد صحیح، اگر دادهٔ اول عدد معتبر و دومی یک حرف باشد، شمار انتساب‌های موفقِ گزارش‌شده چند است؟",
+      "expected_answer_summary": "یک انتساب موفق انجام شده است؛ تابع تعداد مقادیری را می‌دهد که واقعاً تبدیل و ذخیره شدند، نه شمار مشخص‌کننده‌های قالب.",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "fa-io-formatting#s14-c01"
+      ],
+      "evidence_language": "mixed",
+      "provenance": [
+        {
+          "source_id": "fa-io-formatting",
+          "chunk_id": "fa-io-formatting#s14-c01",
+          "section_heading": "مقدار برگشتی scanf — ابزار استحکام برنامه",
+          "title": "فصل ۵: قالب‌بندی ورودی و خروجی",
+          "origin": "data/corpus/c/c-notes-ch02-io-formatting.md",
+          "snapshot": "2026-09-23",
+          "license": "owner-authored study notes (project owner)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-23",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_id": "c",
+      "version": "c-v2"
+    },
+    {
+      "item_id": "C2-010",
+      "question": "در حلقه‌ای که شرط را پس از اجرای بدنه می‌آزماید، اگر شرط از ابتدا نادرست باشد بدنه دست‌کم چند بار اجرا می‌شود؟",
+      "expected_answer_summary": "بدنه یک بار اجرا می‌شود، چون بررسی شرط بعد از نخستین اجرای بدنه است.",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "fa-selection-iteration#s14-c01"
+      ],
+      "evidence_language": "mixed",
+      "provenance": [
+        {
+          "source_id": "fa-selection-iteration",
+          "chunk_id": "fa-selection-iteration#s14-c01",
+          "section_heading": "۶.۷ — حلقه do...while",
+          "title": "فصل ۶: دستورهای انتخاب و تکرار",
+          "origin": "data/corpus/c/c-notes-ch03-selection-iteration.md",
+          "snapshot": "2026-09-23",
+          "license": "owner-authored study notes (project owner)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-23",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_id": "c",
+      "version": "c-v2"
+    },
+    {
+      "item_id": "C2-011",
+      "question": "در حلقهٔ شمارشی، وقتی اجرای بدنه با فرمانِ رفتن به تکرار بعدی قطع شود، آیا مرحلهٔ به‌روزرسانی شمارنده همچنان انجام می‌شود؟",
+      "expected_answer_summary": "بله؛ در حلقهٔ شمارشی، پس از پرش به تکرار بعد، بخش به‌روزرسانی اجرا می‌شود و سپس شرط دوباره بررسی می‌گردد.",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "fa-selection-iteration#s17-c01"
+      ],
+      "evidence_language": "mixed",
+      "provenance": [
+        {
+          "source_id": "fa-selection-iteration",
+          "chunk_id": "fa-selection-iteration#s17-c01",
+          "section_heading": "continue — پرش به تکرار بعدی",
+          "title": "فصل ۶: دستورهای انتخاب و تکرار",
+          "origin": "data/corpus/c/c-notes-ch03-selection-iteration.md",
+          "snapshot": "2026-09-23",
+          "license": "owner-authored study notes (project owner)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-23",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_id": "c",
+      "version": "c-v2"
+    },
+    {
+      "item_id": "C2-012",
+      "question": "متغیری که از نسخهٔ سی ۹۹ به بعد در سرآغاز حلقهٔ شمارشی تعریف می‌شود، پس از پایان حلقه در چه حوزه‌ای قابل استفاده است؟",
+      "expected_answer_summary": "حوزهٔ آن فقط خودِ حلقه است و پس از پایان حلقه بیرون از آن قابل دسترسی نیست.",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "fa-selection-iteration#s13-c01"
+      ],
+      "evidence_language": "mixed",
+      "provenance": [
+        {
+          "source_id": "fa-selection-iteration",
+          "chunk_id": "fa-selection-iteration#s13-c01",
+          "section_heading": "متغیر حلقه در C99",
+          "title": "فصل ۶: دستورهای انتخاب و تکرار",
+          "origin": "data/corpus/c/c-notes-ch03-selection-iteration.md",
+          "snapshot": "2026-09-23",
+          "license": "owner-authored study notes (project owner)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-23",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_id": "c",
+      "version": "c-v2"
+    },
+    {
+      "item_id": "C2-013",
+      "question": "اگر آرایهٔ شش‌عضوی را در زمان تعریف فقط با سه مقدار مقداردهی کنیم، سه خانهٔ باقیمانده چه مقدار می‌گیرند؟",
+      "expected_answer_summary": "در مقداردهی اولیهٔ ناقص، سه عضوِ ذکرنشده خودکار صفر می‌شوند؛ این با آرایهٔ محلیِ بدون هیچ مقداردهی اولیه فرق دارد.",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "fa-arrays#s04-c01"
+      ],
+      "evidence_language": "mixed",
+      "provenance": [
+        {
+          "source_id": "fa-arrays",
+          "chunk_id": "fa-arrays#s04-c01",
+          "section_heading": "۸.۲ — تعریف و مقداردهی اولیه",
+          "title": "فصل ۸: آرایه‌ها",
+          "origin": "data/corpus/c/c-notes-ch05-arrays.md",
+          "snapshot": "2026-09-23",
+          "license": "owner-authored study notes (project owner)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-23",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_id": "c",
+      "version": "c-v2"
+    },
+    {
+      "item_id": "C2-014",
+      "question": "در هر دور مرتب‌سازیِ انتخابی، کدام عنصر از بخشِ هنوز مرتب‌نشده جست‌وجو و به جلوی آن برده می‌شود، و تعداد جابه‌جایی‌ها حداکثر چقدر است؟",
+      "expected_answer_summary": "کوچک‌ترین عنصر بخش مرتب‌نشده انتخاب و به ابتدای آن جابه‌جا می‌شود؛ حداکثر تعداد جابه‌جایی‌ها یک کمتر از شمار عناصر است.",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "fa-arrays#s11-c01"
+      ],
+      "evidence_language": "mixed",
+      "provenance": [
+        {
+          "source_id": "fa-arrays",
+          "chunk_id": "fa-arrays#s11-c01",
+          "section_heading": "Selection Sort (انتخاب)",
+          "title": "فصل ۸: آرایه‌ها",
+          "origin": "data/corpus/c/c-notes-ch05-arrays.md",
+          "snapshot": "2026-09-23",
+          "license": "owner-authored study notes (project owner)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-23",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_id": "c",
+      "version": "c-v2"
+    },
+    {
+      "item_id": "C2-015",
+      "question": "چرا در پارامتر تابعی که ماتریس دوبعدی می‌گیرد باید شمار ستون‌ها مشخص باشد، اما شمار سطرها را می‌توان جداگانه فرستاد؟",
+      "expected_answer_summary": "کامپایلر برای محاسبهٔ آدرس هر عضو در چیدمان سطری به پهنای هر سطر، یعنی شمار ستون‌ها، نیاز دارد؛ شمار سطرها می‌تواند پارامتر جدا باشد.",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "fa-arrays#s17-c01"
+      ],
+      "evidence_language": "mixed",
+      "provenance": [
+        {
+          "source_id": "fa-arrays",
+          "chunk_id": "fa-arrays#s17-c01",
+          "section_heading": "ارسال ماتریس به تابع",
+          "title": "فصل ۸: آرایه‌ها",
+          "origin": "data/corpus/c/c-notes-ch05-arrays.md",
+          "snapshot": "2026-09-23",
+          "license": "owner-authored study notes (project owner)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-23",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_id": "c",
+      "version": "c-v2"
+    },
+    {
+      "item_id": "C2-016",
+      "question": "نوشتن از راهِ اشاره‌گری که هنوز مقصد معتبری نگرفته چه خطری دارد و پیش از ارجاع‌زدایی چه بررسی‌ای لازم است؟",
+      "expected_answer_summary": "نوشتن از اشاره‌گر مقداردهی‌نشده رفتار تعریف‌نشده دارد؛ باید آن را به مقصد معتبر یا تهی مقداردهی کرد و پیش از ارجاع‌زدایی تهی نبودنش را سنجید.",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "fa-pointers#s05-c01"
+      ],
+      "evidence_language": "mixed",
+      "provenance": [
+        {
+          "source_id": "fa-pointers",
+          "chunk_id": "fa-pointers#s05-c01",
+          "section_heading": "dereference روی اشاره‌گر خطرناک",
+          "title": "فصل ۹: اشاره‌گرها",
+          "origin": "data/corpus/c/c-notes-ch06-pointers.md",
+          "snapshot": "2026-09-23",
+          "license": "owner-authored study notes (project owner)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-23",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_id": "c",
+      "version": "c-v2"
+    },
+    {
+      "item_id": "C2-017",
+      "question": "اگر اشاره‌گرِ یک آرایهٔ اعشاری یک خانه جلو رود، فاصلهٔ آدرس‌ها برحسب بایت به چه چیزی بستگی دارد، نه به عددِ واحدِ دلخواه؟",
+      "expected_answer_summary": "افزودن یک به اشاره‌گر آن را یک عنصر جلو می‌برد؛ جابه‌جایی بایتی برابر اندازهٔ نوعِ عنصر است، نه لزوماً یک بایت.",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "fa-pointers#s10-c01"
+      ],
+      "evidence_language": "mixed",
+      "provenance": [
+        {
+          "source_id": "fa-pointers",
+          "chunk_id": "fa-pointers#s10-c01",
+          "section_heading": "۹.۵ — حساب آدرس (Pointer Arithmetic) ⭐⭐⭐",
+          "title": "فصل ۹: اشاره‌گرها",
+          "origin": "data/corpus/c/c-notes-ch06-pointers.md",
+          "snapshot": "2026-09-23",
+          "license": "owner-authored study notes (project owner)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-23",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_id": "c",
+      "version": "c-v2"
+    },
+    {
+      "item_id": "C2-018",
+      "question": "اگر برنامه‌ای با سه آرگومانِ متنی پس از نام خودش اجرا شود، شمار آرگومان‌ها چند است و خانهٔ نخستِ فهرست آرگومان‌ها چه چیزی دارد؟",
+      "expected_answer_summary": "شمار آرگومان‌ها چهار است، زیرا نام برنامه نیز شمرده می‌شود؛ خانهٔ صفرِ فهرست نام برنامه را نگه می‌دارد.",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "fa-pointers#s16-c01"
+      ],
+      "evidence_language": "mixed",
+      "provenance": [
+        {
+          "source_id": "fa-pointers",
+          "chunk_id": "fa-pointers#s16-c01",
+          "section_heading": "آرگومان main",
+          "title": "فصل ۹: اشاره‌گرها",
+          "origin": "data/corpus/c/c-notes-ch06-pointers.md",
+          "snapshot": "2026-09-23",
+          "license": "owner-authored study notes (project owner)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-23",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_id": "c",
+      "version": "c-v2"
+    },
+    {
+      "item_id": "C2-019",
+      "question": "برای آنکه یک متغیرِ اشاره‌گر به تابع گاهی جمع و گاهی ضربِ دو عدد صحیح را فراخوانی کند، بدون عوض‌کردن نوع متغیر چه باید کرد؟",
+      "expected_answer_summary": "اگر امضای دو تابع یکسان باشد می‌توان نشانیِ هر یک را به همان اشاره‌گر تابع نسبت داد و از راه آن فراخوانی غیرمستقیم انجام داد.",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "fa-pointers#s18-c01"
+      ],
+      "evidence_language": "mixed",
+      "provenance": [
+        {
+          "source_id": "fa-pointers",
+          "chunk_id": "fa-pointers#s18-c01",
+          "section_heading": "اشاره‌گر به تابع",
+          "title": "فصل ۹: اشاره‌گرها",
+          "origin": "data/corpus/c/c-notes-ch06-pointers.md",
+          "snapshot": "2026-09-23",
+          "license": "owner-authored study notes (project owner)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-23",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_id": "c",
+      "version": "c-v2"
+    },
+    {
+      "item_id": "C2-020",
+      "question": "پس از انتساب یک ساختار به ساختارِ هم‌نوع، آیا اعضا کپی می‌شوند و آیا می‌توان خودِ دو ساختار را با عملگرِ برابری مستقیم سنجید؟",
+      "expected_answer_summary": "انتسابِ ساختار هم‌نوع کپی کامل اعضا انجام می‌دهد؛ مقایسهٔ مستقیم دو ساختار با عملگر برابری مجاز نیست.",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "fa-structs-unions-enums#s03-c01"
+      ],
+      "evidence_language": "mixed",
+      "provenance": [
+        {
+          "source_id": "fa-structs-unions-enums",
+          "chunk_id": "fa-structs-unions-enums#s03-c01",
+          "section_heading": "دسترسی به اعضا",
+          "title": "فصل ۱۱: ساختارها، union و enum",
+          "origin": "data/corpus/c/c-notes-ch08-structs-unions-enums.md",
+          "snapshot": "2026-09-23",
+          "license": "owner-authored study notes (project owner)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-23",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_id": "c",
+      "version": "c-v2"
+    },
+    {
+      "item_id": "C2-021",
+      "question": "برای خاموش‌کردن کم‌ارزش‌ترین بیتِ یکِ عدد صحیحِ بدون علامت، چه عملی روی خودِ عدد و عددِ یکی‌کمتر از آن انجام می‌شود؟",
+      "expected_answer_summary": "عملِ وِ بیتیِ عدد با مقدارِ یک‌کمتر از خودش کم‌ارزش‌ترین بیتِ یک را پاک می‌کند؛ به صورت x & (x - 1).",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "fa-structs-unions-enums#s09-c01"
+      ],
+      "evidence_language": "mixed",
+      "provenance": [
+        {
+          "source_id": "fa-structs-unions-enums",
+          "chunk_id": "fa-structs-unions-enums#s09-c01",
+          "section_heading": "فرمول‌های طلایی",
+          "title": "فصل ۱۱: ساختارها، union و enum",
+          "origin": "data/corpus/c/c-notes-ch08-structs-unions-enums.md",
+          "snapshot": "2026-09-23",
+          "license": "owner-authored study notes (project owner)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-23",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_id": "c",
+      "version": "c-v2"
+    },
+    {
+      "item_id": "C2-022",
+      "question": "برای نگهداری یک متنِ پنج‌نویسه‌ای به‌عنوان رشتهٔ سی دست‌کم چند خانهٔ کاراکتری لازم است و خانهٔ اضافه چه نقشی دارد؟",
+      "expected_answer_summary": "شش خانه لازم است: پنج نویسهٔ متن و یک خانه برای نویسهٔ پایان‌دهندهٔ صفر که انتهای رشته را به توابع رشته‌ای نشان می‌دهد.",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "fa-strings#s04-c01"
+      ],
+      "evidence_language": "mixed",
+      "provenance": [
+        {
+          "source_id": "fa-strings",
+          "chunk_id": "fa-strings#s04-c01",
+          "section_heading": "۱۰.۳ — رشته چیست؟",
+          "title": "فصل ۱۰: کاراکترها و رشته‌ها",
+          "origin": "data/corpus/c/c-notes-ch07-characters-strings.md",
+          "snapshot": "2026-09-23",
+          "license": "owner-authored study notes (project owner)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-23",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_id": "c",
+      "version": "c-v2"
+    },
+    {
+      "item_id": "C2-023",
+      "question": "چرا هنگام خواندنِ تک‌نویسه‌ایِ فایل تا نشانگر پایان، نتیجهٔ خواندن را در متغیر صحیح می‌گذارند و نه در متغیر کاراکتری؟",
+      "expected_answer_summary": "تابع خواندن نوع صحیح برمی‌گرداند تا نشانگر پایان با مقدار منفیِ یک از همهٔ مقادیر معتبرِ کاراکتر متمایز بماند؛ نوع کاراکتری ممکن است این تمایز را از بین ببرد.",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "fa-files#s07-c01"
+      ],
+      "evidence_language": "mixed",
+      "provenance": [
+        {
+          "source_id": "fa-files",
+          "chunk_id": "fa-files#s07-c01",
+          "section_heading": "خواندن کاراکتربه‌کاراکتر",
+          "title": "فصل ۱۳: پرونده‌ها (فایل)",
+          "origin": "data/corpus/c/c-notes-ch10-files.md",
+          "snapshot": "2026-09-23",
+          "license": "owner-authored study notes (project owner)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-23",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_id": "c",
+      "version": "c-v2"
+    },
+    {
+      "item_id": "C2-024",
+      "question": "اگر نشانیِ تهی را به تابعِ آزادسازی حافظه بدهیم چه رخ می‌دهد و آیا پیش از فراخوانی باید تهی‌بودن را جداگانه بررسی کرد؟",
+      "expected_answer_summary": "آزادسازیِ نشانی تهی مجاز و بی‌اثر است؛ برای این حالت بررسیِ جداگانه پیش از آزادسازی لازم نیست.",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "fa-dynamic-memory#s07-c01"
+      ],
+      "evidence_language": "mixed",
+      "provenance": [
+        {
+          "source_id": "fa-dynamic-memory",
+          "chunk_id": "fa-dynamic-memory#s07-c01",
+          "section_heading": "قواعد طلایی حافظه پویا (هر تخلف = باگ)",
+          "title": "فصل ۱۴: حافظه پویا و لیست پیوندی",
+          "origin": "data/corpus/c/c-notes-ch11-dynamic-memory-linked-lists.md",
+          "snapshot": "2026-09-23",
+          "license": "owner-authored study notes (project owner)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-23",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_id": "c",
+      "version": "c-v2"
+    },
+    {
+      "item_id": "C2-025",
+      "question": "برای افزودن گره به ابتدای فهرست پیوندی و عوض‌کردن سرِ متعلق به فراخواننده، چرا باید نشانیِ خودِ اشاره‌گرِ سر را فرستاد؟",
+      "expected_answer_summary": "تابع باید خودِ اشاره‌گر سر را در فراخواننده تغییر دهد؛ فرستادن نشانی آن، یعنی اشاره‌گر به اشاره‌گر، امکان جایگزین‌کردن سر با گرهٔ تازه را می‌دهد.",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "fa-dynamic-memory#s11-c01"
+      ],
+      "evidence_language": "mixed",
+      "provenance": [
+        {
+          "source_id": "fa-dynamic-memory",
+          "chunk_id": "fa-dynamic-memory#s11-c01",
+          "section_heading": "درج در ابتدا — O(1)",
+          "title": "فصل ۱۴: حافظه پویا و لیست پیوندی",
+          "origin": "data/corpus/c/c-notes-ch11-dynamic-memory-linked-lists.md",
+          "snapshot": "2026-09-23",
+          "license": "owner-authored study notes (project owner)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-23",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_id": "c",
+      "version": "c-v2"
+    },
+    {
+      "item_id": "C2-026",
+      "question": "چگونه می‌توان بخش چاپِ اطلاعاتِ اشکال‌زدایی را تنها وقتی یک نمادِ پیش‌پردازنده تعریف شده وارد برنامهٔ سی کرد؟",
+      "expected_answer_summary": "بخش موردنظر را میان دستورهای کامپایل شرطی #ifdef و #endif برای نماد اشکال‌زدایی قرار می‌دهند؛ اگر نماد تعریف نشده باشد آن بخش کنار گذاشته می‌شود.",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "fa-preprocessor#s10-c01"
+      ],
+      "evidence_language": "mixed",
+      "provenance": [
+        {
+          "source_id": "fa-preprocessor",
+          "chunk_id": "fa-preprocessor#s10-c01",
+          "section_heading": "۱۵.۵ — کامپایل شرطی ⭐⭐",
+          "title": "فصل ۱۵: پیش‌پردازنده کامل",
+          "origin": "data/corpus/c/c-notes-ch12-preprocessor.md",
+          "snapshot": "2026-09-23",
+          "license": "owner-authored study notes (project owner)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-23",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_id": "c",
+      "version": "c-v2"
+    },
+    {
+      "item_id": "C2-027",
+      "question": "اگر ناحیهٔ مبدأ و مقصدِ کپیِ بایت‌ها همپوشانی داشته باشند، چرا روالِ کپیِ ساده مناسب نیست و کدام روال برای چنین وضعی در منابع نام برده شده است؟",
+      "expected_answer_summary": "روال memcpy برای همپوشانی احتیاطِ لازم را ندارد؛ منبع از memmove به‌عنوان روالی که برای ورودی‌های همپوشان تمهید دارد نام می‌برد.",
+      "evidence_note": "English cppreference source",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "cppref-memcpy#s04-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "source_id": "cppref-memcpy",
+          "chunk_id": "cppref-memcpy#s04-c01",
+          "section_heading": "Notes",
+          "title": "cppreference — memcpy",
+          "origin": "data/corpus/c/ref-cppref-memcpy.md",
+          "snapshot": "2026-09-23",
+          "license": "CC-BY-SA (cppreference.com)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-23",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_id": "c",
+      "version": "c-v2"
+    },
+    {
+      "item_id": "C2-028",
+      "question": "بستنِ جویبارِ فایل با خروجیِ هنوز بافرشده چه کاری روی این داده‌ها انجام می‌دهد و استفادهٔ بعدی از اشاره‌گرِ همان جویبار چه وضعی دارد؟",
+      "expected_answer_summary": "هنگام بستن، داده‌های بافرشدهٔ نوشته‌نشده به سیستم‌عامل فرستاده می‌شوند؛ استفاده از اشاره‌گر جویبار پس از بسته‌شدن رفتار تعریف‌نشده دارد.",
+      "evidence_note": "English cppreference source",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "cppref-fclose#s02-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "source_id": "cppref-fclose",
+          "chunk_id": "cppref-fclose#s02-c01",
+          "section_heading": "fclose",
+          "title": "cppreference — fclose",
+          "origin": "data/corpus/c/ref-cppref-fclose.md",
+          "snapshot": "2026-09-23",
+          "license": "CC-BY-SA (cppreference.com)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-23",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      },
+      "pack_id": "c",
+      "version": "c-v2"
+    }
+  ]
+}

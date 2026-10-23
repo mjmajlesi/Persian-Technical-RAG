@@ -75,7 +75,7 @@
 
 ### Author language by language; each completed language has its own review checkpoint
 
-- [ ] T021 [P] [US1] Draft 28 **new C in-corpus** questions in `data/eval/c/eval-set.c.v2.json`: non-copied Persian wording, same-pack expected_source_ids, grounded answer summaries, source/license provenance, and evidence language derived from each actual Persian/English source.
+- [X] T021 [P] [US1] Draft 28 **new C in-corpus** questions in `data/eval/c/eval-set.c.v2.json`: non-copied Persian wording, same-pack expected_source_ids, grounded answer summaries, source/license provenance, and evidence language derived from each actual Persian/English source.
   - CHECKPOINT: STOP → report 28 valid references, auditable examples, and draft status → wait for explicit «تایید» before T022.
 - [ ] T022 [US1] Add 10 new mixed and 7 new OOC questions to `data/eval/c/eval-set.c.v2.json`. Validate the complete 45-item 28/10/7 set with T020, compare with v1, manually check against chunk wording, and require empty IDs/abstention reasons for OOC. **Present the completed C set for its own user review.**
   - CHECKPOINT: STOP → report C counts, sources, and question quality → wait for explicit «تایید» before T023.
