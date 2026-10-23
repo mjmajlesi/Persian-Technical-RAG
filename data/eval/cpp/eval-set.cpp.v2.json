@@ -2,7 +2,7 @@
   "version": "cpp-v2",
   "pack_id": "cpp",
   "snapshot": "2026-10-16",
-  "notes": "Incomplete draft: 28 new C++ in-corpus questions only. Pending user review; 10 mixed and 7 out-of-corpus items belong to T024. Not a publishable complete set.",
+  "notes": "C++ v2: 28 in-corpus, 10 mixed, 7 out-of-corpus. Reviewed at T024 user checkpoint on 2026-10-24; frozen pack/v1 unchanged.",
   "items": [
     {
       "item_id": "CPP2-001",
@@ -29,9 +29,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-24",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T024 checkpoint)",
+        "reviewed_at": "2026-10-24"
       }
     },
     {
@@ -59,9 +59,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-24",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T024 checkpoint)",
+        "reviewed_at": "2026-10-24"
       }
     },
     {
@@ -89,9 +89,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-24",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T024 checkpoint)",
+        "reviewed_at": "2026-10-24"
       }
     },
     {
@@ -119,9 +119,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-24",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T024 checkpoint)",
+        "reviewed_at": "2026-10-24"
       }
     },
     {
@@ -149,9 +149,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-24",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T024 checkpoint)",
+        "reviewed_at": "2026-10-24"
       }
     },
     {
@@ -179,9 +179,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-24",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T024 checkpoint)",
+        "reviewed_at": "2026-10-24"
       }
     },
     {
@@ -209,9 +209,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-24",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T024 checkpoint)",
+        "reviewed_at": "2026-10-24"
       }
     },
     {
@@ -239,9 +239,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-24",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T024 checkpoint)",
+        "reviewed_at": "2026-10-24"
       }
     },
     {
@@ -269,9 +269,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-24",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T024 checkpoint)",
+        "reviewed_at": "2026-10-24"
       }
     },
     {
@@ -299,9 +299,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-24",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T024 checkpoint)",
+        "reviewed_at": "2026-10-24"
       }
     },
     {
@@ -329,9 +329,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-24",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T024 checkpoint)",
+        "reviewed_at": "2026-10-24"
       }
     },
     {
@@ -359,9 +359,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-24",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T024 checkpoint)",
+        "reviewed_at": "2026-10-24"
       }
     },
     {
@@ -389,9 +389,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-24",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T024 checkpoint)",
+        "reviewed_at": "2026-10-24"
       }
     },
     {
@@ -419,9 +419,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-24",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T024 checkpoint)",
+        "reviewed_at": "2026-10-24"
       }
     },
     {
@@ -449,9 +449,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-24",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T024 checkpoint)",
+        "reviewed_at": "2026-10-24"
       }
     },
     {
@@ -479,9 +479,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-24",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T024 checkpoint)",
+        "reviewed_at": "2026-10-24"
       }
     },
     {
@@ -509,9 +509,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-24",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T024 checkpoint)",
+        "reviewed_at": "2026-10-24"
       }
     },
     {
@@ -539,9 +539,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-24",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T024 checkpoint)",
+        "reviewed_at": "2026-10-24"
       }
     },
     {
@@ -569,9 +569,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-24",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T024 checkpoint)",
+        "reviewed_at": "2026-10-24"
       }
     },
     {
@@ -599,9 +599,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-24",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T024 checkpoint)",
+        "reviewed_at": "2026-10-24"
       }
     },
     {
@@ -629,9 +629,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-24",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T024 checkpoint)",
+        "reviewed_at": "2026-10-24"
       }
     },
     {
@@ -659,9 +659,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-24",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T024 checkpoint)",
+        "reviewed_at": "2026-10-24"
       }
     },
     {
@@ -689,9 +689,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-24",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T024 checkpoint)",
+        "reviewed_at": "2026-10-24"
       }
     },
     {
@@ -719,9 +719,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-24",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T024 checkpoint)",
+        "reviewed_at": "2026-10-24"
       }
     },
     {
@@ -749,9 +749,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-24",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T024 checkpoint)",
+        "reviewed_at": "2026-10-24"
       }
     },
     {
@@ -779,9 +779,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-24",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T024 checkpoint)",
+        "reviewed_at": "2026-10-24"
       }
     },
     {
@@ -809,9 +809,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-24",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T024 checkpoint)",
+        "reviewed_at": "2026-10-24"
       }
     },
     {
@@ -839,10 +839,436 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-24",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T024 checkpoint)",
+        "reviewed_at": "2026-10-24"
       }
+    },
+    {
+      "item_id": "CPP2-029",
+      "qtype": "mixed",
+      "question": "اگر `push_back` ظرفیتِ `std::vector` را تغییر ندهد، آیا `end()` قبلی و iterator عناصر موجود هر دو معتبر می‌مانند؟",
+      "expected_answer_summary": "با افزودن عضو بدون تغییر ظرفیت، پیمایشگرهای عناصر قبلی معتبر می‌مانند اما end() قبلی بی‌اعتبار می‌شود؛ اگر ظرفیت عوض شود همهٔ آن‌ها بی‌اعتبارند.",
+      "pack_id": "cpp",
+      "version": "cpp-v2",
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T024 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      },
+      "expected_source_ids": [
+        "cppref-cpp-vector#s05-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "cppref-cpp-vector#s05-c01",
+          "source_id": "cppref-cpp-vector",
+          "section_heading": "Iterator invalidation",
+          "title": "cppreference — std::vector",
+          "origin": "data/corpus/cpp/ref-cppref-cpp-vector.md",
+          "snapshot": "2026-10-16",
+          "license": "CC-BY-SA (cppreference.com)"
+        }
+      ]
+    },
+    {
+      "item_id": "CPP2-030",
+      "qtype": "mixed",
+      "question": "برای پیدا کردن آخرین جایگاهی که نویسهٔ آن عضوِ مجموعهٔ دلخواه نیست، کدام تابع عضو `std::string` را باید جست‌وجو کرد؟",
+      "expected_answer_summary": "تابع عضو find_last_not_of آخرین جایگاهِ نویسه‌ای را پیدا می‌کند که در مجموعهٔ نویسه‌های داده‌شده نیست.",
+      "pack_id": "cpp",
+      "version": "cpp-v2",
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T024 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      },
+      "expected_source_ids": [
+        "cppref-cpp-string#s07-c02"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "cppref-cpp-string#s07-c02",
+          "source_id": "cppref-cpp-string",
+          "section_heading": "Member functions",
+          "title": "cppreference — std::basic_string",
+          "origin": "data/corpus/cpp/ref-cppref-cpp-string.md",
+          "snapshot": "2026-10-16",
+          "license": "CC-BY-SA (cppreference.com)"
+        }
+      ]
+    },
+    {
+      "item_id": "CPP2-031",
+      "qtype": "mixed",
+      "question": "در خروجیِ چندریسه‌ای، اگر `sync_with_stdio(false)` فراخوانی نشده باشد، منبع دربارهٔ دسترسیِ همزمان به `std::cout` چه تضمینی می‌دهد؟",
+      "expected_answer_summary": "منبع دسترسی همزمان از چند ریسه را برای خروجیِ قالب‌بندی‌شده و بدون قالب‌بندی به std::cout ایمن می‌داند، مشروط به اینکه همگام‌سازی با جویبارهای C غیرفعال نشده باشد؛ این وعده ترتیبِ پیام‌ها نیست.",
+      "pack_id": "cpp",
+      "version": "cpp-v2",
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T024 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      },
+      "expected_source_ids": [
+        "cppref-cpp-cout#s02-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "cppref-cpp-cout#s02-c01",
+          "source_id": "cppref-cpp-cout",
+          "section_heading": "std::cout, std::wcout",
+          "title": "cppreference — std::cout",
+          "origin": "data/corpus/cpp/ref-cppref-cpp-cout.md",
+          "snapshot": "2026-10-16",
+          "license": "CC-BY-SA (cppreference.com)"
+        }
+      ]
+    },
+    {
+      "item_id": "CPP2-032",
+      "qtype": "mixed",
+      "question": "اگر با `using namespace N` نام‌های یک فضا را برای جست‌وجوی بی‌قید در دسترس کنیم، آیا این دستور خودِ نام‌ها را به ناحیهٔ اعلان فعلی اضافه می‌کند؟",
+      "expected_answer_summary": "خیر؛ دستور using برای جست‌وجوی نام بی‌قید آن‌ها را قابل مشاهده می‌کند ولی برخلاف using-declaration نام‌ها را به ناحیهٔ اعلان جاری نمی‌افزاید.",
+      "pack_id": "cpp",
+      "version": "cpp-v2",
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T024 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      },
+      "expected_source_ids": [
+        "cppref-cpp-namespace#s08-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "cppref-cpp-namespace#s08-c01",
+          "source_id": "cppref-cpp-namespace",
+          "section_heading": "Using-directives",
+          "title": "cppreference — Namespaces",
+          "origin": "data/corpus/cpp/ref-cppref-cpp-namespace.md",
+          "snapshot": "2026-10-16",
+          "license": "CC-BY-SA (cppreference.com)"
+        }
+      ]
+    },
+    {
+      "item_id": "CPP2-033",
+      "qtype": "mixed",
+      "question": "در تابعِ قالبی با پارامترِ `T&&`، اگر یک متغیرِ نام‌دار بفرستیم، `std::forward<T>` دستهٔ مقداریِ آن را چگونه حفظ می‌کند و برای یک مقدارِ موقت چه فرقی دارد؟",
+      "expected_answer_summary": "برای آرگومان چپ‌مقدار، T به نوعِ ارجاع چپ‌مقدار استنباط می‌شود و forward همان چپ‌مقدار را عبور می‌دهد؛ برای آرگومان موقت، استنباطِ T بدون ارجاع و انتقال به‌صورت راست‌مقدار است.",
+      "pack_id": "cpp",
+      "version": "cpp-v2",
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T024 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      },
+      "expected_source_ids": [
+        "cppref-cpp-reference#s07-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "cppref-cpp-reference#s07-c01",
+          "source_id": "cppref-cpp-reference",
+          "section_heading": "Forwarding references",
+          "title": "cppreference — Reference declaration",
+          "origin": "data/corpus/cpp/ref-cppref-cpp-reference.md",
+          "snapshot": "2026-10-16",
+          "license": "CC-BY-SA (cppreference.com)"
+        }
+      ]
+    },
+    {
+      "item_id": "CPP2-034",
+      "qtype": "mixed",
+      "question": "چرا خروجیِ تابعِ `decltype(auto)` با بازگرداندنِ نام متغیر و بازگرداندنِ همان نام درون پرانتز، ممکن است یکی مقدار و دیگری ارجاع باشد؟",
+      "expected_answer_summary": "استنباط decltype(auto) از قواعد decltype پیروی می‌کند: برای نام بدون پرانتز نوعِ خودِ متغیر به‌دست می‌آید، اما عبارتِ نامِ پرانتزدارِ چپ‌مقدار می‌تواند ارجاع به همان نوع بدهد.",
+      "pack_id": "cpp",
+      "version": "cpp-v2",
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T024 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      },
+      "expected_source_ids": [
+        "cppref-cpp-function#s04-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "cppref-cpp-function#s04-c01",
+          "source_id": "cppref-cpp-function",
+          "section_heading": "Return type deduction",
+          "title": "cppreference — Function declaration",
+          "origin": "data/corpus/cpp/ref-cppref-cpp-function.md",
+          "snapshot": "2026-10-16",
+          "license": "CC-BY-SA (cppreference.com)"
+        }
+      ]
+    },
+    {
+      "item_id": "CPP2-035",
+      "qtype": "mixed",
+      "question": "اگر برای نوعِ کاربرساخته `operator&&` تعریف کنیم، آیا مانند وِ منطقیِ داخلی تضمین می‌شود که با نادرست‌بودنِ سمت نخست، سمت دوم اصلاً ارزیابی نشود؟",
+      "expected_answer_summary": "خیر؛ نسخهٔ سربارگذاری‌شدهٔ && خاصیتِ اتصال‌کوتاهِ عملگر داخلی را ندارد و مانند فراخوانی تابع با عملوندهای ارزیابی‌شده رفتار می‌کند.",
+      "pack_id": "cpp",
+      "version": "cpp-v2",
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T024 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      },
+      "expected_source_ids": [
+        "cppref-cpp-operators#s06-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "cppref-cpp-operators#s06-c01",
+          "source_id": "cppref-cpp-operators",
+          "section_heading": "Restrictions",
+          "title": "cppreference — Operator overloading",
+          "origin": "data/corpus/cpp/ref-cppref-cpp-operators.md",
+          "snapshot": "2026-10-16",
+          "license": "CC-BY-SA (cppreference.com)"
+        }
+      ]
+    },
+    {
+      "item_id": "CPP2-036",
+      "qtype": "mixed",
+      "question": "اگر نوعِ بازه دو عضو به نام‌های `begin` و `end` داشته باشد ولی آن‌ها فقط enum باشند، آیا `range-based for` می‌تواند خودکار توابع آزادِ begin و end را به جای آن‌ها برگزیند؟",
+      "expected_answer_summary": "خیر؛ وجود هر دو نام به‌عنوان عضو، تفسیرِ عضوی را فعال می‌کند حتی اگر از نوع شمارشی باشند؛ در این حالت توابع آزاد جایگزین نمی‌شوند و حلقه روی آن نوع کار نمی‌کند.",
+      "pack_id": "cpp",
+      "version": "cpp-v2",
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T024 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      },
+      "expected_source_ids": [
+        "cppref-cpp-range-for#s06-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "cppref-cpp-range-for#s06-c01",
+          "source_id": "cppref-cpp-range-for",
+          "section_heading": "Notes",
+          "title": "cppreference — Range-based for loop",
+          "origin": "data/corpus/cpp/ref-cppref-cpp-range-for.md",
+          "snapshot": "2026-10-16",
+          "license": "CC-BY-SA (cppreference.com)"
+        }
+      ]
+    },
+    {
+      "item_id": "CPP2-037",
+      "qtype": "mixed",
+      "question": "در مقداردهیِ فهرستیِ یک کلاس، اگر `initializer_list` constructor نامزدِ مناسب داشته باشد، آیا کامپایلر ابتدا همان‌ها را می‌سنجد یا سازنده‌های عادی را؟",
+      "expected_answer_summary": "گزینش سربار در دو مرحله است: ابتدا سازنده‌های initializer_list با کل فهرست به‌عنوان یک آرگومان بررسی می‌شوند؛ اگر آن مرحله به نتیجه نرسد، سازنده‌های دیگر با عناصر فهرست بررسی می‌شوند.",
+      "pack_id": "cpp",
+      "version": "cpp-v2",
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T024 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      },
+      "expected_source_ids": [
+        "cppref-cpp-overload#s11-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "cppref-cpp-overload#s11-c01",
+          "source_id": "cppref-cpp-overload",
+          "section_heading": "List-initialization",
+          "title": "cppreference — Overload resolution",
+          "origin": "data/corpus/cpp/ref-cppref-cpp-overload.md",
+          "snapshot": "2026-10-16",
+          "license": "CC-BY-SA (cppreference.com)"
+        }
+      ]
+    },
+    {
+      "item_id": "CPP2-038",
+      "qtype": "mixed",
+      "question": "برای عضوی از نوعِ ارجاع یا `const` که مقداردهی پیش‌فرضِ قابل‌استفاده ندارد، آیا انتساب در بدنهٔ constructor کافی است یا باید پیش از ورود به بدنه مقداردهی شود؟",
+      "expected_answer_summary": "چنین عضوی باید در مرحلهٔ مقداردهیِ پیش از بدنه، در فهرست مقداردهی سازنده، مقدار بگیرد؛ انتساب در بدنه جای مقداردهیِ لازم را نمی‌گیرد.",
+      "pack_id": "cpp",
+      "version": "cpp-v2",
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T024 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      },
+      "expected_source_ids": [
+        "cppref-cpp-constructor#s05-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "cppref-cpp-constructor#s05-c01",
+          "source_id": "cppref-cpp-constructor",
+          "section_heading": "Explanation",
+          "title": "cppreference — Constructors",
+          "origin": "data/corpus/cpp/ref-cppref-cpp-constructor.md",
+          "snapshot": "2026-10-16",
+          "license": "CC-BY-SA (cppreference.com)"
+        }
+      ]
+    },
+    {
+      "item_id": "CPP2-039",
+      "qtype": "out-of-corpus",
+      "question": "در سی‌پلاس‌پلاس، با `std::filesystem::recursive_directory_iterator` چطور پوشه‌ها را بازگشتی پیمایش و خطاهای دسترسی را مدیریت می‌کنند؟",
+      "abstain_reason": "چانک‌های فریز C++ مستندات std::filesystem یا پیمایش بازگشتی و خطاهای دسترسیِ آن را ندارند؛ پاسخ درون‌پیکره‌ای برای این API وجود ندارد.",
+      "pack_id": "cpp",
+      "version": "cpp-v2",
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T024 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      },
+      "expected_source_ids": [],
+      "evidence_language": "none",
+      "provenance": []
+    },
+    {
+      "item_id": "CPP2-040",
+      "qtype": "out-of-corpus",
+      "question": "برای بیدارکردن یک ریسهٔ منتظر روی `std::condition_variable` و جلوگیری از بیداری کاذب، چه شرط و چه قفلی باید به کار برد؟",
+      "abstain_reason": "منابع فریز C++ مستندات std::condition_variable، قرارداد قفل و بیداری کاذب را ندارند؛ شواهد لازم برای این دستورالعمل فراهم نیست.",
+      "pack_id": "cpp",
+      "version": "cpp-v2",
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T024 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      },
+      "expected_source_ids": [],
+      "evidence_language": "none",
+      "provenance": []
+    },
+    {
+      "item_id": "CPP2-041",
+      "qtype": "out-of-corpus",
+      "question": "با `std::regex` چگونه گروه‌های یک الگو را از متن استخراج می‌کنند و شکست تطبیق را تشخیص می‌دهند؟",
+      "abstain_reason": "پیکرهٔ فریز C++ راهنمای std::regex و API تطبیق و گروه‌های منظم را پوشش نمی‌دهد؛ نباید پاسخی با منبع ساختگی داد.",
+      "pack_id": "cpp",
+      "version": "cpp-v2",
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T024 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      },
+      "expected_source_ids": [],
+      "evidence_language": "none",
+      "provenance": []
+    },
+    {
+      "item_id": "CPP2-042",
+      "qtype": "out-of-corpus",
+      "question": "در سی‌پلاس‌پلاس ۲۰، با `std::chrono::zoned_time` چگونه زمان محلی را هنگام تغییر ساعت تابستانی به منطقهٔ دیگری تبدیل می‌کنند؟",
+      "abstain_reason": "چانک‌های فریز C++ مستندات منطقه‌های زمانی std::chrono و قواعد تغییر ساعت تابستانی را ندارند؛ این تبدیل از پک قابل استناد نیست.",
+      "pack_id": "cpp",
+      "version": "cpp-v2",
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T024 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      },
+      "expected_source_ids": [],
+      "evidence_language": "none",
+      "provenance": []
+    },
+    {
+      "item_id": "CPP2-043",
+      "qtype": "out-of-corpus",
+      "question": "برای یک کلیدِ ساختارِ کاربرساخته در `std::unordered_map`، تابع هش و مقایسهٔ برابری را چگونه تعریف و به ظرف معرفی می‌کنند؟",
+      "abstain_reason": "منابع C++ فریز این پروژه صفحهٔ std::unordered_map یا قرارداد هشِ نوع کاربرساخته را ندارند؛ پاسخِ قابل استناد در این پک موجود نیست.",
+      "pack_id": "cpp",
+      "version": "cpp-v2",
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T024 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      },
+      "expected_source_ids": [],
+      "evidence_language": "none",
+      "provenance": []
+    },
+    {
+      "item_id": "CPP2-044",
+      "qtype": "out-of-corpus",
+      "question": "در یک ماژولِ سی‌پلاس‌پلاس، با `export module` و `import` چگونه یک تابع را از واحد رابط به فایل مصرف‌کننده می‌رسانند؟",
+      "abstain_reason": "پیکرهٔ فریز C++ مستندات ساخت و مصرف ماژول، واحد رابط و نحو import/export module را ندارد؛ منبعی برای مراحل عملی آن نیست.",
+      "pack_id": "cpp",
+      "version": "cpp-v2",
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T024 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      },
+      "expected_source_ids": [],
+      "evidence_language": "none",
+      "provenance": []
+    },
+    {
+      "item_id": "CPP2-045",
+      "qtype": "out-of-corpus",
+      "question": "برای قالب‌بندیِ مقدارِ تاریخ با `std::format` در سی‌پلاس‌پلاس ۲۰، مشخص‌کننده‌های قالب و منطقهٔ زمانی را چگونه می‌نویسند؟",
+      "abstain_reason": "در چانک‌های فریز C++ قرارداد std::format و قالب‌بندی تاریخ یا منطقهٔ زمانی پوشش داده نشده است؛ باید بدون استناد ساختگی انصراف داد.",
+      "pack_id": "cpp",
+      "version": "cpp-v2",
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T024 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      },
+      "expected_source_ids": [],
+      "evidence_language": "none",
+      "provenance": []
     }
   ]
 }
