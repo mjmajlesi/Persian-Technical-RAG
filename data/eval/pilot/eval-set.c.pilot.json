@@ -1,0 +1,181 @@
+{
+  "version": "c-pilot",
+  "pack_id": "c",
+  "pilot_for_model": "e5-large",
+  "snapshot": "2026-09-23",
+  "notes": "Nine new pilot questions only (5 in-corpus, 2 mixed, 2 out-of-corpus); excluded from v1 calibration and all v2 evaluation sets. Drafts await user review before the pilot run.",
+  "items": [
+    {
+      "item_id": "C-P01",
+      "pack_id": "c",
+      "version": "c-pilot",
+      "qtype": "in-corpus",
+      "question": "اگر نام یک ماکرو خودش با عدد جایگزین شود، چرا برای تبدیل مقدار نهایی آن به رشته باید دو لایهٔ ماکرو به کار برد؟",
+      "expected_source_ids": ["fa-preprocessor#s09-c01"],
+      "expected_answer_summary": "رشته‌سازی مستقیم با # نام آرگومان را پیش از گسترش به رشته بدل می‌کند؛ لایهٔ بیرونی ابتدا مقدار ماکرو را باز می‌کند و لایهٔ درونی مقدار بازشده را رشته می‌سازد.",
+      "evidence_language": "mixed",
+      "provenance": [{
+        "source_id": "fa-preprocessor",
+        "chunk_id": "fa-preprocessor#s09-c01",
+        "section_heading": "ترفند دو-سطحی برای گسترش مقدار",
+        "title": "فصل ۱۵: پیش‌پردازنده کامل",
+        "origin": "data/corpus/c/c-notes-ch12-preprocessor.md",
+        "snapshot": "2026-09-23",
+        "license": "owner-authored study notes (project owner)"
+      }],
+      "authorship": {"author": "assistant draft", "authored_at": "2026-10-23", "review_status": "pending-user-review", "reviewer": null}
+    },
+    {
+      "item_id": "C-P02",
+      "pack_id": "c",
+      "version": "c-pilot",
+      "qtype": "in-corpus",
+      "question": "تابعی با خروجی اعشاری را پایین‌تر از نقطهٔ آغاز برنامه تعریف کرده‌ایم؛ برای آنکه فراخوانیِ پیش از تعریف با امضای درست شناخته شود، چه چیزی باید بالاتر نوشته شود؟",
+      "expected_source_ids": ["fa-functions#s05-c01"],
+      "expected_answer_summary": "پیش از نخستین فراخوانی باید اعلان تابع با نوع خروجی و نوع پارامترها و نقطه‌ویرگول بیاید؛ بدنه می‌تواند پس از تابع آغازین تعریف شود.",
+      "evidence_language": "mixed",
+      "provenance": [{
+        "source_id": "fa-functions",
+        "chunk_id": "fa-functions#s05-c01",
+        "section_heading": "۷.۳ — اعلان تابع (Prototype)",
+        "title": "فصل ۷: توابع",
+        "origin": "data/corpus/c/c-notes-ch04-functions.md",
+        "snapshot": "2026-09-23",
+        "license": "owner-authored study notes (project owner)"
+      }],
+      "authorship": {"author": "assistant draft", "authored_at": "2026-10-23", "review_status": "pending-user-review", "reviewer": null}
+    },
+    {
+      "item_id": "C-P03",
+      "pack_id": "c",
+      "version": "c-pilot",
+      "qtype": "in-corpus",
+      "question": "اگر مقدار نخستین عضوِ یک نوع شمارشی را ۴ و سومین عضو را ۹ تعیین کنیم، عضو دوم و چهارم به ترتیب چه مقادیری می‌گیرند؟",
+      "expected_source_ids": ["fa-structs-unions-enums#s13-c01"],
+      "expected_answer_summary": "عضو بدون مقدار صریح، یکی بیشتر از عضو پیشین است؛ بنابراین عضو دوم ۵ و عضو چهارم ۱۰ می‌شود.",
+      "evidence_language": "mixed",
+      "provenance": [{
+        "source_id": "fa-structs-unions-enums",
+        "chunk_id": "fa-structs-unions-enums#s13-c01",
+        "section_heading": "۱۱.۷ — ثابت‌های شمارشی (enum)",
+        "title": "فصل ۱۱: ساختارها، union و enum",
+        "origin": "data/corpus/c/c-notes-ch08-structs-unions-enums.md",
+        "snapshot": "2026-09-23",
+        "license": "owner-authored study notes (project owner)"
+      }],
+      "authorship": {"author": "assistant draft", "authored_at": "2026-10-23", "review_status": "pending-user-review", "reviewer": null}
+    },
+    {
+      "item_id": "C-P04",
+      "pack_id": "c",
+      "version": "c-pilot",
+      "qtype": "in-corpus",
+      "question": "در مقایسهٔ یک عدد صحیح علامت‌دارِ منفیِ ۳ با عدد صحیح بدون‌علامتِ مثبتِ ۲ از همان نوع پایه، چرا ممکن است گزارهٔ «منفی کوچک‌تر است» نادرست از آب درآید؟",
+      "expected_source_ids": ["fa-appendix-numbers#s06-c01"],
+      "expected_answer_summary": "در مقایسهٔ نوع علامت‌دار با نوع بدون‌علامت هم‌رتبه، مقدار منفی به بدون‌علامت تبدیل می‌شود و به عدد بزرگی می‌چرخد؛ بنابراین مقایسهٔ منفیِ ۳ با ۲ بدون‌علامت نتیجهٔ کوچک‌تر بودن نمی‌دهد.",
+      "evidence_language": "mixed",
+      "provenance": [{
+        "source_id": "fa-appendix-numbers",
+        "chunk_id": "fa-appendix-numbers#s06-c01",
+        "section_heading": "الف.۴ — مقایسه signed و unsigned در عبارت‌ها",
+        "title": "پیوست الف: نمایش اعداد در حافظه (مکمل دو)",
+        "origin": "data/corpus/c/c-notes-appendix-numbers.md",
+        "snapshot": "2026-09-23",
+        "license": "owner-authored study notes (project owner)"
+      }],
+      "authorship": {"author": "assistant draft", "authored_at": "2026-10-23", "review_status": "pending-user-review", "reviewer": null}
+    },
+    {
+      "item_id": "C-P05",
+      "pack_id": "c",
+      "version": "c-pilot",
+      "qtype": "in-corpus",
+      "question": "در تابعی که برای حل یک مسئله دوباره خودش را اجرا می‌کند، چه شرط توقفی و چه تغییری در هر فراخوانی لازم است تا اجرا سرانجام تمام شود؟",
+      "expected_source_ids": ["fa-functions#s18-c01"],
+      "expected_answer_summary": "باید حالت پایه‌ای داشته باشد که دیگر فراخوانی نکند و هر گام بازگشتی ورودی را به آن حالت نزدیک‌تر سازد.",
+      "evidence_language": "mixed",
+      "provenance": [{
+        "source_id": "fa-functions",
+        "chunk_id": "fa-functions#s18-c01",
+        "section_heading": "۷.۹ — بازگشت (Recursion) ⭐⭐⭐",
+        "title": "فصل ۷: توابع",
+        "origin": "data/corpus/c/c-notes-ch04-functions.md",
+        "snapshot": "2026-09-23",
+        "license": "owner-authored study notes (project owner)"
+      }],
+      "authorship": {"author": "assistant draft", "authored_at": "2026-10-23", "review_status": "pending-user-review", "reviewer": null}
+    },
+    {
+      "item_id": "C-P06",
+      "pack_id": "c",
+      "version": "c-pilot",
+      "qtype": "mixed",
+      "question": "اگر با `fread(buffer, sizeof(double), 8, stream)` فقط سه مقدار کامل خوانده شود، مقدار بازگشتی ۳ است یا شمار بایت‌های خوانده‌شده؟",
+      "expected_source_ids": ["cppref-fread#s04-c01"],
+      "expected_answer_summary": "مقدار بازگشتی تعداد اعضای کامل خوانده‌شده است، نه تعداد بایت؛ در این وضعیت ۳ برمی‌گردد و ممکن است علت کوتاهی خواندن پایان فایل یا خطا باشد.",
+      "evidence_language": "en",
+      "provenance": [{
+        "source_id": "cppref-fread",
+        "chunk_id": "cppref-fread#s04-c01",
+        "section_heading": "Return value",
+        "title": "cppreference — fread",
+        "origin": "data/corpus/c/ref-cppref-fread.md",
+        "snapshot": "2026-09-23",
+        "license": "CC-BY-SA (cppreference.com)"
+      }],
+      "authorship": {"author": "assistant draft", "authored_at": "2026-10-23", "review_status": "pending-user-review", "reviewer": null}
+    },
+    {
+      "item_id": "C-P07",
+      "pack_id": "c",
+      "version": "c-pilot",
+      "qtype": "mixed",
+      "question": "بعد از خواندن فایل، برای بازگشت با `fseek` به ابتدای `stream`، `origin` و `offset` را چگونه تعیین کنیم و در موفقیت چه عددی برمی‌گردد؟",
+      "expected_source_ids": ["cppref-fseek#s02-c01", "cppref-fseek#s04-c01"],
+      "expected_answer_summary": "با مبدأ SEEK_SET و جابه‌جایی صفر، مکان‌نما به آغاز فایل می‌رود؛ مقدار بازگشتی در موفقیت صفر است.",
+      "evidence_language": "en",
+      "provenance": [{
+        "source_id": "cppref-fseek",
+        "chunk_id": "cppref-fseek#s02-c01",
+        "section_heading": "fseek",
+        "title": "cppreference — fseek",
+        "origin": "data/corpus/c/ref-cppref-fseek.md",
+        "snapshot": "2026-09-23",
+        "license": "CC-BY-SA (cppreference.com)"
+      }, {
+        "source_id": "cppref-fseek",
+        "chunk_id": "cppref-fseek#s04-c01",
+        "section_heading": "Return value",
+        "title": "cppreference — fseek",
+        "origin": "data/corpus/c/ref-cppref-fseek.md",
+        "snapshot": "2026-09-23",
+        "license": "CC-BY-SA (cppreference.com)"
+      }],
+      "authorship": {"author": "assistant draft", "authored_at": "2026-10-23", "review_status": "pending-user-review", "reviewer": null}
+    },
+    {
+      "item_id": "C-P08",
+      "pack_id": "c",
+      "version": "c-pilot",
+      "qtype": "out-of-corpus",
+      "question": "در برنامهٔ سی ۱۱، تفاوت ترتیب حافظهٔ اکتسابی و رهاسازی برای همگام‌سازی متغیرهای اتمی میان ریسه‌های اجرایی چیست؟",
+      "expected_source_ids": [],
+      "abstain_reason": "پیکرهٔ فریز C دربارهٔ اتمیک‌های C11 یا قواعد ترتیب حافظه و همگام‌سازی ریسه‌ها شاهدی ندارد؛ پاسخ مستند ممکن نیست.",
+      "evidence_language": "none",
+      "provenance": [],
+      "authorship": {"author": "assistant draft", "authored_at": "2026-10-23", "review_status": "pending-user-review", "reviewer": null}
+    },
+    {
+      "item_id": "C-P09",
+      "pack_id": "c",
+      "version": "c-pilot",
+      "qtype": "out-of-corpus",
+      "question": "برای راه‌اندازی یک سرور تی‌سی‌پی در برنامهٔ سی، سوکت را چگونه به نشانی محلی وصل می‌کنند و در حالت شنود می‌گذارند؟",
+      "expected_source_ids": [],
+      "abstain_reason": "پیکرهٔ فریز C فقط مباحث زبان و کتابخانهٔ پایهٔ نام‌برده را دارد و API سوکت، اتصال به نشانی و شنود شبکه را پوشش نمی‌دهد.",
+      "evidence_language": "none",
+      "provenance": [],
+      "authorship": {"author": "assistant draft", "authored_at": "2026-10-23", "review_status": "pending-user-review", "reviewer": null}
+    }
+  ]
+}
