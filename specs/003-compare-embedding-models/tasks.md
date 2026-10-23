@@ -43,7 +43,7 @@
   - CHECKPOINT: STOP → report contract failures and positive default-path control → wait for explicit «تایید» before T010.
 - [X] T010 Extend `src/qa/retriever.py` with a model-specific index path and canonical chunk path, validating hashes/IDs/dimensions. Reuse existing `faiss_store` and `has_chunk`; preserve the no-model path. Pass T009 and current scoped-citation tests. Principles II/VIII.
   - CHECKPOINT: STOP → report mismatch rejection, isolation, and regressions → wait for explicit «تایید» before T011.
-- [ ] T011 Write FAIL-first pooled-calibration tests in `tests/unit/test_pooled_calibration.py`: one threshold per model from **all four combined v1 sets** (100 answerable/20 OOC), maximum balanced accuracy, higher-threshold tie break, counts, and confusion separately for each pack. Prove that v2 is never read.
+- [X] T011 Write FAIL-first pooled-calibration tests in `tests/unit/test_pooled_calibration.py`: one threshold per model from **all four combined v1 sets** (100 answerable/20 OOC), maximum balanced accuracy, higher-threshold tie break, counts, and confusion separately for each pack. Prove that v2 is never read.
   - CHECKPOINT: STOP → report expected failures and tie-case result → wait for explicit «تایید» before T012.
 - [ ] T012 Extend `src/eval/calibrate.py` with `--model` and `--pooled-v1`; save locked `CalibrationRecord` under `data/eval/model-comparison/calibration/<model>.json`. Do not alter operational gates in `src/qa/pack_config.py`. Pass T011 and run E5-large over the four v1 sets, reporting the pooled threshold and any score overlap.
   - CHECKPOINT: STOP → report 120 scores, locked E5 gate, and four confusion tables → wait for explicit «تایید» before T013.
