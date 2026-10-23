@@ -41,7 +41,7 @@
   - CHECKPOINT: STOP → report paths, hashes, cache hits/misses, and unchanged operational index → wait for explicit «تایید» before T009.
 - [X] T009 Write FAIL-first index contract tests in `tests/contract/test_model_pack_index.py`: `Retriever` requires matching model_key/pack/hash/dimension, reads chunks only from the selected pack, rejects mismatches explicitly, and never validates a foreign-pack citation.
   - CHECKPOINT: STOP → report contract failures and positive default-path control → wait for explicit «تایید» before T010.
-- [ ] T010 Extend `src/qa/retriever.py` with a model-specific index path and canonical chunk path, validating hashes/IDs/dimensions. Reuse existing `faiss_store` and `has_chunk`; preserve the no-model path. Pass T009 and current scoped-citation tests. Principles II/VIII.
+- [X] T010 Extend `src/qa/retriever.py` with a model-specific index path and canonical chunk path, validating hashes/IDs/dimensions. Reuse existing `faiss_store` and `has_chunk`; preserve the no-model path. Pass T009 and current scoped-citation tests. Principles II/VIII.
   - CHECKPOINT: STOP → report mismatch rejection, isolation, and regressions → wait for explicit «تایید» before T011.
 - [ ] T011 Write FAIL-first pooled-calibration tests in `tests/unit/test_pooled_calibration.py`: one threshold per model from **all four combined v1 sets** (100 answerable/20 OOC), maximum balanced accuracy, higher-threshold tie break, counts, and confusion separately for each pack. Prove that v2 is never read.
   - CHECKPOINT: STOP → report expected failures and tie-case result → wait for explicit «تایید» before T012.

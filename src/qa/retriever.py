@@ -1,18 +1,16 @@
-"""Retrieval orchestration (T012): question -> top-k grounded chunks.
-
-Loads the persisted FAISS index + chunk records once, embeds the question
-with the e5 query prefix, and returns the top-k chunk records (highest
-cosine score first), each carrying its citation metadata.
-"""
+"""Pack-scoped question retrieval from the operational or research index."""
 
 from __future__ import annotations
 
+import hashlib
 import json
 import logging
+from dataclasses import asdict
 from pathlib import Path
 
 from src.index import faiss_store
 from src.index.embed import embed_queries
+from src.index.model_config import get_model_candidate
 
 DEFAULT_TOP_K = 5
 
@@ -33,14 +31,49 @@ def detect_query_lang(text: str) -> str:
 class Retriever:
     """Question-to-chunks retrieval over the frozen index snapshot."""
 
-    def __init__(self, index_dir: str | Path = "data/index"):
-        self._index, self._ids = faiss_store.load(index_dir)
-        chunks_path = Path(index_dir) / "chunks.jsonl"
+    def __init__(self, index_dir: str | Path = "data/index", *,
+                 model_key: str | None = None, pack_id: str | None = None):
+        self._model_key = model_key
+        directory = Path(index_dir)
+        chunks_path = directory / "chunks.jsonl"
+        if model_key is not None:
+            if not pack_id:
+                raise ValueError("research index requires a pack_id")
+            candidate = get_model_candidate(model_key)
+            metadata = json.loads((directory / "index-meta.json").read_text(encoding="utf-8"))
+            chunks_path = Path("data/index") / pack_id / "chunks.jsonl"
+            settings_hash = hashlib.sha256(json.dumps(
+                asdict(candidate), sort_keys=True, ensure_ascii=False
+            ).encode("utf-8")).hexdigest()
+            expected = {
+                "status": "ready", "model_key": model_key, "pack_id": pack_id,
+                "revision_sha": candidate.revision_sha,
+                "settings_sha256": settings_hash,
+                "canonical_chunks_path": chunks_path.as_posix(),
+                "dimension": candidate.dimension,
+            }
+            for field, value in expected.items():
+                if metadata.get(field) != value:
+                    raise ValueError(f"research index {field} mismatch")
+            if hashlib.sha256(chunks_path.read_bytes()).hexdigest() != metadata.get("chunk_sha256"):
+                raise ValueError("canonical chunk hash mismatch")
+            if hashlib.sha256((directory / "faiss.index").read_bytes()).hexdigest() != metadata.get("index_sha256"):
+                raise ValueError("research index hash mismatch")
+        elif pack_id is not None:
+            raise ValueError("pack_id requires a research model_key")
+
+        self._index, self._ids = faiss_store.load(directory)
         records = [
             json.loads(line)
             for line in chunks_path.read_text(encoding="utf-8").splitlines()
             if line.strip()
         ]
+        if model_key is not None:
+            canonical_ids = [record["chunk_id"] for record in records]
+            if self._ids != canonical_ids or len(set(canonical_ids)) != len(canonical_ids):
+                raise ValueError("research index IDs differ from canonical chunk order")
+            if self._index.d != candidate.dimension or self._index.ntotal != metadata.get("count"):
+                raise ValueError("research index dimension/count mismatch")
         self._by_id = {record["chunk_id"]: record for record in records}
         missing = [cid for cid in self._ids if cid not in self._by_id]
         if missing:
@@ -61,7 +94,8 @@ class Retriever:
         question = question.strip()
         lang_hint = detect_query_lang(question)
         logger.info("retrieve lang_hint=%s question=%s", lang_hint, question[:60])
-        query_vec = embed_queries([question])[0]
+        query_vec = (embed_queries([question])[0] if self._model_key is None else
+                     embed_queries([question], model_key=self._model_key)[0])
         hits = faiss_store.search(self._index, self._ids, query_vec, k)
         results = []
         for chunk_id, score in hits:

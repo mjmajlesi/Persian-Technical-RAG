@@ -1,6 +1,8 @@
 """FAIL-first research retriever isolation contract (003-T009, no LLM/model download)."""
 
 import json
+import shutil
+from pathlib import Path
 
 import numpy as np
 import pytest
@@ -10,8 +12,33 @@ from src.index import faiss_store
 from src.qa import retriever as retrieval
 
 
-@pytest.fixture
-def two_packs(tmp_path, monkeypatch):
+class _Index:
+    def __init__(self, dimension, count):
+        self.d = dimension
+        self.ntotal = count
+
+
+def _build(vectors):
+    return _Index(vectors.shape[1], vectors.shape[0])
+
+
+def _write(index, path):
+    Path(path).write_text(json.dumps({"dimension": index.d, "count": index.ntotal}),
+                          encoding="utf-8")
+
+
+def _load(directory):
+    directory = Path(directory)
+    data = json.loads((directory / "faiss.index").read_text(encoding="utf-8"))
+    ids = json.loads((directory / "ids.json").read_text(encoding="utf-8"))
+    if data["count"] != len(ids):
+        raise ValueError("index count does not match ids")
+    return _Index(data["dimension"], data["count"]), ids
+
+
+@pytest.fixture(scope="module")
+def pack_template(tmp_path_factory):
+    tmp_path = tmp_path_factory.mktemp("model-pack-index")
     for pack in ("c", "cpp"):
         canonical = tmp_path / "data/index" / pack
         canonical.mkdir(parents=True)
@@ -32,19 +59,33 @@ def two_packs(tmp_path, monkeypatch):
         manifest.parent.mkdir(parents=True, exist_ok=True)
         manifest.write_text(json.dumps({"sources": [{"source_id": f"{pack}-source"}]}),
                             encoding="utf-8")
-        faiss_store.save(faiss_store.build(np.eye(2, 1024, dtype=np.float32)),
-                         ids, canonical)  # operational control, without the research flags
-
-    monkeypatch.chdir(tmp_path)
+        _write(_Index(1024, 2), canonical / "faiss.index")
 
     def encode(texts, *, model_key, truncation_stats):
         assert model_key == "e5-base"
         truncation_stats["truncation_count"] = 0
         return np.eye(len(texts), 768, dtype=np.float32)
 
-    monkeypatch.setattr(index_cli, "embed_passages", encode)
-    for pack in ("c", "cpp"):
-        assert index_cli.main(["build", "--lang", pack, "--model", "e5-base"]) == 0
+    with pytest.MonkeyPatch.context() as patch:
+        patch.chdir(tmp_path)
+        patch.setattr(index_cli, "embed_passages", encode)
+        patch.setattr(faiss_store, "build", _build)
+        patch.setattr(faiss_store.faiss, "write_index", _write)
+        for pack in ("c", "cpp"):
+            assert index_cli.main(["build", "--lang", pack, "--model", "e5-base"]) == 0
+    return tmp_path
+
+
+@pytest.fixture
+def two_packs(tmp_path, monkeypatch, pack_template):
+    shutil.copytree(pack_template / "data", tmp_path / "data")
+    monkeypatch.chdir(tmp_path)
+    # Keep native FAISS operations out of pre-integration contract tests on
+    # Windows: torch import aborts if this fixture runs FAISS first. T008's
+    # build tests separately exercise the real FAISS adapter.
+    monkeypatch.setattr(faiss_store, "load", _load)
+    monkeypatch.setattr(faiss_store, "search",
+                        lambda index, ids, vec, k: [(cid, 1.0) for cid in ids[:k]])
     return {pack: tmp_path / "data/research/embedding-compare/e5-base" / pack
             for pack in ("c", "cpp")}
 
@@ -104,8 +145,7 @@ def test_changed_canonical_chunk_text_fails_on_hash(two_packs, tmp_path):
 
 
 def test_index_dimension_mismatch_fails(two_packs):
-    bad = faiss_store.build(np.eye(2, 1024, dtype=np.float32))
-    faiss_store.faiss.write_index(bad, str(two_packs["c"] / "faiss.index"))
+    _write(_Index(1024, 2), two_packs["c"] / "faiss.index")
     with pytest.raises(ValueError, match="index|dimension|hash"):
         retrieval.Retriever(two_packs["c"], model_key="e5-base", pack_id="c")
 
