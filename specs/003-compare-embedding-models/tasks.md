@@ -83,7 +83,7 @@
   - CHECKPOINT: STOP → report 28 C++ sources/evidence labels and draft status → wait for explicit «تایید» before T024.
 - [X] T024 [US1] Add 10 new mixed and 7 new OOC questions to `data/eval/cpp/eval-set.cpp.v2.json`. Validate all 45 items in 28/10/7, sources, licenses, and non-duplication against v1/chunks. **Present the completed C++ set for its own user review.**
   - CHECKPOINT: STOP → report 45 items and representative C++ evidence → wait for explicit «تایید» before T025.
-- [ ] T025 [P] [US1] Draft 28 **new Python in-corpus** questions in `data/eval/python/eval-set.python.v2.json`: Persian question → frozen official English source, valid expected_source_ids, grounded summary, provenance/license, and no v1/chunk copying.
+- [X] T025 [P] [US1] Draft 28 **new Python in-corpus** questions in `data/eval/python/eval-set.python.v2.json`: Persian question → frozen official English source, valid expected_source_ids, grounded summary, provenance/license, and no v1/chunk copying.
   - CHECKPOINT: STOP → report 28 sources and Python cross-lingual quality → wait for explicit «تایید» before T026.
 - [ ] T026 [US1] Add 10 new mixed and 7 new OOC questions to `data/eval/python/eval-set.python.v2.json`. Validate 45 items in 28/10/7, English evidence, summaries, and non-duplication against v1/chunks. **Present the completed Python set for its own user review.**
   - CHECKPOINT: STOP → report 45 items and difficult Python cases → wait for explicit «تایید» before T027.

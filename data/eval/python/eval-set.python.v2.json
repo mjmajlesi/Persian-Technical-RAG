@@ -1,0 +1,848 @@
+{
+  "version": "python-v2",
+  "pack_id": "python",
+  "snapshot": "2026-10-16",
+  "notes": "Incomplete draft: 28 new Python in-corpus questions grounded in frozen English docs. Pending user review; 10 mixed and 7 out-of-corpus items belong to T026. Never score as a complete set.",
+  "items": [
+    {
+      "item_id": "PY2-001",
+      "question": "اگر دو عدد صحیحِ ۱۹ و ۴ را تقسیم کنیم، خروجیِ تقسیم معمولی و تقسیمِ کف‌گیری در پایتون چه فرقی دارند؟",
+      "expected_answer_summary": "تقسیم با / مقدار اعشاری ۴٫۷۵ می‌دهد؛ تقسیم کف‌گیری با // برای این دو عدد صحیح مقدار ۴ می‌دهد.",
+      "pack_id": "python",
+      "version": "python-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "pyref-tutorial-introduction#s04-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "pyref-tutorial-introduction#s04-c01",
+          "source_id": "pyref-tutorial-introduction",
+          "section_heading": "3.1.1. Numbers",
+          "title": "Python tutorial — An Informal Introduction",
+          "origin": "data/corpus/python/ref-pyref-tutorial-introduction.md",
+          "snapshot": "2026-10-16",
+          "license": "PSF License (docs.python.org)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "item_id": "PY2-002",
+      "question": "چرا می‌توان دو لیترالِ رشته‌ای را بدون عملگر کنار هم نوشت اما جایگزین‌کردن یکی از آن‌ها با متغیر در همان نحو پذیرفته نیست؟",
+      "expected_answer_summary": "الحاقِ خودکارِ کنارهم‌نویسی فقط برای دو لیترال است؛ برای متغیر و لیترال یا دو مقدارِ محاسبه‌شده باید از عملگر جمع استفاده کرد.",
+      "pack_id": "python",
+      "version": "python-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "pyref-tutorial-introduction#s05-c02"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "pyref-tutorial-introduction#s05-c02",
+          "source_id": "pyref-tutorial-introduction",
+          "section_heading": "3.1.2. Text",
+          "title": "Python tutorial — An Informal Introduction",
+          "origin": "data/corpus/python/ref-pyref-tutorial-introduction.md",
+          "snapshot": "2026-10-16",
+          "license": "PSF License (docs.python.org)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "item_id": "PY2-003",
+      "question": "اگر مقدارِ پیش‌فرضِ پارامتر تابع یک فهرست خالی باشد و تابع در هر فراخوانی چیزی به آن بیفزاید، چرا فراخوانی‌های بعدی فهرستِ خالیِ تازه نمی‌بینند؟",
+      "expected_answer_summary": "مقدارِ پیش‌فرض هنگام تعریف تابع یک‌بار ساخته می‌شود و همان فهرست میان فراخوانی‌ها مشترک می‌ماند؛ برای حالتِ مستقل می‌توان تهی‌نما را پیش‌فرض گذاشت و داخل تابع فهرست ساخت.",
+      "pack_id": "python",
+      "version": "python-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "pyref-tutorial-controlflow#s12-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "pyref-tutorial-controlflow#s12-c01",
+          "source_id": "pyref-tutorial-controlflow",
+          "section_heading": "4.9.1. Default Argument Values",
+          "title": "Python tutorial — More Control Flow Tools",
+          "origin": "data/corpus/python/ref-pyref-tutorial-controlflow.md",
+          "snapshot": "2026-10-16",
+          "license": "PSF License (docs.python.org)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "item_id": "PY2-004",
+      "question": "اگر در امضای تابع پیش از جداکنندهٔ مورب پارامتری تعریف کنیم، آیا فراخواننده می‌تواند آن را با نامِ پارامتر بفرستد؟",
+      "expected_answer_summary": "خیر؛ پارامترهای پیش از / فقط با جایگاه قابل ارسال‌اند و استفاده از نامشان به‌عنوان کلیدواژه مجاز نیست.",
+      "pack_id": "python",
+      "version": "python-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "pyref-tutorial-controlflow#s16-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "pyref-tutorial-controlflow#s16-c01",
+          "source_id": "pyref-tutorial-controlflow",
+          "section_heading": "4.9.3.2. Positional-Only Parameters",
+          "title": "Python tutorial — More Control Flow Tools",
+          "origin": "data/corpus/python/ref-pyref-tutorial-controlflow.md",
+          "snapshot": "2026-10-16",
+          "license": "PSF License (docs.python.org)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "item_id": "PY2-005",
+      "question": "با قرار دادنِ ستارهٔ تنها در فهرست پارامترهای تابع، شیوهٔ ارسال پارامترهای پس از آن چه محدودیتی پیدا می‌کند؟",
+      "expected_answer_summary": "پارامترهای پس از * فقط با نامشان در فراخوانی قابل ارسال‌اند و نمی‌توان آن‌ها را صرفاً جایگاهی فرستاد.",
+      "pack_id": "python",
+      "version": "python-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "pyref-tutorial-controlflow#s17-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "pyref-tutorial-controlflow#s17-c01",
+          "source_id": "pyref-tutorial-controlflow",
+          "section_heading": "4.9.3.3. Keyword-Only Arguments",
+          "title": "Python tutorial — More Control Flow Tools",
+          "origin": "data/corpus/python/ref-pyref-tutorial-controlflow.md",
+          "snapshot": "2026-10-16",
+          "license": "PSF License (docs.python.org)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "item_id": "PY2-006",
+      "question": "وقتی مقادیرِ لازم برای پارامترهای نام‌دارِ تابع در یک دیکشنری موجودند، هنگام فراخوانی چگونه آن‌ها را به آرگومان‌های نام‌دار تبدیل می‌کنیم؟",
+      "expected_answer_summary": "با گشودن دیکشنری به کمک ** در جای آرگومان‌های فراخوانی، کلیدها به نام پارامتر و مقدارها به آرگومان متناظر فرستاده می‌شوند.",
+      "pack_id": "python",
+      "version": "python-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "pyref-tutorial-controlflow#s21-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "pyref-tutorial-controlflow#s21-c01",
+          "source_id": "pyref-tutorial-controlflow",
+          "section_heading": "4.9.5. Unpacking Argument Lists",
+          "title": "Python tutorial — More Control Flow Tools",
+          "origin": "data/corpus/python/ref-pyref-tutorial-controlflow.md",
+          "snapshot": "2026-10-16",
+          "license": "PSF License (docs.python.org)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "item_id": "PY2-007",
+      "question": "برای صفی که باید هم از انتها عضو بگیرد و هم از ابتدا سریع خارج کند، چرا حذف از ابتدای فهرست انتخاب خوبی نیست و مستندات چه ساختاری پیشنهاد می‌کنند؟",
+      "expected_answer_summary": "حذف از ابتدای list اعضای بعدی را جابه‌جا می‌کند و کند است؛ collections.deque برای افزودن و برداشتن سریع از هر دو انتها طراحی شده است.",
+      "pack_id": "python",
+      "version": "python-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "pyref-tutorial-datastructures#s05-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "pyref-tutorial-datastructures#s05-c01",
+          "source_id": "pyref-tutorial-datastructures",
+          "section_heading": "5.1.2. Using Lists as Queues",
+          "title": "Python tutorial — Data Structures",
+          "origin": "data/corpus/python/ref-pyref-tutorial-datastructures.md",
+          "snapshot": "2026-10-16",
+          "license": "PSF License (docs.python.org)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "item_id": "PY2-008",
+      "question": "در ساخت یک تاپلِ تک‌عضوی، آیا گذاشتنِ تنها یک مقدار میان پرانتز کافی است یا نشانهٔ دیگری لازم دارد؟",
+      "expected_answer_summary": "پرانتزِ تنها کافی نیست؛ یک ویرگول پس از مقدار لازم است تا یک تاپلِ تک‌عضوی ساخته شود.",
+      "pack_id": "python",
+      "version": "python-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "pyref-tutorial-datastructures#s10-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "pyref-tutorial-datastructures#s10-c01",
+          "source_id": "pyref-tutorial-datastructures",
+          "section_heading": "5.3. Tuples and Sequences",
+          "title": "Python tutorial — Data Structures",
+          "origin": "data/corpus/python/ref-pyref-tutorial-datastructures.md",
+          "snapshot": "2026-10-16",
+          "license": "PSF License (docs.python.org)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "item_id": "PY2-009",
+      "question": "اگر یک مجموعه شامل ۱ و ۲ و ۳ و دیگری شامل ۳ و ۴ باشد، عملِ تفاضلِ متقارن چه عناصری می‌دهد؟",
+      "expected_answer_summary": "تفاضل متقارن فقط عناصرِ منحصر به یکی از دو مجموعه را نگه می‌دارد؛ نتیجه مجموعهٔ ۱ و ۲ و ۴ است، نه ۳ که در هر دو است.",
+      "pack_id": "python",
+      "version": "python-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "pyref-tutorial-datastructures#s11-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "pyref-tutorial-datastructures#s11-c01",
+          "source_id": "pyref-tutorial-datastructures",
+          "section_heading": "5.4. Sets",
+          "title": "Python tutorial — Data Structures",
+          "origin": "data/corpus/python/ref-pyref-tutorial-datastructures.md",
+          "snapshot": "2026-10-16",
+          "license": "PSF License (docs.python.org)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "item_id": "PY2-010",
+      "question": "در مقایسهٔ واژه‌نامه‌ایِ دو دنباله با آغازِ یکسان، اگر یکی پیش از دیگری تمام شود کدام کوچک‌تر شمرده می‌شود؟",
+      "expected_answer_summary": "اگر همهٔ اعضای مشترک برابر باشند و یکی پیشوند دیگری باشد، دنبالهٔ کوتاه‌تر کوچک‌تر شمرده می‌شود.",
+      "pack_id": "python",
+      "version": "python-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "pyref-tutorial-datastructures#s15-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "pyref-tutorial-datastructures#s15-c01",
+          "source_id": "pyref-tutorial-datastructures",
+          "section_heading": "5.8. Comparing Sequences and Other Types",
+          "title": "Python tutorial — Data Structures",
+          "origin": "data/corpus/python/ref-pyref-tutorial-datastructures.md",
+          "snapshot": "2026-10-16",
+          "license": "PSF License (docs.python.org)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "item_id": "PY2-011",
+      "question": "وقتی یک تابعِ تو در تو می‌خواهد پیوندِ متغیرِ تابعِ بیرونی را عوض کند، چه اعلانی لازم است و این کار چه فرقی با اعلانِ متغیرِ سطح ماژول دارد؟",
+      "expected_answer_summary": "برای تغییر پیوندِ حوزهٔ تابع بیرونی از nonlocal استفاده می‌شود؛ global به پیوندِ سطح ماژول اشاره می‌کند، نه متغیر تابع بیرونی.",
+      "pack_id": "python",
+      "version": "python-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "pyref-tutorial-classes#s05-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "pyref-tutorial-classes#s05-c01",
+          "source_id": "pyref-tutorial-classes",
+          "section_heading": "9.2.1. Scopes and Namespaces Example",
+          "title": "Python tutorial — Classes",
+          "origin": "data/corpus/python/ref-pyref-tutorial-classes.md",
+          "snapshot": "2026-10-16",
+          "license": "PSF License (docs.python.org)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "item_id": "PY2-012",
+      "question": "اگر کلاس و یکی از نمونه‌هایش هر دو ویژگیِ همنام داشته باشند، خواندن آن ویژگی از همان نمونه کدام مقدار را می‌دهد و نمونهٔ دیگر چه وضعی دارد؟",
+      "expected_answer_summary": "در جست‌وجوی ویژگی، مقدارِ همان نمونه بر مقدارِ کلاس اولویت دارد؛ نمونهٔ دیگر که ویژگیِ مستقل را تعریف نکرده همچنان مقدار کلاس را می‌بیند.",
+      "pack_id": "python",
+      "version": "python-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "pyref-tutorial-classes#s12-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "pyref-tutorial-classes#s12-c01",
+          "source_id": "pyref-tutorial-classes",
+          "section_heading": "9.4. Random Remarks",
+          "title": "Python tutorial — Classes",
+          "origin": "data/corpus/python/ref-pyref-tutorial-classes.md",
+          "snapshot": "2026-10-16",
+          "license": "PSF License (docs.python.org)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "item_id": "PY2-013",
+      "question": "آیا پیشوندِ دو زیرخطِ نامِ یک عضو در تعریفِ کلاس پایتون آن را واقعاً خصوصی می‌کند، یا نام به شکلی تغییر می‌یابد که تداخلِ کلاس فرزند کمتر شود؟",
+      "expected_answer_summary": "خصوصی‌سازیِ قطعی نیست؛ نامِ آغازشده با دو زیرخط با نام کلاس ترکیب می‌شود تا از تصادم نام در زیرکلاس‌ها جلوگیری شود.",
+      "pack_id": "python",
+      "version": "python-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "pyref-tutorial-classes#s15-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "pyref-tutorial-classes#s15-c01",
+          "source_id": "pyref-tutorial-classes",
+          "section_heading": "9.6. Private Variables",
+          "title": "Python tutorial — Classes",
+          "origin": "data/corpus/python/ref-pyref-tutorial-classes.md",
+          "snapshot": "2026-10-16",
+          "license": "PSF License (docs.python.org)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "item_id": "PY2-014",
+      "question": "چرا تابعی که هنگام پیمایش چند بار مقدار می‌دهد پس از هر درخواستِ عضو از ابتدا اجرا نمی‌شود و برای پایان پیمایش چه رخ می‌دهد؟",
+      "expected_answer_summary": "مولد جای اجرا و متغیرهای محلی را میان فراخوانی‌های next حفظ می‌کند و از همان نقطه ادامه می‌دهد؛ در پایان StopIteration را به‌طور خودکار برمی‌انگیزد.",
+      "pack_id": "python",
+      "version": "python-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "pyref-tutorial-classes#s18-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "pyref-tutorial-classes#s18-c01",
+          "source_id": "pyref-tutorial-classes",
+          "section_heading": "9.9. Generators",
+          "title": "Python tutorial — Classes",
+          "origin": "data/corpus/python/ref-pyref-tutorial-classes.md",
+          "snapshot": "2026-10-16",
+          "license": "PSF License (docs.python.org)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "item_id": "PY2-015",
+      "question": "اگر هنگام تبدیلِ یک خطا به خطای تازه نخواهیم علتِ قبلی در نمایشِ ردگیری دیده شود، چه صورتی از پرتابِ خطای جدید به کار می‌بریم؟",
+      "expected_answer_summary": "از raise با from None استفاده می‌شود تا نمایشِ زنجیرهٔ خودکارِ خطای پیشین سرکوب شود؛ خطای جدید همچنان گزارش می‌شود.",
+      "pack_id": "python",
+      "version": "python-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "pyref-tutorial-errors#s07-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "pyref-tutorial-errors#s07-c01",
+          "source_id": "pyref-tutorial-errors",
+          "section_heading": "8.5. Exception Chaining",
+          "title": "Python tutorial — Errors and Exceptions",
+          "origin": "data/corpus/python/ref-pyref-tutorial-errors.md",
+          "snapshot": "2026-10-16",
+          "license": "PSF License (docs.python.org)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "item_id": "PY2-016",
+      "question": "اگر هم بخش اصلیِ تابع و هم بخشِ پاک‌سازیِ پایانی مقدار بازگشتی داشته باشند، در نهایت کدام مقدار برمی‌گردد و چرا این الگو توصیه نمی‌شود؟",
+      "expected_answer_summary": "بازگشتِ بخش finally بر بازگشتِ بخش try غلبه می‌کند؛ این کار ممکن است نتیجه یا حتی خطا را پنهان کند و مستندات از آن برحذر می‌دارند.",
+      "pack_id": "python",
+      "version": "python-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "pyref-tutorial-errors#s09-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "pyref-tutorial-errors#s09-c01",
+          "source_id": "pyref-tutorial-errors",
+          "section_heading": "8.7. Defining Clean-up Actions",
+          "title": "Python tutorial — Errors and Exceptions",
+          "origin": "data/corpus/python/ref-pyref-tutorial-errors.md",
+          "snapshot": "2026-10-16",
+          "license": "PSF License (docs.python.org)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "item_id": "PY2-017",
+      "question": "اگر گروهی از چند خطای نامرتبط بالا آمده باشد و فقط زیرگروهِ یک نوعِ مشخص را بخواهیم بگیریم، کدام گونهٔ بندِ گرفتن خطا لازم است؟",
+      "expected_answer_summary": "بند except* فقط خطاهای هم‌نوعِ خواسته‌شده را از ExceptionGroup جداگانه رسیدگی می‌کند و باقی می‌توانند به بندهای دیگر یا بیرون بروند.",
+      "pack_id": "python",
+      "version": "python-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "pyref-tutorial-errors#s11-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "pyref-tutorial-errors#s11-c01",
+          "source_id": "pyref-tutorial-errors",
+          "section_heading": "8.9. Raising and Handling Multiple Unrelated Exceptions",
+          "title": "Python tutorial — Errors and Exceptions",
+          "origin": "data/corpus/python/ref-pyref-tutorial-errors.md",
+          "snapshot": "2026-10-16",
+          "license": "PSF License (docs.python.org)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "item_id": "PY2-018",
+      "question": "وقتی هنگام خواندنِ فایل درون یک بلوکِ مدیریتی استثنا رخ دهد، آیا پس از ترک بلوک لازم است حتماً فایل را جداگانه ببندیم؟",
+      "expected_answer_summary": "خیر؛ فایلِ بازشده با with در پایان بلوک، حتی با رخداد استثنا، به‌درستی بسته می‌شود.",
+      "pack_id": "python",
+      "version": "python-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "pyref-tutorial-inputoutput#s08-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "pyref-tutorial-inputoutput#s08-c01",
+          "source_id": "pyref-tutorial-inputoutput",
+          "section_heading": "7.2. Reading and writing files",
+          "title": "Python tutorial — Input and output",
+          "origin": "data/corpus/python/ref-pyref-tutorial-inputoutput.md",
+          "snapshot": "2026-10-16",
+          "license": "PSF License (docs.python.org)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "item_id": "PY2-019",
+      "question": "برای رفتن به چهار بایت پیش از پایانِ فایلِ دودویی، مرجعِ جابه‌جایی و مقدارِ آن را چگونه تعیین می‌کنیم و چرا این مثال را نباید عیناً به فایل متنی تعمیم داد؟",
+      "expected_answer_summary": "در فایل دودویی، seek با جابه‌جاییِ منفیِ چهار و مرجعِ انتهای فایل (whence برابر دو) استفاده می‌شود؛ در حالت متنی جابه‌جایی‌های دلخواه نسبت به انتها مجاز نیستند.",
+      "pack_id": "python",
+      "version": "python-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "pyref-tutorial-inputoutput#s09-c02"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "pyref-tutorial-inputoutput#s09-c02",
+          "source_id": "pyref-tutorial-inputoutput",
+          "section_heading": "7.2.1. Methods of file objects",
+          "title": "Python tutorial — Input and output",
+          "origin": "data/corpus/python/ref-pyref-tutorial-inputoutput.md",
+          "snapshot": "2026-10-16",
+          "license": "PSF License (docs.python.org)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "item_id": "PY2-020",
+      "question": "برای ثبت ساختارِ دیکشنریِ پایتون در فایلِ متنیِ باز و بازسازیِ بعدی آن، مستندات چه دو عملیاتِ متقابلِ ماژولِ استاندارد پیشنهاد می‌کنند؟",
+      "expected_answer_summary": "json.dump شیء را در فایل متنی سریال‌سازی می‌کند و json.load از فایل خواندنی داده را بازمی‌سازد؛ فایل JSON باید UTF-8 باشد.",
+      "pack_id": "python",
+      "version": "python-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "pyref-tutorial-inputoutput#s10-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "pyref-tutorial-inputoutput#s10-c01",
+          "source_id": "pyref-tutorial-inputoutput",
+          "section_heading": "7.2.2. Saving structured data with json",
+          "title": "Python tutorial — Input and output",
+          "origin": "data/corpus/python/ref-pyref-tutorial-inputoutput.md",
+          "snapshot": "2026-10-16",
+          "license": "PSF License (docs.python.org)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "item_id": "PY2-021",
+      "question": "چطور می‌توان از یک تابعِ خواندنِ بی‌آرگومان تا رسیدن به نشانگرِ دادهٔ تهی، پیمایشگری ساخت که دیگر دادهٔ پایان را تحویل ندهد؟",
+      "expected_answer_summary": "صورت دوآرگومانی iter، تابعِ بی‌آرگومان را بارها فراخوانی می‌کند و وقتی خروجیِ آن برابر مقدارِ نگهبان شود با StopIteration متوقف می‌شود؛ برای خواندن بلوک‌ها می‌توان دادهٔ تهی را نگهبان گذاشت.",
+      "pack_id": "python",
+      "version": "python-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "pyref-library-functions#s02-c14"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "pyref-library-functions#s02-c14",
+          "source_id": "pyref-library-functions",
+          "section_heading": "Built-in functions",
+          "title": "Python library — Built-in functions",
+          "origin": "data/corpus/python/ref-pyref-library-functions.md",
+          "snapshot": "2026-10-16",
+          "license": "PSF License (docs.python.org)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "item_id": "PY2-022",
+      "question": "در گردکردنِ مقدارهای دقیقاً نیمه‌راهیِ ۲٫۵ و ۳٫۵ به نزدیک‌ترین عدد صحیح، قاعدهٔ انتخابِ پایتون چیست و نتیجهٔ هر کدام چند می‌شود؟",
+      "expected_answer_summary": "در تساویِ فاصله، مقدارِ زوج برگزیده می‌شود؛ بنابراین round برای ۲٫۵ مقدار ۲ و برای ۳٫۵ مقدار ۴ می‌دهد.",
+      "pack_id": "python",
+      "version": "python-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "pyref-library-functions#s02-c22"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "pyref-library-functions#s02-c22",
+          "source_id": "pyref-library-functions",
+          "section_heading": "Built-in functions",
+          "title": "Python library — Built-in functions",
+          "origin": "data/corpus/python/ref-pyref-library-functions.md",
+          "snapshot": "2026-10-16",
+          "license": "PSF License (docs.python.org)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "item_id": "PY2-023",
+      "question": "اگر هنگام جفت‌سازی دو پیمایش‌پذیر یکی زودتر تمام شود، با کدام گزینه می‌توان به‌جای حذفِ بی‌صدای دنبالهٔ اضافی خطا دریافت کرد؟",
+      "expected_answer_summary": "با گزینهٔ strict=True در zip، نابرابریِ طولِ ورودی‌ها هنگام پیمایش به ValueError منجر می‌شود؛ حالت عادی در کوتاه‌ترین ورودی متوقف می‌شود.",
+      "pack_id": "python",
+      "version": "python-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "pyref-library-functions#s02-c28"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "pyref-library-functions#s02-c28",
+          "source_id": "pyref-library-functions",
+          "section_heading": "Built-in functions",
+          "title": "Python library — Built-in functions",
+          "origin": "data/corpus/python/ref-pyref-library-functions.md",
+          "snapshot": "2026-10-16",
+          "license": "PSF License (docs.python.org)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "item_id": "PY2-024",
+      "question": "اگر سوی چپِ «یا» در پایتون یک رشتهٔ ناتهی باشد، آیا خروجی الزاماً مقدارِ بولی است و آیا سوی راست ارزیابی می‌شود؟",
+      "expected_answer_summary": "نه؛ or خودِ عملوندِ چپِ راست‌ارز را برمی‌گرداند، نه الزاماً True، و با اتصال‌کوتاه سمت راست ارزیابی نمی‌شود.",
+      "pack_id": "python",
+      "version": "python-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "pyref-library-stdtypes#s04-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "pyref-library-stdtypes#s04-c01",
+          "source_id": "pyref-library-stdtypes",
+          "section_heading": "Boolean Operations — and, or, not",
+          "title": "Python library — Built-in Types",
+          "origin": "data/corpus/python/ref-pyref-library-stdtypes.md",
+          "snapshot": "2026-10-16",
+          "license": "PSF License (docs.python.org)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "item_id": "PY2-025",
+      "question": "اگر با تکرارِ یک فهرستِ حاوی فهرستِ تهی چند خانه بسازیم و یکی از فهرست‌های درونی را تغییر دهیم، چرا تغییر در خانه‌های دیگر نیز دیده می‌شود؟",
+      "expected_answer_summary": "تکرارِ فهرست مرجعِ همان فهرستِ درونی را تکثیر می‌کند، نه خودِ آن را؛ همهٔ خانه‌ها به یک شیء اشاره دارند و برای ساخت اشیای مستقل باید هر بار فهرست تازه ساخت.",
+      "pack_id": "python",
+      "version": "python-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "pyref-library-stdtypes#s20-c02"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "pyref-library-stdtypes#s20-c02",
+          "source_id": "pyref-library-stdtypes",
+          "section_heading": "Common Sequence Operations",
+          "title": "Python library — Built-in Types",
+          "origin": "data/corpus/python/ref-pyref-library-stdtypes.md",
+          "snapshot": "2026-10-16",
+          "license": "PSF License (docs.python.org)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "item_id": "PY2-026",
+      "question": "اگر نمای کلیدهای یک دیکشنری را پیش از افزودنِ کلید تازه نگه داریم، آیا نما هنگام بررسیِ بعدی کلید تازه را بازتاب می‌دهد یا تصویری ثابت از گذشته است؟",
+      "expected_answer_summary": "نمای dict.keys پویاست و تغییرهای دیکشنری را بازتاب می‌دهد؛ پس کلید تازه در نمای موجود دیده می‌شود، هرچند تغییر هنگام پیمایش می‌تواند مشکل‌ساز شود.",
+      "pack_id": "python",
+      "version": "python-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "pyref-library-stdtypes#s43-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "pyref-library-stdtypes#s43-c01",
+          "source_id": "pyref-library-stdtypes",
+          "section_heading": "Dictionary view objects",
+          "title": "Python library — Built-in Types",
+          "origin": "data/corpus/python/ref-pyref-library-stdtypes.md",
+          "snapshot": "2026-10-16",
+          "license": "PSF License (docs.python.org)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "item_id": "PY2-027",
+      "question": "چرا برای ساخت استثنای سفارشی معمولاً ارث‌بری هم‌زمان از چند نوع استثنای داخلی پیشنهاد نمی‌شود؟",
+      "expected_answer_summary": "چند ارث‌بری از استثناهای داخلی می‌تواند با نحوهٔ مدیریت args و چیدمان حافظهٔ پیاده‌سازی آن‌ها تداخل پیدا کند؛ پیشنهاد مستندات ارث‌بری از یک نوع است.",
+      "pack_id": "python",
+      "version": "python-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "pyref-library-exceptions#s04-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "pyref-library-exceptions#s04-c01",
+          "source_id": "pyref-library-exceptions",
+          "section_heading": "Inheriting from built-in exceptions",
+          "title": "Python library — Built-in Exceptions",
+          "origin": "data/corpus/python/ref-pyref-library-exceptions.md",
+          "snapshot": "2026-10-16",
+          "license": "PSF License (docs.python.org)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "item_id": "PY2-028",
+      "question": "اگر برنامه بخواهد فایلی را باز کند که وجود ندارد، کدام زیرگروهِ خطای سیستم‌عامل به این وضعیت اشاره می‌کند و با چه کدِ خطایی متناظر است؟",
+      "expected_answer_summary": "FileNotFoundError زیرکلاس OSError برای درخواستِ فایل یا پوشهٔ ناموجود است و با ENOENT متناظر است.",
+      "pack_id": "python",
+      "version": "python-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "pyref-library-exceptions#s07-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "pyref-library-exceptions#s07-c01",
+          "source_id": "pyref-library-exceptions",
+          "section_heading": "OS exceptions",
+          "title": "Python library — Built-in Exceptions",
+          "origin": "data/corpus/python/ref-pyref-library-exceptions.md",
+          "snapshot": "2026-10-16",
+          "license": "PSF License (docs.python.org)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      }
+    }
+  ]
+}
