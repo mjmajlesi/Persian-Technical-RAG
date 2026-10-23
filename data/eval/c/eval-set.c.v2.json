@@ -2,7 +2,7 @@
   "version": "c-v2",
   "pack_id": "c",
   "snapshot": "2026-09-23",
-  "notes": "Incomplete draft: 28 new in-corpus questions only. Pending user review; 10 mixed and 7 OOC items are T022. Never score as a complete v2 set.",
+  "notes": "C v2: 28 in-corpus, 10 mixed, 7 out-of-corpus. Reviewed at T022 user checkpoint on 2026-10-24; frozen pack/v1/pilot sets unchanged.",
   "items": [
     {
       "item_id": "C2-001",
@@ -27,9 +27,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-23",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T022 checkpoint)",
+        "reviewed_at": "2026-10-24"
       },
       "pack_id": "c",
       "version": "c-v2"
@@ -57,9 +57,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-23",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T022 checkpoint)",
+        "reviewed_at": "2026-10-24"
       },
       "pack_id": "c",
       "version": "c-v2"
@@ -87,9 +87,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-23",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T022 checkpoint)",
+        "reviewed_at": "2026-10-24"
       },
       "pack_id": "c",
       "version": "c-v2"
@@ -117,9 +117,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-23",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T022 checkpoint)",
+        "reviewed_at": "2026-10-24"
       },
       "pack_id": "c",
       "version": "c-v2"
@@ -147,9 +147,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-23",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T022 checkpoint)",
+        "reviewed_at": "2026-10-24"
       },
       "pack_id": "c",
       "version": "c-v2"
@@ -177,9 +177,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-23",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T022 checkpoint)",
+        "reviewed_at": "2026-10-24"
       },
       "pack_id": "c",
       "version": "c-v2"
@@ -207,9 +207,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-23",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T022 checkpoint)",
+        "reviewed_at": "2026-10-24"
       },
       "pack_id": "c",
       "version": "c-v2"
@@ -237,9 +237,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-23",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T022 checkpoint)",
+        "reviewed_at": "2026-10-24"
       },
       "pack_id": "c",
       "version": "c-v2"
@@ -267,9 +267,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-23",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T022 checkpoint)",
+        "reviewed_at": "2026-10-24"
       },
       "pack_id": "c",
       "version": "c-v2"
@@ -297,9 +297,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-23",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T022 checkpoint)",
+        "reviewed_at": "2026-10-24"
       },
       "pack_id": "c",
       "version": "c-v2"
@@ -327,9 +327,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-23",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T022 checkpoint)",
+        "reviewed_at": "2026-10-24"
       },
       "pack_id": "c",
       "version": "c-v2"
@@ -357,9 +357,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-23",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T022 checkpoint)",
+        "reviewed_at": "2026-10-24"
       },
       "pack_id": "c",
       "version": "c-v2"
@@ -387,9 +387,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-23",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T022 checkpoint)",
+        "reviewed_at": "2026-10-24"
       },
       "pack_id": "c",
       "version": "c-v2"
@@ -417,9 +417,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-23",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T022 checkpoint)",
+        "reviewed_at": "2026-10-24"
       },
       "pack_id": "c",
       "version": "c-v2"
@@ -447,9 +447,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-23",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T022 checkpoint)",
+        "reviewed_at": "2026-10-24"
       },
       "pack_id": "c",
       "version": "c-v2"
@@ -477,9 +477,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-23",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T022 checkpoint)",
+        "reviewed_at": "2026-10-24"
       },
       "pack_id": "c",
       "version": "c-v2"
@@ -507,9 +507,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-23",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T022 checkpoint)",
+        "reviewed_at": "2026-10-24"
       },
       "pack_id": "c",
       "version": "c-v2"
@@ -537,9 +537,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-23",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T022 checkpoint)",
+        "reviewed_at": "2026-10-24"
       },
       "pack_id": "c",
       "version": "c-v2"
@@ -567,9 +567,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-23",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T022 checkpoint)",
+        "reviewed_at": "2026-10-24"
       },
       "pack_id": "c",
       "version": "c-v2"
@@ -597,9 +597,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-23",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T022 checkpoint)",
+        "reviewed_at": "2026-10-24"
       },
       "pack_id": "c",
       "version": "c-v2"
@@ -627,9 +627,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-23",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T022 checkpoint)",
+        "reviewed_at": "2026-10-24"
       },
       "pack_id": "c",
       "version": "c-v2"
@@ -657,9 +657,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-23",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T022 checkpoint)",
+        "reviewed_at": "2026-10-24"
       },
       "pack_id": "c",
       "version": "c-v2"
@@ -687,9 +687,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-23",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T022 checkpoint)",
+        "reviewed_at": "2026-10-24"
       },
       "pack_id": "c",
       "version": "c-v2"
@@ -717,9 +717,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-23",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T022 checkpoint)",
+        "reviewed_at": "2026-10-24"
       },
       "pack_id": "c",
       "version": "c-v2"
@@ -747,9 +747,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-23",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T022 checkpoint)",
+        "reviewed_at": "2026-10-24"
       },
       "pack_id": "c",
       "version": "c-v2"
@@ -777,9 +777,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-23",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T022 checkpoint)",
+        "reviewed_at": "2026-10-24"
       },
       "pack_id": "c",
       "version": "c-v2"
@@ -808,9 +808,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-23",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T022 checkpoint)",
+        "reviewed_at": "2026-10-24"
       },
       "pack_id": "c",
       "version": "c-v2"
@@ -839,12 +839,438 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-23",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T022 checkpoint)",
+        "reviewed_at": "2026-10-24"
       },
       "pack_id": "c",
       "version": "c-v2"
+    },
+    {
+      "item_id": "C2-029",
+      "qtype": "mixed",
+      "question": "اگر با `snprintf` در بافری با گنجایش شش بایت متنی بلندتر بسازیم، حداکثر چند نویسهٔ متن در بافر جا می‌گیرد و خانهٔ باقی‌مانده برای چیست؟",
+      "expected_answer_summary": "حداکثر پنج نویسهٔ متن نوشته می‌شود و یک بایت برای پایانهٔ تهی کنار گذاشته می‌شود؛ این نتیجه در چارچوب پارامتر اندازهٔ بافرِ منبع است.",
+      "pack_id": "c",
+      "version": "c-v2",
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T022 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      },
+      "expected_source_ids": [
+        "cppref-printf#s03-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "source_id": "cppref-printf",
+          "chunk_id": "cppref-printf#s03-c01",
+          "section_heading": "Parameters",
+          "title": "cppreference — printf",
+          "origin": "data/corpus/c/ref-cppref-printf.md",
+          "snapshot": "2026-09-23",
+          "license": "CC-BY-SA (cppreference.com)"
+        }
+      ]
+    },
+    {
+      "item_id": "C2-030",
+      "qtype": "mixed",
+      "question": "اگر `fgets` پیش از پرشدن بافر به نویسهٔ پایان خط برسد، آیا newline را از رشتهٔ ذخیره‌شده حذف می‌کند و پس از داده‌ها چه می‌نویسد؟",
+      "expected_answer_summary": "اگر پایان خط خوانده شود در رشتهٔ مقصد باقی می‌ماند؛ پس از آخرین نویسهٔ خوانده‌شده نویسهٔ تهی برای پایان رشته نوشته می‌شود.",
+      "pack_id": "c",
+      "version": "c-v2",
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T022 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      },
+      "expected_source_ids": [
+        "cppref-fgets#s02-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "source_id": "cppref-fgets",
+          "chunk_id": "cppref-fgets#s02-c01",
+          "section_heading": "fgets",
+          "title": "cppreference — fgets",
+          "origin": "data/corpus/c/ref-cppref-fgets.md",
+          "snapshot": "2026-09-23",
+          "license": "CC-BY-SA (cppreference.com)"
+        }
+      ]
+    },
+    {
+      "item_id": "C2-031",
+      "qtype": "mixed",
+      "question": "در جست‌وجو با `strstr`، وقتی زیررشتهٔ درخواستی خالی باشد، نتیجه `NULL` است یا نشانیِ کدام بخش از رشتهٔ ورودی؟",
+      "expected_answer_summary": "اگر زیررشته خالی باشد، تابع نشانیِ آغاز خودِ رشتهٔ ورودی را برمی‌گرداند، نه نشانیِ تهی.",
+      "pack_id": "c",
+      "version": "c-v2",
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T022 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      },
+      "expected_source_ids": [
+        "cppref-strstr#s04-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "source_id": "cppref-strstr",
+          "chunk_id": "cppref-strstr#s04-c01",
+          "section_heading": "Return value",
+          "title": "cppreference — strstr",
+          "origin": "data/corpus/c/ref-cppref-strstr.md",
+          "snapshot": "2026-09-23",
+          "license": "CC-BY-SA (cppreference.com)"
+        }
+      ]
+    },
+    {
+      "item_id": "C2-032",
+      "qtype": "mixed",
+      "question": "آیا از نام `qsort` می‌توان نتیجه گرفت که الگوریتمِ پیاده‌سازی حتماً quicksort و ترتیب عناصر هم‌ارزش همواره پایدار است؟",
+      "expected_answer_summary": "خیر؛ استاندارد C و POSIX نه استفاده از الگوریتم quicksort را الزام می‌کنند و نه تضمینی برای پایداری یا پیچیدگی این تابع می‌دهند.",
+      "pack_id": "c",
+      "version": "c-v2",
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T022 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      },
+      "expected_source_ids": [
+        "cppref-qsort#s04-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "source_id": "cppref-qsort",
+          "chunk_id": "cppref-qsort#s04-c01",
+          "section_heading": "Notes",
+          "title": "cppreference — qsort",
+          "origin": "data/corpus/c/ref-cppref-qsort.md",
+          "snapshot": "2026-09-23",
+          "license": "CC-BY-SA (cppreference.com)"
+        }
+      ]
+    },
+    {
+      "item_id": "C2-033",
+      "qtype": "mixed",
+      "question": "اگر در آرایه چند رکورد از دید تابعِ مقایسهٔ `bsearch` با کلید برابر باشند، آیا می‌توان روی بازگشتِ نخستین رکوردِ برابر تکیه کرد؟",
+      "expected_answer_summary": "خیر؛ اگر چند عنصر از دید تابع مقایسه برابر باشند، اینکه کدام یک برگردانده شود مشخص نشده است.",
+      "pack_id": "c",
+      "version": "c-v2",
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T022 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      },
+      "expected_source_ids": [
+        "cppref-bsearch#s02-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "source_id": "cppref-bsearch",
+          "chunk_id": "cppref-bsearch#s02-c01",
+          "section_heading": "bsearch, bsearch_s",
+          "title": "cppreference — bsearch",
+          "origin": "data/corpus/c/ref-cppref-bsearch.md",
+          "snapshot": "2026-09-23",
+          "license": "CC-BY-SA (cppreference.com)"
+        }
+      ]
+    },
+    {
+      "item_id": "C2-034",
+      "qtype": "mixed",
+      "question": "چرا نباید یک مقدارِ منفیِ `char` را بی‌واسطه به `isalpha` داد و چه دامنه‌ای از ورودی برای این تابع تعریف شده است؟",
+      "expected_answer_summary": "جز EOF، ورودی باید قابل نمایش به‌صورت unsigned char باشد؛ مقدار منفیِ دیگری رفتار تعریف‌نشده دارد، پس برای نویسهٔ معتبر می‌توان آن را نخست به unsigned char تبدیل کرد.",
+      "pack_id": "c",
+      "version": "c-v2",
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T022 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      },
+      "expected_source_ids": [
+        "cppref-isalpha#s02-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "source_id": "cppref-isalpha",
+          "chunk_id": "cppref-isalpha#s02-c01",
+          "section_heading": "isalpha",
+          "title": "cppreference — isalpha",
+          "origin": "data/corpus/c/ref-cppref-isalpha.md",
+          "snapshot": "2026-09-23",
+          "license": "CC-BY-SA (cppreference.com)"
+        }
+      ]
+    },
+    {
+      "item_id": "C2-035",
+      "qtype": "mixed",
+      "question": "اگر در فراخوانی `fwrite` اندازهٔ هر عضو مثبت باشد ولی شمار اعضای درخواستی صفر باشد، آیا عملی روی جویبار انجام می‌شود و مقدار بازگشتی چیست؟",
+      "expected_answer_summary": "اگر شمار اعضا صفر باشد، تابع هیچ کار دیگری انجام نمی‌دهد و صفر برمی‌گرداند؛ اندازهٔ مثبت عضو این قاعده را تغییر نمی‌دهد.",
+      "pack_id": "c",
+      "version": "c-v2",
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T022 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      },
+      "expected_source_ids": [
+        "cppref-fwrite#s04-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "source_id": "cppref-fwrite",
+          "chunk_id": "cppref-fwrite#s04-c01",
+          "section_heading": "Return value",
+          "title": "cppreference — fwrite",
+          "origin": "data/corpus/c/ref-cppref-fwrite.md",
+          "snapshot": "2026-09-23",
+          "license": "CC-BY-SA (cppreference.com)"
+        }
+      ]
+    },
+    {
+      "item_id": "C2-036",
+      "qtype": "mixed",
+      "question": "وقتی پارامترِ اشاره‌گرِ `realloc` تهی باشد و اندازهٔ درخواستی مثبت، این فراخوانی از نظر تخصیص چه رفتاری دارد؟",
+      "expected_answer_summary": "با اشاره‌گرِ تهی، رفتار آن همان تخصیص حافظه با malloc برای اندازهٔ درخواستی است؛ پرسش دربارهٔ اندازهٔ صفر نیست.",
+      "pack_id": "c",
+      "version": "c-v2",
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T022 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      },
+      "expected_source_ids": [
+        "cppref-realloc#s02-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "source_id": "cppref-realloc",
+          "chunk_id": "cppref-realloc#s02-c01",
+          "section_heading": "realloc",
+          "title": "cppreference — realloc",
+          "origin": "data/corpus/c/ref-cppref-realloc.md",
+          "snapshot": "2026-09-23",
+          "license": "CC-BY-SA (cppreference.com)"
+        }
+      ]
+    },
+    {
+      "item_id": "C2-037",
+      "qtype": "mixed",
+      "question": "برای تعیین ترتیبِ دو رشته با `strcmp`، آیا باید منتظر دقیقاً عدد منفیِ یک یا مثبتِ یک بود یا فقط علامتِ نتیجه اهمیت دارد؟",
+      "expected_answer_summary": "علامتِ نتیجه مهم است: مقدار منفی یعنی رشتهٔ نخست پیش‌تر است، صفر یعنی برابرند و مقدار مثبت یعنی پس‌تر است؛ مقدار دقیقِ غیرصفر تضمین نشده است.",
+      "pack_id": "c",
+      "version": "c-v2",
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T022 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      },
+      "expected_source_ids": [
+        "cppref-strcmp#s04-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "source_id": "cppref-strcmp",
+          "chunk_id": "cppref-strcmp#s04-c01",
+          "section_heading": "Return value",
+          "title": "cppreference — strcmp",
+          "origin": "data/corpus/c/ref-cppref-strcmp.md",
+          "snapshot": "2026-09-23",
+          "license": "CC-BY-SA (cppreference.com)"
+        }
+      ]
+    },
+    {
+      "item_id": "C2-038",
+      "qtype": "mixed",
+      "question": "اگر با `memset` رمزی را درست پیش از پایان عمر بافر صفر کنیم و دیگر بافر خوانده نشود، آیا پاک‌شدن واقعی تضمین است و منبع چه جایگزین‌های صریحی را نام می‌برد؟",
+      "expected_answer_summary": "خیر؛ بهینه‌ساز ممکن است نوشتنِ بی‌اثرِ memset را حذف کند. منبع memset_explicit و memset_s را نمونه‌هایی می‌داند که نوشتنشان نباید به این دلیل حذف شود.",
+      "pack_id": "c",
+      "version": "c-v2",
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T022 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      },
+      "expected_source_ids": [
+        "cppref-memset#s04-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "source_id": "cppref-memset",
+          "chunk_id": "cppref-memset#s04-c01",
+          "section_heading": "Notes",
+          "title": "cppreference — memset",
+          "origin": "data/corpus/c/ref-cppref-memset.md",
+          "snapshot": "2026-09-23",
+          "license": "CC-BY-SA (cppreference.com)"
+        }
+      ]
+    },
+    {
+      "item_id": "C2-039",
+      "qtype": "out-of-corpus",
+      "question": "در برنامهٔ سی، پارامترهای یک پرس‌وجوی آمادهٔ SQLite را با `sqlite3_bind_text` چگونه تنظیم و سپس نتیجه را چگونه گام‌به‌گام می‌خوانند؟",
+      "abstain_reason": "چانک‌های فریز C مستندات API پایگاه‌دادهٔ SQLite، اتصال پارامتر و پیمایش نتیجهٔ آن را ندارند؛ شاهدی برای دستورهای درخواستی وجود ندارد.",
+      "pack_id": "c",
+      "version": "c-v2",
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T022 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      },
+      "expected_source_ids": [],
+      "evidence_language": "none",
+      "provenance": []
+    },
+    {
+      "item_id": "C2-040",
+      "qtype": "out-of-corpus",
+      "question": "برای اعتبارسنجی گواهیِ همتای سرور در اتصال TLS با OpenSSL، چه تنظیمی باید روی زمینهٔ اتصال اعمال شود؟",
+      "abstain_reason": "پیکرهٔ فریز C مستندات OpenSSL، زمینهٔ TLS و اعتبارسنجی گواهی را پوشش نمی‌دهد؛ نباید تنظیمِ نامستند ساخت.",
+      "pack_id": "c",
+      "version": "c-v2",
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T022 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      },
+      "expected_source_ids": [],
+      "evidence_language": "none",
+      "provenance": []
+    },
+    {
+      "item_id": "C2-041",
+      "qtype": "out-of-corpus",
+      "question": "با libcurl در برنامهٔ سی، بدنهٔ یک درخواست HTTP POST و سرآیند احراز هویت را چگونه تنظیم و ارسال می‌کنند؟",
+      "abstain_reason": "در چانک‌های C راهنمای libcurl یا API درخواست HTTP و سرآیند احراز هویت وجود ندارد؛ پاسخِ دارای استنادِ درون‌پیکره ممکن نیست.",
+      "pack_id": "c",
+      "version": "c-v2",
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T022 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      },
+      "expected_source_ids": [],
+      "evidence_language": "none",
+      "provenance": []
+    },
+    {
+      "item_id": "C2-042",
+      "qtype": "out-of-corpus",
+      "question": "اگر دو ریسهٔ POSIX یک صف مشترک را تغییر دهند، ترتیبِ فراخوانی‌های pthread_mutex برای قفل‌کردن و آزادکردن آن چیست؟",
+      "abstain_reason": "پیکرهٔ C مستندات pthread و API همگام‌سازی صف میان ریسه‌ها را ندارد؛ این پرسش با منابع فریز پاسخ‌پذیر نیست.",
+      "pack_id": "c",
+      "version": "c-v2",
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T022 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      },
+      "expected_source_ids": [],
+      "evidence_language": "none",
+      "provenance": []
+    },
+    {
+      "item_id": "C2-043",
+      "qtype": "out-of-corpus",
+      "question": "در یک برنامهٔ CUDA نوشته‌شده با سی، برای انتقال آرایه از میزبان به GPU و اجرای kernel چه APIهایی و چه نحوی به کار می‌روند؟",
+      "abstain_reason": "چانک‌های فریز C دستورها و APIهای CUDA یا اجرای kernel روی GPU را توضیح نمی‌دهند؛ منبعی برای این مراحل نیست.",
+      "pack_id": "c",
+      "version": "c-v2",
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T022 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      },
+      "expected_source_ids": [],
+      "evidence_language": "none",
+      "provenance": []
+    },
+    {
+      "item_id": "C2-044",
+      "qtype": "out-of-corpus",
+      "question": "برای ساخت پنجرهٔ تعاملی در ترمینال با ncurses، مقداردهی اولیه، تازه‌سازی صفحه و خواندن کلید چه ترتیبی دارند؟",
+      "abstain_reason": "پیکرهٔ فریز C دربارهٔ کتابخانهٔ ncurses و چرخهٔ پنجرهٔ تعاملی سندی ندارد؛ پاسخ مستند در این پک نیست.",
+      "pack_id": "c",
+      "version": "c-v2",
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T022 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      },
+      "expected_source_ids": [],
+      "evidence_language": "none",
+      "provenance": []
+    },
+    {
+      "item_id": "C2-045",
+      "qtype": "out-of-corpus",
+      "question": "برای رمزگشایی یک تصویر PNG از فایل در برنامهٔ سی با libpng، ساختارهای خواندن و تبدیل دادهٔ پیکسل را چگونه آماده می‌کنند؟",
+      "abstain_reason": "در منابع فریز C مستندات libpng، ساختارهای رمزگشایی و تبدیل پیکسل وجود ندارد؛ باید بدون استناد ساختگی انصراف داد.",
+      "pack_id": "c",
+      "version": "c-v2",
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T022 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      },
+      "expected_source_ids": [],
+      "evidence_language": "none",
+      "provenance": []
     }
   ]
 }
