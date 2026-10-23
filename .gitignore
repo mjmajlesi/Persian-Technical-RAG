@@ -26,6 +26,8 @@ data/index/*/faiss.index
 data/index/*/chunks.jsonl
 data/eval/**/reports/*.json
 !data/eval/reports/.gitkeep
+data/research/embedding-compare/*/*/embeddings-*.npy
+data/research/embedding-compare/*/*/faiss.index
 
 # OS / editors
 .DS_Store
