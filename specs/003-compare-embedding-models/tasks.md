@@ -79,7 +79,7 @@
   - CHECKPOINT: STOP → report 28 valid references, auditable examples, and draft status → wait for explicit «تایید» before T022.
 - [X] T022 [US1] Add 10 new mixed and 7 new OOC questions to `data/eval/c/eval-set.c.v2.json`. Validate the complete 45-item 28/10/7 set with T020, compare with v1, manually check against chunk wording, and require empty IDs/abstention reasons for OOC. **Present the completed C set for its own user review.**
   - CHECKPOINT: STOP → report C counts, sources, and question quality → wait for explicit «تایید» before T023.
-- [ ] T023 [P] [US1] Draft 28 **new C++ in-corpus** questions in `data/eval/cpp/eval-set.cpp.v2.json` with same-pack sources, grounded summaries, and actual Persian/English evidence labels; do not copy v1 or chunk wording.
+- [X] T023 [P] [US1] Draft 28 **new C++ in-corpus** questions in `data/eval/cpp/eval-set.cpp.v2.json` with same-pack sources, grounded summaries, and actual Persian/English evidence labels; do not copy v1 or chunk wording.
   - CHECKPOINT: STOP → report 28 C++ sources/evidence labels and draft status → wait for explicit «تایید» before T024.
 - [ ] T024 [US1] Add 10 new mixed and 7 new OOC questions to `data/eval/cpp/eval-set.cpp.v2.json`. Validate all 45 items in 28/10/7, sources, licenses, and non-duplication against v1/chunks. **Present the completed C++ set for its own user review.**
   - CHECKPOINT: STOP → report 45 items and representative C++ evidence → wait for explicit «تایید» before T025.

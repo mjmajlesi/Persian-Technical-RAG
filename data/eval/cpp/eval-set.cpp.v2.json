@@ -1,0 +1,848 @@
+{
+  "version": "cpp-v2",
+  "pack_id": "cpp",
+  "snapshot": "2026-10-16",
+  "notes": "Incomplete draft: 28 new C++ in-corpus questions only. Pending user review; 10 mixed and 7 out-of-corpus items belong to T024. Not a publishable complete set.",
+  "items": [
+    {
+      "item_id": "CPP2-001",
+      "question": "در خروجیِ جویباریِ سی‌پلاس‌پلاس، به‌جای فقط رفتن به خط بعد، کدام پایان‌دهنده داده‌های بافرشده را نیز تخلیه می‌کند و این تفاوت با نویسهٔ خط جدید چیست؟",
+      "expected_answer_summary": "پایان‌دهندهٔ endl هم خط جدید می‌گذارد و هم جویبار را flush می‌کند؛ نویسهٔ خط جدید به‌تنهایی الزاماً تخلیهٔ بافر نمی‌کند.",
+      "pack_id": "cpp",
+      "version": "cpp-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "cpp-notes-intro#s02-c01"
+      ],
+      "evidence_language": "mixed",
+      "provenance": [
+        {
+          "chunk_id": "cpp-notes-intro#s02-c01",
+          "source_id": "cpp-notes-intro",
+          "section_heading": "۱۲.۱ — ورودی/خروجی با جویبارها (Streams)",
+          "title": "فصل ۱۲: آشنایی با ++C",
+          "origin": "data/corpus/cpp/c-notes-ch09-cpp-intro.md",
+          "snapshot": "2026-10-16",
+          "license": "owner-authored study notes (project owner)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "item_id": "CPP2-002",
+      "question": "اگر یک نامِ محلی روی نامِ متغیرِ سراسری سایه بیندازد، با چه نشانه‌ای می‌توان همان متغیرِ سراسری را بی‌نوشتن نام فضای خاص فراخواند؟",
+      "expected_answer_summary": "قرار دادن عملگر تعیین حوزه در آغاز نام، مانند ::x، به نام سراسری اشاره می‌کند و سایهٔ نام محلی را دور می‌زند.",
+      "pack_id": "cpp",
+      "version": "cpp-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "cpp-notes-intro#s03-c01"
+      ],
+      "evidence_language": "mixed",
+      "provenance": [
+        {
+          "chunk_id": "cpp-notes-intro#s03-c01",
+          "source_id": "cpp-notes-intro",
+          "section_heading": "۱۲.۲ — فضای نام (namespace) و ::",
+          "title": "فصل ۱۲: آشنایی با ++C",
+          "origin": "data/corpus/cpp/c-notes-ch09-cpp-intro.md",
+          "snapshot": "2026-10-16",
+          "license": "owner-authored study notes (project owner)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "item_id": "CPP2-003",
+      "question": "وقتی شمار تقریبیِ اعضای آیندهٔ یک بردار را می‌دانیم، چه فراخوانی‌ای می‌تواند تعداد جابه‌جایی‌های پرهزینهٔ حافظه هنگام افزودن عضو را کم کند و چرا؟",
+      "expected_answer_summary": "با reserve می‌توان ظرفیت لازم را پیشاپیش درخواست کرد؛ رشدِ پیاپی پس از پرشدن ظرفیت و تخصیص مجددِ پرهزینه کمتر رخ می‌دهد.",
+      "pack_id": "cpp",
+      "version": "cpp-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "cppref-cpp-vector#s02-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "cppref-cpp-vector#s02-c01",
+          "source_id": "cppref-cpp-vector",
+          "section_heading": "std::vector",
+          "title": "cppreference — std::vector",
+          "origin": "data/corpus/cpp/ref-cppref-cpp-vector.md",
+          "snapshot": "2026-10-16",
+          "license": "CC-BY-SA (cppreference.com)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "item_id": "CPP2-004",
+      "question": "چرا نباید برای بردارِ مقدارهای بولی همان چیدمانِ متعارفِ عناصرِ بردارهای دیگر را بی‌قید فرض کرد؟",
+      "expected_answer_summary": "کتابخانه برای vector<bool> تخصصِ جداگانه‌ای دارد که ممکن است برای صرفه‌جویی در فضا به‌صورت مجموعه‌ای از بیت‌ها بهینه شود.",
+      "pack_id": "cpp",
+      "version": "cpp-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "cppref-cpp-vector#s04-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "cppref-cpp-vector#s04-c01",
+          "source_id": "cppref-cpp-vector",
+          "section_heading": "Specializations",
+          "title": "cppreference — std::vector",
+          "origin": "data/corpus/cpp/ref-cppref-cpp-vector.md",
+          "snapshot": "2026-10-16",
+          "license": "CC-BY-SA (cppreference.com)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "item_id": "CPP2-005",
+      "question": "آیا می‌توان نشانیِ یک عنصر از بردارِ معمولیِ غیربولی را به تابعی داد که اشاره‌گرِ عنصرِ آرایهٔ پیوسته می‌خواهد، و کدام ویژگیِ حافظه این کار را ممکن می‌کند؟",
+      "expected_answer_summary": "بله؛ عناصر بردار معمولی به‌طور پیوسته نگهداری می‌شوند و نشانی عنصر را می‌توان مانند اشاره‌گر به عناصر آرایه به تابع مناسب داد؛ تخصص bool استثنای مهمی است.",
+      "pack_id": "cpp",
+      "version": "cpp-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "cppref-cpp-vector#s02-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "cppref-cpp-vector#s02-c01",
+          "source_id": "cppref-cpp-vector",
+          "section_heading": "std::vector",
+          "title": "cppreference — std::vector",
+          "origin": "data/corpus/cpp/ref-cppref-cpp-vector.md",
+          "snapshot": "2026-10-16",
+          "license": "CC-BY-SA (cppreference.com)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "item_id": "CPP2-006",
+      "question": "اگر نشانیِ درون یک رشتهٔ کتابخانه‌ای را نگه داریم و بعد آن رشته را به تابعی بدهیم که ارجاعِ غیرثابت می‌گیرد، آیا اعتبارِ نشانی همیشه پابرجاست؟",
+      "expected_answer_summary": "خیر؛ ارجاع‌ها، اشاره‌گرها و پیمایشگرهای عناصر basic_string ممکن است با فراخوانیِ تابع کتابخانه‌ایِ دارای ارجاع غیرثابت به آن رشته بی‌اعتبار شوند.",
+      "pack_id": "cpp",
+      "version": "cpp-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "cppref-cpp-string#s04-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "cppref-cpp-string#s04-c01",
+          "source_id": "cppref-cpp-string",
+          "section_heading": "Iterator invalidation",
+          "title": "cppreference — std::basic_string",
+          "origin": "data/corpus/cpp/ref-cppref-cpp-string.md",
+          "snapshot": "2026-10-16",
+          "license": "CC-BY-SA (cppreference.com)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "item_id": "CPP2-007",
+      "question": "برای سنجش اینکه یک رشته با پیشوند مشخص آغاز می‌شود، از کدام تابع عضوِ معرفی‌شده از استاندارد سی‌پلاس‌پلاس ۲۰ می‌توان استفاده کرد؟",
+      "expected_answer_summary": "تابع عضو starts_with از C++20 آغازِ رشته با پیشوندِ داده‌شده را می‌سنجد.",
+      "pack_id": "cpp",
+      "version": "cpp-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "cppref-cpp-string#s07-c02"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "cppref-cpp-string#s07-c02",
+          "source_id": "cppref-cpp-string",
+          "section_heading": "Member functions",
+          "title": "cppreference — std::basic_string",
+          "origin": "data/corpus/cpp/ref-cppref-cpp-string.md",
+          "snapshot": "2026-10-16",
+          "license": "CC-BY-SA (cppreference.com)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "item_id": "CPP2-008",
+      "question": "پسوندِ s روی یک لیترالِ متنی، از نسخهٔ سی‌پلاس‌پلاس ۱۴ به بعد آن را به چه نوع شیئی بدل می‌کند؟",
+      "expected_answer_summary": "عملگرِ لیترالِ s آرایهٔ کاراکتریِ لیترال را به شیء basic_string مناسب تبدیل می‌کند؛ از C++14 در فضای لیترال‌های رشته‌ای آمده است.",
+      "pack_id": "cpp",
+      "version": "cpp-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "cppref-cpp-string#s09-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "cppref-cpp-string#s09-c01",
+          "source_id": "cppref-cpp-string",
+          "section_heading": "Literals",
+          "title": "cppreference — std::basic_string",
+          "origin": "data/corpus/cpp/ref-cppref-cpp-string.md",
+          "snapshot": "2026-10-16",
+          "license": "CC-BY-SA (cppreference.com)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "item_id": "CPP2-009",
+      "question": "چرا ممکن است متنی که بی‌خط‌جدید روی جویبار خروجی نوشته‌ایم درست پیش از ورودی‌گرفتن از جویبار استاندارد نمایش داده شود؟",
+      "expected_answer_summary": "ورودی استاندارد به خروجی استاندارد گره خورده است؛ آغاز عملِ ورودی، جویبار خروجی را flush می‌کند و متنِ بافرشده دیده می‌شود.",
+      "pack_id": "cpp",
+      "version": "cpp-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "cppref-cpp-cout#s02-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "cppref-cpp-cout#s02-c01",
+          "source_id": "cppref-cpp-cout",
+          "section_heading": "std::cout, std::wcout",
+          "title": "cppreference — std::cout",
+          "origin": "data/corpus/cpp/ref-cppref-cpp-cout.md",
+          "snapshot": "2026-10-16",
+          "license": "CC-BY-SA (cppreference.com)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "item_id": "CPP2-010",
+      "question": "درون تعریف یک کلاس، پسوندِ مساویِ صفر برای یک تابع عضوِ مجازی چه نوع اعلامی را نشان می‌دهد؟",
+      "expected_answer_summary": "نوشتن = 0 پس از اعلان تابع مجازی آن را تابعِ مجازیِ محض معرفی می‌کند؛ در متن تعریف اعضای کلاس نمونهٔ آن آمده است.",
+      "pack_id": "cpp",
+      "version": "cpp-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "cppref-cpp-class#s05-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "cppref-cpp-class#s05-c01",
+          "source_id": "cppref-cpp-class",
+          "section_heading": "Member specification",
+          "title": "cppreference — Class declaration",
+          "origin": "data/corpus/cpp/ref-cppref-cpp-class.md",
+          "snapshot": "2026-10-16",
+          "license": "CC-BY-SA (cppreference.com)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "item_id": "CPP2-011",
+      "question": "اگر نوعی را درون بدنهٔ تابع تعریف کنیم، آیا نام آن از بیرون همان تابع دیده می‌شود و آیا می‌تواند عضو داده‌ایِ ایستا داشته باشد؟",
+      "expected_answer_summary": "نام کلاسِ محلی فقط در حوزهٔ همان تابع دیده می‌شود؛ چنین کلاسی نمی‌تواند عضو داده‌ایِ static داشته باشد.",
+      "pack_id": "cpp",
+      "version": "cpp-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "cppref-cpp-class#s06-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "cppref-cpp-class#s06-c01",
+          "source_id": "cppref-cpp-class",
+          "section_heading": "Local classes",
+          "title": "cppreference — Class declaration",
+          "origin": "data/corpus/cpp/ref-cppref-cpp-class.md",
+          "snapshot": "2026-10-16",
+          "license": "CC-BY-SA (cppreference.com)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "item_id": "CPP2-012",
+      "question": "اگر یک عضو داده‌ای مقدارِ پیش‌فرضِ درون کلاس داشته باشد ولی سازنده همان عضو را در فهرستِ مقداردهی مقدار دیگری بدهد، کدام مقدار برنده است؟",
+      "expected_answer_summary": "مقدارِ فهرست مقداردهیِ سازنده استفاده می‌شود و مقداردهی پیش‌فرضِ عضو در آن ساخت نادیده گرفته می‌شود.",
+      "pack_id": "cpp",
+      "version": "cpp-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "cppref-cpp-constructor#s05-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "cppref-cpp-constructor#s05-c01",
+          "source_id": "cppref-cpp-constructor",
+          "section_heading": "Explanation",
+          "title": "cppreference — Constructors",
+          "origin": "data/corpus/cpp/ref-cppref-cpp-constructor.md",
+          "snapshot": "2026-10-16",
+          "license": "CC-BY-SA (cppreference.com)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "item_id": "CPP2-013",
+      "question": "آیا جابه‌جاکردن ترتیب نوشتاریِ اعضا در فهرست مقداردهیِ سازنده ترتیب واقعیِ مقداردهی آن‌ها را تعیین می‌کند؟",
+      "expected_answer_summary": "خیر؛ منبع تصریح می‌کند ترتیبِ نوشتنِ مقداردهنده‌ها در فهرست برای ترتیب واقعی بی‌اثر است.",
+      "pack_id": "cpp",
+      "version": "cpp-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "cppref-cpp-constructor#s09-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "cppref-cpp-constructor#s09-c01",
+          "source_id": "cppref-cpp-constructor",
+          "section_heading": "Initialization order",
+          "title": "cppreference — Constructors",
+          "origin": "data/corpus/cpp/ref-cppref-cpp-constructor.md",
+          "snapshot": "2026-10-16",
+          "license": "CC-BY-SA (cppreference.com)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "item_id": "CPP2-014",
+      "question": "اگر تابعی در یک فضای نامِ درون‌خطی تعریف شده باشد، آیا جست‌وجوی نام از فضای بیرونی می‌تواند آن عضو را هم پیدا کند؟",
+      "expected_answer_summary": "بله؛ اعضای فضای نام inline در بسیاری از جست‌وجوها همچون اعضای فضای دربرگیرنده دیده می‌شوند و این ویژگی از فضای درون‌خطیِ تو در تو نیز عبور می‌کند.",
+      "pack_id": "cpp",
+      "version": "cpp-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "cppref-cpp-namespace#s05-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "cppref-cpp-namespace#s05-c01",
+          "source_id": "cppref-cpp-namespace",
+          "section_heading": "Inline namespaces",
+          "title": "cppreference — Namespaces",
+          "origin": "data/corpus/cpp/ref-cppref-cpp-namespace.md",
+          "snapshot": "2026-10-16",
+          "license": "CC-BY-SA (cppreference.com)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "item_id": "CPP2-015",
+      "question": "برای نامی در فضای نامِ بی‌نام، از سی‌پلاس‌پلاس ۱۱ به بعد چه نوع پیوندی تعریف شده و آیا آن نام از واحد ترجمهٔ دیگر در دسترس است؟",
+      "expected_answer_summary": "نام‌های قرارگرفته در فضای نامِ بی‌نام پیوند داخلی دارند؛ نام یکتای آن فضا باعث می‌شود از واحد ترجمهٔ دیگری قابل دسترسی نباشند.",
+      "pack_id": "cpp",
+      "version": "cpp-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "cppref-cpp-namespace#s06-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "cppref-cpp-namespace#s06-c01",
+          "source_id": "cppref-cpp-namespace",
+          "section_heading": "Unnamed namespaces",
+          "title": "cppreference — Namespaces",
+          "origin": "data/corpus/cpp/ref-cppref-cpp-namespace.md",
+          "snapshot": "2026-10-16",
+          "license": "CC-BY-SA (cppreference.com)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "item_id": "CPP2-016",
+      "question": "اگر با اعلانِ using تنها یک نامِ تابع را از فضای نام بیاوریم و بعد سربارِ تازه‌ای در آن فضا افزوده شود، آیا اعلان قبلی خودکار سربار تازه را نیز آشکار می‌کند؟",
+      "expected_answer_summary": "نه؛ اعلان using قبلی نام‌هایی را که هنگام آن قابل مشاهده بوده‌اند می‌آورد و سربارهای افزوده‌شدهٔ بعدی به‌صورت خودکار از همان اعلان دیده نمی‌شوند.",
+      "pack_id": "cpp",
+      "version": "cpp-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "cppref-cpp-namespace#s07-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "cppref-cpp-namespace#s07-c01",
+          "source_id": "cppref-cpp-namespace",
+          "section_heading": "Using-declarations",
+          "title": "cppreference — Namespaces",
+          "origin": "data/corpus/cpp/ref-cppref-cpp-namespace.md",
+          "snapshot": "2026-10-16",
+          "license": "CC-BY-SA (cppreference.com)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "item_id": "CPP2-017",
+      "question": "اگر در قالب‌سازی یک نوعِ ارجاعِ چپ‌مقدار دوباره با ارجاعِ راست‌مقدار ترکیب شود، نوعِ فروکاسته‌شدهٔ حاصل کدام ارجاع است؟",
+      "expected_answer_summary": "در فروریزش ارجاع‌ها، هر ترکیبی که یکی از دو بخش ارجاعِ چپ‌مقدار باشد به ارجاعِ چپ‌مقدار بدل می‌شود؛ این مورد نیز همان است.",
+      "pack_id": "cpp",
+      "version": "cpp-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "cppref-cpp-reference#s04-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "cppref-cpp-reference#s04-c01",
+          "source_id": "cppref-cpp-reference",
+          "section_heading": "Reference collapsing",
+          "title": "cppreference — Reference declaration",
+          "origin": "data/corpus/cpp/ref-cppref-cpp-reference.md",
+          "snapshot": "2026-10-16",
+          "license": "CC-BY-SA (cppreference.com)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "item_id": "CPP2-018",
+      "question": "اگر متغیری از نوعِ ارجاعِ راست‌مقدار را با نام خودش به تابعی دارای دو سربار برای دو گونهٔ ارجاع بدهیم، کدام سربار انتخاب می‌شود و چرا؟",
+      "expected_answer_summary": "خودِ متغیرِ نام‌دار در عبارت چپ‌مقدار است، پس سربارِ ارجاعِ چپ‌مقدار انتخاب می‌شود؛ برای رفتارِ راست‌مقدار باید آن را صریحاً تبدیل کرد.",
+      "pack_id": "cpp",
+      "version": "cpp-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "cppref-cpp-reference#s06-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "cppref-cpp-reference#s06-c01",
+          "source_id": "cppref-cpp-reference",
+          "section_heading": "Rvalue references",
+          "title": "cppreference — Reference declaration",
+          "origin": "data/corpus/cpp/ref-cppref-cpp-reference.md",
+          "snapshot": "2026-10-16",
+          "license": "CC-BY-SA (cppreference.com)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "item_id": "CPP2-019",
+      "question": "چرا برگرداندنِ ارجاع به متغیرِ محلی از تابع، حتی اگر ارجاع هنگام ساخت معتبر بوده، برای خواندنِ بعدی امن نیست؟",
+      "expected_answer_summary": "با پایان تابع، عمر متغیر محلی پایان می‌یابد و ارجاع آویزان می‌شود؛ استفاده از آن برای خواندن رفتار تعریف‌نشده دارد.",
+      "pack_id": "cpp",
+      "version": "cpp-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "cppref-cpp-reference#s08-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "cppref-cpp-reference#s08-c01",
+          "source_id": "cppref-cpp-reference",
+          "section_heading": "Dangling references",
+          "title": "cppreference — Reference declaration",
+          "origin": "data/corpus/cpp/ref-cppref-cpp-reference.md",
+          "snapshot": "2026-10-16",
+          "license": "CC-BY-SA (cppreference.com)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "item_id": "CPP2-020",
+      "question": "آیا می‌توان هنگام تعریف صریحِ یک تابعِ عضوِ ویژه با default برای همان تابع آرگومان پیش‌فرض هم تعیین کرد؟",
+      "expected_answer_summary": "خیر؛ تابعی که صریحاً default می‌شود نباید آرگومان پیش‌فرض داشته باشد و باید تابع عضوِ ویژه یا از C++20 عملگر مقایسه باشد.",
+      "pack_id": "cpp",
+      "version": "cpp-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "cppref-cpp-function#s12-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "cppref-cpp-function#s12-c01",
+          "source_id": "cppref-cpp-function",
+          "section_heading": "Defaulted functions",
+          "title": "cppreference — Function declaration",
+          "origin": "data/corpus/cpp/ref-cppref-cpp-function.md",
+          "snapshot": "2026-10-16",
+          "license": "CC-BY-SA (cppreference.com)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "item_id": "CPP2-021",
+      "question": "وقتی تابعِ حذف‌شده یکی از چند سربار همنام باشد، آیا صرف حضورش فراخوانی را باطل می‌کند یا فقط اگر همان سربار انتخاب شود خطا رخ می‌دهد؟",
+      "expected_answer_summary": "ابتدا گزینش سربار انجام می‌شود؛ تنها اگر سربار انتخاب‌شده حذف‌شده باشد، فراخوانی نامعتبر و کامپایل ناموفق است.",
+      "pack_id": "cpp",
+      "version": "cpp-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "cppref-cpp-function#s13-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "cppref-cpp-function#s13-c01",
+          "source_id": "cppref-cpp-function",
+          "section_heading": "Deleted functions",
+          "title": "cppreference — Function declaration",
+          "origin": "data/corpus/cpp/ref-cppref-cpp-function.md",
+          "snapshot": "2026-10-16",
+          "license": "CC-BY-SA (cppreference.com)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "item_id": "CPP2-022",
+      "question": "متغیرِ ازپیش‌تعریف‌شدهٔ نام تابع را می‌توان در بدنهٔ همان تابع خواند؛ آیا استفاده از آن در مقدار پیش‌فرضِ پارامترِ همان اعلان مجاز است؟",
+      "expected_answer_summary": "خیر؛ __func__ در بدنهٔ تابع تعریف می‌شود و فهرست پارامترها بخشی از اعلان است نه بدنه، بنابراین آنجا نمی‌توان از آن استفاده کرد.",
+      "pack_id": "cpp",
+      "version": "cpp-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "cppref-cpp-function#s16-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "cppref-cpp-function#s16-c01",
+          "source_id": "cppref-cpp-function",
+          "section_heading": "__func__",
+          "title": "cppreference — Function declaration",
+          "origin": "data/corpus/cpp/ref-cppref-cpp-function.md",
+          "snapshot": "2026-10-16",
+          "license": "CC-BY-SA (cppreference.com)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "item_id": "CPP2-023",
+      "question": "آیا برای یک نوعِ کاربرساخته می‌توان رفتار عملگرِ شرطیِ سه‌شاخه را سربارگذاری کرد یا اولویتِ عملگرهای موجود را با سربارگذاری تغییر داد؟",
+      "expected_answer_summary": "خیر؛ عملگر ?: سربارشدنی نیست و سربارگذاری نمی‌تواند اولویت، گروه‌بندی یا شمار عملوندهای عملگرهای موجود را عوض کند.",
+      "pack_id": "cpp",
+      "version": "cpp-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "cppref-cpp-operators#s06-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "cppref-cpp-operators#s06-c01",
+          "source_id": "cppref-cpp-operators",
+          "section_heading": "Restrictions",
+          "title": "cppreference — Operator overloading",
+          "origin": "data/corpus/cpp/ref-cppref-cpp-operators.md",
+          "snapshot": "2026-10-16",
+          "license": "CC-BY-SA (cppreference.com)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "item_id": "CPP2-024",
+      "question": "برای جداکردن سربارِ افزایشِ پسوندیِ یک نوع از افزایشِ پیشوندی، چه پارامترِ صوری‌ای در اعلانِ حالتِ پسوندی می‌آید؟",
+      "expected_answer_summary": "حالت پسوندی یک پارامتر صوری int دارد که هنگام فراخوانی مقدار صفر می‌گیرد و معمولاً در بدنه استفاده نمی‌شود؛ حالت پیشوندی این پارامتر را ندارد.",
+      "pack_id": "cpp",
+      "version": "cpp-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "cppref-cpp-operators#s11-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "cppref-cpp-operators#s11-c01",
+          "source_id": "cppref-cpp-operators",
+          "section_heading": "Increment and decrement",
+          "title": "cppreference — Operator overloading",
+          "origin": "data/corpus/cpp/ref-cppref-cpp-operators.md",
+          "snapshot": "2026-10-16",
+          "license": "CC-BY-SA (cppreference.com)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "item_id": "CPP2-025",
+      "question": "در اعلانِ نوعِ استنباطی، آیا می‌توان مانند auto یک اصلاح‌گرِ const را کنار decltype(auto) در همان مشخص‌کننده گذاشت؟",
+      "expected_answer_summary": "خیر؛ decltype(auto) باید تنها سازندهٔ مشخص‌کنندهٔ نوع باشد، در حالی که auto می‌تواند همراه اصلاح‌گرهایی مانند const یا ارجاع بیاید.",
+      "pack_id": "cpp",
+      "version": "cpp-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "cppref-cpp-auto#s03-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "cppref-cpp-auto#s03-c01",
+          "source_id": "cppref-cpp-auto",
+          "section_heading": "Syntax",
+          "title": "cppreference — auto specifier",
+          "origin": "data/corpus/cpp/ref-cppref-cpp-auto.md",
+          "snapshot": "2026-10-16",
+          "license": "CC-BY-SA (cppreference.com)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "item_id": "CPP2-026",
+      "question": "برای بازکردنِ ساختاریِ مقدار به چند نام در استاندارد سی‌پلاس‌پلاس ۱۷، کدام مشخص‌کنندهٔ نوع را می‌توان در اعلان به کار برد؟",
+      "expected_answer_summary": "در اعلان structured binding از مشخص‌کنندهٔ auto استفاده می‌شود؛ این کاربرد از C++17 معرفی شده است.",
+      "pack_id": "cpp",
+      "version": "cpp-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "cppref-cpp-auto#s08-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "cppref-cpp-auto#s08-c01",
+          "source_id": "cppref-cpp-auto",
+          "section_heading": "Structured binding declarations",
+          "title": "cppreference — auto specifier",
+          "origin": "data/corpus/cpp/ref-cppref-cpp-auto.md",
+          "snapshot": "2026-10-16",
+          "license": "CC-BY-SA (cppreference.com)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "item_id": "CPP2-027",
+      "question": "اگر عبارتِ سازندهٔ بازه در حلقهٔ پیمایش، شیئی موقت را مستقیماً برگرداند، عمر آن شیء تا چه زمانی گسترش پیدا می‌کند؟",
+      "expected_answer_summary": "عمرِ شیء موقتِ برگردانده‌شده برای سازندهٔ بازه تا پایان همان حلقه گسترش می‌یابد؛ این حکم را نباید به همهٔ اشیای موقتِ میانی تعمیم داد.",
+      "pack_id": "cpp",
+      "version": "cpp-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "cppref-cpp-range-for#s05-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "cppref-cpp-range-for#s05-c01",
+          "source_id": "cppref-cpp-range-for",
+          "section_heading": "Temporary range initializer",
+          "title": "cppreference — Range-based for loop",
+          "origin": "data/corpus/cpp/ref-cppref-cpp-range-for.md",
+          "snapshot": "2026-10-16",
+          "license": "CC-BY-SA (cppreference.com)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      }
+    },
+    {
+      "item_id": "CPP2-028",
+      "question": "اگر برای ارجاعِ کلاسِ پایه و ارجاعِ کلاسِ مشتق دو سربار داشته باشیم و نمونهٔ مشتق را بدهیم، کدام سربار برگزیده می‌شود؟",
+      "expected_answer_summary": "سرباری که ارجاعِ کلاس مشتق می‌گیرد برگزیده می‌شود؛ اتصال مستقیم به همان نوع نسبت به تبدیل مشتق به پایه رتبهٔ بهتری دارد.",
+      "pack_id": "cpp",
+      "version": "cpp-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "cppref-cpp-overload#s17-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "cppref-cpp-overload#s17-c01",
+          "source_id": "cppref-cpp-overload",
+          "section_heading": "Ranking of implicit conversion sequences",
+          "title": "cppreference — Overload resolution",
+          "origin": "data/corpus/cpp/ref-cppref-cpp-overload.md",
+          "snapshot": "2026-10-16",
+          "license": "CC-BY-SA (cppreference.com)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "pending-user-review",
+        "reviewer": null,
+        "reviewed_at": null
+      }
+    }
+  ]
+}
