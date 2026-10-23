@@ -1,0 +1,14 @@
+{
+  "status": "ready",
+  "model_key": "e5-large",
+  "pack_id": "c",
+  "revision_sha": "3d7cfbdacd47fdda877c5cd8a79fbcc4f2a574f3",
+  "dimension": 1024,
+  "count": 503,
+  "canonical_chunks_path": "data/index/c/chunks.jsonl",
+  "chunk_sha256": "8b2bb61d8a853280bc400d2ea1e4b8bd6bfb76c5a1106bbc99ab2a08ddcfad74",
+  "settings_sha256": "7bc28f60d9ef826f12d8bd6465c750c6a1b3625c03d2621f5a009c452049e69b",
+  "index_sha256": "11a871d5ad8949f52ef90ce0478683020751939381cf35b14a33b40f0c3fe2a8",
+  "cache_hit": false,
+  "truncation_count": 44
+}

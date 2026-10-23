@@ -1,4 +1,4 @@
-"""Per-pack threshold calibration (002-T024).
+"""Per-pack threshold calibration (002-T024); pooled-v1 research gate (003-T012).
 
 Method (per task): fetch each ready pack's 30-item eval set, embed every
 question through that pack's own index, and record top-1 cosine of
@@ -28,14 +28,122 @@ calibrates a single value — pack_config.py holds the per-pack results).
 
 from __future__ import annotations
 
+import argparse
+import hashlib
 import json
-from datetime import date
+import math
+from datetime import date, datetime, timezone
 from pathlib import Path
+from typing import Callable
 
 from src.eval.run import default_set_path
+from src.index.model_config import get_model_candidate
 from src.qa.retriever import Retriever
 
 ANSWERABLE_TYPES = ("in-corpus", "mixed")
+RESEARCH_PACKS = ("c", "cpp", "python", "java")
+
+
+def _confusion(rows: list[dict], threshold: float) -> dict[str, int]:
+    """OOC is positive; scores strictly below the gate predict OOC."""
+    counts = {"tp": 0, "fn": 0, "tn": 0, "fp": 0}
+    for row in rows:
+        predicted_out = row["score"] < threshold
+        actual_out = row["qtype"] == "out-of-corpus"
+        key = ("tp" if predicted_out else "fn") if actual_out else (
+            "fp" if predicted_out else "tn"
+        )
+        counts[key] += 1
+    return counts
+
+
+def calibrate_pooled_v1(
+    model_key: str, set_paths: dict[str, str | Path],
+    score_question: Callable[[str, str], float],
+) -> dict:
+    """Select one gate from exactly four frozen v1 packs, never from v2."""
+    candidate = get_model_candidate(model_key)
+    if set(set_paths) != set(RESEARCH_PACKS):
+        raise ValueError("pooled v1 calibration requires all four packs")
+
+    sources, hashes = {}, {}
+    for pack in RESEARCH_PACKS:
+        path = Path(set_paths[pack])
+        if path.name != f"eval-set.{pack}.v1.json":
+            raise ValueError(f"only a versioned v1 set is accepted for {pack}")
+        raw = path.read_bytes()
+        spec = json.loads(raw.decode("utf-8"))
+        items = spec["items"]
+        counts = {qtype: sum(item["qtype"] == qtype for item in items)
+                  for qtype in (*ANSWERABLE_TYPES, "out-of-corpus")}
+        if spec.get("version") != f"{pack}-v1" or len(items) != 30 or counts != {
+            "in-corpus": 20, "mixed": 5, "out-of-corpus": 5,
+        } or len({item["item_id"] for item in items}) != 30:
+            raise ValueError(f"incomplete or invalid 30-item v1 set: {pack}")
+        hashes[pack] = hashlib.sha256(raw).hexdigest()
+        sources[pack] = items
+
+    rows = []
+    for pack in RESEARCH_PACKS:
+        for item in sources[pack]:
+            score = float(score_question(pack, item["question"]))
+            if not math.isfinite(score):
+                raise ValueError(f"non-finite retrieval score: {pack}/{item['item_id']}")
+            rows.append({"pack_id": pack, "item_id": item["item_id"],
+                         "qtype": item["qtype"], "score": score})
+
+    candidates = sorted({row["score"] for row in rows})
+    candidates.append(math.nextafter(candidates[-1], math.inf))
+    best = None
+    for threshold in candidates:
+        counts = _confusion(rows, threshold)
+        accuracy = (counts["tp"] / 20 + counts["tn"] / 100) / 2
+        if best is None or (accuracy, threshold) > (best[0], best[1]):
+            best = (accuracy, threshold)
+    balanced_accuracy, threshold = best
+    return {
+        "model_key": model_key, "revision_sha": candidate.revision_sha,
+        "method": "pooled-v1-max-balanced-accuracy; tie=higher; ooc=score<threshold",
+        "n_answerable": 100, "n_out": 20, "v1_hashes": hashes,
+        "threshold": threshold, "balanced_accuracy": balanced_accuracy,
+        "pooled_confusion": _confusion(rows, threshold),
+        "per_language_confusion": {
+            pack: _confusion([row for row in rows if row["pack_id"] == pack], threshold)
+            for pack in RESEARCH_PACKS
+        },
+        "score_rows": rows,
+    }
+
+
+def _run_pooled(model_key: str) -> None:
+    retrievers = {
+        pack: Retriever(f"data/research/embedding-compare/{model_key}/{pack}",
+                        model_key=model_key, pack_id=pack)
+        for pack in RESEARCH_PACKS
+    }
+    paths = {pack: Path(default_set_path(pack)) for pack in RESEARCH_PACKS}
+    record = calibrate_pooled_v1(
+        model_key, paths,
+        lambda pack, question: retrievers[pack].retrieve(question, k=1)[0]["score"],
+    )
+    target = Path("data/eval/model-comparison/calibration") / f"{model_key}.json"
+    if target.exists():
+        saved = json.loads(target.read_text(encoding="utf-8"))
+        for field in ("revision_sha", "v1_hashes", "threshold", "method"):
+            if record[field] != saved.get(field):
+                raise ValueError(f"locked calibration {field} changed: {target}")
+        print(f"unchanged locked research gate: {target}")
+    else:
+        record["locked_at"] = datetime.now(timezone.utc).isoformat()
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_text(json.dumps(record, ensure_ascii=False, indent=2) + "\n",
+                          encoding="utf-8")
+        assert json.loads(target.read_text(encoding="utf-8")) == record
+    print(f"model={model_key} pooled-v1 threshold={record['threshold']:.6f} "
+          f"balanced_accuracy={record['balanced_accuracy']:.4f} "
+          f"n={record['n_answerable']}+{record['n_out']}")
+    for pack, confusion in record["per_language_confusion"].items():
+        print(f"  {pack}: {confusion}")
 
 
 def probe_pack(pack) -> dict:
@@ -65,7 +173,18 @@ def probe_pack(pack) -> dict:
     }
 
 
-def main() -> None:
+def main(argv: list[str] | None = None) -> None:
+    parser = argparse.ArgumentParser(description="Calibrate operational or research gates")
+    parser.add_argument("--model", default=None)
+    parser.add_argument("--pooled-v1", action="store_true")
+    args = parser.parse_args(argv)
+    if args.pooled_v1:
+        if args.model is None:
+            parser.error("--pooled-v1 requires --model")
+        _run_pooled(args.model)
+        return
+    if args.model is not None:
+        parser.error("--model requires --pooled-v1")
     from src.web.packs import load_packs
 
     print(f"calibration run {date.today().isoformat()}\n")
