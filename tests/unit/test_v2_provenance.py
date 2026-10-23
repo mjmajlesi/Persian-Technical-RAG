@@ -76,10 +76,20 @@ def test_complete_45_item_set_has_exact_split_and_reviewed_provenance(tmp_path):
 def test_28_item_draft_is_incomplete_not_published(tmp_path):
     data = _fixture()
     data["items"] = data["items"][:28]
+    for item in data["items"]:
+        item["authorship"].update(review_status="pending-user-review", reviewer=None,
+                                  reviewed_at=None)
     result = _validate(tmp_path, data, complete=False)
     assert result["status"] == "incomplete"
-    with pytest.raises(ValueError, match="45|28|complete"):
+    with pytest.raises(ValueError, match="45|28|complete|unreviewed"):
         _validate(tmp_path, data)
+
+
+def test_27_item_draft_is_not_mistaken_for_a_publishable_set(tmp_path):
+    data = _fixture()
+    data["items"] = data["items"][:27]
+    with pytest.raises(ValueError, match="28|draft"):
+        _validate(tmp_path, data, complete=False)
 
 
 def test_duplicate_item_id_is_rejected_not_silently_deduplicated(tmp_path):
@@ -87,6 +97,27 @@ def test_duplicate_item_id_is_rejected_not_silently_deduplicated(tmp_path):
     data["items"][1]["item_id"] = data["items"][0]["item_id"]  # C2-001 twice
     with pytest.raises(ValueError, match="duplicate|item_id"):
         _validate(tmp_path, data)
+
+
+def test_review_date_must_be_valid(tmp_path):
+    data = _fixture()
+    data["items"][0]["authorship"]["reviewed_at"] = "yesterday"
+    with pytest.raises(ValueError, match="reviewed_at"):
+        _validate(tmp_path, data)
+
+
+def test_mixed_question_has_a_latin_technical_term(tmp_path):
+    data = _fixture()
+    data["items"][28]["question"] = "در این پرسش فارسی، مفهوم مربوط به بخش چیست؟"
+    with pytest.raises(ValueError, match="mixed|English"):
+        _validate(tmp_path, data)
+
+
+def test_pilot_cannot_be_published_as_v2():
+    from src.eval.validate_set import validate_set
+
+    with pytest.raises(ValueError, match="version"):
+        validate_set("data/eval/pilot/eval-set.c.pilot.json", pack_id="c")
 
 
 @pytest.mark.parametrize("field,value", [

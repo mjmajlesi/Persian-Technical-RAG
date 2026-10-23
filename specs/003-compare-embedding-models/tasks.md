@@ -70,7 +70,7 @@
 
 - [X] T019 [US1] Write FAIL-first schema/provenance tests in `tests/unit/test_v2_provenance.py`: `BenchmarkItem` needs unique item_id, pack_id, version, Persian question, valid qtype, evidence_language `fa|en|mixed` (`none` for OOC), authorship/review metadata; answerable items need real sources and grounded summaries, OOC items need `expected_source_ids=[]` and `abstain_reason`. Test rejection of v1/chunk copies.
   - CHECKPOINT: STOP → report expected failures and a rejected duplicate example → wait for explicit «تایید» before T020.
-- [ ] T020 [US1] Implement `src/eval/validate_set.py`: unique IDs, sources only from the selected pack, provenance/license/evidence language, literal chunk copying and near-v1 paraphrases flagged for human review, and **exactly 45 items in 28/10/7 for a complete set**. Permit 28-item drafts only as incomplete, never published. Pass T019.
+- [X] T020 [US1] Implement `src/eval/validate_set.py`: unique IDs, sources only from the selected pack, provenance/license/evidence language, literal chunk copying and near-v1 paraphrases flagged for human review, and **exactly 45 items in 28/10/7 for a complete set**. Permit 28-item drafts only as incomplete, never published. Pass T019.
   - CHECKPOINT: STOP → report automated rules and human-review limits → wait for explicit «تایید» before T021.
 
 ### Author language by language; each completed language has its own review checkpoint
