@@ -13,6 +13,7 @@ import json
 import os
 import urllib.request
 from dataclasses import dataclass
+from datetime import datetime, timezone
 
 DEFAULT_BASE_URL = "https://api.openai.com/v1"
 REQUEST_TIMEOUT = 120  # seconds
@@ -75,6 +76,17 @@ class LLMProvider:
 
     def generate(self, prompt: str, context: str = "") -> str:
         """Send prompt (+ optional retrieved context) and return answer text."""
+        return self._request(prompt, context, expected_model_id=None)["text"]
+
+    def generate_with_metadata(self, prompt: str, context: str = "", *,
+                               expected_model_id: str) -> dict:
+        """Research call; require the pre-registered API response model ID."""
+        if not expected_model_id or not expected_model_id.strip():
+            raise ProviderError("expected response model ID must be pre-registered")
+        return self._request(prompt, context, expected_model_id=expected_model_id)
+
+    def _request(self, prompt: str, context: str, *,
+                 expected_model_id: str | None) -> dict:
         user_content = prompt if not context else f"{prompt}\n\n{context}"
         payload = {
             "model": self._config.model,
@@ -90,6 +102,8 @@ class LLMProvider:
                 {"role": "user", "content": user_content},
             ],
         }
+        if expected_model_id is not None:
+            payload["temperature"] = 0
         request = urllib.request.Request(
             f"{self._config.base_url}/chat/completions",
             data=json.dumps(payload).encode("utf-8"),
@@ -99,22 +113,41 @@ class LLMProvider:
             },
             method="POST",
         )
+        requested_at = datetime.now(timezone.utc).isoformat()
         try:
             with urllib.request.urlopen(request, timeout=REQUEST_TIMEOUT) as resp:
                 raw = resp.read().decode("utf-8")
         except Exception as exc:  # noqa: BLE001 - mapped to ProviderError
-            raise ProviderError(f"LLM request failed: {exc}") from exc
+            # Provider/HTTP errors can echo authorization headers or private URLs.
+            reason = "temperature parameter rejected" if (
+                expected_model_id is not None and "temperature" in str(exc).lower()
+            ) else "LLM request failed"
+            raise ProviderError(reason) from None
         try:
+            response_models = []
             if raw.lstrip().startswith("data:"):
                 parts = []
                 for line in raw.splitlines():
                     if not line.startswith("data:") or line.strip() == "data: [DONE]":
                         continue
-                    choice = json.loads(line[5:].strip())["choices"][0]
+                    event = json.loads(line[5:].strip())
+                    response_models.append(event.get("model"))
+                    choice = event["choices"][0]
                     parts.append(choice.get("delta", {}).get("content") or "")
                 if not "".join(parts).strip():
                     raise ValueError("no streamed content")
-                return "".join(parts)
-            return json.loads(raw)["choices"][0]["message"]["content"]
-        except (KeyError, IndexError, TypeError, ValueError) as exc:
-            raise ProviderError("unexpected LLM response shape") from exc
+                text = "".join(parts)
+            else:
+                data = json.loads(raw)
+                response_models.append(data.get("model"))
+                text = data["choices"][0]["message"]["content"]
+            if expected_model_id is not None and (
+                not response_models or any(model != expected_model_id
+                                           for model in response_models)
+            ):
+                raise ProviderError("missing, changing or unexpected API response model ID")
+            return {"text": text, "provider": "openai-compatible",
+                    "request_timestamp": requested_at, "model": response_models[-1],
+                    "temperature": 0 if expected_model_id is not None else None}
+        except (KeyError, IndexError, TypeError, ValueError):
+            raise ProviderError("unexpected LLM response shape") from None
