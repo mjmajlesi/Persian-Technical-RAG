@@ -31,7 +31,7 @@
 
 **Goal**: Prove the smallest real model → index → calibration → retrieval-only → E2E flow. The pilot uses only C and `e5-large`; its questions belong to neither v1 nor v2.
 
-- [ ] T005 Write FAIL-first tests in `tests/unit/test_model_embeddings.py` for query/passage prefixes, normalization, dimension, model-card length limits, truncation counts, and unchanged raw chunk text. Compare an E5 baseline example with current output. Principles III/IV/VI.
+- [X] T005 Write FAIL-first tests in `tests/unit/test_model_embeddings.py` for query/passage prefixes, normalization, dimension, model-card length limits, truncation counts, and unchanged raw chunk text. Compare an E5 baseline example with current output. Principles III/IV/VI.
   - CHECKPOINT: STOP → report expected failures and tested model-card rules → wait for explicit «تایید» before T006.
 - [ ] T006 Extend the embedding boundary in `src/index/embed.py` using T004 config: model-specific query/passage preparation, normalized dense vectors, and lazy model loading. Preserve the current E5 behavior without `--model`; never rewrite `chunks.jsonl`. Pass T005 and existing regression tests.
   - CHECKPOINT: STOP → report candidate settings and unchanged default behavior → wait for explicit «تایید» before T007.
