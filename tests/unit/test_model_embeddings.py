@@ -1,5 +1,8 @@
 """FAIL-first embedding-boundary contract for 003-T005 (no model downloads)."""
 
+import sys
+from types import SimpleNamespace
+
 import numpy as np
 import pytest
 
@@ -86,3 +89,25 @@ def test_explicit_e5_large_matches_default_baseline(models):
     explicit = embed.embed_queries([text], model_key="e5-large")
     np.testing.assert_array_equal(explicit, baseline)
     assert models["e5-large"].inputs == ["query: " + text] * 2
+
+
+def test_legacy_loader_stays_unpinned_but_research_loader_pins_revision(monkeypatch):
+    calls = []
+
+    def construct(repository, **kwargs):
+        calls.append((repository, kwargs))
+        return object()
+
+    monkeypatch.setitem(sys.modules, "sentence_transformers",
+                        SimpleNamespace(SentenceTransformer=construct))
+    monkeypatch.setattr(embed, "_model", None)
+    monkeypatch.setattr(embed, "_model_key", None)
+
+    assert embed.get_model() is embed.get_model()
+    assert embed.get_model("bge-m3") is embed.get_model("bge-m3")
+    embed.get_model()  # switching back releases the research model
+    assert calls == [
+        ("intfloat/multilingual-e5-large", {}),
+        ("BAAI/bge-m3", {"revision": "5617a9f61b028005a4858fdac845db406aefb181"}),
+        ("intfloat/multilingual-e5-large", {}),
+    ]

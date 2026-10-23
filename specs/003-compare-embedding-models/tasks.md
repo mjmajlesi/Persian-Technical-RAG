@@ -33,7 +33,7 @@
 
 - [X] T005 Write FAIL-first tests in `tests/unit/test_model_embeddings.py` for query/passage prefixes, normalization, dimension, model-card length limits, truncation counts, and unchanged raw chunk text. Compare an E5 baseline example with current output. Principles III/IV/VI.
   - CHECKPOINT: STOP → report expected failures and tested model-card rules → wait for explicit «تایید» before T006.
-- [ ] T006 Extend the embedding boundary in `src/index/embed.py` using T004 config: model-specific query/passage preparation, normalized dense vectors, and lazy model loading. Preserve the current E5 behavior without `--model`; never rewrite `chunks.jsonl`. Pass T005 and existing regression tests.
+- [X] T006 Extend the embedding boundary in `src/index/embed.py` using T004 config: model-specific query/passage preparation, normalized dense vectors, and lazy model loading. Preserve the current E5 behavior without `--model`; never rewrite `chunks.jsonl`. Pass T005 and existing regression tests.
   - CHECKPOINT: STOP → report candidate settings and unchanged default behavior → wait for explicit «تایید» before T007.
 - [ ] T007 Write FAIL-first cache tests in `tests/unit/test_embedding_cache.py`: keys include revision, prefix/normalization/max_tokens, ordered `(chunk_id, text)` pairs, and vector type. Each change must miss; an exact hit avoids re-encoding; partial output cannot be ready; incompatible IDs/dimensions fail.
   - CHECKPOINT: STOP → report the hit/miss matrix and expected failures → wait for explicit «تایید» before T008.
