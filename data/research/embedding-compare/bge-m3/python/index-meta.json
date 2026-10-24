@@ -1,0 +1,14 @@
+{
+  "status": "ready",
+  "model_key": "bge-m3",
+  "pack_id": "python",
+  "revision_sha": "5617a9f61b028005a4858fdac845db406aefb181",
+  "dimension": 1024,
+  "count": 253,
+  "canonical_chunks_path": "data/index/python/chunks.jsonl",
+  "chunk_sha256": "0b7afc4c24a6c34e10d797b9c2bab6ebd68f7c32636442c17eba280226d07649",
+  "settings_sha256": "91d3f8e4882a5a90ae0128015d0d28bd141e7e007580f1c2305888ed86fe5927",
+  "index_sha256": "a16373bf201fc063d5f7fe148efaac37b8021950953e98bd433dabe8e62ee0e6",
+  "cache_hit": true,
+  "truncation_count": 0
+}
