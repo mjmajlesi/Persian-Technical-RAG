@@ -100,7 +100,7 @@
 
 **Goal**: 12 model×pack configurations from identical chunks, pooled-v1 gates, retrieval-only without LLM, and E2E with the same citation guard. **Independent test**: model selection, isolation, and unchanged default behavior can be proven on pilot/v1 alone; full v2 comparison depends on US1. Principles I/II/III/V/VI/VIII.
 
-- [ ] T030 [US2] Implement/run real model-card smoke tests for `e5-base` and `bge-m3` in `tests/integration/test_model_card_smoke.py`: verify all three model SHAs/MIT licenses, E5 prefixes vs instruction-free BGE, normalization, max_tokens, 768/1024 dense dimensions, and short-input truncation reporting. Load one model at a time on CPU. If a card contradicts T004 config, STOP and obtain approval before indexing.
+- [X] T030 [US2] Implement/run real model-card smoke tests for `e5-base` and `bge-m3` in `tests/integration/test_model_card_smoke.py`: verify all three model SHAs/MIT licenses, E5 prefixes vs instruction-free BGE, normalization, max_tokens, 768/1024 dense dimensions, and short-input truncation reporting. Load one model at a time on CPU. If a card contradicts T004 config, STOP and obtain approval before indexing.
   - CHECKPOINT: STOP → report model revisions/licenses/dimensions and CPU cost → wait for explicit «تایید» before T031.
 - [ ] T031 [US2] Build all four research `e5-large` indices from `data/index/<lang>/chunks.jsonl` under `data/research/embedding-compare/e5-large/<lang>/`. Check second-run cache hits, canonical hashes/IDs, dimension 1024, and unchanged operational no-`--model` behavior. Record results in `specs/003-compare-embedding-models/index-build-log.md`.
   - CHECKPOINT: STOP → report four chunk counts/hashes and cache hits → wait for explicit «تایید» before T032.
