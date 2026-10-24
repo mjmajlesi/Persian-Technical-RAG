@@ -116,7 +116,7 @@
   - CHECKPOINT: STOP → report three C results with numerators/denominators → wait for explicit «تایید» before T037.
 - [X] T037 [US2] Run the same three retrieval-only models on **C++ v2** in `data/eval/cpp/reports/v2/`. Check 45 rows per model, 38-item hit@5, 7-item gate results, zero LLM calls, and matching corpus hashes.
   - CHECKPOINT: STOP → report three C++ results and errors/absence of errors → wait for explicit «تایید» before T038.
-- [ ] T038 [US2] Run three retrieval-only models on **Python v2** in `data/eval/python/reports/v2/`. Verify English-source evidence labels, 45 rows, separate hit@5/gate metrics, and zero LLM calls.
+- [X] T038 [US2] Run three retrieval-only models on **Python v2** in `data/eval/python/reports/v2/`. Verify English-source evidence labels, 45 rows, separate hit@5/gate metrics, and zero LLM calls.
   - CHECKPOINT: STOP → report three Python results with numerators/denominators → wait for explicit «تایید» before T039.
 - [ ] T039 [US2] Run three retrieval-only models on **Java v2** in `data/eval/java/reports/v2/`. Verify 45 rows, English evidence, hit@5/gate metrics, zero LLM calls, and no threshold tuning on v2.
   - CHECKPOINT: STOP → report three Java results and locked-gate check → wait for explicit «تایید» before T040.

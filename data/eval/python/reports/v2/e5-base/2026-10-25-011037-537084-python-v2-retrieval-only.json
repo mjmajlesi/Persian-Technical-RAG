@@ -1,0 +1,1440 @@
+{
+  "status": "complete",
+  "started_at": "2026-10-24T21:40:15.757192+00:00",
+  "elapsed_seconds": 21.781784699999662,
+  "model": {
+    "repository": "intfloat/multilingual-e5-base",
+    "revision_sha": "d128750597153bb5987e10b1c3493a34e5a4502a",
+    "license": "MIT"
+  },
+  "set_sha256": "94a4ec6e4f5c9ecfbf64681e05a314e1c35f47869247671543e1b5bedfc7604a",
+  "v2_sha256": "94a4ec6e4f5c9ecfbf64681e05a314e1c35f47869247671543e1b5bedfc7604a",
+  "snapshot": "2026-10-16",
+  "index": {
+    "chunk_sha256": "0b7afc4c24a6c34e10d797b9c2bab6ebd68f7c32636442c17eba280226d07649",
+    "settings_sha256": "7fafd9e2e4c1c09f2f2a37f2b4ec4c56e034d40020c930f3bbfbf83ec66338db",
+    "index_sha256": "a3240f6704816bd7ed61164a7d7933f3348badf93285ec8c7d74acc17dad5fc4",
+    "dimension": 768,
+    "count": 253,
+    "truncation_count": 134,
+    "ordered_ids_sha256": "d42c0b9dd0be5d4c42b23f7288ca68404c613ae0fadcbc87daaac15d235e80e5"
+  },
+  "model_key": "e5-base",
+  "language_id": "python",
+  "eval_set_version": "python-v2",
+  "mode": "retrieval-only",
+  "calibration": {
+    "model_key": "e5-base",
+    "revision_sha": "d128750597153bb5987e10b1c3493a34e5a4502a",
+    "method": "pooled-v1-max-balanced-accuracy; tie=higher; ooc=score<threshold",
+    "n_answerable": 100,
+    "n_out": 20,
+    "v1_hashes": {
+      "c": "55a69ac80a2e7bc1db11aae2ded7c346b5372ebeba9619f7e9cfd181b3083e88",
+      "cpp": "087cf8a163563bfa9765b769e939b08622d10efed43f825646ba67291a01f533",
+      "python": "a4b364891578dd9023a70994d2e351fce5c83b0eb5fe7f2b7ef7a388b2b3f22a",
+      "java": "60d015014299f3d29d8e42cda61d78b5aa3a560a1881799aff7dafbd3ded3725"
+    },
+    "threshold": 0.8026493787765503,
+    "balanced_accuracy": 0.855,
+    "pooled_confusion": {
+      "tp": 16,
+      "fn": 4,
+      "tn": 91,
+      "fp": 9
+    },
+    "per_language_confusion": {
+      "c": {
+        "tp": 4,
+        "fn": 1,
+        "tn": 25,
+        "fp": 0
+      },
+      "cpp": {
+        "tp": 2,
+        "fn": 3,
+        "tn": 25,
+        "fp": 0
+      },
+      "python": {
+        "tp": 5,
+        "fn": 0,
+        "tn": 23,
+        "fp": 2
+      },
+      "java": {
+        "tp": 5,
+        "fn": 0,
+        "tn": 18,
+        "fp": 7
+      }
+    },
+    "score_rows": [
+      {
+        "pack_id": "c",
+        "item_id": "C-001",
+        "qtype": "in-corpus",
+        "score": 0.858502984046936
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-002",
+        "qtype": "in-corpus",
+        "score": 0.8604968190193176
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-003",
+        "qtype": "in-corpus",
+        "score": 0.882943868637085
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-004",
+        "qtype": "in-corpus",
+        "score": 0.8371521234512329
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-005",
+        "qtype": "in-corpus",
+        "score": 0.8550131320953369
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-006",
+        "qtype": "in-corpus",
+        "score": 0.8512646555900574
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-007",
+        "qtype": "in-corpus",
+        "score": 0.8488719463348389
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-008",
+        "qtype": "in-corpus",
+        "score": 0.8773065805435181
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-009",
+        "qtype": "in-corpus",
+        "score": 0.8364853858947754
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-010",
+        "qtype": "in-corpus",
+        "score": 0.8354381918907166
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-011",
+        "qtype": "in-corpus",
+        "score": 0.8690749406814575
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-012",
+        "qtype": "in-corpus",
+        "score": 0.8421270847320557
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-013",
+        "qtype": "in-corpus",
+        "score": 0.8372600674629211
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-014",
+        "qtype": "in-corpus",
+        "score": 0.8577170372009277
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-015",
+        "qtype": "in-corpus",
+        "score": 0.8598752617835999
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-016",
+        "qtype": "in-corpus",
+        "score": 0.8559784889221191
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-017",
+        "qtype": "in-corpus",
+        "score": 0.8421650528907776
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-018",
+        "qtype": "in-corpus",
+        "score": 0.8910778760910034
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-019",
+        "qtype": "in-corpus",
+        "score": 0.8213208913803101
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-020",
+        "qtype": "in-corpus",
+        "score": 0.8470392227172852
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-M01",
+        "qtype": "mixed",
+        "score": 0.8504859209060669
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-M02",
+        "qtype": "mixed",
+        "score": 0.8714467287063599
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-M03",
+        "qtype": "mixed",
+        "score": 0.8501428365707397
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-M04",
+        "qtype": "mixed",
+        "score": 0.8623650670051575
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-M05",
+        "qtype": "mixed",
+        "score": 0.8418433666229248
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-O01",
+        "qtype": "out-of-corpus",
+        "score": 0.7495394349098206
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-O02",
+        "qtype": "out-of-corpus",
+        "score": 0.7750787734985352
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-O03",
+        "qtype": "out-of-corpus",
+        "score": 0.7524940371513367
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-O04",
+        "qtype": "out-of-corpus",
+        "score": 0.7946615815162659
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-O05",
+        "qtype": "out-of-corpus",
+        "score": 0.8196395635604858
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-001",
+        "qtype": "in-corpus",
+        "score": 0.8855170607566833
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-002",
+        "qtype": "in-corpus",
+        "score": 0.8565998077392578
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-003",
+        "qtype": "in-corpus",
+        "score": 0.8551936149597168
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-004",
+        "qtype": "in-corpus",
+        "score": 0.8583273887634277
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-005",
+        "qtype": "in-corpus",
+        "score": 0.8503717184066772
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-006",
+        "qtype": "in-corpus",
+        "score": 0.854804277420044
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-007",
+        "qtype": "in-corpus",
+        "score": 0.8351471424102783
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-008",
+        "qtype": "in-corpus",
+        "score": 0.8381533622741699
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-009",
+        "qtype": "in-corpus",
+        "score": 0.8530243635177612
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-010",
+        "qtype": "in-corpus",
+        "score": 0.841320812702179
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-011",
+        "qtype": "in-corpus",
+        "score": 0.8275524973869324
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-012",
+        "qtype": "in-corpus",
+        "score": 0.842961311340332
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-013",
+        "qtype": "in-corpus",
+        "score": 0.8448270559310913
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-014",
+        "qtype": "in-corpus",
+        "score": 0.8418524861335754
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-015",
+        "qtype": "in-corpus",
+        "score": 0.838967502117157
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-016",
+        "qtype": "in-corpus",
+        "score": 0.8486994504928589
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-017",
+        "qtype": "in-corpus",
+        "score": 0.8264489769935608
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-018",
+        "qtype": "in-corpus",
+        "score": 0.8483799695968628
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-019",
+        "qtype": "in-corpus",
+        "score": 0.8309568762779236
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-020",
+        "qtype": "in-corpus",
+        "score": 0.8291277289390564
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-M01",
+        "qtype": "mixed",
+        "score": 0.8536826372146606
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-M02",
+        "qtype": "mixed",
+        "score": 0.8470848798751831
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-M03",
+        "qtype": "mixed",
+        "score": 0.8510656356811523
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-M04",
+        "qtype": "mixed",
+        "score": 0.8383643627166748
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-M05",
+        "qtype": "mixed",
+        "score": 0.8527933359146118
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-O01",
+        "qtype": "out-of-corpus",
+        "score": 0.8172796964645386
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-O02",
+        "qtype": "out-of-corpus",
+        "score": 0.7365221977233887
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-O03",
+        "qtype": "out-of-corpus",
+        "score": 0.8209605813026428
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-O04",
+        "qtype": "out-of-corpus",
+        "score": 0.801316499710083
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-O05",
+        "qtype": "out-of-corpus",
+        "score": 0.8168352246284485
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-001",
+        "qtype": "in-corpus",
+        "score": 0.8440619707107544
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-002",
+        "qtype": "in-corpus",
+        "score": 0.8120542168617249
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-003",
+        "qtype": "in-corpus",
+        "score": 0.8326796293258667
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-004",
+        "qtype": "in-corpus",
+        "score": 0.8324519395828247
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-005",
+        "qtype": "in-corpus",
+        "score": 0.8232907652854919
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-006",
+        "qtype": "in-corpus",
+        "score": 0.8026493787765503
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-007",
+        "qtype": "in-corpus",
+        "score": 0.8359151482582092
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-008",
+        "qtype": "in-corpus",
+        "score": 0.8207522630691528
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-009",
+        "qtype": "in-corpus",
+        "score": 0.8328213691711426
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-010",
+        "qtype": "in-corpus",
+        "score": 0.7817098498344421
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-011",
+        "qtype": "in-corpus",
+        "score": 0.8324505090713501
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-012",
+        "qtype": "in-corpus",
+        "score": 0.8095051646232605
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-013",
+        "qtype": "in-corpus",
+        "score": 0.8149466514587402
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-014",
+        "qtype": "in-corpus",
+        "score": 0.7988357543945312
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-015",
+        "qtype": "in-corpus",
+        "score": 0.813015341758728
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-016",
+        "qtype": "in-corpus",
+        "score": 0.8092007637023926
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-017",
+        "qtype": "in-corpus",
+        "score": 0.8053869009017944
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-018",
+        "qtype": "in-corpus",
+        "score": 0.82909095287323
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-019",
+        "qtype": "in-corpus",
+        "score": 0.8413513898849487
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-020",
+        "qtype": "in-corpus",
+        "score": 0.830532968044281
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-M01",
+        "qtype": "mixed",
+        "score": 0.817639946937561
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-M02",
+        "qtype": "mixed",
+        "score": 0.8397035002708435
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-M03",
+        "qtype": "mixed",
+        "score": 0.8170472383499146
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-M04",
+        "qtype": "mixed",
+        "score": 0.8147302865982056
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-M05",
+        "qtype": "mixed",
+        "score": 0.8104698657989502
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-O01",
+        "qtype": "out-of-corpus",
+        "score": 0.7954769134521484
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-O02",
+        "qtype": "out-of-corpus",
+        "score": 0.7861974835395813
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-O03",
+        "qtype": "out-of-corpus",
+        "score": 0.780081033706665
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-O04",
+        "qtype": "out-of-corpus",
+        "score": 0.777840256690979
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-O05",
+        "qtype": "out-of-corpus",
+        "score": 0.7483582496643066
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-001",
+        "qtype": "in-corpus",
+        "score": 0.8178059458732605
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-002",
+        "qtype": "in-corpus",
+        "score": 0.7904640436172485
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-003",
+        "qtype": "in-corpus",
+        "score": 0.7735626697540283
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-004",
+        "qtype": "in-corpus",
+        "score": 0.8005062341690063
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-005",
+        "qtype": "in-corpus",
+        "score": 0.8273884654045105
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-006",
+        "qtype": "in-corpus",
+        "score": 0.8258939385414124
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-007",
+        "qtype": "in-corpus",
+        "score": 0.8039315342903137
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-008",
+        "qtype": "in-corpus",
+        "score": 0.7922938466072083
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-009",
+        "qtype": "in-corpus",
+        "score": 0.8114427328109741
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-010",
+        "qtype": "in-corpus",
+        "score": 0.8241043090820312
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-011",
+        "qtype": "in-corpus",
+        "score": 0.814062237739563
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-012",
+        "qtype": "in-corpus",
+        "score": 0.8459625244140625
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-013",
+        "qtype": "in-corpus",
+        "score": 0.8073194622993469
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-014",
+        "qtype": "in-corpus",
+        "score": 0.7905864119529724
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-015",
+        "qtype": "in-corpus",
+        "score": 0.7866026759147644
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-016",
+        "qtype": "in-corpus",
+        "score": 0.810144305229187
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-017",
+        "qtype": "in-corpus",
+        "score": 0.8315269351005554
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-018",
+        "qtype": "in-corpus",
+        "score": 0.8053262233734131
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-019",
+        "qtype": "in-corpus",
+        "score": 0.7959508895874023
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-020",
+        "qtype": "in-corpus",
+        "score": 0.8493365049362183
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-M01",
+        "qtype": "mixed",
+        "score": 0.8201380372047424
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-M02",
+        "qtype": "mixed",
+        "score": 0.8372494578361511
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-M03",
+        "qtype": "mixed",
+        "score": 0.8441030383110046
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-M04",
+        "qtype": "mixed",
+        "score": 0.821494996547699
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-M05",
+        "qtype": "mixed",
+        "score": 0.8140004873275757
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-O01",
+        "qtype": "out-of-corpus",
+        "score": 0.7795164585113525
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-O02",
+        "qtype": "out-of-corpus",
+        "score": 0.7768868803977966
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-O03",
+        "qtype": "out-of-corpus",
+        "score": 0.7955759763717651
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-O04",
+        "qtype": "out-of-corpus",
+        "score": 0.7713391780853271
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-O05",
+        "qtype": "out-of-corpus",
+        "score": 0.7572355270385742
+      }
+    ],
+    "locked_at": "2026-10-24T20:51:57.907301+00:00"
+  },
+  "retrieval": {
+    "status": "complete",
+    "error_count": 0,
+    "rows": [
+      {
+        "item_id": "PY2-001",
+        "qtype": "in-corpus",
+        "top1_score": 0.78182053565979,
+        "top5_ids": [
+          "pyref-tutorial-introduction#s07-c01",
+          "pyref-library-exceptions#s06-c05",
+          "pyref-library-stdtypes#s41-c03",
+          "pyref-library-stdtypes#s28-c01",
+          "pyref-tutorial-introduction#s07-c02"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": true
+      },
+      {
+        "item_id": "PY2-002",
+        "qtype": "in-corpus",
+        "top1_score": 0.801280677318573,
+        "top5_ids": [
+          "pyref-library-stdtypes#s27-c01",
+          "pyref-library-functions#s02-c23",
+          "pyref-tutorial-errors#s05-c01",
+          "pyref-library-functions#s02-c22",
+          "pyref-tutorial-controlflow#s09-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": true
+      },
+      {
+        "item_id": "PY2-003",
+        "qtype": "in-corpus",
+        "top1_score": 0.8205932378768921,
+        "top5_ids": [
+          "pyref-library-stdtypes#s17-c01",
+          "pyref-library-exceptions#s03-c01",
+          "pyref-tutorial-classes#s05-c01",
+          "pyref-library-stdtypes#s18-c02",
+          "pyref-library-stdtypes#s18-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "PY2-004",
+        "qtype": "in-corpus",
+        "top1_score": 0.7977536916732788,
+        "top5_ids": [
+          "pyref-library-functions#s02-c22",
+          "pyref-tutorial-controlflow#s21-c01",
+          "pyref-tutorial-controlflow#s13-c01",
+          "pyref-tutorial-controlflow#s10-c01",
+          "pyref-library-exceptions#s06-c02"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": true
+      },
+      {
+        "item_id": "PY2-005",
+        "qtype": "in-corpus",
+        "top1_score": 0.7787290811538696,
+        "top5_ids": [
+          "pyref-library-stdtypes#s65-c01",
+          "pyref-library-stdtypes#s64-c01",
+          "pyref-tutorial-inputoutput#s04-c01",
+          "pyref-tutorial-controlflow#s16-c01",
+          "pyref-library-stdtypes#s17-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": true
+      },
+      {
+        "item_id": "PY2-006",
+        "qtype": "in-corpus",
+        "top1_score": 0.811912477016449,
+        "top5_ids": [
+          "pyref-tutorial-inputoutput#s04-c01",
+          "pyref-library-functions#s02-c23",
+          "pyref-library-stdtypes#s42-c01",
+          "pyref-library-functions#s02-c11",
+          "pyref-library-functions#s02-c22"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "PY2-007",
+        "qtype": "in-corpus",
+        "top1_score": 0.7871456146240234,
+        "top5_ids": [
+          "pyref-tutorial-datastructures#s05-c01",
+          "pyref-tutorial-datastructures#s03-c01",
+          "pyref-library-stdtypes#s41-c03",
+          "pyref-library-functions#s02-c21",
+          "pyref-library-stdtypes#s38-c06"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": true
+      },
+      {
+        "item_id": "PY2-008",
+        "qtype": "in-corpus",
+        "top1_score": 0.7928707599639893,
+        "top5_ids": [
+          "pyref-library-stdtypes#s41-c03",
+          "pyref-tutorial-controlflow#s16-c01",
+          "pyref-tutorial-controlflow#s23-c01",
+          "pyref-tutorial-introduction#s02-c01",
+          "pyref-library-stdtypes#s20-c03"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": true
+      },
+      {
+        "item_id": "PY2-009",
+        "qtype": "in-corpus",
+        "top1_score": 0.7749173641204834,
+        "top5_ids": [
+          "pyref-library-stdtypes#s41-c02",
+          "pyref-library-stdtypes#s41-c03",
+          "pyref-tutorial-datastructures#s07-c01",
+          "pyref-library-stdtypes#s20-c02",
+          "pyref-tutorial-datastructures#s08-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": true
+      },
+      {
+        "item_id": "PY2-010",
+        "qtype": "in-corpus",
+        "top1_score": 0.7833908796310425,
+        "top5_ids": [
+          "pyref-tutorial-datastructures#s15-c01",
+          "pyref-tutorial-introduction#s07-c01",
+          "pyref-library-stdtypes#s20-c01",
+          "pyref-library-stdtypes#s05-c01",
+          "pyref-tutorial-introduction#s07-c02"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": true
+      },
+      {
+        "item_id": "PY2-011",
+        "qtype": "in-corpus",
+        "top1_score": 0.8135955333709717,
+        "top5_ids": [
+          "pyref-tutorial-classes#s05-c01",
+          "pyref-tutorial-classes#s04-c02",
+          "pyref-library-stdtypes#s18-c01",
+          "pyref-library-stdtypes#s17-c01",
+          "pyref-library-stdtypes#s18-c02"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "PY2-012",
+        "qtype": "in-corpus",
+        "top1_score": 0.7820839881896973,
+        "top5_ids": [
+          "pyref-tutorial-classes#s09-c01",
+          "pyref-tutorial-classes#s16-c01",
+          "pyref-library-functions#s02-c22",
+          "pyref-tutorial-inputoutput#s09-c01",
+          "pyref-tutorial-classes#s12-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": true
+      },
+      {
+        "item_id": "PY2-013",
+        "qtype": "in-corpus",
+        "top1_score": 0.836347222328186,
+        "top5_ids": [
+          "pyref-tutorial-classes#s15-c01",
+          "pyref-tutorial-classes#s14-c01",
+          "pyref-tutorial-classes#s02-c01",
+          "pyref-library-exceptions#s06-c03",
+          "pyref-library-stdtypes#s62-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "PY2-014",
+        "qtype": "in-corpus",
+        "top1_score": 0.7947274446487427,
+        "top5_ids": [
+          "pyref-tutorial-controlflow#s07-c01",
+          "pyref-library-stdtypes#s18-c01",
+          "pyref-tutorial-classes#s05-c01",
+          "pyref-library-stdtypes#s17-c01",
+          "pyref-library-functions#s02-c15"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": true
+      },
+      {
+        "item_id": "PY2-015",
+        "qtype": "in-corpus",
+        "top1_score": 0.8207151293754578,
+        "top5_ids": [
+          "pyref-library-exceptions#s03-c01",
+          "pyref-tutorial-errors#s07-c01",
+          "pyref-library-exceptions#s05-c01",
+          "pyref-library-exceptions#s06-c04",
+          "pyref-tutorial-errors#s12-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "PY2-016",
+        "qtype": "in-corpus",
+        "top1_score": 0.7942203283309937,
+        "top5_ids": [
+          "pyref-library-stdtypes#s17-c01",
+          "pyref-tutorial-errors#s09-c01",
+          "pyref-library-stdtypes#s45-c01",
+          "pyref-library-stdtypes#s17-c02",
+          "pyref-library-stdtypes#s18-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": true
+      },
+      {
+        "item_id": "PY2-017",
+        "qtype": "in-corpus",
+        "top1_score": 0.798850953578949,
+        "top5_ids": [
+          "pyref-tutorial-errors#s11-c01",
+          "pyref-library-exceptions#s09-c02",
+          "pyref-library-exceptions#s09-c01",
+          "pyref-library-exceptions#s06-c04",
+          "pyref-library-stdtypes#s41-c03"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": true
+      },
+      {
+        "item_id": "PY2-018",
+        "qtype": "in-corpus",
+        "top1_score": 0.7914894819259644,
+        "top5_ids": [
+          "pyref-library-exceptions#s06-c01",
+          "pyref-library-exceptions#s10-c01",
+          "pyref-library-exceptions#s06-c02",
+          "pyref-library-exceptions#s07-c01",
+          "pyref-library-stdtypes#s41-c03"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": true
+      },
+      {
+        "item_id": "PY2-019",
+        "qtype": "in-corpus",
+        "top1_score": 0.8140095472335815,
+        "top5_ids": [
+          "pyref-tutorial-inputoutput#s09-c02",
+          "pyref-library-stdtypes#s40-c05",
+          "pyref-tutorial-controlflow#s10-c01",
+          "pyref-library-stdtypes#s40-c04",
+          "pyref-library-stdtypes#s45-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "PY2-020",
+        "qtype": "in-corpus",
+        "top1_score": 0.7808049917221069,
+        "top5_ids": [
+          "pyref-library-functions#s02-c20",
+          "pyref-library-stdtypes#s41-c03",
+          "pyref-library-exceptions#s10-c01",
+          "pyref-tutorial-controlflow#s23-c01",
+          "pyref-tutorial-controlflow#s09-c02"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": true
+      },
+      {
+        "item_id": "PY2-021",
+        "qtype": "in-corpus",
+        "top1_score": 0.7903088331222534,
+        "top5_ids": [
+          "pyref-library-stdtypes#s17-c01",
+          "pyref-library-stdtypes#s18-c02",
+          "pyref-library-functions#s02-c22",
+          "pyref-library-stdtypes#s41-c03",
+          "pyref-tutorial-classes#s17-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": true
+      },
+      {
+        "item_id": "PY2-022",
+        "qtype": "in-corpus",
+        "top1_score": 0.7938909530639648,
+        "top5_ids": [
+          "pyref-tutorial-introduction#s07-c01",
+          "pyref-library-functions#s02-c23",
+          "pyref-library-stdtypes#s11-c02",
+          "pyref-tutorial-controlflow#s06-c01",
+          "pyref-library-exceptions#s06-c05"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": true
+      },
+      {
+        "item_id": "PY2-023",
+        "qtype": "in-corpus",
+        "top1_score": 0.7881615161895752,
+        "top5_ids": [
+          "pyref-library-stdtypes#s41-c03",
+          "pyref-library-stdtypes#s38-c03",
+          "pyref-library-exceptions#s06-c02",
+          "pyref-library-exceptions#s06-c05",
+          "pyref-library-stdtypes#s18-c02"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": true
+      },
+      {
+        "item_id": "PY2-024",
+        "qtype": "in-corpus",
+        "top1_score": 0.7893025875091553,
+        "top5_ids": [
+          "pyref-tutorial-datastructures#s14-c01",
+          "pyref-library-stdtypes#s45-c01",
+          "pyref-library-functions#s02-c02",
+          "pyref-library-functions#s02-c13",
+          "pyref-library-functions#s02-c20"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": true
+      },
+      {
+        "item_id": "PY2-025",
+        "qtype": "in-corpus",
+        "top1_score": 0.8100684285163879,
+        "top5_ids": [
+          "pyref-tutorial-controlflow#s02-c01",
+          "pyref-tutorial-classes#s05-c01",
+          "pyref-tutorial-controlflow#s11-c01",
+          "pyref-library-stdtypes#s41-c03",
+          "pyref-library-stdtypes#s41-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "PY2-026",
+        "qtype": "in-corpus",
+        "top1_score": 0.7966961860656738,
+        "top5_ids": [
+          "pyref-library-stdtypes#s43-c01",
+          "pyref-library-stdtypes#s42-c03",
+          "pyref-library-exceptions#s03-c01",
+          "pyref-tutorial-classes#s04-c02",
+          "pyref-library-stdtypes#s42-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": true
+      },
+      {
+        "item_id": "PY2-027",
+        "qtype": "in-corpus",
+        "top1_score": 0.7996615171432495,
+        "top5_ids": [
+          "pyref-library-exceptions#s04-c01",
+          "pyref-tutorial-errors#s05-c01",
+          "pyref-library-exceptions#s06-c01",
+          "pyref-library-exceptions#s06-c02",
+          "pyref-library-exceptions#s05-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": true
+      },
+      {
+        "item_id": "PY2-028",
+        "qtype": "in-corpus",
+        "top1_score": 0.8099749088287354,
+        "top5_ids": [
+          "pyref-library-exceptions#s10-c01",
+          "pyref-library-exceptions#s07-c01",
+          "pyref-library-exceptions#s06-c03",
+          "pyref-library-exceptions#s06-c05",
+          "pyref-tutorial-errors#s11-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "PY2-029",
+        "qtype": "mixed",
+        "top1_score": 0.8219326734542847,
+        "top5_ids": [
+          "pyref-library-stdtypes#s18-c02",
+          "pyref-library-functions#s02-c01",
+          "pyref-library-stdtypes#s17-c01",
+          "pyref-library-functions#s02-c15",
+          "pyref-library-functions#s02-c10"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "PY2-030",
+        "qtype": "mixed",
+        "top1_score": 0.7917089462280273,
+        "top5_ids": [
+          "pyref-library-stdtypes#s08-c02",
+          "pyref-library-stdtypes#s41-c03",
+          "pyref-library-stdtypes#s20-c03",
+          "pyref-library-stdtypes#s38-c03",
+          "pyref-tutorial-controlflow#s05-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": true
+      },
+      {
+        "item_id": "PY2-031",
+        "qtype": "mixed",
+        "top1_score": 0.8154382705688477,
+        "top5_ids": [
+          "pyref-library-stdtypes#s42-c04",
+          "pyref-tutorial-datastructures#s12-c01",
+          "pyref-tutorial-datastructures#s12-c02",
+          "pyref-library-stdtypes#s42-c02",
+          "pyref-library-stdtypes#s42-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "PY2-032",
+        "qtype": "mixed",
+        "top1_score": 0.8631460666656494,
+        "top5_ids": [
+          "pyref-library-stdtypes#s28-c06",
+          "pyref-library-stdtypes#s28-c09",
+          "pyref-library-stdtypes#s38-c06",
+          "pyref-library-stdtypes#s38-c05",
+          "pyref-library-stdtypes#s28-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "PY2-033",
+        "qtype": "mixed",
+        "top1_score": 0.8102527856826782,
+        "top5_ids": [
+          "pyref-library-stdtypes#s37-c01",
+          "pyref-library-stdtypes#s08-c02",
+          "pyref-library-stdtypes#s36-c02",
+          "pyref-library-stdtypes#s38-c06",
+          "pyref-library-stdtypes#s38-c09"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "PY2-034",
+        "qtype": "mixed",
+        "top1_score": 0.8204318284988403,
+        "top5_ids": [
+          "pyref-library-stdtypes#s40-c05",
+          "pyref-library-stdtypes#s40-c02",
+          "pyref-library-stdtypes#s40-c01",
+          "pyref-library-stdtypes#s38-c03",
+          "pyref-library-stdtypes#s40-c03"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "PY2-035",
+        "qtype": "mixed",
+        "top1_score": 0.8534083366394043,
+        "top5_ids": [
+          "pyref-library-stdtypes#s25-c02",
+          "pyref-library-stdtypes#s25-c01",
+          "pyref-tutorial-controlflow#s06-c01",
+          "pyref-library-stdtypes#s20-c03",
+          "pyref-tutorial-controlflow#s05-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "PY2-036",
+        "qtype": "mixed",
+        "top1_score": 0.8353292942047119,
+        "top5_ids": [
+          "pyref-library-exceptions#s09-c02",
+          "pyref-tutorial-errors#s11-c01",
+          "pyref-library-exceptions#s09-c01",
+          "pyref-tutorial-errors#s09-c01",
+          "pyref-library-exceptions#s06-c02"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "PY2-037",
+        "qtype": "mixed",
+        "top1_score": 0.8692435026168823,
+        "top5_ids": [
+          "pyref-library-stdtypes#s12-c01",
+          "pyref-library-functions#s02-c02",
+          "pyref-library-functions#s02-c14",
+          "pyref-tutorial-introduction#s07-c01",
+          "pyref-library-stdtypes#s03-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "PY2-038",
+        "qtype": "mixed",
+        "top1_score": 0.8269867897033691,
+        "top5_ids": [
+          "pyref-tutorial-inputoutput#s09-c01",
+          "pyref-library-stdtypes#s28-c09",
+          "pyref-library-stdtypes#s28-c08",
+          "pyref-library-stdtypes#s38-c08",
+          "pyref-library-stdtypes#s38-c06"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "PY2-039",
+        "qtype": "out-of-corpus",
+        "top1_score": 0.7989699244499207,
+        "top5_ids": [
+          "pyref-library-stdtypes#s28-c06",
+          "pyref-library-stdtypes#s42-c03",
+          "pyref-library-stdtypes#s41-c03",
+          "pyref-library-stdtypes#s43-c01",
+          "pyref-library-stdtypes#s38-c04"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": true
+      },
+      {
+        "item_id": "PY2-040",
+        "qtype": "out-of-corpus",
+        "top1_score": 0.8012438416481018,
+        "top5_ids": [
+          "pyref-tutorial-introduction#s06-c01",
+          "pyref-tutorial-controlflow#s04-c01",
+          "pyref-tutorial-introduction#s05-c03",
+          "pyref-library-stdtypes#s41-c03",
+          "pyref-library-stdtypes#s26-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": true
+      },
+      {
+        "item_id": "PY2-041",
+        "qtype": "out-of-corpus",
+        "top1_score": 0.8001696467399597,
+        "top5_ids": [
+          "pyref-library-stdtypes#s17-c01",
+          "pyref-library-stdtypes#s18-c02",
+          "pyref-library-functions#s02-c26",
+          "pyref-library-stdtypes#s18-c01",
+          "pyref-library-exceptions#s09-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": true
+      },
+      {
+        "item_id": "PY2-042",
+        "qtype": "out-of-corpus",
+        "top1_score": 0.8063955307006836,
+        "top5_ids": [
+          "pyref-library-stdtypes#s41-c03",
+          "pyref-library-stdtypes#s18-c02",
+          "pyref-library-exceptions#s06-c04",
+          "pyref-library-stdtypes#s38-c04",
+          "pyref-library-stdtypes#s18-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "PY2-043",
+        "qtype": "out-of-corpus",
+        "top1_score": 0.8097960948944092,
+        "top5_ids": [
+          "pyref-library-stdtypes#s41-c03",
+          "pyref-tutorial-errors#s07-c01",
+          "pyref-library-exceptions#s10-c01",
+          "pyref-library-stdtypes#s38-c07",
+          "pyref-library-stdtypes#s38-c03"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "PY2-044",
+        "qtype": "out-of-corpus",
+        "top1_score": 0.8033626675605774,
+        "top5_ids": [
+          "pyref-library-stdtypes#s38-c03",
+          "pyref-library-exceptions#s06-c04",
+          "pyref-library-exceptions#s06-c01",
+          "pyref-library-exceptions#s01-c01",
+          "pyref-library-exceptions#s10-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "PY2-045",
+        "qtype": "out-of-corpus",
+        "top1_score": 0.785845160484314,
+        "top5_ids": [
+          "pyref-library-stdtypes#s41-c03",
+          "pyref-library-exceptions#s06-c02",
+          "pyref-library-stdtypes#s18-c01",
+          "pyref-tutorial-introduction#s03-c01",
+          "pyref-library-stdtypes#s26-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": true
+      }
+    ]
+  },
+  "end_to_end": {
+    "status": "not_run",
+    "error_count": 0,
+    "rows": [],
+    "reasons": [],
+    "expected_response_model": null
+  },
+  "error_count": 0
+}
