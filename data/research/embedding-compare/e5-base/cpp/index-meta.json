@@ -1,0 +1,14 @@
+{
+  "status": "ready",
+  "model_key": "e5-base",
+  "pack_id": "cpp",
+  "revision_sha": "d128750597153bb5987e10b1c3493a34e5a4502a",
+  "dimension": 768,
+  "count": 201,
+  "canonical_chunks_path": "data/index/cpp/chunks.jsonl",
+  "chunk_sha256": "c22bd9fb1e37a9f3e8cf1d2b747c8d9a9e6b050d7798817feb35f20fa0444366",
+  "settings_sha256": "7fafd9e2e4c1c09f2f2a37f2b4ec4c56e034d40020c930f3bbfbf83ec66338db",
+  "index_sha256": "e463ad18b4759d845fbe736b038b597d7402bf712265b65945cb2f529a2e76bd",
+  "cache_hit": true,
+  "truncation_count": 37
+}

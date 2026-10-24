@@ -1,0 +1,14 @@
+{
+  "status": "ready",
+  "model_key": "e5-base",
+  "pack_id": "java",
+  "revision_sha": "d128750597153bb5987e10b1c3493a34e5a4502a",
+  "dimension": 768,
+  "count": 73,
+  "canonical_chunks_path": "data/index/java/chunks.jsonl",
+  "chunk_sha256": "dd119c50203b76016275ae95513f145fac6005a95a4752a69f4dd0c35b63c9a8",
+  "settings_sha256": "7fafd9e2e4c1c09f2f2a37f2b4ec4c56e034d40020c930f3bbfbf83ec66338db",
+  "index_sha256": "0aff9a42a405a0cbf408c3d572ed3c0feea99f4b7570fda5d350ebb1620f828f",
+  "cache_hit": true,
+  "truncation_count": 10
+}

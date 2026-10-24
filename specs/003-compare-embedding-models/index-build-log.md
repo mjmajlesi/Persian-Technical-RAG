@@ -14,3 +14,18 @@ These four research directories **already contained valid caches and indices bef
 | java | 73 | `dd119c50203b76016275ae95513f145fac6005a95a4752a69f4dd0c35b63c9a8` | 1024 | 10 | hit / hit (0.40s / 0.34s) | `b92f058b5ec8fa724bd3f9b955faa8df528df8c4b2b7f0a9c9c28613db35aa94` |
 
 Verification: every metadata record has `status=ready`, pinned revision, correct pack, count, dimension, canonical and index hashes, `cache_hit=true`, and cached truncation count. Both `ids.json` and loaded `Retriever` index agree exactly with the canonical chunk order/count, with no foreign IDs. Before/after SHA-256 of every file in all four operational `data/index/<pack>/` directories, all four v1 sets and all four manifests matched; the canonical chunk hashes also match T001. The no-`--model` `Retriever` loaded all four operational indices and a real C question returned five scoped hits without changing its index hash (31.74s including model load). No LLM calls, gate changes, corpus rewrite or v2 scoring.
+
+## T032: e5-base across four frozen packs (2026-10-24)
+
+Model: `intfloat/multilingual-e5-base@d128750597153bb5987e10b1c3493a34e5a4502a`, dense normalized dimension 768. Command: `.\.venv\Scripts\python -m src.index build --lang <pack> --model e5-base`, separately per pack on CPU. These four directories did **not** exist before T032: the first run encoded fresh passages (`cache_hit=false`); the second run per pack reused the exact fingerprint (`cache_hit=true`) without encoding. Only the small `cache.json`, `ids.json` and `index-meta.json` are versionable; FAISS binaries and `.npy` vectors remain ignored.
+
+| Pack | Chunks / ordered IDs | Canonical chunks SHA-256 = T001 | Dimension | Truncated / total | First build CPU wall time | Second run | Research FAISS SHA-256 |
+|---|---:|---|---:|---:|---|---|---|
+| c | 503 | `8b2bb61d8a853280bc400d2ea1e4b8bd6bfb76c5a1106bbc99ab2a08ddcfad74` | 768 | 44/503 | not captured by timer (successful fresh build) | hit | `06760dda3b8e22b3ad77f0891555c3e395eccfb72b921d4189343246cb0e7cb4` |
+| cpp | 201 | `c22bd9fb1e37a9f3e8cf1d2b747c8d9a9e6b050d7798817feb35f20fa0444366` | 768 | 37/201 | 126.43s | hit (0.51s) | `e463ad18b4759d845fbe736b038b597d7402bf712265b65945cb2f529a2e76bd` |
+| python | 253 | `0b7afc4c24a6c34e10d797b9c2bab6ebd68f7c32636442c17eba280226d07649` | 768 | 134/253 | 214.29s | hit (0.47s) | `a3240f6704816bd7ed61164a7d7933f3348badf93285ec8c7d74acc17dad5fc4` |
+| java | 73 | `dd119c50203b76016275ae95513f145fac6005a95a4752a69f4dd0c35b63c9a8` | 768 | 10/73 | 67.35s | hit | `0aff9a42a405a0cbf408c3d572ed3c0feea99f4b7570fda5d350ebb1620f828f` |
+
+Memory context: Windows reported 15.64 GiB physical RAM, 3.37 GiB free before builds and 2.94 GiB free afterwards. This is **not** a peak-RSS measurement; no peak or model-specific RAM usage is claimed. Every pack ran in a separate process so model weights were not resident simultaneously. Disk free after builds was 86.81 GiB. Tokenizer warnings for untruncated 618/526/690/712-token passages arose during the deliberate pre-truncation count; real encoding was limited to 512 tokens and the recorded per-pack truncation counts are shown above.
+
+Verification: fresh first-run misses were observed for all four packs, then second-run hits; `status=ready`, pinned revision, 768-dimensional FAISS index, checksum of both `.npy` vectors and FAISS, normalized reconstructed vectors, exact ordered canonical IDs and successful scoped `Retriever` load were checked. Canonical chunks, v1 and manifests still match their pack-specific T001 SHA-256. `git status` showed no changes outside new `e5-base` metadata (until this log/task update); the operational `data/index/` and existing `e5-large` research indices were not edited. No LLM calls or gate changes.

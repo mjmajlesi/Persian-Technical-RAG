@@ -104,7 +104,7 @@
   - CHECKPOINT: STOP → report model revisions/licenses/dimensions and CPU cost → wait for explicit «تایید» before T031.
 - [X] T031 [US2] Build all four research `e5-large` indices from `data/index/<lang>/chunks.jsonl` under `data/research/embedding-compare/e5-large/<lang>/`. Check second-run cache hits, canonical hashes/IDs, dimension 1024, and unchanged operational no-`--model` behavior. Record results in `specs/003-compare-embedding-models/index-build-log.md`.
   - CHECKPOINT: STOP → report four chunk counts/hashes and cache hits → wait for explicit «تایید» before T032.
-- [ ] T032 [US2] Build four `e5-base` indices under `data/research/embedding-compare/e5-base/<lang>/` at dimension 768 with identical canonical chunk hashes/IDs. Record cache and truncation in `specs/003-compare-embedding-models/index-build-log.md`; do not touch other indices.
+- [X] T032 [US2] Build four `e5-base` indices under `data/research/embedding-compare/e5-base/<lang>/` at dimension 768 with identical canonical chunk hashes/IDs. Record cache and truncation in `specs/003-compare-embedding-models/index-build-log.md`; do not touch other indices.
   - CHECKPOINT: STOP → report four builds, time/memory, and unchanged corpus → wait for explicit «تایید» before T033.
 - [ ] T033 [US2] Build four dense `bge-m3` indices under `data/research/embedding-compare/bge-m3/<lang>/` at dimension 1024. Record model-card behavior, cache, truncation, and CPU timings in `specs/003-compare-embedding-models/index-build-log.md`. If local resources fail, use optional Kaggle only with identical settings/hashes and report CPU/GPU differences.
   - CHECKPOINT: STOP → report four builds or a genuine blocker and reproduction path → wait for explicit «تایید» before T034.
