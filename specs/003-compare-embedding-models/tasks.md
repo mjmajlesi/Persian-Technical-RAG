@@ -89,7 +89,7 @@
   - CHECKPOINT: STOP → report 45 items and difficult Python cases → wait for explicit «تایید» before T027.
 - [X] T027 [P] [US1] Draft 28 **new Java in-corpus** questions in `data/eval/java/eval-set.java.v2.json` from frozen official English documentation: valid same-pack IDs, grounded summaries, provenance/license, and no literal chunk/v1 copying.
   - CHECKPOINT: STOP → report 28 sources and Java cross-lingual quality → wait for explicit «تایید» before T028.
-- [ ] T028 [US1] Add 10 new mixed and 7 new OOC questions to `data/eval/java/eval-set.java.v2.json`. Validate the full 45-item 28/10/7 set with T020 and **present the completed Java set for its own user review**.
+- [X] T028 [US1] Add 10 new mixed and 7 new OOC questions to `data/eval/java/eval-set.java.v2.json`. Validate the full 45-item 28/10/7 set with T020 and **present the completed Java set for its own user review**.
   - CHECKPOINT: STOP → report 45 Java items, provenance, and non-copied wording → wait for explicit «تایید» before T029.
 - [ ] T029 [US1] Audit **all 180 items** in `specs/003-compare-embedding-models/v2-audit.md`: four 45-item 28/10/7 sets, 180/180 provenance records, unique IDs, Persian non-copied wording, valid chunks/evidence language, and unchanged SHA-256 of every v1 file since T001. Return any questionable item to user review before publication.
   - CHECKPOINT: STOP → report four summaries and all open/cleared audit issues → wait for explicit «تایید» before T030. **US1 is independently testable.**

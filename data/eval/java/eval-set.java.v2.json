@@ -2,7 +2,7 @@
   "version": "java-v2",
   "pack_id": "java",
   "snapshot": "2026-10-16",
-  "notes": "Incomplete Java draft: 28 in-corpus questions grounded in frozen English Oracle tutorials. Reviewed at T027 user checkpoint on 2026-10-24; 10 mixed and 7 out-of-corpus items belong to T028.",
+  "notes": "Java v2: 28 in-corpus, 10 mixed, 7 out-of-corpus. Reviewed at T027/T028 user checkpoints on 2026-10-24; frozen pack/v1 unchanged.",
   "items": [
     {
       "item_id": "JV2-001",
@@ -841,6 +841,432 @@
         "authored_at": "2026-10-24",
         "review_status": "reviewed",
         "reviewer": "project owner (user approval, T027 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      }
+    },
+    {
+      "item_id": "JV2-029",
+      "qtype": "mixed",
+      "question": "اگر با `System.arraycopy` هفت عضو را از جایگاه دومِ آرایهٔ مبدأ به آغازِ آرایهٔ مقصد ببریم، سه پارامترِ عددیِ فراخوانی به چه ترتیبی‌اند؟",
+      "expected_answer_summary": "پس از دو آرایه، جایگاه آغاز در مبدأ، جایگاه آغاز در مقصد و تعداد عناصر می‌آید؛ در این مثال به‌ترتیب ۲، صفر و ۷ است.",
+      "pack_id": "java",
+      "version": "java-v2",
+      "expected_source_ids": [
+        "javaref-arrays#s05-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "javaref-arrays#s05-c01",
+          "source_id": "javaref-arrays",
+          "section_heading": "Copying Arrays",
+          "title": "Java Tutorials — Arrays",
+          "origin": "data/corpus/java/ref-javaref-arrays.md",
+          "snapshot": "2026-10-16",
+          "license": "Oracle tutorial (see docs.oracle.com terms)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T028 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      }
+    },
+    {
+      "item_id": "JV2-030",
+      "qtype": "mixed",
+      "question": "در زنجیرهٔ `if-then-else` با چند شرطِ درست، آیا شاخه‌های بعدی هم ارزیابی می‌شوند یا پس از نخستین شرطِ درست توقف می‌کند؟",
+      "expected_answer_summary": "نخستین شرطِ درست اجرا می‌شود و شرط‌ها و شاخه‌های باقی‌مانده بررسی نمی‌شوند؛ مانند نمونهٔ نمرهٔ ۷۶ که فقط شاخهٔ C را می‌گیرد.",
+      "pack_id": "java",
+      "version": "java-v2",
+      "expected_source_ids": [
+        "javaref-if#s03-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "javaref-if#s03-c01",
+          "source_id": "javaref-if",
+          "section_heading": "The if-then-else Statement",
+          "title": "Java Tutorials — if-then statements",
+          "origin": "data/corpus/java/ref-javaref-if.md",
+          "snapshot": "2026-10-16",
+          "license": "Oracle tutorial (see docs.oracle.com terms)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T028 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      }
+    },
+    {
+      "item_id": "JV2-031",
+      "qtype": "mixed",
+      "question": "اگر در سرآیندِ `for` هر سه بخشِ مقداردهی، شرطِ پایان و به‌روزرسانی را خالی بگذاریم، حلقه چه رفتاری دارد؟",
+      "expected_answer_summary": "هر سه عبارتِ سرآیند اختیاری‌اند و شکل for(;;) حلقهٔ بی‌پایان می‌سازد، مگر جریان اجرا از راه دیگری خارج شود.",
+      "pack_id": "java",
+      "version": "java-v2",
+      "expected_source_ids": [
+        "javaref-for#s02-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "javaref-for#s02-c01",
+          "source_id": "javaref-for",
+          "section_heading": "The for Statement (The Java™ Tutorials > Learning the Java Language > Language Basics)",
+          "title": "Java Tutorials — The for Statement",
+          "origin": "data/corpus/java/ref-javaref-for.md",
+          "snapshot": "2026-10-16",
+          "license": "Oracle tutorial (see docs.oracle.com terms)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T028 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      }
+    },
+    {
+      "item_id": "JV2-032",
+      "qtype": "mixed",
+      "question": "اگر فیلدِ والد `private` باشد، آیا فرزند می‌تواند آن را مستقیم به ارث ببرد و از چه راهی ممکن است به مقدارش برسد؟",
+      "expected_answer_summary": "عضو خصوصی به زیرکلاس به ارث نمی‌رسد؛ ولی متدهای public یا protected والد که به آن فیلد دسترسی می‌دهند برای فرزند قابل استفاده‌اند.",
+      "pack_id": "java",
+      "version": "java-v2",
+      "expected_source_ids": [
+        "javaref-subclasses#s06-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "javaref-subclasses#s06-c01",
+          "source_id": "javaref-subclasses",
+          "section_heading": "Private Members in a Superclass",
+          "title": "Java Tutorials — Inheritance",
+          "origin": "data/corpus/java/ref-javaref-subclasses.md",
+          "snapshot": "2026-10-16",
+          "license": "Oracle tutorial (see docs.oracle.com terms)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T028 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      }
+    },
+    {
+      "item_id": "JV2-033",
+      "qtype": "mixed",
+      "question": "اگر امضای متدِ فرزند را به‌اشتباه متفاوت بنویسیم، گذاشتنِ `@Override` چگونه مانعِ اشتباه در بازنویسی می‌شود؟",
+      "expected_answer_summary": "@Override قصدِ بازنویسی را به کامپایلر اعلام می‌کند؛ اگر متدِ متناظر در والد یافت نشود، کامپایلر خطا می‌دهد، نه اینکه بی‌صدا متدِ تازه‌ای پذیرفته شود.",
+      "pack_id": "java",
+      "version": "java-v2",
+      "expected_source_ids": [
+        "javaref-override#s02-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "javaref-override#s02-c01",
+          "source_id": "javaref-override",
+          "section_heading": "Instance Methods",
+          "title": "Java Tutorials — Overriding Methods",
+          "origin": "data/corpus/java/ref-javaref-override.md",
+          "snapshot": "2026-10-16",
+          "license": "Oracle tutorial (see docs.oracle.com terms)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T028 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      }
+    },
+    {
+      "item_id": "JV2-034",
+      "qtype": "mixed",
+      "question": "آیا متدِ ایستای یک `interface` مثل متدِ پیش‌فرض به پیاده‌ساز ارث می‌رسد، و متدِ نمونهٔ والد با متدِ انتزاعیِ هم‌امضای رابط چه می‌کند؟",
+      "expected_answer_summary": "متدِ ایستای رابط هرگز به ارث نمی‌رسد؛ متدِ نمونهٔ به‌ارث‌رسیده از کلاس می‌تواند قراردادِ متدِ انتزاعیِ هم‌امضای رابط را پیاده کند.",
+      "pack_id": "java",
+      "version": "java-v2",
+      "expected_source_ids": [
+        "javaref-override#s04-c02"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "javaref-override#s04-c02",
+          "source_id": "javaref-override",
+          "section_heading": "Interface Methods",
+          "title": "Java Tutorials — Overriding Methods",
+          "origin": "data/corpus/java/ref-javaref-override.md",
+          "snapshot": "2026-10-16",
+          "license": "Oracle tutorial (see docs.oracle.com terms)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T028 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      }
+    },
+    {
+      "item_id": "JV2-035",
+      "qtype": "mixed",
+      "question": "آیا یک `interface` می‌تواند چند رابطِ والد داشته باشد، در حالی‌که یک کلاس فقط یک کلاسِ والد مستقیم دارد، و نام والدها چطور نوشته می‌شوند؟",
+      "expected_answer_summary": "بله؛ رابط می‌تواند چند رابط را با extends و فهرستی جداشده با کاما گسترش دهد، اما کلاس فقط یک کلاسِ والد را می‌تواند گسترش دهد.",
+      "pack_id": "java",
+      "version": "java-v2",
+      "expected_source_ids": [
+        "javaref-interface-def#s02-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "javaref-interface-def#s02-c01",
+          "source_id": "javaref-interface-def",
+          "section_heading": "Defining an Interface (The Java™ Tutorials > Learning the Java Language > Interfaces and Inheritance)",
+          "title": "Java Tutorials — Defining an Interface",
+          "origin": "data/corpus/java/ref-javaref-interface-def.md",
+          "snapshot": "2026-10-16",
+          "license": "Oracle tutorial (see docs.oracle.com terms)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T028 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      }
+    },
+    {
+      "item_id": "JV2-036",
+      "qtype": "mixed",
+      "question": "برای نگه‌داشتنِ خروجیِ قالب‌بندی و استفادهٔ دوباره از آن، `String.format` چه تفاوتی با چاپ مستقیمِ `printf` دارد؟",
+      "expected_answer_summary": "متد ایستای String.format یک شیء String قالب‌بندی‌شده برمی‌گرداند تا ذخیره و دوباره استفاده شود؛ printf خروجی را در جویبار چاپ می‌کند.",
+      "pack_id": "java",
+      "version": "java-v2",
+      "expected_source_ids": [
+        "javaref-strings#s06-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "javaref-strings#s06-c01",
+          "source_id": "javaref-strings",
+          "section_heading": "Creating Format Strings",
+          "title": "Java Tutorials — Strings",
+          "origin": "data/corpus/java/ref-javaref-strings.md",
+          "snapshot": "2026-10-16",
+          "license": "Oracle tutorial (see docs.oracle.com terms)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T028 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      }
+    },
+    {
+      "item_id": "JV2-037",
+      "qtype": "mixed",
+      "question": "آیا `Files.readAllBytes` برای فایلِ بسیار بزرگ گزینهٔ توصیه‌شدهٔ این درس است، و باز و بسته‌کردن جویبار را چه کسی انجام می‌دهد؟",
+      "expected_answer_summary": "خیر؛ readAllBytes و readAllLines برای فایل نسبتاً کوچک و خواندن یک‌باره‌اند و خودِ متدها کارهایی مانند باز و بسته‌کردن جویبار را انجام می‌دهند.",
+      "pack_id": "java",
+      "version": "java-v2",
+      "expected_source_ids": [
+        "javaref-fileio#s04-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "javaref-fileio#s04-c01",
+          "source_id": "javaref-fileio",
+          "section_heading": "Reading All Bytes or Lines from a File",
+          "title": "Java Tutorials — Reading and Writing Files",
+          "origin": "data/corpus/java/ref-javaref-fileio.md",
+          "snapshot": "2026-10-16",
+          "license": "Oracle tutorial (see docs.oracle.com terms)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T028 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      }
+    },
+    {
+      "item_id": "JV2-038",
+      "qtype": "mixed",
+      "question": "چرا یک الگوریتمِ جست‌وجوی چارچوب `Collections` می‌تواند روی چند پیاده‌سازیِ متفاوتِ مجموعه کار کند؟ نقشِ رابط، پیاده‌سازی و الگوریتم چیست؟",
+      "expected_answer_summary": "رابط نوع انتزاعیِ مستقل از نمایش را تعریف می‌کند، پیاده‌سازی ساختار دادهٔ مشخص است و الگوریتم به‌صورت چندریخت روی اشیای پیاده‌سازِ رابطِ مناسب کار می‌کند.",
+      "pack_id": "java",
+      "version": "java-v2",
+      "expected_source_ids": [
+        "javaref-collections-intro#s03-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "javaref-collections-intro#s03-c01",
+          "source_id": "javaref-collections-intro",
+          "section_heading": "What Is a Collections Framework?",
+          "title": "Java Tutorials — Introduction to Collections",
+          "origin": "data/corpus/java/ref-javaref-collections-intro.md",
+          "snapshot": "2026-10-16",
+          "license": "Oracle tutorial (see docs.oracle.com terms)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T028 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      }
+    },
+    {
+      "item_id": "JV2-039",
+      "qtype": "out-of-corpus",
+      "question": "در جاوای جدید چگونه با `Thread.ofVirtual` نخِ مجازی بسازیم و آن را برای درخواست‌های پرتعداد به کار ببریم؟",
+      "abstain_reason": "چانک‌های فریز Oracle این پک دربارهٔ virtual threads یا Thread.ofVirtual شاهدی ندارند؛ شیوهٔ اجرای آن‌ها را نمی‌توان از این پیکره استناد کرد.",
+      "pack_id": "java",
+      "version": "java-v2",
+      "expected_source_ids": [],
+      "evidence_language": "none",
+      "provenance": [],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T028 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      }
+    },
+    {
+      "item_id": "JV2-040",
+      "qtype": "out-of-corpus",
+      "question": "در یک `record` جاوا چگونه سازندهٔ فشرده تعریف کنیم تا مقدار هر مؤلفه پیش از ذخیره اعتبارسنجی شود؟",
+      "abstain_reason": "مستندات فریز Java در این پک قرارداد record و سازندهٔ فشردهٔ آن را پوشش نمی‌دهند؛ باید از پاسخ مستند انصراف داد.",
+      "pack_id": "java",
+      "version": "java-v2",
+      "expected_source_ids": [],
+      "evidence_language": "none",
+      "provenance": [],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T028 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      }
+    },
+    {
+      "item_id": "JV2-041",
+      "qtype": "out-of-corpus",
+      "question": "در سلسله‌مراتبِ `sealed class` با چه اعلامی فقط زیرکلاس‌های مشخص اجازهٔ ارث‌بری می‌گیرند؟",
+      "abstain_reason": "پیکرهٔ فریز Java قواعد sealed class و فهرستِ زیرکلاس‌های مجاز را ندارد؛ استنادِ هم‌پک برای این نحو وجود ندارد.",
+      "pack_id": "java",
+      "version": "java-v2",
+      "expected_source_ids": [],
+      "evidence_language": "none",
+      "provenance": [],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T028 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      }
+    },
+    {
+      "item_id": "JV2-042",
+      "qtype": "out-of-corpus",
+      "question": "برای `pattern matching` در عبارتِ switch جاوا، بازوی نگهبان‌دار را چگونه می‌نویسیم و ترتیبِ الگوها چه اثری دارد؟",
+      "abstain_reason": "چانک‌های این پک مستندات pattern matching برای switch، نگهبان یا تقدم الگوها را ندارند؛ پاسخ دقیق از شاهد فریز ممکن نیست.",
+      "pack_id": "java",
+      "version": "java-v2",
+      "expected_source_ids": [],
+      "evidence_language": "none",
+      "provenance": [],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T028 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      }
+    },
+    {
+      "item_id": "JV2-043",
+      "qtype": "out-of-corpus",
+      "question": "در `Spring Security` چگونه ورود با OAuth2 را برای مسیرهای مشخص فعال کنیم و بازگشتِ نشست را تنظیم کنیم؟",
+      "abstain_reason": "پیکرهٔ فریز Java راهنمای Spring Security یا OAuth2 و تنظیمات احراز هویت وب را شامل نمی‌شود؛ هیچ استناد معتبری برای مراحل درخواست‌شده نیست.",
+      "pack_id": "java",
+      "version": "java-v2",
+      "expected_source_ids": [],
+      "evidence_language": "none",
+      "provenance": [],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T028 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      }
+    },
+    {
+      "item_id": "JV2-044",
+      "qtype": "out-of-corpus",
+      "question": "در `Hibernate` چطور بارگذاریِ تنبلِ رابطه را بیرون از نشست مدیریت کنیم تا خطای دسترسیِ دیرهنگام رخ ندهد؟",
+      "abstain_reason": "در منابع فریز Java مستندات Hibernate، نشست یا lazy loading رابطه وجود ندارد؛ ساختنِ راهکار بدون شاهد مجاز نیست.",
+      "pack_id": "java",
+      "version": "java-v2",
+      "expected_source_ids": [],
+      "evidence_language": "none",
+      "provenance": [],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T028 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      }
+    },
+    {
+      "item_id": "JV2-045",
+      "qtype": "out-of-corpus",
+      "question": "در `Gradle` چگونه وابستگیِ زمانِ اجرا را از وابستگیِ فقط زمانِ آزمون در فایلِ ساخت تفکیک می‌کنند؟",
+      "abstain_reason": "چانک‌های فریز Java دربارهٔ Gradle، پیکربندی وابستگی‌ها یا فایلِ ساختِ آن نیستند؛ برای پاسخ باید انصراف داد.",
+      "pack_id": "java",
+      "version": "java-v2",
+      "expected_source_ids": [],
+      "evidence_language": "none",
+      "provenance": [],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T028 checkpoint)",
         "reviewed_at": "2026-10-24"
       }
     }
