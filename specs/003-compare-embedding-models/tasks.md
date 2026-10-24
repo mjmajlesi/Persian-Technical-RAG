@@ -112,7 +112,7 @@
   - CHECKPOINT: STOP → report schema, tests, ignore checks, and sample staged-file scan → wait for explicit «تایید» before T035.
 - [X] T035 [US2] Lock pooled-v1 gates for the remaining candidates with `src/eval/calibrate.py --model e5-base|bge-m3 --pooled-v1` and review all three records in `data/eval/model-comparison/calibration/`: each has 100/20 samples, balanced accuracy/tie rule, four pack confusion tables, and no v2 data. Do not change operational gates.
   - CHECKPOINT: STOP → report three gates and per-pack pooling effects → wait for explicit «تایید» before T036.
-- [ ] T036 [US2] Run three retrieval-only models on the 45 **C v2** questions using `src/eval/run.py --lang c --model ... --mode retrieval-only`. Save top-5/score rows, hit@5 on 38 answerable questions, and fixed-gate abstention on 7 OOC in `data/eval/c/reports/v2/`; assert zero LLM calls and zero errors.
+- [X] T036 [US2] Run three retrieval-only models on the 45 **C v2** questions using `src/eval/run.py --lang c --model ... --mode retrieval-only`. Save top-5/score rows, hit@5 on 38 answerable questions, and fixed-gate abstention on 7 OOC in `data/eval/c/reports/v2/`; assert zero LLM calls and zero errors.
   - CHECKPOINT: STOP → report three C results with numerators/denominators → wait for explicit «تایید» before T037.
 - [ ] T037 [US2] Run the same three retrieval-only models on **C++ v2** in `data/eval/cpp/reports/v2/`. Check 45 rows per model, 38-item hit@5, 7-item gate results, zero LLM calls, and matching corpus hashes.
   - CHECKPOINT: STOP → report three C++ results and errors/absence of errors → wait for explicit «تایید» before T038.

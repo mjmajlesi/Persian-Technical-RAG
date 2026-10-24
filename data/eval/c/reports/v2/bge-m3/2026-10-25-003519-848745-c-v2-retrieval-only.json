@@ -1,0 +1,1440 @@
+{
+  "status": "complete",
+  "started_at": "2026-10-24T21:04:49.984263+00:00",
+  "elapsed_seconds": 29.86288549999972,
+  "model": {
+    "repository": "BAAI/bge-m3",
+    "revision_sha": "5617a9f61b028005a4858fdac845db406aefb181",
+    "license": "MIT"
+  },
+  "set_sha256": "9f5d929ea4b54f2268a2fcdad2d353ec62cccc2838462928eded9e1f29d37cf3",
+  "v2_sha256": "9f5d929ea4b54f2268a2fcdad2d353ec62cccc2838462928eded9e1f29d37cf3",
+  "snapshot": "2026-09-23",
+  "index": {
+    "chunk_sha256": "8b2bb61d8a853280bc400d2ea1e4b8bd6bfb76c5a1106bbc99ab2a08ddcfad74",
+    "settings_sha256": "91d3f8e4882a5a90ae0128015d0d28bd141e7e007580f1c2305888ed86fe5927",
+    "index_sha256": "974d536dcecb56023658238f29dd42e56f89dee1575b2291d9c75ab206d91f78",
+    "dimension": 1024,
+    "count": 503,
+    "truncation_count": 0,
+    "ordered_ids_sha256": "b2f884d7502302c1776bef9cd7347e3df867847f012afaec90493222958e62dc"
+  },
+  "model_key": "bge-m3",
+  "language_id": "c",
+  "eval_set_version": "c-v2",
+  "mode": "retrieval-only",
+  "calibration": {
+    "model_key": "bge-m3",
+    "revision_sha": "5617a9f61b028005a4858fdac845db406aefb181",
+    "method": "pooled-v1-max-balanced-accuracy; tie=higher; ooc=score<threshold",
+    "n_answerable": 100,
+    "n_out": 20,
+    "v1_hashes": {
+      "c": "55a69ac80a2e7bc1db11aae2ded7c346b5372ebeba9619f7e9cfd181b3083e88",
+      "cpp": "087cf8a163563bfa9765b769e939b08622d10efed43f825646ba67291a01f533",
+      "python": "a4b364891578dd9023a70994d2e351fce5c83b0eb5fe7f2b7ef7a388b2b3f22a",
+      "java": "60d015014299f3d29d8e42cda61d78b5aa3a560a1881799aff7dafbd3ded3725"
+    },
+    "threshold": 0.5504866242408752,
+    "balanced_accuracy": 0.98,
+    "pooled_confusion": {
+      "tp": 20,
+      "fn": 0,
+      "tn": 96,
+      "fp": 4
+    },
+    "per_language_confusion": {
+      "c": {
+        "tp": 5,
+        "fn": 0,
+        "tn": 24,
+        "fp": 1
+      },
+      "cpp": {
+        "tp": 5,
+        "fn": 0,
+        "tn": 25,
+        "fp": 0
+      },
+      "python": {
+        "tp": 5,
+        "fn": 0,
+        "tn": 24,
+        "fp": 1
+      },
+      "java": {
+        "tp": 5,
+        "fn": 0,
+        "tn": 23,
+        "fp": 2
+      }
+    },
+    "score_rows": [
+      {
+        "pack_id": "c",
+        "item_id": "C-001",
+        "qtype": "in-corpus",
+        "score": 0.6440348625183105
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-002",
+        "qtype": "in-corpus",
+        "score": 0.5982194542884827
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-003",
+        "qtype": "in-corpus",
+        "score": 0.6262091398239136
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-004",
+        "qtype": "in-corpus",
+        "score": 0.5688381791114807
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-005",
+        "qtype": "in-corpus",
+        "score": 0.6310622692108154
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-006",
+        "qtype": "in-corpus",
+        "score": 0.5978911519050598
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-007",
+        "qtype": "in-corpus",
+        "score": 0.5610072016716003
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-008",
+        "qtype": "in-corpus",
+        "score": 0.7067208290100098
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-009",
+        "qtype": "in-corpus",
+        "score": 0.5939510464668274
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-010",
+        "qtype": "in-corpus",
+        "score": 0.5931930541992188
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-011",
+        "qtype": "in-corpus",
+        "score": 0.588600754737854
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-012",
+        "qtype": "in-corpus",
+        "score": 0.5335940718650818
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-013",
+        "qtype": "in-corpus",
+        "score": 0.5508223176002502
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-014",
+        "qtype": "in-corpus",
+        "score": 0.6543603539466858
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-015",
+        "qtype": "in-corpus",
+        "score": 0.689166784286499
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-016",
+        "qtype": "in-corpus",
+        "score": 0.6821774244308472
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-017",
+        "qtype": "in-corpus",
+        "score": 0.6442654132843018
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-018",
+        "qtype": "in-corpus",
+        "score": 0.6661496758460999
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-019",
+        "qtype": "in-corpus",
+        "score": 0.6290504932403564
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-020",
+        "qtype": "in-corpus",
+        "score": 0.5866231918334961
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-M01",
+        "qtype": "mixed",
+        "score": 0.6887116432189941
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-M02",
+        "qtype": "mixed",
+        "score": 0.5942453742027283
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-M03",
+        "qtype": "mixed",
+        "score": 0.668819785118103
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-M04",
+        "qtype": "mixed",
+        "score": 0.6188790798187256
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-M05",
+        "qtype": "mixed",
+        "score": 0.5504866242408752
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-O01",
+        "qtype": "out-of-corpus",
+        "score": 0.3587530851364136
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-O02",
+        "qtype": "out-of-corpus",
+        "score": 0.40632063150405884
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-O03",
+        "qtype": "out-of-corpus",
+        "score": 0.33320072293281555
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-O04",
+        "qtype": "out-of-corpus",
+        "score": 0.3769235610961914
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-O05",
+        "qtype": "out-of-corpus",
+        "score": 0.45431163907051086
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-001",
+        "qtype": "in-corpus",
+        "score": 0.7690926790237427
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-002",
+        "qtype": "in-corpus",
+        "score": 0.679914116859436
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-003",
+        "qtype": "in-corpus",
+        "score": 0.7241210341453552
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-004",
+        "qtype": "in-corpus",
+        "score": 0.674518883228302
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-005",
+        "qtype": "in-corpus",
+        "score": 0.6146067380905151
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-006",
+        "qtype": "in-corpus",
+        "score": 0.6940027475357056
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-007",
+        "qtype": "in-corpus",
+        "score": 0.6291316747665405
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-008",
+        "qtype": "in-corpus",
+        "score": 0.678525447845459
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-009",
+        "qtype": "in-corpus",
+        "score": 0.7198954820632935
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-010",
+        "qtype": "in-corpus",
+        "score": 0.6744991540908813
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-011",
+        "qtype": "in-corpus",
+        "score": 0.6252239942550659
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-012",
+        "qtype": "in-corpus",
+        "score": 0.592137336730957
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-013",
+        "qtype": "in-corpus",
+        "score": 0.7126712799072266
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-014",
+        "qtype": "in-corpus",
+        "score": 0.7089937925338745
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-015",
+        "qtype": "in-corpus",
+        "score": 0.6360678672790527
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-016",
+        "qtype": "in-corpus",
+        "score": 0.6290969848632812
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-017",
+        "qtype": "in-corpus",
+        "score": 0.5945636630058289
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-018",
+        "qtype": "in-corpus",
+        "score": 0.6175968647003174
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-019",
+        "qtype": "in-corpus",
+        "score": 0.5760189890861511
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-020",
+        "qtype": "in-corpus",
+        "score": 0.6195078492164612
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-M01",
+        "qtype": "mixed",
+        "score": 0.6309149265289307
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-M02",
+        "qtype": "mixed",
+        "score": 0.6551095247268677
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-M03",
+        "qtype": "mixed",
+        "score": 0.6558940410614014
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-M04",
+        "qtype": "mixed",
+        "score": 0.6223254799842834
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-M05",
+        "qtype": "mixed",
+        "score": 0.6741454601287842
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-O01",
+        "qtype": "out-of-corpus",
+        "score": 0.4646027386188507
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-O02",
+        "qtype": "out-of-corpus",
+        "score": 0.32916730642318726
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-O03",
+        "qtype": "out-of-corpus",
+        "score": 0.499246209859848
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-O04",
+        "qtype": "out-of-corpus",
+        "score": 0.4867802858352661
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-O05",
+        "qtype": "out-of-corpus",
+        "score": 0.4345870614051819
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-001",
+        "qtype": "in-corpus",
+        "score": 0.6537710428237915
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-002",
+        "qtype": "in-corpus",
+        "score": 0.6474185585975647
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-003",
+        "qtype": "in-corpus",
+        "score": 0.606867790222168
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-004",
+        "qtype": "in-corpus",
+        "score": 0.6673946380615234
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-005",
+        "qtype": "in-corpus",
+        "score": 0.6093752384185791
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-006",
+        "qtype": "in-corpus",
+        "score": 0.5475713610649109
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-007",
+        "qtype": "in-corpus",
+        "score": 0.6034404039382935
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-008",
+        "qtype": "in-corpus",
+        "score": 0.6132891178131104
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-009",
+        "qtype": "in-corpus",
+        "score": 0.587031364440918
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-010",
+        "qtype": "in-corpus",
+        "score": 0.6053686738014221
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-011",
+        "qtype": "in-corpus",
+        "score": 0.6371690630912781
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-012",
+        "qtype": "in-corpus",
+        "score": 0.6354122161865234
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-013",
+        "qtype": "in-corpus",
+        "score": 0.6017758250236511
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-014",
+        "qtype": "in-corpus",
+        "score": 0.6319217681884766
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-015",
+        "qtype": "in-corpus",
+        "score": 0.5771727561950684
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-016",
+        "qtype": "in-corpus",
+        "score": 0.610314130783081
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-017",
+        "qtype": "in-corpus",
+        "score": 0.6086978316307068
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-018",
+        "qtype": "in-corpus",
+        "score": 0.6432996988296509
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-019",
+        "qtype": "in-corpus",
+        "score": 0.6446222066879272
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-020",
+        "qtype": "in-corpus",
+        "score": 0.6241520643234253
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-M01",
+        "qtype": "mixed",
+        "score": 0.6085031628608704
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-M02",
+        "qtype": "mixed",
+        "score": 0.6046671271324158
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-M03",
+        "qtype": "mixed",
+        "score": 0.5915239453315735
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-M04",
+        "qtype": "mixed",
+        "score": 0.6505804061889648
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-M05",
+        "qtype": "mixed",
+        "score": 0.6039757132530212
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-O01",
+        "qtype": "out-of-corpus",
+        "score": 0.5485296249389648
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-O02",
+        "qtype": "out-of-corpus",
+        "score": 0.48114213347435
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-O03",
+        "qtype": "out-of-corpus",
+        "score": 0.5196127891540527
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-O04",
+        "qtype": "out-of-corpus",
+        "score": 0.4733891785144806
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-O05",
+        "qtype": "out-of-corpus",
+        "score": 0.4022425413131714
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-001",
+        "qtype": "in-corpus",
+        "score": 0.694473147392273
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-002",
+        "qtype": "in-corpus",
+        "score": 0.5506198406219482
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-003",
+        "qtype": "in-corpus",
+        "score": 0.5301467776298523
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-004",
+        "qtype": "in-corpus",
+        "score": 0.5567357540130615
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-005",
+        "qtype": "in-corpus",
+        "score": 0.6609469652175903
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-006",
+        "qtype": "in-corpus",
+        "score": 0.6672295331954956
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-007",
+        "qtype": "in-corpus",
+        "score": 0.6153786182403564
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-008",
+        "qtype": "in-corpus",
+        "score": 0.6041994094848633
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-009",
+        "qtype": "in-corpus",
+        "score": 0.6541234254837036
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-010",
+        "qtype": "in-corpus",
+        "score": 0.6245267391204834
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-011",
+        "qtype": "in-corpus",
+        "score": 0.6576010584831238
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-012",
+        "qtype": "in-corpus",
+        "score": 0.7210893630981445
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-013",
+        "qtype": "in-corpus",
+        "score": 0.5800526142120361
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-014",
+        "qtype": "in-corpus",
+        "score": 0.670870304107666
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-015",
+        "qtype": "in-corpus",
+        "score": 0.5595694780349731
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-016",
+        "qtype": "in-corpus",
+        "score": 0.6310240030288696
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-017",
+        "qtype": "in-corpus",
+        "score": 0.6566461324691772
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-018",
+        "qtype": "in-corpus",
+        "score": 0.5995779037475586
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-019",
+        "qtype": "in-corpus",
+        "score": 0.516952633857727
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-020",
+        "qtype": "in-corpus",
+        "score": 0.6940425634384155
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-M01",
+        "qtype": "mixed",
+        "score": 0.6748378276824951
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-M02",
+        "qtype": "mixed",
+        "score": 0.6381664276123047
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-M03",
+        "qtype": "mixed",
+        "score": 0.6933455467224121
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-M04",
+        "qtype": "mixed",
+        "score": 0.6614140272140503
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-M05",
+        "qtype": "mixed",
+        "score": 0.6746329665184021
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-O01",
+        "qtype": "out-of-corpus",
+        "score": 0.5104725956916809
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-O02",
+        "qtype": "out-of-corpus",
+        "score": 0.48515453934669495
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-O03",
+        "qtype": "out-of-corpus",
+        "score": 0.46751803159713745
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-O04",
+        "qtype": "out-of-corpus",
+        "score": 0.44284123182296753
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-O05",
+        "qtype": "out-of-corpus",
+        "score": 0.3924165964126587
+      }
+    ],
+    "locked_at": "2026-10-24T20:53:01.267797+00:00"
+  },
+  "retrieval": {
+    "status": "complete",
+    "error_count": 0,
+    "rows": [
+      {
+        "item_id": "C2-001",
+        "qtype": "in-corpus",
+        "top1_score": 0.6291170120239258,
+        "top5_ids": [
+          "fa-vars-types-operators#s02-c01",
+          "cppref-replace#s07-c01",
+          "fa-pointers#s09-c01",
+          "fa-preprocessor#s04-c01",
+          "cppref-operator-precedence#s02-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "C2-002",
+        "qtype": "in-corpus",
+        "top1_score": 0.592948853969574,
+        "top5_ids": [
+          "fa-pointers#s10-c01",
+          "fa-vars-types-operators#s14-c01",
+          "fa-pointers#s11-c01",
+          "fa-vars-types-operators#s11-c01",
+          "fa-appendix-numbers#s03-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "C2-003",
+        "qtype": "in-corpus",
+        "top1_score": 0.5620749592781067,
+        "top5_ids": [
+          "fa-selection-iteration#s03-c01",
+          "fa-vars-types-operators#s17-c01",
+          "fa-preprocessor#s07-c01",
+          "fa-pointers#s11-c01",
+          "fa-vars-types-operators#s16-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "C2-004",
+        "qtype": "in-corpus",
+        "top1_score": 0.5389289855957031,
+        "top5_ids": [
+          "fa-strings#s02-c01",
+          "fa-vars-types-operators#s13-c01",
+          "fa-strings#s03-c01",
+          "fa-vars-types-operators#s23-c01",
+          "fa-vars-types-operators#s12-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": true
+      },
+      {
+        "item_id": "C2-005",
+        "qtype": "in-corpus",
+        "top1_score": 0.6274799108505249,
+        "top5_ids": [
+          "fa-io-formatting#s05-c01",
+          "fa-io-formatting#s08-c01",
+          "fa-io-formatting#s06-c01",
+          "fa-io-formatting#s02-c01",
+          "fa-io-formatting#s15-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "C2-006",
+        "qtype": "in-corpus",
+        "top1_score": 0.678749680519104,
+        "top5_ids": [
+          "fa-io-formatting#s06-c01",
+          "cppref-atoi#s02-c01",
+          "fa-vars-types-operators#s04-c01",
+          "cppref-printf#s06-c02",
+          "fa-pointers#s15-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "C2-007",
+        "qtype": "in-corpus",
+        "top1_score": 0.565112829208374,
+        "top5_ids": [
+          "fa-io-formatting#s05-c01",
+          "fa-io-formatting#s08-c01",
+          "fa-strings#s03-c01",
+          "fa-io-formatting#s09-c01",
+          "fa-pointers#s17-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "C2-008",
+        "qtype": "in-corpus",
+        "top1_score": 0.595659613609314,
+        "top5_ids": [
+          "fa-functions#s10-c01",
+          "fa-io-formatting#s14-c01",
+          "fa-vars-types-operators#s10-c01",
+          "cppref-scanf#s05-c01",
+          "fa-selection-iteration#s22-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "C2-009",
+        "qtype": "in-corpus",
+        "top1_score": 0.5510629415512085,
+        "top5_ids": [
+          "fa-vars-types-operators#s10-c01",
+          "fa-io-formatting#s14-c01",
+          "fa-appendix-numbers#s05-c01",
+          "cppref-byte-strings#s03-c02",
+          "fa-vars-types-operators#s18-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "C2-010",
+        "qtype": "in-corpus",
+        "top1_score": 0.7484012842178345,
+        "top5_ids": [
+          "fa-selection-iteration#s14-c01",
+          "fa-selection-iteration#s10-c01",
+          "fa-selection-iteration#s15-c01",
+          "fa-selection-iteration#s12-c01",
+          "fa-functions#s18-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "C2-011",
+        "qtype": "in-corpus",
+        "top1_score": 0.5855019688606262,
+        "top5_ids": [
+          "fa-selection-iteration#s14-c01",
+          "fa-selection-iteration#s17-c01",
+          "fa-selection-iteration#s10-c01",
+          "fa-selection-iteration#s11-c01",
+          "cppref-for#s02-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "C2-012",
+        "qtype": "in-corpus",
+        "top1_score": 0.6549297571182251,
+        "top5_ids": [
+          "fa-selection-iteration#s13-c01",
+          "cppref-for#s04-c01",
+          "cppref-replace#s07-c02",
+          "cppref-memcpy#s02-c01",
+          "fa-selection-iteration#s10-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "C2-013",
+        "qtype": "in-corpus",
+        "top1_score": 0.545045018196106,
+        "top5_ids": [
+          "fa-arrays#s02-c01",
+          "fa-pointers#s09-c01",
+          "fa-pointers#s07-c01",
+          "fa-arrays#s04-c01",
+          "fa-arrays#s03-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": true
+      },
+      {
+        "item_id": "C2-014",
+        "qtype": "in-corpus",
+        "top1_score": 0.5990650057792664,
+        "top5_ids": [
+          "fa-arrays#s11-c01",
+          "fa-arrays#s12-c01",
+          "fa-arrays#s22-c01",
+          "fa-arrays#s10-c01",
+          "fa-vars-types-operators#s15-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "C2-015",
+        "qtype": "in-corpus",
+        "top1_score": 0.5842872858047485,
+        "top5_ids": [
+          "fa-arrays#s17-c01",
+          "fa-arrays#s14-c01",
+          "fa-functions#s02-c01",
+          "fa-pointers#s15-c01",
+          "fa-preprocessor#s09-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "C2-016",
+        "qtype": "in-corpus",
+        "top1_score": 0.5294831991195679,
+        "top5_ids": [
+          "fa-pointers#s05-c01",
+          "fa-pointers#s03-c01",
+          "cppref-pointer#s09-c01",
+          "cppref-realloc#s04-c01",
+          "cppref-pointer#s01-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": true
+      },
+      {
+        "item_id": "C2-017",
+        "qtype": "in-corpus",
+        "top1_score": 0.6548563241958618,
+        "top5_ids": [
+          "fa-pointers#s10-c01",
+          "fa-pointers#s09-c01",
+          "fa-pointers#s03-c01",
+          "fa-pointers#s02-c01",
+          "fa-pointers#s15-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "C2-018",
+        "qtype": "in-corpus",
+        "top1_score": 0.5370095372200012,
+        "top5_ids": [
+          "fa-vars-types-operators#s15-c01",
+          "fa-functions#s07-c01",
+          "fa-pointers#s07-c01",
+          "fa-selection-iteration#s22-c01",
+          "fa-pointers#s11-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": true
+      },
+      {
+        "item_id": "C2-019",
+        "qtype": "in-corpus",
+        "top1_score": 0.6112578511238098,
+        "top5_ids": [
+          "fa-functions#s18-c01",
+          "fa-pointers#s11-c01",
+          "fa-dynamic-memory#s11-c01",
+          "fa-arrays#s07-c01",
+          "fa-pointers#s19-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "C2-020",
+        "qtype": "in-corpus",
+        "top1_score": 0.560265064239502,
+        "top5_ids": [
+          "fa-structs-unions-enums#s07-c01",
+          "fa-vars-types-operators#s15-c01",
+          "fa-functions#s07-c01",
+          "fa-structs-unions-enums#s03-c01",
+          "cppref-pointer#s05-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "C2-021",
+        "qtype": "in-corpus",
+        "top1_score": 0.614098310470581,
+        "top5_ids": [
+          "fa-appendix-numbers#s05-c01",
+          "fa-structs-unions-enums#s09-c01",
+          "fa-vars-types-operators#s05-c01",
+          "fa-appendix-numbers#s04-c01",
+          "cppref-byte-strings#s03-c02"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "C2-022",
+        "qtype": "in-corpus",
+        "top1_score": 0.5275425314903259,
+        "top5_ids": [
+          "fa-pointers#s15-c01",
+          "fa-strings#s05-c01",
+          "fa-strings#s02-c01",
+          "fa-arrays#s02-c01",
+          "fa-strings#s04-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": true
+      },
+      {
+        "item_id": "C2-023",
+        "qtype": "in-corpus",
+        "top1_score": 0.588503360748291,
+        "top5_ids": [
+          "fa-vars-types-operators#s09-c01",
+          "cppref-scanf#s02-c01",
+          "cppref-fgets#s04-c01",
+          "cppref-fgets#s02-c01",
+          "cppref-scanf#s05-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "C2-024",
+        "qtype": "in-corpus",
+        "top1_score": 0.5932375192642212,
+        "top5_ids": [
+          "cppref-calloc#s04-c01",
+          "cppref-malloc#s04-c01",
+          "cppref-realloc#s04-c01",
+          "cppref-realloc#s02-c01",
+          "cppref-fseek#s04-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "C2-025",
+        "qtype": "in-corpus",
+        "top1_score": 0.6602796316146851,
+        "top5_ids": [
+          "fa-dynamic-memory#s11-c01",
+          "fa-dynamic-memory#s09-c01",
+          "fa-pointers#s03-c01",
+          "fa-dynamic-memory#s12-c01",
+          "cppref-pointer#s05-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "C2-026",
+        "qtype": "in-corpus",
+        "top1_score": 0.6033470630645752,
+        "top5_ids": [
+          "fa-preprocessor#s02-c01",
+          "cppref-printf#s02-c01",
+          "fa-selection-iteration#s03-c01",
+          "cppref-conditional#s05-c01",
+          "cppref-conditional#s02-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "C2-027",
+        "qtype": "in-corpus",
+        "top1_score": 0.5253734588623047,
+        "top5_ids": [
+          "cppref-strcpy#s01-c01",
+          "fa-strings#s11-c01",
+          "cppref-memcpy#s01-c01",
+          "cppref-memcpy#s03-c01",
+          "cppref-scanf#s01-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": true
+      },
+      {
+        "item_id": "C2-028",
+        "qtype": "in-corpus",
+        "top1_score": 0.6056628823280334,
+        "top5_ids": [
+          "fa-files#s02-c01",
+          "cppref-fseek#s05-c01",
+          "cppref-fclose#s02-c01",
+          "fa-files#s04-c01",
+          "fa-pointers#s03-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "C2-029",
+        "qtype": "mixed",
+        "top1_score": 0.6014593839645386,
+        "top5_ids": [
+          "fa-dynamic-memory#s14-c01",
+          "cppref-printf#s02-c01",
+          "fa-files#s08-c01",
+          "fa-files#s05-c01",
+          "cppref-printf#s07-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "C2-030",
+        "qtype": "mixed",
+        "top1_score": 0.6589289903640747,
+        "top5_ids": [
+          "fa-files#s08-c01",
+          "cppref-fgets#s02-c01",
+          "fa-files#s09-c01",
+          "fa-strings#s06-c01",
+          "cppref-fgets#s04-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "C2-031",
+        "qtype": "mixed",
+        "top1_score": 0.6400255560874939,
+        "top5_ids": [
+          "cppref-strstr#s04-c01",
+          "cppref-strstr#s03-c01",
+          "cppref-atoi#s04-c01",
+          "cppref-atoi#s03-c01",
+          "cppref-strlen#s03-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "C2-032",
+        "qtype": "mixed",
+        "top1_score": 0.5916526317596436,
+        "top5_ids": [
+          "cppref-qsort#s01-c01",
+          "cppref-qsort#s04-c01",
+          "fa-arrays#s13-c01",
+          "cppref-qsort#s02-c01",
+          "fa-arrays#s12-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "C2-033",
+        "qtype": "mixed",
+        "top1_score": 0.5525530576705933,
+        "top5_ids": [
+          "cppref-bsearch#s03-c01",
+          "cppref-bsearch#s01-c01",
+          "cppref-bsearch#s04-c01",
+          "cppref-bsearch#s02-c01",
+          "fa-arrays#s09-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "C2-034",
+        "qtype": "mixed",
+        "top1_score": 0.5605794191360474,
+        "top5_ids": [
+          "cppref-isalpha#s01-c01",
+          "fa-strings#s16-c01",
+          "fa-vars-types-operators#s20-c01",
+          "cppref-isalpha#s07-c01",
+          "fa-strings#s03-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "C2-035",
+        "qtype": "mixed",
+        "top1_score": 0.6804924011230469,
+        "top5_ids": [
+          "cppref-fwrite#s04-c01",
+          "cppref-fseek#s04-c01",
+          "cppref-fread#s04-c01",
+          "cppref-fclose#s04-c01",
+          "cppref-atoi#s04-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "C2-036",
+        "qtype": "mixed",
+        "top1_score": 0.6675050258636475,
+        "top5_ids": [
+          "cppref-realloc#s02-c01",
+          "cppref-malloc#s02-c01",
+          "cppref-calloc#s02-c01",
+          "cppref-calloc#s04-c01",
+          "cppref-malloc#s04-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "C2-037",
+        "qtype": "mixed",
+        "top1_score": 0.6364386081695557,
+        "top5_ids": [
+          "cppref-strcmp#s02-c01",
+          "fa-strings#s08-c01",
+          "fa-strings#s12-c01",
+          "cppref-byte-strings#s03-c02",
+          "cppref-strcmp#s08-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "C2-038",
+        "qtype": "mixed",
+        "top1_score": 0.6555618047714233,
+        "top5_ids": [
+          "cppref-memset#s04-c01",
+          "fa-files#s09-c01",
+          "cppref-memset#s01-c01",
+          "fa-dynamic-memory#s14-c01",
+          "cppref-memset#s02-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "C2-039",
+        "qtype": "out-of-corpus",
+        "top1_score": 0.527008056640625,
+        "top5_ids": [
+          "fa-functions#s18-c01",
+          "fa-selection-iteration#s11-c01",
+          "fa-selection-iteration#s10-c01",
+          "fa-selection-iteration#s14-c01",
+          "fa-selection-iteration#s18-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": true
+      },
+      {
+        "item_id": "C2-040",
+        "qtype": "out-of-corpus",
+        "top1_score": 0.44536447525024414,
+        "top5_ids": [
+          "fa-strings#s07-c01",
+          "cppref-fseek#s02-c01",
+          "cppref-scanf#s04-c01",
+          "fa-functions#s05-c01",
+          "cppref-strcmp#s03-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": true
+      },
+      {
+        "item_id": "C2-041",
+        "qtype": "out-of-corpus",
+        "top1_score": 0.5257890224456787,
+        "top5_ids": [
+          "fa-preprocessor#s03-c01",
+          "fa-selection-iteration#s14-c01",
+          "cppref-fseek#s02-c01",
+          "fa-strings#s13-c01",
+          "fa-files#s02-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": true
+      },
+      {
+        "item_id": "C2-042",
+        "qtype": "out-of-corpus",
+        "top1_score": 0.5118985176086426,
+        "top5_ids": [
+          "cppref-fseek#s05-c01",
+          "fa-dynamic-memory#s11-c01",
+          "fa-structs-unions-enums#s07-c01",
+          "cppref-free#s02-c01",
+          "cppref-printf#s07-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": true
+      },
+      {
+        "item_id": "C2-043",
+        "qtype": "out-of-corpus",
+        "top1_score": 0.5527142286300659,
+        "top5_ids": [
+          "fa-files#s02-c01",
+          "fa-preprocessor#s02-c01",
+          "cppref-conditional#s08-c01",
+          "fa-pointers#s12-c01",
+          "glibc-standard-streams#s02-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "C2-044",
+        "qtype": "out-of-corpus",
+        "top1_score": 0.5422807335853577,
+        "top5_ids": [
+          "fa-dynamic-memory#s15-c01",
+          "fa-dynamic-memory#s12-c01",
+          "fa-selection-iteration#s11-c01",
+          "fa-dynamic-memory#s11-c01",
+          "fa-preprocessor#s02-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": true
+      },
+      {
+        "item_id": "C2-045",
+        "qtype": "out-of-corpus",
+        "top1_score": 0.5065528154373169,
+        "top5_ids": [
+          "fa-structs-unions-enums#s07-c01",
+          "cppref-memset#s01-c01",
+          "fa-structs-unions-enums#s14-c01",
+          "cppref-strcmp#s01-c01",
+          "cppref-scanf#s01-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": true
+      }
+    ]
+  },
+  "end_to_end": {
+    "status": "not_run",
+    "error_count": 0,
+    "rows": [],
+    "reasons": [],
+    "expected_response_model": null
+  },
+  "error_count": 0
+}
