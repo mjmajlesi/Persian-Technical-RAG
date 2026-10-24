@@ -2,7 +2,7 @@
   "version": "python-v2",
   "pack_id": "python",
   "snapshot": "2026-10-16",
-  "notes": "Incomplete draft: 28 new Python in-corpus questions grounded in frozen English docs. Pending user review; 10 mixed and 7 out-of-corpus items belong to T026. Never score as a complete set.",
+  "notes": "Python v2: 28 in-corpus, 10 mixed, 7 out-of-corpus. Reviewed at T026 user checkpoint on 2026-10-24; frozen pack/v1 unchanged.",
   "items": [
     {
       "item_id": "PY2-001",
@@ -29,9 +29,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-24",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T026 checkpoint)",
+        "reviewed_at": "2026-10-24"
       }
     },
     {
@@ -59,9 +59,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-24",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T026 checkpoint)",
+        "reviewed_at": "2026-10-24"
       }
     },
     {
@@ -89,9 +89,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-24",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T026 checkpoint)",
+        "reviewed_at": "2026-10-24"
       }
     },
     {
@@ -119,9 +119,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-24",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T026 checkpoint)",
+        "reviewed_at": "2026-10-24"
       }
     },
     {
@@ -149,9 +149,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-24",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T026 checkpoint)",
+        "reviewed_at": "2026-10-24"
       }
     },
     {
@@ -179,9 +179,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-24",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T026 checkpoint)",
+        "reviewed_at": "2026-10-24"
       }
     },
     {
@@ -209,9 +209,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-24",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T026 checkpoint)",
+        "reviewed_at": "2026-10-24"
       }
     },
     {
@@ -239,9 +239,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-24",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T026 checkpoint)",
+        "reviewed_at": "2026-10-24"
       }
     },
     {
@@ -269,9 +269,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-24",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T026 checkpoint)",
+        "reviewed_at": "2026-10-24"
       }
     },
     {
@@ -299,9 +299,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-24",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T026 checkpoint)",
+        "reviewed_at": "2026-10-24"
       }
     },
     {
@@ -329,9 +329,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-24",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T026 checkpoint)",
+        "reviewed_at": "2026-10-24"
       }
     },
     {
@@ -359,9 +359,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-24",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T026 checkpoint)",
+        "reviewed_at": "2026-10-24"
       }
     },
     {
@@ -389,9 +389,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-24",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T026 checkpoint)",
+        "reviewed_at": "2026-10-24"
       }
     },
     {
@@ -419,9 +419,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-24",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T026 checkpoint)",
+        "reviewed_at": "2026-10-24"
       }
     },
     {
@@ -449,9 +449,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-24",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T026 checkpoint)",
+        "reviewed_at": "2026-10-24"
       }
     },
     {
@@ -479,9 +479,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-24",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T026 checkpoint)",
+        "reviewed_at": "2026-10-24"
       }
     },
     {
@@ -509,9 +509,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-24",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T026 checkpoint)",
+        "reviewed_at": "2026-10-24"
       }
     },
     {
@@ -539,9 +539,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-24",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T026 checkpoint)",
+        "reviewed_at": "2026-10-24"
       }
     },
     {
@@ -569,9 +569,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-24",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T026 checkpoint)",
+        "reviewed_at": "2026-10-24"
       }
     },
     {
@@ -599,9 +599,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-24",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T026 checkpoint)",
+        "reviewed_at": "2026-10-24"
       }
     },
     {
@@ -629,9 +629,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-24",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T026 checkpoint)",
+        "reviewed_at": "2026-10-24"
       }
     },
     {
@@ -659,9 +659,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-24",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T026 checkpoint)",
+        "reviewed_at": "2026-10-24"
       }
     },
     {
@@ -689,9 +689,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-24",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T026 checkpoint)",
+        "reviewed_at": "2026-10-24"
       }
     },
     {
@@ -719,9 +719,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-24",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T026 checkpoint)",
+        "reviewed_at": "2026-10-24"
       }
     },
     {
@@ -749,9 +749,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-24",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T026 checkpoint)",
+        "reviewed_at": "2026-10-24"
       }
     },
     {
@@ -779,9 +779,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-24",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T026 checkpoint)",
+        "reviewed_at": "2026-10-24"
       }
     },
     {
@@ -809,9 +809,9 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-24",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T026 checkpoint)",
+        "reviewed_at": "2026-10-24"
       }
     },
     {
@@ -839,10 +839,436 @@
       "authorship": {
         "author": "assistant draft",
         "authored_at": "2026-10-24",
-        "review_status": "pending-user-review",
-        "reviewer": null,
-        "reviewed_at": null
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T026 checkpoint)",
+        "reviewed_at": "2026-10-24"
       }
+    },
+    {
+      "item_id": "PY2-029",
+      "qtype": "mixed",
+      "question": "اگر `all` و `any` را هر دو روی یک iterable خالی اجرا کنیم، آیا خروجی‌شان یکسان است و هر کدام چه مقدار می‌دهد؟",
+      "expected_answer_summary": "خیر؛ all برای پیمایش‌پذیرِ خالی True و any برای همان ورودی False می‌دهد، چون هیچ عضوِ مخالفِ شرطِ همه یا عضوِ تأییدکنندهٔ شرطِ وجودی پیدا نمی‌شود.",
+      "pack_id": "python",
+      "version": "python-v2",
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T026 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      },
+      "expected_source_ids": [
+        "pyref-library-functions#s02-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "pyref-library-functions#s02-c01",
+          "source_id": "pyref-library-functions",
+          "section_heading": "Built-in functions",
+          "title": "Python library — Built-in functions",
+          "origin": "data/corpus/python/ref-pyref-library-functions.md",
+          "snapshot": "2026-10-16",
+          "license": "PSF License (docs.python.org)"
+        }
+      ]
+    },
+    {
+      "item_id": "PY2-030",
+      "qtype": "mixed",
+      "question": "اگر در `enumerate` مقدار `start` را پنج بگذاریم، زوجِ نخستِ تولیدشده برای اولین عضو چه شماره‌ای دارد و آیا جایگاهِ واقعی عضو در دنباله عوض می‌شود؟",
+      "expected_answer_summary": "شمارندهٔ زوج نخست از پنج آغاز می‌شود؛ enumerate فقط شمارنده‌ای کنار همان اعضای ورودی می‌سازد و جایگاه یا خودِ دنباله را تغییر نمی‌دهد.",
+      "pack_id": "python",
+      "version": "python-v2",
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T026 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      },
+      "expected_source_ids": [
+        "pyref-library-functions#s02-c07"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "pyref-library-functions#s02-c07",
+          "source_id": "pyref-library-functions",
+          "section_heading": "Built-in functions",
+          "title": "Python library — Built-in functions",
+          "origin": "data/corpus/python/ref-pyref-library-functions.md",
+          "snapshot": "2026-10-16",
+          "license": "PSF License (docs.python.org)"
+        }
+      ]
+    },
+    {
+      "item_id": "PY2-031",
+      "qtype": "mixed",
+      "question": "وقتی دو `dict` کلیدِ مشترک دارند، عملگرِ ادغامِ `d | other` مقدارِ کدام‌طرف را برای آن کلید برمی‌گزیند و آیا دیکشنری تازه‌ای می‌سازد؟",
+      "expected_answer_summary": "این عملگر دیکشنری تازه‌ای با کلیدهای دو طرف می‌سازد و برای کلید مشترک مقدارِ دیکشنری سمت راست (other) اولویت دارد.",
+      "pack_id": "python",
+      "version": "python-v2",
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T026 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      },
+      "expected_source_ids": [
+        "pyref-library-stdtypes#s42-c03"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "pyref-library-stdtypes#s42-c03",
+          "source_id": "pyref-library-stdtypes",
+          "section_heading": "Mapping types — dict, frozendict",
+          "title": "Python library — Built-in Types",
+          "origin": "data/corpus/python/ref-pyref-library-stdtypes.md",
+          "snapshot": "2026-10-16",
+          "license": "PSF License (docs.python.org)"
+        }
+      ]
+    },
+    {
+      "item_id": "PY2-032",
+      "qtype": "mixed",
+      "question": "اگر بخواهیم فقط یک پیشوندِ کامل را حذف کنیم، چرا `lstrip(chars)` جایگزین دقیقی برای `removeprefix(prefix)` نیست؟",
+      "expected_answer_summary": "lstrip تمام نویسه‌های آغازینِ متعلق به مجموعهٔ chars را پی‌درپی حذف می‌کند، نه یک پیشوندِ ثابت را؛ removeprefix تنها در صورت انطباقِ پیشوندِ کامل آن را برمی‌دارد.",
+      "pack_id": "python",
+      "version": "python-v2",
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T026 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      },
+      "expected_source_ids": [
+        "pyref-library-stdtypes#s28-c06"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "pyref-library-stdtypes#s28-c06",
+          "source_id": "pyref-library-stdtypes",
+          "section_heading": "String Methods",
+          "title": "Python library — Built-in Types",
+          "origin": "data/corpus/python/ref-pyref-library-stdtypes.md",
+          "snapshot": "2026-10-16",
+          "license": "PSF License (docs.python.org)"
+        }
+      ]
+    },
+    {
+      "item_id": "PY2-033",
+      "qtype": "mixed",
+      "question": "در تبدیلِ یک رشتهٔ شانزده‌شانزدهی با `bytes.fromhex`، فاصله‌ها و دیگر نویسه‌های سفیدِ ASCII چه می‌شوند و برای هر بایت چند رقم لازم است؟",
+      "expected_answer_summary": "fromhex نویسه‌های سفیدِ ASCII را نادیده می‌گیرد و هر دو رقمِ شانزده‌شانزدهی را به یک بایت تبدیل می‌کند.",
+      "pack_id": "python",
+      "version": "python-v2",
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T026 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      },
+      "expected_source_ids": [
+        "pyref-library-stdtypes#s36-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "pyref-library-stdtypes#s36-c01",
+          "source_id": "pyref-library-stdtypes",
+          "section_heading": "Bytes Objects",
+          "title": "Python library — Built-in Types",
+          "origin": "data/corpus/python/ref-pyref-library-stdtypes.md",
+          "snapshot": "2026-10-16",
+          "license": "PSF License (docs.python.org)"
+        }
+      ]
+    },
+    {
+      "item_id": "PY2-034",
+      "qtype": "mixed",
+      "question": "اگر از یک `bytearray` نمای `memoryview` بسازیم و از راه نما یک بایت را تغییر دهیم، آیا دادهٔ اصلی هم تغییر می‌کند یا نما کپیِ جدا دارد؟",
+      "expected_answer_summary": "memoryview بدون کپی به دادهٔ شیء پشتیبان دسترسی می‌دهد؛ چون bytearray نوشتنی است، تغییر بایت از راه نما در همان شیء اصلی دیده می‌شود.",
+      "pack_id": "python",
+      "version": "python-v2",
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T026 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      },
+      "expected_source_ids": [
+        "pyref-library-stdtypes#s40-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "pyref-library-stdtypes#s40-c01",
+          "source_id": "pyref-library-stdtypes",
+          "section_heading": "Memory Views",
+          "title": "Python library — Built-in Types",
+          "origin": "data/corpus/python/ref-pyref-library-stdtypes.md",
+          "snapshot": "2026-10-16",
+          "license": "PSF License (docs.python.org)"
+        }
+      ]
+    },
+    {
+      "item_id": "PY2-035",
+      "qtype": "mixed",
+      "question": "چرا دو `range` با مقدارهای متفاوتِ stop ممکن است در مقایسه با `==` برابر باشند، با اینکه مشخصاتِ ساختشان یکسان نیست؟",
+      "expected_answer_summary": "برابریِ range بر اساس دنبالهٔ عددهای تولیدشده است، نه برابر بودنِ تک‌تکِ start/stop/step؛ اگر هر دو دقیقاً همان اعداد را بسازند برابرند.",
+      "pack_id": "python",
+      "version": "python-v2",
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T026 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      },
+      "expected_source_ids": [
+        "pyref-library-stdtypes#s25-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "pyref-library-stdtypes#s25-c01",
+          "source_id": "pyref-library-stdtypes",
+          "section_heading": "Ranges",
+          "title": "Python library — Built-in Types",
+          "origin": "data/corpus/python/ref-pyref-library-stdtypes.md",
+          "snapshot": "2026-10-16",
+          "license": "PSF License (docs.python.org)"
+        }
+      ]
+    },
+    {
+      "item_id": "PY2-036",
+      "qtype": "mixed",
+      "question": "برای تقسیمِ یک `ExceptionGroup` به خطاهای منطبق با نوعی مشخص و خطاهای باقی‌مانده، `split(condition)` چه دو نتیجه‌ای برمی‌گرداند؟",
+      "expected_answer_summary": "split یک زوجِ (match, rest) برمی‌گرداند: زیرگروهِ منطبق با شرط و بخشِ نامنطبقِ باقیمانده؛ اگر زیرگروه خالی باشد می‌تواند None باشد.",
+      "pack_id": "python",
+      "version": "python-v2",
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T026 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      },
+      "expected_source_ids": [
+        "pyref-library-exceptions#s09-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "pyref-library-exceptions#s09-c01",
+          "source_id": "pyref-library-exceptions",
+          "section_heading": "Exception groups",
+          "title": "Python library — Built-in Exceptions",
+          "origin": "data/corpus/python/ref-pyref-library-exceptions.md",
+          "snapshot": "2026-10-16",
+          "license": "PSF License (docs.python.org)"
+        }
+      ]
+    },
+    {
+      "item_id": "PY2-037",
+      "qtype": "mixed",
+      "question": "با اینکه `bool` زیرکلاسِ `int` است، چرا برای حساب‌کردن با `True` و `False` بهتر است تبدیلِ صریح انجام دهیم؟",
+      "expected_answer_summary": "bool زیرکلاس int است و True و False در بسیاری از زمینه‌های عددی مانند یک و صفر رفتار می‌کنند؛ مستندات اتکا به این تبدیل ضمنی را توصیه نمی‌کند و int() صریح را پیشنهاد می‌دهد.",
+      "pack_id": "python",
+      "version": "python-v2",
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T026 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      },
+      "expected_source_ids": [
+        "pyref-library-stdtypes#s12-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "pyref-library-stdtypes#s12-c01",
+          "source_id": "pyref-library-stdtypes",
+          "section_heading": "Boolean Type - bool",
+          "title": "Python library — Built-in Types",
+          "origin": "data/corpus/python/ref-pyref-library-stdtypes.md",
+          "snapshot": "2026-10-16",
+          "license": "PSF License (docs.python.org)"
+        }
+      ]
+    },
+    {
+      "item_id": "PY2-038",
+      "qtype": "mixed",
+      "question": "اگر متن با نویسهٔ پایان خط تمام شود، چرا `splitlines()` بر خلاف `split('\\n')` در پایان یک عضوِ خالیِ اضافه تولید نمی‌کند؟",
+      "expected_answer_summary": "splitlines پایان خطِ پایانی را جداکنندهٔ پایان متن می‌داند و عضو خالیِ پس از آن نمی‌سازد؛ split با جداکنندهٔ صریحِ خط جدید چنین عضوِ خالی‌ای تولید می‌کند.",
+      "pack_id": "python",
+      "version": "python-v2",
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T026 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      },
+      "expected_source_ids": [
+        "pyref-library-stdtypes#s28-c09"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "pyref-library-stdtypes#s28-c09",
+          "source_id": "pyref-library-stdtypes",
+          "section_heading": "String Methods",
+          "title": "Python library — Built-in Types",
+          "origin": "data/corpus/python/ref-pyref-library-stdtypes.md",
+          "snapshot": "2026-10-16",
+          "license": "PSF License (docs.python.org)"
+        }
+      ]
+    },
+    {
+      "item_id": "PY2-039",
+      "qtype": "out-of-corpus",
+      "question": "در Django ORM، چگونه با `select_related` بارگذاری رابطهٔ کلید خارجی را طوری تنظیم کنیم که پرس‌وجوهای تکراری کم شوند؟",
+      "abstain_reason": "چانک‌های فریز Python دربارهٔ Django ORM و دستور select_related سندی ندارند؛ راهکارِ پرس‌وجوی این چارچوب از منابع رسمیِ موجود قابل استناد نیست.",
+      "pack_id": "python",
+      "version": "python-v2",
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T026 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      },
+      "expected_source_ids": [],
+      "evidence_language": "none",
+      "provenance": []
+    },
+    {
+      "item_id": "PY2-040",
+      "qtype": "out-of-corpus",
+      "question": "با pandas چگونه پس از `groupby` میانگینِ متحرکِ هر گروه را در ستونِ تازه‌ای ذخیره می‌کنند؟",
+      "abstain_reason": "پیکرهٔ فریز Python مستندات pandas، گروه‌بندی داده‌قاب یا محاسبهٔ میانگین متحرکِ گروهی را در بر ندارد؛ باید انصراف داد.",
+      "pack_id": "python",
+      "version": "python-v2",
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T026 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      },
+      "expected_source_ids": [],
+      "evidence_language": "none",
+      "provenance": []
+    },
+    {
+      "item_id": "PY2-041",
+      "qtype": "out-of-corpus",
+      "question": "در PyTorch، چگونه با `autograd` گرادیانِ تانسورهای یک مدل را با فراخوانیِ پس‌انتشار به دست می‌آورند؟",
+      "abstain_reason": "مستندات فریز این پک دربارهٔ PyTorch، تانسورها یا موتور autograd شاهدی ندارند؛ پاسخِ مدل‌محور با این منابع پشتیبانی نمی‌شود.",
+      "pack_id": "python",
+      "version": "python-v2",
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T026 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      },
+      "expected_source_ids": [],
+      "evidence_language": "none",
+      "provenance": []
+    },
+    {
+      "item_id": "PY2-042",
+      "qtype": "out-of-corpus",
+      "question": "در FastAPI چگونه با `Depends` یک وابستگیِ ناهمگام را به مسیر درخواست تزریق و هنگام پایان پاک‌سازی می‌کنند؟",
+      "abstain_reason": "در چانک‌های فریز Python راهنمای FastAPI و قرارداد Depends یا پاک‌سازیِ وابستگی‌های آن وجود ندارد؛ منبعی برای مراحل خواسته‌شده نیست.",
+      "pack_id": "python",
+      "version": "python-v2",
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T026 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      },
+      "expected_source_ids": [],
+      "evidence_language": "none",
+      "provenance": []
+    },
+    {
+      "item_id": "PY2-043",
+      "qtype": "out-of-corpus",
+      "question": "با SQLAlchemy چگونه `Session` را برای یک تراکنش بسازیم، در موفقیت ثبت و در خطا بازگردانی کنیم؟",
+      "abstain_reason": "منابع فریز Python قرارداد SQLAlchemy و Session، ثبت یا بازگردانیِ تراکنش این کتابخانه را پوشش نمی‌دهند؛ استناد قابل ارائه نیست.",
+      "pack_id": "python",
+      "version": "python-v2",
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T026 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      },
+      "expected_source_ids": [],
+      "evidence_language": "none",
+      "provenance": []
+    },
+    {
+      "item_id": "PY2-044",
+      "qtype": "out-of-corpus",
+      "question": "برای بارگذاریِ چندبخشیِ یک فایل بزرگ به فضای S3 با `boto3`، چه API و چه روشی برای مدیریتِ خطای هر بخش لازم است؟",
+      "abstain_reason": "پیکرهٔ فریز Python مستندات boto3، بارگذاریِ S3 و بازیابیِ خطاهای چندبخشی را ندارد؛ پاسخِ دقیق با شاهدِ همان پک ممکن نیست.",
+      "pack_id": "python",
+      "version": "python-v2",
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T026 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      },
+      "expected_source_ids": [],
+      "evidence_language": "none",
+      "provenance": []
+    },
+    {
+      "item_id": "PY2-045",
+      "qtype": "out-of-corpus",
+      "question": "در Selenium چگونه با `WebDriverWait` تا قابل‌کلیک‌شدنِ دکمه صبر کنیم و سپس روی آن کلیک کنیم؟",
+      "abstain_reason": "چانک‌های فریز Python مستندات Selenium، WebDriverWait و انتظار برای عنصر رابط وب را ندارند؛ باید بدون منبع ساختگی انصراف داد.",
+      "pack_id": "python",
+      "version": "python-v2",
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T026 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      },
+      "expected_source_ids": [],
+      "evidence_language": "none",
+      "provenance": []
     }
   ]
 }
