@@ -26,6 +26,9 @@ data/index/*/faiss.index
 data/index/*/chunks.jsonl
 data/eval/**/reports/*.json
 !data/eval/reports/.gitkeep
+# Official v2 JSON is versioned; incomplete per-item diagnostics are not.
+!data/eval/*/reports/v2/*/*.json
+data/eval/*/reports/v2/*/*.diagnostics.json
 data/research/embedding-compare/*/*/embeddings-*.npy
 data/research/embedding-compare/*/*/faiss.index
 

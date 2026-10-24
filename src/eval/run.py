@@ -22,7 +22,9 @@ import argparse
 import hashlib
 import json
 import os
-from datetime import date, datetime
+import time
+from collections import Counter
+from datetime import date, datetime, timezone
 from pathlib import Path
 
 from src.eval.scoring import (
@@ -141,7 +143,9 @@ def run_eval(set_path: str, index_dir: str, report_dir: str, top_k: int = 5,
 
 
 def _run_research_eval(set_path: str, index_dir: str, top_k: int,
-                       language: str, model_key: str, mode: str) -> dict:
+                        language: str, model_key: str, mode: str) -> dict:
+    started_at = datetime.now(timezone.utc).isoformat()
+    started = time.perf_counter()
     if mode not in ("retrieval-only", "end-to-end"):
         raise ValueError("unknown research evaluation mode")
     if top_k != 5:
@@ -156,7 +160,18 @@ def _run_research_eval(set_path: str, index_dir: str, top_k: int,
         if hashlib.sha256(v1.read_bytes()).hexdigest() != calibration["v1_hashes"][pack]:
             raise ValueError(f"locked v1 calibration input changed: {pack}")
     spec = json.loads(Path(set_path).read_text(encoding="utf-8"))
+    set_sha256 = hashlib.sha256(Path(set_path).read_bytes()).hexdigest()
     retriever = Retriever(index_dir, model_key=model_key, pack_id=language)
+    index_meta = json.loads((Path(index_dir) / "index-meta.json").read_text(encoding="utf-8"))
+    if (index_meta["model_key"] != model_key or index_meta["pack_id"] != language or
+            index_meta["revision_sha"] != candidate.revision_sha):
+        raise ValueError("research report index/model/pack mismatch")
+    ordered_ids = Path(index_dir) / "ids.json"
+    is_v2 = spec["version"] == f"{language}-v2"
+    set_complete = (not is_v2 or
+                    len(spec["items"]) == 45 and Counter(item["qtype"] for item in spec["items"]) ==
+                    {"in-corpus": 28, "mixed": 10, "out-of-corpus": 7} and
+                    len({item["item_id"] for item in spec["items"]}) == 45)
     threshold = calibration["threshold"]
     if mode == "end-to-end":
         load_dotenv()  # same environment source as ProviderConfig.from_env()
@@ -219,20 +234,33 @@ def _run_research_eval(set_path: str, index_dir: str, top_k: int,
                                            if isinstance(exc, ProviderError) else
                                            "end-to-end response failed")})
 
-    retrieval_status = ("complete" if spec["items"] and not retrieval_errors
-                        and len(retrieval_rows) == len(spec["items"]) else "incomplete")
+    retrieval_status = ("complete" if spec["items"] and set_complete and not retrieval_errors
+                         and len(retrieval_rows) == len(spec["items"]) else "incomplete")
     e2e_status = ("not_run" if mode == "retrieval-only" else
-                  "complete" if not e2e_errors and retrieval_status == "complete"
-                  and metadata else "incomplete")
+                   "complete" if not e2e_errors and retrieval_status == "complete"
+                   and len(answer_rows) == len(spec["items"]) and metadata else "incomplete")
     reasons = sorted({row["reason"] for row in answer_rows if "reason" in row})
     if mode == "end-to-end" and retrieval_errors:
         reasons.append("retrieval errors prevented complete end-to-end evaluation")
     if mode == "end-to-end" and not metadata:
         reasons.append("no API response model ID verified")
+    if not set_complete:
+        reasons.append("v2 set requires 45 distinct rows in the 28/10/7 split")
     return {
+        "status": "complete" if retrieval_status == "complete" and
+                  e2e_status in ("complete", "not_run") else "incomplete",
+        "started_at": started_at, "elapsed_seconds": time.perf_counter() - started,
+        "model": {"repository": candidate.repository, "revision_sha": candidate.revision_sha,
+                  "license": candidate.license},
+        "set_sha256": set_sha256,
+        "v2_sha256": set_sha256 if is_v2 else None,
+        "snapshot": spec.get("snapshot"),
+        "index": {key: index_meta[key] for key in
+                  ("chunk_sha256", "settings_sha256", "index_sha256", "dimension",
+                   "count", "truncation_count")} |
+                 {"ordered_ids_sha256": hashlib.sha256(ordered_ids.read_bytes()).hexdigest()},
         "model_key": model_key, "language_id": language, "eval_set_version": spec["version"],
-        "mode": mode, "calibration": {"threshold": threshold,
-                                      "v1_hashes": calibration["v1_hashes"]},
+        "mode": mode, "calibration": calibration,
         "retrieval": {"status": retrieval_status, "error_count": retrieval_errors,
                       "rows": retrieval_rows},
         "end_to_end": {"status": e2e_status, "error_count": e2e_errors,
@@ -245,35 +273,59 @@ def _run_research_eval(set_path: str, index_dir: str, top_k: int,
 def write_reports(report: dict, report_dir: str) -> tuple[str, str]:
     out_dir = Path(report_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
-    # Timestamped to the minute so same-day re-runs never clobber evidence.
-    stamp = (datetime.now().strftime("%Y-%m-%d-%H%M")
-             + f"-{report['eval_set_version']}")
+    # Keep operational v1 filenames unchanged; research modes need distinct files.
+    stamp = (datetime.now().strftime("%Y-%m-%d-%H%M%S-%f")
+             if "model_key" in report else datetime.now().strftime("%Y-%m-%d-%H%M"))
+    stamp += f"-{report['eval_set_version']}"
+    if "model_key" in report:
+        stamp += f"-{report['mode']}"
     json_path = out_dir / f"{stamp}.json"
     md_path = out_dir / f"{stamp}.md"
     if "model_key" in report:
+        if report["retrieval"]["status"] != "complete":
+            json_path = out_dir / f"{stamp}.diagnostics.json"
+            diagnostics_text = json.dumps({**report, "status": "diagnostics-only"},
+                                          ensure_ascii=False, indent=2) + "\n"
+            json_path.write_bytes(diagnostics_text.encode("utf-8"))
+            # Never publish incomplete retrieval rows as official evidence.
+            assert json_path.read_bytes() == diagnostics_text.encode("utf-8")
+            md_text = (f"# Research eval {stamp}\n\n- Status: incomplete retrieval; "
+                       f"{report['retrieval']['error_count']} errors. Diagnostics only.\n")
+            md_path.write_bytes(md_text.encode("utf-8"))
+            assert md_path.read_bytes() == md_text.encode("utf-8")
+            return str(json_path), str(md_path)
         # Partial E2E rows are diagnostics, not official complete-run evidence.
         official = dict(report)
         if report["end_to_end"]["status"] == "incomplete":
             official["end_to_end"] = {key: value for key, value in
                                        report["end_to_end"].items() if key != "rows"}
-            (out_dir / f"{stamp}.diagnostics.json").write_text(json.dumps({
+            diagnostics_path = out_dir / f"{stamp}.diagnostics.json"
+            diagnostics_text = json.dumps({
                 "status": "diagnostics-only", "model_key": report["model_key"],
                 "language_id": report["language_id"],
                 "end_to_end_rows": report["end_to_end"]["rows"],
-            }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-        json_path.write_text(json.dumps(official, ensure_ascii=False, indent=2) + "\n",
-                             encoding="utf-8")
-        md_path.write_text(
+            }, ensure_ascii=False, indent=2) + "\n"
+            diagnostics_path.write_bytes(diagnostics_text.encode("utf-8"))
+            assert diagnostics_path.read_bytes() == diagnostics_text.encode("utf-8")
+        official_text = json.dumps(official, ensure_ascii=False, indent=2) + "\n"
+        json_path.write_bytes(official_text.encode("utf-8"))
+        assert json_path.read_bytes() == official_text.encode("utf-8")
+        md_text = (
             f"# Research eval {stamp}\n\n"
             f"- Model / pack: {report['model_key']} / {report['language_id']}\n"
+            f"- Run status: {report['status']}\n"
+            f"- Revision: {report['model']['revision_sha']}\n"
+            f"- Set SHA-256: {report['set_sha256']}\n"
+            f"- Canonical chunks SHA-256: {report['index']['chunk_sha256']}\n"
             f"- Retrieval: {report['retrieval']['status']} "
             f"({len(report['retrieval']['rows'])} rows, "
             f"{report['retrieval']['error_count']} errors)\n"
             f"- End-to-end: {report['end_to_end']['status']} "
             f"({report['end_to_end']['error_count']} errors)\n"
-            f"- Reasons: {', '.join(report['end_to_end']['reasons']) or 'none'}\n",
-            encoding="utf-8",
+            f"- Reasons: {', '.join(report['end_to_end']['reasons']) or 'none'}\n"
         )
+        md_path.write_bytes(md_text.encode("utf-8"))
+        assert md_path.read_bytes() == md_text.encode("utf-8")
         return str(json_path), str(md_path)
     json_path.write_text(json.dumps(report, ensure_ascii=False, indent=2),
                          encoding="utf-8")
