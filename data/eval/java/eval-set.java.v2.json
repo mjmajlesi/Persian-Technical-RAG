@@ -1,0 +1,848 @@
+{
+  "version": "java-v2",
+  "pack_id": "java",
+  "snapshot": "2026-10-16",
+  "notes": "Incomplete Java draft: 28 in-corpus questions grounded in frozen English Oracle tutorials. Reviewed at T027 user checkpoint on 2026-10-24; 10 mixed and 7 out-of-corpus items belong to T028.",
+  "items": [
+    {
+      "item_id": "JV2-001",
+      "question": "اگر از یک کلاس چند شیء بسازیم، یک فیلدِ ایستا چند نسخه دارد و مقدار یک فیلدِ غیرایستا در دو نمونه چه نسبتی با هم دارد؟",
+      "expected_answer_summary": "فیلدِ static فقط یک نسخه در سطح کلاس دارد و میان نمونه‌ها مشترک است؛ فیلدِ نمونه بدون static برای هر شیء مقدار مستقل دارد.",
+      "pack_id": "java",
+      "version": "java-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "javaref-variables#s02-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "javaref-variables#s02-c01",
+          "source_id": "javaref-variables",
+          "section_heading": "Variables (The Java™ Tutorials > Learning the Java Language > Language Basics)",
+          "title": "Java Tutorials — Variables",
+          "origin": "data/corpus/java/ref-javaref-variables.md",
+          "snapshot": "2026-10-16",
+          "license": "Oracle tutorial (see docs.oracle.com terms)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T027 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      }
+    },
+    {
+      "item_id": "JV2-002",
+      "question": "آیا آرگومانِ دریافتیِ متدِ آغاز برنامه در دستهٔ فیلدهای کلاس قرار می‌گیرد یا متغیر محسوب می‌شود و چرا؟",
+      "expected_answer_summary": "پارامترِ متد متغیر است، نه فیلد؛ همین تفکیک دربارهٔ پارامترهای سازنده و رسیدگی‌کنندهٔ استثنا نیز به کار می‌رود.",
+      "pack_id": "java",
+      "version": "java-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "javaref-variables#s02-c02"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "javaref-variables#s02-c02",
+          "source_id": "javaref-variables",
+          "section_heading": "Variables (The Java™ Tutorials > Learning the Java Language > Language Basics)",
+          "title": "Java Tutorials — Variables",
+          "origin": "data/corpus/java/ref-javaref-variables.md",
+          "snapshot": "2026-10-16",
+          "license": "Oracle tutorial (see docs.oracle.com terms)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T027 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      }
+    },
+    {
+      "item_id": "JV2-003",
+      "question": "وقتی چند عملگرِ هم‌تقدم در یک عبارت باشند، جهتِ گروه‌بندیِ انتساب‌ها چه تفاوتی با دیگر عملگرهای دودویی دارد؟",
+      "expected_answer_summary": "عملگرهای دودوییِ هم‌تقدم به‌جز انتساب از چپ به راست گروه‌بندی می‌شوند؛ عملگرهای انتساب از راست به چپ‌اند.",
+      "pack_id": "java",
+      "version": "java-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "javaref-operators#s02-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "javaref-operators#s02-c01",
+          "source_id": "javaref-operators",
+          "section_heading": "Operators (The Java™ Tutorials > Learning the Java Language > Language Basics)",
+          "title": "Java Tutorials — Operators",
+          "origin": "data/corpus/java/ref-javaref-operators.md",
+          "snapshot": "2026-10-16",
+          "license": "Oracle tutorial (see docs.oracle.com terms)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T027 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      }
+    },
+    {
+      "item_id": "JV2-004",
+      "question": "اگر فقط متغیری از نوع آرایهٔ عدد صحیح اعلان کنیم، آیا حافظهٔ عناصر نیز همان لحظه ساخته می‌شود و چرا اندازه در اعلانِ نوع نمی‌آید؟",
+      "expected_answer_summary": "اعلانِ متغیرِ آرایه صرفاً ارجاعی با نوع عنصر و علامتِ کروشه معرفی می‌کند و خودِ آرایه را ایجاد نمی‌کند؛ اندازه بخشی از نوع آرایه نیست.",
+      "pack_id": "java",
+      "version": "java-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "javaref-arrays#s03-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "javaref-arrays#s03-c01",
+          "source_id": "javaref-arrays",
+          "section_heading": "Declaring a Variable to Refer to an Array",
+          "title": "Java Tutorials — Arrays",
+          "origin": "data/corpus/java/ref-javaref-arrays.md",
+          "snapshot": "2026-10-16",
+          "license": "Oracle tutorial (see docs.oracle.com terms)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T027 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      }
+    },
+    {
+      "item_id": "JV2-005",
+      "question": "در کپیِ بازه‌ایِ آرایه، کران آغاز و پایان چگونه شمرده می‌شوند و آیا لازم است آرایهٔ مقصد را از پیش بسازیم؟",
+      "expected_answer_summary": "در Arrays.copyOfRange کرانِ آغاز داخل بازه و کرانِ پایان بیرون بازه است؛ خودِ تابع آرایهٔ مقصد را می‌سازد و برمی‌گرداند.",
+      "pack_id": "java",
+      "version": "java-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "javaref-arrays#s06-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "javaref-arrays#s06-c01",
+          "source_id": "javaref-arrays",
+          "section_heading": "Array Manipulations",
+          "title": "Java Tutorials — Arrays",
+          "origin": "data/corpus/java/ref-javaref-arrays.md",
+          "snapshot": "2026-10-16",
+          "license": "Oracle tutorial (see docs.oracle.com terms)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T027 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      }
+    },
+    {
+      "item_id": "JV2-006",
+      "question": "اگر بدنهٔ شرط تک‌دستوری را بدون آکولاد بنویسیم و بعد فرمان دومی به زیر آن اضافه کنیم، چه خطری پیش می‌آید؟",
+      "expected_answer_summary": "بدون آکولاد فقط دستورِ نخست زیرِ شرط است؛ اضافه‌کردن دستور دوم بدون گذاشتن آکولاد ممکن است آن را ناخواسته همیشه اجرا کند و کامپایلر هم لزوماً خطا ندهد.",
+      "pack_id": "java",
+      "version": "java-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "javaref-if#s02-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "javaref-if#s02-c01",
+          "source_id": "javaref-if",
+          "section_heading": "The if-then Statement",
+          "title": "Java Tutorials — if-then statements",
+          "origin": "data/corpus/java/ref-javaref-if.md",
+          "snapshot": "2026-10-16",
+          "license": "Oracle tutorial (see docs.oracle.com terms)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T027 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      }
+    },
+    {
+      "item_id": "JV2-007",
+      "question": "اگر شمارنده را در بخشِ آغازِ یک حلقهٔ شمارشی تعریف کنیم، آیا پس از پایانِ بدنهٔ حلقه در بیرون آن قابل استفاده می‌ماند؟",
+      "expected_answer_summary": "خیر؛ حوزهٔ شمارندهٔ تعریف‌شده در بخشِ آغاز تا انتهای بلوکِ تحت کنترلِ حلقه است و بیرون آن در دسترس نیست.",
+      "pack_id": "java",
+      "version": "java-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "javaref-for#s02-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "javaref-for#s02-c01",
+          "source_id": "javaref-for",
+          "section_heading": "The for Statement (The Java™ Tutorials > Learning the Java Language > Language Basics)",
+          "title": "Java Tutorials — The for Statement",
+          "origin": "data/corpus/java/ref-javaref-for.md",
+          "snapshot": "2026-10-16",
+          "license": "Oracle tutorial (see docs.oracle.com terms)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T027 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      }
+    },
+    {
+      "item_id": "JV2-008",
+      "question": "در ساختِ نمونه‌ای از زیرکلاسِ دوچرخه که ویژگیِ ارتفاع صندلی دارد، برای مقداردهیِ قسمتِ دوچرخهٔ والد چه فراخوانی‌ای پیش از مقداردهیِ ارتفاع انجام می‌شود؟",
+      "expected_answer_summary": "سازندهٔ زیرکلاس با super پارامترهای بخشِ والد را به سازندهٔ کلاسِ پایه می‌فرستد و سپس فیلدِ ارتفاعِ اختصاصی را مقداردهی می‌کند.",
+      "pack_id": "java",
+      "version": "java-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "javaref-classes#s02-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "javaref-classes#s02-c01",
+          "source_id": "javaref-classes",
+          "section_heading": "Classes (The Java™ Tutorials > Learning the Java Language > Classes and Objects)",
+          "title": "Java Tutorials — Classes",
+          "origin": "data/corpus/java/ref-javaref-classes.md",
+          "snapshot": "2026-10-16",
+          "license": "Oracle tutorial (see docs.oracle.com terms)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T027 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      }
+    },
+    {
+      "item_id": "JV2-009",
+      "question": "در سلسله‌مراتبِ کلاس‌های سکوی جاوا، بالاترین کلاسِ مشترکِ کلاس‌های نوشته‌شده توسط کاربر و کلاس‌های کتابخانه کدام است؟",
+      "expected_answer_summary": "کلاس Object در java.lang در رأس سلسله‌مراتب است و رفتارهای مشترکِ کلاس‌ها، از جمله کلاس‌های کاربر، از آن می‌آید.",
+      "pack_id": "java",
+      "version": "java-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "javaref-subclasses#s03-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "javaref-subclasses#s03-c01",
+          "source_id": "javaref-subclasses",
+          "section_heading": "The Java Platform Class Hierarchy",
+          "title": "Java Tutorials — Inheritance",
+          "origin": "data/corpus/java/ref-javaref-subclasses.md",
+          "snapshot": "2026-10-16",
+          "license": "Oracle tutorial (see docs.oracle.com terms)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T027 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      }
+    },
+    {
+      "item_id": "JV2-010",
+      "question": "اگر زیرکلاسی فیلدی هم‌نام با فیلدِ والد تعریف کند، رفتار آن چیست و آیا مستندات این کار را توصیه می‌کنند؟",
+      "expected_answer_summary": "تعریفِ فیلدِ هم‌نام در زیرکلاس فیلدِ والد را پنهان می‌کند؛ مستندات این شیوه را توصیه نمی‌کنند.",
+      "pack_id": "java",
+      "version": "java-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "javaref-subclasses#s05-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "javaref-subclasses#s05-c01",
+          "source_id": "javaref-subclasses",
+          "section_heading": "What You Can Do in a Subclass",
+          "title": "Java Tutorials — Inheritance",
+          "origin": "data/corpus/java/ref-javaref-subclasses.md",
+          "snapshot": "2026-10-16",
+          "license": "Oracle tutorial (see docs.oracle.com terms)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T027 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      }
+    },
+    {
+      "item_id": "JV2-011",
+      "question": "برای تبدیلِ ارجاعی با نوعِ ایستای والد به زیرکلاس، چرا تبدیلِ صریح لازم است و در زمان اجرا چه چیزی باید وارسی شود؟",
+      "expected_answer_summary": "کامپایلر از نوعِ ایستای والد نمی‌تواند زیرکلاس بودنِ شیء را نتیجه بگیرد؛ تبدیلِ صریح بررسیِ زمانِ اجرا می‌افزاید و اگر شیء از آن زیرکلاس نباشد خطا رخ می‌دهد، پس instanceof می‌تواند پیشاپیش وارسی کند.",
+      "pack_id": "java",
+      "version": "java-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "javaref-subclasses#s07-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "javaref-subclasses#s07-c01",
+          "source_id": "javaref-subclasses",
+          "section_heading": "Casting Objects",
+          "title": "Java Tutorials — Inheritance",
+          "origin": "data/corpus/java/ref-javaref-subclasses.md",
+          "snapshot": "2026-10-16",
+          "license": "Oracle tutorial (see docs.oracle.com terms)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T027 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      }
+    },
+    {
+      "item_id": "JV2-012",
+      "question": "اگر زیرکلاس متدِ ایستای هم‌امضای والد را تعریف کند، انتخابِ آن مانند متدِ نمونه بر پایهٔ نوعِ واقعی شیء انجام می‌شود؟",
+      "expected_answer_summary": "خیر؛ متدِ ایستا پنهان می‌شود و انتخابش به مرجعِ کلاسِ فراخوانی وابسته است، در حالی که متدِ نمونهٔ بازنویسی‌شده از نوعِ واقعیِ شیء انتخاب می‌شود.",
+      "pack_id": "java",
+      "version": "java-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "javaref-override#s03-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "javaref-override#s03-c01",
+          "source_id": "javaref-override",
+          "section_heading": "Static Methods",
+          "title": "Java Tutorials — Overriding Methods",
+          "origin": "data/corpus/java/ref-javaref-override.md",
+          "snapshot": "2026-10-16",
+          "license": "Oracle tutorial (see docs.oracle.com terms)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T027 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      }
+    },
+    {
+      "item_id": "JV2-013",
+      "question": "اگر متدِ والد با دسترسیِ محافظت‌شده تعریف شده باشد، آیا بازنویسیِ آن در فرزند می‌تواند خصوصی شود یا فقط دسترسی را گسترش دهد؟",
+      "expected_answer_summary": "بازنویسی می‌تواند دسترسی را بیشتر کند، مثلاً protected را public کند، اما نمی‌تواند آن را به private محدودتر کند.",
+      "pack_id": "java",
+      "version": "java-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "javaref-override#s05-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "javaref-override#s05-c01",
+          "source_id": "javaref-override",
+          "section_heading": "Modifiers",
+          "title": "Java Tutorials — Overriding Methods",
+          "origin": "data/corpus/java/ref-javaref-override.md",
+          "snapshot": "2026-10-16",
+          "license": "Oracle tutorial (see docs.oracle.com terms)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T027 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      }
+    },
+    {
+      "item_id": "JV2-014",
+      "question": "وقتی کلاسِ والد و یک رابط هر دو پیاده‌سازیِ هم‌امضایی دارند، فراخوانیِ شیء به متدِ نمونهٔ کلاس می‌رسد یا به متدِ پیش‌فرض رابط؟",
+      "expected_answer_summary": "متدِ نمونهٔ کلاس بر متدِ پیش‌فرضِ رابط اولویت دارد؛ قاعدهٔ حل تعارضِ مستندات ابتدا متدِ کلاسی را برمی‌گزیند.",
+      "pack_id": "java",
+      "version": "java-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "javaref-override#s04-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "javaref-override#s04-c01",
+          "source_id": "javaref-override",
+          "section_heading": "Interface Methods",
+          "title": "Java Tutorials — Overriding Methods",
+          "origin": "data/corpus/java/ref-javaref-override.md",
+          "snapshot": "2026-10-16",
+          "license": "Oracle tutorial (see docs.oracle.com terms)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T027 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      }
+    },
+    {
+      "item_id": "JV2-015",
+      "question": "اگر در بدنهٔ یک رابط مقداری ثابت بدون نوشتنِ سه اصلاح‌گرِ دسترسی و ماندگاری تعریف کنیم، آن سه ویژگیِ ضمنی چیستند؟",
+      "expected_answer_summary": "ثابت‌های تعریف‌شده در رابط به‌طور ضمنی public و static و final هستند؛ نوشتن این واژه‌ها الزامی نیست.",
+      "pack_id": "java",
+      "version": "java-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "javaref-interface-def#s03-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "javaref-interface-def#s03-c01",
+          "source_id": "javaref-interface-def",
+          "section_heading": "The Interface Body",
+          "title": "Java Tutorials — Defining an Interface",
+          "origin": "data/corpus/java/ref-javaref-interface-def.md",
+          "snapshot": "2026-10-16",
+          "license": "Oracle tutorial (see docs.oracle.com terms)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T027 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      }
+    },
+    {
+      "item_id": "JV2-016",
+      "question": "برای ساخت رشته از آرایهٔ نویسه‌ها، آیا فقط لیترالِ داخل گیومه ممکن است یا سازندهٔ کلاسِ رشته هم ورودیِ آرایه‌ای می‌پذیرد؟",
+      "expected_answer_summary": "علاوه بر لیترالِ رشته، می‌توان شیء String را با سازنده‌ای که آرایهٔ char را می‌گیرد ساخت؛ منبع این حالت را با آرایهٔ نویسه‌ها نشان می‌دهد.",
+      "pack_id": "java",
+      "version": "java-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "javaref-strings#s03-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "javaref-strings#s03-c01",
+          "source_id": "javaref-strings",
+          "section_heading": "Creating Strings",
+          "title": "Java Tutorials — Strings",
+          "origin": "data/corpus/java/ref-javaref-strings.md",
+          "snapshot": "2026-10-16",
+          "license": "Oracle tutorial (see docs.oracle.com terms)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T027 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      }
+    },
+    {
+      "item_id": "JV2-017",
+      "question": "اگر نتیجهٔ الحاقِ دو رشته را نگه نداریم، آیا فراخوانیِ تابع الحاق خودِ رشتهٔ اول را درجا تغییر می‌دهد یا شیءِ تازه‌ای می‌سازد؟",
+      "expected_answer_summary": "متد concat رشتهٔ تازه‌ای شامل رشتهٔ اول و سپس دوم برمی‌گرداند؛ اگر نتیجه استفاده نشود، رشتهٔ اولیه تغییر نمی‌کند.",
+      "pack_id": "java",
+      "version": "java-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "javaref-strings#s05-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "javaref-strings#s05-c01",
+          "source_id": "javaref-strings",
+          "section_heading": "Concatenating Strings",
+          "title": "Java Tutorials — Strings",
+          "origin": "data/corpus/java/ref-javaref-strings.md",
+          "snapshot": "2026-10-16",
+          "license": "Oracle tutorial (see docs.oracle.com terms)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T027 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      }
+    },
+    {
+      "item_id": "JV2-018",
+      "question": "وقتی در یک متد خطایی رخ می‌دهد و همان متد رسیدگی‌کنندهٔ مناسب ندارد، زمان اجرا برای پیدا کردنِ رسیدگی‌کننده در چه جهتی حرکت می‌کند؟",
+      "expected_answer_summary": "زمان اجرا از متدِ محل وقوع خطا در پشتهٔ فراخوانی شروع می‌کند و به ترتیبِ معکوسِ فراخوانی‌ها به دنبال رسیدگی‌کنندهٔ هم‌نوع می‌گردد؛ اگر نیابد برنامه پایان می‌یابد.",
+      "pack_id": "java",
+      "version": "java-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "javaref-exceptions#s02-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "javaref-exceptions#s02-c01",
+          "source_id": "javaref-exceptions",
+          "section_heading": "What Is an Exception? (The Java™ Tutorials > Essential Java Classes > Exceptions)",
+          "title": "Java Tutorials — What Is an Exception",
+          "origin": "data/corpus/java/ref-javaref-exceptions.md",
+          "snapshot": "2026-10-16",
+          "license": "Oracle tutorial (see docs.oracle.com terms)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T027 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      }
+    },
+    {
+      "item_id": "JV2-019",
+      "question": "برای ساختِ فایلی که نباید فایلِ همنامِ موجود را جایگزین کند، کدام گزینهٔ بازکردن را برمی‌گزینیم و در صورت وجودِ قبلی چه می‌شود؟",
+      "expected_answer_summary": "گزینهٔ CREATE_NEW فایل جدید می‌سازد و اگر همان فایل از قبل وجود داشته باشد استثنا می‌اندازد؛ با CREATE که فایلِ موجود را باز می‌کند فرق دارد.",
+      "pack_id": "java",
+      "version": "java-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "javaref-fileio#s03-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "javaref-fileio#s03-c01",
+          "source_id": "javaref-fileio",
+          "section_heading": "The OpenOptions Parameter",
+          "title": "Java Tutorials — Reading and Writing Files",
+          "origin": "data/corpus/java/ref-javaref-fileio.md",
+          "snapshot": "2026-10-16",
+          "license": "Oracle tutorial (see docs.oracle.com terms)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T027 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      }
+    },
+    {
+      "item_id": "JV2-020",
+      "question": "اگر دادهٔ خروجی یک آرایهٔ بایت باشد نه مجموعه‌ای از خط‌های متن، کدام شکلِ نوشتنِ فایل در مستندات برای آن نشان داده شده است؟",
+      "expected_answer_summary": "شکل Files.write با مسیر و آرایهٔ byte برای دادهٔ باینری است؛ شکل دیگرِ write برای Iterable از CharSequence همراه با Charset به‌کار می‌رود.",
+      "pack_id": "java",
+      "version": "java-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "javaref-fileio#s05-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "javaref-fileio#s05-c01",
+          "source_id": "javaref-fileio",
+          "section_heading": "Writing All Bytes or Lines to a File",
+          "title": "Java Tutorials — Reading and Writing Files",
+          "origin": "data/corpus/java/ref-javaref-fileio.md",
+          "snapshot": "2026-10-16",
+          "license": "Oracle tutorial (see docs.oracle.com terms)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T027 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      }
+    },
+    {
+      "item_id": "JV2-021",
+      "question": "طبق مستندات ورودی/خروجی، چرا جابه‌جاییِ داده با کانالِ مبتنی بر بافر می‌تواند از بعضی گلوگاه‌های جویبارِ معمولی بگذرد؟",
+      "expected_answer_summary": "در بستهٔ java.nio.file، ورودی/خروجیِ کانالی داده را در بافر جابه‌جا می‌کند و از بخشی از لایه‌های جویبار که می‌توانند گلوگاه شوند می‌گذرد.",
+      "pack_id": "java",
+      "version": "java-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "javaref-fileio#s06-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "javaref-fileio#s06-c01",
+          "source_id": "javaref-fileio",
+          "section_heading": "Buffered I/O Methods for Text Files",
+          "title": "Java Tutorials — Reading and Writing Files",
+          "origin": "data/corpus/java/ref-javaref-fileio.md",
+          "snapshot": "2026-10-16",
+          "license": "Oracle tutorial (see docs.oracle.com terms)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T027 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      }
+    },
+    {
+      "item_id": "JV2-022",
+      "question": "برای نوشتنِ متن با نویسه‌گردانیِ مشخص در فایل، کدام روشِ ساختِ نویسندهٔ بافرشده با مسیر و مجموعه‌نویسه به کار می‌رود؟",
+      "expected_answer_summary": "Files.newBufferedWriter(Path, Charset, OpenOption...) یک BufferedWriter برای نوشتن متن با مجموعه‌نویسهٔ مشخص می‌گشاید و می‌توان آن را در بلوکِ بستنِ خودکار استفاده کرد.",
+      "pack_id": "java",
+      "version": "java-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "javaref-fileio#s08-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "javaref-fileio#s08-c01",
+          "source_id": "javaref-fileio",
+          "section_heading": "Writing a File by Using Buffered Stream I/O",
+          "title": "Java Tutorials — Reading and Writing Files",
+          "origin": "data/corpus/java/ref-javaref-fileio.md",
+          "snapshot": "2026-10-16",
+          "license": "Oracle tutorial (see docs.oracle.com terms)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T027 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      }
+    },
+    {
+      "item_id": "JV2-023",
+      "question": "اگر با روشِ ایجادِ جویبارِ ورودیِ Files فقط مسیر را بدهیم، خروجیِ آن بافرشده است یا بی‌بافر و داده را در چه واحدی می‌خواند؟",
+      "expected_answer_summary": "Files.newInputStream(Path, ...) جویبارِ ورودیِ بی‌بافر برمی‌گرداند که بایت‌های فایل را می‌خواند؛ برای خواندنِ کارآمدِ متن می‌توان لایه‌های بافر/تبدیل نویسه روی آن افزود.",
+      "pack_id": "java",
+      "version": "java-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "javaref-fileio#s09-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "javaref-fileio#s09-c01",
+          "source_id": "javaref-fileio",
+          "section_heading": "Reading a File by Using Stream I/O",
+          "title": "Java Tutorials — Reading and Writing Files",
+          "origin": "data/corpus/java/ref-javaref-fileio.md",
+          "snapshot": "2026-10-16",
+          "license": "Oracle tutorial (see docs.oracle.com terms)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T027 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      }
+    },
+    {
+      "item_id": "JV2-024",
+      "question": "اگر جویبارِ خروجیِ بایت را بدون گزینهٔ بازکردن بسازیم، روی فایلِ موجود چه رخ می‌دهد و در نبودِ فایل چه می‌شود؟",
+      "expected_answer_summary": "Files.newOutputStream بدون گزینه در صورت نبودِ فایل آن را می‌سازد و اگر موجود باشد محتوا را کوتاه/پاک می‌کند؛ معادلِ CREATE و TRUNCATE_EXISTING است.",
+      "pack_id": "java",
+      "version": "java-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "javaref-fileio#s10-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "javaref-fileio#s10-c01",
+          "source_id": "javaref-fileio",
+          "section_heading": "Creating and Writing a File by Using Stream I/O",
+          "title": "Java Tutorials — Reading and Writing Files",
+          "origin": "data/corpus/java/ref-javaref-fileio.md",
+          "snapshot": "2026-10-16",
+          "license": "Oracle tutorial (see docs.oracle.com terms)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T027 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      }
+    },
+    {
+      "item_id": "JV2-025",
+      "question": "برای جابه‌جاییِ موقعیتِ خواندن در میانهٔ فایل از راه کانال، چه قابلیتی فراتر از کانال بایتِ ساده لازم است؟",
+      "expected_answer_summary": "SeekableByteChannel علاوه بر خواندن و نوشتنِ ByteChannel موقعیت را نگه می‌دارد و می‌تواند آن را تغییر دهد؛ به این وسیله دسترسیِ تصادفی به فایل ممکن است.",
+      "pack_id": "java",
+      "version": "java-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "javaref-fileio#s11-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "javaref-fileio#s11-c01",
+          "source_id": "javaref-fileio",
+          "section_heading": "Reading and Writing Files by Using Channel I/O",
+          "title": "Java Tutorials — Reading and Writing Files",
+          "origin": "data/corpus/java/ref-javaref-fileio.md",
+          "snapshot": "2026-10-16",
+          "license": "Oracle tutorial (see docs.oracle.com terms)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T027 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      }
+    },
+    {
+      "item_id": "JV2-026",
+      "question": "چرا ایجادِ فایلِ خالی با عملیاتِ ایجادِ اتمی نسبت به وارسیِ جداگانهٔ وجود و سپس ساخت امن‌تر است و روی فایل موجود چه می‌کند؟",
+      "expected_answer_summary": "Files.createFile بررسیِ وجود و ساخت را یکجا و اتمی انجام می‌دهد تا فاصلهٔ آسیب‌پذیر میان وارسی و ساخت نباشد؛ اگر فایل از قبل وجود داشته باشد استثنا می‌دهد.",
+      "pack_id": "java",
+      "version": "java-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "javaref-fileio#s12-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "javaref-fileio#s12-c01",
+          "source_id": "javaref-fileio",
+          "section_heading": "Creating Files",
+          "title": "Java Tutorials — Reading and Writing Files",
+          "origin": "data/corpus/java/ref-javaref-fileio.md",
+          "snapshot": "2026-10-16",
+          "license": "Oracle tutorial (see docs.oracle.com terms)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T027 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      }
+    },
+    {
+      "item_id": "JV2-027",
+      "question": "برای ساخت فایلِ موقت در پوشهٔ دلخواه، کدام گونهٔ فراخوانیِ ایجادِ فایل موقت را باید برگزید و گونهٔ بدون مسیر کجا فایل می‌سازد؟",
+      "expected_answer_summary": "گونهٔ createTempFile که Path را می‌گیرد پوشهٔ موردنظر را مشخص می‌کند؛ گونهٔ بدون Path فایل را در پوشهٔ پیش‌فرضِ فایل‌های موقت ایجاد می‌کند.",
+      "pack_id": "java",
+      "version": "java-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "javaref-fileio#s13-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "javaref-fileio#s13-c01",
+          "source_id": "javaref-fileio",
+          "section_heading": "Creating Temporary Files",
+          "title": "Java Tutorials — Reading and Writing Files",
+          "origin": "data/corpus/java/ref-javaref-fileio.md",
+          "snapshot": "2026-10-16",
+          "license": "Oracle tutorial (see docs.oracle.com terms)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T027 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      }
+    },
+    {
+      "item_id": "JV2-028",
+      "question": "چرا دو کتابخانهٔ نامرتبط اگر داده‌ها را با قراردادهای یکسانِ مجموعه ردوبدل کنند کمتر به شیءِ واسط یا تبدیلِ اختصاصی نیاز دارند؟",
+      "expected_answer_summary": "رابط‌های مشترکِ چارچوب Collections زبانِ مشترکِ مبادلهٔ مجموعه‌ها میان APIها هستند؛ بنابراین تعامل‌پذیری را زیاد و نیاز به آداپتور و کد تبدیل را کم می‌کنند.",
+      "pack_id": "java",
+      "version": "java-v2",
+      "qtype": "in-corpus",
+      "expected_source_ids": [
+        "javaref-collections-intro#s04-c01"
+      ],
+      "evidence_language": "en",
+      "provenance": [
+        {
+          "chunk_id": "javaref-collections-intro#s04-c01",
+          "source_id": "javaref-collections-intro",
+          "section_heading": "Benefits of the Java Collections Framework",
+          "title": "Java Tutorials — Introduction to Collections",
+          "origin": "data/corpus/java/ref-javaref-collections-intro.md",
+          "snapshot": "2026-10-16",
+          "license": "Oracle tutorial (see docs.oracle.com terms)"
+        }
+      ],
+      "authorship": {
+        "author": "assistant draft",
+        "authored_at": "2026-10-24",
+        "review_status": "reviewed",
+        "reviewer": "project owner (user approval, T027 checkpoint)",
+        "reviewed_at": "2026-10-24"
+      }
+    }
+  ]
+}
