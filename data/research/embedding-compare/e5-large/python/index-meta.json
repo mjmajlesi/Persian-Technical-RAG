@@ -9,6 +9,6 @@
   "chunk_sha256": "0b7afc4c24a6c34e10d797b9c2bab6ebd68f7c32636442c17eba280226d07649",
   "settings_sha256": "7bc28f60d9ef826f12d8bd6465c750c6a1b3625c03d2621f5a009c452049e69b",
   "index_sha256": "c199bbea962f4e6da47330b72b6f2df6bc4b3699cafbec751bc7cb0b6fde8077",
-  "cache_hit": false,
+  "cache_hit": true,
   "truncation_count": 134
 }

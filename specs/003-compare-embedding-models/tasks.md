@@ -102,7 +102,7 @@
 
 - [X] T030 [US2] Implement/run real model-card smoke tests for `e5-base` and `bge-m3` in `tests/integration/test_model_card_smoke.py`: verify all three model SHAs/MIT licenses, E5 prefixes vs instruction-free BGE, normalization, max_tokens, 768/1024 dense dimensions, and short-input truncation reporting. Load one model at a time on CPU. If a card contradicts T004 config, STOP and obtain approval before indexing.
   - CHECKPOINT: STOP → report model revisions/licenses/dimensions and CPU cost → wait for explicit «تایید» before T031.
-- [ ] T031 [US2] Build all four research `e5-large` indices from `data/index/<lang>/chunks.jsonl` under `data/research/embedding-compare/e5-large/<lang>/`. Check second-run cache hits, canonical hashes/IDs, dimension 1024, and unchanged operational no-`--model` behavior. Record results in `specs/003-compare-embedding-models/index-build-log.md`.
+- [X] T031 [US2] Build all four research `e5-large` indices from `data/index/<lang>/chunks.jsonl` under `data/research/embedding-compare/e5-large/<lang>/`. Check second-run cache hits, canonical hashes/IDs, dimension 1024, and unchanged operational no-`--model` behavior. Record results in `specs/003-compare-embedding-models/index-build-log.md`.
   - CHECKPOINT: STOP → report four chunk counts/hashes and cache hits → wait for explicit «تایید» before T032.
 - [ ] T032 [US2] Build four `e5-base` indices under `data/research/embedding-compare/e5-base/<lang>/` at dimension 768 with identical canonical chunk hashes/IDs. Record cache and truncation in `specs/003-compare-embedding-models/index-build-log.md`; do not touch other indices.
   - CHECKPOINT: STOP → report four builds, time/memory, and unchanged corpus → wait for explicit «تایید» before T033.
