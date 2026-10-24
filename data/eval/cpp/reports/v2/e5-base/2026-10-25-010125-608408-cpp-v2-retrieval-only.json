@@ -1,0 +1,1440 @@
+{
+  "status": "complete",
+  "started_at": "2026-10-24T21:31:02.228492+00:00",
+  "elapsed_seconds": 23.380500700000084,
+  "model": {
+    "repository": "intfloat/multilingual-e5-base",
+    "revision_sha": "d128750597153bb5987e10b1c3493a34e5a4502a",
+    "license": "MIT"
+  },
+  "set_sha256": "1fab399cf00bb133d510e21e9d6c2eb1bf0975ce7d645454d5b3b3fc6bc1c878",
+  "v2_sha256": "1fab399cf00bb133d510e21e9d6c2eb1bf0975ce7d645454d5b3b3fc6bc1c878",
+  "snapshot": "2026-10-16",
+  "index": {
+    "chunk_sha256": "c22bd9fb1e37a9f3e8cf1d2b747c8d9a9e6b050d7798817feb35f20fa0444366",
+    "settings_sha256": "7fafd9e2e4c1c09f2f2a37f2b4ec4c56e034d40020c930f3bbfbf83ec66338db",
+    "index_sha256": "e463ad18b4759d845fbe736b038b597d7402bf712265b65945cb2f529a2e76bd",
+    "dimension": 768,
+    "count": 201,
+    "truncation_count": 37,
+    "ordered_ids_sha256": "c7c00828bd56a2e3f055baa9f0be03e18ed27773ff9077e4f475baf1f40e7cf0"
+  },
+  "model_key": "e5-base",
+  "language_id": "cpp",
+  "eval_set_version": "cpp-v2",
+  "mode": "retrieval-only",
+  "calibration": {
+    "model_key": "e5-base",
+    "revision_sha": "d128750597153bb5987e10b1c3493a34e5a4502a",
+    "method": "pooled-v1-max-balanced-accuracy; tie=higher; ooc=score<threshold",
+    "n_answerable": 100,
+    "n_out": 20,
+    "v1_hashes": {
+      "c": "55a69ac80a2e7bc1db11aae2ded7c346b5372ebeba9619f7e9cfd181b3083e88",
+      "cpp": "087cf8a163563bfa9765b769e939b08622d10efed43f825646ba67291a01f533",
+      "python": "a4b364891578dd9023a70994d2e351fce5c83b0eb5fe7f2b7ef7a388b2b3f22a",
+      "java": "60d015014299f3d29d8e42cda61d78b5aa3a560a1881799aff7dafbd3ded3725"
+    },
+    "threshold": 0.8026493787765503,
+    "balanced_accuracy": 0.855,
+    "pooled_confusion": {
+      "tp": 16,
+      "fn": 4,
+      "tn": 91,
+      "fp": 9
+    },
+    "per_language_confusion": {
+      "c": {
+        "tp": 4,
+        "fn": 1,
+        "tn": 25,
+        "fp": 0
+      },
+      "cpp": {
+        "tp": 2,
+        "fn": 3,
+        "tn": 25,
+        "fp": 0
+      },
+      "python": {
+        "tp": 5,
+        "fn": 0,
+        "tn": 23,
+        "fp": 2
+      },
+      "java": {
+        "tp": 5,
+        "fn": 0,
+        "tn": 18,
+        "fp": 7
+      }
+    },
+    "score_rows": [
+      {
+        "pack_id": "c",
+        "item_id": "C-001",
+        "qtype": "in-corpus",
+        "score": 0.858502984046936
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-002",
+        "qtype": "in-corpus",
+        "score": 0.8604968190193176
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-003",
+        "qtype": "in-corpus",
+        "score": 0.882943868637085
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-004",
+        "qtype": "in-corpus",
+        "score": 0.8371521234512329
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-005",
+        "qtype": "in-corpus",
+        "score": 0.8550131320953369
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-006",
+        "qtype": "in-corpus",
+        "score": 0.8512646555900574
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-007",
+        "qtype": "in-corpus",
+        "score": 0.8488719463348389
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-008",
+        "qtype": "in-corpus",
+        "score": 0.8773065805435181
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-009",
+        "qtype": "in-corpus",
+        "score": 0.8364853858947754
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-010",
+        "qtype": "in-corpus",
+        "score": 0.8354381918907166
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-011",
+        "qtype": "in-corpus",
+        "score": 0.8690749406814575
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-012",
+        "qtype": "in-corpus",
+        "score": 0.8421270847320557
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-013",
+        "qtype": "in-corpus",
+        "score": 0.8372600674629211
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-014",
+        "qtype": "in-corpus",
+        "score": 0.8577170372009277
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-015",
+        "qtype": "in-corpus",
+        "score": 0.8598752617835999
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-016",
+        "qtype": "in-corpus",
+        "score": 0.8559784889221191
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-017",
+        "qtype": "in-corpus",
+        "score": 0.8421650528907776
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-018",
+        "qtype": "in-corpus",
+        "score": 0.8910778760910034
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-019",
+        "qtype": "in-corpus",
+        "score": 0.8213208913803101
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-020",
+        "qtype": "in-corpus",
+        "score": 0.8470392227172852
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-M01",
+        "qtype": "mixed",
+        "score": 0.8504859209060669
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-M02",
+        "qtype": "mixed",
+        "score": 0.8714467287063599
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-M03",
+        "qtype": "mixed",
+        "score": 0.8501428365707397
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-M04",
+        "qtype": "mixed",
+        "score": 0.8623650670051575
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-M05",
+        "qtype": "mixed",
+        "score": 0.8418433666229248
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-O01",
+        "qtype": "out-of-corpus",
+        "score": 0.7495394349098206
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-O02",
+        "qtype": "out-of-corpus",
+        "score": 0.7750787734985352
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-O03",
+        "qtype": "out-of-corpus",
+        "score": 0.7524940371513367
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-O04",
+        "qtype": "out-of-corpus",
+        "score": 0.7946615815162659
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-O05",
+        "qtype": "out-of-corpus",
+        "score": 0.8196395635604858
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-001",
+        "qtype": "in-corpus",
+        "score": 0.8855170607566833
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-002",
+        "qtype": "in-corpus",
+        "score": 0.8565998077392578
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-003",
+        "qtype": "in-corpus",
+        "score": 0.8551936149597168
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-004",
+        "qtype": "in-corpus",
+        "score": 0.8583273887634277
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-005",
+        "qtype": "in-corpus",
+        "score": 0.8503717184066772
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-006",
+        "qtype": "in-corpus",
+        "score": 0.854804277420044
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-007",
+        "qtype": "in-corpus",
+        "score": 0.8351471424102783
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-008",
+        "qtype": "in-corpus",
+        "score": 0.8381533622741699
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-009",
+        "qtype": "in-corpus",
+        "score": 0.8530243635177612
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-010",
+        "qtype": "in-corpus",
+        "score": 0.841320812702179
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-011",
+        "qtype": "in-corpus",
+        "score": 0.8275524973869324
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-012",
+        "qtype": "in-corpus",
+        "score": 0.842961311340332
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-013",
+        "qtype": "in-corpus",
+        "score": 0.8448270559310913
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-014",
+        "qtype": "in-corpus",
+        "score": 0.8418524861335754
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-015",
+        "qtype": "in-corpus",
+        "score": 0.838967502117157
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-016",
+        "qtype": "in-corpus",
+        "score": 0.8486994504928589
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-017",
+        "qtype": "in-corpus",
+        "score": 0.8264489769935608
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-018",
+        "qtype": "in-corpus",
+        "score": 0.8483799695968628
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-019",
+        "qtype": "in-corpus",
+        "score": 0.8309568762779236
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-020",
+        "qtype": "in-corpus",
+        "score": 0.8291277289390564
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-M01",
+        "qtype": "mixed",
+        "score": 0.8536826372146606
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-M02",
+        "qtype": "mixed",
+        "score": 0.8470848798751831
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-M03",
+        "qtype": "mixed",
+        "score": 0.8510656356811523
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-M04",
+        "qtype": "mixed",
+        "score": 0.8383643627166748
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-M05",
+        "qtype": "mixed",
+        "score": 0.8527933359146118
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-O01",
+        "qtype": "out-of-corpus",
+        "score": 0.8172796964645386
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-O02",
+        "qtype": "out-of-corpus",
+        "score": 0.7365221977233887
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-O03",
+        "qtype": "out-of-corpus",
+        "score": 0.8209605813026428
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-O04",
+        "qtype": "out-of-corpus",
+        "score": 0.801316499710083
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-O05",
+        "qtype": "out-of-corpus",
+        "score": 0.8168352246284485
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-001",
+        "qtype": "in-corpus",
+        "score": 0.8440619707107544
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-002",
+        "qtype": "in-corpus",
+        "score": 0.8120542168617249
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-003",
+        "qtype": "in-corpus",
+        "score": 0.8326796293258667
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-004",
+        "qtype": "in-corpus",
+        "score": 0.8324519395828247
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-005",
+        "qtype": "in-corpus",
+        "score": 0.8232907652854919
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-006",
+        "qtype": "in-corpus",
+        "score": 0.8026493787765503
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-007",
+        "qtype": "in-corpus",
+        "score": 0.8359151482582092
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-008",
+        "qtype": "in-corpus",
+        "score": 0.8207522630691528
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-009",
+        "qtype": "in-corpus",
+        "score": 0.8328213691711426
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-010",
+        "qtype": "in-corpus",
+        "score": 0.7817098498344421
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-011",
+        "qtype": "in-corpus",
+        "score": 0.8324505090713501
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-012",
+        "qtype": "in-corpus",
+        "score": 0.8095051646232605
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-013",
+        "qtype": "in-corpus",
+        "score": 0.8149466514587402
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-014",
+        "qtype": "in-corpus",
+        "score": 0.7988357543945312
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-015",
+        "qtype": "in-corpus",
+        "score": 0.813015341758728
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-016",
+        "qtype": "in-corpus",
+        "score": 0.8092007637023926
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-017",
+        "qtype": "in-corpus",
+        "score": 0.8053869009017944
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-018",
+        "qtype": "in-corpus",
+        "score": 0.82909095287323
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-019",
+        "qtype": "in-corpus",
+        "score": 0.8413513898849487
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-020",
+        "qtype": "in-corpus",
+        "score": 0.830532968044281
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-M01",
+        "qtype": "mixed",
+        "score": 0.817639946937561
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-M02",
+        "qtype": "mixed",
+        "score": 0.8397035002708435
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-M03",
+        "qtype": "mixed",
+        "score": 0.8170472383499146
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-M04",
+        "qtype": "mixed",
+        "score": 0.8147302865982056
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-M05",
+        "qtype": "mixed",
+        "score": 0.8104698657989502
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-O01",
+        "qtype": "out-of-corpus",
+        "score": 0.7954769134521484
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-O02",
+        "qtype": "out-of-corpus",
+        "score": 0.7861974835395813
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-O03",
+        "qtype": "out-of-corpus",
+        "score": 0.780081033706665
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-O04",
+        "qtype": "out-of-corpus",
+        "score": 0.777840256690979
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-O05",
+        "qtype": "out-of-corpus",
+        "score": 0.7483582496643066
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-001",
+        "qtype": "in-corpus",
+        "score": 0.8178059458732605
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-002",
+        "qtype": "in-corpus",
+        "score": 0.7904640436172485
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-003",
+        "qtype": "in-corpus",
+        "score": 0.7735626697540283
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-004",
+        "qtype": "in-corpus",
+        "score": 0.8005062341690063
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-005",
+        "qtype": "in-corpus",
+        "score": 0.8273884654045105
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-006",
+        "qtype": "in-corpus",
+        "score": 0.8258939385414124
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-007",
+        "qtype": "in-corpus",
+        "score": 0.8039315342903137
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-008",
+        "qtype": "in-corpus",
+        "score": 0.7922938466072083
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-009",
+        "qtype": "in-corpus",
+        "score": 0.8114427328109741
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-010",
+        "qtype": "in-corpus",
+        "score": 0.8241043090820312
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-011",
+        "qtype": "in-corpus",
+        "score": 0.814062237739563
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-012",
+        "qtype": "in-corpus",
+        "score": 0.8459625244140625
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-013",
+        "qtype": "in-corpus",
+        "score": 0.8073194622993469
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-014",
+        "qtype": "in-corpus",
+        "score": 0.7905864119529724
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-015",
+        "qtype": "in-corpus",
+        "score": 0.7866026759147644
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-016",
+        "qtype": "in-corpus",
+        "score": 0.810144305229187
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-017",
+        "qtype": "in-corpus",
+        "score": 0.8315269351005554
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-018",
+        "qtype": "in-corpus",
+        "score": 0.8053262233734131
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-019",
+        "qtype": "in-corpus",
+        "score": 0.7959508895874023
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-020",
+        "qtype": "in-corpus",
+        "score": 0.8493365049362183
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-M01",
+        "qtype": "mixed",
+        "score": 0.8201380372047424
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-M02",
+        "qtype": "mixed",
+        "score": 0.8372494578361511
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-M03",
+        "qtype": "mixed",
+        "score": 0.8441030383110046
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-M04",
+        "qtype": "mixed",
+        "score": 0.821494996547699
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-M05",
+        "qtype": "mixed",
+        "score": 0.8140004873275757
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-O01",
+        "qtype": "out-of-corpus",
+        "score": 0.7795164585113525
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-O02",
+        "qtype": "out-of-corpus",
+        "score": 0.7768868803977966
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-O03",
+        "qtype": "out-of-corpus",
+        "score": 0.7955759763717651
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-O04",
+        "qtype": "out-of-corpus",
+        "score": 0.7713391780853271
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-O05",
+        "qtype": "out-of-corpus",
+        "score": 0.7572355270385742
+      }
+    ],
+    "locked_at": "2026-10-24T20:51:57.907301+00:00"
+  },
+  "retrieval": {
+    "status": "complete",
+    "error_count": 0,
+    "rows": [
+      {
+        "item_id": "CPP2-001",
+        "qtype": "in-corpus",
+        "top1_score": 0.8116973638534546,
+        "top5_ids": [
+          "cpp-notes-intro#s02-c01",
+          "cpp-notes-intro#s04-c01",
+          "cpp-notes-intro#s10-c01",
+          "cpp-notes-intro#s08-c01",
+          "cpp-notes-intro#s05-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "CPP2-002",
+        "qtype": "in-corpus",
+        "top1_score": 0.8481420874595642,
+        "top5_ids": [
+          "cpp-notes-intro#s03-c01",
+          "cpp-notes-intro#s04-c01",
+          "cpp-notes-intro#s10-c01",
+          "cpp-notes-intro#s06-c01",
+          "cpp-notes-intro#s08-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "CPP2-003",
+        "qtype": "in-corpus",
+        "top1_score": 0.8243758082389832,
+        "top5_ids": [
+          "cpp-notes-intro#s05-c01",
+          "cpp-notes-intro#s06-c01",
+          "cppref-cpp-vector#s02-c01",
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s04-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "CPP2-004",
+        "qtype": "in-corpus",
+        "top1_score": 0.8206233382225037,
+        "top5_ids": [
+          "cpp-notes-intro#s06-c01",
+          "cpp-notes-intro#s03-c01",
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s05-c01",
+          "cpp-notes-intro#s08-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "CPP2-005",
+        "qtype": "in-corpus",
+        "top1_score": 0.8217923641204834,
+        "top5_ids": [
+          "cpp-notes-intro#s04-c01",
+          "cpp-notes-intro#s08-c01",
+          "cpp-notes-intro#s09-c01",
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s05-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "CPP2-006",
+        "qtype": "in-corpus",
+        "top1_score": 0.8287602663040161,
+        "top5_ids": [
+          "cpp-notes-intro#s04-c01",
+          "cpp-notes-intro#s08-c01",
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s05-c01",
+          "cppref-cpp-reference#s08-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "CPP2-007",
+        "qtype": "in-corpus",
+        "top1_score": 0.8270879983901978,
+        "top5_ids": [
+          "cpp-notes-intro#s08-c01",
+          "cpp-notes-intro#s09-c01",
+          "cpp-notes-intro#s02-c01",
+          "cpp-notes-intro#s06-c01",
+          "cppref-cpp-constructor#s13-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "CPP2-008",
+        "qtype": "in-corpus",
+        "top1_score": 0.7954772710800171,
+        "top5_ids": [
+          "cppref-cpp-string#s09-c01",
+          "cpp-notes-intro#s10-c01",
+          "cpp-notes-intro#s08-c01",
+          "cpp-notes-intro#s02-c01",
+          "cpp-notes-intro#s07-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": true
+      },
+      {
+        "item_id": "CPP2-009",
+        "qtype": "in-corpus",
+        "top1_score": 0.8142231702804565,
+        "top5_ids": [
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s02-c01",
+          "cpp-notes-intro#s10-c01",
+          "cpp-notes-intro#s05-c01",
+          "cpp-notes-intro#s06-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "CPP2-010",
+        "qtype": "in-corpus",
+        "top1_score": 0.8225857019424438,
+        "top5_ids": [
+          "cpp-notes-intro#s08-c01",
+          "cpp-notes-intro#s10-c01",
+          "cpp-notes-intro#s09-c01",
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s03-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "CPP2-011",
+        "qtype": "in-corpus",
+        "top1_score": 0.8408350944519043,
+        "top5_ids": [
+          "cpp-notes-intro#s08-c01",
+          "cpp-notes-intro#s03-c01",
+          "cpp-notes-intro#s02-c01",
+          "cpp-notes-intro#s09-c01",
+          "cpp-notes-intro#s07-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "CPP2-012",
+        "qtype": "in-corpus",
+        "top1_score": 0.8383232355117798,
+        "top5_ids": [
+          "cpp-notes-intro#s09-c01",
+          "cpp-notes-intro#s08-c01",
+          "cpp-notes-intro#s06-c01",
+          "cpp-notes-intro#s11-c01",
+          "cpp-notes-intro#s05-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "CPP2-013",
+        "qtype": "in-corpus",
+        "top1_score": 0.828071117401123,
+        "top5_ids": [
+          "cppref-cpp-auto#s08-c01",
+          "cppref-cpp-constructor#s09-c01",
+          "cppref-cpp-operators#s23-c01",
+          "cppref-cpp-operators#s02-c01",
+          "cpp-notes-intro#s08-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "CPP2-014",
+        "qtype": "in-corpus",
+        "top1_score": 0.8287292718887329,
+        "top5_ids": [
+          "cpp-notes-intro#s03-c01",
+          "cpp-notes-intro#s08-c01",
+          "cpp-notes-intro#s05-c01",
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s04-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "CPP2-015",
+        "qtype": "in-corpus",
+        "top1_score": 0.8066243529319763,
+        "top5_ids": [
+          "cpp-notes-intro#s10-c01",
+          "cppref-cpp-namespace#s06-c01",
+          "cpp-notes-intro#s03-c01",
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s08-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "CPP2-016",
+        "qtype": "in-corpus",
+        "top1_score": 0.8375361561775208,
+        "top5_ids": [
+          "cpp-notes-intro#s07-c01",
+          "cppref-cpp-namespace#s13-c01",
+          "cpp-notes-intro#s03-c01",
+          "cpp-notes-intro#s04-c01",
+          "cpp-notes-intro#s05-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "CPP2-017",
+        "qtype": "in-corpus",
+        "top1_score": 0.8176098465919495,
+        "top5_ids": [
+          "cpp-notes-intro#s04-c01",
+          "cppref-cpp-reference#s04-c01",
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s10-c01",
+          "cpp-notes-intro#s09-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "CPP2-018",
+        "qtype": "in-corpus",
+        "top1_score": 0.8392317295074463,
+        "top5_ids": [
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s04-c01",
+          "cpp-notes-intro#s06-c01",
+          "cpp-notes-intro#s05-c01",
+          "cpp-notes-intro#s10-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "CPP2-019",
+        "qtype": "in-corpus",
+        "top1_score": 0.8549066781997681,
+        "top5_ids": [
+          "cpp-notes-intro#s04-c01",
+          "cpp-notes-intro#s05-c01",
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s06-c01",
+          "cpp-notes-intro#s09-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "CPP2-020",
+        "qtype": "in-corpus",
+        "top1_score": 0.8353183269500732,
+        "top5_ids": [
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s10-c01",
+          "cpp-notes-intro#s06-c01",
+          "cpp-notes-intro#s04-c01",
+          "cppref-cpp-function#s14-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "CPP2-021",
+        "qtype": "in-corpus",
+        "top1_score": 0.8298736810684204,
+        "top5_ids": [
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s05-c01",
+          "cpp-notes-intro#s04-c01",
+          "cpp-notes-intro#s06-c01",
+          "cpp-notes-intro#s10-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "CPP2-022",
+        "qtype": "in-corpus",
+        "top1_score": 0.846279501914978,
+        "top5_ids": [
+          "cpp-notes-intro#s06-c01",
+          "cpp-notes-intro#s04-c01",
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s03-c01",
+          "cpp-notes-intro#s05-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "CPP2-023",
+        "qtype": "in-corpus",
+        "top1_score": 0.8206808567047119,
+        "top5_ids": [
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s06-c01",
+          "cpp-notes-intro#s05-c01",
+          "cpp-notes-intro#s04-c01",
+          "cpp-notes-intro#s08-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "CPP2-024",
+        "qtype": "in-corpus",
+        "top1_score": 0.814363956451416,
+        "top5_ids": [
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s06-c01",
+          "cppref-cpp-operators#s23-c01",
+          "cppref-cpp-overload#s01-c01",
+          "cpp-notes-intro#s10-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "CPP2-025",
+        "qtype": "in-corpus",
+        "top1_score": 0.8408132791519165,
+        "top5_ids": [
+          "cppref-cpp-auto#s11-c01",
+          "cpp-notes-intro#s04-c01",
+          "cppref-cpp-auto#s03-c01",
+          "cppref-cpp-auto#s10-c01",
+          "cppref-cpp-auto#s08-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "CPP2-026",
+        "qtype": "in-corpus",
+        "top1_score": 0.8207770586013794,
+        "top5_ids": [
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s06-c01",
+          "cppref-cpp-auto#s08-c01",
+          "cpp-notes-intro#s03-c01",
+          "cpp-notes-intro#s08-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "CPP2-027",
+        "qtype": "in-corpus",
+        "top1_score": 0.8074439764022827,
+        "top5_ids": [
+          "cpp-notes-intro#s09-c01",
+          "cpp-notes-intro#s04-c01",
+          "cpp-notes-intro#s03-c01",
+          "cpp-notes-intro#s11-c01",
+          "cpp-notes-intro#s08-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "CPP2-028",
+        "qtype": "in-corpus",
+        "top1_score": 0.833106279373169,
+        "top5_ids": [
+          "cpp-notes-intro#s04-c01",
+          "cpp-notes-intro#s08-c01",
+          "cpp-notes-intro#s07-c01",
+          "cppref-cpp-overload#s10-c01",
+          "cpp-notes-intro#s10-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "CPP2-029",
+        "qtype": "mixed",
+        "top1_score": 0.8534497022628784,
+        "top5_ids": [
+          "cppref-cpp-vector#s05-c01",
+          "cppref-cpp-range-for#s06-c01",
+          "cppref-cpp-vector#s07-c01",
+          "cppref-cpp-vector#s02-c01",
+          "cpp-notes-intro#s06-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "CPP2-030",
+        "qtype": "mixed",
+        "top1_score": 0.82197105884552,
+        "top5_ids": [
+          "cppref-cpp-string#s07-c02",
+          "cpp-notes-intro#s08-c01",
+          "cpp-notes-intro#s04-c01",
+          "cppref-cpp-string#s07-c01",
+          "cpp-notes-intro#s09-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "CPP2-031",
+        "qtype": "mixed",
+        "top1_score": 0.8250131607055664,
+        "top5_ids": [
+          "cppref-cpp-cout#s02-c01",
+          "cpp-notes-intro#s05-c01",
+          "cpp-notes-intro#s10-c01",
+          "cpp-notes-intro#s07-c01",
+          "cppref-cpp-cout#s01-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "CPP2-032",
+        "qtype": "mixed",
+        "top1_score": 0.8350926041603088,
+        "top5_ids": [
+          "cpp-notes-intro#s03-c01",
+          "cppref-cpp-namespace#s13-c01",
+          "cppref-cpp-namespace#s08-c01",
+          "cppref-cpp-namespace#s04-c01",
+          "cppref-cpp-namespace#s08-c02"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "CPP2-033",
+        "qtype": "mixed",
+        "top1_score": 0.8422695398330688,
+        "top5_ids": [
+          "cppref-cpp-reference#s07-c01",
+          "cpp-notes-intro#s04-c01",
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s03-c01",
+          "cppref-cpp-operators#s08-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "CPP2-034",
+        "qtype": "mixed",
+        "top1_score": 0.859264612197876,
+        "top5_ids": [
+          "cpp-notes-intro#s04-c01",
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s05-c01",
+          "cppref-cpp-function#s04-c01",
+          "cpp-notes-intro#s09-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "CPP2-035",
+        "qtype": "mixed",
+        "top1_score": 0.8332507014274597,
+        "top5_ids": [
+          "cppref-cpp-operators#s06-c01",
+          "cppref-cpp-operators#s23-c01",
+          "cpp-notes-intro#s07-c01",
+          "cppref-cpp-operators#s08-c01",
+          "cppref-cpp-overload#s19-c02"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "CPP2-036",
+        "qtype": "mixed",
+        "top1_score": 0.839909553527832,
+        "top5_ids": [
+          "cppref-cpp-range-for#s06-c01",
+          "cppref-cpp-range-for#s09-c01",
+          "cppref-cpp-range-for#s04-c01",
+          "cppref-cpp-range-for#s01-c01",
+          "cppref-cpp-auto#s08-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "CPP2-037",
+        "qtype": "mixed",
+        "top1_score": 0.8517431020736694,
+        "top5_ids": [
+          "cppref-cpp-overload#s19-c02",
+          "cppref-cpp-overload#s15-c01",
+          "cppref-cpp-overload#s07-c01",
+          "cppref-cpp-constructor#s07-c01",
+          "cppref-cpp-constructor#s05-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "CPP2-038",
+        "qtype": "mixed",
+        "top1_score": 0.8394326567649841,
+        "top5_ids": [
+          "cppref-cpp-constructor#s13-c01",
+          "cppref-cpp-overload#s19-c02",
+          "cpp-notes-intro#s08-c01",
+          "cpp-notes-intro#s04-c01",
+          "cpp-notes-intro#s06-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "CPP2-039",
+        "qtype": "out-of-corpus",
+        "top1_score": 0.8185156583786011,
+        "top5_ids": [
+          "cpp-notes-intro#s08-c01",
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s03-c01",
+          "cpp-notes-intro#s04-c01",
+          "cppref-cpp-function#s23-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "CPP2-040",
+        "qtype": "out-of-corpus",
+        "top1_score": 0.8232240676879883,
+        "top5_ids": [
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s06-c01",
+          "cpp-notes-intro#s03-c01",
+          "cpp-notes-intro#s04-c01",
+          "cpp-notes-intro#s05-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "CPP2-041",
+        "qtype": "out-of-corpus",
+        "top1_score": 0.8274132013320923,
+        "top5_ids": [
+          "cpp-notes-intro#s08-c01",
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s04-c01",
+          "cppref-cpp-string#s07-c02",
+          "cpp-notes-intro#s03-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "CPP2-042",
+        "qtype": "out-of-corpus",
+        "top1_score": 0.822426438331604,
+        "top5_ids": [
+          "cpp-notes-intro#s03-c01",
+          "cpp-notes-intro#s02-c01",
+          "cpp-notes-intro#s07-c01",
+          "cppref-cpp-operators#s22-c01",
+          "cpp-notes-intro#s05-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "CPP2-043",
+        "qtype": "out-of-corpus",
+        "top1_score": 0.8260642290115356,
+        "top5_ids": [
+          "cpp-notes-intro#s11-c01",
+          "cpp-notes-intro#s08-c01",
+          "cpp-notes-intro#s03-c01",
+          "cpp-notes-intro#s04-c01",
+          "cpp-notes-intro#s09-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "CPP2-044",
+        "qtype": "out-of-corpus",
+        "top1_score": 0.8271443843841553,
+        "top5_ids": [
+          "cpp-notes-intro#s08-c01",
+          "cpp-notes-intro#s09-c01",
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s05-c01",
+          "cpp-notes-intro#s10-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "CPP2-045",
+        "qtype": "out-of-corpus",
+        "top1_score": 0.8179932236671448,
+        "top5_ids": [
+          "cpp-notes-intro#s03-c01",
+          "cpp-notes-intro#s02-c01",
+          "cpp-notes-intro#s08-c01",
+          "cppref-cpp-constructor#s10-c01",
+          "cppref-cpp-constructor#s13-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": false
+      }
+    ]
+  },
+  "end_to_end": {
+    "status": "not_run",
+    "error_count": 0,
+    "rows": [],
+    "reasons": [],
+    "expected_response_model": null
+  },
+  "error_count": 0
+}
