@@ -139,7 +139,7 @@
 
 - [X] T045 [P] [US3] Write FAIL-first paired-bootstrap tests in `tests/unit/test_paired_bootstrap.py`: 10,000 resamples with seed `20261022` over identical item IDs, 95% percentile CI per metric, Bonferroni-adjusted 98.33% difference CI for three model pairs, precision conditional on answered rows in each resample, and N/A at denominator zero.
   - CHECKPOINT: STOP → report winner/inconclusive fixtures and expected failures → wait for explicit «تایید» before T046.
-- [ ] T046 [US3] Implement CI and paired differences in `src/eval/comparison.py`; accept only complete same-language rows with matching item IDs, numerators/denominators, and answer counts. Declare a winner only when its hit@5 difference CI exceeds zero against **every** alternative and precision/both abstention measures show no significant harm; otherwise `inconclusive`. Pass T045.
+- [X] T046 [US3] Implement CI and paired differences in `src/eval/comparison.py`; accept only complete same-language rows with matching item IDs, numerators/denominators, and answer counts. Declare a winner only when its hit@5 difference CI exceeds zero against **every** alternative and precision/both abstention measures show no significant harm; otherwise `inconclusive`. Pass T045.
   - CHECKPOINT: STOP → report seeded reproducibility and inconclusive cases → wait for explicit «تایید» before T047.
 - [ ] T047 [P] [US3] Write FAIL-first threshold-sweep tests in `tests/unit/test_threshold_sweep.py`: OOC is the positive class; calculate AUROC and PR curve from v2 scores, CI for summary measures, N/A for class-absent slices, and unchanged locked pooled-v1 threshold.
   - CHECKPOINT: STOP → report expected failures and no-v2-leakage control → wait for explicit «تایید» before T048.

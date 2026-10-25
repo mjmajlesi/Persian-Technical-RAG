@@ -101,6 +101,13 @@ def test_clear_paired_hit_advantage_wins_but_tie_or_secondary_harm_does_not():
         row["fixed_gate_abstain"] = False
     assert _compare(items, harmed_gate)["winner_status"] == "inconclusive"
 
+    harmed_e2e = copy.deepcopy(runs)
+    for row in harmed_e2e["e5-large"]["end_to_end"]["rows"][38:]:
+        row.update(response_type="answer", cited_ids=["c-other"])
+    e2e_result = _compare(items, harmed_e2e)
+    assert e2e_result["winner_status"] == "inconclusive"
+    assert e2e_result["paired_differences"]["e5-large|e5-base"]["e2e_abstention"]["ci"][1] < 0
+
 
 def test_precision_is_macro_over_answered_rows_in_each_resample_not_all_items():
     items, runs = _fixture()
@@ -127,14 +134,17 @@ def test_zero_answer_denominator_and_incomplete_e2e_are_na_not_zero():
     runs["e5-base"]["end_to_end"] = {"status": "incomplete", "error_count": 1}
     result = _compare(items, runs)
     assert result["models"]["e5-large"]["citation_precision"] == {
-        "value": None, "ci": None, "answer_count": 0, "citation_count": 0}
+        "value": None, "ci": None, "answer_count": 0,
+        "citation_count": 0, "correct_citations": 0}
     assert result["models"]["e5-base"]["hit_at_5"]["denominator"] == 38
     assert result["models"]["e5-base"]["citation_precision"]["value"] is None
     assert result["models"]["e5-base"]["e2e_abstention"]["value"] is None
     assert result["winner_status"] == "inconclusive"
 
 
-@pytest.mark.parametrize("change", ("language", "missing_id", "duplicate_id", "incomplete_retrieval"))
+@pytest.mark.parametrize("change", ("language", "missing_id", "duplicate_id",
+                                    "incomplete_retrieval", "item_count", "answer_count",
+                                    "different_set_hash"))
 def test_unpaired_or_incomplete_retrieval_cannot_be_compared(change):
     items, runs = _fixture()
     candidate = runs["e5-base"]
@@ -145,7 +155,16 @@ def test_unpaired_or_incomplete_retrieval_cannot_be_compared(change):
     elif change == "duplicate_id":
         candidate["retrieval"]["rows"][0]["item_id"] = candidate["retrieval"]["rows"][1]["item_id"]
     else:
-        candidate["retrieval"]["status"] = "incomplete"
-        candidate["retrieval"]["error_count"] = 1
-    with pytest.raises(ValueError, match="language|item|retrieval|complete"):
+        if change == "incomplete_retrieval":
+            candidate["retrieval"]["status"] = "incomplete"
+            candidate["retrieval"]["error_count"] = 1
+        elif change == "item_count":
+            candidate["n_items"] = 44
+        elif change == "answer_count":
+            candidate["end_to_end"]["answer_count"] = 37
+        else:
+            for report in runs.values():
+                report["v2_sha256"] = "a" * 64
+            candidate["v2_sha256"] = "b" * 64
+    with pytest.raises(ValueError, match="language|item|retrieval|complete|answer|hash"):
         _compare(items, runs)
