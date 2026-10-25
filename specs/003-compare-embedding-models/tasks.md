@@ -128,7 +128,7 @@
   - CHECKPOINT: STOP → report three Python E2E statuses and cross-lingual limits → wait for explicit «تایید» before T043.
 - [X] T043 [US2] Run E2E for three models on **Java v2** under `data/eval/java/reports/v2/` with the same settings. Check 45 rows per model, model ID/errors, precision/abstention, and valid Java-pack citations.
   - CHECKPOINT: STOP → report three Java E2E statuses and retrieval-only comparison → wait for explicit «تایید» before T044.
-- [ ] T044 [US2] Run model/pack isolation integration tests in `tests/integration/test_research_isolation.py`: a wrong model or pack index fails explicitly, foreign citations abstain/are rejected, retrieval-only uses no LLM, and feature 002's operational path remains green under `pytest tests/ -q`.
+- [X] T044 [US2] Run model/pack isolation integration tests in `tests/integration/test_research_isolation.py`: a wrong model or pack index fails explicitly, foreign citations abstain/are rejected, retrieval-only uses no LLM, and feature 002's operational path remains green under `pytest tests/ -q`.
   - CHECKPOINT: STOP → report isolation matrix and regressions → wait for explicit «تایید» before T045. **US2 is independently testable using pilot/v1; its full v2 data is now collected.**
 
 ---
