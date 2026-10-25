@@ -502,3 +502,111 @@ def write_comparisons(root: Path = Path("data/eval")) -> list[tuple[Path, Path]]
         assert md_path.read_bytes() == comparison_markdown(report).encode("utf-8")
         written.append((json_path, md_path))
     return written
+
+
+def exploratory_pool(reports: dict[str, dict], *, seed: int = 20261022,
+                     replications: int = 10_000) -> dict:
+    """Secondary stratified summary; no cross-pack gate or winner decision."""
+    if set(reports) != set(LANGUAGES) or replications <= 0:
+        raise ValueError("exploratory pool needs four complete language comparisons")
+    columns = {model: {metric: [] for metric in METRICS} for model in MODELS}
+    counts = {model: {"answers": 0, "citations": 0, "correct_citations": 0,
+                      "retrieval_errors": 0, "e2e_errors": 0} for model in MODELS}
+    source_hashes = {}
+    incomplete = set()
+    for lang in LANGUAGES:
+        report = reports[lang]
+        if report["language_id"] != lang or report["set_version"] != f"{lang}-v2" or set(
+                report["models"]) != set(MODELS) or set(report["per_item"]) != set(MODELS):
+            raise ValueError("primary language identity/model mismatch")
+        ids = [row["item_id"] for row in report["per_item"][MODELS[0]]]
+        if len(ids) != 45 or len(set(ids)) != 45 or Counter(
+                row["qtype"] for row in report["per_item"][MODELS[0]]) != {
+                "in-corpus": 28, "mixed": 10, "out-of-corpus": 7}:
+            raise ValueError("primary language item set mismatch")
+        source_hashes[lang] = report["set"]["sha256"]
+        for model in MODELS:
+            rows = report["per_item"][model]
+            if [row["item_id"] for row in rows] != ids:
+                raise ValueError("primary question pairing mismatch")
+            source = report["source_reports"][model]
+            counts[model]["retrieval_errors"] += source["retrieval_only"]["error_count"]
+            counts[model]["e2e_errors"] += source["end_to_end"]["error_count"]
+            if source["end_to_end"]["status"] != "complete":
+                incomplete.add(model)
+            if (source["locked_threshold"] != report["models"][model]["sweep"]["locked_threshold"] or
+                    (source["end_to_end"]["status"] == "complete") !=
+                    (report["models"][model]["e2e_abstention"]["value"] is not None)):
+                raise ValueError("locked gate or E2E status mismatch")
+            for row in rows:
+                out = row["qtype"] == "out-of-corpus"
+                cited = row["cited_ids"]
+                if (row["hit"] != bool(set(row["top5_ids"][:5]) &
+                                        set(row["expected_source_ids"])) or
+                        row["fixed_gate_abstain"] !=
+                        (row["top1_score"] < source["locked_threshold"])):
+                    raise ValueError("pooled input would change a fixed-gate or hit result")
+                if cited is not None and row["correct_citations"] != sum(
+                        cid in row["expected_source_ids"] for cid in cited):
+                    raise ValueError("pooled citation input mismatch")
+                columns[model]["hit_at_5"].append(None if out else int(row["hit"]))
+                columns[model]["fixed_gate_abstention"].append(
+                    int(row["fixed_gate_abstain"]) if out else None)
+                columns[model]["e2e_abstention"].append(
+                    int(row["response_type"] == "abstain" and cited == [])
+                    if out and cited is not None else None)
+                precision = None
+                if row["response_type"] == "answer":
+                    if not cited:
+                        raise ValueError("answer without citation denominator")
+                    counts[model]["answers"] += 1
+                    counts[model]["citations"] += len(cited)
+                    counts[model]["correct_citations"] += row["correct_citations"]
+                    precision = row["correct_citations"] / len(cited)
+                columns[model]["citation_precision"].append(precision)
+
+    # Never form a four-language E2E estimate from fewer than four complete runs.
+    for model in incomplete:
+        for metric in ("citation_precision", "e2e_abstention"):
+            columns[model][metric] = [None] * 180
+        for key in ("answers", "citations", "correct_citations"):
+            counts[model][key] = 0
+
+    def estimate(column: list[float | None], indices: list[int] | range) -> float | None:
+        values = [column[i] for i in indices if column[i] is not None]
+        return sum(values) / len(values) if values else None
+
+    boot = {model: {metric: [] for metric in METRICS} for model in MODELS}
+    rng = random.Random(seed)
+    for _ in range(replications):
+        # Resample questions separately per pack, keeping 45 observations per pack.
+        sample = [lang_index * 45 + i for lang_index in range(4)
+                  for i in rng.choices(range(45), k=45)]
+        for model in MODELS:
+            for metric in METRICS:
+                value = estimate(columns[model][metric], sample)
+                if value is not None:
+                    boot[model][metric].append(value)
+    pooled = {}
+    for model in MODELS:
+        pooled[model] = {}
+        for metric in METRICS:
+            column = columns[model][metric]
+            present = [value for value in column if value is not None]
+            entry = {"value": estimate(column, range(180)),
+                     "ci": _interval(boot[model][metric], 0.95),
+                     "denominator": len(present)}
+            if metric == "citation_precision":
+                entry.update(answer_count=counts[model]["answers"],
+                             citation_count=counts[model]["citations"],
+                             correct_citations=counts[model]["correct_citations"])
+            else:
+                entry["numerator"] = sum(present) if present else None
+            pooled[model][metric] = entry
+        pooled[model]["errors"] = {key: counts[model][key]
+                                    for key in ("retrieval_errors", "e2e_errors")}
+    return {"status": "exploratory-secondary", "languages": list(LANGUAGES),
+            "set_sha256": source_hashes, "n_items": 180, "n_answerable": 152,
+            "n_out": 28, "seed": seed, "replications": replications,
+            "confidence": 0.95, "resampling": "within-language paired questions",
+            "models": pooled}
