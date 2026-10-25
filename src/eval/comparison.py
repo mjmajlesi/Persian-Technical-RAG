@@ -147,6 +147,11 @@ def compare_language(runs: dict[str, dict], items: list[dict], *,
                 summary[metric].update(numerator=sum(present) if present else None,
                                        denominator=len(present))
         metrics[model] = summary
+        threshold = runs[model].get("calibration", {}).get("threshold")
+        if threshold is not None:
+            metrics[model]["sweep"] = threshold_sweep(
+                [rows_by_model[model][0][item_id] for item_id in ids],
+                locked_threshold=threshold, seed=seed, replications=replications)
     paired = {}
     for a, b in pairs:
         paired[f"{a}|{b}"] = {}
@@ -185,3 +190,70 @@ def compare_language(runs: dict[str, dict], items: list[dict], *,
     return {"language_id": language, "bootstrap_seed": seed, "replications": replications,
             "confidence": 0.95, "pair_confidence": pair_confidence,
             "models": metrics, "paired_differences": paired, "winner_status": winner}
+
+
+def threshold_sweep(rows: list[dict], *, locked_threshold: float,
+                    seed: int = 20261022, replications: int = 10_000) -> dict:
+    """Describe v2 scores; never select or persist a replacement for the v1 gate."""
+    if not math.isfinite(locked_threshold) or replications <= 0:
+        raise ValueError("finite locked threshold and positive replications required")
+    ids = [row["item_id"] for row in rows]
+    if len(set(ids)) != len(ids):
+        raise ValueError("duplicate sweep item ID")
+    scores = []
+    for row in rows:
+        if row["qtype"] not in ("in-corpus", "mixed", "out-of-corpus"):
+            raise ValueError("invalid sweep qtype")
+        score = row["top1_score"]
+        if not math.isfinite(score):
+            raise ValueError("non-finite sweep score")
+        scores.append((row["qtype"] == "out-of-corpus", score))
+    positives = [score for out, score in scores if out]
+    negatives = [score for out, score in scores if not out]
+    n_out, n_answerable = len(positives), len(negatives)
+
+    def auroc(pos: list[float], neg: list[float]) -> float:
+        # Low similarity means OOC; identical scores count as half a win.
+        return sum(1 if out < answer else 0.5 if out == answer else 0
+                   for out in pos for answer in neg) / (len(pos) * len(neg))
+
+    auc = {"value": None, "ci": None}
+    pr = None
+    best = {"status": "descriptive-only", "value": None, "balanced_accuracy": None}
+    if n_out and n_answerable:
+        auc["value"] = auroc(positives, negatives)
+        rng = random.Random(seed)
+        samples = []
+        for _ in range(replications):
+            draw = rng.choices(scores, k=len(scores))
+            pos = [score for out, score in draw if out]
+            neg = [score for out, score in draw if not out]
+            if pos and neg:  # class-absent resamples cannot define AUROC
+                samples.append(auroc(pos, neg))
+        auc["ci"] = _interval(samples, 0.95)
+
+        ordered = sorted(scores, key=lambda pair: pair[1])
+        pr = [{"threshold": ordered[0][1], "tp": 0, "fp": 0,
+               "precision": 1.0, "recall": 0.0}]
+        best_accuracy, best_threshold = (0.5, ordered[0][1])
+        tp = fp = 0
+        for score in sorted(set(value for _, value in scores)):
+            group = [out for out, value in ordered if value == score]
+            tp += sum(group)
+            fp += len(group) - sum(group)
+            threshold = math.nextafter(score, math.inf)  # strict score < threshold
+            pr.append({"threshold": threshold, "tp": tp, "fp": fp,
+                       "precision": tp / (tp + fp), "recall": tp / n_out})
+            balanced = (tp / n_out + (n_answerable - fp) / n_answerable) / 2
+            if (balanced, threshold) > (best_accuracy, best_threshold):
+                best_accuracy, best_threshold = balanced, threshold
+        best.update(value=best_threshold, balanced_accuracy=best_accuracy)
+
+    locked_tp = sum(out and score < locked_threshold for out, score in scores)
+    locked_fp = sum(not out and score < locked_threshold for out, score in scores)
+    return {"status": "descriptive-only", "positive_class": "out-of-corpus",
+            "seed": seed, "replications": replications, "n_out": n_out,
+            "n_answerable": n_answerable, "locked_threshold": locked_threshold,
+            "locked_gate": {"tp": locked_tp, "fn": n_out - locked_tp,
+                            "tn": n_answerable - locked_fp, "fp": locked_fp},
+            "auroc": auc, "pr_curve": pr, "observed_best_threshold": best}

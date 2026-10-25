@@ -102,6 +102,40 @@ def test_sweep_cannot_retune_pooled_v1_or_operational_gates(monkeypatch):
     assert PACK_THRESHOLDS == operational
 
 
+def test_language_comparison_keeps_fixed_gate_and_e2e_abstention_separate():
+    from src.eval.comparison import compare_language
+
+    items = [{"item_id": f"C2-{i}", "qtype": "in-corpus" if i < 28 else
+              "mixed" if i < 38 else "out-of-corpus",
+              "expected_source_ids": [] if i >= 38 else [f"c-{i}"]}
+             for i in range(45)]
+    runs = {}
+    for model in ("e5-large", "e5-base", "bge-m3"):
+        retrieval = [{"item_id": item["item_id"], "qtype": item["qtype"],
+                      "hit": i < 38, "top1_score": 0.9 if i == 44 else
+                      0.1 if i >= 38 else 0.5,
+                      "fixed_gate_abstain": 38 <= i < 44}
+                     for i, item in enumerate(items)]
+        answers = [{"item_id": item["item_id"],
+                    "response_type": "abstain" if i >= 38 else "answer",
+                    "cited_ids": [] if i >= 38 else [f"c-{i}"]}
+                   for i, item in enumerate(items)]
+        runs[model] = {"model_key": model, "language_id": "c", "status": "complete",
+                       "calibration": {"threshold": 0.6},
+                       "retrieval": {"status": "complete", "error_count": 0, "rows": retrieval},
+                       "end_to_end": {"status": "complete", "error_count": 0,
+                                      "rows": answers}}
+    result = compare_language(runs, items, seed=SEED, replications=100)
+    for model in runs:
+        metrics = result["models"][model]
+        assert metrics["fixed_gate_abstention"]["numerator"] == 6
+        assert metrics["e2e_abstention"]["numerator"] == 7
+        assert metrics["sweep"]["locked_threshold"] == 0.6
+        assert metrics["sweep"]["locked_gate"]["tp"] == 6
+        assert metrics["sweep"]["observed_best_threshold"]["value"] != 0.6
+    assert result["winner_status"] == "inconclusive"  # identical hits, no global rank
+
+
 @pytest.mark.parametrize("change", ("duplicate_id", "non_finite", "unknown_qtype"))
 def test_malformed_scores_never_become_a_descriptive_sweep(change):
     rows = _rows((True, 0.1), (False, 0.8))

@@ -143,7 +143,7 @@
   - CHECKPOINT: STOP → report seeded reproducibility and inconclusive cases → wait for explicit «تایید» before T047.
 - [X] T047 [P] [US3] Write FAIL-first threshold-sweep tests in `tests/unit/test_threshold_sweep.py`: OOC is the positive class; calculate AUROC and PR curve from v2 scores, CI for summary measures, N/A for class-absent slices, and unchanged locked pooled-v1 threshold.
   - CHECKPOINT: STOP → report expected failures and no-v2-leakage control → wait for explicit «تایید» before T048.
-- [ ] T048 [US3] Complete descriptive sweep and separate fixed-gate/E2E abstention in `src/eval/comparison.py`. Show the observed v2 optimum **only** as sensitivity analysis; never change calibration code or the locked threshold. Pass T047.
+- [X] T048 [US3] Complete descriptive sweep and separate fixed-gate/E2E abstention in `src/eval/comparison.py`. Show the observed v2 optimum **only** as sensitivity analysis; never change calibration code or the locked threshold. Pass T047.
   - CHECKPOINT: STOP → report fixture AUROC/PR and unchanged gate → wait for explicit «تایید» before T049.
 - [ ] T049 [US3] Produce official per-language reports with `src/eval/__main__.py`/`src/eval/comparison.py`: for each language, three model rows for retrieval-only hit@5, answered-only citation precision, both abstention measures, mixed/evidence-language slices, CI/denominators, and `winner|inconclusive`. Make official machine-readable JSON and Markdown under `data/eval/<lang>/reports/v2/` committable. Run T034 schema checks and per-item reproduction; never mix incomplete and complete runs.
   - CHECKPOINT: STOP → report four tables, CIs, and official file IDs → wait for explicit «تایید» before T050.
