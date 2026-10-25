@@ -158,7 +158,7 @@
 
 - [X] T052 Finalize the implemented reproduction guide in `specs/003-compare-embedding-models/quickstart.md` and `README.md`: CPU build/cache (Kaggle fallback only), pooled-v1 calibration, 12 retrieval-only/E2E combinations, committed official JSON+Markdown, bootstrap/sweep, and incomplete E2E behavior. Smoke-check guide commands and links to official reports.
   - CHECKPOINT: STOP → report both documents, commands tried, and valid links → wait for explicit «تایید» before T053.
-- [ ] T053 Run final validation from `specs/003-compare-embedding-models/quickstart.md`: `pytest tests/ -q`, feature 002 default-path smoke test, unchanged v1/chunk SHAs, retrieval-only reproduction, and inspection of 12 official JSON/Markdown report pairs. Count E2E as complete only with valid provider identity. Record a staged scan for `.env`/keys/cache/FAISS and official JSON status in `specs/003-compare-embedding-models/VALIDATION.md`; do not close the feature if a prerequisite/run is incomplete.
+- [X] T053 Run final validation from `specs/003-compare-embedding-models/quickstart.md`: `pytest tests/ -q`, feature 002 default-path smoke test, unchanged v1/chunk SHAs, retrieval-only reproduction, and inspection of 12 official JSON/Markdown report pairs. Count E2E as complete only with valid provider identity. Record a staged scan for `.env`/keys/cache/FAISS and official JSON status in `specs/003-compare-embedding-models/VALIDATION.md`; do not close the feature if a prerequisite/run is incomplete.
   - CHECKPOINT: STOP → report full log, deviations, and 12-combination status → wait for explicit «تایید»; **only then is the feature complete.**
 
 ---
