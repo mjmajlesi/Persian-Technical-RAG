@@ -1,0 +1,4594 @@
+{
+  "language_id": "python",
+  "bootstrap_seed": 20261022,
+  "replications": 10000,
+  "confidence": 0.95,
+  "pair_confidence": 0.9833333333333333,
+  "models": {
+    "e5-large": {
+      "hit_at_5": {
+        "value": 0.631578947368421,
+        "ci": [
+          0.47368421052631576,
+          0.7837837837837838
+        ],
+        "numerator": 24,
+        "denominator": 38
+      },
+      "citation_precision": {
+        "value": 0.8333333333333334,
+        "ci": [
+          0.6578947368421053,
+          0.9722222222222222
+        ],
+        "answer_count": 18,
+        "citation_count": 20,
+        "correct_citations": 16
+      },
+      "fixed_gate_abstention": {
+        "value": 0.8571428571428571,
+        "ci": [
+          0.5,
+          1.0
+        ],
+        "numerator": 6,
+        "denominator": 7
+      },
+      "e2e_abstention": {
+        "value": 1.0,
+        "ci": [
+          1.0,
+          1.0
+        ],
+        "numerator": 7,
+        "denominator": 7
+      },
+      "slices": {
+        "mixed_qtype": {
+          "hit_at_5": {
+            "value": 0.7,
+            "ci": [
+              0.375,
+              1.0
+            ],
+            "denominator": 10,
+            "numerator": 7
+          },
+          "citation_precision": {
+            "value": 0.9285714285714286,
+            "ci": [
+              0.75,
+              1.0
+            ],
+            "denominator": 7,
+            "answer_count": 7,
+            "citation_count": 8,
+            "correct_citations": 7
+          },
+          "fixed_gate_abstention": {
+            "value": null,
+            "ci": null,
+            "denominator": 0,
+            "numerator": null
+          },
+          "e2e_abstention": {
+            "value": null,
+            "ci": null,
+            "denominator": 0,
+            "numerator": null
+          }
+        },
+        "evidence_language:en": {
+          "hit_at_5": {
+            "value": 0.631578947368421,
+            "ci": [
+              0.47368421052631576,
+              0.7837837837837838
+            ],
+            "denominator": 38,
+            "numerator": 24
+          },
+          "citation_precision": {
+            "value": 0.8333333333333334,
+            "ci": [
+              0.6578947368421053,
+              0.9722222222222222
+            ],
+            "denominator": 18,
+            "answer_count": 18,
+            "citation_count": 20,
+            "correct_citations": 16
+          },
+          "fixed_gate_abstention": {
+            "value": null,
+            "ci": null,
+            "denominator": 0,
+            "numerator": null
+          },
+          "e2e_abstention": {
+            "value": null,
+            "ci": null,
+            "denominator": 0,
+            "numerator": null
+          }
+        },
+        "evidence_language:none": {
+          "hit_at_5": {
+            "value": null,
+            "ci": null,
+            "denominator": 0,
+            "numerator": null
+          },
+          "citation_precision": {
+            "value": null,
+            "ci": null,
+            "denominator": 0,
+            "answer_count": 0,
+            "citation_count": 0,
+            "correct_citations": 0
+          },
+          "fixed_gate_abstention": {
+            "value": 0.8571428571428571,
+            "ci": [
+              0.5,
+              1.0
+            ],
+            "denominator": 7,
+            "numerator": 6
+          },
+          "e2e_abstention": {
+            "value": 1.0,
+            "ci": [
+              1.0,
+              1.0
+            ],
+            "denominator": 7,
+            "numerator": 7
+          }
+        }
+      },
+      "sweep": {
+        "status": "descriptive-only",
+        "positive_class": "out-of-corpus",
+        "seed": 20261022,
+        "replications": 10000,
+        "n_out": 7,
+        "n_answerable": 38,
+        "locked_threshold": 0.808958888053894,
+        "locked_gate": {
+          "tp": 6,
+          "fn": 1,
+          "tn": 19,
+          "fp": 19
+        },
+        "auroc": {
+          "value": 0.6203007518796992,
+          "ci": [
+            0.44512195121951226,
+            0.7837837837837838
+          ]
+        },
+        "pr_curve": [
+          {
+            "threshold": 0.7670265436172485,
+            "tp": 0,
+            "fp": 0,
+            "precision": 1.0,
+            "recall": 0.0
+          },
+          {
+            "threshold": 0.7670265436172486,
+            "tp": 0,
+            "fp": 1,
+            "precision": 0.0,
+            "recall": 0.0
+          },
+          {
+            "threshold": 0.7736233472824098,
+            "tp": 0,
+            "fp": 2,
+            "precision": 0.0,
+            "recall": 0.0
+          },
+          {
+            "threshold": 0.7751561403274537,
+            "tp": 0,
+            "fp": 3,
+            "precision": 0.0,
+            "recall": 0.0
+          },
+          {
+            "threshold": 0.783000946044922,
+            "tp": 0,
+            "fp": 4,
+            "precision": 0.0,
+            "recall": 0.0
+          },
+          {
+            "threshold": 0.7849398255348207,
+            "tp": 0,
+            "fp": 5,
+            "precision": 0.0,
+            "recall": 0.0
+          },
+          {
+            "threshold": 0.7861728668212892,
+            "tp": 0,
+            "fp": 6,
+            "precision": 0.0,
+            "recall": 0.0
+          },
+          {
+            "threshold": 0.7873815298080445,
+            "tp": 0,
+            "fp": 7,
+            "precision": 0.0,
+            "recall": 0.0
+          },
+          {
+            "threshold": 0.7903751134872438,
+            "tp": 1,
+            "fp": 7,
+            "precision": 0.125,
+            "recall": 0.14285714285714285
+          },
+          {
+            "threshold": 0.7939167022705079,
+            "tp": 2,
+            "fp": 7,
+            "precision": 0.2222222222222222,
+            "recall": 0.2857142857142857
+          },
+          {
+            "threshold": 0.7960447072982789,
+            "tp": 2,
+            "fp": 8,
+            "precision": 0.2,
+            "recall": 0.2857142857142857
+          },
+          {
+            "threshold": 0.7961995601654054,
+            "tp": 2,
+            "fp": 9,
+            "precision": 0.18181818181818182,
+            "recall": 0.2857142857142857
+          },
+          {
+            "threshold": 0.7969008684158326,
+            "tp": 2,
+            "fp": 10,
+            "precision": 0.16666666666666666,
+            "recall": 0.2857142857142857
+          },
+          {
+            "threshold": 0.7981253862380983,
+            "tp": 2,
+            "fp": 11,
+            "precision": 0.15384615384615385,
+            "recall": 0.2857142857142857
+          },
+          {
+            "threshold": 0.7992566823959352,
+            "tp": 2,
+            "fp": 12,
+            "precision": 0.14285714285714285,
+            "recall": 0.2857142857142857
+          },
+          {
+            "threshold": 0.7997015714645387,
+            "tp": 2,
+            "fp": 13,
+            "precision": 0.13333333333333333,
+            "recall": 0.2857142857142857
+          },
+          {
+            "threshold": 0.8019176125526429,
+            "tp": 2,
+            "fp": 14,
+            "precision": 0.125,
+            "recall": 0.2857142857142857
+          },
+          {
+            "threshold": 0.8023941516876222,
+            "tp": 2,
+            "fp": 15,
+            "precision": 0.11764705882352941,
+            "recall": 0.2857142857142857
+          },
+          {
+            "threshold": 0.8024203777313234,
+            "tp": 2,
+            "fp": 16,
+            "precision": 0.1111111111111111,
+            "recall": 0.2857142857142857
+          },
+          {
+            "threshold": 0.8035026192665101,
+            "tp": 3,
+            "fp": 16,
+            "precision": 0.15789473684210525,
+            "recall": 0.42857142857142855
+          },
+          {
+            "threshold": 0.8036327958106996,
+            "tp": 4,
+            "fp": 16,
+            "precision": 0.2,
+            "recall": 0.5714285714285714
+          },
+          {
+            "threshold": 0.8053289055824281,
+            "tp": 5,
+            "fp": 16,
+            "precision": 0.23809523809523808,
+            "recall": 0.7142857142857143
+          },
+          {
+            "threshold": 0.8057872653007508,
+            "tp": 5,
+            "fp": 17,
+            "precision": 0.22727272727272727,
+            "recall": 0.7142857142857143
+          },
+          {
+            "threshold": 0.8067781925201417,
+            "tp": 5,
+            "fp": 18,
+            "precision": 0.21739130434782608,
+            "recall": 0.7142857142857143
+          },
+          {
+            "threshold": 0.8072297573089601,
+            "tp": 5,
+            "fp": 19,
+            "precision": 0.20833333333333334,
+            "recall": 0.7142857142857143
+          },
+          {
+            "threshold": 0.808337688446045,
+            "tp": 6,
+            "fp": 19,
+            "precision": 0.24,
+            "recall": 0.8571428571428571
+          },
+          {
+            "threshold": 0.8116338849067689,
+            "tp": 6,
+            "fp": 20,
+            "precision": 0.23076923076923078,
+            "recall": 0.8571428571428571
+          },
+          {
+            "threshold": 0.8124616146087648,
+            "tp": 7,
+            "fp": 20,
+            "precision": 0.25925925925925924,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.814435362815857,
+            "tp": 7,
+            "fp": 21,
+            "precision": 0.25,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.816000521183014,
+            "tp": 7,
+            "fp": 22,
+            "precision": 0.2413793103448276,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8176136612892152,
+            "tp": 7,
+            "fp": 23,
+            "precision": 0.23333333333333334,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8197104930877687,
+            "tp": 7,
+            "fp": 24,
+            "precision": 0.22580645161290322,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8200201988220216,
+            "tp": 7,
+            "fp": 25,
+            "precision": 0.21875,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8208845853805543,
+            "tp": 7,
+            "fp": 26,
+            "precision": 0.21212121212121213,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8233221173286439,
+            "tp": 7,
+            "fp": 27,
+            "precision": 0.20588235294117646,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8242202997207643,
+            "tp": 7,
+            "fp": 28,
+            "precision": 0.2,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8248406052589418,
+            "tp": 7,
+            "fp": 29,
+            "precision": 0.19444444444444445,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8264199495315553,
+            "tp": 7,
+            "fp": 30,
+            "precision": 0.1891891891891892,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8298989534378053,
+            "tp": 7,
+            "fp": 31,
+            "precision": 0.18421052631578946,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8314454555511476,
+            "tp": 7,
+            "fp": 32,
+            "precision": 0.1794871794871795,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8326352834701539,
+            "tp": 7,
+            "fp": 33,
+            "precision": 0.175,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8358094692230226,
+            "tp": 7,
+            "fp": 34,
+            "precision": 0.17073170731707318,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8397681713104249,
+            "tp": 7,
+            "fp": 35,
+            "precision": 0.16666666666666666,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8458567857742311,
+            "tp": 7,
+            "fp": 36,
+            "precision": 0.16279069767441862,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8538544178009034,
+            "tp": 7,
+            "fp": 37,
+            "precision": 0.1590909090909091,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.857514798641205,
+            "tp": 7,
+            "fp": 38,
+            "precision": 0.15555555555555556,
+            "recall": 1.0
+          }
+        ],
+        "observed_best_threshold": {
+          "status": "descriptive-only",
+          "value": 0.8124616146087648,
+          "balanced_accuracy": 0.7368421052631579
+        }
+      }
+    },
+    "e5-base": {
+      "hit_at_5": {
+        "value": 0.5,
+        "ci": [
+          0.34146341463414637,
+          0.6578947368421053
+        ],
+        "numerator": 19,
+        "denominator": 38
+      },
+      "citation_precision": {
+        "value": 0.7916666666666666,
+        "ci": [
+          0.5416666666666666,
+          1.0
+        ],
+        "answer_count": 12,
+        "citation_count": 14,
+        "correct_citations": 10
+      },
+      "fixed_gate_abstention": {
+        "value": 0.5714285714285714,
+        "ci": [
+          0.16666666666666666,
+          1.0
+        ],
+        "numerator": 4,
+        "denominator": 7
+      },
+      "e2e_abstention": {
+        "value": 1.0,
+        "ci": [
+          1.0,
+          1.0
+        ],
+        "numerator": 7,
+        "denominator": 7
+      },
+      "slices": {
+        "mixed_qtype": {
+          "hit_at_5": {
+            "value": 0.7,
+            "ci": [
+              0.38461538461538464,
+              1.0
+            ],
+            "denominator": 10,
+            "numerator": 7
+          },
+          "citation_precision": {
+            "value": 0.7857142857142857,
+            "ci": [
+              0.5,
+              1.0
+            ],
+            "denominator": 7,
+            "answer_count": 7,
+            "citation_count": 9,
+            "correct_citations": 6
+          },
+          "fixed_gate_abstention": {
+            "value": null,
+            "ci": null,
+            "denominator": 0,
+            "numerator": null
+          },
+          "e2e_abstention": {
+            "value": null,
+            "ci": null,
+            "denominator": 0,
+            "numerator": null
+          }
+        },
+        "evidence_language:en": {
+          "hit_at_5": {
+            "value": 0.5,
+            "ci": [
+              0.34146341463414637,
+              0.6578947368421053
+            ],
+            "denominator": 38,
+            "numerator": 19
+          },
+          "citation_precision": {
+            "value": 0.7916666666666666,
+            "ci": [
+              0.5416666666666666,
+              1.0
+            ],
+            "denominator": 12,
+            "answer_count": 12,
+            "citation_count": 14,
+            "correct_citations": 10
+          },
+          "fixed_gate_abstention": {
+            "value": null,
+            "ci": null,
+            "denominator": 0,
+            "numerator": null
+          },
+          "e2e_abstention": {
+            "value": null,
+            "ci": null,
+            "denominator": 0,
+            "numerator": null
+          }
+        },
+        "evidence_language:none": {
+          "hit_at_5": {
+            "value": null,
+            "ci": null,
+            "denominator": 0,
+            "numerator": null
+          },
+          "citation_precision": {
+            "value": null,
+            "ci": null,
+            "denominator": 0,
+            "answer_count": 0,
+            "citation_count": 0,
+            "correct_citations": 0
+          },
+          "fixed_gate_abstention": {
+            "value": 0.5714285714285714,
+            "ci": [
+              0.16666666666666666,
+              1.0
+            ],
+            "denominator": 7,
+            "numerator": 4
+          },
+          "e2e_abstention": {
+            "value": 1.0,
+            "ci": [
+              1.0,
+              1.0
+            ],
+            "denominator": 7,
+            "numerator": 7
+          }
+        }
+      },
+      "sweep": {
+        "status": "descriptive-only",
+        "positive_class": "out-of-corpus",
+        "seed": 20261022,
+        "replications": 10000,
+        "n_out": 7,
+        "n_answerable": 38,
+        "locked_threshold": 0.8026493787765503,
+        "locked_gate": {
+          "tp": 4,
+          "fn": 3,
+          "tn": 17,
+          "fp": 21
+        },
+        "auroc": {
+          "value": 0.518796992481203,
+          "ci": [
+            0.34146341463414637,
+            0.7030075187969925
+          ]
+        },
+        "pr_curve": [
+          {
+            "threshold": 0.7749173641204834,
+            "tp": 0,
+            "fp": 0,
+            "precision": 1.0,
+            "recall": 0.0
+          },
+          {
+            "threshold": 0.7749173641204835,
+            "tp": 0,
+            "fp": 1,
+            "precision": 0.0,
+            "recall": 0.0
+          },
+          {
+            "threshold": 0.7787290811538697,
+            "tp": 0,
+            "fp": 2,
+            "precision": 0.0,
+            "recall": 0.0
+          },
+          {
+            "threshold": 0.780804991722107,
+            "tp": 0,
+            "fp": 3,
+            "precision": 0.0,
+            "recall": 0.0
+          },
+          {
+            "threshold": 0.7818205356597902,
+            "tp": 0,
+            "fp": 4,
+            "precision": 0.0,
+            "recall": 0.0
+          },
+          {
+            "threshold": 0.7820839881896974,
+            "tp": 0,
+            "fp": 5,
+            "precision": 0.0,
+            "recall": 0.0
+          },
+          {
+            "threshold": 0.7833908796310426,
+            "tp": 0,
+            "fp": 6,
+            "precision": 0.0,
+            "recall": 0.0
+          },
+          {
+            "threshold": 0.7858451604843141,
+            "tp": 1,
+            "fp": 6,
+            "precision": 0.14285714285714285,
+            "recall": 0.14285714285714285
+          },
+          {
+            "threshold": 0.7871456146240235,
+            "tp": 1,
+            "fp": 7,
+            "precision": 0.125,
+            "recall": 0.14285714285714285
+          },
+          {
+            "threshold": 0.7881615161895753,
+            "tp": 1,
+            "fp": 8,
+            "precision": 0.1111111111111111,
+            "recall": 0.14285714285714285
+          },
+          {
+            "threshold": 0.7893025875091554,
+            "tp": 1,
+            "fp": 9,
+            "precision": 0.1,
+            "recall": 0.14285714285714285
+          },
+          {
+            "threshold": 0.7903088331222535,
+            "tp": 1,
+            "fp": 10,
+            "precision": 0.09090909090909091,
+            "recall": 0.14285714285714285
+          },
+          {
+            "threshold": 0.7914894819259645,
+            "tp": 1,
+            "fp": 11,
+            "precision": 0.08333333333333333,
+            "recall": 0.14285714285714285
+          },
+          {
+            "threshold": 0.7917089462280275,
+            "tp": 1,
+            "fp": 12,
+            "precision": 0.07692307692307693,
+            "recall": 0.14285714285714285
+          },
+          {
+            "threshold": 0.7928707599639894,
+            "tp": 1,
+            "fp": 13,
+            "precision": 0.07142857142857142,
+            "recall": 0.14285714285714285
+          },
+          {
+            "threshold": 0.793890953063965,
+            "tp": 1,
+            "fp": 14,
+            "precision": 0.06666666666666667,
+            "recall": 0.14285714285714285
+          },
+          {
+            "threshold": 0.7942203283309938,
+            "tp": 1,
+            "fp": 15,
+            "precision": 0.0625,
+            "recall": 0.14285714285714285
+          },
+          {
+            "threshold": 0.7947274446487428,
+            "tp": 1,
+            "fp": 16,
+            "precision": 0.058823529411764705,
+            "recall": 0.14285714285714285
+          },
+          {
+            "threshold": 0.7966961860656739,
+            "tp": 1,
+            "fp": 17,
+            "precision": 0.05555555555555555,
+            "recall": 0.14285714285714285
+          },
+          {
+            "threshold": 0.7977536916732789,
+            "tp": 1,
+            "fp": 18,
+            "precision": 0.05263157894736842,
+            "recall": 0.14285714285714285
+          },
+          {
+            "threshold": 0.7988509535789491,
+            "tp": 1,
+            "fp": 19,
+            "precision": 0.05,
+            "recall": 0.14285714285714285
+          },
+          {
+            "threshold": 0.7989699244499208,
+            "tp": 2,
+            "fp": 19,
+            "precision": 0.09523809523809523,
+            "recall": 0.2857142857142857
+          },
+          {
+            "threshold": 0.7996615171432496,
+            "tp": 2,
+            "fp": 20,
+            "precision": 0.09090909090909091,
+            "recall": 0.2857142857142857
+          },
+          {
+            "threshold": 0.8001696467399598,
+            "tp": 3,
+            "fp": 20,
+            "precision": 0.13043478260869565,
+            "recall": 0.42857142857142855
+          },
+          {
+            "threshold": 0.8012438416481019,
+            "tp": 4,
+            "fp": 20,
+            "precision": 0.16666666666666666,
+            "recall": 0.5714285714285714
+          },
+          {
+            "threshold": 0.8012806773185731,
+            "tp": 4,
+            "fp": 21,
+            "precision": 0.16,
+            "recall": 0.5714285714285714
+          },
+          {
+            "threshold": 0.8033626675605775,
+            "tp": 5,
+            "fp": 21,
+            "precision": 0.19230769230769232,
+            "recall": 0.7142857142857143
+          },
+          {
+            "threshold": 0.8063955307006837,
+            "tp": 6,
+            "fp": 21,
+            "precision": 0.2222222222222222,
+            "recall": 0.8571428571428571
+          },
+          {
+            "threshold": 0.8097960948944093,
+            "tp": 7,
+            "fp": 21,
+            "precision": 0.25,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8099749088287355,
+            "tp": 7,
+            "fp": 22,
+            "precision": 0.2413793103448276,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.810068428516388,
+            "tp": 7,
+            "fp": 23,
+            "precision": 0.23333333333333334,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8102527856826783,
+            "tp": 7,
+            "fp": 24,
+            "precision": 0.22580645161290322,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8119124770164491,
+            "tp": 7,
+            "fp": 25,
+            "precision": 0.21875,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8135955333709718,
+            "tp": 7,
+            "fp": 26,
+            "precision": 0.21212121212121213,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8140095472335817,
+            "tp": 7,
+            "fp": 27,
+            "precision": 0.20588235294117646,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8154382705688478,
+            "tp": 7,
+            "fp": 28,
+            "precision": 0.2,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8204318284988404,
+            "tp": 7,
+            "fp": 29,
+            "precision": 0.19444444444444445,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8205932378768922,
+            "tp": 7,
+            "fp": 30,
+            "precision": 0.1891891891891892,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8207151293754579,
+            "tp": 7,
+            "fp": 31,
+            "precision": 0.18421052631578946,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8219326734542848,
+            "tp": 7,
+            "fp": 32,
+            "precision": 0.1794871794871795,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8269867897033693,
+            "tp": 7,
+            "fp": 33,
+            "precision": 0.175,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.835329294204712,
+            "tp": 7,
+            "fp": 34,
+            "precision": 0.17073170731707318,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8363472223281861,
+            "tp": 7,
+            "fp": 35,
+            "precision": 0.16666666666666666,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8534083366394044,
+            "tp": 7,
+            "fp": 36,
+            "precision": 0.16279069767441862,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8631460666656495,
+            "tp": 7,
+            "fp": 37,
+            "precision": 0.1590909090909091,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8692435026168824,
+            "tp": 7,
+            "fp": 38,
+            "precision": 0.15555555555555556,
+            "recall": 1.0
+          }
+        ],
+        "observed_best_threshold": {
+          "status": "descriptive-only",
+          "value": 0.8097960948944093,
+          "balanced_accuracy": 0.7236842105263158
+        }
+      }
+    },
+    "bge-m3": {
+      "hit_at_5": {
+        "value": 0.6842105263157895,
+        "ci": [
+          0.5263157894736842,
+          0.825
+        ],
+        "numerator": 26,
+        "denominator": 38
+      },
+      "citation_precision": {
+        "value": 0.8611111111111112,
+        "ci": [
+          0.7142857142857143,
+          0.9736842105263158
+        ],
+        "answer_count": 18,
+        "citation_count": 21,
+        "correct_citations": 17
+      },
+      "fixed_gate_abstention": {
+        "value": 1.0,
+        "ci": [
+          1.0,
+          1.0
+        ],
+        "numerator": 7,
+        "denominator": 7
+      },
+      "e2e_abstention": {
+        "value": 1.0,
+        "ci": [
+          1.0,
+          1.0
+        ],
+        "numerator": 7,
+        "denominator": 7
+      },
+      "slices": {
+        "mixed_qtype": {
+          "hit_at_5": {
+            "value": 0.9,
+            "ci": [
+              0.6666666666666666,
+              1.0
+            ],
+            "denominator": 10,
+            "numerator": 9
+          },
+          "citation_precision": {
+            "value": 0.8333333333333334,
+            "ci": [
+              0.5714285714285714,
+              1.0
+            ],
+            "denominator": 9,
+            "answer_count": 9,
+            "citation_count": 10,
+            "correct_citations": 8
+          },
+          "fixed_gate_abstention": {
+            "value": null,
+            "ci": null,
+            "denominator": 0,
+            "numerator": null
+          },
+          "e2e_abstention": {
+            "value": null,
+            "ci": null,
+            "denominator": 0,
+            "numerator": null
+          }
+        },
+        "evidence_language:en": {
+          "hit_at_5": {
+            "value": 0.6842105263157895,
+            "ci": [
+              0.5263157894736842,
+              0.825
+            ],
+            "denominator": 38,
+            "numerator": 26
+          },
+          "citation_precision": {
+            "value": 0.8611111111111112,
+            "ci": [
+              0.7142857142857143,
+              0.9736842105263158
+            ],
+            "denominator": 18,
+            "answer_count": 18,
+            "citation_count": 21,
+            "correct_citations": 17
+          },
+          "fixed_gate_abstention": {
+            "value": null,
+            "ci": null,
+            "denominator": 0,
+            "numerator": null
+          },
+          "e2e_abstention": {
+            "value": null,
+            "ci": null,
+            "denominator": 0,
+            "numerator": null
+          }
+        },
+        "evidence_language:none": {
+          "hit_at_5": {
+            "value": null,
+            "ci": null,
+            "denominator": 0,
+            "numerator": null
+          },
+          "citation_precision": {
+            "value": null,
+            "ci": null,
+            "denominator": 0,
+            "answer_count": 0,
+            "citation_count": 0,
+            "correct_citations": 0
+          },
+          "fixed_gate_abstention": {
+            "value": 1.0,
+            "ci": [
+              1.0,
+              1.0
+            ],
+            "denominator": 7,
+            "numerator": 7
+          },
+          "e2e_abstention": {
+            "value": 1.0,
+            "ci": [
+              1.0,
+              1.0
+            ],
+            "denominator": 7,
+            "numerator": 7
+          }
+        }
+      },
+      "sweep": {
+        "status": "descriptive-only",
+        "positive_class": "out-of-corpus",
+        "seed": 20261022,
+        "replications": 10000,
+        "n_out": 7,
+        "n_answerable": 38,
+        "locked_threshold": 0.5504866242408752,
+        "locked_gate": {
+          "tp": 7,
+          "fn": 0,
+          "tn": 23,
+          "fp": 15
+        },
+        "auroc": {
+          "value": 0.8947368421052632,
+          "ci": [
+            0.7871621621621622,
+            0.9761904761904762
+          ]
+        },
+        "pr_curve": [
+          {
+            "threshold": 0.47215574979782104,
+            "tp": 0,
+            "fp": 0,
+            "precision": 1.0,
+            "recall": 0.0
+          },
+          {
+            "threshold": 0.4721557497978211,
+            "tp": 1,
+            "fp": 0,
+            "precision": 1.0,
+            "recall": 0.14285714285714285
+          },
+          {
+            "threshold": 0.48214873671531683,
+            "tp": 1,
+            "fp": 1,
+            "precision": 0.5,
+            "recall": 0.14285714285714285
+          },
+          {
+            "threshold": 0.4886923432350159,
+            "tp": 2,
+            "fp": 1,
+            "precision": 0.6666666666666666,
+            "recall": 0.2857142857142857
+          },
+          {
+            "threshold": 0.4890665411949158,
+            "tp": 2,
+            "fp": 2,
+            "precision": 0.5,
+            "recall": 0.2857142857142857
+          },
+          {
+            "threshold": 0.5016831159591676,
+            "tp": 2,
+            "fp": 3,
+            "precision": 0.4,
+            "recall": 0.2857142857142857
+          },
+          {
+            "threshold": 0.5055932998657228,
+            "tp": 3,
+            "fp": 3,
+            "precision": 0.5,
+            "recall": 0.42857142857142855
+          },
+          {
+            "threshold": 0.5067102313041688,
+            "tp": 3,
+            "fp": 4,
+            "precision": 0.42857142857142855,
+            "recall": 0.42857142857142855
+          },
+          {
+            "threshold": 0.5137586593627931,
+            "tp": 3,
+            "fp": 5,
+            "precision": 0.375,
+            "recall": 0.42857142857142855
+          },
+          {
+            "threshold": 0.5141390562057496,
+            "tp": 4,
+            "fp": 5,
+            "precision": 0.4444444444444444,
+            "recall": 0.5714285714285714
+          },
+          {
+            "threshold": 0.5144487619400026,
+            "tp": 5,
+            "fp": 5,
+            "precision": 0.5,
+            "recall": 0.7142857142857143
+          },
+          {
+            "threshold": 0.5178900957107545,
+            "tp": 5,
+            "fp": 6,
+            "precision": 0.45454545454545453,
+            "recall": 0.7142857142857143
+          },
+          {
+            "threshold": 0.5196169614791871,
+            "tp": 6,
+            "fp": 6,
+            "precision": 0.5,
+            "recall": 0.8571428571428571
+          },
+          {
+            "threshold": 0.5203354954719545,
+            "tp": 6,
+            "fp": 7,
+            "precision": 0.46153846153846156,
+            "recall": 0.8571428571428571
+          },
+          {
+            "threshold": 0.5247210264205934,
+            "tp": 6,
+            "fp": 8,
+            "precision": 0.42857142857142855,
+            "recall": 0.8571428571428571
+          },
+          {
+            "threshold": 0.5248441696166993,
+            "tp": 7,
+            "fp": 8,
+            "precision": 0.4666666666666667,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.5258225202560426,
+            "tp": 7,
+            "fp": 9,
+            "precision": 0.4375,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.5355879664421083,
+            "tp": 7,
+            "fp": 10,
+            "precision": 0.4117647058823529,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.5360021591186525,
+            "tp": 7,
+            "fp": 11,
+            "precision": 0.3888888888888889,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.5370357036590577,
+            "tp": 7,
+            "fp": 12,
+            "precision": 0.3684210526315789,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.5412155985832215,
+            "tp": 7,
+            "fp": 13,
+            "precision": 0.35,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.5454713702201844,
+            "tp": 7,
+            "fp": 14,
+            "precision": 0.3333333333333333,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.548237979412079,
+            "tp": 7,
+            "fp": 15,
+            "precision": 0.3181818181818182,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.5520153641700746,
+            "tp": 7,
+            "fp": 16,
+            "precision": 0.30434782608695654,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.5550959110260011,
+            "tp": 7,
+            "fp": 17,
+            "precision": 0.2916666666666667,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.5552975535392762,
+            "tp": 7,
+            "fp": 18,
+            "precision": 0.28,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.5560046434402467,
+            "tp": 7,
+            "fp": 19,
+            "precision": 0.2692307692307692,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.5573405027389527,
+            "tp": 7,
+            "fp": 20,
+            "precision": 0.25925925925925924,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.5690383315086366,
+            "tp": 7,
+            "fp": 21,
+            "precision": 0.25,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.5695841908454896,
+            "tp": 7,
+            "fp": 22,
+            "precision": 0.2413793103448276,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.5717084407806398,
+            "tp": 7,
+            "fp": 23,
+            "precision": 0.23333333333333334,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.5754916071891786,
+            "tp": 7,
+            "fp": 24,
+            "precision": 0.22580645161290322,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.576454520225525,
+            "tp": 7,
+            "fp": 25,
+            "precision": 0.21875,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.5767592191696168,
+            "tp": 7,
+            "fp": 26,
+            "precision": 0.21212121212121213,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.5820494890213014,
+            "tp": 7,
+            "fp": 27,
+            "precision": 0.20588235294117646,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.582643747329712,
+            "tp": 7,
+            "fp": 28,
+            "precision": 0.2,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.5828574895858766,
+            "tp": 7,
+            "fp": 29,
+            "precision": 0.19444444444444445,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.5887726545333863,
+            "tp": 7,
+            "fp": 30,
+            "precision": 0.1891891891891892,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.6096297502517701,
+            "tp": 7,
+            "fp": 31,
+            "precision": 0.18421052631578946,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.6246309280395509,
+            "tp": 7,
+            "fp": 32,
+            "precision": 0.1794871794871795,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.6249101161956788,
+            "tp": 7,
+            "fp": 33,
+            "precision": 0.175,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.6393603086471559,
+            "tp": 7,
+            "fp": 34,
+            "precision": 0.17073170731707318,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.6458459496498109,
+            "tp": 7,
+            "fp": 35,
+            "precision": 0.16666666666666666,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.6569188237190248,
+            "tp": 7,
+            "fp": 36,
+            "precision": 0.16279069767441862,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.6635203957557679,
+            "tp": 7,
+            "fp": 37,
+            "precision": 0.1590909090909091,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.6687697172164918,
+            "tp": 7,
+            "fp": 38,
+            "precision": 0.15555555555555556,
+            "recall": 1.0
+          }
+        ],
+        "observed_best_threshold": {
+          "status": "descriptive-only",
+          "value": 0.5248441696166993,
+          "balanced_accuracy": 0.8947368421052632
+        }
+      }
+    }
+  },
+  "paired_differences": {
+    "e5-large|e5-base": {
+      "hit_at_5": {
+        "value": 0.13157894736842102,
+        "ci": [
+          -0.05086538461538424,
+          0.3157894736842105
+        ]
+      },
+      "citation_precision": {
+        "value": 0.04166666666666674,
+        "ci": [
+          -0.2556428571428569,
+          0.35
+        ]
+      },
+      "fixed_gate_abstention": {
+        "value": 0.2857142857142857,
+        "ci": [
+          0.0,
+          0.8
+        ]
+      },
+      "e2e_abstention": {
+        "value": 0.0,
+        "ci": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "e5-large|bge-m3": {
+      "hit_at_5": {
+        "value": -0.052631578947368474,
+        "ci": [
+          -0.2702702702702703,
+          0.17142857142857149
+        ]
+      },
+      "citation_precision": {
+        "value": -0.02777777777777779,
+        "ci": [
+          -0.28444493006992994,
+          0.22482057416267962
+        ]
+      },
+      "fixed_gate_abstention": {
+        "value": -0.1428571428571429,
+        "ci": [
+          -0.5714285714285714,
+          0.0
+        ]
+      },
+      "e2e_abstention": {
+        "value": 0.0,
+        "ci": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "e5-base|bge-m3": {
+      "hit_at_5": {
+        "value": -0.1842105263157895,
+        "ci": [
+          -0.43243243243243246,
+          0.07894736842105265
+        ]
+      },
+      "citation_precision": {
+        "value": -0.06944444444444453,
+        "ci": [
+          -0.39682539682539686,
+          0.16666666666666674
+        ]
+      },
+      "fixed_gate_abstention": {
+        "value": -0.4285714285714286,
+        "ci": [
+          -1.0,
+          0.0
+        ]
+      },
+      "e2e_abstention": {
+        "value": 0.0,
+        "ci": [
+          0.0,
+          0.0
+        ]
+      }
+    }
+  },
+  "winner_status": "inconclusive",
+  "set_version": "python-v2",
+  "set": {
+    "path": "data/eval/python/eval-set.python.v2.json",
+    "sha256": "94a4ec6e4f5c9ecfbf64681e05a314e1c35f47869247671543e1b5bedfc7604a",
+    "n_items": 45
+  },
+  "source_reports": {
+    "e5-large": {
+      "retrieval_only": {
+        "path": "data/eval/python/reports/v2/e5-large/2026-10-25-011006-858513-python-v2-retrieval-only.json",
+        "sha256": "b1703c5547e876095e4e1f7ef50eeede5a1e9d4d50241161054ccb341324669b",
+        "status": "complete",
+        "error_count": 0
+      },
+      "end_to_end": {
+        "path": "data/eval/python/reports/v2/e5-large/2026-10-25-024223-113813-python-v2-end-to-end.json",
+        "sha256": "230d28d3fd4b1cdcefb52a3b50c56ddd13074338a1caec786d268fcb60f448b3",
+        "status": "complete",
+        "error_count": 0
+      },
+      "model": {
+        "repository": "intfloat/multilingual-e5-large",
+        "revision_sha": "3d7cfbdacd47fdda877c5cd8a79fbcc4f2a574f3",
+        "license": "MIT"
+      },
+      "index": {
+        "chunk_sha256": "0b7afc4c24a6c34e10d797b9c2bab6ebd68f7c32636442c17eba280226d07649",
+        "settings_sha256": "7bc28f60d9ef826f12d8bd6465c750c6a1b3625c03d2621f5a009c452049e69b",
+        "index_sha256": "c199bbea962f4e6da47330b72b6f2df6bc4b3699cafbec751bc7cb0b6fde8077",
+        "dimension": 1024,
+        "count": 253,
+        "truncation_count": 134,
+        "ordered_ids_sha256": "d42c0b9dd0be5d4c42b23f7288ca68404c613ae0fadcbc87daaac15d235e80e5"
+      },
+      "locked_threshold": 0.808958888053894,
+      "calibration_sha256": "01eac2939b10b1a97e26f9c10309289df621176d2f4159f275d48f661b51a62c",
+      "e2e_reasons": []
+    },
+    "e5-base": {
+      "retrieval_only": {
+        "path": "data/eval/python/reports/v2/e5-base/2026-10-25-011037-537084-python-v2-retrieval-only.json",
+        "sha256": "79bf7a1e5fdec7560a2565c351667dfa872b88f333750afa264fe7805e34954d",
+        "status": "complete",
+        "error_count": 0
+      },
+      "end_to_end": {
+        "path": "data/eval/python/reports/v2/e5-base/2026-10-25-024441-877000-python-v2-end-to-end.json",
+        "sha256": "7d97a83c5cb9cd6d60013e8c03a1fca4b35c0a3d7101262a23c90f78f466b16d",
+        "status": "complete",
+        "error_count": 0
+      },
+      "model": {
+        "repository": "intfloat/multilingual-e5-base",
+        "revision_sha": "d128750597153bb5987e10b1c3493a34e5a4502a",
+        "license": "MIT"
+      },
+      "index": {
+        "chunk_sha256": "0b7afc4c24a6c34e10d797b9c2bab6ebd68f7c32636442c17eba280226d07649",
+        "settings_sha256": "7fafd9e2e4c1c09f2f2a37f2b4ec4c56e034d40020c930f3bbfbf83ec66338db",
+        "index_sha256": "a3240f6704816bd7ed61164a7d7933f3348badf93285ec8c7d74acc17dad5fc4",
+        "dimension": 768,
+        "count": 253,
+        "truncation_count": 134,
+        "ordered_ids_sha256": "d42c0b9dd0be5d4c42b23f7288ca68404c613ae0fadcbc87daaac15d235e80e5"
+      },
+      "locked_threshold": 0.8026493787765503,
+      "calibration_sha256": "defbe4d1aeadf87b43000985bb84389f9dcc067d50276d4c6902206bff08e555",
+      "e2e_reasons": []
+    },
+    "bge-m3": {
+      "retrieval_only": {
+        "path": "data/eval/python/reports/v2/bge-m3/2026-10-25-011114-840748-python-v2-retrieval-only.json",
+        "sha256": "6abf252036c726b49a915eda2e5016e0a3dbaa279791958771415d31654cad69",
+        "status": "complete",
+        "error_count": 0
+      },
+      "end_to_end": {
+        "path": "data/eval/python/reports/v2/bge-m3/2026-10-25-024723-172063-python-v2-end-to-end.json",
+        "sha256": "e65ff43fa477362ffe8dc7ff3393bbfe2d17a8a527cbd24d494787ddd6d84d5c",
+        "status": "complete",
+        "error_count": 0
+      },
+      "model": {
+        "repository": "BAAI/bge-m3",
+        "revision_sha": "5617a9f61b028005a4858fdac845db406aefb181",
+        "license": "MIT"
+      },
+      "index": {
+        "chunk_sha256": "0b7afc4c24a6c34e10d797b9c2bab6ebd68f7c32636442c17eba280226d07649",
+        "settings_sha256": "91d3f8e4882a5a90ae0128015d0d28bd141e7e007580f1c2305888ed86fe5927",
+        "index_sha256": "a16373bf201fc063d5f7fe148efaac37b8021950953e98bd433dabe8e62ee0e6",
+        "dimension": 1024,
+        "count": 253,
+        "truncation_count": 0,
+        "ordered_ids_sha256": "d42c0b9dd0be5d4c42b23f7288ca68404c613ae0fadcbc87daaac15d235e80e5"
+      },
+      "locked_threshold": 0.5504866242408752,
+      "calibration_sha256": "965f1c07ea0a9bb2a7396ca1dd542c990b6dc62f2369db74a89a9e3320d6b26a",
+      "e2e_reasons": []
+    }
+  },
+  "per_item": {
+    "e5-large": [
+      {
+        "item_id": "PY2-001",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-tutorial-introduction#s04-c01"
+        ],
+        "top5_ids": [
+          "pyref-tutorial-introduction#s04-c01",
+          "pyref-tutorial-introduction#s07-c02",
+          "pyref-library-functions#s02-c21",
+          "pyref-library-functions#s02-c13",
+          "pyref-library-stdtypes#s06-c01"
+        ],
+        "top1_score": 0.8023941516876221,
+        "hit": true,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-002",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-tutorial-introduction#s05-c02"
+        ],
+        "top5_ids": [
+          "pyref-tutorial-controlflow#s21-c01",
+          "pyref-tutorial-introduction#s07-c01",
+          "pyref-tutorial-controlflow#s09-c01",
+          "pyref-tutorial-controlflow#s18-c01",
+          "pyref-library-stdtypes#s06-c01"
+        ],
+        "top1_score": 0.80722975730896,
+        "hit": false,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-003",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-tutorial-controlflow#s12-c01"
+        ],
+        "top5_ids": [
+          "pyref-tutorial-controlflow#s15-c01",
+          "pyref-tutorial-controlflow#s19-c01",
+          "pyref-tutorial-controlflow#s21-c01",
+          "pyref-tutorial-controlflow#s12-c01",
+          "pyref-tutorial-controlflow#s20-c01"
+        ],
+        "top1_score": 0.8314454555511475,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-tutorial-controlflow#s12-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "PY2-004",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-tutorial-controlflow#s16-c01"
+        ],
+        "top5_ids": [
+          "pyref-tutorial-controlflow#s19-c01",
+          "pyref-tutorial-controlflow#s16-c01",
+          "pyref-tutorial-controlflow#s20-c01",
+          "pyref-tutorial-controlflow#s15-c01",
+          "pyref-tutorial-classes#s15-c01"
+        ],
+        "top1_score": 0.8176136612892151,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-tutorial-controlflow#s16-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "PY2-005",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-tutorial-controlflow#s17-c01"
+        ],
+        "top5_ids": [
+          "pyref-tutorial-controlflow#s16-c01",
+          "pyref-tutorial-controlflow#s20-c01",
+          "pyref-tutorial-controlflow#s14-c01",
+          "pyref-tutorial-controlflow#s19-c01",
+          "pyref-tutorial-controlflow#s18-c01"
+        ],
+        "top1_score": 0.7969008684158325,
+        "hit": false,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-006",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-tutorial-controlflow#s21-c01"
+        ],
+        "top5_ids": [
+          "pyref-tutorial-controlflow#s21-c01",
+          "pyref-tutorial-controlflow#s15-c01",
+          "pyref-library-functions#s02-c06",
+          "pyref-tutorial-controlflow#s19-c01",
+          "pyref-tutorial-classes#s04-c02"
+        ],
+        "top1_score": 0.8298989534378052,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-tutorial-controlflow#s21-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "PY2-007",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-tutorial-datastructures#s05-c01"
+        ],
+        "top5_ids": [
+          "pyref-tutorial-datastructures#s05-c01",
+          "pyref-tutorial-controlflow#s19-c01",
+          "pyref-tutorial-datastructures#s13-c01",
+          "pyref-tutorial-datastructures#s09-c01",
+          "pyref-tutorial-datastructures#s04-c01"
+        ],
+        "top1_score": 0.8208845853805542,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-tutorial-datastructures#s05-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "PY2-008",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-tutorial-datastructures#s10-c01"
+        ],
+        "top5_ids": [
+          "pyref-tutorial-controlflow#s16-c01",
+          "pyref-tutorial-controlflow#s19-c01",
+          "pyref-tutorial-controlflow#s20-c01",
+          "pyref-tutorial-introduction#s07-c02",
+          "pyref-tutorial-classes#s19-c01"
+        ],
+        "top1_score": 0.7960447072982788,
+        "hit": false,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-009",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-tutorial-datastructures#s11-c01"
+        ],
+        "top5_ids": [
+          "pyref-tutorial-datastructures#s06-c02",
+          "pyref-tutorial-datastructures#s07-c01",
+          "pyref-library-stdtypes#s41-c03",
+          "pyref-tutorial-datastructures#s06-c01",
+          "pyref-tutorial-datastructures#s13-c01"
+        ],
+        "top1_score": 0.7830009460449219,
+        "hit": false,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-010",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-tutorial-datastructures#s15-c01"
+        ],
+        "top5_ids": [
+          "pyref-tutorial-datastructures#s15-c01",
+          "pyref-library-stdtypes#s20-c01",
+          "pyref-tutorial-introduction#s07-c01",
+          "pyref-tutorial-datastructures#s13-c01",
+          "pyref-library-stdtypes#s05-c01"
+        ],
+        "top1_score": 0.7736233472824097,
+        "hit": true,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-011",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-tutorial-classes#s05-c01"
+        ],
+        "top5_ids": [
+          "pyref-tutorial-classes#s05-c01",
+          "pyref-tutorial-classes#s04-c02",
+          "pyref-tutorial-controlflow#s19-c01",
+          "pyref-tutorial-controlflow#s21-c01",
+          "pyref-library-functions#s02-c09"
+        ],
+        "top1_score": 0.8144353628158569,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-tutorial-classes#s04-c02",
+          "pyref-tutorial-classes#s05-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "PY2-012",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-tutorial-classes#s12-c01"
+        ],
+        "top5_ids": [
+          "pyref-tutorial-classes#s08-c01",
+          "pyref-tutorial-classes#s12-c01",
+          "pyref-tutorial-classes#s09-c01",
+          "pyref-tutorial-classes#s02-c01",
+          "pyref-library-stdtypes#s53-c01"
+        ],
+        "top1_score": 0.7997015714645386,
+        "hit": true,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-013",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-tutorial-classes#s15-c01"
+        ],
+        "top5_ids": [
+          "pyref-tutorial-classes#s15-c01",
+          "pyref-tutorial-classes#s14-c01",
+          "pyref-tutorial-classes#s12-c01",
+          "pyref-tutorial-classes#s04-c02",
+          "pyref-tutorial-classes#s06-c01"
+        ],
+        "top1_score": 0.8264199495315552,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-tutorial-classes#s15-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "PY2-014",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-tutorial-classes#s18-c01"
+        ],
+        "top5_ids": [
+          "pyref-tutorial-controlflow#s21-c01",
+          "pyref-tutorial-controlflow#s13-c01",
+          "pyref-tutorial-classes#s04-c02",
+          "pyref-library-stdtypes#s18-c01",
+          "pyref-tutorial-errors#s09-c01"
+        ],
+        "top1_score": 0.8160005211830139,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-library-stdtypes#s18-c01"
+        ],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-015",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-tutorial-errors#s07-c01"
+        ],
+        "top5_ids": [
+          "pyref-library-exceptions#s03-c01",
+          "pyref-library-exceptions#s09-c02",
+          "pyref-tutorial-controlflow#s15-c01",
+          "pyref-tutorial-errors#s12-c01",
+          "pyref-library-exceptions#s05-c01"
+        ],
+        "top1_score": 0.8233221173286438,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-library-exceptions#s03-c01"
+        ],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-016",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-tutorial-errors#s09-c01"
+        ],
+        "top5_ids": [
+          "pyref-tutorial-controlflow#s21-c01",
+          "pyref-library-functions#s02-c10",
+          "pyref-library-functions#s02-c16",
+          "pyref-tutorial-errors#s09-c01",
+          "pyref-tutorial-errors#s10-c01"
+        ],
+        "top1_score": 0.8116338849067688,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-tutorial-errors#s09-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "PY2-017",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-tutorial-errors#s11-c01"
+        ],
+        "top5_ids": [
+          "pyref-tutorial-errors#s11-c01",
+          "pyref-library-exceptions#s10-c01",
+          "pyref-library-exceptions#s09-c02",
+          "pyref-tutorial-errors#s12-c01",
+          "pyref-library-exceptions#s09-c01"
+        ],
+        "top1_score": 0.7961995601654053,
+        "hit": true,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-018",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-tutorial-inputoutput#s08-c01"
+        ],
+        "top5_ids": [
+          "pyref-library-stdtypes#s45-c01",
+          "pyref-tutorial-inputoutput#s08-c01",
+          "pyref-tutorial-errors#s10-c01",
+          "pyref-library-exceptions#s01-c01",
+          "pyref-library-exceptions#s07-c01"
+        ],
+        "top1_score": 0.7981253862380981,
+        "hit": true,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-019",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-tutorial-inputoutput#s09-c02"
+        ],
+        "top5_ids": [
+          "pyref-tutorial-inputoutput#s09-c02",
+          "pyref-library-stdtypes#s37-c02",
+          "pyref-library-stdtypes#s39-c01",
+          "pyref-tutorial-controlflow#s19-c01",
+          "pyref-library-stdtypes#s38-c04"
+        ],
+        "top1_score": 0.8200201988220215,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-tutorial-inputoutput#s09-c02"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "PY2-020",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-tutorial-inputoutput#s10-c01"
+        ],
+        "top5_ids": [
+          "pyref-tutorial-classes#s04-c02",
+          "pyref-tutorial-inputoutput#s10-c01",
+          "pyref-tutorial-datastructures#s12-c01",
+          "pyref-library-stdtypes#s34-c01",
+          "pyref-tutorial-controlflow#s09-c01"
+        ],
+        "top1_score": 0.7849398255348206,
+        "hit": true,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-021",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-library-functions#s02-c14"
+        ],
+        "top5_ids": [
+          "pyref-tutorial-controlflow#s21-c01",
+          "pyref-library-stdtypes#s18-c01",
+          "pyref-tutorial-introduction#s07-c01",
+          "pyref-library-stdtypes#s38-c05",
+          "pyref-tutorial-inputoutput#s01-c01"
+        ],
+        "top1_score": 0.8067781925201416,
+        "hit": false,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-022",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-library-functions#s02-c22"
+        ],
+        "top5_ids": [
+          "pyref-library-stdtypes#s07-c01",
+          "pyref-library-functions#s02-c23",
+          "pyref-library-stdtypes#s06-c01",
+          "pyref-tutorial-introduction#s07-c02",
+          "pyref-library-stdtypes#s41-c03"
+        ],
+        "top1_score": 0.7751561403274536,
+        "hit": false,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-023",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-library-functions#s02-c28"
+        ],
+        "top5_ids": [
+          "pyref-tutorial-controlflow#s21-c01",
+          "pyref-tutorial-datastructures#s15-c01",
+          "pyref-library-stdtypes#s38-c05",
+          "pyref-library-stdtypes#s39-c01",
+          "pyref-library-stdtypes#s28-c03"
+        ],
+        "top1_score": 0.7670265436172485,
+        "hit": false,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-024",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-library-stdtypes#s04-c01"
+        ],
+        "top5_ids": [
+          "pyref-tutorial-introduction#s07-c01",
+          "pyref-tutorial-inputoutput#s01-c01",
+          "pyref-library-stdtypes#s07-c01",
+          "pyref-tutorial-datastructures#s14-c01",
+          "pyref-tutorial-classes#s04-c02"
+        ],
+        "top1_score": 0.7873815298080444,
+        "hit": false,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-025",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-library-stdtypes#s20-c02"
+        ],
+        "top5_ids": [
+          "pyref-tutorial-datastructures#s07-c01",
+          "pyref-tutorial-datastructures#s02-c01",
+          "pyref-tutorial-classes#s05-c01",
+          "pyref-tutorial-classes#s15-c01",
+          "pyref-tutorial-controlflow#s21-c01"
+        ],
+        "top1_score": 0.8019176125526428,
+        "hit": false,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-026",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-library-stdtypes#s43-c01"
+        ],
+        "top5_ids": [
+          "pyref-library-stdtypes#s43-c01",
+          "pyref-library-stdtypes#s42-c03",
+          "pyref-library-stdtypes#s42-c04",
+          "pyref-tutorial-classes#s04-c02",
+          "pyref-tutorial-datastructures#s12-c01"
+        ],
+        "top1_score": 0.8197104930877686,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-library-stdtypes#s43-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "PY2-027",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-library-exceptions#s04-c01"
+        ],
+        "top5_ids": [
+          "pyref-library-exceptions#s04-c01",
+          "pyref-tutorial-classes#s14-c01",
+          "pyref-tutorial-errors#s05-c01",
+          "pyref-tutorial-errors#s11-c01",
+          "pyref-library-exceptions#s09-c01"
+        ],
+        "top1_score": 0.8024203777313232,
+        "hit": true,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-028",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-library-exceptions#s07-c01"
+        ],
+        "top5_ids": [
+          "pyref-library-exceptions#s07-c01",
+          "pyref-library-exceptions#s06-c03",
+          "pyref-library-exceptions#s06-c02",
+          "pyref-library-functions#s02-c20",
+          "pyref-library-exceptions#s10-c01"
+        ],
+        "top1_score": 0.7861728668212891,
+        "hit": true,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-029",
+        "qtype": "mixed",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-library-functions#s02-c01"
+        ],
+        "top5_ids": [
+          "pyref-library-stdtypes#s18-c01",
+          "pyref-library-functions#s02-c10",
+          "pyref-library-functions#s02-c17",
+          "pyref-library-stdtypes#s17-c01",
+          "pyref-library-stdtypes#s41-c03"
+        ],
+        "top1_score": 0.8242202997207642,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-030",
+        "qtype": "mixed",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-library-functions#s02-c07"
+        ],
+        "top5_ids": [
+          "pyref-library-stdtypes#s28-c03",
+          "pyref-tutorial-datastructures#s13-c01",
+          "pyref-tutorial-controlflow#s21-c01",
+          "pyref-tutorial-controlflow#s10-c01",
+          "pyref-library-functions#s02-c17"
+        ],
+        "top1_score": 0.8057872653007507,
+        "hit": false,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-031",
+        "qtype": "mixed",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-library-stdtypes#s42-c03"
+        ],
+        "top5_ids": [
+          "pyref-library-stdtypes#s42-c04",
+          "pyref-tutorial-datastructures#s12-c02",
+          "pyref-tutorial-datastructures#s12-c01",
+          "pyref-library-stdtypes#s42-c02",
+          "pyref-library-stdtypes#s42-c03"
+        ],
+        "top1_score": 0.8248406052589417,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-library-stdtypes#s42-c03"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "PY2-032",
+        "qtype": "mixed",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-library-stdtypes#s28-c06"
+        ],
+        "top5_ids": [
+          "pyref-library-stdtypes#s28-c06",
+          "pyref-library-stdtypes#s38-c05",
+          "pyref-tutorial-datastructures#s09-c01",
+          "pyref-library-stdtypes#s38-c06",
+          "pyref-library-stdtypes#s28-c09"
+        ],
+        "top1_score": 0.8538544178009033,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-library-stdtypes#s28-c06"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "PY2-033",
+        "qtype": "mixed",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-library-stdtypes#s36-c01"
+        ],
+        "top5_ids": [
+          "pyref-library-stdtypes#s38-c05",
+          "pyref-library-stdtypes#s37-c01",
+          "pyref-library-stdtypes#s36-c02",
+          "pyref-library-stdtypes#s64-c01",
+          "pyref-library-stdtypes#s40-c03"
+        ],
+        "top1_score": 0.7992566823959351,
+        "hit": false,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-034",
+        "qtype": "mixed",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-library-stdtypes#s40-c01"
+        ],
+        "top5_ids": [
+          "pyref-library-stdtypes#s40-c01",
+          "pyref-library-stdtypes#s35-c01",
+          "pyref-library-stdtypes#s40-c03",
+          "pyref-library-stdtypes#s40-c05",
+          "pyref-library-stdtypes#s40-c02"
+        ],
+        "top1_score": 0.8397681713104248,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-library-stdtypes#s40-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "PY2-035",
+        "qtype": "mixed",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-library-stdtypes#s25-c01"
+        ],
+        "top5_ids": [
+          "pyref-library-stdtypes#s25-c02",
+          "pyref-library-stdtypes#s25-c01",
+          "pyref-tutorial-controlflow#s21-c01",
+          "pyref-library-stdtypes#s05-c01",
+          "pyref-tutorial-controlflow#s09-c01"
+        ],
+        "top1_score": 0.8575147986412048,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-library-stdtypes#s25-c02",
+          "pyref-library-stdtypes#s25-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "PY2-036",
+        "qtype": "mixed",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-library-exceptions#s09-c01"
+        ],
+        "top5_ids": [
+          "pyref-library-exceptions#s09-c02",
+          "pyref-tutorial-errors#s04-c01",
+          "pyref-tutorial-errors#s11-c01",
+          "pyref-library-exceptions#s09-c01",
+          "pyref-library-exceptions#s10-c01"
+        ],
+        "top1_score": 0.8326352834701538,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-library-exceptions#s09-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "PY2-037",
+        "qtype": "mixed",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-library-stdtypes#s12-c01"
+        ],
+        "top5_ids": [
+          "pyref-library-stdtypes#s12-c01",
+          "pyref-library-functions#s02-c14",
+          "pyref-library-stdtypes#s03-c01",
+          "pyref-library-stdtypes#s06-c01",
+          "pyref-library-functions#s02-c13"
+        ],
+        "top1_score": 0.845856785774231,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-library-stdtypes#s12-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "PY2-038",
+        "qtype": "mixed",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-library-stdtypes#s28-c09"
+        ],
+        "top5_ids": [
+          "pyref-library-stdtypes#s28-c09",
+          "pyref-library-stdtypes#s38-c06",
+          "pyref-library-stdtypes#s38-c05",
+          "pyref-library-stdtypes#s38-c08",
+          "pyref-tutorial-introduction#s05-c02"
+        ],
+        "top1_score": 0.8358094692230225,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-library-stdtypes#s28-c09"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "PY2-039",
+        "qtype": "out-of-corpus",
+        "evidence_language": "none",
+        "expected_source_ids": [],
+        "top5_ids": [
+          "pyref-tutorial-datastructures#s13-c01",
+          "pyref-library-stdtypes#s43-c01",
+          "pyref-library-stdtypes#s42-c04",
+          "pyref-tutorial-controlflow#s19-c01",
+          "pyref-tutorial-datastructures#s01-c01"
+        ],
+        "top1_score": 0.8083376884460449,
+        "hit": false,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-040",
+        "qtype": "out-of-corpus",
+        "evidence_language": "none",
+        "expected_source_ids": [],
+        "top5_ids": [
+          "pyref-tutorial-inputoutput#s03-c01",
+          "pyref-tutorial-classes#s19-c01",
+          "pyref-library-functions#s02-c11",
+          "pyref-tutorial-controlflow#s04-c01",
+          "pyref-tutorial-datastructures#s06-c02"
+        ],
+        "top1_score": 0.805328905582428,
+        "hit": false,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-041",
+        "qtype": "out-of-corpus",
+        "evidence_language": "none",
+        "expected_source_ids": [],
+        "top5_ids": [
+          "pyref-library-stdtypes#s18-c01",
+          "pyref-tutorial-inputoutput#s01-c01",
+          "pyref-library-stdtypes#s18-c02",
+          "pyref-tutorial-datastructures#s01-c01",
+          "pyref-tutorial-classes#s01-c01"
+        ],
+        "top1_score": 0.8036327958106995,
+        "hit": false,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-042",
+        "qtype": "out-of-corpus",
+        "evidence_language": "none",
+        "expected_source_ids": [],
+        "top5_ids": [
+          "pyref-library-stdtypes#s18-c01",
+          "pyref-tutorial-controlflow#s19-c01",
+          "pyref-tutorial-controlflow#s21-c01",
+          "pyref-tutorial-classes#s04-c02",
+          "pyref-tutorial-controlflow#s20-c01"
+        ],
+        "top1_score": 0.80350261926651,
+        "hit": false,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-043",
+        "qtype": "out-of-corpus",
+        "evidence_language": "none",
+        "expected_source_ids": [],
+        "top5_ids": [
+          "pyref-tutorial-errors#s11-c01",
+          "pyref-tutorial-errors#s12-c01",
+          "pyref-library-stdtypes#s45-c01",
+          "pyref-tutorial-errors#s01-c01",
+          "pyref-library-exceptions#s10-c01"
+        ],
+        "top1_score": 0.8124616146087646,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-044",
+        "qtype": "out-of-corpus",
+        "evidence_language": "none",
+        "expected_source_ids": [],
+        "top5_ids": [
+          "pyref-tutorial-errors#s01-c01",
+          "pyref-library-exceptions#s10-c01",
+          "pyref-library-stdtypes#s38-c03",
+          "pyref-tutorial-controlflow#s01-c01",
+          "pyref-library-exceptions#s01-c01"
+        ],
+        "top1_score": 0.7903751134872437,
+        "hit": false,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-045",
+        "qtype": "out-of-corpus",
+        "evidence_language": "none",
+        "expected_source_ids": [],
+        "top5_ids": [
+          "pyref-library-stdtypes#s18-c01",
+          "pyref-library-exceptions#s10-c01",
+          "pyref-tutorial-controlflow#s19-c01",
+          "pyref-library-stdtypes#s18-c02",
+          "pyref-tutorial-introduction#s03-c01"
+        ],
+        "top1_score": 0.7939167022705078,
+        "hit": false,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      }
+    ],
+    "e5-base": [
+      {
+        "item_id": "PY2-001",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-tutorial-introduction#s04-c01"
+        ],
+        "top5_ids": [
+          "pyref-tutorial-introduction#s07-c01",
+          "pyref-library-exceptions#s06-c05",
+          "pyref-library-stdtypes#s41-c03",
+          "pyref-library-stdtypes#s28-c01",
+          "pyref-tutorial-introduction#s07-c02"
+        ],
+        "top1_score": 0.78182053565979,
+        "hit": false,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-002",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-tutorial-introduction#s05-c02"
+        ],
+        "top5_ids": [
+          "pyref-library-stdtypes#s27-c01",
+          "pyref-library-functions#s02-c23",
+          "pyref-tutorial-errors#s05-c01",
+          "pyref-library-functions#s02-c22",
+          "pyref-tutorial-controlflow#s09-c01"
+        ],
+        "top1_score": 0.801280677318573,
+        "hit": false,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-003",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-tutorial-controlflow#s12-c01"
+        ],
+        "top5_ids": [
+          "pyref-library-stdtypes#s17-c01",
+          "pyref-library-exceptions#s03-c01",
+          "pyref-tutorial-classes#s05-c01",
+          "pyref-library-stdtypes#s18-c02",
+          "pyref-library-stdtypes#s18-c01"
+        ],
+        "top1_score": 0.8205932378768921,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-004",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-tutorial-controlflow#s16-c01"
+        ],
+        "top5_ids": [
+          "pyref-library-functions#s02-c22",
+          "pyref-tutorial-controlflow#s21-c01",
+          "pyref-tutorial-controlflow#s13-c01",
+          "pyref-tutorial-controlflow#s10-c01",
+          "pyref-library-exceptions#s06-c02"
+        ],
+        "top1_score": 0.7977536916732788,
+        "hit": false,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-005",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-tutorial-controlflow#s17-c01"
+        ],
+        "top5_ids": [
+          "pyref-library-stdtypes#s65-c01",
+          "pyref-library-stdtypes#s64-c01",
+          "pyref-tutorial-inputoutput#s04-c01",
+          "pyref-tutorial-controlflow#s16-c01",
+          "pyref-library-stdtypes#s17-c01"
+        ],
+        "top1_score": 0.7787290811538696,
+        "hit": false,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-006",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-tutorial-controlflow#s21-c01"
+        ],
+        "top5_ids": [
+          "pyref-tutorial-inputoutput#s04-c01",
+          "pyref-library-functions#s02-c23",
+          "pyref-library-stdtypes#s42-c01",
+          "pyref-library-functions#s02-c11",
+          "pyref-library-functions#s02-c22"
+        ],
+        "top1_score": 0.811912477016449,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-007",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-tutorial-datastructures#s05-c01"
+        ],
+        "top5_ids": [
+          "pyref-tutorial-datastructures#s05-c01",
+          "pyref-tutorial-datastructures#s03-c01",
+          "pyref-library-stdtypes#s41-c03",
+          "pyref-library-functions#s02-c21",
+          "pyref-library-stdtypes#s38-c06"
+        ],
+        "top1_score": 0.7871456146240234,
+        "hit": true,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-008",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-tutorial-datastructures#s10-c01"
+        ],
+        "top5_ids": [
+          "pyref-library-stdtypes#s41-c03",
+          "pyref-tutorial-controlflow#s16-c01",
+          "pyref-tutorial-controlflow#s23-c01",
+          "pyref-tutorial-introduction#s02-c01",
+          "pyref-library-stdtypes#s20-c03"
+        ],
+        "top1_score": 0.7928707599639893,
+        "hit": false,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-009",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-tutorial-datastructures#s11-c01"
+        ],
+        "top5_ids": [
+          "pyref-library-stdtypes#s41-c02",
+          "pyref-library-stdtypes#s41-c03",
+          "pyref-tutorial-datastructures#s07-c01",
+          "pyref-library-stdtypes#s20-c02",
+          "pyref-tutorial-datastructures#s08-c01"
+        ],
+        "top1_score": 0.7749173641204834,
+        "hit": false,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-010",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-tutorial-datastructures#s15-c01"
+        ],
+        "top5_ids": [
+          "pyref-tutorial-datastructures#s15-c01",
+          "pyref-tutorial-introduction#s07-c01",
+          "pyref-library-stdtypes#s20-c01",
+          "pyref-library-stdtypes#s05-c01",
+          "pyref-tutorial-introduction#s07-c02"
+        ],
+        "top1_score": 0.7833908796310425,
+        "hit": true,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-011",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-tutorial-classes#s05-c01"
+        ],
+        "top5_ids": [
+          "pyref-tutorial-classes#s05-c01",
+          "pyref-tutorial-classes#s04-c02",
+          "pyref-library-stdtypes#s18-c01",
+          "pyref-library-stdtypes#s17-c01",
+          "pyref-library-stdtypes#s18-c02"
+        ],
+        "top1_score": 0.8135955333709717,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-tutorial-classes#s04-c02"
+        ],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-012",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-tutorial-classes#s12-c01"
+        ],
+        "top5_ids": [
+          "pyref-tutorial-classes#s09-c01",
+          "pyref-tutorial-classes#s16-c01",
+          "pyref-library-functions#s02-c22",
+          "pyref-tutorial-inputoutput#s09-c01",
+          "pyref-tutorial-classes#s12-c01"
+        ],
+        "top1_score": 0.7820839881896973,
+        "hit": true,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-013",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-tutorial-classes#s15-c01"
+        ],
+        "top5_ids": [
+          "pyref-tutorial-classes#s15-c01",
+          "pyref-tutorial-classes#s14-c01",
+          "pyref-tutorial-classes#s02-c01",
+          "pyref-library-exceptions#s06-c03",
+          "pyref-library-stdtypes#s62-c01"
+        ],
+        "top1_score": 0.836347222328186,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-tutorial-classes#s15-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "PY2-014",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-tutorial-classes#s18-c01"
+        ],
+        "top5_ids": [
+          "pyref-tutorial-controlflow#s07-c01",
+          "pyref-library-stdtypes#s18-c01",
+          "pyref-tutorial-classes#s05-c01",
+          "pyref-library-stdtypes#s17-c01",
+          "pyref-library-functions#s02-c15"
+        ],
+        "top1_score": 0.7947274446487427,
+        "hit": false,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-015",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-tutorial-errors#s07-c01"
+        ],
+        "top5_ids": [
+          "pyref-library-exceptions#s03-c01",
+          "pyref-tutorial-errors#s07-c01",
+          "pyref-library-exceptions#s05-c01",
+          "pyref-library-exceptions#s06-c04",
+          "pyref-tutorial-errors#s12-c01"
+        ],
+        "top1_score": 0.8207151293754578,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-tutorial-errors#s07-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "PY2-016",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-tutorial-errors#s09-c01"
+        ],
+        "top5_ids": [
+          "pyref-library-stdtypes#s17-c01",
+          "pyref-tutorial-errors#s09-c01",
+          "pyref-library-stdtypes#s45-c01",
+          "pyref-library-stdtypes#s17-c02",
+          "pyref-library-stdtypes#s18-c01"
+        ],
+        "top1_score": 0.7942203283309937,
+        "hit": true,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-017",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-tutorial-errors#s11-c01"
+        ],
+        "top5_ids": [
+          "pyref-tutorial-errors#s11-c01",
+          "pyref-library-exceptions#s09-c02",
+          "pyref-library-exceptions#s09-c01",
+          "pyref-library-exceptions#s06-c04",
+          "pyref-library-stdtypes#s41-c03"
+        ],
+        "top1_score": 0.798850953578949,
+        "hit": true,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-018",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-tutorial-inputoutput#s08-c01"
+        ],
+        "top5_ids": [
+          "pyref-library-exceptions#s06-c01",
+          "pyref-library-exceptions#s10-c01",
+          "pyref-library-exceptions#s06-c02",
+          "pyref-library-exceptions#s07-c01",
+          "pyref-library-stdtypes#s41-c03"
+        ],
+        "top1_score": 0.7914894819259644,
+        "hit": false,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-019",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-tutorial-inputoutput#s09-c02"
+        ],
+        "top5_ids": [
+          "pyref-tutorial-inputoutput#s09-c02",
+          "pyref-library-stdtypes#s40-c05",
+          "pyref-tutorial-controlflow#s10-c01",
+          "pyref-library-stdtypes#s40-c04",
+          "pyref-library-stdtypes#s45-c01"
+        ],
+        "top1_score": 0.8140095472335815,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-tutorial-inputoutput#s09-c02"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "PY2-020",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-tutorial-inputoutput#s10-c01"
+        ],
+        "top5_ids": [
+          "pyref-library-functions#s02-c20",
+          "pyref-library-stdtypes#s41-c03",
+          "pyref-library-exceptions#s10-c01",
+          "pyref-tutorial-controlflow#s23-c01",
+          "pyref-tutorial-controlflow#s09-c02"
+        ],
+        "top1_score": 0.7808049917221069,
+        "hit": false,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-021",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-library-functions#s02-c14"
+        ],
+        "top5_ids": [
+          "pyref-library-stdtypes#s17-c01",
+          "pyref-library-stdtypes#s18-c02",
+          "pyref-library-functions#s02-c22",
+          "pyref-library-stdtypes#s41-c03",
+          "pyref-tutorial-classes#s17-c01"
+        ],
+        "top1_score": 0.7903088331222534,
+        "hit": false,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-022",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-library-functions#s02-c22"
+        ],
+        "top5_ids": [
+          "pyref-tutorial-introduction#s07-c01",
+          "pyref-library-functions#s02-c23",
+          "pyref-library-stdtypes#s11-c02",
+          "pyref-tutorial-controlflow#s06-c01",
+          "pyref-library-exceptions#s06-c05"
+        ],
+        "top1_score": 0.7938909530639648,
+        "hit": false,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-023",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-library-functions#s02-c28"
+        ],
+        "top5_ids": [
+          "pyref-library-stdtypes#s41-c03",
+          "pyref-library-stdtypes#s38-c03",
+          "pyref-library-exceptions#s06-c02",
+          "pyref-library-exceptions#s06-c05",
+          "pyref-library-stdtypes#s18-c02"
+        ],
+        "top1_score": 0.7881615161895752,
+        "hit": false,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-024",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-library-stdtypes#s04-c01"
+        ],
+        "top5_ids": [
+          "pyref-tutorial-datastructures#s14-c01",
+          "pyref-library-stdtypes#s45-c01",
+          "pyref-library-functions#s02-c02",
+          "pyref-library-functions#s02-c13",
+          "pyref-library-functions#s02-c20"
+        ],
+        "top1_score": 0.7893025875091553,
+        "hit": false,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-025",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-library-stdtypes#s20-c02"
+        ],
+        "top5_ids": [
+          "pyref-tutorial-controlflow#s02-c01",
+          "pyref-tutorial-classes#s05-c01",
+          "pyref-tutorial-controlflow#s11-c01",
+          "pyref-library-stdtypes#s41-c03",
+          "pyref-library-stdtypes#s41-c01"
+        ],
+        "top1_score": 0.8100684285163879,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-026",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-library-stdtypes#s43-c01"
+        ],
+        "top5_ids": [
+          "pyref-library-stdtypes#s43-c01",
+          "pyref-library-stdtypes#s42-c03",
+          "pyref-library-exceptions#s03-c01",
+          "pyref-tutorial-classes#s04-c02",
+          "pyref-library-stdtypes#s42-c01"
+        ],
+        "top1_score": 0.7966961860656738,
+        "hit": true,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-027",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-library-exceptions#s04-c01"
+        ],
+        "top5_ids": [
+          "pyref-library-exceptions#s04-c01",
+          "pyref-tutorial-errors#s05-c01",
+          "pyref-library-exceptions#s06-c01",
+          "pyref-library-exceptions#s06-c02",
+          "pyref-library-exceptions#s05-c01"
+        ],
+        "top1_score": 0.7996615171432495,
+        "hit": true,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-028",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-library-exceptions#s07-c01"
+        ],
+        "top5_ids": [
+          "pyref-library-exceptions#s10-c01",
+          "pyref-library-exceptions#s07-c01",
+          "pyref-library-exceptions#s06-c03",
+          "pyref-library-exceptions#s06-c05",
+          "pyref-tutorial-errors#s11-c01"
+        ],
+        "top1_score": 0.8099749088287354,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-library-exceptions#s07-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "PY2-029",
+        "qtype": "mixed",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-library-functions#s02-c01"
+        ],
+        "top5_ids": [
+          "pyref-library-stdtypes#s18-c02",
+          "pyref-library-functions#s02-c01",
+          "pyref-library-stdtypes#s17-c01",
+          "pyref-library-functions#s02-c15",
+          "pyref-library-functions#s02-c10"
+        ],
+        "top1_score": 0.8219326734542847,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-library-functions#s02-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "PY2-030",
+        "qtype": "mixed",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-library-functions#s02-c07"
+        ],
+        "top5_ids": [
+          "pyref-library-stdtypes#s08-c02",
+          "pyref-library-stdtypes#s41-c03",
+          "pyref-library-stdtypes#s20-c03",
+          "pyref-library-stdtypes#s38-c03",
+          "pyref-tutorial-controlflow#s05-c01"
+        ],
+        "top1_score": 0.7917089462280273,
+        "hit": false,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-031",
+        "qtype": "mixed",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-library-stdtypes#s42-c03"
+        ],
+        "top5_ids": [
+          "pyref-library-stdtypes#s42-c04",
+          "pyref-tutorial-datastructures#s12-c01",
+          "pyref-tutorial-datastructures#s12-c02",
+          "pyref-library-stdtypes#s42-c02",
+          "pyref-library-stdtypes#s42-c01"
+        ],
+        "top1_score": 0.8154382705688477,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-032",
+        "qtype": "mixed",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-library-stdtypes#s28-c06"
+        ],
+        "top5_ids": [
+          "pyref-library-stdtypes#s28-c06",
+          "pyref-library-stdtypes#s28-c09",
+          "pyref-library-stdtypes#s38-c06",
+          "pyref-library-stdtypes#s38-c05",
+          "pyref-library-stdtypes#s28-c01"
+        ],
+        "top1_score": 0.8631460666656494,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-library-stdtypes#s28-c06"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "PY2-033",
+        "qtype": "mixed",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-library-stdtypes#s36-c01"
+        ],
+        "top5_ids": [
+          "pyref-library-stdtypes#s37-c01",
+          "pyref-library-stdtypes#s08-c02",
+          "pyref-library-stdtypes#s36-c02",
+          "pyref-library-stdtypes#s38-c06",
+          "pyref-library-stdtypes#s38-c09"
+        ],
+        "top1_score": 0.8102527856826782,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-034",
+        "qtype": "mixed",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-library-stdtypes#s40-c01"
+        ],
+        "top5_ids": [
+          "pyref-library-stdtypes#s40-c05",
+          "pyref-library-stdtypes#s40-c02",
+          "pyref-library-stdtypes#s40-c01",
+          "pyref-library-stdtypes#s38-c03",
+          "pyref-library-stdtypes#s40-c03"
+        ],
+        "top1_score": 0.8204318284988403,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-library-stdtypes#s40-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "PY2-035",
+        "qtype": "mixed",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-library-stdtypes#s25-c01"
+        ],
+        "top5_ids": [
+          "pyref-library-stdtypes#s25-c02",
+          "pyref-library-stdtypes#s25-c01",
+          "pyref-tutorial-controlflow#s06-c01",
+          "pyref-library-stdtypes#s20-c03",
+          "pyref-tutorial-controlflow#s05-c01"
+        ],
+        "top1_score": 0.8534083366394043,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-library-stdtypes#s25-c02",
+          "pyref-tutorial-controlflow#s05-c01"
+        ],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-036",
+        "qtype": "mixed",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-library-exceptions#s09-c01"
+        ],
+        "top5_ids": [
+          "pyref-library-exceptions#s09-c02",
+          "pyref-tutorial-errors#s11-c01",
+          "pyref-library-exceptions#s09-c01",
+          "pyref-tutorial-errors#s09-c01",
+          "pyref-library-exceptions#s06-c02"
+        ],
+        "top1_score": 0.8353292942047119,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-library-exceptions#s09-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "PY2-037",
+        "qtype": "mixed",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-library-stdtypes#s12-c01"
+        ],
+        "top5_ids": [
+          "pyref-library-stdtypes#s12-c01",
+          "pyref-library-functions#s02-c02",
+          "pyref-library-functions#s02-c14",
+          "pyref-tutorial-introduction#s07-c01",
+          "pyref-library-stdtypes#s03-c01"
+        ],
+        "top1_score": 0.8692435026168823,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-library-stdtypes#s12-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "PY2-038",
+        "qtype": "mixed",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-library-stdtypes#s28-c09"
+        ],
+        "top5_ids": [
+          "pyref-tutorial-inputoutput#s09-c01",
+          "pyref-library-stdtypes#s28-c09",
+          "pyref-library-stdtypes#s28-c08",
+          "pyref-library-stdtypes#s38-c08",
+          "pyref-library-stdtypes#s38-c06"
+        ],
+        "top1_score": 0.8269867897033691,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-library-stdtypes#s28-c08",
+          "pyref-library-stdtypes#s28-c09"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "PY2-039",
+        "qtype": "out-of-corpus",
+        "evidence_language": "none",
+        "expected_source_ids": [],
+        "top5_ids": [
+          "pyref-library-stdtypes#s28-c06",
+          "pyref-library-stdtypes#s42-c03",
+          "pyref-library-stdtypes#s41-c03",
+          "pyref-library-stdtypes#s43-c01",
+          "pyref-library-stdtypes#s38-c04"
+        ],
+        "top1_score": 0.7989699244499207,
+        "hit": false,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-040",
+        "qtype": "out-of-corpus",
+        "evidence_language": "none",
+        "expected_source_ids": [],
+        "top5_ids": [
+          "pyref-tutorial-introduction#s06-c01",
+          "pyref-tutorial-controlflow#s04-c01",
+          "pyref-tutorial-introduction#s05-c03",
+          "pyref-library-stdtypes#s41-c03",
+          "pyref-library-stdtypes#s26-c01"
+        ],
+        "top1_score": 0.8012438416481018,
+        "hit": false,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-041",
+        "qtype": "out-of-corpus",
+        "evidence_language": "none",
+        "expected_source_ids": [],
+        "top5_ids": [
+          "pyref-library-stdtypes#s17-c01",
+          "pyref-library-stdtypes#s18-c02",
+          "pyref-library-functions#s02-c26",
+          "pyref-library-stdtypes#s18-c01",
+          "pyref-library-exceptions#s09-c01"
+        ],
+        "top1_score": 0.8001696467399597,
+        "hit": false,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-042",
+        "qtype": "out-of-corpus",
+        "evidence_language": "none",
+        "expected_source_ids": [],
+        "top5_ids": [
+          "pyref-library-stdtypes#s41-c03",
+          "pyref-library-stdtypes#s18-c02",
+          "pyref-library-exceptions#s06-c04",
+          "pyref-library-stdtypes#s38-c04",
+          "pyref-library-stdtypes#s18-c01"
+        ],
+        "top1_score": 0.8063955307006836,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-043",
+        "qtype": "out-of-corpus",
+        "evidence_language": "none",
+        "expected_source_ids": [],
+        "top5_ids": [
+          "pyref-library-stdtypes#s41-c03",
+          "pyref-tutorial-errors#s07-c01",
+          "pyref-library-exceptions#s10-c01",
+          "pyref-library-stdtypes#s38-c07",
+          "pyref-library-stdtypes#s38-c03"
+        ],
+        "top1_score": 0.8097960948944092,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-044",
+        "qtype": "out-of-corpus",
+        "evidence_language": "none",
+        "expected_source_ids": [],
+        "top5_ids": [
+          "pyref-library-stdtypes#s38-c03",
+          "pyref-library-exceptions#s06-c04",
+          "pyref-library-exceptions#s06-c01",
+          "pyref-library-exceptions#s01-c01",
+          "pyref-library-exceptions#s10-c01"
+        ],
+        "top1_score": 0.8033626675605774,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-045",
+        "qtype": "out-of-corpus",
+        "evidence_language": "none",
+        "expected_source_ids": [],
+        "top5_ids": [
+          "pyref-library-stdtypes#s41-c03",
+          "pyref-library-exceptions#s06-c02",
+          "pyref-library-stdtypes#s18-c01",
+          "pyref-tutorial-introduction#s03-c01",
+          "pyref-library-stdtypes#s26-c01"
+        ],
+        "top1_score": 0.785845160484314,
+        "hit": false,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      }
+    ],
+    "bge-m3": [
+      {
+        "item_id": "PY2-001",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-tutorial-introduction#s04-c01"
+        ],
+        "top5_ids": [
+          "pyref-tutorial-introduction#s04-c01",
+          "pyref-library-stdtypes#s06-c01",
+          "pyref-library-stdtypes#s11-c01",
+          "pyref-library-stdtypes#s28-c09",
+          "pyref-library-stdtypes#s06-c02"
+        ],
+        "top1_score": 0.513758659362793,
+        "hit": true,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-002",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-tutorial-introduction#s05-c02"
+        ],
+        "top5_ids": [
+          "pyref-library-stdtypes#s36-c01",
+          "pyref-library-stdtypes#s33-c01",
+          "pyref-library-stdtypes#s27-c01",
+          "pyref-library-stdtypes#s28-c09",
+          "pyref-tutorial-controlflow#s21-c01"
+        ],
+        "top1_score": 0.5360021591186523,
+        "hit": false,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-003",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-tutorial-controlflow#s12-c01"
+        ],
+        "top5_ids": [
+          "pyref-library-stdtypes#s47-c02",
+          "pyref-tutorial-controlflow#s12-c01",
+          "pyref-library-stdtypes#s03-c01",
+          "pyref-library-stdtypes#s49-c01",
+          "pyref-tutorial-controlflow#s24-c01"
+        ],
+        "top1_score": 0.5203354954719543,
+        "hit": true,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-004",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-tutorial-controlflow#s16-c01"
+        ],
+        "top5_ids": [
+          "pyref-tutorial-controlflow#s09-c02",
+          "pyref-tutorial-controlflow#s16-c01",
+          "pyref-tutorial-classes#s12-c01",
+          "pyref-tutorial-classes#s03-c01",
+          "pyref-tutorial-controlflow#s20-c01"
+        ],
+        "top1_score": 0.5247210264205933,
+        "hit": true,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-005",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-tutorial-controlflow#s17-c01"
+        ],
+        "top5_ids": [
+          "pyref-tutorial-controlflow#s16-c01",
+          "pyref-tutorial-controlflow#s19-c01",
+          "pyref-tutorial-controlflow#s17-c01",
+          "pyref-tutorial-controlflow#s18-c01",
+          "pyref-library-functions#s02-c14"
+        ],
+        "top1_score": 0.5573405027389526,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-tutorial-controlflow#s17-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "PY2-006",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-tutorial-controlflow#s21-c01"
+        ],
+        "top5_ids": [
+          "pyref-tutorial-controlflow#s13-c01",
+          "pyref-tutorial-controlflow#s12-c01",
+          "pyref-tutorial-controlflow#s20-c01",
+          "pyref-library-functions#s02-c06",
+          "pyref-tutorial-controlflow#s21-c01"
+        ],
+        "top1_score": 0.5690383315086365,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-tutorial-controlflow#s21-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "PY2-007",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-tutorial-datastructures#s05-c01"
+        ],
+        "top5_ids": [
+          "pyref-tutorial-datastructures#s05-c01",
+          "pyref-tutorial-errors#s09-c01",
+          "pyref-tutorial-controlflow#s20-c01",
+          "pyref-library-stdtypes#s28-c08",
+          "pyref-tutorial-datastructures#s04-c01"
+        ],
+        "top1_score": 0.5178900957107544,
+        "hit": true,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-008",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-tutorial-datastructures#s10-c01"
+        ],
+        "top5_ids": [
+          "pyref-library-stdtypes#s24-c01",
+          "pyref-tutorial-datastructures#s10-c01",
+          "pyref-tutorial-controlflow#s16-c01",
+          "pyref-tutorial-controlflow#s20-c01",
+          "pyref-tutorial-controlflow#s17-c01"
+        ],
+        "top1_score": 0.5482379794120789,
+        "hit": true,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-009",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-tutorial-datastructures#s11-c01"
+        ],
+        "top5_ids": [
+          "pyref-tutorial-datastructures#s06-c02",
+          "pyref-tutorial-datastructures#s06-c01",
+          "pyref-tutorial-datastructures#s10-c01",
+          "pyref-library-stdtypes#s20-c02",
+          "pyref-tutorial-datastructures#s07-c01"
+        ],
+        "top1_score": 0.5717084407806396,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-010",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-tutorial-datastructures#s15-c01"
+        ],
+        "top5_ids": [
+          "pyref-tutorial-datastructures#s15-c01",
+          "pyref-tutorial-introduction#s07-c02",
+          "pyref-library-stdtypes#s05-c01",
+          "pyref-library-stdtypes#s20-c01",
+          "pyref-library-stdtypes#s28-c09"
+        ],
+        "top1_score": 0.4821487367153168,
+        "hit": true,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-011",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-tutorial-classes#s05-c01"
+        ],
+        "top5_ids": [
+          "pyref-tutorial-classes#s04-c01",
+          "pyref-tutorial-classes#s04-c02",
+          "pyref-tutorial-classes#s11-c01",
+          "pyref-library-functions#s02-c09",
+          "pyref-tutorial-classes#s15-c01"
+        ],
+        "top1_score": 0.5258225202560425,
+        "hit": false,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-012",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-tutorial-classes#s12-c01"
+        ],
+        "top5_ids": [
+          "pyref-tutorial-classes#s08-c01",
+          "pyref-tutorial-datastructures#s15-c01",
+          "pyref-library-stdtypes#s53-c01",
+          "pyref-tutorial-classes#s16-c01",
+          "pyref-tutorial-classes#s13-c01"
+        ],
+        "top1_score": 0.5767592191696167,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-013",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-tutorial-classes#s15-c01"
+        ],
+        "top5_ids": [
+          "pyref-tutorial-classes#s15-c01",
+          "pyref-tutorial-classes#s02-c01",
+          "pyref-tutorial-classes#s06-c01",
+          "pyref-tutorial-classes#s14-c01",
+          "pyref-tutorial-classes#s03-c01"
+        ],
+        "top1_score": 0.5826437473297119,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-tutorial-classes#s15-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "PY2-014",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-tutorial-classes#s18-c01"
+        ],
+        "top5_ids": [
+          "pyref-library-stdtypes#s60-c01",
+          "pyref-tutorial-controlflow#s13-c01",
+          "pyref-library-functions#s02-c28",
+          "pyref-tutorial-classes#s10-c01",
+          "pyref-tutorial-controlflow#s05-c01"
+        ],
+        "top1_score": 0.5520153641700745,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-015",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-tutorial-errors#s07-c01"
+        ],
+        "top5_ids": [
+          "pyref-tutorial-errors#s12-c01",
+          "pyref-library-exceptions#s06-c04",
+          "pyref-library-exceptions#s05-c01",
+          "pyref-library-exceptions#s06-c05",
+          "pyref-tutorial-errors#s06-c01"
+        ],
+        "top1_score": 0.5560046434402466,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-016",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-tutorial-errors#s09-c01"
+        ],
+        "top5_ids": [
+          "pyref-library-stdtypes#s20-c01",
+          "pyref-library-functions#s02-c29",
+          "pyref-library-functions#s02-c10",
+          "pyref-library-functions#s02-c15",
+          "pyref-library-functions#s02-c30"
+        ],
+        "top1_score": 0.5067102313041687,
+        "hit": false,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-017",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-tutorial-errors#s11-c01"
+        ],
+        "top5_ids": [
+          "pyref-tutorial-errors#s11-c01",
+          "pyref-library-exceptions#s09-c01",
+          "pyref-library-exceptions#s09-c02",
+          "pyref-tutorial-errors#s12-c01",
+          "pyref-library-exceptions#s06-c06"
+        ],
+        "top1_score": 0.6246309280395508,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-tutorial-errors#s11-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "PY2-018",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-tutorial-inputoutput#s08-c01"
+        ],
+        "top5_ids": [
+          "pyref-tutorial-errors#s07-c01",
+          "pyref-tutorial-inputoutput#s08-c01",
+          "pyref-tutorial-errors#s09-c01",
+          "pyref-tutorial-errors#s05-c02",
+          "pyref-library-exceptions#s06-c02"
+        ],
+        "top1_score": 0.5754916071891785,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-tutorial-inputoutput#s08-c01",
+          "pyref-tutorial-errors#s09-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "PY2-019",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-tutorial-inputoutput#s09-c02"
+        ],
+        "top5_ids": [
+          "pyref-tutorial-inputoutput#s09-c02",
+          "pyref-library-stdtypes#s36-c01",
+          "pyref-library-stdtypes#s63-c01",
+          "pyref-library-stdtypes#s64-c01",
+          "pyref-tutorial-inputoutput#s09-c01"
+        ],
+        "top1_score": 0.555095911026001,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-tutorial-inputoutput#s09-c02"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "PY2-020",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-tutorial-inputoutput#s10-c01"
+        ],
+        "top5_ids": [
+          "pyref-library-functions#s02-c09",
+          "pyref-library-stdtypes#s42-c01",
+          "pyref-library-stdtypes#s43-c01",
+          "pyref-tutorial-inputoutput#s08-c01",
+          "pyref-tutorial-datastructures#s12-c01"
+        ],
+        "top1_score": 0.5412155985832214,
+        "hit": false,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-021",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-library-functions#s02-c14"
+        ],
+        "top5_ids": [
+          "pyref-library-functions#s02-c02",
+          "pyref-library-functions#s02-c22",
+          "pyref-library-functions#s02-c17",
+          "pyref-library-functions#s02-c28",
+          "pyref-library-functions#s02-c03"
+        ],
+        "top1_score": 0.5016831159591675,
+        "hit": false,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-022",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-library-functions#s02-c22"
+        ],
+        "top5_ids": [
+          "pyref-library-stdtypes#s11-c02",
+          "pyref-tutorial-introduction#s04-c01",
+          "pyref-library-stdtypes#s08-c02",
+          "pyref-tutorial-introduction#s05-c02",
+          "pyref-library-stdtypes#s11-c01"
+        ],
+        "top1_score": 0.48906654119491577,
+        "hit": false,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-023",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-library-functions#s02-c28"
+        ],
+        "top5_ids": [
+          "pyref-library-functions#s02-c28",
+          "pyref-library-stdtypes#s38-c03",
+          "pyref-tutorial-introduction#s07-c01",
+          "pyref-library-stdtypes#s38-c02",
+          "pyref-library-stdtypes#s38-c05"
+        ],
+        "top1_score": 0.5454713702201843,
+        "hit": true,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-024",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-library-stdtypes#s04-c01"
+        ],
+        "top5_ids": [
+          "pyref-library-stdtypes#s12-c01",
+          "pyref-library-stdtypes#s04-c01",
+          "pyref-tutorial-datastructures#s14-c01",
+          "pyref-library-stdtypes#s03-c01",
+          "pyref-library-stdtypes#s07-c01"
+        ],
+        "top1_score": 0.5370357036590576,
+        "hit": true,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-025",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-library-stdtypes#s20-c02"
+        ],
+        "top5_ids": [
+          "pyref-library-stdtypes#s23-c01",
+          "pyref-library-stdtypes#s20-c02",
+          "pyref-tutorial-introduction#s06-c02",
+          "pyref-library-stdtypes#s20-c01",
+          "pyref-tutorial-datastructures#s03-c01"
+        ],
+        "top1_score": 0.5828574895858765,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-library-stdtypes#s20-c01",
+          "pyref-library-stdtypes#s20-c02"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "PY2-026",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-library-stdtypes#s43-c01"
+        ],
+        "top5_ids": [
+          "pyref-library-stdtypes#s42-c03",
+          "pyref-library-stdtypes#s43-c01",
+          "pyref-library-stdtypes#s42-c04",
+          "pyref-library-stdtypes#s42-c02",
+          "pyref-library-stdtypes#s42-c01"
+        ],
+        "top1_score": 0.5820494890213013,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-library-stdtypes#s43-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "PY2-027",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-library-exceptions#s04-c01"
+        ],
+        "top5_ids": [
+          "pyref-library-exceptions#s04-c01",
+          "pyref-library-exceptions#s09-c01",
+          "pyref-tutorial-errors#s11-c01",
+          "pyref-tutorial-errors#s05-c02",
+          "pyref-library-exceptions#s05-c01"
+        ],
+        "top1_score": 0.5695841908454895,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-library-exceptions#s04-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "PY2-028",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-library-exceptions#s07-c01"
+        ],
+        "top5_ids": [
+          "pyref-library-exceptions#s06-c03",
+          "pyref-tutorial-inputoutput#s08-c01",
+          "pyref-library-exceptions#s06-c06",
+          "pyref-library-functions#s02-c19",
+          "pyref-tutorial-errors#s10-c01"
+        ],
+        "top1_score": 0.5552975535392761,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-029",
+        "qtype": "mixed",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-library-functions#s02-c01"
+        ],
+        "top5_ids": [
+          "pyref-library-functions#s02-c17",
+          "pyref-library-stdtypes#s20-c02",
+          "pyref-library-functions#s02-c01",
+          "pyref-library-stdtypes#s16-c01",
+          "pyref-library-stdtypes#s03-c01"
+        ],
+        "top1_score": 0.5764545202255249,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-library-functions#s02-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "PY2-030",
+        "qtype": "mixed",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-library-functions#s02-c07"
+        ],
+        "top5_ids": [
+          "pyref-tutorial-introduction#s07-c02",
+          "pyref-tutorial-introduction#s07-c01",
+          "pyref-library-functions#s02-c24",
+          "pyref-tutorial-controlflow#s05-c01",
+          "pyref-library-stdtypes#s38-c03"
+        ],
+        "top1_score": 0.5355879664421082,
+        "hit": false,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-031",
+        "qtype": "mixed",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-library-stdtypes#s42-c03"
+        ],
+        "top5_ids": [
+          "pyref-tutorial-datastructures#s12-c02",
+          "pyref-library-stdtypes#s42-c04",
+          "pyref-library-stdtypes#s42-c03",
+          "pyref-library-stdtypes#s42-c02",
+          "pyref-library-stdtypes#s42-c01"
+        ],
+        "top1_score": 0.6249101161956787,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-library-stdtypes#s42-c03"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "PY2-032",
+        "qtype": "mixed",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-library-stdtypes#s28-c06"
+        ],
+        "top5_ids": [
+          "pyref-library-stdtypes#s28-c06",
+          "pyref-library-stdtypes#s28-c09",
+          "pyref-library-stdtypes#s28-c08",
+          "pyref-library-stdtypes#s28-c07",
+          "pyref-tutorial-datastructures#s09-c01"
+        ],
+        "top1_score": 0.5887726545333862,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-library-stdtypes#s28-c06"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "PY2-033",
+        "qtype": "mixed",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-library-stdtypes#s36-c01"
+        ],
+        "top5_ids": [
+          "pyref-library-stdtypes#s36-c01",
+          "pyref-library-stdtypes#s36-c02",
+          "pyref-library-stdtypes#s38-c07",
+          "pyref-library-stdtypes#s38-c08",
+          "pyref-library-stdtypes#s38-c06"
+        ],
+        "top1_score": 0.60962975025177,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-library-stdtypes#s36-c01",
+          "pyref-library-stdtypes#s38-c07"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "PY2-034",
+        "qtype": "mixed",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-library-stdtypes#s40-c01"
+        ],
+        "top5_ids": [
+          "pyref-library-stdtypes#s40-c01",
+          "pyref-library-stdtypes#s40-c02",
+          "pyref-library-stdtypes#s40-c05",
+          "pyref-library-stdtypes#s40-c03",
+          "pyref-library-stdtypes#s40-c04"
+        ],
+        "top1_score": 0.6569188237190247,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-library-stdtypes#s40-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "PY2-035",
+        "qtype": "mixed",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-library-stdtypes#s25-c01"
+        ],
+        "top5_ids": [
+          "pyref-library-stdtypes#s25-c01",
+          "pyref-library-stdtypes#s25-c02",
+          "pyref-tutorial-controlflow#s21-c01",
+          "pyref-library-stdtypes#s20-c03",
+          "pyref-library-stdtypes#s05-c01"
+        ],
+        "top1_score": 0.6458459496498108,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-library-stdtypes#s25-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "PY2-036",
+        "qtype": "mixed",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-library-exceptions#s09-c01"
+        ],
+        "top5_ids": [
+          "pyref-library-exceptions#s09-c02",
+          "pyref-library-exceptions#s09-c01",
+          "pyref-tutorial-errors#s11-c01",
+          "pyref-library-exceptions#s02-c01",
+          "pyref-library-exceptions#s10-c01"
+        ],
+        "top1_score": 0.6635203957557678,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-library-exceptions#s09-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "PY2-037",
+        "qtype": "mixed",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-library-stdtypes#s12-c01"
+        ],
+        "top5_ids": [
+          "pyref-library-stdtypes#s12-c01",
+          "pyref-library-stdtypes#s03-c01",
+          "pyref-library-functions#s02-c14",
+          "pyref-library-functions#s02-c02",
+          "pyref-library-stdtypes#s08-c01"
+        ],
+        "top1_score": 0.6687697172164917,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-library-stdtypes#s12-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "PY2-038",
+        "qtype": "mixed",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "pyref-library-stdtypes#s28-c09"
+        ],
+        "top5_ids": [
+          "pyref-library-stdtypes#s28-c09",
+          "pyref-library-stdtypes#s28-c08",
+          "pyref-tutorial-introduction#s05-c02",
+          "pyref-library-stdtypes#s28-c07",
+          "pyref-tutorial-errors#s04-c01"
+        ],
+        "top1_score": 0.6393603086471558,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-library-stdtypes#s28-c08"
+        ],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-039",
+        "qtype": "out-of-corpus",
+        "evidence_language": "none",
+        "expected_source_ids": [],
+        "top5_ids": [
+          "pyref-library-stdtypes#s43-c01",
+          "pyref-library-stdtypes#s42-c03",
+          "pyref-library-stdtypes#s42-c04",
+          "pyref-library-exceptions#s06-c02",
+          "pyref-tutorial-datastructures#s12-c02"
+        ],
+        "top1_score": 0.5141390562057495,
+        "hit": false,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-040",
+        "qtype": "out-of-corpus",
+        "evidence_language": "none",
+        "expected_source_ids": [],
+        "top5_ids": [
+          "pyref-tutorial-introduction#s06-c01",
+          "pyref-tutorial-datastructures#s03-c01",
+          "pyref-tutorial-errors#s12-c01",
+          "pyref-library-stdtypes#s24-c01",
+          "pyref-tutorial-controlflow#s04-c01"
+        ],
+        "top1_score": 0.48869234323501587,
+        "hit": false,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-041",
+        "qtype": "out-of-corpus",
+        "evidence_language": "none",
+        "expected_source_ids": [],
+        "top5_ids": [
+          "pyref-library-functions#s02-c22",
+          "pyref-tutorial-classes#s18-c01",
+          "pyref-library-stdtypes#s16-c01",
+          "pyref-library-stdtypes#s17-c01",
+          "pyref-library-stdtypes#s18-c01"
+        ],
+        "top1_score": 0.5144487619400024,
+        "hit": false,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-042",
+        "qtype": "out-of-corpus",
+        "evidence_language": "none",
+        "expected_source_ids": [],
+        "top5_ids": [
+          "pyref-library-functions#s02-c28",
+          "pyref-tutorial-classes#s04-c02",
+          "pyref-library-functions#s02-c04",
+          "pyref-tutorial-classes#s05-c01",
+          "pyref-library-functions#s02-c10"
+        ],
+        "top1_score": 0.5055932998657227,
+        "hit": false,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-043",
+        "qtype": "out-of-corpus",
+        "evidence_language": "none",
+        "expected_source_ids": [],
+        "top5_ids": [
+          "pyref-library-stdtypes#s20-c01",
+          "pyref-library-functions#s02-c14",
+          "pyref-library-stdtypes#s38-c03",
+          "pyref-library-functions#s02-c02",
+          "pyref-library-stdtypes#s43-c01"
+        ],
+        "top1_score": 0.5248441696166992,
+        "hit": false,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-044",
+        "qtype": "out-of-corpus",
+        "evidence_language": "none",
+        "expected_source_ids": [],
+        "top5_ids": [
+          "pyref-library-stdtypes#s20-c02",
+          "pyref-tutorial-controlflow#s01-c01",
+          "pyref-tutorial-introduction#s03-c01",
+          "pyref-tutorial-classes#s05-c01",
+          "pyref-library-stdtypes#s28-c01"
+        ],
+        "top1_score": 0.47215574979782104,
+        "hit": false,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "PY2-045",
+        "qtype": "out-of-corpus",
+        "evidence_language": "none",
+        "expected_source_ids": [],
+        "top5_ids": [
+          "pyref-tutorial-introduction#s03-c01",
+          "pyref-library-functions#s02-c14",
+          "pyref-library-functions#s02-c24",
+          "pyref-tutorial-datastructures#s05-c01",
+          "pyref-tutorial-errors#s05-c01"
+        ],
+        "top1_score": 0.519616961479187,
+        "hit": false,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      }
+    ]
+  },
+  "limitations": [
+    "Seven out-of-corpus questions per language limit abstention inference.",
+    "The pooled-v1 gates are frozen; v2 sweep optima are descriptive only.",
+    "The E5 baseline saw v1; a stable API model ID cannot prove immutable weights."
+  ]
+}

@@ -4,8 +4,11 @@ from __future__ import annotations
 
 import math
 import random
+import hashlib
+import json
 from collections import Counter
 from itertools import combinations
+from pathlib import Path
 
 
 METRICS = ("hit_at_5", "citation_precision", "fixed_gate_abstention",
@@ -78,6 +81,11 @@ def compare_language(runs: dict[str, dict], items: list[dict], *,
 
     values = {}
     counts = {}
+    slices = {"mixed_qtype": [i for i, item in enumerate(items) if item["qtype"] == "mixed"]}
+    slices.update({f"evidence_language:{lang}": [i for i, item in enumerate(items)
+                                                if item.get("evidence_language") == lang]
+                   for lang in sorted({item.get("evidence_language") for item in items
+                                       if item.get("evidence_language")})})
     for model, (retrieved, answers) in rows_by_model.items():
         columns = {name: [] for name in METRICS}
         answered = cited = correct = 0
@@ -115,6 +123,8 @@ def compare_language(runs: dict[str, dict], items: list[dict], *,
     pairs = list(combinations(runs, 2))
     pair_confidence = 1 - 0.05 / len(pairs)
     boot = {model: {metric: [] for metric in METRICS} for model in runs}
+    slice_boot = {model: {name: {metric: [] for metric in METRICS} for name in slices}
+                  for model in runs}
     differences = {f"{a}|{b}": {metric: [] for metric in METRICS} for a, b in pairs}
     rng = random.Random(seed)
     for _ in range(replications):
@@ -125,6 +135,12 @@ def compare_language(runs: dict[str, dict], items: list[dict], *,
             for metric, value in estimates[model].items():
                 if value is not None:
                     boot[model][metric].append(value)
+            for name, positions in slices.items():
+                selected = [i for i in sample if i in positions]
+                for metric in METRICS:
+                    value = mean(values[model][metric], selected)
+                    if value is not None:
+                        slice_boot[model][name][metric].append(value)
         for a, b in pairs:
             for metric in METRICS:
                 left, right = estimates[a][metric], estimates[b][metric]
@@ -147,6 +163,27 @@ def compare_language(runs: dict[str, dict], items: list[dict], *,
                 summary[metric].update(numerator=sum(present) if present else None,
                                        denominator=len(present))
         metrics[model] = summary
+        summary["slices"] = {}
+        for name, positions in slices.items():
+            summary["slices"][name] = {}
+            for metric in METRICS:
+                column = values[model][metric]
+                present = [column[i] for i in positions if column[i] is not None]
+                entry = {"value": mean(column, positions),
+                         "ci": _interval(slice_boot[model][name][metric], 0.95),
+                         "denominator": len(present)}
+                if metric == "citation_precision":
+                    entry["answer_count"] = len(present)
+                    entry["citation_count"] = sum(
+                        len(rows_by_model[model][1][ids[i]]["cited_ids"])
+                        for i in positions if column[i] is not None)
+                    entry["correct_citations"] = sum(
+                        cid in items[i]["expected_source_ids"]
+                        for i in positions if column[i] is not None
+                        for cid in rows_by_model[model][1][ids[i]]["cited_ids"])
+                else:
+                    entry["numerator"] = sum(present) if present else None
+                summary["slices"][name][metric] = entry
         threshold = runs[model].get("calibration", {}).get("threshold")
         if threshold is not None:
             metrics[model]["sweep"] = threshold_sweep(
@@ -257,3 +294,211 @@ def threshold_sweep(rows: list[dict], *, locked_threshold: float,
             "locked_gate": {"tp": locked_tp, "fn": n_out - locked_tp,
                             "tn": n_answerable - locked_fp, "fp": locked_fp},
             "auroc": auc, "pr_curve": pr, "observed_best_threshold": best}
+
+
+LANGUAGES = ("c", "cpp", "python", "java")
+MODELS = ("e5-large", "e5-base", "bge-m3")
+
+
+def _read_report(root: Path, language: str, model: str, mode: str) -> tuple[dict, dict]:
+    folder = root / language / "reports" / "v2" / model
+    paths = list(folder.glob(f"*-{language}-v2-{mode}.json"))
+    if len(paths) != 1:
+        raise ValueError(f"expected one official {mode} report for {language}/{model}")
+    path = paths[0]
+    raw = path.read_bytes()
+    report = json.loads(raw.decode("utf-8"))
+    return report, {"path": path.as_posix(), "sha256": hashlib.sha256(raw).hexdigest(),
+                    "status": report["status"], "error_count": report["error_count"]}
+
+
+def build_official_comparison(root: Path, language: str, *,
+                              seed: int = 20261022, replications: int = 10_000) -> dict:
+    """Reproduce one pack's official evidence from the frozen v2 runs only."""
+    if language not in LANGUAGES:
+        raise ValueError("unknown comparison language")
+    set_path = root / language / f"eval-set.{language}.v2.json"
+    raw = set_path.read_bytes()
+    spec = json.loads(raw.decode("utf-8"))
+    if spec["version"] != f"{language}-v2" or spec["pack_id"] != language:
+        raise ValueError("v2 set identity mismatch")
+    set_hash = hashlib.sha256(raw).hexdigest()
+    items = spec["items"]
+    by_id = {item["item_id"]: item for item in items}
+    if len(by_id) != len(items):
+        raise ValueError("duplicate v2 item ID")
+    runs, sources, per_item = {}, {}, {}
+    for model in MODELS:
+        retrieval, retrieval_source = _read_report(root, language, model, "retrieval-only")
+        e2e, e2e_source = _read_report(root, language, model, "end-to-end")
+        for mode, report in (("retrieval-only", retrieval), ("end-to-end", e2e)):
+            if (report["mode"] != mode or report["model_key"] != model or
+                    report["language_id"] != language or
+                    report["eval_set_version"] != spec["version"] or
+                    report["v2_sha256"] != set_hash or
+                    report["snapshot"] != spec["snapshot"] or
+                    report["calibration"]["model_key"] != model or
+                    report["calibration"]["revision_sha"] != report["model"]["revision_sha"]):
+                raise ValueError(f"report provenance mismatch: {language}/{model}/{mode}")
+        calibration_path = root / "model-comparison" / "calibration" / f"{model}.json"
+        frozen = json.loads(calibration_path.read_text(encoding="utf-8"))
+        if retrieval["calibration"] != frozen or e2e["calibration"] != frozen:
+            raise ValueError(f"pooled-v1 calibration mismatch: {language}/{model}")
+        if (retrieval["status"] != "complete" or retrieval["error_count"] or
+                retrieval["retrieval"]["status"] != "complete" or
+                retrieval["retrieval"]["error_count"] or
+                e2e["retrieval"]["status"] != "complete" or
+                e2e["retrieval"]["error_count"] or
+                retrieval["retrieval"]["rows"] != e2e["retrieval"]["rows"] or
+                retrieval["index"] != e2e["index"] or
+                retrieval["model"] != e2e["model"] or
+                retrieval["end_to_end"]["status"] != "not_run"):
+            raise ValueError(f"retrieval-only/E2E replay mismatch: {language}/{model}")
+        rows = _by_id(retrieval["retrieval"]["rows"], set(by_id), "retrieval")
+        for item_id, row in rows.items():
+            item = by_id[item_id]
+            if (row["qtype"] != item["qtype"] or
+                    row["hit"] != bool(set(row["top5_ids"][:5]) &
+                                       set(item["expected_source_ids"])) or
+                    row["fixed_gate_abstain"] !=
+                    (row["top1_score"] < frozen["threshold"])):
+                raise ValueError(f"per-item retrieval score mismatch: {item_id}/{model}")
+        complete = (e2e["status"] == e2e["end_to_end"]["status"] == "complete" and
+                    e2e["error_count"] == e2e["end_to_end"]["error_count"] == 0)
+        answers = _by_id(e2e["end_to_end"]["rows"], set(by_id), "end-to-end") if complete else {}
+        if complete:
+            if (not e2e["end_to_end"].get("expected_response_model") or
+                    not any(row.get("llm_metadata") for row in answers.values())):
+                raise ValueError(f"unverified E2E model identity: {language}/{model}")
+            for item_id, answer in answers.items():
+                meta = answer.get("llm_metadata")
+                if (answer["response_type"] not in ("answer", "abstain") or
+                        (answer["response_type"] == "abstain" and answer["cited_ids"]) or
+                        (answer["response_type"] == "answer" and not answer["cited_ids"]) or
+                        (meta is None and not (rows[item_id]["fixed_gate_abstain"] and
+                                               answer["response_type"] == "abstain")) or
+                        (meta is not None and (not meta.get("request_timestamp") or
+                                               not meta.get("prompt_sha256") or
+                                               not meta.get("provider") or
+                                               meta.get("temperature") != 0 or
+                                               meta.get("model") != e2e["end_to_end"]["expected_response_model"]))):
+                    raise ValueError(f"unverified E2E row: {item_id}/{model}")
+        elif e2e["end_to_end"]["status"] != "incomplete" or "rows" in e2e["end_to_end"]:
+            raise ValueError(f"partial E2E rows cannot enter official evidence: {language}/{model}")
+        runs[model] = {**retrieval, "status": e2e["status"],
+                       "end_to_end": e2e["end_to_end"]}
+        sources[model] = {"retrieval_only": retrieval_source, "end_to_end": e2e_source,
+                          "model": retrieval["model"], "index": retrieval["index"],
+                          "locked_threshold": frozen["threshold"],
+                          "calibration_sha256": hashlib.sha256(calibration_path.read_bytes()).hexdigest(),
+                          "e2e_reasons": e2e["end_to_end"].get("reasons", [])}
+        per_item[model] = [{"item_id": item["item_id"], "qtype": item["qtype"],
+                            "evidence_language": item["evidence_language"],
+                            "expected_source_ids": item["expected_source_ids"],
+                            "top5_ids": rows[item["item_id"]]["top5_ids"],
+                            "top1_score": rows[item["item_id"]]["top1_score"],
+                            "hit": rows[item["item_id"]]["hit"],
+                            "fixed_gate_abstain": rows[item["item_id"]]["fixed_gate_abstain"],
+                            "response_type": answers[item["item_id"]]["response_type"] if complete else None,
+                            "cited_ids": answers[item["item_id"]]["cited_ids"] if complete else None,
+                            "correct_citations": sum(cid in item["expected_source_ids"]
+                                                     for cid in answers[item["item_id"]]["cited_ids"])
+                            if complete else None} for item in items]
+    result = compare_language(runs, items, seed=seed, replications=replications)
+    return {**result, "set_version": spec["version"],
+            "set": {"path": set_path.as_posix(), "sha256": set_hash,
+                    "n_items": len(items)}, "source_reports": sources,
+            "per_item": per_item,
+            "limitations": ["Seven out-of-corpus questions per language limit abstention inference.",
+                            "The pooled-v1 gates are frozen; v2 sweep optima are descriptive only.",
+                            "The E5 baseline saw v1; a stable API model ID cannot prove immutable weights."]}
+
+
+def comparison_markdown(report: dict) -> str:
+    """Human-readable mirror of one language's versioned comparison JSON."""
+    def fmt(metric: dict) -> str:
+        if metric["value"] is None:
+            return "N/A"
+        ci = metric["ci"]
+        return f"{metric['value']:.3f} [{ci[0]:.3f}, {ci[1]:.3f}]"
+
+    lines = [f"# {report['language_id']} v2 embedding comparison", "",
+             f"Set: `{report['set']['path']}` (SHA-256 `{report['set']['sha256']}`; "
+             f"n={report['set']['n_items']}). Seed {report['bootstrap_seed']}, "
+             f"{report['replications']} paired resamples; 95% metric CIs, "
+             f"{report['pair_confidence']:.2%} Bonferroni pair CIs.", "",
+             "| Model | Hit@5 /38 (95% CI) | Citation precision (answered; citations) | "
+             "Fixed OOC /7 | E2E OOC /7 | Errors retrieval/E2E |",
+             "|---|---|---|---|---|---|"]
+    for model in MODELS:
+        summary = report["models"][model]
+        source = report["source_reports"][model]
+        hit = summary["hit_at_5"]
+        precision = summary["citation_precision"]
+        gate = summary["fixed_gate_abstention"]
+        e2e = summary["e2e_abstention"]
+        lines.append(f"| {model} | {hit['numerator']}/{hit['denominator']} {fmt(hit)} | "
+                     f"{precision['correct_citations']}/{precision['citation_count']} "
+                     f"({precision['answer_count']} answers) {fmt(precision)} | "
+                     f"{gate['numerator']}/{gate['denominator']} {fmt(gate)} | "
+                     f"{e2e['numerator']}/{e2e['denominator']} {fmt(e2e)} | "
+                     f"{source['retrieval_only']['error_count']}/"
+                     f"{source['end_to_end']['error_count']} |")
+    lines.extend(["", f"**Decision (this language only): {report['winner_status']}**", "",
+                  "Citation precision is a question-level mean over answered rows; "
+                  "citation counts are audit denominators, not the mean's denominator.", "",
+                  "## Paired model differences (98.33% CIs)", "",
+                  "| Pair (first minus second) | Hit@5 | Citation precision | Fixed OOC | E2E OOC |",
+                  "|---|---|---|---|---|"])
+    for pair, differences in report["paired_differences"].items():
+        lines.append("| " + pair.replace("|", " − ") + " | " +
+                     " | ".join(fmt(differences[key]) for key in METRICS) + " |")
+    lines.extend(["", "## Mixed and evidence-language slices (95% CIs)", "",
+                  "| Model / slice (n) | Hit@5 | Citation precision | Fixed OOC | E2E OOC |",
+                  "|---|---|---|---|---|"])
+    for model in MODELS:
+        for name, slice_metrics in report["models"][model]["slices"].items():
+            cells = [f"{fmt(slice_metrics[key])} (n={slice_metrics[key]['denominator']})"
+                     for key in METRICS]
+            lines.append(f"| {model} / {name} | " + " | ".join(cells) + " |")
+    lines.extend(["", "## Descriptive v2 threshold sensitivity (not calibration)", "",
+                  "| Model | Locked pooled-v1 gate | OOC-positive AUROC (95% CI) | "
+                  "Observed v2 best gate (descriptive only) |",
+                  "|---|---|---|---|"])
+    for model in MODELS:
+        sweep = report["models"][model]["sweep"]
+        lines.append(f"| {model} | {sweep['locked_threshold']:.6f} | "
+                     f"{fmt(sweep['auroc'])} (7 OOC / 38 answerable) | "
+                     f"{sweep['observed_best_threshold']['value']:.6f} |")
+    lines.extend(["", "## Sources and reproducibility", ""])
+    for model in MODELS:
+        source = report["source_reports"][model]
+        lines.append(f"- {model}: retrieval `{source['retrieval_only']['path']}` "
+                     f"(SHA-256 `{source['retrieval_only']['sha256']}`); E2E "
+                     f"`{source['end_to_end']['path']}` (SHA-256 "
+                     f"`{source['end_to_end']['sha256']}`); revision "
+                     f"`{source['model']['revision_sha']}`; "
+                     f"calibration SHA-256 `{source['calibration_sha256']}`. "
+                     f"E2E status {source['end_to_end']['status']}; "
+                     f"reasons: {', '.join(source['e2e_reasons']) or 'none'}.")
+    lines.extend(["", "Per-item scores, retrieval IDs, cited IDs, reference IDs and PR points "
+                  "are in the companion JSON; no global winner is inferred.", "",
+                  "## Limitations", ""])
+    lines.extend(f"- {limitation}" for limitation in report["limitations"])
+    return "\n".join(lines) + "\n"
+
+
+def write_comparisons(root: Path = Path("data/eval")) -> list[tuple[Path, Path]]:
+    """Validate all four packs before writing any comparison artifacts."""
+    reports = {lang: build_official_comparison(root, lang) for lang in LANGUAGES}
+    written = []
+    for lang, report in reports.items():
+        folder = root / lang / "reports" / "v2"
+        folder.mkdir(parents=True, exist_ok=True)
+        json_path, md_path = folder / "comparison.v2.json", folder / "comparison.v2.md"
+        json_path.write_bytes((json.dumps(report, ensure_ascii=False, indent=2) + "\n").encode("utf-8"))
+        md_path.write_bytes(comparison_markdown(report).encode("utf-8"))
+        assert json.loads(json_path.read_text(encoding="utf-8")) == report
+        assert md_path.read_bytes() == comparison_markdown(report).encode("utf-8")
+        written.append((json_path, md_path))
+    return written

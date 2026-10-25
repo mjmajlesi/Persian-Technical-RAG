@@ -1,0 +1,4711 @@
+{
+  "language_id": "cpp",
+  "bootstrap_seed": 20261022,
+  "replications": 10000,
+  "confidence": 0.95,
+  "pair_confidence": 0.9833333333333333,
+  "models": {
+    "e5-large": {
+      "hit_at_5": {
+        "value": 0.34210526315789475,
+        "ci": [
+          0.19444444444444445,
+          0.5
+        ],
+        "numerator": 13,
+        "denominator": 38
+      },
+      "citation_precision": {
+        "value": 0.75,
+        "ci": [
+          0.5,
+          0.9583333333333334
+        ],
+        "answer_count": 14,
+        "citation_count": 15,
+        "correct_citations": 11
+      },
+      "fixed_gate_abstention": {
+        "value": 0.0,
+        "ci": [
+          0.0,
+          0.0
+        ],
+        "numerator": 0,
+        "denominator": 7
+      },
+      "e2e_abstention": {
+        "value": 1.0,
+        "ci": [
+          1.0,
+          1.0
+        ],
+        "numerator": 7,
+        "denominator": 7
+      },
+      "slices": {
+        "mixed_qtype": {
+          "hit_at_5": {
+            "value": 0.5,
+            "ci": [
+              0.16666666666666666,
+              0.8181818181818182
+            ],
+            "denominator": 10,
+            "numerator": 5
+          },
+          "citation_precision": {
+            "value": 0.75,
+            "ci": [
+              0.3608766233766248,
+              1.0
+            ],
+            "denominator": 6,
+            "answer_count": 6,
+            "citation_count": 7,
+            "correct_citations": 5
+          },
+          "fixed_gate_abstention": {
+            "value": null,
+            "ci": null,
+            "denominator": 0,
+            "numerator": null
+          },
+          "e2e_abstention": {
+            "value": null,
+            "ci": null,
+            "denominator": 0,
+            "numerator": null
+          }
+        },
+        "evidence_language:en": {
+          "hit_at_5": {
+            "value": 0.3055555555555556,
+            "ci": [
+              0.16216216216216217,
+              0.4594594594594595
+            ],
+            "denominator": 36,
+            "numerator": 11
+          },
+          "citation_precision": {
+            "value": 0.7083333333333334,
+            "ci": [
+              0.4375,
+              0.95
+            ],
+            "denominator": 12,
+            "answer_count": 12,
+            "citation_count": 13,
+            "correct_citations": 9
+          },
+          "fixed_gate_abstention": {
+            "value": null,
+            "ci": null,
+            "denominator": 0,
+            "numerator": null
+          },
+          "e2e_abstention": {
+            "value": null,
+            "ci": null,
+            "denominator": 0,
+            "numerator": null
+          }
+        },
+        "evidence_language:mixed": {
+          "hit_at_5": {
+            "value": 1.0,
+            "ci": [
+              1.0,
+              1.0
+            ],
+            "denominator": 2,
+            "numerator": 2
+          },
+          "citation_precision": {
+            "value": 1.0,
+            "ci": [
+              1.0,
+              1.0
+            ],
+            "denominator": 2,
+            "answer_count": 2,
+            "citation_count": 2,
+            "correct_citations": 2
+          },
+          "fixed_gate_abstention": {
+            "value": null,
+            "ci": null,
+            "denominator": 0,
+            "numerator": null
+          },
+          "e2e_abstention": {
+            "value": null,
+            "ci": null,
+            "denominator": 0,
+            "numerator": null
+          }
+        },
+        "evidence_language:none": {
+          "hit_at_5": {
+            "value": null,
+            "ci": null,
+            "denominator": 0,
+            "numerator": null
+          },
+          "citation_precision": {
+            "value": null,
+            "ci": null,
+            "denominator": 0,
+            "answer_count": 0,
+            "citation_count": 0,
+            "correct_citations": 0
+          },
+          "fixed_gate_abstention": {
+            "value": 0.0,
+            "ci": [
+              0.0,
+              0.0
+            ],
+            "denominator": 7,
+            "numerator": 0
+          },
+          "e2e_abstention": {
+            "value": 1.0,
+            "ci": [
+              1.0,
+              1.0
+            ],
+            "denominator": 7,
+            "numerator": 7
+          }
+        }
+      },
+      "sweep": {
+        "status": "descriptive-only",
+        "positive_class": "out-of-corpus",
+        "seed": 20261022,
+        "replications": 10000,
+        "n_out": 7,
+        "n_answerable": 38,
+        "locked_threshold": 0.808958888053894,
+        "locked_gate": {
+          "tp": 0,
+          "fn": 7,
+          "tn": 35,
+          "fp": 3
+        },
+        "auroc": {
+          "value": 0.5789473684210527,
+          "ci": [
+            0.40601503759398494,
+            0.75
+          ]
+        },
+        "pr_curve": [
+          {
+            "threshold": 0.8013357520103455,
+            "tp": 0,
+            "fp": 0,
+            "precision": 1.0,
+            "recall": 0.0
+          },
+          {
+            "threshold": 0.8013357520103456,
+            "tp": 0,
+            "fp": 1,
+            "precision": 0.0,
+            "recall": 0.0
+          },
+          {
+            "threshold": 0.8066493272781373,
+            "tp": 0,
+            "fp": 2,
+            "precision": 0.0,
+            "recall": 0.0
+          },
+          {
+            "threshold": 0.8075531125068666,
+            "tp": 0,
+            "fp": 3,
+            "precision": 0.0,
+            "recall": 0.0
+          },
+          {
+            "threshold": 0.8140053749084474,
+            "tp": 0,
+            "fp": 4,
+            "precision": 0.0,
+            "recall": 0.0
+          },
+          {
+            "threshold": 0.8168632984161378,
+            "tp": 0,
+            "fp": 5,
+            "precision": 0.0,
+            "recall": 0.0
+          },
+          {
+            "threshold": 0.8173875212669374,
+            "tp": 0,
+            "fp": 6,
+            "precision": 0.0,
+            "recall": 0.0
+          },
+          {
+            "threshold": 0.8175880908966066,
+            "tp": 0,
+            "fp": 7,
+            "precision": 0.0,
+            "recall": 0.0
+          },
+          {
+            "threshold": 0.8202602267265321,
+            "tp": 0,
+            "fp": 8,
+            "precision": 0.0,
+            "recall": 0.0
+          },
+          {
+            "threshold": 0.8205290436744691,
+            "tp": 0,
+            "fp": 9,
+            "precision": 0.0,
+            "recall": 0.0
+          },
+          {
+            "threshold": 0.8205854892730714,
+            "tp": 1,
+            "fp": 9,
+            "precision": 0.1,
+            "recall": 0.14285714285714285
+          },
+          {
+            "threshold": 0.8220390081405641,
+            "tp": 1,
+            "fp": 10,
+            "precision": 0.09090909090909091,
+            "recall": 0.14285714285714285
+          },
+          {
+            "threshold": 0.8239616155624391,
+            "tp": 1,
+            "fp": 11,
+            "precision": 0.08333333333333333,
+            "recall": 0.14285714285714285
+          },
+          {
+            "threshold": 0.8248838186264039,
+            "tp": 1,
+            "fp": 12,
+            "precision": 0.07692307692307693,
+            "recall": 0.14285714285714285
+          },
+          {
+            "threshold": 0.8255341053009034,
+            "tp": 2,
+            "fp": 12,
+            "precision": 0.14285714285714285,
+            "recall": 0.2857142857142857
+          },
+          {
+            "threshold": 0.8259005546569825,
+            "tp": 2,
+            "fp": 13,
+            "precision": 0.13333333333333333,
+            "recall": 0.2857142857142857
+          },
+          {
+            "threshold": 0.826328992843628,
+            "tp": 2,
+            "fp": 14,
+            "precision": 0.125,
+            "recall": 0.2857142857142857
+          },
+          {
+            "threshold": 0.8291618824005128,
+            "tp": 3,
+            "fp": 14,
+            "precision": 0.17647058823529413,
+            "recall": 0.42857142857142855
+          },
+          {
+            "threshold": 0.829195261001587,
+            "tp": 4,
+            "fp": 14,
+            "precision": 0.2222222222222222,
+            "recall": 0.5714285714285714
+          },
+          {
+            "threshold": 0.8294353485107423,
+            "tp": 4,
+            "fp": 15,
+            "precision": 0.21052631578947367,
+            "recall": 0.5714285714285714
+          },
+          {
+            "threshold": 0.8296350240707399,
+            "tp": 4,
+            "fp": 16,
+            "precision": 0.2,
+            "recall": 0.5714285714285714
+          },
+          {
+            "threshold": 0.8298898935317994,
+            "tp": 4,
+            "fp": 17,
+            "precision": 0.19047619047619047,
+            "recall": 0.5714285714285714
+          },
+          {
+            "threshold": 0.8306358456611634,
+            "tp": 5,
+            "fp": 17,
+            "precision": 0.22727272727272727,
+            "recall": 0.7142857142857143
+          },
+          {
+            "threshold": 0.8311580419540406,
+            "tp": 5,
+            "fp": 18,
+            "precision": 0.21739130434782608,
+            "recall": 0.7142857142857143
+          },
+          {
+            "threshold": 0.8331234455108644,
+            "tp": 5,
+            "fp": 19,
+            "precision": 0.20833333333333334,
+            "recall": 0.7142857142857143
+          },
+          {
+            "threshold": 0.8332406282424928,
+            "tp": 5,
+            "fp": 20,
+            "precision": 0.2,
+            "recall": 0.7142857142857143
+          },
+          {
+            "threshold": 0.833587408065796,
+            "tp": 5,
+            "fp": 21,
+            "precision": 0.19230769230769232,
+            "recall": 0.7142857142857143
+          },
+          {
+            "threshold": 0.8336734771728517,
+            "tp": 5,
+            "fp": 22,
+            "precision": 0.18518518518518517,
+            "recall": 0.7142857142857143
+          },
+          {
+            "threshold": 0.8349517583847047,
+            "tp": 5,
+            "fp": 23,
+            "precision": 0.17857142857142858,
+            "recall": 0.7142857142857143
+          },
+          {
+            "threshold": 0.8370693922042848,
+            "tp": 6,
+            "fp": 23,
+            "precision": 0.20689655172413793,
+            "recall": 0.8571428571428571
+          },
+          {
+            "threshold": 0.837726652622223,
+            "tp": 7,
+            "fp": 23,
+            "precision": 0.23333333333333334,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8381599187850953,
+            "tp": 7,
+            "fp": 24,
+            "precision": 0.22580645161290322,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8393848538398744,
+            "tp": 7,
+            "fp": 25,
+            "precision": 0.21875,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8394051790237428,
+            "tp": 7,
+            "fp": 26,
+            "precision": 0.21212121212121213,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8398268222808839,
+            "tp": 7,
+            "fp": 27,
+            "precision": 0.20588235294117646,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8428068161010743,
+            "tp": 7,
+            "fp": 28,
+            "precision": 0.2,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8476556539535524,
+            "tp": 7,
+            "fp": 29,
+            "precision": 0.19444444444444445,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8481538295745851,
+            "tp": 7,
+            "fp": 30,
+            "precision": 0.1891891891891892,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8489986658096315,
+            "tp": 7,
+            "fp": 31,
+            "precision": 0.18421052631578946,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8494989275932313,
+            "tp": 7,
+            "fp": 32,
+            "precision": 0.1794871794871795,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8497095704078675,
+            "tp": 7,
+            "fp": 33,
+            "precision": 0.175,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8536998033523561,
+            "tp": 7,
+            "fp": 34,
+            "precision": 0.17073170731707318,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8583098649978639,
+            "tp": 7,
+            "fp": 35,
+            "precision": 0.16666666666666666,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8587319254875184,
+            "tp": 7,
+            "fp": 36,
+            "precision": 0.16279069767441862,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8602542877197267,
+            "tp": 7,
+            "fp": 37,
+            "precision": 0.1590909090909091,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8662303090095521,
+            "tp": 7,
+            "fp": 38,
+            "precision": 0.15555555555555556,
+            "recall": 1.0
+          }
+        ],
+        "observed_best_threshold": {
+          "status": "descriptive-only",
+          "value": 0.837726652622223,
+          "balanced_accuracy": 0.6973684210526316
+        }
+      }
+    },
+    "e5-base": {
+      "hit_at_5": {
+        "value": 0.4473684210526316,
+        "ci": [
+          0.2894736842105263,
+          0.6052631578947368
+        ],
+        "numerator": 17,
+        "denominator": 38
+      },
+      "citation_precision": {
+        "value": 0.9117647058823529,
+        "ci": [
+          0.7666666666666667,
+          1.0
+        ],
+        "answer_count": 17,
+        "citation_count": 18,
+        "correct_citations": 16
+      },
+      "fixed_gate_abstention": {
+        "value": 0.0,
+        "ci": [
+          0.0,
+          0.0
+        ],
+        "numerator": 0,
+        "denominator": 7
+      },
+      "e2e_abstention": {
+        "value": 1.0,
+        "ci": [
+          1.0,
+          1.0
+        ],
+        "numerator": 7,
+        "denominator": 7
+      },
+      "slices": {
+        "mixed_qtype": {
+          "hit_at_5": {
+            "value": 0.8,
+            "ci": [
+              0.5,
+              1.0
+            ],
+            "denominator": 10,
+            "numerator": 8
+          },
+          "citation_precision": {
+            "value": 0.8333333333333334,
+            "ci": [
+              0.5714285714285714,
+              1.0
+            ],
+            "denominator": 9,
+            "answer_count": 9,
+            "citation_count": 10,
+            "correct_citations": 8
+          },
+          "fixed_gate_abstention": {
+            "value": null,
+            "ci": null,
+            "denominator": 0,
+            "numerator": null
+          },
+          "e2e_abstention": {
+            "value": null,
+            "ci": null,
+            "denominator": 0,
+            "numerator": null
+          }
+        },
+        "evidence_language:en": {
+          "hit_at_5": {
+            "value": 0.4166666666666667,
+            "ci": [
+              0.2571428571428571,
+              0.5789473684210527
+            ],
+            "denominator": 36,
+            "numerator": 15
+          },
+          "citation_precision": {
+            "value": 0.9,
+            "ci": [
+              0.7333333333333333,
+              1.0
+            ],
+            "denominator": 15,
+            "answer_count": 15,
+            "citation_count": 16,
+            "correct_citations": 14
+          },
+          "fixed_gate_abstention": {
+            "value": null,
+            "ci": null,
+            "denominator": 0,
+            "numerator": null
+          },
+          "e2e_abstention": {
+            "value": null,
+            "ci": null,
+            "denominator": 0,
+            "numerator": null
+          }
+        },
+        "evidence_language:mixed": {
+          "hit_at_5": {
+            "value": 1.0,
+            "ci": [
+              1.0,
+              1.0
+            ],
+            "denominator": 2,
+            "numerator": 2
+          },
+          "citation_precision": {
+            "value": 1.0,
+            "ci": [
+              1.0,
+              1.0
+            ],
+            "denominator": 2,
+            "answer_count": 2,
+            "citation_count": 2,
+            "correct_citations": 2
+          },
+          "fixed_gate_abstention": {
+            "value": null,
+            "ci": null,
+            "denominator": 0,
+            "numerator": null
+          },
+          "e2e_abstention": {
+            "value": null,
+            "ci": null,
+            "denominator": 0,
+            "numerator": null
+          }
+        },
+        "evidence_language:none": {
+          "hit_at_5": {
+            "value": null,
+            "ci": null,
+            "denominator": 0,
+            "numerator": null
+          },
+          "citation_precision": {
+            "value": null,
+            "ci": null,
+            "denominator": 0,
+            "answer_count": 0,
+            "citation_count": 0,
+            "correct_citations": 0
+          },
+          "fixed_gate_abstention": {
+            "value": 0.0,
+            "ci": [
+              0.0,
+              0.0
+            ],
+            "denominator": 7,
+            "numerator": 0
+          },
+          "e2e_abstention": {
+            "value": 1.0,
+            "ci": [
+              1.0,
+              1.0
+            ],
+            "denominator": 7,
+            "numerator": 7
+          }
+        }
+      },
+      "sweep": {
+        "status": "descriptive-only",
+        "positive_class": "out-of-corpus",
+        "seed": 20261022,
+        "replications": 10000,
+        "n_out": 7,
+        "n_answerable": 38,
+        "locked_threshold": 0.8026493787765503,
+        "locked_gate": {
+          "tp": 0,
+          "fn": 7,
+          "tn": 37,
+          "fp": 1
+        },
+        "auroc": {
+          "value": 0.6766917293233082,
+          "ci": [
+            0.52,
+            0.8243243243243243
+          ]
+        },
+        "pr_curve": [
+          {
+            "threshold": 0.7954772710800171,
+            "tp": 0,
+            "fp": 0,
+            "precision": 1.0,
+            "recall": 0.0
+          },
+          {
+            "threshold": 0.7954772710800172,
+            "tp": 0,
+            "fp": 1,
+            "precision": 0.0,
+            "recall": 0.0
+          },
+          {
+            "threshold": 0.8066243529319764,
+            "tp": 0,
+            "fp": 2,
+            "precision": 0.0,
+            "recall": 0.0
+          },
+          {
+            "threshold": 0.8074439764022828,
+            "tp": 0,
+            "fp": 3,
+            "precision": 0.0,
+            "recall": 0.0
+          },
+          {
+            "threshold": 0.8116973638534547,
+            "tp": 0,
+            "fp": 4,
+            "precision": 0.0,
+            "recall": 0.0
+          },
+          {
+            "threshold": 0.8142231702804567,
+            "tp": 0,
+            "fp": 5,
+            "precision": 0.0,
+            "recall": 0.0
+          },
+          {
+            "threshold": 0.8143639564514161,
+            "tp": 0,
+            "fp": 6,
+            "precision": 0.0,
+            "recall": 0.0
+          },
+          {
+            "threshold": 0.8176098465919496,
+            "tp": 0,
+            "fp": 7,
+            "precision": 0.0,
+            "recall": 0.0
+          },
+          {
+            "threshold": 0.8179932236671449,
+            "tp": 1,
+            "fp": 7,
+            "precision": 0.125,
+            "recall": 0.14285714285714285
+          },
+          {
+            "threshold": 0.8185156583786012,
+            "tp": 2,
+            "fp": 7,
+            "precision": 0.2222222222222222,
+            "recall": 0.2857142857142857
+          },
+          {
+            "threshold": 0.8206233382225038,
+            "tp": 2,
+            "fp": 8,
+            "precision": 0.2,
+            "recall": 0.2857142857142857
+          },
+          {
+            "threshold": 0.820680856704712,
+            "tp": 2,
+            "fp": 9,
+            "precision": 0.18181818181818182,
+            "recall": 0.2857142857142857
+          },
+          {
+            "threshold": 0.8207770586013795,
+            "tp": 2,
+            "fp": 10,
+            "precision": 0.16666666666666666,
+            "recall": 0.2857142857142857
+          },
+          {
+            "threshold": 0.8217923641204835,
+            "tp": 2,
+            "fp": 11,
+            "precision": 0.15384615384615385,
+            "recall": 0.2857142857142857
+          },
+          {
+            "threshold": 0.8219710588455201,
+            "tp": 2,
+            "fp": 12,
+            "precision": 0.14285714285714285,
+            "recall": 0.2857142857142857
+          },
+          {
+            "threshold": 0.8224264383316041,
+            "tp": 3,
+            "fp": 12,
+            "precision": 0.2,
+            "recall": 0.42857142857142855
+          },
+          {
+            "threshold": 0.822585701942444,
+            "tp": 3,
+            "fp": 13,
+            "precision": 0.1875,
+            "recall": 0.42857142857142855
+          },
+          {
+            "threshold": 0.8232240676879884,
+            "tp": 4,
+            "fp": 13,
+            "precision": 0.23529411764705882,
+            "recall": 0.5714285714285714
+          },
+          {
+            "threshold": 0.8243758082389833,
+            "tp": 4,
+            "fp": 14,
+            "precision": 0.2222222222222222,
+            "recall": 0.5714285714285714
+          },
+          {
+            "threshold": 0.8250131607055665,
+            "tp": 4,
+            "fp": 15,
+            "precision": 0.21052631578947367,
+            "recall": 0.5714285714285714
+          },
+          {
+            "threshold": 0.8260642290115358,
+            "tp": 5,
+            "fp": 15,
+            "precision": 0.25,
+            "recall": 0.7142857142857143
+          },
+          {
+            "threshold": 0.8270879983901979,
+            "tp": 5,
+            "fp": 16,
+            "precision": 0.23809523809523808,
+            "recall": 0.7142857142857143
+          },
+          {
+            "threshold": 0.8271443843841554,
+            "tp": 6,
+            "fp": 16,
+            "precision": 0.2727272727272727,
+            "recall": 0.8571428571428571
+          },
+          {
+            "threshold": 0.8274132013320924,
+            "tp": 7,
+            "fp": 16,
+            "precision": 0.30434782608695654,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8280711174011232,
+            "tp": 7,
+            "fp": 17,
+            "precision": 0.2916666666666667,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.828729271888733,
+            "tp": 7,
+            "fp": 18,
+            "precision": 0.28,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8287602663040162,
+            "tp": 7,
+            "fp": 19,
+            "precision": 0.2692307692307692,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8298736810684205,
+            "tp": 7,
+            "fp": 20,
+            "precision": 0.25925925925925924,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8331062793731691,
+            "tp": 7,
+            "fp": 21,
+            "precision": 0.25,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8332507014274598,
+            "tp": 7,
+            "fp": 22,
+            "precision": 0.2413793103448276,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.835092604160309,
+            "tp": 7,
+            "fp": 23,
+            "precision": 0.23333333333333334,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8353183269500734,
+            "tp": 7,
+            "fp": 24,
+            "precision": 0.22580645161290322,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8375361561775209,
+            "tp": 7,
+            "fp": 25,
+            "precision": 0.21875,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8383232355117799,
+            "tp": 7,
+            "fp": 26,
+            "precision": 0.21212121212121213,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8392317295074464,
+            "tp": 7,
+            "fp": 27,
+            "precision": 0.20588235294117646,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8394326567649842,
+            "tp": 7,
+            "fp": 28,
+            "precision": 0.2,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8399095535278321,
+            "tp": 7,
+            "fp": 29,
+            "precision": 0.19444444444444445,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8408132791519166,
+            "tp": 7,
+            "fp": 30,
+            "precision": 0.1891891891891892,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8408350944519044,
+            "tp": 7,
+            "fp": 31,
+            "precision": 0.18421052631578946,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.842269539833069,
+            "tp": 7,
+            "fp": 32,
+            "precision": 0.1794871794871795,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8462795019149781,
+            "tp": 7,
+            "fp": 33,
+            "precision": 0.175,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8481420874595643,
+            "tp": 7,
+            "fp": 34,
+            "precision": 0.17073170731707318,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8517431020736695,
+            "tp": 7,
+            "fp": 35,
+            "precision": 0.16666666666666666,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8534497022628785,
+            "tp": 7,
+            "fp": 36,
+            "precision": 0.16279069767441862,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8549066781997682,
+            "tp": 7,
+            "fp": 37,
+            "precision": 0.1590909090909091,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.8592646121978761,
+            "tp": 7,
+            "fp": 38,
+            "precision": 0.15555555555555556,
+            "recall": 1.0
+          }
+        ],
+        "observed_best_threshold": {
+          "status": "descriptive-only",
+          "value": 0.8274132013320924,
+          "balanced_accuracy": 0.7894736842105263
+        }
+      }
+    },
+    "bge-m3": {
+      "hit_at_5": {
+        "value": 0.7631578947368421,
+        "ci": [
+          0.6216216216216216,
+          0.8947368421052632
+        ],
+        "numerator": 29,
+        "denominator": 38
+      },
+      "citation_precision": {
+        "value": 0.88,
+        "ci": [
+          0.7692307692307693,
+          0.975
+        ],
+        "answer_count": 25,
+        "citation_count": 29,
+        "correct_citations": 24
+      },
+      "fixed_gate_abstention": {
+        "value": 0.42857142857142855,
+        "ci": [
+          0.0,
+          0.8333333333333334
+        ],
+        "numerator": 3,
+        "denominator": 7
+      },
+      "e2e_abstention": {
+        "value": 1.0,
+        "ci": [
+          1.0,
+          1.0
+        ],
+        "numerator": 7,
+        "denominator": 7
+      },
+      "slices": {
+        "mixed_qtype": {
+          "hit_at_5": {
+            "value": 0.9,
+            "ci": [
+              0.6666666666666666,
+              1.0
+            ],
+            "denominator": 10,
+            "numerator": 9
+          },
+          "citation_precision": {
+            "value": 0.8888888888888888,
+            "ci": [
+              0.75,
+              1.0
+            ],
+            "denominator": 9,
+            "answer_count": 9,
+            "citation_count": 11,
+            "correct_citations": 9
+          },
+          "fixed_gate_abstention": {
+            "value": null,
+            "ci": null,
+            "denominator": 0,
+            "numerator": null
+          },
+          "e2e_abstention": {
+            "value": null,
+            "ci": null,
+            "denominator": 0,
+            "numerator": null
+          }
+        },
+        "evidence_language:en": {
+          "hit_at_5": {
+            "value": 0.7777777777777778,
+            "ci": [
+              0.631578947368421,
+              0.9090909090909091
+            ],
+            "denominator": 36,
+            "numerator": 28
+          },
+          "citation_precision": {
+            "value": 0.875,
+            "ci": [
+              0.7608695652173914,
+              0.9736842105263158
+            ],
+            "denominator": 24,
+            "answer_count": 24,
+            "citation_count": 28,
+            "correct_citations": 23
+          },
+          "fixed_gate_abstention": {
+            "value": null,
+            "ci": null,
+            "denominator": 0,
+            "numerator": null
+          },
+          "e2e_abstention": {
+            "value": null,
+            "ci": null,
+            "denominator": 0,
+            "numerator": null
+          }
+        },
+        "evidence_language:mixed": {
+          "hit_at_5": {
+            "value": 0.5,
+            "ci": [
+              0.0,
+              1.0
+            ],
+            "denominator": 2,
+            "numerator": 1
+          },
+          "citation_precision": {
+            "value": 1.0,
+            "ci": [
+              1.0,
+              1.0
+            ],
+            "denominator": 1,
+            "answer_count": 1,
+            "citation_count": 1,
+            "correct_citations": 1
+          },
+          "fixed_gate_abstention": {
+            "value": null,
+            "ci": null,
+            "denominator": 0,
+            "numerator": null
+          },
+          "e2e_abstention": {
+            "value": null,
+            "ci": null,
+            "denominator": 0,
+            "numerator": null
+          }
+        },
+        "evidence_language:none": {
+          "hit_at_5": {
+            "value": null,
+            "ci": null,
+            "denominator": 0,
+            "numerator": null
+          },
+          "citation_precision": {
+            "value": null,
+            "ci": null,
+            "denominator": 0,
+            "answer_count": 0,
+            "citation_count": 0,
+            "correct_citations": 0
+          },
+          "fixed_gate_abstention": {
+            "value": 0.42857142857142855,
+            "ci": [
+              0.0,
+              0.8333333333333334
+            ],
+            "denominator": 7,
+            "numerator": 3
+          },
+          "e2e_abstention": {
+            "value": 1.0,
+            "ci": [
+              1.0,
+              1.0
+            ],
+            "denominator": 7,
+            "numerator": 7
+          }
+        }
+      },
+      "sweep": {
+        "status": "descriptive-only",
+        "positive_class": "out-of-corpus",
+        "seed": 20261022,
+        "replications": 10000,
+        "n_out": 7,
+        "n_answerable": 38,
+        "locked_threshold": 0.5504866242408752,
+        "locked_gate": {
+          "tp": 3,
+          "fn": 4,
+          "tn": 29,
+          "fp": 9
+        },
+        "auroc": {
+          "value": 0.7406015037593985,
+          "ci": [
+            0.5679012345679012,
+            0.8974358974358975
+          ]
+        },
+        "pr_curve": [
+          {
+            "threshold": 0.5048249959945679,
+            "tp": 0,
+            "fp": 0,
+            "precision": 1.0,
+            "recall": 0.0
+          },
+          {
+            "threshold": 0.504824995994568,
+            "tp": 0,
+            "fp": 1,
+            "precision": 0.0,
+            "recall": 0.0
+          },
+          {
+            "threshold": 0.5115056037902833,
+            "tp": 0,
+            "fp": 2,
+            "precision": 0.0,
+            "recall": 0.0
+          },
+          {
+            "threshold": 0.5119258165359498,
+            "tp": 1,
+            "fp": 2,
+            "precision": 0.3333333333333333,
+            "recall": 0.14285714285714285
+          },
+          {
+            "threshold": 0.5180177688598634,
+            "tp": 1,
+            "fp": 3,
+            "precision": 0.25,
+            "recall": 0.14285714285714285
+          },
+          {
+            "threshold": 0.5234912037849427,
+            "tp": 2,
+            "fp": 3,
+            "precision": 0.4,
+            "recall": 0.2857142857142857
+          },
+          {
+            "threshold": 0.52617746591568,
+            "tp": 2,
+            "fp": 4,
+            "precision": 0.3333333333333333,
+            "recall": 0.2857142857142857
+          },
+          {
+            "threshold": 0.5269219875335694,
+            "tp": 2,
+            "fp": 5,
+            "precision": 0.2857142857142857,
+            "recall": 0.2857142857142857
+          },
+          {
+            "threshold": 0.5283913612365724,
+            "tp": 2,
+            "fp": 6,
+            "precision": 0.25,
+            "recall": 0.2857142857142857
+          },
+          {
+            "threshold": 0.531300723552704,
+            "tp": 2,
+            "fp": 7,
+            "precision": 0.2222222222222222,
+            "recall": 0.2857142857142857
+          },
+          {
+            "threshold": 0.5382388830184938,
+            "tp": 3,
+            "fp": 7,
+            "precision": 0.3,
+            "recall": 0.42857142857142855
+          },
+          {
+            "threshold": 0.5389415025711061,
+            "tp": 3,
+            "fp": 8,
+            "precision": 0.2727272727272727,
+            "recall": 0.42857142857142855
+          },
+          {
+            "threshold": 0.539342761039734,
+            "tp": 3,
+            "fp": 9,
+            "precision": 0.25,
+            "recall": 0.42857142857142855
+          },
+          {
+            "threshold": 0.5511803030967714,
+            "tp": 4,
+            "fp": 9,
+            "precision": 0.3076923076923077,
+            "recall": 0.5714285714285714
+          },
+          {
+            "threshold": 0.5514497160911561,
+            "tp": 4,
+            "fp": 10,
+            "precision": 0.2857142857142857,
+            "recall": 0.5714285714285714
+          },
+          {
+            "threshold": 0.5563334226608277,
+            "tp": 4,
+            "fp": 11,
+            "precision": 0.26666666666666666,
+            "recall": 0.5714285714285714
+          },
+          {
+            "threshold": 0.5585402250289918,
+            "tp": 4,
+            "fp": 12,
+            "precision": 0.25,
+            "recall": 0.5714285714285714
+          },
+          {
+            "threshold": 0.5634734630584718,
+            "tp": 4,
+            "fp": 13,
+            "precision": 0.23529411764705882,
+            "recall": 0.5714285714285714
+          },
+          {
+            "threshold": 0.5637411475181581,
+            "tp": 5,
+            "fp": 13,
+            "precision": 0.2777777777777778,
+            "recall": 0.7142857142857143
+          },
+          {
+            "threshold": 0.5653814673423768,
+            "tp": 5,
+            "fp": 14,
+            "precision": 0.2631578947368421,
+            "recall": 0.7142857142857143
+          },
+          {
+            "threshold": 0.5656676292419435,
+            "tp": 5,
+            "fp": 15,
+            "precision": 0.25,
+            "recall": 0.7142857142857143
+          },
+          {
+            "threshold": 0.5694308280944825,
+            "tp": 6,
+            "fp": 15,
+            "precision": 0.2857142857142857,
+            "recall": 0.8571428571428571
+          },
+          {
+            "threshold": 0.5720455646514894,
+            "tp": 6,
+            "fp": 16,
+            "precision": 0.2727272727272727,
+            "recall": 0.8571428571428571
+          },
+          {
+            "threshold": 0.5738263130187989,
+            "tp": 6,
+            "fp": 17,
+            "precision": 0.2608695652173913,
+            "recall": 0.8571428571428571
+          },
+          {
+            "threshold": 0.5768452286720277,
+            "tp": 6,
+            "fp": 18,
+            "precision": 0.25,
+            "recall": 0.8571428571428571
+          },
+          {
+            "threshold": 0.5769473314285279,
+            "tp": 6,
+            "fp": 19,
+            "precision": 0.24,
+            "recall": 0.8571428571428571
+          },
+          {
+            "threshold": 0.5785194635391236,
+            "tp": 6,
+            "fp": 20,
+            "precision": 0.23076923076923078,
+            "recall": 0.8571428571428571
+          },
+          {
+            "threshold": 0.584925949573517,
+            "tp": 7,
+            "fp": 20,
+            "precision": 0.25925925925925924,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.5853499770164491,
+            "tp": 7,
+            "fp": 21,
+            "precision": 0.25,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.5896794795989991,
+            "tp": 7,
+            "fp": 22,
+            "precision": 0.2413793103448276,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.5911458730697633,
+            "tp": 7,
+            "fp": 23,
+            "precision": 0.23333333333333334,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.5927358865737916,
+            "tp": 7,
+            "fp": 24,
+            "precision": 0.22580645161290322,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.5981479883193971,
+            "tp": 7,
+            "fp": 25,
+            "precision": 0.21875,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.5997366309165956,
+            "tp": 7,
+            "fp": 26,
+            "precision": 0.21212121212121213,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.6055294871330262,
+            "tp": 7,
+            "fp": 27,
+            "precision": 0.20588235294117646,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.6071259975433351,
+            "tp": 7,
+            "fp": 28,
+            "precision": 0.2,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.6121092438697816,
+            "tp": 7,
+            "fp": 29,
+            "precision": 0.19444444444444445,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.6127370595932008,
+            "tp": 7,
+            "fp": 30,
+            "precision": 0.1891891891891892,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.6146355867385865,
+            "tp": 7,
+            "fp": 31,
+            "precision": 0.18421052631578946,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.6385456323623658,
+            "tp": 7,
+            "fp": 32,
+            "precision": 0.1794871794871795,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.6388192176818849,
+            "tp": 7,
+            "fp": 33,
+            "precision": 0.175,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.6435420513153077,
+            "tp": 7,
+            "fp": 34,
+            "precision": 0.17073170731707318,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.6664249897003175,
+            "tp": 7,
+            "fp": 35,
+            "precision": 0.16666666666666666,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.6693266630172731,
+            "tp": 7,
+            "fp": 36,
+            "precision": 0.16279069767441862,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.6919554471969606,
+            "tp": 7,
+            "fp": 37,
+            "precision": 0.1590909090909091,
+            "recall": 1.0
+          },
+          {
+            "threshold": 0.6946311593055726,
+            "tp": 7,
+            "fp": 38,
+            "precision": 0.15555555555555556,
+            "recall": 1.0
+          }
+        ],
+        "observed_best_threshold": {
+          "status": "descriptive-only",
+          "value": 0.584925949573517,
+          "balanced_accuracy": 0.7368421052631579
+        }
+      }
+    }
+  },
+  "paired_differences": {
+    "e5-large|e5-base": {
+      "hit_at_5": {
+        "value": -0.10526315789473684,
+        "ci": [
+          -0.3157894736842105,
+          0.10526315789473686
+        ]
+      },
+      "citation_precision": {
+        "value": -0.16176470588235292,
+        "ci": [
+          -0.5,
+          0.15023601398601444
+        ]
+      },
+      "fixed_gate_abstention": {
+        "value": 0.0,
+        "ci": [
+          0.0,
+          0.0
+        ]
+      },
+      "e2e_abstention": {
+        "value": 0.0,
+        "ci": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "e5-large|bge-m3": {
+      "hit_at_5": {
+        "value": -0.4210526315789474,
+        "ci": [
+          -0.625,
+          -0.21052631578947367
+        ]
+      },
+      "citation_precision": {
+        "value": -0.13,
+        "ci": [
+          -0.4287087912087912,
+          0.1241085423197522
+        ]
+      },
+      "fixed_gate_abstention": {
+        "value": -0.42857142857142855,
+        "ci": [
+          -1.0,
+          0.0
+        ]
+      },
+      "e2e_abstention": {
+        "value": 0.0,
+        "ci": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "e5-base|bge-m3": {
+      "hit_at_5": {
+        "value": -0.31578947368421056,
+        "ci": [
+          -0.537851782363977,
+          -0.0975609756097561
+        ]
+      },
+      "citation_precision": {
+        "value": 0.03176470588235292,
+        "ci": [
+          -0.1768784506556244,
+          0.2142857142857143
+        ]
+      },
+      "fixed_gate_abstention": {
+        "value": -0.42857142857142855,
+        "ci": [
+          -1.0,
+          0.0
+        ]
+      },
+      "e2e_abstention": {
+        "value": 0.0,
+        "ci": [
+          0.0,
+          0.0
+        ]
+      }
+    }
+  },
+  "winner_status": "bge-m3",
+  "set_version": "cpp-v2",
+  "set": {
+    "path": "data/eval/cpp/eval-set.cpp.v2.json",
+    "sha256": "1fab399cf00bb133d510e21e9d6c2eb1bf0975ce7d645454d5b3b3fc6bc1c878",
+    "n_items": 45
+  },
+  "source_reports": {
+    "e5-large": {
+      "retrieval_only": {
+        "path": "data/eval/cpp/reports/v2/e5-large/2026-10-25-010053-231441-cpp-v2-retrieval-only.json",
+        "sha256": "68cf5d882b23b3161cdd162ea8d8d74f46ded6d44192d6e221455358d2ef3173",
+        "status": "complete",
+        "error_count": 0
+      },
+      "end_to_end": {
+        "path": "data/eval/cpp/reports/v2/e5-large/2026-10-25-014537-817989-cpp-v2-end-to-end.json",
+        "sha256": "26f3d17aca8dbfafd0e282bd43470dc3f127efb64d87f86435f01627457537ac",
+        "status": "complete",
+        "error_count": 0
+      },
+      "model": {
+        "repository": "intfloat/multilingual-e5-large",
+        "revision_sha": "3d7cfbdacd47fdda877c5cd8a79fbcc4f2a574f3",
+        "license": "MIT"
+      },
+      "index": {
+        "chunk_sha256": "c22bd9fb1e37a9f3e8cf1d2b747c8d9a9e6b050d7798817feb35f20fa0444366",
+        "settings_sha256": "7bc28f60d9ef826f12d8bd6465c750c6a1b3625c03d2621f5a009c452049e69b",
+        "index_sha256": "de80d13a085258ee9c1215351f21f52ae9dc42b4bcd18d1edb270e807f35e9e7",
+        "dimension": 1024,
+        "count": 201,
+        "truncation_count": 37,
+        "ordered_ids_sha256": "c7c00828bd56a2e3f055baa9f0be03e18ed27773ff9077e4f475baf1f40e7cf0"
+      },
+      "locked_threshold": 0.808958888053894,
+      "calibration_sha256": "01eac2939b10b1a97e26f9c10309289df621176d2f4159f275d48f661b51a62c",
+      "e2e_reasons": []
+    },
+    "e5-base": {
+      "retrieval_only": {
+        "path": "data/eval/cpp/reports/v2/e5-base/2026-10-25-010125-608408-cpp-v2-retrieval-only.json",
+        "sha256": "8d36c687860b4035f6d25af3cf3db393ef98f10284e7e110e03b5aac911d1c7e",
+        "status": "complete",
+        "error_count": 0
+      },
+      "end_to_end": {
+        "path": "data/eval/cpp/reports/v2/e5-base/2026-10-25-014920-616053-cpp-v2-end-to-end.json",
+        "sha256": "cd8b24622b07c36152134185237d489e1dbd81d8de021dc66c866e30269b7fd4",
+        "status": "complete",
+        "error_count": 0
+      },
+      "model": {
+        "repository": "intfloat/multilingual-e5-base",
+        "revision_sha": "d128750597153bb5987e10b1c3493a34e5a4502a",
+        "license": "MIT"
+      },
+      "index": {
+        "chunk_sha256": "c22bd9fb1e37a9f3e8cf1d2b747c8d9a9e6b050d7798817feb35f20fa0444366",
+        "settings_sha256": "7fafd9e2e4c1c09f2f2a37f2b4ec4c56e034d40020c930f3bbfbf83ec66338db",
+        "index_sha256": "e463ad18b4759d845fbe736b038b597d7402bf712265b65945cb2f529a2e76bd",
+        "dimension": 768,
+        "count": 201,
+        "truncation_count": 37,
+        "ordered_ids_sha256": "c7c00828bd56a2e3f055baa9f0be03e18ed27773ff9077e4f475baf1f40e7cf0"
+      },
+      "locked_threshold": 0.8026493787765503,
+      "calibration_sha256": "defbe4d1aeadf87b43000985bb84389f9dcc067d50276d4c6902206bff08e555",
+      "e2e_reasons": []
+    },
+    "bge-m3": {
+      "retrieval_only": {
+        "path": "data/eval/cpp/reports/v2/bge-m3/2026-10-25-010207-328273-cpp-v2-retrieval-only.json",
+        "sha256": "1b964f2d221bb98619edce3e70143411e9ef98e0482cba1caa4605ccbc2c6e28",
+        "status": "complete",
+        "error_count": 0
+      },
+      "end_to_end": {
+        "path": "data/eval/cpp/reports/v2/bge-m3/2026-10-25-015232-193295-cpp-v2-end-to-end.json",
+        "sha256": "f61ad24a4778228ea1fe1026afa344b9dd6be2ddcc255f92ccbd9b127715f278",
+        "status": "complete",
+        "error_count": 0
+      },
+      "model": {
+        "repository": "BAAI/bge-m3",
+        "revision_sha": "5617a9f61b028005a4858fdac845db406aefb181",
+        "license": "MIT"
+      },
+      "index": {
+        "chunk_sha256": "c22bd9fb1e37a9f3e8cf1d2b747c8d9a9e6b050d7798817feb35f20fa0444366",
+        "settings_sha256": "91d3f8e4882a5a90ae0128015d0d28bd141e7e007580f1c2305888ed86fe5927",
+        "index_sha256": "da08b046d7948a6f68aab4034031d096867f42609095bfe14cff4783fbbb3d9c",
+        "dimension": 1024,
+        "count": 201,
+        "truncation_count": 0,
+        "ordered_ids_sha256": "c7c00828bd56a2e3f055baa9f0be03e18ed27773ff9077e4f475baf1f40e7cf0"
+      },
+      "locked_threshold": 0.5504866242408752,
+      "calibration_sha256": "965f1c07ea0a9bb2a7396ca1dd542c990b6dc62f2369db74a89a9e3320d6b26a",
+      "e2e_reasons": []
+    }
+  },
+  "per_item": {
+    "e5-large": [
+      {
+        "item_id": "CPP2-001",
+        "qtype": "in-corpus",
+        "evidence_language": "mixed",
+        "expected_source_ids": [
+          "cpp-notes-intro#s02-c01"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s02-c01",
+          "cpp-notes-intro#s10-c01",
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s05-c01",
+          "cpp-notes-intro#s09-c01"
+        ],
+        "top1_score": 0.8349517583847046,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "cpp-notes-intro#s02-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "CPP2-002",
+        "qtype": "in-corpus",
+        "evidence_language": "mixed",
+        "expected_source_ids": [
+          "cpp-notes-intro#s03-c01"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s03-c01",
+          "cpp-notes-intro#s04-c01",
+          "cpp-notes-intro#s09-c01",
+          "cpp-notes-intro#s05-c01",
+          "cpp-notes-intro#s06-c01"
+        ],
+        "top1_score": 0.848153829574585,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "cpp-notes-intro#s03-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "CPP2-003",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-vector#s02-c01"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s05-c01",
+          "cpp-notes-intro#s03-c01",
+          "cpp-notes-intro#s04-c01",
+          "cpp-notes-intro#s08-c01",
+          "cpp-notes-intro#s07-c01"
+        ],
+        "top1_score": 0.8296350240707397,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-004",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-vector#s04-c01"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s03-c01",
+          "cpp-notes-intro#s05-c01",
+          "cpp-notes-intro#s08-c01",
+          "cpp-notes-intro#s06-c01",
+          "cpp-notes-intro#s07-c01"
+        ],
+        "top1_score": 0.8168632984161377,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-005",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-vector#s02-c01"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s03-c01",
+          "cpp-notes-intro#s04-c01",
+          "cpp-notes-intro#s09-c01",
+          "cpp-notes-intro#s11-c01"
+        ],
+        "top1_score": 0.8140053749084473,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-006",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-string#s04-c01"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s04-c01",
+          "cpp-notes-intro#s11-c01",
+          "cpp-notes-intro#s05-c01",
+          "cpp-notes-intro#s03-c01",
+          "cppref-cpp-reference#s08-c01"
+        ],
+        "top1_score": 0.822039008140564,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-007",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-string#s07-c02"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s09-c01",
+          "cpp-notes-intro#s10-c01",
+          "cpp-notes-intro#s06-c01",
+          "cpp-notes-intro#s11-c01"
+        ],
+        "top1_score": 0.8263289928436279,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-008",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-string#s09-c01"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s02-c01",
+          "cppref-cpp-string#s09-c01",
+          "cpp-notes-intro#s04-c01",
+          "cpp-notes-intro#s10-c01"
+        ],
+        "top1_score": 0.8075531125068665,
+        "hit": true,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-009",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-cout#s02-c01"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s02-c01",
+          "cpp-notes-intro#s03-c01",
+          "cpp-notes-intro#s05-c01",
+          "cpp-notes-intro#s09-c01",
+          "cpp-notes-intro#s04-c01"
+        ],
+        "top1_score": 0.823961615562439,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-010",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-class#s05-c01"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s09-c01",
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s08-c01",
+          "cpp-notes-intro#s04-c01",
+          "cpp-notes-intro#s03-c01"
+        ],
+        "top1_score": 0.820529043674469,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-011",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-class#s06-c01"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s08-c01",
+          "cpp-notes-intro#s09-c01",
+          "cpp-notes-intro#s03-c01",
+          "cpp-notes-intro#s07-c01",
+          "cppref-cpp-class#s06-c01"
+        ],
+        "top1_score": 0.8335874080657959,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "cppref-cpp-class#s06-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "CPP2-012",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-constructor#s05-c01"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s06-c01",
+          "cpp-notes-intro#s09-c01",
+          "cpp-notes-intro#s08-c01",
+          "cpp-notes-intro#s11-c01",
+          "cpp-notes-intro#s07-c01"
+        ],
+        "top1_score": 0.8394051790237427,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-013",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-constructor#s09-c01"
+        ],
+        "top5_ids": [
+          "cppref-cpp-constructor#s09-c01",
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s03-c01",
+          "cpp-notes-intro#s04-c01",
+          "cpp-notes-intro#s08-c01"
+        ],
+        "top1_score": 0.8248838186264038,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "cppref-cpp-constructor#s09-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "CPP2-014",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-namespace#s05-c01"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s03-c01",
+          "cpp-notes-intro#s05-c01",
+          "cppref-cpp-overload#s21-c01",
+          "cpp-notes-intro#s08-c01",
+          "cpp-notes-intro#s07-c01"
+        ],
+        "top1_score": 0.8336734771728516,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-015",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-namespace#s06-c01"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s03-c01",
+          "cpp-notes-intro#s04-c01",
+          "cpp-notes-intro#s07-c01",
+          "cppref-cpp-namespace#s06-c01",
+          "cpp-notes-intro#s10-c01"
+        ],
+        "top1_score": 0.8298898935317993,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "cppref-cpp-namespace#s06-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "CPP2-016",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-namespace#s07-c01"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s03-c01",
+          "cppref-cpp-namespace#s08-c01",
+          "cpp-notes-intro#s07-c01",
+          "cppref-cpp-reference#s02-c01",
+          "cppref-cpp-namespace#s07-c02"
+        ],
+        "top1_score": 0.8381599187850952,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "cppref-cpp-namespace#s08-c01"
+        ],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-017",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-reference#s04-c01"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s04-c01",
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s03-c01",
+          "cpp-notes-intro#s05-c01",
+          "cpp-notes-intro#s09-c01"
+        ],
+        "top1_score": 0.8173875212669373,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-018",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-reference#s06-c01"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s04-c01",
+          "cpp-notes-intro#s09-c01",
+          "cpp-notes-intro#s03-c01",
+          "cpp-notes-intro#s05-c01"
+        ],
+        "top1_score": 0.853699803352356,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-019",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-reference#s08-c01"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s05-c01",
+          "cpp-notes-intro#s04-c01",
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s09-c01",
+          "cpp-notes-intro#s03-c01"
+        ],
+        "top1_score": 0.8587319254875183,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-020",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-function#s12-c01"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s06-c01",
+          "cppref-cpp-function#s14-c01",
+          "cpp-notes-intro#s09-c01",
+          "cppref-cpp-function#s12-c01",
+          "cpp-notes-intro#s07-c01"
+        ],
+        "top1_score": 0.8332406282424927,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "cppref-cpp-function#s12-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "CPP2-021",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-function#s13-c01"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s05-c01",
+          "cpp-notes-intro#s04-c01",
+          "cppref-cpp-overload#s02-c01",
+          "cpp-notes-intro#s06-c01"
+        ],
+        "top1_score": 0.8398268222808838,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-022",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-function#s16-c01"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s06-c01",
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s05-c01",
+          "cpp-notes-intro#s03-c01",
+          "cpp-notes-intro#s04-c01"
+        ],
+        "top1_score": 0.8583098649978638,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-023",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-operators#s06-c01"
+        ],
+        "top5_ids": [
+          "cppref-cpp-operators#s02-c01",
+          "cpp-notes-intro#s05-c01",
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s08-c01",
+          "cpp-notes-intro#s06-c01"
+        ],
+        "top1_score": 0.820260226726532,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-024",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-operators#s11-c01"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s06-c01",
+          "cpp-notes-intro#s03-c01",
+          "cpp-notes-intro#s09-c01",
+          "cpp-notes-intro#s10-c01"
+        ],
+        "top1_score": 0.8013357520103455,
+        "hit": false,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-025",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-auto#s03-c01"
+        ],
+        "top5_ids": [
+          "cppref-cpp-auto#s08-c01",
+          "cppref-cpp-function#s04-c01",
+          "cpp-notes-intro#s05-c01",
+          "cpp-notes-intro#s04-c01",
+          "cppref-cpp-auto#s12-c01"
+        ],
+        "top1_score": 0.8428068161010742,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "cppref-cpp-function#s04-c01"
+        ],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-026",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-auto#s08-c01"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s04-c01",
+          "cpp-notes-intro#s03-c01",
+          "cpp-notes-intro#s10-c01",
+          "cpp-notes-intro#s06-c01"
+        ],
+        "top1_score": 0.8294353485107422,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-027",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-range-for#s05-c01"
+        ],
+        "top5_ids": [
+          "cppref-cpp-range-for#s05-c01",
+          "cpp-notes-intro#s11-c01",
+          "cpp-notes-intro#s03-c01",
+          "cpp-notes-intro#s09-c01",
+          "cppref-cpp-reference#s08-c01"
+        ],
+        "top1_score": 0.8066493272781372,
+        "hit": true,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-028",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-overload#s17-c01"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s11-c01",
+          "cpp-notes-intro#s04-c01",
+          "cpp-notes-intro#s08-c01",
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s03-c01"
+        ],
+        "top1_score": 0.8259005546569824,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-029",
+        "qtype": "mixed",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-vector#s05-c01"
+        ],
+        "top5_ids": [
+          "cppref-cpp-vector#s05-c01",
+          "cppref-cpp-string#s04-c01",
+          "cppref-cpp-vector#s02-c01",
+          "cppref-cpp-vector#s11-c01",
+          "cpp-notes-intro#s03-c01"
+        ],
+        "top1_score": 0.8497095704078674,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "cppref-cpp-vector#s05-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "CPP2-030",
+        "qtype": "mixed",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-string#s07-c02"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s03-c01",
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s08-c01",
+          "cpp-notes-intro#s09-c01",
+          "cpp-notes-intro#s11-c01"
+        ],
+        "top1_score": 0.8175880908966064,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-031",
+        "qtype": "mixed",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-cout#s02-c01"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s02-c01",
+          "cpp-notes-intro#s03-c01",
+          "cpp-notes-intro#s05-c01",
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s04-c01"
+        ],
+        "top1_score": 0.8331234455108643,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-032",
+        "qtype": "mixed",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-namespace#s08-c01"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s03-c01",
+          "cppref-cpp-namespace#s08-c01",
+          "cppref-cpp-namespace#s13-c01",
+          "cppref-cpp-namespace#s08-c02",
+          "cppref-cpp-reference#s02-c01"
+        ],
+        "top1_score": 0.8489986658096313,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "cppref-cpp-namespace#s08-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "CPP2-033",
+        "qtype": "mixed",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-reference#s07-c01"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s04-c01",
+          "cpp-notes-intro#s03-c01",
+          "cpp-notes-intro#s06-c01",
+          "cpp-notes-intro#s09-c01",
+          "cpp-notes-intro#s07-c01"
+        ],
+        "top1_score": 0.8494989275932312,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-034",
+        "qtype": "mixed",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-function#s04-c01"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s04-c01",
+          "cpp-notes-intro#s09-c01",
+          "cpp-notes-intro#s03-c01",
+          "cppref-cpp-function#s04-c01",
+          "cpp-notes-intro#s05-c01"
+        ],
+        "top1_score": 0.866230309009552,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "cppref-cpp-function#s04-c01",
+          "cpp-notes-intro#s04-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "CPP2-035",
+        "qtype": "mixed",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-operators#s06-c01"
+        ],
+        "top5_ids": [
+          "cppref-cpp-operators#s17-c01",
+          "cpp-notes-intro#s05-c01",
+          "cpp-notes-intro#s09-c01",
+          "cpp-notes-intro#s07-c01",
+          "cppref-cpp-operators#s09-c01"
+        ],
+        "top1_score": 0.8311580419540405,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "cppref-cpp-operators#s17-c01"
+        ],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-036",
+        "qtype": "mixed",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-range-for#s06-c01"
+        ],
+        "top5_ids": [
+          "cppref-cpp-range-for#s06-c01",
+          "cppref-cpp-range-for#s05-c01",
+          "cppref-cpp-range-for#s09-c01",
+          "cppref-cpp-range-for#s01-c01",
+          "cpp-notes-intro#s03-c01"
+        ],
+        "top1_score": 0.8393848538398743,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "cppref-cpp-range-for#s06-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "CPP2-037",
+        "qtype": "mixed",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-overload#s11-c01"
+        ],
+        "top5_ids": [
+          "cppref-cpp-constructor#s09-c01",
+          "cppref-cpp-overload#s07-c01",
+          "cppref-cpp-overload#s11-c01",
+          "cppref-cpp-constructor#s07-c01",
+          "cppref-cpp-overload#s18-c01"
+        ],
+        "top1_score": 0.8602542877197266,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "cppref-cpp-overload#s11-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "CPP2-038",
+        "qtype": "mixed",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-constructor#s05-c01"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s09-c01",
+          "cpp-notes-intro#s03-c01",
+          "cpp-notes-intro#s08-c01",
+          "cpp-notes-intro#s04-c01",
+          "cpp-notes-intro#s06-c01"
+        ],
+        "top1_score": 0.8476556539535522,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-039",
+        "qtype": "out-of-corpus",
+        "evidence_language": "none",
+        "expected_source_ids": [],
+        "top5_ids": [
+          "cpp-notes-intro#s09-c01",
+          "cpp-notes-intro#s03-c01",
+          "cpp-notes-intro#s08-c01",
+          "cpp-notes-intro#s04-c01",
+          "cpp-notes-intro#s05-c01"
+        ],
+        "top1_score": 0.8291952610015869,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-040",
+        "qtype": "out-of-corpus",
+        "evidence_language": "none",
+        "expected_source_ids": [],
+        "top5_ids": [
+          "cpp-notes-intro#s06-c01",
+          "cpp-notes-intro#s03-c01",
+          "cpp-notes-intro#s05-c01",
+          "cpp-notes-intro#s04-c01",
+          "cpp-notes-intro#s02-c01"
+        ],
+        "top1_score": 0.8205854892730713,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-041",
+        "qtype": "out-of-corpus",
+        "evidence_language": "none",
+        "expected_source_ids": [],
+        "top5_ids": [
+          "cpp-notes-intro#s03-c01",
+          "cpp-notes-intro#s11-c01",
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s02-c01",
+          "cpp-notes-intro#s04-c01"
+        ],
+        "top1_score": 0.8255341053009033,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-042",
+        "qtype": "out-of-corpus",
+        "evidence_language": "none",
+        "expected_source_ids": [],
+        "top5_ids": [
+          "cpp-notes-intro#s03-c01",
+          "cpp-notes-intro#s02-c01",
+          "cpp-notes-intro#s05-c01",
+          "cpp-notes-intro#s11-c01",
+          "cpp-notes-intro#s04-c01"
+        ],
+        "top1_score": 0.8291618824005127,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-043",
+        "qtype": "out-of-corpus",
+        "evidence_language": "none",
+        "expected_source_ids": [],
+        "top5_ids": [
+          "cpp-notes-intro#s03-c01",
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s08-c01",
+          "cpp-notes-intro#s04-c01",
+          "cpp-notes-intro#s02-c01"
+        ],
+        "top1_score": 0.8306358456611633,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-044",
+        "qtype": "out-of-corpus",
+        "evidence_language": "none",
+        "expected_source_ids": [],
+        "top5_ids": [
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s05-c01",
+          "cpp-notes-intro#s09-c01",
+          "cpp-notes-intro#s02-c01",
+          "cpp-notes-intro#s04-c01"
+        ],
+        "top1_score": 0.8377266526222229,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-045",
+        "qtype": "out-of-corpus",
+        "evidence_language": "none",
+        "expected_source_ids": [],
+        "top5_ids": [
+          "cpp-notes-intro#s03-c01",
+          "cpp-notes-intro#s04-c01",
+          "cpp-notes-intro#s02-c01",
+          "cpp-notes-intro#s06-c01",
+          "cpp-notes-intro#s08-c01"
+        ],
+        "top1_score": 0.8370693922042847,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      }
+    ],
+    "e5-base": [
+      {
+        "item_id": "CPP2-001",
+        "qtype": "in-corpus",
+        "evidence_language": "mixed",
+        "expected_source_ids": [
+          "cpp-notes-intro#s02-c01"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s02-c01",
+          "cpp-notes-intro#s04-c01",
+          "cpp-notes-intro#s10-c01",
+          "cpp-notes-intro#s08-c01",
+          "cpp-notes-intro#s05-c01"
+        ],
+        "top1_score": 0.8116973638534546,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "cpp-notes-intro#s02-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "CPP2-002",
+        "qtype": "in-corpus",
+        "evidence_language": "mixed",
+        "expected_source_ids": [
+          "cpp-notes-intro#s03-c01"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s03-c01",
+          "cpp-notes-intro#s04-c01",
+          "cpp-notes-intro#s10-c01",
+          "cpp-notes-intro#s06-c01",
+          "cpp-notes-intro#s08-c01"
+        ],
+        "top1_score": 0.8481420874595642,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "cpp-notes-intro#s03-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "CPP2-003",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-vector#s02-c01"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s05-c01",
+          "cpp-notes-intro#s06-c01",
+          "cppref-cpp-vector#s02-c01",
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s04-c01"
+        ],
+        "top1_score": 0.8243758082389832,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "cppref-cpp-vector#s02-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "CPP2-004",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-vector#s04-c01"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s06-c01",
+          "cpp-notes-intro#s03-c01",
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s05-c01",
+          "cpp-notes-intro#s08-c01"
+        ],
+        "top1_score": 0.8206233382225037,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-005",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-vector#s02-c01"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s04-c01",
+          "cpp-notes-intro#s08-c01",
+          "cpp-notes-intro#s09-c01",
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s05-c01"
+        ],
+        "top1_score": 0.8217923641204834,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-006",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-string#s04-c01"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s04-c01",
+          "cpp-notes-intro#s08-c01",
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s05-c01",
+          "cppref-cpp-reference#s08-c01"
+        ],
+        "top1_score": 0.8287602663040161,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-007",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-string#s07-c02"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s08-c01",
+          "cpp-notes-intro#s09-c01",
+          "cpp-notes-intro#s02-c01",
+          "cpp-notes-intro#s06-c01",
+          "cppref-cpp-constructor#s13-c01"
+        ],
+        "top1_score": 0.8270879983901978,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-008",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-string#s09-c01"
+        ],
+        "top5_ids": [
+          "cppref-cpp-string#s09-c01",
+          "cpp-notes-intro#s10-c01",
+          "cpp-notes-intro#s08-c01",
+          "cpp-notes-intro#s02-c01",
+          "cpp-notes-intro#s07-c01"
+        ],
+        "top1_score": 0.7954772710800171,
+        "hit": true,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-009",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-cout#s02-c01"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s02-c01",
+          "cpp-notes-intro#s10-c01",
+          "cpp-notes-intro#s05-c01",
+          "cpp-notes-intro#s06-c01"
+        ],
+        "top1_score": 0.8142231702804565,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-010",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-class#s05-c01"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s08-c01",
+          "cpp-notes-intro#s10-c01",
+          "cpp-notes-intro#s09-c01",
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s03-c01"
+        ],
+        "top1_score": 0.8225857019424438,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-011",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-class#s06-c01"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s08-c01",
+          "cpp-notes-intro#s03-c01",
+          "cpp-notes-intro#s02-c01",
+          "cpp-notes-intro#s09-c01",
+          "cpp-notes-intro#s07-c01"
+        ],
+        "top1_score": 0.8408350944519043,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-012",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-constructor#s05-c01"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s09-c01",
+          "cpp-notes-intro#s08-c01",
+          "cpp-notes-intro#s06-c01",
+          "cpp-notes-intro#s11-c01",
+          "cpp-notes-intro#s05-c01"
+        ],
+        "top1_score": 0.8383232355117798,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-013",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-constructor#s09-c01"
+        ],
+        "top5_ids": [
+          "cppref-cpp-auto#s08-c01",
+          "cppref-cpp-constructor#s09-c01",
+          "cppref-cpp-operators#s23-c01",
+          "cppref-cpp-operators#s02-c01",
+          "cpp-notes-intro#s08-c01"
+        ],
+        "top1_score": 0.828071117401123,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "cppref-cpp-constructor#s09-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "CPP2-014",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-namespace#s05-c01"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s03-c01",
+          "cpp-notes-intro#s08-c01",
+          "cpp-notes-intro#s05-c01",
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s04-c01"
+        ],
+        "top1_score": 0.8287292718887329,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-015",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-namespace#s06-c01"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s10-c01",
+          "cppref-cpp-namespace#s06-c01",
+          "cpp-notes-intro#s03-c01",
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s08-c01"
+        ],
+        "top1_score": 0.8066243529319763,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "cppref-cpp-namespace#s06-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "CPP2-016",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-namespace#s07-c01"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s07-c01",
+          "cppref-cpp-namespace#s13-c01",
+          "cpp-notes-intro#s03-c01",
+          "cpp-notes-intro#s04-c01",
+          "cpp-notes-intro#s05-c01"
+        ],
+        "top1_score": 0.8375361561775208,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-017",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-reference#s04-c01"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s04-c01",
+          "cppref-cpp-reference#s04-c01",
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s10-c01",
+          "cpp-notes-intro#s09-c01"
+        ],
+        "top1_score": 0.8176098465919495,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "cppref-cpp-reference#s04-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "CPP2-018",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-reference#s06-c01"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s04-c01",
+          "cpp-notes-intro#s06-c01",
+          "cpp-notes-intro#s05-c01",
+          "cpp-notes-intro#s10-c01"
+        ],
+        "top1_score": 0.8392317295074463,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-019",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-reference#s08-c01"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s04-c01",
+          "cpp-notes-intro#s05-c01",
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s06-c01",
+          "cpp-notes-intro#s09-c01"
+        ],
+        "top1_score": 0.8549066781997681,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-020",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-function#s12-c01"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s10-c01",
+          "cpp-notes-intro#s06-c01",
+          "cpp-notes-intro#s04-c01",
+          "cppref-cpp-function#s14-c01"
+        ],
+        "top1_score": 0.8353183269500732,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-021",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-function#s13-c01"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s05-c01",
+          "cpp-notes-intro#s04-c01",
+          "cpp-notes-intro#s06-c01",
+          "cpp-notes-intro#s10-c01"
+        ],
+        "top1_score": 0.8298736810684204,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-022",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-function#s16-c01"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s06-c01",
+          "cpp-notes-intro#s04-c01",
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s03-c01",
+          "cpp-notes-intro#s05-c01"
+        ],
+        "top1_score": 0.846279501914978,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-023",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-operators#s06-c01"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s06-c01",
+          "cpp-notes-intro#s05-c01",
+          "cpp-notes-intro#s04-c01",
+          "cpp-notes-intro#s08-c01"
+        ],
+        "top1_score": 0.8206808567047119,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-024",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-operators#s11-c01"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s06-c01",
+          "cppref-cpp-operators#s23-c01",
+          "cppref-cpp-overload#s01-c01",
+          "cpp-notes-intro#s10-c01"
+        ],
+        "top1_score": 0.814363956451416,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-025",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-auto#s03-c01"
+        ],
+        "top5_ids": [
+          "cppref-cpp-auto#s11-c01",
+          "cpp-notes-intro#s04-c01",
+          "cppref-cpp-auto#s03-c01",
+          "cppref-cpp-auto#s10-c01",
+          "cppref-cpp-auto#s08-c01"
+        ],
+        "top1_score": 0.8408132791519165,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "cppref-cpp-auto#s03-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "CPP2-026",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-auto#s08-c01"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s06-c01",
+          "cppref-cpp-auto#s08-c01",
+          "cpp-notes-intro#s03-c01",
+          "cpp-notes-intro#s08-c01"
+        ],
+        "top1_score": 0.8207770586013794,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "cppref-cpp-auto#s08-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "CPP2-027",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-range-for#s05-c01"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s09-c01",
+          "cpp-notes-intro#s04-c01",
+          "cpp-notes-intro#s03-c01",
+          "cpp-notes-intro#s11-c01",
+          "cpp-notes-intro#s08-c01"
+        ],
+        "top1_score": 0.8074439764022827,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-028",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-overload#s17-c01"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s04-c01",
+          "cpp-notes-intro#s08-c01",
+          "cpp-notes-intro#s07-c01",
+          "cppref-cpp-overload#s10-c01",
+          "cpp-notes-intro#s10-c01"
+        ],
+        "top1_score": 0.833106279373169,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-029",
+        "qtype": "mixed",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-vector#s05-c01"
+        ],
+        "top5_ids": [
+          "cppref-cpp-vector#s05-c01",
+          "cppref-cpp-range-for#s06-c01",
+          "cppref-cpp-vector#s07-c01",
+          "cppref-cpp-vector#s02-c01",
+          "cpp-notes-intro#s06-c01"
+        ],
+        "top1_score": 0.8534497022628784,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "cppref-cpp-vector#s05-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "CPP2-030",
+        "qtype": "mixed",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-string#s07-c02"
+        ],
+        "top5_ids": [
+          "cppref-cpp-string#s07-c02",
+          "cpp-notes-intro#s08-c01",
+          "cpp-notes-intro#s04-c01",
+          "cppref-cpp-string#s07-c01",
+          "cpp-notes-intro#s09-c01"
+        ],
+        "top1_score": 0.82197105884552,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "cppref-cpp-string#s07-c02"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "CPP2-031",
+        "qtype": "mixed",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-cout#s02-c01"
+        ],
+        "top5_ids": [
+          "cppref-cpp-cout#s02-c01",
+          "cpp-notes-intro#s05-c01",
+          "cpp-notes-intro#s10-c01",
+          "cpp-notes-intro#s07-c01",
+          "cppref-cpp-cout#s01-c01"
+        ],
+        "top1_score": 0.8250131607055664,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "cppref-cpp-cout#s02-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "CPP2-032",
+        "qtype": "mixed",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-namespace#s08-c01"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s03-c01",
+          "cppref-cpp-namespace#s13-c01",
+          "cppref-cpp-namespace#s08-c01",
+          "cppref-cpp-namespace#s04-c01",
+          "cppref-cpp-namespace#s08-c02"
+        ],
+        "top1_score": 0.8350926041603088,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "cppref-cpp-namespace#s08-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "CPP2-033",
+        "qtype": "mixed",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-reference#s07-c01"
+        ],
+        "top5_ids": [
+          "cppref-cpp-reference#s07-c01",
+          "cpp-notes-intro#s04-c01",
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s03-c01",
+          "cppref-cpp-operators#s08-c01"
+        ],
+        "top1_score": 0.8422695398330688,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "cppref-cpp-reference#s07-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "CPP2-034",
+        "qtype": "mixed",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-function#s04-c01"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s04-c01",
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s05-c01",
+          "cppref-cpp-function#s04-c01",
+          "cpp-notes-intro#s09-c01"
+        ],
+        "top1_score": 0.859264612197876,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "cppref-cpp-function#s04-c01",
+          "cpp-notes-intro#s04-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "CPP2-035",
+        "qtype": "mixed",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-operators#s06-c01"
+        ],
+        "top5_ids": [
+          "cppref-cpp-operators#s06-c01",
+          "cppref-cpp-operators#s23-c01",
+          "cpp-notes-intro#s07-c01",
+          "cppref-cpp-operators#s08-c01",
+          "cppref-cpp-overload#s19-c02"
+        ],
+        "top1_score": 0.8332507014274597,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "cppref-cpp-operators#s06-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "CPP2-036",
+        "qtype": "mixed",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-range-for#s06-c01"
+        ],
+        "top5_ids": [
+          "cppref-cpp-range-for#s06-c01",
+          "cppref-cpp-range-for#s09-c01",
+          "cppref-cpp-range-for#s04-c01",
+          "cppref-cpp-range-for#s01-c01",
+          "cppref-cpp-auto#s08-c01"
+        ],
+        "top1_score": 0.839909553527832,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "cppref-cpp-range-for#s06-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "CPP2-037",
+        "qtype": "mixed",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-overload#s11-c01"
+        ],
+        "top5_ids": [
+          "cppref-cpp-overload#s19-c02",
+          "cppref-cpp-overload#s15-c01",
+          "cppref-cpp-overload#s07-c01",
+          "cppref-cpp-constructor#s07-c01",
+          "cppref-cpp-constructor#s05-c01"
+        ],
+        "top1_score": 0.8517431020736694,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "cppref-cpp-overload#s19-c02"
+        ],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-038",
+        "qtype": "mixed",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-constructor#s05-c01"
+        ],
+        "top5_ids": [
+          "cppref-cpp-constructor#s13-c01",
+          "cppref-cpp-overload#s19-c02",
+          "cpp-notes-intro#s08-c01",
+          "cpp-notes-intro#s04-c01",
+          "cpp-notes-intro#s06-c01"
+        ],
+        "top1_score": 0.8394326567649841,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-039",
+        "qtype": "out-of-corpus",
+        "evidence_language": "none",
+        "expected_source_ids": [],
+        "top5_ids": [
+          "cpp-notes-intro#s08-c01",
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s03-c01",
+          "cpp-notes-intro#s04-c01",
+          "cppref-cpp-function#s23-c01"
+        ],
+        "top1_score": 0.8185156583786011,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-040",
+        "qtype": "out-of-corpus",
+        "evidence_language": "none",
+        "expected_source_ids": [],
+        "top5_ids": [
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s06-c01",
+          "cpp-notes-intro#s03-c01",
+          "cpp-notes-intro#s04-c01",
+          "cpp-notes-intro#s05-c01"
+        ],
+        "top1_score": 0.8232240676879883,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-041",
+        "qtype": "out-of-corpus",
+        "evidence_language": "none",
+        "expected_source_ids": [],
+        "top5_ids": [
+          "cpp-notes-intro#s08-c01",
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s04-c01",
+          "cppref-cpp-string#s07-c02",
+          "cpp-notes-intro#s03-c01"
+        ],
+        "top1_score": 0.8274132013320923,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-042",
+        "qtype": "out-of-corpus",
+        "evidence_language": "none",
+        "expected_source_ids": [],
+        "top5_ids": [
+          "cpp-notes-intro#s03-c01",
+          "cpp-notes-intro#s02-c01",
+          "cpp-notes-intro#s07-c01",
+          "cppref-cpp-operators#s22-c01",
+          "cpp-notes-intro#s05-c01"
+        ],
+        "top1_score": 0.822426438331604,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-043",
+        "qtype": "out-of-corpus",
+        "evidence_language": "none",
+        "expected_source_ids": [],
+        "top5_ids": [
+          "cpp-notes-intro#s11-c01",
+          "cpp-notes-intro#s08-c01",
+          "cpp-notes-intro#s03-c01",
+          "cpp-notes-intro#s04-c01",
+          "cpp-notes-intro#s09-c01"
+        ],
+        "top1_score": 0.8260642290115356,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-044",
+        "qtype": "out-of-corpus",
+        "evidence_language": "none",
+        "expected_source_ids": [],
+        "top5_ids": [
+          "cpp-notes-intro#s08-c01",
+          "cpp-notes-intro#s09-c01",
+          "cpp-notes-intro#s07-c01",
+          "cpp-notes-intro#s05-c01",
+          "cpp-notes-intro#s10-c01"
+        ],
+        "top1_score": 0.8271443843841553,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-045",
+        "qtype": "out-of-corpus",
+        "evidence_language": "none",
+        "expected_source_ids": [],
+        "top5_ids": [
+          "cpp-notes-intro#s03-c01",
+          "cpp-notes-intro#s02-c01",
+          "cpp-notes-intro#s08-c01",
+          "cppref-cpp-constructor#s10-c01",
+          "cppref-cpp-constructor#s13-c01"
+        ],
+        "top1_score": 0.8179932236671448,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      }
+    ],
+    "bge-m3": [
+      {
+        "item_id": "CPP2-001",
+        "qtype": "in-corpus",
+        "evidence_language": "mixed",
+        "expected_source_ids": [
+          "cpp-notes-intro#s02-c01"
+        ],
+        "top5_ids": [
+          "cppref-cpp-function#s06-c01",
+          "cppref-cpp-string#s07-c01",
+          "cppref-cpp-cout#s03-c01",
+          "cppref-cpp-function#s22-c01",
+          "cppref-cpp-string#s11-c01"
+        ],
+        "top1_score": 0.538941502571106,
+        "hit": false,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-002",
+        "qtype": "in-corpus",
+        "evidence_language": "mixed",
+        "expected_source_ids": [
+          "cpp-notes-intro#s03-c01"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s03-c01",
+          "cpp-notes-intro#s04-c01",
+          "cppref-cpp-namespace#s08-c01",
+          "cppref-cpp-namespace#s08-c02",
+          "cppref-cpp-namespace#s07-c01"
+        ],
+        "top1_score": 0.5656676292419434,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "cpp-notes-intro#s03-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "CPP2-003",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-vector#s02-c01"
+        ],
+        "top5_ids": [
+          "cppref-cpp-vector#s02-c01",
+          "cppref-cpp-vector#s07-c01",
+          "cpp-notes-intro#s05-c01",
+          "cppref-cpp-string#s07-c01",
+          "cppref-cpp-overload#s18-c01"
+        ],
+        "top1_score": 0.5313007235527039,
+        "hit": true,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-004",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-vector#s04-c01"
+        ],
+        "top5_ids": [
+          "cppref-cpp-operators#s12-c01",
+          "cppref-cpp-overload#s19-c02",
+          "cppref-cpp-operators#s07-c01",
+          "cppref-cpp-overload#s18-c01",
+          "cppref-cpp-vector#s02-c01"
+        ],
+        "top1_score": 0.5048249959945679,
+        "hit": false,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-005",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-vector#s02-c01"
+        ],
+        "top5_ids": [
+          "cppref-cpp-reference#s03-c01",
+          "cppref-cpp-vector#s02-c01",
+          "cppref-cpp-overload#s18-c02",
+          "cppref-cpp-overload#s14-c01",
+          "cppref-cpp-class#s05-c01"
+        ],
+        "top1_score": 0.5115056037902832,
+        "hit": true,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-006",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-string#s04-c01"
+        ],
+        "top5_ids": [
+          "cppref-cpp-reference#s08-c01",
+          "cpp-notes-intro#s04-c01",
+          "cppref-cpp-namespace#s08-c01",
+          "cppref-cpp-namespace#s06-c01",
+          "cppref-cpp-reference#s02-c01"
+        ],
+        "top1_score": 0.5269219875335693,
+        "hit": false,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-007",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-string#s07-c02"
+        ],
+        "top5_ids": [
+          "cppref-cpp-class#s05-c01",
+          "cppref-cpp-class#s03-c01",
+          "cppref-cpp-constructor#s03-c01",
+          "cppref-cpp-function#s05-c01",
+          "cpp-notes-intro#s09-c01"
+        ],
+        "top1_score": 0.5393427610397339,
+        "hit": false,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-008",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-string#s09-c01"
+        ],
+        "top5_ids": [
+          "cppref-cpp-string#s09-c01",
+          "cppref-cpp-namespace#s05-c01",
+          "cppref-cpp-string#s15-c01",
+          "cppref-cpp-vector#s09-c01",
+          "cppref-cpp-string#s10-c01"
+        ],
+        "top1_score": 0.5585402250289917,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "cppref-cpp-string#s09-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "CPP2-009",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-cout#s02-c01"
+        ],
+        "top5_ids": [
+          "cppref-cpp-cout#s03-c01",
+          "cppref-cpp-function#s22-c01",
+          "cppref-cpp-namespace#s08-c02",
+          "cppref-cpp-namespace#s07-c02",
+          "cppref-cpp-namespace#s08-c01"
+        ],
+        "top1_score": 0.551449716091156,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-010",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-class#s05-c01"
+        ],
+        "top5_ids": [
+          "cppref-cpp-class#s05-c01",
+          "cppref-cpp-function#s03-c01",
+          "cppref-cpp-class#s04-c01",
+          "cppref-cpp-reference#s02-c01",
+          "cppref-cpp-namespace#s04-c02"
+        ],
+        "top1_score": 0.5563334226608276,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "cppref-cpp-class#s05-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "CPP2-011",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-class#s06-c01"
+        ],
+        "top5_ids": [
+          "cppref-cpp-overload#s14-c01",
+          "cppref-cpp-class#s06-c01",
+          "cppref-cpp-class#s05-c01",
+          "cppref-cpp-constructor#s03-c01",
+          "cppref-cpp-constructor#s05-c01"
+        ],
+        "top1_score": 0.598147988319397,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "cppref-cpp-class#s06-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "CPP2-012",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-constructor#s05-c01"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s06-c01",
+          "cpp-notes-intro#s09-c01",
+          "cppref-cpp-constructor#s07-c01",
+          "cppref-cpp-overload#s18-c01",
+          "cppref-cpp-overload#s16-c01"
+        ],
+        "top1_score": 0.5769473314285278,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-013",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-constructor#s09-c01"
+        ],
+        "top5_ids": [
+          "cppref-cpp-constructor#s09-c01",
+          "cppref-cpp-overload#s18-c01",
+          "cppref-cpp-vector#s02-c01",
+          "cppref-cpp-overload#s18-c02",
+          "cppref-cpp-constructor#s05-c01"
+        ],
+        "top1_score": 0.6146355867385864,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "cppref-cpp-constructor#s09-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "CPP2-014",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-namespace#s05-c01"
+        ],
+        "top5_ids": [
+          "cppref-cpp-namespace#s04-c02",
+          "cppref-cpp-namespace#s04-c01",
+          "cppref-cpp-class#s06-c01",
+          "cppref-cpp-namespace#s05-c01",
+          "cpp-notes-intro#s03-c01"
+        ],
+        "top1_score": 0.607125997543335,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "cppref-cpp-namespace#s05-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "CPP2-015",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-namespace#s06-c01"
+        ],
+        "top5_ids": [
+          "cppref-cpp-namespace#s06-c01",
+          "cppref-cpp-namespace#s03-c01",
+          "cppref-cpp-namespace#s04-c01",
+          "cppref-cpp-namespace#s08-c01",
+          "cppref-cpp-namespace#s01-c01"
+        ],
+        "top1_score": 0.6385456323623657,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "cppref-cpp-namespace#s06-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "CPP2-016",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-namespace#s07-c01"
+        ],
+        "top5_ids": [
+          "cppref-cpp-namespace#s07-c01",
+          "cppref-cpp-namespace#s07-c02",
+          "cppref-cpp-reference#s02-c01",
+          "cppref-cpp-namespace#s08-c02",
+          "cppref-cpp-namespace#s08-c01"
+        ],
+        "top1_score": 0.585349977016449,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "cppref-cpp-namespace#s07-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "CPP2-017",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-reference#s04-c01"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s04-c01",
+          "cppref-cpp-reference#s04-c01",
+          "cppref-cpp-overload#s17-c01",
+          "cppref-cpp-operators#s11-c01",
+          "cppref-cpp-overload#s18-c02"
+        ],
+        "top1_score": 0.5283913612365723,
+        "hit": true,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-018",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-reference#s06-c01"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s04-c01",
+          "cpp-notes-intro#s07-c01",
+          "cppref-cpp-overload#s17-c01",
+          "cpp-notes-intro#s09-c01",
+          "cppref-cpp-overload#s18-c01"
+        ],
+        "top1_score": 0.5927358865737915,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "cppref-cpp-overload#s17-c01"
+        ],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-019",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-reference#s08-c01"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s04-c01",
+          "cppref-cpp-reference#s03-c01",
+          "cpp-notes-intro#s09-c01",
+          "cppref-cpp-reference#s06-c01",
+          "cppref-cpp-reference#s08-c01"
+        ],
+        "top1_score": 0.5720455646514893,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "cppref-cpp-reference#s03-c01",
+          "cppref-cpp-reference#s08-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "CPP2-020",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-function#s12-c01"
+        ],
+        "top5_ids": [
+          "cppref-cpp-function#s12-c01",
+          "cppref-cpp-overload#s14-c01",
+          "cppref-cpp-function#s05-c01",
+          "cppref-cpp-constructor#s05-c01",
+          "cppref-cpp-function#s11-c02"
+        ],
+        "top1_score": 0.6127370595932007,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "cppref-cpp-function#s12-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "CPP2-021",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-function#s13-c01"
+        ],
+        "top5_ids": [
+          "cpp-notes-intro#s07-c01",
+          "cppref-cpp-namespace#s07-c02",
+          "cppref-cpp-function#s13-c01",
+          "cppref-cpp-overload#s16-c02",
+          "cpp-notes-intro#s05-c01"
+        ],
+        "top1_score": 0.5653814673423767,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "cppref-cpp-function#s13-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "CPP2-022",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-function#s16-c01"
+        ],
+        "top5_ids": [
+          "cppref-cpp-reference#s02-c01",
+          "cppref-cpp-overload#s14-c01",
+          "cppref-cpp-function#s05-c01",
+          "cppref-cpp-namespace#s07-c02",
+          "cpp-notes-intro#s06-c01"
+        ],
+        "top1_score": 0.5768452286720276,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-023",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-operators#s06-c01"
+        ],
+        "top5_ids": [
+          "cppref-cpp-overload#s19-c02",
+          "cppref-cpp-operators#s06-c01",
+          "cppref-cpp-overload#s15-c01",
+          "cppref-cpp-overload#s06-c01",
+          "cppref-cpp-overload#s18-c01"
+        ],
+        "top1_score": 0.5785194635391235,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "cppref-cpp-operators#s06-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "CPP2-024",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-operators#s11-c01"
+        ],
+        "top5_ids": [
+          "cppref-cpp-operators#s11-c01",
+          "cppref-cpp-operators#s07-c01",
+          "cpp-notes-intro#s06-c01",
+          "cppref-cpp-function#s17-c01",
+          "cppref-cpp-class#s03-c01"
+        ],
+        "top1_score": 0.5261774659156799,
+        "hit": true,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-025",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-auto#s03-c01"
+        ],
+        "top5_ids": [
+          "cppref-cpp-auto#s12-c01",
+          "cppref-cpp-auto#s13-c01",
+          "cppref-cpp-auto#s03-c01",
+          "cppref-cpp-auto#s07-c01",
+          "cppref-cpp-function#s04-c01"
+        ],
+        "top1_score": 0.6946311593055725,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "cppref-cpp-auto#s03-c01",
+          "cppref-cpp-function#s04-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "CPP2-026",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-auto#s08-c01"
+        ],
+        "top5_ids": [
+          "cppref-cpp-constructor#s03-c01",
+          "cppref-cpp-namespace#s07-c01",
+          "cppref-cpp-auto#s08-c01",
+          "cppref-cpp-function#s05-c02",
+          "cppref-cpp-class#s04-c01"
+        ],
+        "top1_score": 0.589679479598999,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "cppref-cpp-auto#s08-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "CPP2-027",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-range-for#s05-c01"
+        ],
+        "top5_ids": [
+          "cppref-cpp-range-for#s05-c01",
+          "cppref-cpp-reference#s08-c01",
+          "cppref-cpp-reference#s06-c01",
+          "cppref-cpp-vector#s07-c01",
+          "cppref-cpp-range-for#s04-c01"
+        ],
+        "top1_score": 0.5738263130187988,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "cppref-cpp-range-for#s05-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "CPP2-028",
+        "qtype": "in-corpus",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-overload#s17-c01"
+        ],
+        "top5_ids": [
+          "cppref-cpp-overload#s17-c01",
+          "cppref-cpp-overload#s16-c01",
+          "cpp-notes-intro#s09-c01",
+          "cppref-cpp-overload#s06-c01",
+          "cppref-cpp-overload#s18-c01"
+        ],
+        "top1_score": 0.5180177688598633,
+        "hit": true,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-029",
+        "qtype": "mixed",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-vector#s05-c01"
+        ],
+        "top5_ids": [
+          "cppref-cpp-vector#s05-c01",
+          "cppref-cpp-vector#s02-c01",
+          "cppref-cpp-vector#s07-c01",
+          "cppref-cpp-string#s04-c01",
+          "cppref-cpp-function#s03-c02"
+        ],
+        "top1_score": 0.6664249897003174,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "cppref-cpp-vector#s05-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "CPP2-030",
+        "qtype": "mixed",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-string#s07-c02"
+        ],
+        "top5_ids": [
+          "cppref-cpp-string#s07-c02",
+          "cppref-cpp-string#s07-c01",
+          "cppref-cpp-string#s11-c01",
+          "cppref-cpp-string#s02-c01",
+          "cppref-cpp-string#s15-c01"
+        ],
+        "top1_score": 0.5634734630584717,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "cppref-cpp-string#s07-c02"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "CPP2-031",
+        "qtype": "mixed",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-cout#s02-c01"
+        ],
+        "top5_ids": [
+          "cppref-cpp-cout#s02-c01",
+          "cppref-cpp-range-for#s08-c01",
+          "cppref-cpp-cout#s03-c01",
+          "cppref-cpp-function#s19-c01",
+          "cpp-notes-intro#s11-c01"
+        ],
+        "top1_score": 0.6055294871330261,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "cppref-cpp-cout#s02-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "CPP2-032",
+        "qtype": "mixed",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-namespace#s08-c01"
+        ],
+        "top5_ids": [
+          "cppref-cpp-namespace#s08-c01",
+          "cppref-cpp-namespace#s07-c01",
+          "cppref-cpp-namespace#s04-c01",
+          "cppref-cpp-namespace#s04-c02",
+          "cppref-cpp-namespace#s06-c01"
+        ],
+        "top1_score": 0.5997366309165955,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "cppref-cpp-namespace#s08-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "CPP2-033",
+        "qtype": "mixed",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-reference#s07-c01"
+        ],
+        "top5_ids": [
+          "cppref-cpp-reference#s07-c01",
+          "cppref-cpp-vector#s02-c01",
+          "cpp-notes-intro#s04-c01",
+          "cppref-cpp-class#s04-c01",
+          "cppref-cpp-string#s02-c01"
+        ],
+        "top1_score": 0.6388192176818848,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "cppref-cpp-reference#s07-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "CPP2-034",
+        "qtype": "mixed",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-function#s04-c01"
+        ],
+        "top5_ids": [
+          "cppref-cpp-auto#s12-c01",
+          "cppref-cpp-auto#s13-c01",
+          "cpp-notes-intro#s04-c01",
+          "cppref-cpp-function#s04-c01",
+          "cppref-cpp-function#s04-c02"
+        ],
+        "top1_score": 0.669326663017273,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "cppref-cpp-function#s04-c01",
+          "cpp-notes-intro#s04-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "CPP2-035",
+        "qtype": "mixed",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-operators#s06-c01"
+        ],
+        "top5_ids": [
+          "cppref-cpp-operators#s09-c01",
+          "cppref-cpp-operators#s07-c01",
+          "cppref-cpp-overload#s06-c01",
+          "cppref-cpp-overload#s19-c02",
+          "cppref-cpp-overload#s06-c02"
+        ],
+        "top1_score": 0.5911458730697632,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-036",
+        "qtype": "mixed",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-range-for#s06-c01"
+        ],
+        "top5_ids": [
+          "cppref-cpp-range-for#s06-c01",
+          "cppref-cpp-range-for#s04-c01",
+          "cppref-cpp-namespace#s04-c01",
+          "cppref-cpp-range-for#s05-c01",
+          "cppref-cpp-range-for#s03-c01"
+        ],
+        "top1_score": 0.6121092438697815,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "cppref-cpp-range-for#s06-c01",
+          "cppref-cpp-range-for#s04-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "CPP2-037",
+        "qtype": "mixed",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-overload#s11-c01"
+        ],
+        "top5_ids": [
+          "cppref-cpp-overload#s07-c01",
+          "cppref-cpp-constructor#s05-c01",
+          "cppref-cpp-overload#s11-c01",
+          "cppref-cpp-constructor#s07-c01",
+          "cppref-cpp-constructor#s03-c01"
+        ],
+        "top1_score": 0.6919554471969604,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "cppref-cpp-overload#s11-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "CPP2-038",
+        "qtype": "mixed",
+        "evidence_language": "en",
+        "expected_source_ids": [
+          "cppref-cpp-constructor#s05-c01"
+        ],
+        "top5_ids": [
+          "cppref-cpp-constructor#s05-c01",
+          "cppref-cpp-overload#s19-c02",
+          "cppref-cpp-overload#s14-c01",
+          "cppref-cpp-overload#s18-c02",
+          "cppref-cpp-overload#s18-c01"
+        ],
+        "top1_score": 0.6435420513153076,
+        "hit": true,
+        "fixed_gate_abstain": false,
+        "response_type": "answer",
+        "cited_ids": [
+          "cppref-cpp-constructor#s05-c01"
+        ],
+        "correct_citations": 1
+      },
+      {
+        "item_id": "CPP2-039",
+        "qtype": "out-of-corpus",
+        "evidence_language": "none",
+        "expected_source_ids": [],
+        "top5_ids": [
+          "cppref-cpp-namespace#s08-c01",
+          "cppref-cpp-vector#s02-c01",
+          "cppref-cpp-vector#s07-c01",
+          "cppref-cpp-namespace#s09-c01",
+          "cppref-cpp-cout#s02-c01"
+        ],
+        "top1_score": 0.5694308280944824,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-040",
+        "qtype": "out-of-corpus",
+        "evidence_language": "none",
+        "expected_source_ids": [],
+        "top5_ids": [
+          "cppref-cpp-function#s19-c01",
+          "cppref-cpp-overload#s15-c01",
+          "cpp-notes-intro#s06-c01",
+          "cppref-cpp-operators#s05-c01",
+          "cppref-cpp-overload#s19-c02"
+        ],
+        "top1_score": 0.5382388830184937,
+        "hit": false,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-041",
+        "qtype": "out-of-corpus",
+        "evidence_language": "none",
+        "expected_source_ids": [],
+        "top5_ids": [
+          "cppref-cpp-string#s15-c01",
+          "cppref-cpp-vector#s10-c01",
+          "cppref-cpp-string#s02-c01",
+          "cppref-cpp-string#s11-c01",
+          "cppref-cpp-overload#s19-c01"
+        ],
+        "top1_score": 0.5511803030967712,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-042",
+        "qtype": "out-of-corpus",
+        "evidence_language": "none",
+        "expected_source_ids": [],
+        "top5_ids": [
+          "cpp-notes-intro#s03-c01",
+          "cppref-cpp-string#s15-c01",
+          "cppref-cpp-constructor#s08-c01",
+          "cppref-cpp-operators#s02-c01",
+          "cppref-cpp-operators#s18-c01"
+        ],
+        "top1_score": 0.5119258165359497,
+        "hit": false,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-043",
+        "qtype": "out-of-corpus",
+        "evidence_language": "none",
+        "expected_source_ids": [],
+        "top5_ids": [
+          "cppref-cpp-operators#s13-c01",
+          "cppref-cpp-vector#s02-c01",
+          "cppref-cpp-namespace#s07-c02",
+          "cppref-cpp-string#s02-c01",
+          "cppref-cpp-vector#s07-c01"
+        ],
+        "top1_score": 0.5849259495735168,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-044",
+        "qtype": "out-of-corpus",
+        "evidence_language": "none",
+        "expected_source_ids": [],
+        "top5_ids": [
+          "cppref-cpp-vector#s07-c01",
+          "cppref-cpp-vector#s02-c01",
+          "cpp-notes-intro#s07-c01",
+          "cppref-cpp-operators#s09-c01",
+          "cppref-cpp-string#s07-c01"
+        ],
+        "top1_score": 0.563741147518158,
+        "hit": false,
+        "fixed_gate_abstain": false,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      },
+      {
+        "item_id": "CPP2-045",
+        "qtype": "out-of-corpus",
+        "evidence_language": "none",
+        "expected_source_ids": [],
+        "top5_ids": [
+          "cppref-cpp-string#s10-c01",
+          "cpp-notes-intro#s03-c01",
+          "cppref-cpp-operators#s18-c01",
+          "cppref-cpp-string#s02-c01",
+          "cppref-cpp-operators#s02-c01"
+        ],
+        "top1_score": 0.5234912037849426,
+        "hit": false,
+        "fixed_gate_abstain": true,
+        "response_type": "abstain",
+        "cited_ids": [],
+        "correct_citations": 0
+      }
+    ]
+  },
+  "limitations": [
+    "Seven out-of-corpus questions per language limit abstention inference.",
+    "The pooled-v1 gates are frozen; v2 sweep optima are descriptive only.",
+    "The E5 baseline saw v1; a stable API model ID cannot prove immutable weights."
+  ]
+}
