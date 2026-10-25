@@ -1,0 +1,1888 @@
+{
+  "status": "complete",
+  "started_at": "2026-10-24T23:14:52.860812+00:00",
+  "elapsed_seconds": 150.31123880000087,
+  "model": {
+    "repository": "BAAI/bge-m3",
+    "revision_sha": "5617a9f61b028005a4858fdac845db406aefb181",
+    "license": "MIT"
+  },
+  "set_sha256": "94a4ec6e4f5c9ecfbf64681e05a314e1c35f47869247671543e1b5bedfc7604a",
+  "v2_sha256": "94a4ec6e4f5c9ecfbf64681e05a314e1c35f47869247671543e1b5bedfc7604a",
+  "snapshot": "2026-10-16",
+  "index": {
+    "chunk_sha256": "0b7afc4c24a6c34e10d797b9c2bab6ebd68f7c32636442c17eba280226d07649",
+    "settings_sha256": "91d3f8e4882a5a90ae0128015d0d28bd141e7e007580f1c2305888ed86fe5927",
+    "index_sha256": "a16373bf201fc063d5f7fe148efaac37b8021950953e98bd433dabe8e62ee0e6",
+    "dimension": 1024,
+    "count": 253,
+    "truncation_count": 0,
+    "ordered_ids_sha256": "d42c0b9dd0be5d4c42b23f7288ca68404c613ae0fadcbc87daaac15d235e80e5"
+  },
+  "model_key": "bge-m3",
+  "language_id": "python",
+  "eval_set_version": "python-v2",
+  "mode": "end-to-end",
+  "calibration": {
+    "model_key": "bge-m3",
+    "revision_sha": "5617a9f61b028005a4858fdac845db406aefb181",
+    "method": "pooled-v1-max-balanced-accuracy; tie=higher; ooc=score<threshold",
+    "n_answerable": 100,
+    "n_out": 20,
+    "v1_hashes": {
+      "c": "55a69ac80a2e7bc1db11aae2ded7c346b5372ebeba9619f7e9cfd181b3083e88",
+      "cpp": "087cf8a163563bfa9765b769e939b08622d10efed43f825646ba67291a01f533",
+      "python": "a4b364891578dd9023a70994d2e351fce5c83b0eb5fe7f2b7ef7a388b2b3f22a",
+      "java": "60d015014299f3d29d8e42cda61d78b5aa3a560a1881799aff7dafbd3ded3725"
+    },
+    "threshold": 0.5504866242408752,
+    "balanced_accuracy": 0.98,
+    "pooled_confusion": {
+      "tp": 20,
+      "fn": 0,
+      "tn": 96,
+      "fp": 4
+    },
+    "per_language_confusion": {
+      "c": {
+        "tp": 5,
+        "fn": 0,
+        "tn": 24,
+        "fp": 1
+      },
+      "cpp": {
+        "tp": 5,
+        "fn": 0,
+        "tn": 25,
+        "fp": 0
+      },
+      "python": {
+        "tp": 5,
+        "fn": 0,
+        "tn": 24,
+        "fp": 1
+      },
+      "java": {
+        "tp": 5,
+        "fn": 0,
+        "tn": 23,
+        "fp": 2
+      }
+    },
+    "score_rows": [
+      {
+        "pack_id": "c",
+        "item_id": "C-001",
+        "qtype": "in-corpus",
+        "score": 0.6440348625183105
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-002",
+        "qtype": "in-corpus",
+        "score": 0.5982194542884827
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-003",
+        "qtype": "in-corpus",
+        "score": 0.6262091398239136
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-004",
+        "qtype": "in-corpus",
+        "score": 0.5688381791114807
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-005",
+        "qtype": "in-corpus",
+        "score": 0.6310622692108154
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-006",
+        "qtype": "in-corpus",
+        "score": 0.5978911519050598
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-007",
+        "qtype": "in-corpus",
+        "score": 0.5610072016716003
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-008",
+        "qtype": "in-corpus",
+        "score": 0.7067208290100098
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-009",
+        "qtype": "in-corpus",
+        "score": 0.5939510464668274
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-010",
+        "qtype": "in-corpus",
+        "score": 0.5931930541992188
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-011",
+        "qtype": "in-corpus",
+        "score": 0.588600754737854
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-012",
+        "qtype": "in-corpus",
+        "score": 0.5335940718650818
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-013",
+        "qtype": "in-corpus",
+        "score": 0.5508223176002502
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-014",
+        "qtype": "in-corpus",
+        "score": 0.6543603539466858
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-015",
+        "qtype": "in-corpus",
+        "score": 0.689166784286499
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-016",
+        "qtype": "in-corpus",
+        "score": 0.6821774244308472
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-017",
+        "qtype": "in-corpus",
+        "score": 0.6442654132843018
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-018",
+        "qtype": "in-corpus",
+        "score": 0.6661496758460999
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-019",
+        "qtype": "in-corpus",
+        "score": 0.6290504932403564
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-020",
+        "qtype": "in-corpus",
+        "score": 0.5866231918334961
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-M01",
+        "qtype": "mixed",
+        "score": 0.6887116432189941
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-M02",
+        "qtype": "mixed",
+        "score": 0.5942453742027283
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-M03",
+        "qtype": "mixed",
+        "score": 0.668819785118103
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-M04",
+        "qtype": "mixed",
+        "score": 0.6188790798187256
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-M05",
+        "qtype": "mixed",
+        "score": 0.5504866242408752
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-O01",
+        "qtype": "out-of-corpus",
+        "score": 0.3587530851364136
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-O02",
+        "qtype": "out-of-corpus",
+        "score": 0.40632063150405884
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-O03",
+        "qtype": "out-of-corpus",
+        "score": 0.33320072293281555
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-O04",
+        "qtype": "out-of-corpus",
+        "score": 0.3769235610961914
+      },
+      {
+        "pack_id": "c",
+        "item_id": "C-O05",
+        "qtype": "out-of-corpus",
+        "score": 0.45431163907051086
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-001",
+        "qtype": "in-corpus",
+        "score": 0.7690926790237427
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-002",
+        "qtype": "in-corpus",
+        "score": 0.679914116859436
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-003",
+        "qtype": "in-corpus",
+        "score": 0.7241210341453552
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-004",
+        "qtype": "in-corpus",
+        "score": 0.674518883228302
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-005",
+        "qtype": "in-corpus",
+        "score": 0.6146067380905151
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-006",
+        "qtype": "in-corpus",
+        "score": 0.6940027475357056
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-007",
+        "qtype": "in-corpus",
+        "score": 0.6291316747665405
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-008",
+        "qtype": "in-corpus",
+        "score": 0.678525447845459
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-009",
+        "qtype": "in-corpus",
+        "score": 0.7198954820632935
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-010",
+        "qtype": "in-corpus",
+        "score": 0.6744991540908813
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-011",
+        "qtype": "in-corpus",
+        "score": 0.6252239942550659
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-012",
+        "qtype": "in-corpus",
+        "score": 0.592137336730957
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-013",
+        "qtype": "in-corpus",
+        "score": 0.7126712799072266
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-014",
+        "qtype": "in-corpus",
+        "score": 0.7089937925338745
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-015",
+        "qtype": "in-corpus",
+        "score": 0.6360678672790527
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-016",
+        "qtype": "in-corpus",
+        "score": 0.6290969848632812
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-017",
+        "qtype": "in-corpus",
+        "score": 0.5945636630058289
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-018",
+        "qtype": "in-corpus",
+        "score": 0.6175968647003174
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-019",
+        "qtype": "in-corpus",
+        "score": 0.5760189890861511
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-020",
+        "qtype": "in-corpus",
+        "score": 0.6195078492164612
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-M01",
+        "qtype": "mixed",
+        "score": 0.6309149265289307
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-M02",
+        "qtype": "mixed",
+        "score": 0.6551095247268677
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-M03",
+        "qtype": "mixed",
+        "score": 0.6558940410614014
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-M04",
+        "qtype": "mixed",
+        "score": 0.6223254799842834
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-M05",
+        "qtype": "mixed",
+        "score": 0.6741454601287842
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-O01",
+        "qtype": "out-of-corpus",
+        "score": 0.4646027386188507
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-O02",
+        "qtype": "out-of-corpus",
+        "score": 0.32916730642318726
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-O03",
+        "qtype": "out-of-corpus",
+        "score": 0.499246209859848
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-O04",
+        "qtype": "out-of-corpus",
+        "score": 0.4867802858352661
+      },
+      {
+        "pack_id": "cpp",
+        "item_id": "CPP-O05",
+        "qtype": "out-of-corpus",
+        "score": 0.4345870614051819
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-001",
+        "qtype": "in-corpus",
+        "score": 0.6537710428237915
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-002",
+        "qtype": "in-corpus",
+        "score": 0.6474185585975647
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-003",
+        "qtype": "in-corpus",
+        "score": 0.606867790222168
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-004",
+        "qtype": "in-corpus",
+        "score": 0.6673946380615234
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-005",
+        "qtype": "in-corpus",
+        "score": 0.6093752384185791
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-006",
+        "qtype": "in-corpus",
+        "score": 0.5475713610649109
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-007",
+        "qtype": "in-corpus",
+        "score": 0.6034404039382935
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-008",
+        "qtype": "in-corpus",
+        "score": 0.6132891178131104
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-009",
+        "qtype": "in-corpus",
+        "score": 0.587031364440918
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-010",
+        "qtype": "in-corpus",
+        "score": 0.6053686738014221
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-011",
+        "qtype": "in-corpus",
+        "score": 0.6371690630912781
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-012",
+        "qtype": "in-corpus",
+        "score": 0.6354122161865234
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-013",
+        "qtype": "in-corpus",
+        "score": 0.6017758250236511
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-014",
+        "qtype": "in-corpus",
+        "score": 0.6319217681884766
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-015",
+        "qtype": "in-corpus",
+        "score": 0.5771727561950684
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-016",
+        "qtype": "in-corpus",
+        "score": 0.610314130783081
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-017",
+        "qtype": "in-corpus",
+        "score": 0.6086978316307068
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-018",
+        "qtype": "in-corpus",
+        "score": 0.6432996988296509
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-019",
+        "qtype": "in-corpus",
+        "score": 0.6446222066879272
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-020",
+        "qtype": "in-corpus",
+        "score": 0.6241520643234253
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-M01",
+        "qtype": "mixed",
+        "score": 0.6085031628608704
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-M02",
+        "qtype": "mixed",
+        "score": 0.6046671271324158
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-M03",
+        "qtype": "mixed",
+        "score": 0.5915239453315735
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-M04",
+        "qtype": "mixed",
+        "score": 0.6505804061889648
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-M05",
+        "qtype": "mixed",
+        "score": 0.6039757132530212
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-O01",
+        "qtype": "out-of-corpus",
+        "score": 0.5485296249389648
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-O02",
+        "qtype": "out-of-corpus",
+        "score": 0.48114213347435
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-O03",
+        "qtype": "out-of-corpus",
+        "score": 0.5196127891540527
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-O04",
+        "qtype": "out-of-corpus",
+        "score": 0.4733891785144806
+      },
+      {
+        "pack_id": "python",
+        "item_id": "PY-O05",
+        "qtype": "out-of-corpus",
+        "score": 0.4022425413131714
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-001",
+        "qtype": "in-corpus",
+        "score": 0.694473147392273
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-002",
+        "qtype": "in-corpus",
+        "score": 0.5506198406219482
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-003",
+        "qtype": "in-corpus",
+        "score": 0.5301467776298523
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-004",
+        "qtype": "in-corpus",
+        "score": 0.5567357540130615
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-005",
+        "qtype": "in-corpus",
+        "score": 0.6609469652175903
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-006",
+        "qtype": "in-corpus",
+        "score": 0.6672295331954956
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-007",
+        "qtype": "in-corpus",
+        "score": 0.6153786182403564
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-008",
+        "qtype": "in-corpus",
+        "score": 0.6041994094848633
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-009",
+        "qtype": "in-corpus",
+        "score": 0.6541234254837036
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-010",
+        "qtype": "in-corpus",
+        "score": 0.6245267391204834
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-011",
+        "qtype": "in-corpus",
+        "score": 0.6576010584831238
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-012",
+        "qtype": "in-corpus",
+        "score": 0.7210893630981445
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-013",
+        "qtype": "in-corpus",
+        "score": 0.5800526142120361
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-014",
+        "qtype": "in-corpus",
+        "score": 0.670870304107666
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-015",
+        "qtype": "in-corpus",
+        "score": 0.5595694780349731
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-016",
+        "qtype": "in-corpus",
+        "score": 0.6310240030288696
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-017",
+        "qtype": "in-corpus",
+        "score": 0.6566461324691772
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-018",
+        "qtype": "in-corpus",
+        "score": 0.5995779037475586
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-019",
+        "qtype": "in-corpus",
+        "score": 0.516952633857727
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-020",
+        "qtype": "in-corpus",
+        "score": 0.6940425634384155
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-M01",
+        "qtype": "mixed",
+        "score": 0.6748378276824951
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-M02",
+        "qtype": "mixed",
+        "score": 0.6381664276123047
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-M03",
+        "qtype": "mixed",
+        "score": 0.6933455467224121
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-M04",
+        "qtype": "mixed",
+        "score": 0.6614140272140503
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-M05",
+        "qtype": "mixed",
+        "score": 0.6746329665184021
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-O01",
+        "qtype": "out-of-corpus",
+        "score": 0.5104725956916809
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-O02",
+        "qtype": "out-of-corpus",
+        "score": 0.48515453934669495
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-O03",
+        "qtype": "out-of-corpus",
+        "score": 0.46751803159713745
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-O04",
+        "qtype": "out-of-corpus",
+        "score": 0.44284123182296753
+      },
+      {
+        "pack_id": "java",
+        "item_id": "JV-O05",
+        "qtype": "out-of-corpus",
+        "score": 0.3924165964126587
+      }
+    ],
+    "locked_at": "2026-10-24T20:53:01.267797+00:00"
+  },
+  "retrieval": {
+    "status": "complete",
+    "error_count": 0,
+    "rows": [
+      {
+        "item_id": "PY2-001",
+        "qtype": "in-corpus",
+        "top1_score": 0.513758659362793,
+        "top5_ids": [
+          "pyref-tutorial-introduction#s04-c01",
+          "pyref-library-stdtypes#s06-c01",
+          "pyref-library-stdtypes#s11-c01",
+          "pyref-library-stdtypes#s28-c09",
+          "pyref-library-stdtypes#s06-c02"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": true
+      },
+      {
+        "item_id": "PY2-002",
+        "qtype": "in-corpus",
+        "top1_score": 0.5360021591186523,
+        "top5_ids": [
+          "pyref-library-stdtypes#s36-c01",
+          "pyref-library-stdtypes#s33-c01",
+          "pyref-library-stdtypes#s27-c01",
+          "pyref-library-stdtypes#s28-c09",
+          "pyref-tutorial-controlflow#s21-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": true
+      },
+      {
+        "item_id": "PY2-003",
+        "qtype": "in-corpus",
+        "top1_score": 0.5203354954719543,
+        "top5_ids": [
+          "pyref-library-stdtypes#s47-c02",
+          "pyref-tutorial-controlflow#s12-c01",
+          "pyref-library-stdtypes#s03-c01",
+          "pyref-library-stdtypes#s49-c01",
+          "pyref-tutorial-controlflow#s24-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": true
+      },
+      {
+        "item_id": "PY2-004",
+        "qtype": "in-corpus",
+        "top1_score": 0.5247210264205933,
+        "top5_ids": [
+          "pyref-tutorial-controlflow#s09-c02",
+          "pyref-tutorial-controlflow#s16-c01",
+          "pyref-tutorial-classes#s12-c01",
+          "pyref-tutorial-classes#s03-c01",
+          "pyref-tutorial-controlflow#s20-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": true
+      },
+      {
+        "item_id": "PY2-005",
+        "qtype": "in-corpus",
+        "top1_score": 0.5573405027389526,
+        "top5_ids": [
+          "pyref-tutorial-controlflow#s16-c01",
+          "pyref-tutorial-controlflow#s19-c01",
+          "pyref-tutorial-controlflow#s17-c01",
+          "pyref-tutorial-controlflow#s18-c01",
+          "pyref-library-functions#s02-c14"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "PY2-006",
+        "qtype": "in-corpus",
+        "top1_score": 0.5690383315086365,
+        "top5_ids": [
+          "pyref-tutorial-controlflow#s13-c01",
+          "pyref-tutorial-controlflow#s12-c01",
+          "pyref-tutorial-controlflow#s20-c01",
+          "pyref-library-functions#s02-c06",
+          "pyref-tutorial-controlflow#s21-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "PY2-007",
+        "qtype": "in-corpus",
+        "top1_score": 0.5178900957107544,
+        "top5_ids": [
+          "pyref-tutorial-datastructures#s05-c01",
+          "pyref-tutorial-errors#s09-c01",
+          "pyref-tutorial-controlflow#s20-c01",
+          "pyref-library-stdtypes#s28-c08",
+          "pyref-tutorial-datastructures#s04-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": true
+      },
+      {
+        "item_id": "PY2-008",
+        "qtype": "in-corpus",
+        "top1_score": 0.5482379794120789,
+        "top5_ids": [
+          "pyref-library-stdtypes#s24-c01",
+          "pyref-tutorial-datastructures#s10-c01",
+          "pyref-tutorial-controlflow#s16-c01",
+          "pyref-tutorial-controlflow#s20-c01",
+          "pyref-tutorial-controlflow#s17-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": true
+      },
+      {
+        "item_id": "PY2-009",
+        "qtype": "in-corpus",
+        "top1_score": 0.5717084407806396,
+        "top5_ids": [
+          "pyref-tutorial-datastructures#s06-c02",
+          "pyref-tutorial-datastructures#s06-c01",
+          "pyref-tutorial-datastructures#s10-c01",
+          "pyref-library-stdtypes#s20-c02",
+          "pyref-tutorial-datastructures#s07-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "PY2-010",
+        "qtype": "in-corpus",
+        "top1_score": 0.4821487367153168,
+        "top5_ids": [
+          "pyref-tutorial-datastructures#s15-c01",
+          "pyref-tutorial-introduction#s07-c02",
+          "pyref-library-stdtypes#s05-c01",
+          "pyref-library-stdtypes#s20-c01",
+          "pyref-library-stdtypes#s28-c09"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": true
+      },
+      {
+        "item_id": "PY2-011",
+        "qtype": "in-corpus",
+        "top1_score": 0.5258225202560425,
+        "top5_ids": [
+          "pyref-tutorial-classes#s04-c01",
+          "pyref-tutorial-classes#s04-c02",
+          "pyref-tutorial-classes#s11-c01",
+          "pyref-library-functions#s02-c09",
+          "pyref-tutorial-classes#s15-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": true
+      },
+      {
+        "item_id": "PY2-012",
+        "qtype": "in-corpus",
+        "top1_score": 0.5767592191696167,
+        "top5_ids": [
+          "pyref-tutorial-classes#s08-c01",
+          "pyref-tutorial-datastructures#s15-c01",
+          "pyref-library-stdtypes#s53-c01",
+          "pyref-tutorial-classes#s16-c01",
+          "pyref-tutorial-classes#s13-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "PY2-013",
+        "qtype": "in-corpus",
+        "top1_score": 0.5826437473297119,
+        "top5_ids": [
+          "pyref-tutorial-classes#s15-c01",
+          "pyref-tutorial-classes#s02-c01",
+          "pyref-tutorial-classes#s06-c01",
+          "pyref-tutorial-classes#s14-c01",
+          "pyref-tutorial-classes#s03-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "PY2-014",
+        "qtype": "in-corpus",
+        "top1_score": 0.5520153641700745,
+        "top5_ids": [
+          "pyref-library-stdtypes#s60-c01",
+          "pyref-tutorial-controlflow#s13-c01",
+          "pyref-library-functions#s02-c28",
+          "pyref-tutorial-classes#s10-c01",
+          "pyref-tutorial-controlflow#s05-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "PY2-015",
+        "qtype": "in-corpus",
+        "top1_score": 0.5560046434402466,
+        "top5_ids": [
+          "pyref-tutorial-errors#s12-c01",
+          "pyref-library-exceptions#s06-c04",
+          "pyref-library-exceptions#s05-c01",
+          "pyref-library-exceptions#s06-c05",
+          "pyref-tutorial-errors#s06-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "PY2-016",
+        "qtype": "in-corpus",
+        "top1_score": 0.5067102313041687,
+        "top5_ids": [
+          "pyref-library-stdtypes#s20-c01",
+          "pyref-library-functions#s02-c29",
+          "pyref-library-functions#s02-c10",
+          "pyref-library-functions#s02-c15",
+          "pyref-library-functions#s02-c30"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": true
+      },
+      {
+        "item_id": "PY2-017",
+        "qtype": "in-corpus",
+        "top1_score": 0.6246309280395508,
+        "top5_ids": [
+          "pyref-tutorial-errors#s11-c01",
+          "pyref-library-exceptions#s09-c01",
+          "pyref-library-exceptions#s09-c02",
+          "pyref-tutorial-errors#s12-c01",
+          "pyref-library-exceptions#s06-c06"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "PY2-018",
+        "qtype": "in-corpus",
+        "top1_score": 0.5754916071891785,
+        "top5_ids": [
+          "pyref-tutorial-errors#s07-c01",
+          "pyref-tutorial-inputoutput#s08-c01",
+          "pyref-tutorial-errors#s09-c01",
+          "pyref-tutorial-errors#s05-c02",
+          "pyref-library-exceptions#s06-c02"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "PY2-019",
+        "qtype": "in-corpus",
+        "top1_score": 0.555095911026001,
+        "top5_ids": [
+          "pyref-tutorial-inputoutput#s09-c02",
+          "pyref-library-stdtypes#s36-c01",
+          "pyref-library-stdtypes#s63-c01",
+          "pyref-library-stdtypes#s64-c01",
+          "pyref-tutorial-inputoutput#s09-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "PY2-020",
+        "qtype": "in-corpus",
+        "top1_score": 0.5412155985832214,
+        "top5_ids": [
+          "pyref-library-functions#s02-c09",
+          "pyref-library-stdtypes#s42-c01",
+          "pyref-library-stdtypes#s43-c01",
+          "pyref-tutorial-inputoutput#s08-c01",
+          "pyref-tutorial-datastructures#s12-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": true
+      },
+      {
+        "item_id": "PY2-021",
+        "qtype": "in-corpus",
+        "top1_score": 0.5016831159591675,
+        "top5_ids": [
+          "pyref-library-functions#s02-c02",
+          "pyref-library-functions#s02-c22",
+          "pyref-library-functions#s02-c17",
+          "pyref-library-functions#s02-c28",
+          "pyref-library-functions#s02-c03"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": true
+      },
+      {
+        "item_id": "PY2-022",
+        "qtype": "in-corpus",
+        "top1_score": 0.48906654119491577,
+        "top5_ids": [
+          "pyref-library-stdtypes#s11-c02",
+          "pyref-tutorial-introduction#s04-c01",
+          "pyref-library-stdtypes#s08-c02",
+          "pyref-tutorial-introduction#s05-c02",
+          "pyref-library-stdtypes#s11-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": true
+      },
+      {
+        "item_id": "PY2-023",
+        "qtype": "in-corpus",
+        "top1_score": 0.5454713702201843,
+        "top5_ids": [
+          "pyref-library-functions#s02-c28",
+          "pyref-library-stdtypes#s38-c03",
+          "pyref-tutorial-introduction#s07-c01",
+          "pyref-library-stdtypes#s38-c02",
+          "pyref-library-stdtypes#s38-c05"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": true
+      },
+      {
+        "item_id": "PY2-024",
+        "qtype": "in-corpus",
+        "top1_score": 0.5370357036590576,
+        "top5_ids": [
+          "pyref-library-stdtypes#s12-c01",
+          "pyref-library-stdtypes#s04-c01",
+          "pyref-tutorial-datastructures#s14-c01",
+          "pyref-library-stdtypes#s03-c01",
+          "pyref-library-stdtypes#s07-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": true
+      },
+      {
+        "item_id": "PY2-025",
+        "qtype": "in-corpus",
+        "top1_score": 0.5828574895858765,
+        "top5_ids": [
+          "pyref-library-stdtypes#s23-c01",
+          "pyref-library-stdtypes#s20-c02",
+          "pyref-tutorial-introduction#s06-c02",
+          "pyref-library-stdtypes#s20-c01",
+          "pyref-tutorial-datastructures#s03-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "PY2-026",
+        "qtype": "in-corpus",
+        "top1_score": 0.5820494890213013,
+        "top5_ids": [
+          "pyref-library-stdtypes#s42-c03",
+          "pyref-library-stdtypes#s43-c01",
+          "pyref-library-stdtypes#s42-c04",
+          "pyref-library-stdtypes#s42-c02",
+          "pyref-library-stdtypes#s42-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "PY2-027",
+        "qtype": "in-corpus",
+        "top1_score": 0.5695841908454895,
+        "top5_ids": [
+          "pyref-library-exceptions#s04-c01",
+          "pyref-library-exceptions#s09-c01",
+          "pyref-tutorial-errors#s11-c01",
+          "pyref-tutorial-errors#s05-c02",
+          "pyref-library-exceptions#s05-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "PY2-028",
+        "qtype": "in-corpus",
+        "top1_score": 0.5552975535392761,
+        "top5_ids": [
+          "pyref-library-exceptions#s06-c03",
+          "pyref-tutorial-inputoutput#s08-c01",
+          "pyref-library-exceptions#s06-c06",
+          "pyref-library-functions#s02-c19",
+          "pyref-tutorial-errors#s10-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "PY2-029",
+        "qtype": "mixed",
+        "top1_score": 0.5764545202255249,
+        "top5_ids": [
+          "pyref-library-functions#s02-c17",
+          "pyref-library-stdtypes#s20-c02",
+          "pyref-library-functions#s02-c01",
+          "pyref-library-stdtypes#s16-c01",
+          "pyref-library-stdtypes#s03-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "PY2-030",
+        "qtype": "mixed",
+        "top1_score": 0.5355879664421082,
+        "top5_ids": [
+          "pyref-tutorial-introduction#s07-c02",
+          "pyref-tutorial-introduction#s07-c01",
+          "pyref-library-functions#s02-c24",
+          "pyref-tutorial-controlflow#s05-c01",
+          "pyref-library-stdtypes#s38-c03"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": true
+      },
+      {
+        "item_id": "PY2-031",
+        "qtype": "mixed",
+        "top1_score": 0.6249101161956787,
+        "top5_ids": [
+          "pyref-tutorial-datastructures#s12-c02",
+          "pyref-library-stdtypes#s42-c04",
+          "pyref-library-stdtypes#s42-c03",
+          "pyref-library-stdtypes#s42-c02",
+          "pyref-library-stdtypes#s42-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "PY2-032",
+        "qtype": "mixed",
+        "top1_score": 0.5887726545333862,
+        "top5_ids": [
+          "pyref-library-stdtypes#s28-c06",
+          "pyref-library-stdtypes#s28-c09",
+          "pyref-library-stdtypes#s28-c08",
+          "pyref-library-stdtypes#s28-c07",
+          "pyref-tutorial-datastructures#s09-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "PY2-033",
+        "qtype": "mixed",
+        "top1_score": 0.60962975025177,
+        "top5_ids": [
+          "pyref-library-stdtypes#s36-c01",
+          "pyref-library-stdtypes#s36-c02",
+          "pyref-library-stdtypes#s38-c07",
+          "pyref-library-stdtypes#s38-c08",
+          "pyref-library-stdtypes#s38-c06"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "PY2-034",
+        "qtype": "mixed",
+        "top1_score": 0.6569188237190247,
+        "top5_ids": [
+          "pyref-library-stdtypes#s40-c01",
+          "pyref-library-stdtypes#s40-c02",
+          "pyref-library-stdtypes#s40-c05",
+          "pyref-library-stdtypes#s40-c03",
+          "pyref-library-stdtypes#s40-c04"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "PY2-035",
+        "qtype": "mixed",
+        "top1_score": 0.6458459496498108,
+        "top5_ids": [
+          "pyref-library-stdtypes#s25-c01",
+          "pyref-library-stdtypes#s25-c02",
+          "pyref-tutorial-controlflow#s21-c01",
+          "pyref-library-stdtypes#s20-c03",
+          "pyref-library-stdtypes#s05-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "PY2-036",
+        "qtype": "mixed",
+        "top1_score": 0.6635203957557678,
+        "top5_ids": [
+          "pyref-library-exceptions#s09-c02",
+          "pyref-library-exceptions#s09-c01",
+          "pyref-tutorial-errors#s11-c01",
+          "pyref-library-exceptions#s02-c01",
+          "pyref-library-exceptions#s10-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "PY2-037",
+        "qtype": "mixed",
+        "top1_score": 0.6687697172164917,
+        "top5_ids": [
+          "pyref-library-stdtypes#s12-c01",
+          "pyref-library-stdtypes#s03-c01",
+          "pyref-library-functions#s02-c14",
+          "pyref-library-functions#s02-c02",
+          "pyref-library-stdtypes#s08-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "PY2-038",
+        "qtype": "mixed",
+        "top1_score": 0.6393603086471558,
+        "top5_ids": [
+          "pyref-library-stdtypes#s28-c09",
+          "pyref-library-stdtypes#s28-c08",
+          "pyref-tutorial-introduction#s05-c02",
+          "pyref-library-stdtypes#s28-c07",
+          "pyref-tutorial-errors#s04-c01"
+        ],
+        "hit": true,
+        "fixed_gate_abstain": false
+      },
+      {
+        "item_id": "PY2-039",
+        "qtype": "out-of-corpus",
+        "top1_score": 0.5141390562057495,
+        "top5_ids": [
+          "pyref-library-stdtypes#s43-c01",
+          "pyref-library-stdtypes#s42-c03",
+          "pyref-library-stdtypes#s42-c04",
+          "pyref-library-exceptions#s06-c02",
+          "pyref-tutorial-datastructures#s12-c02"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": true
+      },
+      {
+        "item_id": "PY2-040",
+        "qtype": "out-of-corpus",
+        "top1_score": 0.48869234323501587,
+        "top5_ids": [
+          "pyref-tutorial-introduction#s06-c01",
+          "pyref-tutorial-datastructures#s03-c01",
+          "pyref-tutorial-errors#s12-c01",
+          "pyref-library-stdtypes#s24-c01",
+          "pyref-tutorial-controlflow#s04-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": true
+      },
+      {
+        "item_id": "PY2-041",
+        "qtype": "out-of-corpus",
+        "top1_score": 0.5144487619400024,
+        "top5_ids": [
+          "pyref-library-functions#s02-c22",
+          "pyref-tutorial-classes#s18-c01",
+          "pyref-library-stdtypes#s16-c01",
+          "pyref-library-stdtypes#s17-c01",
+          "pyref-library-stdtypes#s18-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": true
+      },
+      {
+        "item_id": "PY2-042",
+        "qtype": "out-of-corpus",
+        "top1_score": 0.5055932998657227,
+        "top5_ids": [
+          "pyref-library-functions#s02-c28",
+          "pyref-tutorial-classes#s04-c02",
+          "pyref-library-functions#s02-c04",
+          "pyref-tutorial-classes#s05-c01",
+          "pyref-library-functions#s02-c10"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": true
+      },
+      {
+        "item_id": "PY2-043",
+        "qtype": "out-of-corpus",
+        "top1_score": 0.5248441696166992,
+        "top5_ids": [
+          "pyref-library-stdtypes#s20-c01",
+          "pyref-library-functions#s02-c14",
+          "pyref-library-stdtypes#s38-c03",
+          "pyref-library-functions#s02-c02",
+          "pyref-library-stdtypes#s43-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": true
+      },
+      {
+        "item_id": "PY2-044",
+        "qtype": "out-of-corpus",
+        "top1_score": 0.47215574979782104,
+        "top5_ids": [
+          "pyref-library-stdtypes#s20-c02",
+          "pyref-tutorial-controlflow#s01-c01",
+          "pyref-tutorial-introduction#s03-c01",
+          "pyref-tutorial-classes#s05-c01",
+          "pyref-library-stdtypes#s28-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": true
+      },
+      {
+        "item_id": "PY2-045",
+        "qtype": "out-of-corpus",
+        "top1_score": 0.519616961479187,
+        "top5_ids": [
+          "pyref-tutorial-introduction#s03-c01",
+          "pyref-library-functions#s02-c14",
+          "pyref-library-functions#s02-c24",
+          "pyref-tutorial-datastructures#s05-c01",
+          "pyref-tutorial-errors#s05-c01"
+        ],
+        "hit": false,
+        "fixed_gate_abstain": true
+      }
+    ]
+  },
+  "end_to_end": {
+    "status": "complete",
+    "error_count": 0,
+    "rows": [
+      {
+        "item_id": "PY2-001",
+        "response_type": "abstain",
+        "cited_ids": [],
+        "llm_metadata": null
+      },
+      {
+        "item_id": "PY2-002",
+        "response_type": "abstain",
+        "cited_ids": [],
+        "llm_metadata": null
+      },
+      {
+        "item_id": "PY2-003",
+        "response_type": "abstain",
+        "cited_ids": [],
+        "llm_metadata": null
+      },
+      {
+        "item_id": "PY2-004",
+        "response_type": "abstain",
+        "cited_ids": [],
+        "llm_metadata": null
+      },
+      {
+        "item_id": "PY2-005",
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-tutorial-controlflow#s17-c01"
+        ],
+        "llm_metadata": {
+          "provider": "openai-compatible",
+          "request_timestamp": "2026-10-24T23:15:14.952074+00:00",
+          "model": "gpt-5.6-sol",
+          "temperature": 0,
+          "prompt_sha256": "1cbadc18c25135b92b6b00769f1a78572a3f6e72eea94b22c3521f7e15f156a1"
+        }
+      },
+      {
+        "item_id": "PY2-006",
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-tutorial-controlflow#s21-c01"
+        ],
+        "llm_metadata": {
+          "provider": "openai-compatible",
+          "request_timestamp": "2026-10-24T23:15:20.764355+00:00",
+          "model": "gpt-5.6-sol",
+          "temperature": 0,
+          "prompt_sha256": "a7ba57417d6996a3f533eef137f1921b9917b54c33e22139a8af9a5240ef97c2"
+        }
+      },
+      {
+        "item_id": "PY2-007",
+        "response_type": "abstain",
+        "cited_ids": [],
+        "llm_metadata": null
+      },
+      {
+        "item_id": "PY2-008",
+        "response_type": "abstain",
+        "cited_ids": [],
+        "llm_metadata": null
+      },
+      {
+        "item_id": "PY2-009",
+        "response_type": "abstain",
+        "cited_ids": [],
+        "llm_metadata": {
+          "provider": "openai-compatible",
+          "request_timestamp": "2026-10-24T23:15:26.296586+00:00",
+          "model": "gpt-5.6-sol",
+          "temperature": 0,
+          "prompt_sha256": "1b7f3bc3c8941b902201509cbb1b7f216a99f510d1843bfbbb42a2ff22acd457"
+        }
+      },
+      {
+        "item_id": "PY2-010",
+        "response_type": "abstain",
+        "cited_ids": [],
+        "llm_metadata": null
+      },
+      {
+        "item_id": "PY2-011",
+        "response_type": "abstain",
+        "cited_ids": [],
+        "llm_metadata": null
+      },
+      {
+        "item_id": "PY2-012",
+        "response_type": "abstain",
+        "cited_ids": [],
+        "llm_metadata": {
+          "provider": "openai-compatible",
+          "request_timestamp": "2026-10-24T23:15:30.678842+00:00",
+          "model": "gpt-5.6-sol",
+          "temperature": 0,
+          "prompt_sha256": "6b26ef2ca05df26a1ca7a687c0dbc6384c6ba0737dd3d9d160e0b51b8434a2ad"
+        }
+      },
+      {
+        "item_id": "PY2-013",
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-tutorial-classes#s15-c01"
+        ],
+        "llm_metadata": {
+          "provider": "openai-compatible",
+          "request_timestamp": "2026-10-24T23:15:34.633375+00:00",
+          "model": "gpt-5.6-sol",
+          "temperature": 0,
+          "prompt_sha256": "8a32973505c0d4dd5eb36d2fb1fa3c8c9aec7d7d7a33aa2feae2db0d4e40f304"
+        }
+      },
+      {
+        "item_id": "PY2-014",
+        "response_type": "abstain",
+        "cited_ids": [],
+        "llm_metadata": {
+          "provider": "openai-compatible",
+          "request_timestamp": "2026-10-24T23:15:40.164455+00:00",
+          "model": "gpt-5.6-sol",
+          "temperature": 0,
+          "prompt_sha256": "af4f182ce66fe7cb30e782f6fa56c4b0d7f3c69a0100c2d00a19ec262505e412"
+        }
+      },
+      {
+        "item_id": "PY2-015",
+        "response_type": "abstain",
+        "cited_ids": [],
+        "llm_metadata": {
+          "provider": "openai-compatible",
+          "request_timestamp": "2026-10-24T23:15:46.866070+00:00",
+          "model": "gpt-5.6-sol",
+          "temperature": 0,
+          "prompt_sha256": "c1fb21dda269a29c6dab07ab85889dfbe23382092e7afaf60f35dcaad1d95016"
+        }
+      },
+      {
+        "item_id": "PY2-016",
+        "response_type": "abstain",
+        "cited_ids": [],
+        "llm_metadata": null
+      },
+      {
+        "item_id": "PY2-017",
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-tutorial-errors#s11-c01"
+        ],
+        "llm_metadata": {
+          "provider": "openai-compatible",
+          "request_timestamp": "2026-10-24T23:15:53.191847+00:00",
+          "model": "gpt-5.6-sol",
+          "temperature": 0,
+          "prompt_sha256": "d4ac19b13147ef298b2f83a9f6f0de0dc6dd212d55b92943c3b56e6e905dcbc8"
+        }
+      },
+      {
+        "item_id": "PY2-018",
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-tutorial-inputoutput#s08-c01",
+          "pyref-tutorial-errors#s09-c01"
+        ],
+        "llm_metadata": {
+          "provider": "openai-compatible",
+          "request_timestamp": "2026-10-24T23:15:58.005870+00:00",
+          "model": "gpt-5.6-sol",
+          "temperature": 0,
+          "prompt_sha256": "1d7ff0f984e1b806111faf45bc65f929f18ccea3562b55df49a48b7995068391"
+        }
+      },
+      {
+        "item_id": "PY2-019",
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-tutorial-inputoutput#s09-c02"
+        ],
+        "llm_metadata": {
+          "provider": "openai-compatible",
+          "request_timestamp": "2026-10-24T23:16:04.492927+00:00",
+          "model": "gpt-5.6-sol",
+          "temperature": 0,
+          "prompt_sha256": "5f0c707210650a3104a58742487155c465fb7c6d4bb9ae9bd8705201eade7b30"
+        }
+      },
+      {
+        "item_id": "PY2-020",
+        "response_type": "abstain",
+        "cited_ids": [],
+        "llm_metadata": null
+      },
+      {
+        "item_id": "PY2-021",
+        "response_type": "abstain",
+        "cited_ids": [],
+        "llm_metadata": null
+      },
+      {
+        "item_id": "PY2-022",
+        "response_type": "abstain",
+        "cited_ids": [],
+        "llm_metadata": null
+      },
+      {
+        "item_id": "PY2-023",
+        "response_type": "abstain",
+        "cited_ids": [],
+        "llm_metadata": null
+      },
+      {
+        "item_id": "PY2-024",
+        "response_type": "abstain",
+        "cited_ids": [],
+        "llm_metadata": null
+      },
+      {
+        "item_id": "PY2-025",
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-library-stdtypes#s20-c01",
+          "pyref-library-stdtypes#s20-c02"
+        ],
+        "llm_metadata": {
+          "provider": "openai-compatible",
+          "request_timestamp": "2026-10-24T23:16:12.213739+00:00",
+          "model": "gpt-5.6-sol",
+          "temperature": 0,
+          "prompt_sha256": "cdfa76fc67f3f6b8e8ee47b820599ca4d025b56adfc8a6f8b2ed1490240c045a"
+        }
+      },
+      {
+        "item_id": "PY2-026",
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-library-stdtypes#s43-c01"
+        ],
+        "llm_metadata": {
+          "provider": "openai-compatible",
+          "request_timestamp": "2026-10-24T23:16:19.306143+00:00",
+          "model": "gpt-5.6-sol",
+          "temperature": 0,
+          "prompt_sha256": "3fda889ca5f7a040e854d3f4b2e12f97e01af9dd9fbf33ec57b6c421c18671b3"
+        }
+      },
+      {
+        "item_id": "PY2-027",
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-library-exceptions#s04-c01"
+        ],
+        "llm_metadata": {
+          "provider": "openai-compatible",
+          "request_timestamp": "2026-10-24T23:16:23.956116+00:00",
+          "model": "gpt-5.6-sol",
+          "temperature": 0,
+          "prompt_sha256": "3ebc29190539f43d73b6543cba632707bc28b6433fcce608520934aa3ed553c5"
+        }
+      },
+      {
+        "item_id": "PY2-028",
+        "response_type": "abstain",
+        "cited_ids": [],
+        "llm_metadata": {
+          "provider": "openai-compatible",
+          "request_timestamp": "2026-10-24T23:16:30.780324+00:00",
+          "model": "gpt-5.6-sol",
+          "temperature": 0,
+          "prompt_sha256": "cf5676549a09affd92888554a3f04edbd1e75c871f752c1d867c0826ee769b2f"
+        }
+      },
+      {
+        "item_id": "PY2-029",
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-library-functions#s02-c01"
+        ],
+        "llm_metadata": {
+          "provider": "openai-compatible",
+          "request_timestamp": "2026-10-24T23:16:34.738234+00:00",
+          "model": "gpt-5.6-sol",
+          "temperature": 0,
+          "prompt_sha256": "0ee531f080acef3b117213957a795ed2a95a033b93697df54787952ba10f4455"
+        }
+      },
+      {
+        "item_id": "PY2-030",
+        "response_type": "abstain",
+        "cited_ids": [],
+        "llm_metadata": null
+      },
+      {
+        "item_id": "PY2-031",
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-library-stdtypes#s42-c03"
+        ],
+        "llm_metadata": {
+          "provider": "openai-compatible",
+          "request_timestamp": "2026-10-24T23:16:39.433447+00:00",
+          "model": "gpt-5.6-sol",
+          "temperature": 0,
+          "prompt_sha256": "c14b652b6f3c198c7a78ef2fddbe1cf1ff906d065bf9fcd49cca6c0e66f19b1a"
+        }
+      },
+      {
+        "item_id": "PY2-032",
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-library-stdtypes#s28-c06"
+        ],
+        "llm_metadata": {
+          "provider": "openai-compatible",
+          "request_timestamp": "2026-10-24T23:16:43.863111+00:00",
+          "model": "gpt-5.6-sol",
+          "temperature": 0,
+          "prompt_sha256": "cd18a28163547368a51ddb1dd486064687641bb7287d4a46bdbb5e4a1b14c13b"
+        }
+      },
+      {
+        "item_id": "PY2-033",
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-library-stdtypes#s36-c01",
+          "pyref-library-stdtypes#s38-c07"
+        ],
+        "llm_metadata": {
+          "provider": "openai-compatible",
+          "request_timestamp": "2026-10-24T23:16:50.077884+00:00",
+          "model": "gpt-5.6-sol",
+          "temperature": 0,
+          "prompt_sha256": "82edb10aadda2c76e3e6e3db26e49eb3dd363b22ed6b66ad7d93671ed9d5f6ff"
+        }
+      },
+      {
+        "item_id": "PY2-034",
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-library-stdtypes#s40-c01"
+        ],
+        "llm_metadata": {
+          "provider": "openai-compatible",
+          "request_timestamp": "2026-10-24T23:16:54.963838+00:00",
+          "model": "gpt-5.6-sol",
+          "temperature": 0,
+          "prompt_sha256": "e2dd8f56d7408aadc374d2480bd9999b978f034f147c3d7d58c405121022db20"
+        }
+      },
+      {
+        "item_id": "PY2-035",
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-library-stdtypes#s25-c01"
+        ],
+        "llm_metadata": {
+          "provider": "openai-compatible",
+          "request_timestamp": "2026-10-24T23:16:59.915078+00:00",
+          "model": "gpt-5.6-sol",
+          "temperature": 0,
+          "prompt_sha256": "890d020e4153efbce7be30a1d2a25166618efe6ba9b53dca20f2c0fc7ba71d14"
+        }
+      },
+      {
+        "item_id": "PY2-036",
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-library-exceptions#s09-c01"
+        ],
+        "llm_metadata": {
+          "provider": "openai-compatible",
+          "request_timestamp": "2026-10-24T23:17:05.465439+00:00",
+          "model": "gpt-5.6-sol",
+          "temperature": 0,
+          "prompt_sha256": "06882f552be77d70bcbcb3b9c27def0269b28043dd30fcdeb73c54001ab461a3"
+        }
+      },
+      {
+        "item_id": "PY2-037",
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-library-stdtypes#s12-c01"
+        ],
+        "llm_metadata": {
+          "provider": "openai-compatible",
+          "request_timestamp": "2026-10-24T23:17:10.158200+00:00",
+          "model": "gpt-5.6-sol",
+          "temperature": 0,
+          "prompt_sha256": "a1c9cb8fccc5b66626a76030038caee2e94fd3df6f9b60b90499c64c6e1621cf"
+        }
+      },
+      {
+        "item_id": "PY2-038",
+        "response_type": "answer",
+        "cited_ids": [
+          "pyref-library-stdtypes#s28-c08"
+        ],
+        "llm_metadata": {
+          "provider": "openai-compatible",
+          "request_timestamp": "2026-10-24T23:17:15.671574+00:00",
+          "model": "gpt-5.6-sol",
+          "temperature": 0,
+          "prompt_sha256": "0ae3d21b71dc762b585ac7e8d9e1180a8d4fafd619d95abe1acd677478c2d19d"
+        }
+      },
+      {
+        "item_id": "PY2-039",
+        "response_type": "abstain",
+        "cited_ids": [],
+        "llm_metadata": null
+      },
+      {
+        "item_id": "PY2-040",
+        "response_type": "abstain",
+        "cited_ids": [],
+        "llm_metadata": null
+      },
+      {
+        "item_id": "PY2-041",
+        "response_type": "abstain",
+        "cited_ids": [],
+        "llm_metadata": null
+      },
+      {
+        "item_id": "PY2-042",
+        "response_type": "abstain",
+        "cited_ids": [],
+        "llm_metadata": null
+      },
+      {
+        "item_id": "PY2-043",
+        "response_type": "abstain",
+        "cited_ids": [],
+        "llm_metadata": null
+      },
+      {
+        "item_id": "PY2-044",
+        "response_type": "abstain",
+        "cited_ids": [],
+        "llm_metadata": null
+      },
+      {
+        "item_id": "PY2-045",
+        "response_type": "abstain",
+        "cited_ids": [],
+        "llm_metadata": null
+      }
+    ],
+    "reasons": [],
+    "expected_response_model": "gpt-5.6-sol"
+  },
+  "error_count": 0
+}

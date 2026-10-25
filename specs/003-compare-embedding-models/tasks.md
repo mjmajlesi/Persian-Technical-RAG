@@ -124,7 +124,7 @@
   - CHECKPOINT: STOP → report three C E2E statuses and identity/citation evidence → wait for explicit «تایید» before T041.
 - [X] T041 [US2] Run E2E for three models on **C++ v2** under `data/eval/cpp/reports/v2/` using the same locked LLM/version/temperature/prompt and pack guard. Report 45 rows per model and errors, precision, and abstention separately.
   - CHECKPOINT: STOP → report three C++ E2E statuses and citations → wait for explicit «تایید» before T042.
-- [ ] T042 [US2] Run E2E for three models on **Python v2** under `data/eval/python/reports/v2/` with the same fixed settings. Check 45 rows per model, returned model IDs, citation precision, abstention, and zero foreign-pack citations.
+- [X] T042 [US2] Run E2E for three models on **Python v2** under `data/eval/python/reports/v2/` with the same fixed settings. Check 45 rows per model, returned model IDs, citation precision, abstention, and zero foreign-pack citations.
   - CHECKPOINT: STOP → report three Python E2E statuses and cross-lingual limits → wait for explicit «تایید» before T043.
 - [ ] T043 [US2] Run E2E for three models on **Java v2** under `data/eval/java/reports/v2/` with the same settings. Check 45 rows per model, model ID/errors, precision/abstention, and valid Java-pack citations.
   - CHECKPOINT: STOP → report three Java E2E statuses and retrieval-only comparison → wait for explicit «تایید» before T044.
