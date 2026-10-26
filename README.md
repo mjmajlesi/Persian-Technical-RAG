@@ -64,7 +64,12 @@ the response**. Neither is trained from scratch in this project.
 generation. Document preparation is a separate step: the corpus is not chunked and
 embedded again for every question.
 
-```mermaid
+![Architecture: frozen sources are chunked and embedded into a per-pack FAISS index; questions retrieve evidence, pass a score gate, and produce an answer or abstention.](docs/images/architecture.en.svg)
+
+<details>
+<summary>Editable diagram source (Mermaid)</summary>
+
+```text
 flowchart TD
     subgraph Prepare["Document preparation"]
         A["Frozen sources + per-language manifest"] --> B["Ingest and chunk"]
@@ -82,6 +87,8 @@ flowchart TD
         K --> L["Answer + citations, or abstain"]
     end
 ```
+
+</details>
 
 Very short questions return `clarify`, and an unprepared pack returns
 `unavailable`; these branches stop before retrieval. The user explicitly selects

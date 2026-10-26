@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="980" viewBox="0 0 1040 980" role="img" aria-labelledby="title description">
+  <title id="title">Persian Technical RAG architecture</title>
+  <desc id="description">Preparation: frozen sources, chunks, embeddings, and a per-pack FAISS index. Question time: select a pack, retrieve its top five passages, and check the score threshold. A failed gate abstains without calling the answer LLM. A passed gate sends evidence to the LLM, checks citation IDs and declared sufficiency, and returns an answer or abstention.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#475569"/></marker>
+    <style>
+      text { font-family: Arial, Helvetica, sans-serif; font-size: 17px; fill: #0f172a; text-anchor: middle; }
+      .heading { font-size: 20px; font-weight: bold; fill: #1e40af; }
+      .node { fill: #ffffff; stroke: #64748b; stroke-width: 1.5; }
+      .edge { fill: none; stroke: #475569; stroke-width: 2; marker-end: url(#arrow); }
+      .branch { font-size: 15px; font-weight: bold; }
+    </style>
+  </defs>
+  <rect width="1040" height="980" rx="16" fill="#f8fafc"/>
+  <rect x="16" y="24" width="280" height="554" rx="12" fill="#eff6ff" stroke="#bfdbfe"/>
+  <rect x="354" y="24" width="670" height="932" rx="12" fill="#f0fdfa" stroke="#99f6e4"/>
+  <text class="heading" x="156" y="64">Document preparation</text>
+  <text class="heading" x="689" y="64">Question time</text>
+
+  <path class="edge" d="M 156 190 V 230"/>
+  <path class="edge" d="M 156 310 V 350"/>
+  <path class="edge" d="M 156 430 V 470"/>
+  <path class="edge" d="M 286 510 H 328 V 390 H 374"/>
+  <path class="edge" d="M 514 190 V 230"/>
+  <path class="edge" d="M 514 310 V 350"/>
+  <path class="edge" d="M 514 430 V 450"/>
+  <path class="edge" d="M 654 510 H 744"/>
+  <path class="edge" d="M 514 570 V 620"/>
+  <path class="edge" d="M 514 700 V 740"/>
+  <path class="edge" d="M 514 820 V 860"/>
+  <text class="branch" x="699" y="496">No</text>
+  <text class="branch" x="540" y="601">Yes</text>
+
+  <rect class="node" x="26" y="110" width="260" height="80" rx="8"/>
+  <text x="156" y="144"><tspan x="156">Frozen sources</tspan><tspan x="156" dy="25">+ per-language manifest</tspan></text>
+  <rect class="node" x="26" y="230" width="260" height="80" rx="8"/>
+  <text x="156" y="264"><tspan x="156">Ingest</tspan><tspan x="156" dy="25">and chunk documents</tspan></text>
+  <rect class="node" x="26" y="350" width="260" height="80" rx="8"/>
+  <text x="156" y="397">Embed passages</text>
+  <rect class="node" x="26" y="470" width="260" height="80" rx="8"/>
+  <text x="156" y="504"><tspan x="156">Per-pack FAISS index</tspan><tspan x="156" dy="25">+ ordered IDs</tspan></text>
+
+  <rect class="node" x="374" y="110" width="280" height="80" rx="8"/>
+  <text x="514" y="144"><tspan x="514">Persian question</tspan><tspan x="514" dy="25">+ selected language</tspan></text>
+  <rect class="node" x="374" y="230" width="280" height="80" rx="8"/>
+  <text x="514" y="264"><tspan x="514">Validate request</tspan><tspan x="514" dy="25">and select pack</tspan></text>
+  <rect class="node" x="374" y="350" width="280" height="80" rx="8"/>
+  <text x="514" y="384"><tspan x="514">Embed question</tspan><tspan x="514" dy="25">and retrieve pack's top 5</tspan></text>
+  <polygon points="514,450 654,510 514,570 374,510" fill="#fef3c7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="514" y="504"><tspan x="514">Score passes</tspan><tspan x="514" dy="25">threshold?</tspan></text>
+  <rect x="744" y="470" width="260" height="80" rx="8" fill="#fff1f2" stroke="#be123c" stroke-width="1.5"/>
+  <text x="874" y="504"><tspan x="874">Abstain without</tspan><tspan x="874" dy="25">calling the answer LLM</tspan></text>
+  <rect class="node" x="374" y="620" width="280" height="80" rx="8"/>
+  <text x="514" y="654"><tspan x="514">Prompt for LLM:</tspan><tspan x="514" dy="25">question + evidence</tspan></text>
+  <rect class="node" x="374" y="740" width="280" height="80" rx="8"/>
+  <text x="514" y="774"><tspan x="514">Check citation IDs</tspan><tspan x="514" dy="25">and declared sufficiency</tspan></text>
+  <rect x="374" y="860" width="280" height="80" rx="8" fill="#dcfce7" stroke="#15803d" stroke-width="1.5"/>
+  <text x="514" y="894"><tspan x="514">Answer + citations</tspan><tspan x="514" dy="25">or abstain</tspan></text>
+</svg>
