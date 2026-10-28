@@ -133,7 +133,10 @@ class LLMProvider:
                     event = json.loads(line[5:].strip())
                     response_models.append(event.get("model"))
                     choice = event["choices"][0]
-                    parts.append(choice.get("delta", {}).get("content") or "")
+                    content = choice.get("delta", {}).get("content")
+                    if content is not None and not isinstance(content, str):
+                        raise TypeError("streamed content must be text")
+                    parts.append(content or "")
                 if not "".join(parts).strip():
                     raise ValueError("no streamed content")
                 text = "".join(parts)
@@ -141,6 +144,8 @@ class LLMProvider:
                 data = json.loads(raw)
                 response_models.append(data.get("model"))
                 text = data["choices"][0]["message"]["content"]
+            if not isinstance(text, str):
+                raise TypeError("response content must be text")
             if expected_model_id is not None and (
                 not response_models or any(model != expected_model_id
                                            for model in response_models)
@@ -149,5 +154,5 @@ class LLMProvider:
             return {"text": text, "provider": "openai-compatible",
                     "request_timestamp": requested_at, "model": response_models[-1],
                     "temperature": 0 if expected_model_id is not None else None}
-        except (KeyError, IndexError, TypeError, ValueError):
+        except (AttributeError, KeyError, IndexError, TypeError, ValueError):
             raise ProviderError("unexpected LLM response shape") from None
