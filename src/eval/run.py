@@ -61,6 +61,11 @@ def run_eval(set_path: str, index_dir: str, report_dir: str, top_k: int = 5,
         return _run_research_eval(set_path, index_dir, top_k, language, model_key, mode)
     if mode != "end-to-end":
         raise ValueError("retrieval-only requires --model")
+    expected_index = Path("data/index") / language
+    if Path(index_dir).resolve() != expected_index.resolve():
+        raise ValueError(
+            f"v1 --index-dir must match the selected language operational index: {expected_index}"
+        )
     spec = json.loads(Path(set_path).read_text(encoding="utf-8"))
     items = list(spec["items"])
     contamination_version = None

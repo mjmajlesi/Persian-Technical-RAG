@@ -144,7 +144,7 @@ def test_model_errors_mark_report_incomplete(tmp_path, monkeypatch):
 
 def test_per_pack_report_reports_language_id(tmp_path):
     set_path = _write_set(tmp_path, [])
-    report = run_eval(set_path, "data/index/c", str(tmp_path / "reports"),
+    report = run_eval(set_path, "data/index/python", str(tmp_path / "reports"),
                       language="python")
     assert report["language_id"] == "python"
 
