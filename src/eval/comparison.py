@@ -323,6 +323,11 @@ def build_official_comparison(root: Path, language: str, *,
     if spec["version"] != f"{language}-v2" or spec["pack_id"] != language:
         raise ValueError("v2 set identity mismatch")
     set_hash = hashlib.sha256(raw).hexdigest()
+    chunks_path = root.parent / "index" / language / "chunks.jsonl"
+    chunks_bytes = chunks_path.read_bytes()
+    pack_ids = {json.loads(line)["chunk_id"] for line in chunks_bytes.decode("utf-8").splitlines()
+                if line.strip()}
+    chunk_hash = hashlib.sha256(chunks_bytes).hexdigest()
     items = spec["items"]
     by_id = {item["item_id"]: item for item in items}
     if len(by_id) != len(items):
@@ -355,6 +360,8 @@ def build_official_comparison(root: Path, language: str, *,
                 retrieval["model"] != e2e["model"] or
                 retrieval["end_to_end"]["status"] != "not_run"):
             raise ValueError(f"retrieval-only/E2E replay mismatch: {language}/{model}")
+        if retrieval["index"]["chunk_sha256"] != chunk_hash:
+            raise ValueError(f"canonical pack chunk hash mismatch: {language}/{model}")
         rows = _by_id(retrieval["retrieval"]["rows"], set(by_id), "retrieval")
         for item_id, row in rows.items():
             item = by_id[item_id]
@@ -384,6 +391,9 @@ def build_official_comparison(root: Path, language: str, *,
                                                meta.get("temperature") != 0 or
                                                meta.get("model") != e2e["end_to_end"]["expected_response_model"]))):
                     raise ValueError(f"unverified E2E row: {item_id}/{model}")
+                if any(cid not in pack_ids or cid not in rows[item_id]["top5_ids"][:5]
+                       for cid in answer["cited_ids"]):
+                    raise ValueError(f"citation outside selected pack or row Top-5: {item_id}/{model}")
                 if meta is not None:
                     generators.add((meta["provider"], meta["model"]))
         elif e2e["end_to_end"]["status"] != "incomplete" or "rows" in e2e["end_to_end"]:
