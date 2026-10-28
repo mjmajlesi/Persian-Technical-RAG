@@ -10,6 +10,8 @@ from collections import Counter
 from itertools import combinations
 from pathlib import Path
 
+from src.eval.validate_set import ensure_unique_questions
+
 
 METRICS = ("hit_at_5", "citation_precision", "fixed_gate_abstention",
            "e2e_abstention")
@@ -329,6 +331,7 @@ def build_official_comparison(root: Path, language: str, *,
                 if line.strip()}
     chunk_hash = hashlib.sha256(chunks_bytes).hexdigest()
     items = spec["items"]
+    ensure_unique_questions(items)
     by_id = {item["item_id"]: item for item in items}
     if len(by_id) != len(items):
         raise ValueError("duplicate v2 item ID")

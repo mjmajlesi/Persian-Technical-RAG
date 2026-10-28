@@ -20,6 +20,18 @@ def _nonempty(value) -> bool:
     return isinstance(value, str) and bool(value.strip())
 
 
+def ensure_unique_questions(items: list[dict]) -> None:
+    """Reject duplicate normalized question texts within one set."""
+    seen = set()
+    for item in items:
+        if not isinstance(item, dict) or not _nonempty(item.get("question")):
+            raise ValueError("each item requires a non-empty question")
+        question = _plain(item["question"])
+        if question in seen:
+            raise ValueError(f"duplicate normalized question: {item.get('item_id')}")
+        seen.add(question)
+
+
 def validate_set(path: str | Path, *, pack_id: str, complete: bool = True) -> dict:
     """Return counts/review flags, or reject invalid/copy-pasted evidence.
 
@@ -35,6 +47,7 @@ def validate_set(path: str | Path, *, pack_id: str, complete: bool = True) -> di
     items = spec.get("items")
     if not isinstance(items, list):
         raise ValueError("items must be a list")
+    ensure_unique_questions(items)
 
     chunks = {chunk["chunk_id"]: chunk for line in
               Path(f"data/index/{pack_id}/chunks.jsonl").read_text(encoding="utf-8").splitlines()
