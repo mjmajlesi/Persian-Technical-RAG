@@ -148,7 +148,7 @@ def _ask(request: AskRequest, *, retriever: Retriever | None = None,
               retriever.retrieve(question, k=request.top_k))
     if not chunks:
         payload = abstain.decide([], 0.0, llm_insufficient=True, threshold=threshold)
-        return {"type": "abstain", **payload}
+        return {"type": "abstain", "language_id": pack.language_id, **payload}
     gated = abstain.decide(
         chunks, top_score=chunks[0]["score"], llm_insufficient=False,
         threshold=threshold,

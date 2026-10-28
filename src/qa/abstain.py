@@ -7,7 +7,8 @@ Two abstention triggers (either suffices):
 
 The response is a fixed-form Persian message naming the closest available
 topics (taken from the top retrieved chunks' sections, so they always exist
-in the corpus) and carries zero citations.
+in the corpus) and carries zero citations. Without topic evidence it uses
+a neutral message and suggests no topics.
 
 DEFAULT_THRESHOLD is provisional; T024 (src/eval/calibrate.py) calibrates it
 formally on the versioned evaluation set.
@@ -26,6 +27,7 @@ MESSAGE_TEMPLATE = (
     "در منابع موجود پاسخی برای این سوال پیدا نکردم. "
     "نزدیک‌ترین مباحث موجود: {topics}."
 )
+NO_TOPICS_MESSAGE = "در منابع موجود پاسخی برای این سوال پیدا نکردم."
 
 
 def closest_topics(chunks: list[dict], limit: int = 3) -> list[str]:
@@ -60,9 +62,9 @@ def decide(
     """
     if not llm_insufficient and not should_abstain(top_score, threshold):
         return None
-    topics = closest_topics(chunks) or ["مباحث زبان C"]
+    topics = closest_topics(chunks)
     return {
-        "message": MESSAGE_TEMPLATE.format(topics="، ".join(topics)),
+        "message": MESSAGE_TEMPLATE.format(topics="، ".join(topics)) if topics else NO_TOPICS_MESSAGE,
         "suggested_topics": topics,
         "citations": [],
     }
