@@ -7,6 +7,8 @@ only.
 
 from __future__ import annotations
 import json
+import os
+import tempfile
 from pathlib import Path
 from .chunker import Chunk
 
@@ -34,6 +36,8 @@ def load_manifest_ids(manifest_path: str | Path) -> set[str]:
 
 def validate_chunks(chunks: list[Chunk], manifest_ids: set[str]) -> None:
     """Enforce the CorpusChunk contract; raise ChunkValidationError on breach."""
+    if not chunks:
+        raise ChunkValidationError("cannot publish empty chunks")
     seen: set[str] = set()
     for chunk in chunks:
         record = chunk.to_dict()
@@ -59,7 +63,7 @@ def validate_chunks(chunks: list[Chunk], manifest_ids: set[str]) -> None:
 def write_chunks_jsonl(
     chunks: list[Chunk], manifest_path: str | Path, out_path: str | Path
 ) -> int:
-    """Validate chunks against the manifest and write them as JSONL.
+    """Validate chunks and atomically replace the destination with complete JSONL.
 
     Returns the number of chunks written.
     """
@@ -67,7 +71,15 @@ def write_chunks_jsonl(
     validate_chunks(chunks, manifest_ids)
     out = Path(out_path)
     out.parent.mkdir(parents=True, exist_ok=True)
-    with out.open("w", encoding="utf-8") as fh:
-        for chunk in chunks:
-            fh.write(json.dumps(chunk.to_dict(), ensure_ascii=False) + "\n")
+    temporary = None
+    try:
+        with tempfile.NamedTemporaryFile(mode="w", encoding="utf-8", newline="\n",
+                                         dir=out.parent, suffix=".tmp", delete=False) as fh:
+            temporary = Path(fh.name)
+            for chunk in chunks:
+                fh.write(json.dumps(chunk.to_dict(), ensure_ascii=False) + "\n")
+        os.replace(temporary, out)
+    finally:
+        if temporary is not None:
+            temporary.unlink(missing_ok=True)
     return len(chunks)

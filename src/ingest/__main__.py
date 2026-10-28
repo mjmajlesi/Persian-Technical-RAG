@@ -7,7 +7,7 @@ For each manifest source the origin is resolved as follows:
   1. an existing local file -> chunked directly;
   2. otherwise (e.g. a reference URL) a dev mirror at
      <samples-dir>/<source_id>.md is used when present;
-  3. otherwise the source is skipped with a warning.
+  3. otherwise ingest fails before chunking or publishing any output.
 
 Rule 2 is a development-only convenience so the skeleton manifest resolves
 to the T004 fixtures; the real frozen corpus (T010b) uses real origins.
@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 from pathlib import Path
 
 from .chunker import chunk_markdown
@@ -49,18 +50,24 @@ def main(argv: list[str] | None = None) -> int:
 
     manifest = json.loads(Path(args.manifest).read_text(encoding="utf-8"))
     samples_dir = Path(args.samples_dir)
-    chunks = []
-    per_source: dict[str, int] = {}
+    resolved = []
     for source in manifest.get("sources", []):
         path = resolve_origin(source, samples_dir)
         if path is None:
-            print(f"SKIP {source.get('source_id')}: no local origin or mirror")
-            continue
+            print(f"ERROR {source.get('source_id')}: no local origin or mirror", file=sys.stderr)
+            return 1
+        resolved.append((source, path))
+    chunks = []
+    per_source: dict[str, int] = {}
+    for source, path in resolved:
         made = chunk_markdown(
             path.read_text(encoding="utf-8"),
             source["source_id"],
             source.get("title", source["source_id"]),
         )
+        if not made:
+            print(f"ERROR {source['source_id']}: source produced no chunks", file=sys.stderr)
+            return 1
         chunks.extend(made)
         per_source[source["source_id"]] = len(made)
 
