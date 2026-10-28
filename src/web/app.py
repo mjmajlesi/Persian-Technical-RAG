@@ -14,7 +14,7 @@ from pydantic import BaseModel, Field
 
 from src.qa import abstain
 from src.qa import pack_config
-from src.qa.answer import AnswerError, compose_answer
+from src.qa.answer import AnswerError, UncitedAnswerError, compose_answer
 from src.qa.provider import LLMProvider, ProviderConfig, ProviderError
 from src.qa.retriever import Retriever
 from src.web import packs as pack_registry
@@ -25,6 +25,7 @@ CORPUS_UNAVAILABLE_MESSAGE = "کورپوس این زبان هنوز آماده �
 LLM_NOT_CONFIGURED_MESSAGE = (
     "سرویس مدل زبانی پیکربندی نشده است (LLM_API_KEY/LLM_MODEL)."
 )
+INVALID_ANSWER_MESSAGE = "پاسخ معتبر تولید نشد. لطفاً دوباره تلاش کنید."
 # T020b: questions shorter than this (words, after trim) get a single
 # targeted follow-up instead of an answer attempt (clarify decision Q3).
 AMBIGUOUS_MIN_WORDS = 3
@@ -169,6 +170,8 @@ def _ask(request: AskRequest, *, retriever: Retriever | None = None,
         cited = [c["chunk_id"] for c in result.get("citations", [])]
         if cited and not all(retriever.has_chunk(cid) for cid in cited):
             return _fabrication_abstain(pack, chunks, threshold)
+    except UncitedAnswerError:
+        raise HTTPException(status_code=500, detail=INVALID_ANSWER_MESSAGE)
     except AnswerError:
         # Fabrication (model cited an unknown chunk id) → abstain, never
         # a fabricated answer and never a 500.

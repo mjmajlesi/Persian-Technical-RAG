@@ -43,6 +43,10 @@ class AnswerError(RuntimeError):
     """Raised when the model output violates the groundedness contract."""
 
 
+class UncitedAnswerError(AnswerError):
+    """Raised when a non-abstention output contains no complete citation."""
+
+
 def build_prompt(question: str, chunks: list[dict]) -> str:
     """Render the grounded Persian prompt for the given question + chunks."""
     numbered = "\n\n".join(
@@ -61,7 +65,8 @@ def compose_answer(question: str, chunks: list[dict], provider) -> dict:
     """Generate a grounded answer via the provider and validate citations.
 
     Returns {"answer_text", "citations", "retrieved_chunk_ids",
-    "insufficient"}. Raises AnswerError on phantom citations.
+    "insufficient"}. Raises UncitedAnswerError without citations, or
+    AnswerError on phantom citations.
     """
     retrieved_ids = [c["chunk_id"] for c in chunks]
     logger.info("compose lang_hint=%s", detect_query_lang(question))
@@ -77,6 +82,8 @@ def compose_answer(question: str, chunks: list[dict], provider) -> dict:
             "insufficient": True,
         }
     cited = extract_cited_ids(answer_text)
+    if not cited:
+        raise UncitedAnswerError("model output contains no complete citation")
     phantom = [cid for cid in cited if cid not in retrieved_ids]
     if phantom:
         raise AnswerError(f"cited unknown chunk ids: {phantom}")
