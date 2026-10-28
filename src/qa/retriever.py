@@ -5,16 +5,19 @@ from __future__ import annotations
 import hashlib
 import json
 import logging
+import threading
 from dataclasses import asdict
 from pathlib import Path
 
 from src.index import faiss_store
-from src.index.embed import embed_queries
+from src.index.embed import MODEL_ID, embed_queries
 from src.index.model_config import get_model_candidate
 
 DEFAULT_TOP_K = 5
 
 logger = logging.getLogger(__name__)
+_legacy_identity_warned = False
+_legacy_warning_lock = threading.Lock()
 
 
 def detect_query_lang(text: str) -> str:
@@ -61,6 +64,23 @@ class Retriever:
                 raise ValueError("research index hash mismatch")
         elif pack_id is not None:
             raise ValueError("pack_id requires a research model_key")
+        else:
+            candidate = get_model_candidate("e5-large")
+            metadata_path = directory / "index-meta.json"
+            if metadata_path.exists():
+                metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
+                if not isinstance(metadata, dict) or metadata.get("model_key") != "e5-large":
+                    raise ValueError("operational index model identity metadata mismatch")
+                if "repository" in metadata and metadata["repository"] != MODEL_ID:
+                    raise ValueError("operational index model repository mismatch")
+                if "revision_sha" in metadata and metadata["revision_sha"] != candidate.revision_sha:
+                    raise ValueError("operational index model revision mismatch")
+            else:
+                global _legacy_identity_warned
+                with _legacy_warning_lock:
+                    if not _legacy_identity_warned:
+                        logger.warning("هویت مدل تأییدنشده: ایندکس عملیاتی فاقد metadata است")
+                        _legacy_identity_warned = True
 
         self._index, self._ids = faiss_store.load(directory)
         records = [
@@ -68,10 +88,12 @@ class Retriever:
             for line in chunks_path.read_text(encoding="utf-8").splitlines()
             if line.strip()
         ]
+        canonical_ids = [record["chunk_id"] for record in records]
+        if self._ids != canonical_ids or len(set(canonical_ids)) != len(canonical_ids):
+            raise ValueError("index IDs differ from canonical chunk order or contain duplicates")
+        if self._index.d != candidate.dimension or self._index.ntotal != len(self._ids):
+            raise ValueError("index dimension/count mismatch")
         if model_key is not None:
-            canonical_ids = [record["chunk_id"] for record in records]
-            if self._ids != canonical_ids or len(set(canonical_ids)) != len(canonical_ids):
-                raise ValueError("research index IDs differ from canonical chunk order")
             if self._index.d != candidate.dimension or self._index.ntotal != metadata.get("count"):
                 raise ValueError("research index dimension/count mismatch")
         self._by_id = {record["chunk_id"]: record for record in records}

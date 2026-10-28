@@ -143,7 +143,10 @@ def _ask(request: AskRequest, *, retriever: Retriever | None = None,
     if threshold is None:
         threshold = pack_config.threshold_for(pack.language_id)
     if retriever is None:
-        retriever = get_retriever(pack.language_id)
+        try:
+            retriever = get_retriever(pack.language_id)
+        except (ValueError, OSError, RuntimeError, KeyError, TypeError) as exc:
+            raise HTTPException(status_code=503, detail="ایندکس این زبان خراب یا ناسازگار است.") from exc
     chunks = (retrieved_chunks if retrieved_chunks is not None else
               retriever.retrieve(question, k=request.top_k))
     if not chunks:

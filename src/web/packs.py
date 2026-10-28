@@ -49,7 +49,8 @@ def load_packs(corpus_dir: str | Path = "data/corpus",
             raise PackError(f"{manifest_path} has empty display_name")
         index_dir = index_root / lang
         ready = (index_dir / "faiss.index").is_file() \
-            and (index_dir / "chunks.jsonl").is_file()
+            and (index_dir / "chunks.jsonl").is_file() \
+            and (index_dir / "ids.json").is_file()
         packs.append(LanguagePack(
             language_id=lang,
             display_name=display_name,
