@@ -328,6 +328,7 @@ def build_official_comparison(root: Path, language: str, *,
     if len(by_id) != len(items):
         raise ValueError("duplicate v2 item ID")
     runs, sources, per_item = {}, {}, {}
+    generators = set()
     for model in MODELS:
         retrieval, retrieval_source = _read_report(root, language, model, "retrieval-only")
         e2e, e2e_source = _read_report(root, language, model, "end-to-end")
@@ -383,6 +384,8 @@ def build_official_comparison(root: Path, language: str, *,
                                                meta.get("temperature") != 0 or
                                                meta.get("model") != e2e["end_to_end"]["expected_response_model"]))):
                     raise ValueError(f"unverified E2E row: {item_id}/{model}")
+                if meta is not None:
+                    generators.add((meta["provider"], meta["model"]))
         elif e2e["end_to_end"]["status"] != "incomplete" or "rows" in e2e["end_to_end"]:
             raise ValueError(f"partial E2E rows cannot enter official evidence: {language}/{model}")
         runs[model] = {**retrieval, "status": e2e["status"],
@@ -404,6 +407,8 @@ def build_official_comparison(root: Path, language: str, *,
                             "correct_citations": sum(cid in item["expected_source_ids"]
                                                      for cid in answers[item["item_id"]]["cited_ids"])
                             if complete else None} for item in items]
+    if len(generators) > 1:
+        raise ValueError(f"E2E generator identity mismatch in comparison: {language}")
     result = compare_language(runs, items, seed=seed, replications=replications)
     return {**result, "set_version": spec["version"],
             "set": {"path": set_path.as_posix(), "sha256": set_hash,
