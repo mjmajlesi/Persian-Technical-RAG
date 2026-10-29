@@ -263,10 +263,9 @@ activation is unnecessary: commands invoke its Python directly.
 - A GPU was not required for the recorded workflow. Research builds used a CPU-only laptop with about 15.6 GiB RAM; this is not a guaranteed minimum-memory specification.
 
 > [!WARNING]
-> Ingest and build commands **write files**. In the current implementation, a
-> missing source may only produce a `SKIP` warning and leave incomplete output.
-> Check sources and dataset versions before rebuilding an existing index. These
-> instructions do not fix that code defect.
+> Ingest and build commands **write files**. Ingest fails on a missing or empty
+> source and atomically publishes its completed output, but rebuilding an index
+> can still replace artifacts. Check sources and dataset versions first.
 
 ### 1. Clone and install
 
@@ -310,8 +309,9 @@ LLM_MODEL=<YOUR_CHAT_MODEL>
 
 For another service, use its valid base URL and model name. Existing process
 environment variables take precedence over `.env`. Restart the server after
-changing answer-provider settings. Do not rely on `.env.example` in a fresh
-clone: it is not versioned.
+changing answer-provider settings. The versioned `.env.example` contains only
+placeholders; copy it to a local `.env`, supply your own settings, and never
+commit `.env`.
 
 Without an LLM, you can still prepare sources, build indices, and run
 retrieval-only evaluation. Generating answers requires an active service;
@@ -427,6 +427,7 @@ Invoke-RestMethod -Uri 'http://127.0.0.1:8000/api/ask' `
 | `unavailable` | Registered pack whose sources/index are not ready |
 | HTTP `422` | Invalid input or unknown language ID |
 | HTTP `500` | For example, missing answer-provider configuration; service errors are not correct abstentions |
+| HTTP `503` | The selected operational index could not be loaded or is incompatible |
 
 Contracts: [Ask API](specs/001-persian-c-qa/contracts/ask-api.md) and
 [Languages API](specs/002-multi-language-dashboard/contracts/languages-api.md).
@@ -580,27 +581,28 @@ citing a run. A failed provider response is not a scientifically correct abstent
 
 This version has **known defects**. Important boundaries for use and interpretation:
 
-- **Empty or uncited answers:** the composer can classify empty text or a response
-  without citations as an Answer. Citation-ID checks do not establish semantic support.
+- **Citation limits:** empty or uncited non-abstention answers are rejected, but
+  valid citation IDs do not establish semantic support for a claim.
 - **Multi-pack prompt:** the shared prompt still names C; separate indices do not
   automatically fix this instruction weakness for other packs.
-- **Ingest and chunking:** missing sources can be skipped; chunk size uses words,
-  not actual token limits. Long code blocks can be split, and model inputs can be truncated.
+- **Ingest and chunking:** missing or empty sources fail before publication; chunk
+  size uses words, not actual token limits. Long code blocks can be split, and
+  model inputs can be truncated.
 - **Operational model identity:** research checks revisions/hashes more strictly
   than the normal path; the operational model has no explicit research-style revision pin.
-- **Web interface:** HTML-entity rendering, late responses during language
-  round-trips, and accessibility of clickable controls need improvement. Error-free
-  behavior across all browsers is not claimed.
-- **Validation boundaries:** duplicate question text within v2 and some cross-report
-  citation/identity inconsistencies are not fully rejected. Independently verify
-  answer-model consistency and citation membership in fresh runs.
+- **Web interface:** stale requests are ignored after language changes, but
+  HTML-entity rendering and accessibility of clickable controls need improvement.
+  Error-free behavior across all browsers is not claimed.
+- **Validation boundaries:** v2 validation rejects normalized duplicate questions;
+  the official comparison builder checks shared recorded generator identity and
+  per-row citation scope. Neither check proves immutable model weights or semantic
+  support; independently review fresh evidence.
 - **Research generalization:** the dataset is small and authored, E5 has prior
   exposure through v1 experimentation, input-length limits differ, and the answer
   service can change. Results do not establish intrinsic or universal superiority.
 
-Development priorities are guards against empty/uncited answers and incomplete
-ingest, pack-aware prompts, stronger operational index checks, UI fixes, and edge-case
-tests. Larger evaluation sets, token-aware chunking, and other retrieval methods
+Development priorities include pack-aware prompts, UI fixes, and additional
+edge-case tests. Larger evaluation sets, token-aware chunking, and other retrieval methods
 are subsequent experiments—**future work, not implemented features**.
 
 Authentication, multi-user deployment, production scaling, live web crawling,
@@ -617,6 +619,7 @@ and training models from scratch are outside the current scope. See the
 | [Research build log](specs/003-compare-embedding-models/index-build-log.md) | Recorded timings, dimensions, and truncated-input counts |
 | [Baseline audit](specs/003-compare-embedding-models/baseline-audit.md) | Baseline source hashes and ID order |
 | [Final 003 validation](specs/003-compare-embedding-models/VALIDATION.md) | What the historical validation actually checked |
+| [Source and license inventory](docs/SOURCE-INVENTORY.md) | Manifest origin/license labels and metadata requiring review |
 | [C migration report](docs/MIGRATION-RESULTS.md) | What remained stable and what changed after adding packs |
 | [Specifications and tasks](specs/) | Decisions and evolution of features 001, 002, and 003 |
 
@@ -628,6 +631,9 @@ question provenance. The research models' MIT licenses **do not license the enti
 corpus**. In particular, review Oracle's terms separately before redistributing
 substantial text. Attribution or inclusion in this repository is not a blanket
 redistribution grant; this collection is not presented under one unified license.
+The [source inventory](docs/SOURCE-INVENTORY.md) lists every manifest entry and
+flags missing or ambiguous redistribution metadata for review without making a
+legal determination.
 
 ### Changes and issue reports
 

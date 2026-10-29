@@ -104,8 +104,8 @@ instead of silently replacing published evidence.
 
 E2E requires a live, authorized provider and incurs cost. In a **local,
 gitignored** `.env` supply `LLM_API_KEY`, `LLM_BASE_URL` and requested
-`LLM_MODEL`. There is no versioned `.env.example` in this repository;
-create `.env` locally and never commit it. Before
+`LLM_MODEL`. The versioned `.env.example` contains placeholders only; copy
+it to `.env` locally, fill in your own settings and never commit `.env`. Before
 the run, independently pre-register the *API-returned* model identifier in
 the process environment (the historical reports used `gpt-5.6-sol`):
 
@@ -135,8 +135,9 @@ base URLs, diagnostics, caches or FAISS binaries.
 
 Run this only with the one-per-mode official pairs, not a directory of
 multiple timestamped replays. It validates set/calibration provenance,
-row-by-row retrieval agreement between modes, LLM response IDs, and
-per-item hits/gate decisions before writing the four official files:
+row-by-row retrieval agreement between modes, shared LLM identity, citation
+membership in the row's Top-5 and selected pack, normalized question
+uniqueness, and per-item hits/gate decisions before writing the four official files:
 
 ```powershell
 .\.venv\Scripts\python -m pytest tests/ -q
@@ -180,7 +181,8 @@ git diff --cached --check
 Review staged paths **and content** for `.env`, credentials and binary
 caches. This guide does not authorize committing regenerated replays or
 changing existing official reports without a new reviewed evidence run.
-T052 smoke-checked C ingest/hash, cached C index build, locked e5-large
+Historically, T052 smoke-checked C ingest/hash, cached C index build, locked e5-large
 calibration, one zero-LLM C replay in a temp folder, all four existing
 comparisons and focused report tests; a fresh 12×E2E provider run was not
-performed. Full closeout validation is a separate T053 gate.
+performed. The subsequent historical T053 results are recorded in
+[VALIDATION.md](VALIDATION.md); they are not a fresh validation of a new run.

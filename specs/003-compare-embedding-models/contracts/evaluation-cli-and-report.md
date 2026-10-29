@@ -1,8 +1,8 @@
 # Contract: research evaluation and comparison
 
-**Status**: planned interface; not yet implemented. Default `python -m src.eval run --lang c` stays the current v1 operational run.
+**Status**: implemented research CLI and report comparison. Default `python -m src.eval run --lang c` remains the v1 operational run. Historical reports are frozen evidence, not automatically rerun by this contract.
 
-## Commands (planned)
+## Commands
 
 ```powershell
 # Calibrate one research gate per model from all four frozen v1 sets (120 items).
@@ -17,6 +17,8 @@
 ```
 
 `--model` must not change corpus, chunk order, reference answers, LLM prompt or scoring. `retrieval-only` computes top-5 and top-1 on all 45 items and makes **zero LLM calls**. Fixed-gate abstention is determined from top-1 against the model's locked pooled-v1 gate. `end-to-end` reuses the same selected model-pack retriever, gate, composer and pack-scoped citation check; record the **fixed LLM identity** per response: provider name, request timestamp and the `model` identifier **returned by the API**, plus `temperature=0` actually sent, prompt hash and errors. Pre-register the expected response model ID for the provider and compare it across every response in the run; a missing, changing or unexpected ID, or a rejected temperature parameter, makes **only E2E incomplete**. A returned stable ID or an accepted `temperature` parameter does not prove the backend is unchanged (a provider may silently serve different weights behind one alias): disclose this residual risk; never claim the returned ID proves immutable weights.
+
+The official comparison builder also rejects inconsistent recorded provider/model identities across complete E2E runs and citations outside the same row's first five retrieval IDs or the selected canonical pack. It rejects duplicate normalized question text within a v2 set. Incomplete E2E remains N/A rather than a successful abstention. For v1, `--index-dir` must resolve to the selected language's operational index; incompatible overrides fail rather than mixing retrieval and answer indices.
 
 ## Report structure
 

@@ -1,10 +1,10 @@
 # Contract: model selection, indexing and cache integrity
 
-**Status**: planned interface; not yet implemented. This contract extends the existing CLIs without changing their no-flag defaults.
+**Status**: implemented research model registry, build and cache interfaces. The operational no-`--model` loader retains its legacy unpinned behavior; research revisions are pinned.
 
 ## Registered candidates
 
-Tracked registry: `data/eval/model-comparison/models.json` (planned). Required keys per entry: `model_key`, `repository`, `revision_sha`, `license`, `model_card_url`, `dimension`, `query_prefix`, `passage_prefix`, `normalize`, `max_tokens`. Fixed initial values:
+Tracked registry: `data/eval/model-comparison/models.json`. Required keys per entry: `model_key`, `repository`, `revision_sha`, `license`, `model_card_url`, `dimension`, `query_prefix`, `passage_prefix`, `normalize`, `max_tokens`. Fixed initial values:
 
 | Key | Repository and revision | License | Dimension | Query / passage prefixes | Normalize | Max tokens |
 |---|---|---|---:|---|---|---:|
@@ -14,7 +14,7 @@ Tracked registry: `data/eval/model-comparison/models.json` (planned). Required k
 
 Never substitute a floating revision, change prefix policy across runs, or mix vector dimensions. Cache-key input is the full pinned model/settings record plus SHA-256 of ordered `(chunk_id, text)` pairs, not merely the manifest date. Record observed token truncation count per pack. If a model-card smoke test contradicts the settings above, correct the registry **before** running the benchmark and record the rationale; do not retrofit settings after v2 results are seen.
 
-## CLI surface (to implement)
+## CLI surface
 
 ```powershell
 # Existing behavior unchanged: builds the operational e5-large index.
