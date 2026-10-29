@@ -153,6 +153,7 @@
   }
 
   let inFlight = false;
+  let requestVersion = 0;
   let askBtn = document.getElementById("ask-btn");
 
   // T013: switching language resets the question view state. T015d: an
@@ -160,6 +161,9 @@
   const EMPTY_PACK_MESSAGE = "کورپوس این زبان هنوز آماده نیست.";
 
   function selectLanguage(langId, silent) {
+    requestVersion++;
+    inFlight = false;
+    setLoading(false);
     currentLanguage = langId;
     Array.prototype.forEach.call(langList.children, (li) => {
       li.classList.toggle("active", li.dataset.lang === langId);
@@ -308,6 +312,7 @@
     ev.preventDefault();
     if (inFlight) return; // T015d: no parallel asks, button stays disabled
     inFlight = true;
+    const version = ++requestVersion;
     clearViewState();
     // T015c: keep the promo text but collapse it after use so the demo
     // viewport leads with the live Q&A; sample chips stay available.
@@ -324,7 +329,7 @@
       });
       let body = {};
       try { body = await res.json(); } catch (_) { /* non-JSON body */ }
-      if (currentLanguage !== askedLanguage) return;
+      if (version !== requestVersion || currentLanguage !== askedLanguage) return;
       if (!res.ok) {
         // T015d: friendly Persian error tree. Our backend 422/500s carry a
         // plain Persian string in `detail` (HTTPException); a pydantic-style
@@ -350,13 +355,15 @@
         message.textContent = "خطای غیرمنتظره: " + JSON.stringify(body).slice(0, 200);
       }
     } catch (err) {
-      if (currentLanguage !== askedLanguage) return;
+      if (version !== requestVersion || currentLanguage !== askedLanguage) return;
       // T015d: network/server failure → same friendly Persian error.
       message.textContent = ERR_MESSAGE;
       pane.textContent = "";
     } finally {
-      inFlight = false;
-      setLoading(false);
+      if (version === requestVersion) {
+        inFlight = false;
+        setLoading(false);
+      }
     }
   });
 })();
