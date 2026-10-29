@@ -22,7 +22,7 @@ INSUFFICIENT = "CANNOT_ANSWER"
 
 _CITE_RE = re.compile(r"\[([^\[\]\s]+#[^\[\]\s]+)\]")
 
-PROMPT_TEMPLATE = """شما یک دستیار آموزشی زبان C هستید که فقط به فارسی پاسخ می‌دهد.
+PROMPT_TEMPLATE = """شما یک دستیار آموزشی زبان {language} هستید که فقط به فارسی پاسخ می‌دهد.
 
 قواعد الزامی:
 ۱. فقط بر اساس «متن‌های زمینه» زیر پاسخ بده؛ از دانش خودت چیزی اضافه نکن.
@@ -47,13 +47,16 @@ class UncitedAnswerError(AnswerError):
     """Raised when a non-abstention output contains no complete citation."""
 
 
-def build_prompt(question: str, chunks: list[dict]) -> str:
+def build_prompt(question: str, chunks: list[dict], language_id: str = "c") -> str:
     """Render the grounded Persian prompt for the given question + chunks."""
+    names = {"c": "C", "cpp": "C++", "python": "Python", "java": "Java"}
+    if language_id not in names:
+        raise ValueError(f"unknown language pack: {language_id}")
     numbered = "\n\n".join(
         f"[{c['chunk_id']}] ({c['doc_title']} — {c['section_heading']})\n{c['text']}"
         for c in chunks
     )
-    return PROMPT_TEMPLATE.format(question=question.strip(), context=numbered)
+    return PROMPT_TEMPLATE.format(language=names[language_id], question=question.strip(), context=numbered)
 
 
 def extract_cited_ids(answer_text: str) -> list[str]:
@@ -61,7 +64,7 @@ def extract_cited_ids(answer_text: str) -> list[str]:
     return _CITE_RE.findall(answer_text)
 
 
-def compose_answer(question: str, chunks: list[dict], provider) -> dict:
+def compose_answer(question: str, chunks: list[dict], provider, language_id: str = "c") -> dict:
     """Generate a grounded answer via the provider and validate citations.
 
     Returns {"answer_text", "citations", "retrieved_chunk_ids",
@@ -71,7 +74,7 @@ def compose_answer(question: str, chunks: list[dict], provider) -> dict:
     retrieved_ids = [c["chunk_id"] for c in chunks]
     logger.info("compose lang_hint=%s", detect_query_lang(question))
     answer_text = provider.generate(
-        build_prompt(question, chunks),
+        build_prompt(question, chunks, language_id),
         "",  # context is already embedded in the prompt
     ).strip()
     if answer_text == INSUFFICIENT:

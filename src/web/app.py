@@ -169,7 +169,7 @@ def _ask(request: AskRequest, *, retriever: Retriever | None = None,
         # chunks (AnswerError = fabrication); here a fabricator that slips
         # past that layer still cannot cite anything outside the SELECTED
         # pack's index — foreign ids abstain instead of answering.
-        result = compose_answer(question, chunks, provider)
+        result = compose_answer(question, chunks, provider, pack.language_id)
         cited = [c["chunk_id"] for c in result.get("citations", [])]
         if cited and not all(retriever.has_chunk(cid) for cid in cited):
             return _fabrication_abstain(pack, chunks, threshold)

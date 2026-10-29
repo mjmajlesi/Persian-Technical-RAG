@@ -583,8 +583,9 @@ This version has **known defects**. Important boundaries for use and interpretat
 
 - **Citation limits:** empty or uncited non-abstention answers are rejected, but
   valid citation IDs do not establish semantic support for a claim.
-- **Multi-pack prompt:** the shared prompt still names C; separate indices do not
-  automatically fix this instruction weakness for other packs.
+- **Multi-pack prompt:** the role names the selected language, but the unchanged
+  citation-format example still uses a C-pack chunk ID. Historical v2 reports used
+  the previous C-only role and must not be treated as results from the new prompt.
 - **Ingest and chunking:** missing or empty sources fail before publication; chunk
   size uses words, not actual token limits. Long code blocks can be split, and
   model inputs can be truncated.
