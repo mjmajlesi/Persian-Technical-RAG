@@ -13,7 +13,7 @@
   --line: #dde5f0;
   --card: #ffffff;
   --canvas: #f6f9fd;
-  --accent: #3b82f6;      /* mild blue */
+  --accent: #2563eb;      /* mild blue (AA: white on accent = 5.17:1) */
   --accent-2: #7cb0f9;    /* lighter blue for soft gradients */
   --accent-soft: #eaf2fe;
   --accent-ink: #1d4ed8;
@@ -143,12 +143,12 @@ header#site-header, main#qa-view, aside#language-sidebar,
   white-space: nowrap;
 }
 .lang-status::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--ok); }
-li.active .lang-status { color: rgba(255, 255, 255, 0.85); }
+li.active .lang-status { color: rgba(255, 255, 255, 0.95); }
 li.active .lang-status::before { background: #a7f3d0; }
 li.empty .lang-status::before { background: var(--bad); }
 li.empty { color: var(--faint); }
 li.empty .lang-status { color: #b91c1c; }
-li.active.empty .lang-status { color: rgba(255, 255, 255, 0.9); }
+li.active.empty .lang-status { color: rgba(255, 255, 255, 0.95); }
 li.active.empty .lang-status::before { background: #fecaca; }
 
 /* --- Main Q&A view --- */
@@ -175,7 +175,28 @@ li.active.empty .lang-status::before { background: #fecaca; }
   background: transparent;
 }
 #question-box:focus { outline: none; }
+#question-box::placeholder { color: var(--faint); }
 #ask-form:focus-within { border-color: #a9cbfc; }
+
+/* F15: one visible focus ring for every control, including the ones that are
+   now native buttons (language items, citation and topic chips). */
+#question-box:focus-visible, #ask-btn:focus-visible,
+#lang-list .lang-item:focus-visible,
+.cite-chip:focus-visible, .topic-chip:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+/* F15: real <label> for the question box, hidden visually but not from AT. */
+.visually-hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
 
 #ask-btn {
   align-self: flex-start;
@@ -301,8 +322,30 @@ li.active.empty .lang-status::before { background: #fecaca; }
   flex: none;
 }
 @keyframes spin { to { transform: rotate(360deg); } }
-#ask-btn:disabled { opacity: 0.6; cursor: progress; transform: none; }
+#ask-btn:disabled {
+  background: #e2e8f0;
+  color: #475569;
+  opacity: 1;
+  cursor: progress;
+  transform: none;
+  box-shadow: none;
+}
 #question-box:disabled { opacity: 0.55; }
+
+/* F15: the pack row is a native button, so Tab/Enter/Space work; the visual
+   card styling stays on the list item. */
+#lang-list .lang-item {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: inherit;
+  cursor: pointer;
+}
 
 /* citation chips + revealed source */
 #citations { margin-top: 0.7rem; }
@@ -312,6 +355,7 @@ li.active.empty .lang-status::before { background: #fecaca; }
   border-radius: 999px;
   padding: 0.18rem 0.85rem;
   margin: 0.2rem 0;
+  font-family: inherit;
   font-size: 0.82rem;
   cursor: pointer;
   transition: background 130ms ease, transform 130ms ease;

@@ -140,6 +140,7 @@
     pane.textContent = "";
     cites.innerHTML = "";
     reveal.innerHTML = "";
+    openChip = null;
   }
 
   function setLoading(on) {
@@ -158,6 +159,8 @@
   let inFlight = false;
   let requestVersion = 0;
   let askBtn = document.getElementById("ask-btn");
+  // F15: the citation chip whose source is currently revealed (Escape closes it).
+  let openChip = null;
 
   // T013: switching language resets the question view state. T015d: an
   // empty pack shows its explicit state right away (contracts/languages-api.md).
@@ -169,7 +172,10 @@
     setLoading(false);
     currentLanguage = langId;
     Array.prototype.forEach.call(langList.children, (li) => {
-      li.classList.toggle("active", li.dataset.lang === langId);
+      const active = li.dataset.lang === langId;
+      li.classList.toggle("active", active);
+      const button = li.querySelector ? li.querySelector(".lang-item") : null;
+      if (button) button.setAttribute("aria-pressed", active ? "true" : "false");
     });
     const pack = packs.filter((p) => p.language_id === langId)[0];
     const name = (pack ? pack.display_name.split("/")[0] : langId).trim();
@@ -257,11 +263,17 @@
       const li = document.createElement("li");
       li.className = p.status;
       li.dataset.lang = p.language_id;
-      li.appendChild(document.createTextNode(p.display_name));
+      // F15: native button inside the card, so keyboard users can switch packs.
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "lang-item";
+      button.setAttribute("aria-pressed", "false");
+      button.appendChild(document.createTextNode(p.display_name));
       const badge = document.createElement("span");
       badge.className = "lang-status";
       badge.textContent = STATUS_LABEL[p.status] || p.status;
-      li.appendChild(badge);
+      button.appendChild(badge);
+      li.appendChild(button);
       li.addEventListener("click", () => selectLanguage(p.language_id, false));
       langList.appendChild(li);
     });
@@ -275,10 +287,17 @@
   // T025: suggested topics render as clickable chips; clicking one fills
   // the question box (no auto-submit) so the student can ask about it.
   function topicChip(topic) {
-    const el = document.createElement("span");
+    const el = document.createElement("button");
+    el.type = "button";
     el.className = "topic-chip";
     el.textContent = topic;
     return el;
+  }
+
+  function closeReveal() {
+    if (openChip) openChip.setAttribute("aria-expanded", "false");
+    openChip = null;
+    reveal.innerHTML = "";
   }
 
   cites.addEventListener("click", (ev) => {
@@ -293,6 +312,13 @@
     // the T013 refactor, breaking the reveal with a ReferenceError.)
     const chipEl = ev.target.closest(".cite-chip");
     if (!chipEl) return;
+    if (openChip === chipEl) {   // F15: same chip closes its own reveal
+      closeReveal();
+      return;
+    }
+    if (openChip) openChip.setAttribute("aria-expanded", "false");
+    openChip = chipEl;
+    chipEl.setAttribute("aria-expanded", "true");
     reveal.innerHTML = buildReveal({
       doc_title: chipEl.dataset.docTitle || chipEl.textContent,
       section_heading: chipEl.dataset.section || "",
@@ -300,14 +326,26 @@
     });
   });
 
+  // F15: Escape closes the reveal and returns focus to the chip that opened it.
+  cites.addEventListener("keydown", (ev) => {
+    if (ev.key !== "Escape" || !openChip) return;
+    const opener = openChip;
+    closeReveal();
+    opener.focus();
+    ev.preventDefault();
+  });
+
   function chip(c) {
-    const el = document.createElement("span");
+    const el = document.createElement("button");
+    el.type = "button";
     el.className = "cite-chip";
     el.textContent = c.doc_title + " — " + c.section_heading;
     el.dataset.chunkId = c.chunk_id;
     el.dataset.docTitle = c.doc_title;
     el.dataset.section = c.section_heading;
     el.dataset.excerpt = c.excerpt;
+    el.setAttribute("aria-expanded", "false");
+    el.setAttribute("aria-controls", "cite-reveal-pane");
     return el;
   }
 

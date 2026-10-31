@@ -13,6 +13,8 @@ class Element {
   }
   appendChild(child) { this.children.push(child); return child; }
   after() {}
+  setAttribute(name, value) { this.attrs = this.attrs || {}; this.attrs[name] = value; }
+  getAttribute(name) { return (this.attrs || {})[name]; }
   addEventListener(name, callback) { this.listeners[name] = callback; }
   click() { return this.listeners.click(); }
   requestSubmit() { return this.listeners.submit({ preventDefault() {} }); }
