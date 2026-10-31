@@ -24,9 +24,12 @@
   // Latin/number/code run in dir="auto" so identifiers and numbers don't
   // jump around inside RTL paragraphs. Content of style/code markup still
   // joined correctly inside its own element below.
-  const CODE_RUN_RE = /([A-Za-z0-9_#+]+(?:[.\-][A-Za-z0-9_#+]+)*)/g;
+  const CODE_RUN_RE = /&(?:amp;)?(?:lt|gt|amp|quot);|([A-Za-z0-9_#+]+(?:[.\-][A-Za-z0-9_#+]+)*)/g;
+  // F08: HTML entities are matched whole, so the wrapper can never split one
+  // (`&lt;` stays one text node; a literal `&lt;` stays `&amp;lt;`).
   function wrapCodeRuns(escaped) {
-    return escaped.replace(CODE_RUN_RE, '<span dir="auto">$1</span>');
+    return escaped.replace(CODE_RUN_RE, (match, run) =>
+      run ? '<span dir="auto">' + run + "</span>" : match);
   }
 
   // Inline markdown for one plain line (T015d groundwork): inline `code`,
