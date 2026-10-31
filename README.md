@@ -633,13 +633,24 @@ This version has **known defects**. Important boundaries for use and interpretat
   model inputs can be truncated.
 - **Operational model identity:** research checks revisions/hashes more strictly
   than the normal path; the operational model has no explicit research-style revision pin.
-- **Web interface:** stale requests are ignored after language changes, but
-  HTML-entity rendering and accessibility of clickable controls need improvement.
-  Error-free behavior across all browsers is not claimed.
+- **Web interface:** stale answers are ignored after a language change, and the
+  language list has an explicit failure state with a retry, but an in-flight
+  request is **not cancelled**. Entity rendering in answers, contrast, real
+  labels, and keyboard-operable language items and citation chips are covered by
+  automated checks and manual browser tests; screen-reader usability (NVDA, JAWS,
+  VoiceOver) was **not** tested. Error-free behavior across all browsers is not claimed.
 - **Validation boundaries:** v2 validation rejects normalized duplicate questions;
   the official comparison builder checks shared recorded generator identity and
   per-row citation scope. Neither check proves immutable model weights or semantic
   support; independently review fresh evidence.
+- **Known corpus inaccuracy (deferred):** the owner-authored study notes behind
+  chunk `fa-vars-types-operators#s03-c01` call `printf`, `scanf`, `main` and
+  `size_t` "library functions". Only `printf` and `scanf` are library functions;
+  `size_t` is an unsigned integer type and `main` is the program entry point. No
+  v1 or v2 question cites that chunk, and the correction is deferred to the next
+  corpus version so that current hashes, indices and historical reports stay
+  reproducible. The proposed replacement text is kept in the local audit note
+  `docs/learning/audit-fixes/F17-proposal.md`, outside version control.
 - **Research generalization:** the dataset is small and authored, E5 has prior
   exposure through v1 experimentation, input-length limits differ, and the answer
   service can change. Results do not establish intrinsic or universal superiority.
