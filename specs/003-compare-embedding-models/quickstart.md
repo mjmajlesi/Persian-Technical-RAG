@@ -137,7 +137,8 @@ Run this only with the one-per-mode official pairs, not a directory of
 multiple timestamped replays. It validates set/calibration provenance,
 row-by-row retrieval agreement between modes, shared LLM identity, citation
 membership in the row's Top-5 and selected pack, normalized question
-uniqueness, and per-item hits/gate decisions before writing the four official files:
+uniqueness, and per-item hits/gate decisions before writing the eight official
+files (one table and one companion JSON per pack):
 
 ```powershell
 .\.venv\Scripts\python -m pytest tests/ -q
