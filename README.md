@@ -654,9 +654,10 @@ This version has **known defects**. Important boundaries for use and interpretat
   exposure through v1 experimentation, input-length limits differ, and the answer
   service can change. Results do not establish intrinsic or universal superiority.
 
-Development priorities include pack-aware prompts, UI fixes, and additional
-edge-case tests. Larger evaluation sets, token-aware chunking, and other retrieval methods
-are subsequent experiments—**future work, not implemented features**.
+Development priorities are measuring the effect of the new prompt on end-to-end
+quality (not yet run), cancelling in-flight requests and screen-reader testing,
+token-aware chunking and a corrected corpus version, and larger evaluation sets
+and other retrieval methods—**future work, not implemented features**.
 
 Authentication, multi-user deployment, production scaling, live web crawling,
 and training models from scratch are outside the current scope. See the
