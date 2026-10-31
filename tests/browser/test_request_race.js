@@ -36,7 +36,11 @@ async function run() {
     createTextNode: text => ({ textContent: text }),
   };
   const fetch = (url, options) => {
-    if (url === "/api/languages") return Promise.resolve({ json: async () => packs });
+    // F16: the app now checks res.ok before trusting a body, so the stub has to
+    // look like a real Response instead of a bare { json } object.
+    if (url === "/api/languages") {
+      return Promise.resolve({ ok: true, status: 200, json: async () => packs });
+    }
     return new Promise((resolve, reject) => requests.push({ resolve, reject,
       question: JSON.parse(options.body).question }));
   };

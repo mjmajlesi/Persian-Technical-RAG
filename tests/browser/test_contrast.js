@@ -119,6 +119,17 @@ check("reveal pre", () => {
 check("footer / canvas", onRule("#pack-footer", "color", canvas));
 check("welcome text / card", onRule("#welcome-pane", "color", card));
 check("sample label / card", onRule("#sample-label", "color", card));
+check("language loading / card", onRule(".lang-loading", "color", card));
+check("language error / card", onRule(".lang-error", "color", card));
+check("retry button", onOwnBg(".lang-retry"));
+check("disabled question text", () => {
+  const bg = rgb(declared("#question-box:disabled", "background"));
+  return ratio(over(rgb(declared("#question-box:disabled", "color")), bg), bg);
+});
+check("disabled question placeholder", () => {
+  const bg = rgb(declared("#question-box:disabled", "background"));
+  return ratio(over(rgb(declared("#question-box:disabled::placeholder", "color")), bg), bg);
+});
 
 for (const row of rows) {
   const status = row.value >= row.min ? "ok  " : "FAIL";

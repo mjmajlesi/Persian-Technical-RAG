@@ -216,6 +216,37 @@ li.active.empty .lang-status::before { background: #fecaca; }
 #ask-btn:active { transform: translateY(0); }
 #ask-btn:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
 
+/* F16: loading / error / retry states of the pack list. The retry control is a
+   real <button>, so it is reachable by Tab and fires on Enter/Space. */
+#lang-state { margin-bottom: 0.5rem; }
+
+.lang-loading {
+  display: flex; align-items: center; gap: 0.4rem;
+  margin: 0; font-size: 0.8rem; color: var(--muted);
+}
+
+.lang-error {
+  margin: 0 0 0.5rem;
+  font-size: 0.82rem;
+  line-height: 1.7;
+  color: #b91c1c;
+}
+
+.lang-retry {
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.35rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent-ink);
+  cursor: pointer;
+  transition: background 130ms ease;
+}
+.lang-retry:hover { background: #ffffff; }
+.lang-retry:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+
 /* --- Welcome pane + one-click demo questions (002-T015c) --- */
 #welcome-pane {
   background: var(--card);
@@ -329,8 +360,20 @@ li.active.empty .lang-status::before { background: #fecaca; }
   cursor: progress;
   transform: none;
   box-shadow: none;
+  /* F16: a non-colour cue — dashed outline instead of the solid fill edge —
+     so the disabled state is not conveyed by colour alone. */
+  outline: 2px dashed #475569;
+  outline-offset: -6px;
 }
-#question-box:disabled { opacity: 0.55; }
+/* F16: the question box is disabled until a pack is known; explicit colours
+   keep the placeholder readable instead of fading it with opacity. */
+#question-box:disabled {
+  background: #f1f5f9;
+  color: #475569;
+  opacity: 1;
+  cursor: progress;
+}
+#question-box:disabled::placeholder { color: #475569; }
 
 /* F15: the pack row is a native button, so Tab/Enter/Space work; the visual
    card styling stays on the list item. */

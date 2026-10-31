@@ -105,12 +105,51 @@
     return out.join("\n");
   }
 
+  // F16: GET /api/languages is the one response the whole page depends on, so
+  // its payload is classified explicitly instead of trusting any 200 body.
+  // Pure helper (node-testable): HTTP status + parsed body -> verdict.
+  function validateLanguagesPayload(status, body) {
+    if (typeof status === "number" && (status < 200 || status > 299)) {
+      return { ok: false, reason: "http", status: status };
+    }
+    const list = body && body.languages;
+    if (!Array.isArray(list) || list.length === 0) {
+      return { ok: false, reason: "empty" };
+    }
+    const ids = list.map((p) => p && p.language_id);
+    const wanted = body && body.default;
+    return {
+      ok: true,
+      packs: list,
+      // An unknown default must never leave the form pointing at no pack.
+      defaultLanguage: ids.indexOf(wanted) >= 0 ? wanted : ids[0],
+    };
+  }
+
+  // F16: every language-fetch failure gets its own Persian sentence, and every
+  // one of them tells the student what to do next (the retry button).
+  const LANGUAGE_ERROR_MESSAGES = {
+    network: "فهرست زبان‌ها دریافت نشد؛ اتصال به سرور برقرار نیست. دوباره تلاش کنید.",
+    http: "سرور در ارسال فهرست زبان‌ها خطا داد. دوباره تلاش کنید.",
+    json: "پاسخ سرور برای فهرست زبان‌ها خوانا نبود. دوباره تلاش کنید.",
+    empty: "هیچ زبانی از سرور دریافت نشد. دوباره تلاش کنید.",
+  };
+
+  function languageErrorMessage(reason, status) {
+    const base = LANGUAGE_ERROR_MESSAGES[reason] || LANGUAGE_ERROR_MESSAGES.http;
+    return reason === "http" && status
+      ? "سرور در ارسال فهرست زبان‌ها خطا داد (HTTP " + status + "). دوباره تلاش کنید."
+      : base;
+  }
+
   // Export for node-based verification; browsers ignore this branch.
   if (typeof module !== "undefined" && module.exports) {
     module.exports = {
       escapeHtml: escapeHtml,
       buildReveal: buildReveal,
       renderMarkdownAnswer: renderMarkdownAnswer,
+      validateLanguagesPayload: validateLanguagesPayload,
+      languageErrorMessage: languageErrorMessage,
     };
     return;
   }
@@ -256,9 +295,9 @@
     });
   }
 
-  function renderSidebar(body) {
-    packs = body.languages || [];
-    langList.innerHTML = "";
+  function renderSidebar(verdict) {
+    packs = verdict.packs;
+    langList.textContent = "";
     packs.forEach((p) => {
       const li = document.createElement("li");
       li.className = p.status;
@@ -277,11 +316,98 @@
       li.addEventListener("click", () => selectLanguage(p.language_id, false));
       langList.appendChild(li);
     });
-    selectLanguage(body.default || "c", true);
+    selectLanguage(verdict.defaultLanguage, true);
     renderFooter();
   }
 
-  fetch("/api/languages").then((res) => res.json()).then(renderSidebar);
+  // F16: explicit loading / ready / error states for the pack list. A failed
+  // fetch used to leave an empty sidebar and currentLanguage === null, which
+  // silently swallowed every answer, so the form stays unusable until a pack
+  // is actually known, and the failure speaks (role="alert") with a retry.
+  const langStateBox = document.getElementById("lang-state");
+  let langState = "loading";
+
+  function showLanguageLoading() {
+    if (langStateBox) {
+      langStateBox.textContent = "";
+      const row = document.createElement("p");
+      row.className = "lang-loading";
+      row.setAttribute("role", "status");
+      const spin = document.createElement("span");
+      spin.className = "spinner";
+      spin.setAttribute("aria-hidden", "true");
+      row.appendChild(spin);
+      row.appendChild(document.createTextNode("در حال دریافت فهرست زبان‌ها…"));
+      langStateBox.appendChild(row);
+    }
+    langList.textContent = "";
+  }
+
+  function showLanguageError(text) {
+    if (langStateBox) {
+      langStateBox.textContent = "";
+      const err = document.createElement("p");
+      err.className = "lang-error";
+      err.setAttribute("role", "alert");
+      err.textContent = text;
+      const retry = document.createElement("button");
+      retry.type = "button";
+      retry.id = "lang-retry";
+      retry.className = "lang-retry";
+      retry.textContent = "تلاش دوباره";
+      retry.addEventListener("click", loadLanguages);
+      langStateBox.appendChild(err);
+      langStateBox.appendChild(retry);
+      retry.focus();
+    }
+    langList.textContent = "";
+    packs = [];
+    currentLanguage = null;
+    box.disabled = true;
+    askBtn.disabled = true;
+    clearViewState();
+  }
+
+  function failLanguages(reason, status) {
+    langState = "error";
+    showLanguageError(languageErrorMessage(reason, status));
+  }
+
+  async function loadLanguages() {
+    const hadError = langState === "error";
+    langState = "loading";
+    box.disabled = true;
+    askBtn.disabled = true;
+    showLanguageLoading();
+    let res = null;
+    try {
+      res = await fetch("/api/languages", { headers: { Accept: "application/json" } });
+    } catch (_) {
+      failLanguages("network");
+      return;
+    }
+    if (!res.ok) { failLanguages("http", res.status); return; }
+    let body = null;
+    try {
+      body = await res.json();
+    } catch (_) {
+      failLanguages("json");
+      return;
+    }
+    const verdict = validateLanguagesPayload(res.status, body);
+    if (!verdict.ok) { failLanguages(verdict.reason, verdict.status); return; }
+    langState = "ready";
+    if (langStateBox) langStateBox.textContent = "";
+    renderSidebar(verdict);
+    if (hadError) {
+      // Focus lands on the pack that is now selected; the form is usable again.
+      const active = langList.querySelector("li.active .lang-item");
+      const target = active || langList.querySelector(".lang-item") || box;
+      target.focus();
+    }
+  }
+
+  loadLanguages();
 
   // T020: click a chip to reveal its source title + section + full excerpt.
   // T025: suggested topics render as clickable chips; clicking one fills
@@ -351,6 +477,12 @@
 
   form.addEventListener("submit", async (ev) => {
     ev.preventDefault();
+    // F16: never post a question for a language the page has not received.
+    if (langState !== "ready" || !currentLanguage) {
+      message.textContent =
+        "زبان انتخاب نشده است؛ ابتدا فهرست زبان‌ها را دوباره بارگذاری کنید.";
+      return;
+    }
     if (inFlight) return; // T015d: no parallel asks, button stays disabled
     inFlight = true;
     const version = ++requestVersion;
