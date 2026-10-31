@@ -649,8 +649,7 @@ This version has **known defects**. Important boundaries for use and interpretat
   `size_t` is an unsigned integer type and `main` is the program entry point. No
   v1 or v2 question cites that chunk, and the correction is deferred to the next
   corpus version so that current hashes, indices and historical reports stay
-  reproducible. The proposed replacement text is kept in the local audit note
-  `docs/learning/audit-fixes/F17-proposal.md`, outside version control.
+  reproducible.
 - **Research generalization:** the dataset is small and authored, E5 has prior
   exposure through v1 experimentation, input-length limits differ, and the answer
   service can change. Results do not establish intrinsic or universal superiority.
