@@ -518,6 +518,47 @@ E2E ناقص باید خطا و دلیل داشته باشد؛ معیارهای�
 است؛ [جزئیات و حدود اجرا](specs/003-compare-embedding-models/VALIDATION.md) را
 ببینید. این عدد نتیجهٔ اجرای تازهٔ نصب شما نیست و Skip به معنی Pass نیست.
 
+### اجرای همهٔ تست‌ها
+
+تست‌های خودکار در دو لایه‌اند: مجموعهٔ `pytest` پایتون و چهار بررسی مستقل Node که
+منطق خالص اسکریپت داشبورد را بدون مرورگر، سرور یا مدل می‌سنجند.
+
+پیش‌نیازها:
+
+- همان محیط پایتونِ توضیح‌داده‌شده در بالا (برای `pytest`)؛
+- **Node.js نسخهٔ ۱۸ یا بالاتر** برای بررسی‌های Node — تأییدشده روی `v22.23.4`.
+  این‌ها فقط از کتابخانهٔ استاندارد Node (`node:assert`، `node:fs`، `node:path`،
+  `node:vm`) استفاده می‌کنند؛ پس **نیازی به `npm install` نیست** و `package.json`
+  لازم ندارند.
+
+اجرای هر دو لایه، با توقف در نخستین شکست:
+
+```powershell
+# ۱) مجموعهٔ پایتون (پیش‌نیازها و هشدارهای بالا)
+.\.venv\Scripts\python -B -m pytest tests/ -q
+if ($LASTEXITCODE -ne 0) { throw 'Python suite failed' }
+
+# ۲) بررسی‌های Node روی فایل‌های واقعی src/web/static
+Get-ChildItem tests/browser/*.js | ForEach-Object {
+    node $_.FullName
+    if ($LASTEXITCODE -ne 0) { throw "Node check failed: $($_.Name)" }
+}
+```
+
+چهار فایل Node، که هرکدام با یک خط `PASS ...` پایان می‌یابند و در شکست Exit code
+غیرصفر می‌دهند:
+
+| فایل | چه چیزی را می‌سنجد |
+|---|---|
+| `tests/browser/test_request_race.js` | پاسخ کهنه هرگز جای پاسخ پکی را که آخر انتخاب شده نمی‌گیرد (رفت‌وبرگشت زبان ‎A→B→A‎) |
+| `tests/browser/test_entity_markup.js` | نگاشت کامل Entity در `escapeHtml`، سالم‌ماندن Runهای لاتین/کد و متن‌ماندن `<script>`/`<img>` |
+| `tests/browser/test_contrast.js` | کنتراست WCAG AA برای همهٔ جفت‌های متن/پس‌زمینهٔ تعریف‌شده در `dashboard.css` |
+| `tests/browser/test_language_state.js` | دسته‌بندی بدنهٔ `/api/languages` و پیام‌های فارسی خطا |
+
+بررسی‌های Node مستقیماً `src/web/static/app.js` و `src/web/static/dashboard.css` را
+می‌خوانند؛ پس شکست آن‌ها به فایل‌های تحویل‌شده اشاره دارد، نه یک کپی. بازبینی تعاملی
+داشبورد در مرورگر مرحله‌ای دستی و جدا از این فرمان است.
+
 برای ارزیابی عملیاتی یک پک با پاسخ‌ساز فعال — این دستور می‌تواند تماس پولی بزند:
 
 ```powershell

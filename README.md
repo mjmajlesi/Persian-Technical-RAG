@@ -549,6 +549,48 @@ The historical final validation of feature 003 on **October 25, 2026** recorded
 **182 passed, 3 skipped**. See its [evidence and execution boundaries](specs/003-compare-embedding-models/VALIDATION.md).
 This is not a fresh result for your installation; skipped tests are not passes.
 
+### Running all the tests
+
+The automated tests live in two layers: the Python `pytest` suite and four
+standalone Node checks that exercise the dashboard script's pure logic without a
+browser, server or model.
+
+Requirements:
+
+- the Python environment described above (for `pytest`);
+- **Node.js 18 or newer** for the Node checks — verified on `v22.23.4`. They use
+  only Node's standard library (`node:assert`, `node:fs`, `node:path`, `node:vm`),
+  so there is **no `npm install` step** and the checks do not need a `package.json`.
+
+Run both layers, stopping at the first failure:
+
+```powershell
+# 1) Python suite (prerequisites and caveats above)
+.\.venv\Scripts\python -B -m pytest tests/ -q
+if ($LASTEXITCODE -ne 0) { throw 'Python suite failed' }
+
+# 2) Node checks against the real src/web/static files
+Get-ChildItem tests/browser/*.js | ForEach-Object {
+    node $_.FullName
+    if ($LASTEXITCODE -ne 0) { throw "Node check failed: $($_.Name)" }
+}
+```
+
+The four Node files, each of which ends with a `PASS ...` line and exits
+non-zero on failure:
+
+| File | What it checks |
+|---|---|
+| `tests/browser/test_request_race.js` | A stale answer never replaces the answer of the pack selected last (language round-trip A→B→A) |
+| `tests/browser/test_entity_markup.js` | `escapeHtml`'s full entity map, entity-safe Latin/code runs, and that `<script>`/`<img>` payloads stay text |
+| `tests/browser/test_contrast.js` | WCAG AA contrast for every text/background pair declared in `dashboard.css` |
+| `tests/browser/test_language_state.js` | `/api/languages` payload classification and the Persian failure messages |
+
+The Node checks read `src/web/static/app.js` and `src/web/static/dashboard.css`
+directly, so a failing Node check points at the shipped files, not at a copy.
+Interactive browser verification of the running dashboard is a separate manual
+step and is not part of this command.
+
 For operational evaluation of one pack with a configured answer provider—this
 command may trigger paid calls:
 
