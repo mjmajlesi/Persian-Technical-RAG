@@ -56,7 +56,18 @@ def default_set_path(lang: str) -> str:
 def run_eval(set_path: str, index_dir: str, report_dir: str, top_k: int = 5,
              language: str = DEFAULT_LANGUAGE,
              contamination_set_path: str | None = None, *,
-             model_key: str | None = None, mode: str = "end-to-end") -> dict:
+             model_key: str | None = None, mode: str = "end-to-end",
+             retrieval_strategy: str = "dense") -> dict:
+    if retrieval_strategy not in ("dense", "bm25", "hybrid"):
+        raise ValueError("unknown retrieval strategy")
+    if retrieval_strategy != "dense":
+        if mode != "retrieval-only" or model_key is None:
+            raise ValueError("alternative retrieval requires research retrieval-only mode")
+        allowed = Path("data/research/hybrid-retrieval").resolve()
+        if not Path(report_dir).resolve().is_relative_to(allowed):
+            raise ValueError("alternative retrieval reports must be under data/research/hybrid-retrieval")
+        return _run_research_eval(set_path, index_dir, top_k, language, model_key, mode,
+                                  retrieval_strategy=retrieval_strategy)
     if model_key is not None:
         return _run_research_eval(set_path, index_dir, top_k, language, model_key, mode)
     if mode != "end-to-end":
@@ -148,7 +159,8 @@ def run_eval(set_path: str, index_dir: str, report_dir: str, top_k: int = 5,
 
 
 def _run_research_eval(set_path: str, index_dir: str, top_k: int,
-                        language: str, model_key: str, mode: str) -> dict:
+                        language: str, model_key: str, mode: str,
+                        retrieval_strategy: str = "dense") -> dict:
     started_at = datetime.now(timezone.utc).isoformat()
     started = time.perf_counter()
     if mode not in ("retrieval-only", "end-to-end"):
@@ -167,6 +179,15 @@ def _run_research_eval(set_path: str, index_dir: str, top_k: int,
     spec = json.loads(Path(set_path).read_text(encoding="utf-8"))
     set_sha256 = hashlib.sha256(Path(set_path).read_bytes()).hexdigest()
     retriever = Retriever(index_dir, model_key=model_key, pack_id=language)
+    lexical = hybrid = None
+    if retrieval_strategy != "dense":
+        from src.qa.hybrid import HybridRetriever
+        chunks_path = Path("data/index") / language / "chunks.jsonl"
+        chunks = [json.loads(line) for line in chunks_path.read_text(encoding="utf-8").splitlines()
+                  if line.strip()]
+        hybrid = HybridRetriever(retriever, chunks)
+        lexical = hybrid.bm25
+        chunks_by_id = {chunk["chunk_id"]: chunk for chunk in chunks}
     index_meta = json.loads((Path(index_dir) / "index-meta.json").read_text(encoding="utf-8"))
     if (index_meta["model_key"] != model_key or index_meta["pack_id"] != language or
             index_meta["revision_sha"] != candidate.revision_sha):
@@ -198,16 +219,24 @@ def _run_research_eval(set_path: str, index_dir: str, top_k: int,
     e2e_errors = 0
     for item in spec["items"]:
         try:
-            hits = retriever.retrieve(item["question"], k=top_k)
-            if not hits:
+            dense_hits = retriever.retrieve(item["question"], k=20 if hybrid else top_k)
+            if not dense_hits:
                 raise ValueError("empty retrieval")
+            if retrieval_strategy == "hybrid":
+                hits = hybrid.fuse(item["question"], dense_hits, top_k)
+            elif retrieval_strategy == "bm25":
+                hits = [dict(chunks_by_id[cid], score=score) for cid, score in
+                        lexical.search(item["question"], top_k)]
+            else:
+                hits = dense_hits
             ids = [hit["chunk_id"] for hit in hits]
-            fixed_abstain = should_abstain(hits[0]["score"], threshold)
+            fixed_abstain = should_abstain(dense_hits[0]["score"], threshold)
             retrieval_rows.append({
                 "item_id": item["item_id"], "qtype": item["qtype"],
-                "top1_score": hits[0]["score"], "top5_ids": ids,
+                "top1_score": dense_hits[0]["score"], "top5_ids": ids,
                 "hit": bool(set(ids) & set(item.get("expected_source_ids", []))),
                 "fixed_gate_abstain": fixed_abstain,
+                "retrieval_strategy": retrieval_strategy,
             })
         except Exception:  # noqa: BLE001 - incomplete retrieval is not a zero score
             retrieval_errors += 1
@@ -265,7 +294,7 @@ def _run_research_eval(set_path: str, index_dir: str, top_k: int,
                    "count", "truncation_count")} |
                  {"ordered_ids_sha256": hashlib.sha256(ordered_ids.read_bytes()).hexdigest()},
         "model_key": model_key, "language_id": language, "eval_set_version": spec["version"],
-        "mode": mode, "calibration": calibration,
+        "mode": mode, "calibration": calibration, "retrieval_strategy": retrieval_strategy,
         "retrieval": {"status": retrieval_status, "error_count": retrieval_errors,
                       "rows": retrieval_rows},
         "end_to_end": {"status": e2e_status, "error_count": e2e_errors,
@@ -277,6 +306,9 @@ def _run_research_eval(set_path: str, index_dir: str, top_k: int,
 
 def write_reports(report: dict, report_dir: str) -> tuple[str, str]:
     out_dir = Path(report_dir)
+    if report.get("retrieval_strategy", "dense") != "dense":
+        if not out_dir.resolve().is_relative_to(Path("data/research/hybrid-retrieval").resolve()):
+            raise ValueError("alternative retrieval reports must be under data/research/hybrid-retrieval")
     out_dir.mkdir(parents=True, exist_ok=True)
     # Keep operational v1 filenames unchanged; research modes need distinct files.
     stamp = (datetime.now().strftime("%Y-%m-%d-%H%M%S-%f")
@@ -381,10 +413,14 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--model", default=None, help="research embedding model key")
     parser.add_argument("--mode", choices=("retrieval-only", "end-to-end"),
                         default="end-to-end")
+    parser.add_argument("--retrieval", choices=("dense", "bm25", "hybrid"), default=None,
+                        help="research retrieval-only strategy (default: dense)")
     parser.add_argument("--contamination-set",
                         default="data/eval/contamination.v1.json",
                         help="dedicated cross-pack probes, scored separately")
     args = parser.parse_args(argv)
+    if args.retrieval is not None and args.mode != "retrieval-only":
+        parser.error("--retrieval is only valid in retrieval-only mode")
     if args.mode == "retrieval-only" and not args.model:
         parser.error("--mode retrieval-only requires --model")
     if args.model and not args.set:
@@ -392,11 +428,17 @@ def main(argv: list[str] | None = None) -> int:
     set_path = args.set or default_set_path(args.lang)
     index_dir = args.index_dir or (f"data/research/embedding-compare/{args.model}/{args.lang}"
                                    if args.model else f"data/index/{args.lang}")
-    report_dir = args.report_dir or (f"data/eval/{args.lang}/reports/v2/{args.model}"
+    strategy = args.retrieval or "dense"
+    report_dir = args.report_dir or (f"data/research/hybrid-retrieval/{args.lang}/{strategy}/{args.model}"
+                                     if strategy != "dense" else
+                                     f"data/eval/{args.lang}/reports/v2/{args.model}"
                                      if args.model else f"data/eval/{args.lang}/reports")
     if args.model:
+        kwargs = {"model_key": args.model, "mode": args.mode}
+        if strategy != "dense":
+            kwargs["retrieval_strategy"] = strategy
         report = run_eval(set_path, index_dir, report_dir, args.top_k, args.lang,
-                          None, model_key=args.model, mode=args.mode)
+                          None, **kwargs)
     else:
         report = run_eval(set_path, index_dir, report_dir, args.top_k, args.lang,
                           args.contamination_set)
