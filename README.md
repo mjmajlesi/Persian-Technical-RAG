@@ -259,148 +259,27 @@ limitations, reference-answer provenance, and links to all 12 report pairs.
 <a id="quickstart"></a>
 ## Quick start: run the C pack first
 
-This is the shortest setup path to a dashboard with **one prepared pack**, not a
-guarantee of short download or processing times. Commands target **Windows,
-PowerShell, and Python 3.11** and run from the repository root. Virtual-environment
-activation is unnecessary: commands invoke its Python directly.
-
-### Prerequisites
-
-- Git, Python **3.11**, and a browser.
-- Internet access for packages and initial embedding-model downloads, plus several GB of free disk space for weights and caches.
-- An API key and model name for an OpenAI-compatible Chat service to **generate answers**.
-- A GPU was not required for the recorded workflow. Research builds used a CPU-only laptop with about 15.6 GiB RAM; this is not a guaranteed minimum-memory specification.
-
-> [!WARNING]
-> Ingest and build commands **write files**. Ingest fails on a missing or empty
-> source and atomically publishes its completed output, but rebuilding an index
-> can still replace artifacts. Check sources and dataset versions first.
-
-### 1. Clone and install
-
-Skip the clone step if you already have the repository:
+Clone the repository, then run setup for C. Omit the pack option to prepare all
+four packs; setup installs Python dependencies and may download an embedding model.
 
 ```powershell
 git clone https://github.com/mjmajlesi/Persian-Technical-RAG.git
 cd Persian-Technical-RAG
-
-python --version
-python -m venv .venv
-.\.venv\Scripts\python -m pip install -r requirements.txt
-if ($LASTEXITCODE -ne 0) { throw 'Dependency installation failed' }
+.\scripts\setup.ps1 -Packs c
 ```
 
-Direct dependencies are pinned; transitive dependencies such as Torch and NumPy
-are not fully locked. Check an existing installation with:
-
-```powershell
-.\.venv\Scripts\python -m pip check
+```bash
+git clone https://github.com/mjmajlesi/Persian-Technical-RAG.git
+cd Persian-Technical-RAG
+./scripts/setup.sh --packs c
 ```
 
-### 2. Configure the answer-generating LLM
-
-Create a local `.env` file at the repository root using an editor. If it already
-exists, preserve your settings and update only what is needed. The values below
-are **placeholders, not working credentials**:
-
-```dotenv
-LLM_API_KEY=<YOUR_API_KEY>
-LLM_BASE_URL=https://api.openai.com/v1
-LLM_MODEL=<YOUR_CHAT_MODEL>
-```
-
-| Variable | Purpose |
-|---|---|
-| `LLM_API_KEY` | Service API key; never commit it |
-| `LLM_BASE_URL` | Service base URL; the provider appends `/chat/completions` |
-| `LLM_MODEL` | Answer model name accepted by that service, not the embedding model |
-| `LLM_EXPECTED_RESPONSE_MODEL` | Research E2E only: independently verified model ID returned by the API |
-
-For another service, use its valid base URL and model name. Existing process
-environment variables take precedence over `.env`. Restart the server after
-changing answer-provider settings. The versioned `.env.example` contains only
-placeholders; copy it to a local `.env`, supply your own settings, and never
-commit `.env`.
-
-Without an LLM, you can still prepare sources, build indices, and run
-retrieval-only evaluation. Generating answers requires an active service;
-requests reaching the LLM may incur charges.
-
-### 3. Check source files before building
-
-This read-only check inspects sources referenced by all four manifests; it does
-not load a model or access the network:
-
-```powershell
-@'
-import json
-from pathlib import Path
-
-for lang in ("c", "cpp", "python", "java"):
-    path = Path(f"data/corpus/manifest.{lang}.json")
-    manifest = json.loads(path.read_text(encoding="utf-8"))
-    missing = []
-    for source in manifest["sources"]:
-        origin = Path(source["origin"])
-        if not origin.is_file() or not origin.read_text(encoding="utf-8").strip():
-            missing.append(source["source_id"])
-    if missing:
-        raise SystemExit(f"Missing or empty sources for {lang}: {missing}")
-    print(lang, "sources:", len(manifest["sources"]), "OK")
-'@ | .\.venv\Scripts\python -B -
-if ($LASTEXITCODE -ne 0) { throw 'Source preflight failed; do not ingest' }
-```
-
-Expected source counts: C **52**, C++ **13**, Python **9**, and Java **16**, each
-marked `OK`. This check does not establish scientific correctness or redistribution rights.
-
-### 4. Build C and start the web app
-
-```powershell
-.\.venv\Scripts\python -m src.ingest --lang c
-if ($LASTEXITCODE -ne 0) { throw 'C ingest failed' }
-if (@(Get-Content -Encoding UTF8 'data/index/c/chunks.jsonl').Count -ne 503) {
-    throw 'Unexpected C chunk count; stop before building the index'
-}
-
-.\.venv\Scripts\python -m src.index build --lang c
-if ($LASTEXITCODE -ne 0) { throw 'C index build failed' }
-
-.\.venv\Scripts\python -m uvicorn src.web.app:app --host 127.0.0.1 --port 8000
-```
-
-The first build downloads the embedding model if needed. C should have **503
-chunks with 1,024-dimensional embeddings**. A matching count alone does not prove
-content or index integrity; research reproduction also requires matching baseline hashes.
-
-Dashboard: **http://127.0.0.1:8000** · API docs: **http://127.0.0.1:8000/docs**
-
-Select C and ask **«تفاوت malloc و calloc چیست؟»** (“What is the difference between
-malloc and calloc?”). Click a citation to inspect its evidence. Clicking a
-**sample question** submits it automatically and may trigger a paid request;
-clicking a **suggested topic after abstention** only fills the question field.
-Stop the server with `Ctrl+C`. If you built only C, the other packs being
-unavailable is expected.
-
-### 5. Prepare the remaining packs
-
-After the source check succeeds, use another PowerShell window or stop the server:
-
-```powershell
-$expectedCounts = @{ cpp = 201; python = 253; java = 73 }
-foreach ($lang in 'cpp', 'python', 'java') {
-    .\.venv\Scripts\python -m src.ingest --lang $lang
-    if ($LASTEXITCODE -ne 0) { throw "Ingest failed: $lang" }
-    $count = @(Get-Content -Encoding UTF8 "data/index/$lang/chunks.jsonl").Count
-    if ($count -ne $expectedCounts[$lang]) { throw "Unexpected chunk count: $lang" }
-
-    .\.venv\Scripts\python -m src.index build --lang $lang
-    if ($LASTEXITCODE -ne 0) { throw "Index build failed: $lang" }
-}
-```
-
-Restart the server afterward. Pack IDs are `c`, `cpp`, `python`, and `java`;
-use `cpp`, not `c++`, on the command line.
+Edit the generated `.env` and set `LLM_API_KEY`, `LLM_BASE_URL`, and `LLM_MODEL`
+before generating answers; requests to the service may incur charges. Run the
+server with `.\.venv\Scripts\python -m uvicorn src.web.app:app --host 127.0.0.1 --port 8000`
+on Windows, or `./.venv/bin/python -m uvicorn src.web.app:app --host 127.0.0.1 --port 8000`
+on Linux/macOS, then open http://127.0.0.1:8000. See the
+[step-by-step manual reproduction](docs/REPRODUCTION.md) for the original manual steps.
 
 <a id="api"></a>
 ## API usage

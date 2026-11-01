@@ -249,140 +249,28 @@ CIها، تعداد Citationها، Sliceهای آمیخته/زبان شاهد و
 <a id="quickstart"></a>
 ## راه‌اندازی سریع؛ اول پک C را اجرا کنید
 
-این مسیر کمترین مراحل برای دیدن داشبورد با **یک پک آماده** است؛ «سریع» به
-معنی تضمین زمانِ دانلود یا پردازش نیست. همهٔ دستورها برای **Windows + PowerShell**
-و از ریشهٔ مخزن نوشته شده‌اند. فعال‌کردن `.venv` ضروری نیست؛ Python آن را مستقیم اجرا می‌کنیم.
-
-### پیش‌نیازها
-
-- Git، Python **3.11** و مرورگر.
-- اینترنت برای نصب بسته‌ها و دریافت اولیهٔ وزن Embedding؛ چند گیگابایت فضای آزاد برای مدل‌ها و Cache.
-- برای **پاسخ‌سازی**، کلید و نام مدلِ یک سرویس Chat سازگار با OpenAI.
-- GPU برای مسیر ثبت‌شده لازم نبوده است؛ ساخت‌های پژوهشی روی لپ‌تاپ CPU-only با حدود ۱۵٫۶ GiB RAM انجام شده‌اند. این عدد حداقل حافظهٔ تضمین‌شده نیست.
-
-> [!WARNING]
-> Ingest و Build **فایل می‌نویسند**. Ingest روی منبع مفقود یا خالی شکست می‌دهد و
-> خروجی کاملِ خود را به‌صورت اتمیک منتشر می‌کند، اما بازسازی Index همچنان می‌تواند
-> فایل‌ها را جایگزین کند؛ ابتدا منابع و نسخهٔ داده را بررسی کنید.
-
-### ۱. دریافت و نصب
-
-اگر مخزن را از قبل دارید، مرحلهٔ Clone را رد کنید:
+مخزن را Clone کنید و Setup را برای C اجرا کنید. برای آماده‌سازی هر چهار پک،
+گزینهٔ انتخاب پک را حذف کنید؛ Setup وابستگی‌ها را نصب می‌کند و ممکن است مدل
+Embedding را دانلود کند.
 
 ```powershell
 git clone https://github.com/mjmajlesi/Persian-Technical-RAG.git
 cd Persian-Technical-RAG
-
-python --version
-python -m venv .venv
-.\.venv\Scripts\python -m pip install -r requirements.txt
-if ($LASTEXITCODE -ne 0) { throw 'Dependency installation failed' }
+.\scripts\setup.ps1 -Packs c
 ```
 
-وابستگی‌های مستقیم نسخهٔ ثابت دارند؛ وابستگی‌های غیرمستقیم مثل Torch/NumPy
-به‌طور کامل قفل نشده‌اند. برای بررسی سازگاریِ نصب موجود می‌توانید اجرا کنید:
-
-```powershell
-.\.venv\Scripts\python -m pip check
+```bash
+git clone https://github.com/mjmajlesi/Persian-Technical-RAG.git
+cd Persian-Technical-RAG
+./scripts/setup.sh --packs c
 ```
 
-### ۲. تنظیم پاسخ‌ساز
-
-در ریشه، فایل محلی `.env` را با ویرایشگر بسازید. اگر موجود است، مقادیر خودتان
-را حفظ و فقط موارد لازم را تنظیم کنید؛ مثال زیر **مقدار قابل‌استفادهٔ واقعی نیست**:
-
-```dotenv
-LLM_API_KEY=<YOUR_API_KEY>
-LLM_BASE_URL=https://api.openai.com/v1
-LLM_MODEL=<YOUR_CHAT_MODEL>
-```
-
-| متغیر | کاربرد |
-|---|---|
-| `LLM_API_KEY` | کلید سرویس؛ هرگز در Git ثبت نکنید |
-| `LLM_BASE_URL` | نشانی پایهٔ سرویس؛ رابط مسیر `/chat/completions` را به آن اضافه می‌کند |
-| `LLM_MODEL` | نام مدل پاسخ‌ساز نزد همان سرویس؛ نام مدل Embedding نیست |
-| `LLM_EXPECTED_RESPONSE_MODEL` | فقط برای E2E پژوهشی؛ شناسهٔ برگشتیِ مستقل و ازپیش‌بررسی‌شده |
-
-برای سرویس دیگری، آدرس و نام مدلِ معتبر همان سرویس را بگذارید. متغیرهای ازقبل
-موجودِ فرایند بر `.env` اولویت دارند؛ پس از تغییر تنظیم پاسخ‌ساز، سرور را دوباره راه بیندازید.
-به وجود `.env.example` در دریافت تازه تکیه نکنید؛ این فایل نسخه‌بندی نشده است.
-
-بدون LLM هم می‌توانید منابع را آماده کنید، Index بسازید و Retrieval-only را
-اجرا کنید؛ تولید Answer به سرویس فعال نیاز دارد. درخواست‌هایی که به LLM برسند ممکن است هزینه داشته باشند.
-
-### ۳. پیش از ساخت، وجود منابع را بررسی کنید
-
-این بررسی فقط فایل‌های منبعِ چهار Manifest را می‌خواند؛ مدل یا شبکه‌ای اجرا نمی‌کند:
-
-```powershell
-@'
-import json
-from pathlib import Path
-
-for lang in ("c", "cpp", "python", "java"):
-    path = Path(f"data/corpus/manifest.{lang}.json")
-    manifest = json.loads(path.read_text(encoding="utf-8"))
-    missing = []
-    for source in manifest["sources"]:
-        origin = Path(source["origin"])
-        if not origin.is_file() or not origin.read_text(encoding="utf-8").strip():
-            missing.append(source["source_id"])
-    if missing:
-        raise SystemExit(f"Missing or empty sources for {lang}: {missing}")
-    print(lang, "sources:", len(manifest["sources"]), "OK")
-'@ | .\.venv\Scripts\python -B -
-if ($LASTEXITCODE -ne 0) { throw 'Source preflight failed; do not ingest' }
-```
-
-خروجی موردانتظار: C برابر ۵۲، C++ برابر ۱۳، Python برابر ۹ و Java برابر ۱۶
-منبع با برچسب `OK`. این کنترل جای بررسی علمیِ متن یا مجوز بازنشر را نمی‌گیرد.
-
-### ۴. ساخت پک C و اجرای وب
-
-```powershell
-.\.venv\Scripts\python -m src.ingest --lang c
-if ($LASTEXITCODE -ne 0) { throw 'C ingest failed' }
-if (@(Get-Content -Encoding UTF8 'data/index/c/chunks.jsonl').Count -ne 503) {
-    throw 'Unexpected C chunk count; stop before building the index'
-}
-
-.\.venv\Scripts\python -m src.index build --lang c
-if ($LASTEXITCODE -ne 0) { throw 'C index build failed' }
-
-.\.venv\Scripts\python -m uvicorn src.web.app:app --host 127.0.0.1 --port 8000
-```
-
-ساخت نخست مدل Embedding را در صورت نیاز دانلود می‌کند. شمار موردانتظار C،
-**۵۰۳ چانک با بُعد ۱۰۲۴** است. شمار درست به‌تنهایی سلامت کاملِ محتوا/Index را ثابت نمی‌کند؛
-برای بازتولید پژوهشی، Hashها هم باید با مبنا برابر باشند.
-
-داشبورد: **http://127.0.0.1:8000** · مستندات API: **http://127.0.0.1:8000/docs**
-
-برای C بپرسید: «تفاوت malloc و calloc چیست؟» سپس روی ارجاع کلیک کنید تا شاهد
-را ببینید. کلیک **سؤال نمونه** خودکار ارسال می‌کند و می‌تواند تماس پولی ایجاد
-کند؛ کلیک **موضوع پیشنهادی پس از انصراف** فقط کادر سؤال را پر می‌کند.
-برای توقف سرور `Ctrl+C` بزنید. اگر فقط C را ساخته‌اید، آماده‌نبودن سه پک دیگر طبیعی است.
-
-### ۵. آماده‌کردن سه پک دیگر
-
-پس از موفقیت بررسی منابع، در PowerShell جدا یا بعد از توقف سرور:
-
-```powershell
-$expectedCounts = @{ cpp = 201; python = 253; java = 73 }
-foreach ($lang in 'cpp', 'python', 'java') {
-    .\.venv\Scripts\python -m src.ingest --lang $lang
-    if ($LASTEXITCODE -ne 0) { throw "Ingest failed: $lang" }
-    $count = @(Get-Content -Encoding UTF8 "data/index/$lang/chunks.jsonl").Count
-    if ($count -ne $expectedCounts[$lang]) { throw "Unexpected chunk count: $lang" }
-
-    .\.venv\Scripts\python -m src.index build --lang $lang
-    if ($LASTEXITCODE -ne 0) { throw "Index build failed: $lang" }
-}
-```
-
-بعد سرور را دوباره اجرا کنید. کلیدها `c`، `cpp`، `python` و `java` هستند؛
-برای C++ در خط فرمان `cpp` بنویسید، نه `c++`.
+برای تولید پاسخ، فایل ساخته‌شدهٔ `.env` را ویرایش و `LLM_API_KEY`،
+`LLM_BASE_URL` و `LLM_MODEL` را تنظیم کنید؛ تماس با سرویس ممکن است هزینه داشته
+باشد. سرور را در Windows با `.\.venv\Scripts\python -m uvicorn src.web.app:app --host 127.0.0.1 --port 8000`
+یا در Linux/macOS با `./.venv/bin/python -m uvicorn src.web.app:app --host 127.0.0.1 --port 8000`
+اجرا و http://127.0.0.1:8000 را باز کنید. مراحل دستی اصلی در
+[راهنمای بازتولید گام‌به‌گام](docs/REPRODUCTION.md) حفظ شده‌اند.
 
 <a id="api"></a>
 ## استفاده از API
