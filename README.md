@@ -164,8 +164,8 @@ execution mode.
 
 | Evidence | Status |
 |---|---|
-| v2.0 historical research results | Primary source for the recorded comparison; generated with the earlier prompt. |
-| [Prompt sensitivity follow-up](docs/prompt-sensitivity.md) | Limited later analysis of the revised prompt; supplements, not replaces, v2.0. |
+| v2.0 historical research results | Primary source for the recorded comparison. The C prompt remains unchanged, so its prompt-related validity is preserved; this does not remove other limitations. |
+| [Prompt sensitivity follow-up](docs/prompt-sensitivity.md) | In the two examined non-C slices (Python and C++ with e5-large), an effect on response type was not detectable under the recorded rule; this does not establish no effect elsewhere. |
 
 ### Operational v1 — October 22, 2026
 

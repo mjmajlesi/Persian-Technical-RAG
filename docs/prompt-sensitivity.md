@@ -33,7 +33,8 @@ omitted; no response text is needed for this analysis.
 
 ## Decision rule
 
-Registered on **2026-11-01**, before these final control and treatment runs:
+Registered on **2026-11-01**, before these final control and treatment runs, but
+**not blind** to the historical results, Python pilots, or an earlier C/C++ run:
 **از پیش ثبت‌شده، قبل از اجرای کنترل و تیمار؛ بعد از مشاهده‌ی نتیجه قابل تغییر نیست**
 
 قاعده‌ی تفسیر:
@@ -60,7 +61,9 @@ is no direction or proportion of same-direction changes to calculate.
   C++ comparisons had already been observed.
 - These are two treatment slices, not the complete 12-combination matrix.
   Failure to detect an effect does not establish that the prompt has no effect
-  elsewhere. The 45 questions are a fixed, non-random set; interpreting a
-  binomial confidence bound as a population rate requires additional assumptions.
+  elsewhere. For zero changes in 45 rows, the one-sided 95% upper bound is about
+  **6.7%** by the rule of three and **6.4%** by the exact binomial calculation.
+  A population-rate interpretation assumes independent observations and a common
+  change probability; these 45 questions are a fixed, non-random set.
 - Temperature 0 is what the client requested and recorded, not an independently
   verified backend setting. A returned model ID does not prove immutable weights.
