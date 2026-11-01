@@ -160,6 +160,13 @@ These are **stored experimental results**, not a promise of identical output on
 future runs. Read each number together with its dataset version, threshold, and
 execution mode.
 
+### Result versions
+
+| Evidence | Status |
+|---|---|
+| v2.0 historical research results | Primary source for the recorded comparison; generated with the earlier prompt. |
+| [Prompt sensitivity follow-up](docs/prompt-sensitivity.md) | Limited later analysis of the revised prompt; supplements, not replaces, v2.0. |
+
 ### Operational v1 — October 22, 2026
 
 Each pack has 30 questions: 20 in-corpus, 5 mixed Persian/English, and 5
@@ -628,6 +635,10 @@ This version has **known defects**. Important boundaries for use and interpretat
 - **Multi-pack prompt:** the role names the selected language, but the unchanged
   citation-format example still uses a C-pack chunk ID. Historical v2 reports used
   the previous C-only role and must not be treated as results from the new prompt.
+- **Prompt sensitivity:** a limited Python and C++ follow-up with a C control
+  found no detectable response-type effect under its recorded rule. The rule was
+  not blind to earlier observations, and the result does not establish that other
+  combinations are unaffected; see the [analysis](docs/prompt-sensitivity.md).
 - **Ingest and chunking:** missing or empty sources fail before publication; chunk
   size uses words, not actual token limits. Long code blocks can be split, and
   model inputs can be truncated.
@@ -654,8 +665,8 @@ This version has **known defects**. Important boundaries for use and interpretat
   exposure through v1 experimentation, input-length limits differ, and the answer
   service can change. Results do not establish intrinsic or universal superiority.
 
-Development priorities are measuring the effect of the new prompt on end-to-end
-quality (not yet run), cancelling in-flight requests and screen-reader testing,
+Development priorities include broader independent measurement of prompt effects,
+cancelling in-flight requests and screen-reader testing,
 token-aware chunking and a corrected corpus version, and larger evaluation sets
 and other retrieval methods—**future work, not implemented features**.
 
