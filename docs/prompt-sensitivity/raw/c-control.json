@@ -1,0 +1,508 @@
+{
+  "run": "c-control",
+  "language": "c",
+  "embedding_model": "e5-large",
+  "rows": [
+    {
+      "item_id": "C2-001",
+      "response_type": "answer",
+      "cited_ids": [
+        "fa-vars-types-operators#s02-c01"
+      ],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "C2-002",
+      "response_type": "answer",
+      "cited_ids": [
+        "fa-vars-types-operators#s14-c01"
+      ],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "C2-003",
+      "response_type": "answer",
+      "cited_ids": [
+        "fa-vars-types-operators#s17-c01"
+      ],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "C2-004",
+      "response_type": "answer",
+      "cited_ids": [
+        "fa-vars-types-operators#s19-c01"
+      ],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "C2-005",
+      "response_type": "answer",
+      "cited_ids": [
+        "fa-io-formatting#s05-c01"
+      ],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "C2-006",
+      "response_type": "answer",
+      "cited_ids": [
+        "fa-io-formatting#s06-c01"
+      ],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "C2-007",
+      "response_type": "answer",
+      "cited_ids": [
+        "fa-io-formatting#s09-c01"
+      ],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "C2-008",
+      "response_type": "answer",
+      "cited_ids": [
+        "fa-io-formatting#s12-c01"
+      ],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "C2-009",
+      "response_type": "answer",
+      "cited_ids": [
+        "fa-io-formatting#s14-c01"
+      ],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "C2-010",
+      "response_type": "answer",
+      "cited_ids": [
+        "fa-selection-iteration#s14-c01"
+      ],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "C2-011",
+      "response_type": "answer",
+      "cited_ids": [
+        "fa-selection-iteration#s17-c01"
+      ],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "C2-012",
+      "response_type": "answer",
+      "cited_ids": [
+        "fa-selection-iteration#s13-c01"
+      ],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "C2-013",
+      "response_type": "llm_abstain",
+      "cited_ids": [],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "C2-014",
+      "response_type": "answer",
+      "cited_ids": [
+        "fa-arrays#s11-c01"
+      ],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "C2-015",
+      "response_type": "answer",
+      "cited_ids": [
+        "fa-arrays#s14-c01",
+        "fa-arrays#s17-c01"
+      ],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "C2-016",
+      "response_type": "answer",
+      "cited_ids": [
+        "fa-pointers#s05-c01"
+      ],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "C2-017",
+      "response_type": "answer",
+      "cited_ids": [
+        "fa-pointers#s10-c01"
+      ],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "C2-018",
+      "response_type": "gate_abstain",
+      "cited_ids": [],
+      "llm_metadata": null
+    },
+    {
+      "item_id": "C2-019",
+      "response_type": "answer",
+      "cited_ids": [
+        "fa-pointers#s18-c01"
+      ],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "C2-020",
+      "response_type": "answer",
+      "cited_ids": [
+        "fa-structs-unions-enums#s03-c01"
+      ],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "C2-021",
+      "response_type": "answer",
+      "cited_ids": [
+        "fa-structs-unions-enums#s09-c01"
+      ],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "C2-022",
+      "response_type": "answer",
+      "cited_ids": [
+        "fa-strings#s05-c01"
+      ],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "C2-023",
+      "response_type": "answer",
+      "cited_ids": [
+        "fa-files#s07-c01",
+        "fa-files#s09-c01"
+      ],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "C2-024",
+      "response_type": "answer",
+      "cited_ids": [
+        "fa-dynamic-memory#s07-c01"
+      ],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "C2-025",
+      "response_type": "answer",
+      "cited_ids": [
+        "fa-functions#s07-c01",
+        "fa-dynamic-memory#s11-c01"
+      ],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "C2-026",
+      "response_type": "answer",
+      "cited_ids": [
+        "fa-preprocessor#s10-c01"
+      ],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "C2-027",
+      "response_type": "llm_abstain",
+      "cited_ids": [],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "C2-028",
+      "response_type": "llm_abstain",
+      "cited_ids": [],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "C2-029",
+      "response_type": "answer",
+      "cited_ids": [
+        "fa-dynamic-memory#s14-c01"
+      ],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "C2-030",
+      "response_type": "llm_abstain",
+      "cited_ids": [],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "C2-031",
+      "response_type": "llm_abstain",
+      "cited_ids": [],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "C2-032",
+      "response_type": "llm_abstain",
+      "cited_ids": [],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "C2-033",
+      "response_type": "llm_abstain",
+      "cited_ids": [],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "C2-034",
+      "response_type": "llm_abstain",
+      "cited_ids": [],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "C2-035",
+      "response_type": "answer",
+      "cited_ids": [
+        "cppref-fwrite#s04-c01"
+      ],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "C2-036",
+      "response_type": "llm_abstain",
+      "cited_ids": [],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "C2-037",
+      "response_type": "answer",
+      "cited_ids": [
+        "fa-strings#s08-c01"
+      ],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "C2-038",
+      "response_type": "answer",
+      "cited_ids": [
+        "cppref-memset#s04-c01"
+      ],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "C2-039",
+      "response_type": "llm_abstain",
+      "cited_ids": [],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "C2-040",
+      "response_type": "gate_abstain",
+      "cited_ids": [],
+      "llm_metadata": null
+    },
+    {
+      "item_id": "C2-041",
+      "response_type": "llm_abstain",
+      "cited_ids": [],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "C2-042",
+      "response_type": "llm_abstain",
+      "cited_ids": [],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "C2-043",
+      "response_type": "llm_abstain",
+      "cited_ids": [],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "C2-044",
+      "response_type": "llm_abstain",
+      "cited_ids": [],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "C2-045",
+      "response_type": "llm_abstain",
+      "cited_ids": [],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    }
+  ]
+}

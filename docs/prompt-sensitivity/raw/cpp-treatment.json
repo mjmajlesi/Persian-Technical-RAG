@@ -1,0 +1,474 @@
+{
+  "run": "cpp-treatment",
+  "language": "cpp",
+  "embedding_model": "e5-large",
+  "rows": [
+    {
+      "item_id": "CPP2-001",
+      "response_type": "answer",
+      "cited_ids": [
+        "cpp-notes-intro#s02-c01"
+      ],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "CPP2-002",
+      "response_type": "answer",
+      "cited_ids": [
+        "cpp-notes-intro#s03-c01"
+      ],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "CPP2-003",
+      "response_type": "llm_abstain",
+      "cited_ids": [],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "CPP2-004",
+      "response_type": "llm_abstain",
+      "cited_ids": [],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "CPP2-005",
+      "response_type": "llm_abstain",
+      "cited_ids": [],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "CPP2-006",
+      "response_type": "llm_abstain",
+      "cited_ids": [],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "CPP2-007",
+      "response_type": "llm_abstain",
+      "cited_ids": [],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "CPP2-008",
+      "response_type": "gate_abstain",
+      "cited_ids": [],
+      "llm_metadata": null
+    },
+    {
+      "item_id": "CPP2-009",
+      "response_type": "llm_abstain",
+      "cited_ids": [],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "CPP2-010",
+      "response_type": "llm_abstain",
+      "cited_ids": [],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "CPP2-011",
+      "response_type": "answer",
+      "cited_ids": [
+        "cppref-cpp-class#s06-c01"
+      ],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "CPP2-012",
+      "response_type": "llm_abstain",
+      "cited_ids": [],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "CPP2-013",
+      "response_type": "answer",
+      "cited_ids": [
+        "cppref-cpp-constructor#s09-c01"
+      ],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "CPP2-014",
+      "response_type": "llm_abstain",
+      "cited_ids": [],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "CPP2-015",
+      "response_type": "answer",
+      "cited_ids": [
+        "cppref-cpp-namespace#s06-c01"
+      ],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "CPP2-016",
+      "response_type": "answer",
+      "cited_ids": [
+        "cppref-cpp-namespace#s08-c01"
+      ],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "CPP2-017",
+      "response_type": "llm_abstain",
+      "cited_ids": [],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "CPP2-018",
+      "response_type": "llm_abstain",
+      "cited_ids": [],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "CPP2-019",
+      "response_type": "llm_abstain",
+      "cited_ids": [],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "CPP2-020",
+      "response_type": "answer",
+      "cited_ids": [
+        "cppref-cpp-function#s12-c01"
+      ],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "CPP2-021",
+      "response_type": "llm_abstain",
+      "cited_ids": [],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "CPP2-022",
+      "response_type": "llm_abstain",
+      "cited_ids": [],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "CPP2-023",
+      "response_type": "llm_abstain",
+      "cited_ids": [],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "CPP2-024",
+      "response_type": "gate_abstain",
+      "cited_ids": [],
+      "llm_metadata": null
+    },
+    {
+      "item_id": "CPP2-025",
+      "response_type": "answer",
+      "cited_ids": [
+        "cppref-cpp-function#s04-c01"
+      ],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "CPP2-026",
+      "response_type": "llm_abstain",
+      "cited_ids": [],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "CPP2-027",
+      "response_type": "gate_abstain",
+      "cited_ids": [],
+      "llm_metadata": null
+    },
+    {
+      "item_id": "CPP2-028",
+      "response_type": "llm_abstain",
+      "cited_ids": [],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "CPP2-029",
+      "response_type": "answer",
+      "cited_ids": [
+        "cppref-cpp-vector#s05-c01"
+      ],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "CPP2-030",
+      "response_type": "llm_abstain",
+      "cited_ids": [],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "CPP2-031",
+      "response_type": "llm_abstain",
+      "cited_ids": [],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "CPP2-032",
+      "response_type": "answer",
+      "cited_ids": [
+        "cppref-cpp-namespace#s08-c01"
+      ],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "CPP2-033",
+      "response_type": "llm_abstain",
+      "cited_ids": [],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "CPP2-034",
+      "response_type": "answer",
+      "cited_ids": [
+        "cppref-cpp-function#s04-c01",
+        "cpp-notes-intro#s04-c01"
+      ],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "CPP2-035",
+      "response_type": "answer",
+      "cited_ids": [
+        "cppref-cpp-operators#s17-c01"
+      ],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "CPP2-036",
+      "response_type": "answer",
+      "cited_ids": [
+        "cppref-cpp-range-for#s06-c01"
+      ],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "CPP2-037",
+      "response_type": "answer",
+      "cited_ids": [
+        "cppref-cpp-overload#s11-c01"
+      ],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "CPP2-038",
+      "response_type": "llm_abstain",
+      "cited_ids": [],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "CPP2-039",
+      "response_type": "llm_abstain",
+      "cited_ids": [],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "CPP2-040",
+      "response_type": "llm_abstain",
+      "cited_ids": [],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "CPP2-041",
+      "response_type": "llm_abstain",
+      "cited_ids": [],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "CPP2-042",
+      "response_type": "llm_abstain",
+      "cited_ids": [],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "CPP2-043",
+      "response_type": "llm_abstain",
+      "cited_ids": [],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "CPP2-044",
+      "response_type": "llm_abstain",
+      "cited_ids": [],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "CPP2-045",
+      "response_type": "llm_abstain",
+      "cited_ids": [],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,395 @@
+{
+  "run": "python-pilot-2",
+  "language": "python",
+  "embedding_model": "e5-large",
+  "rows": [
+    {
+      "item_id": "PY2-001",
+      "response_type": "gate_abstain",
+      "cited_ids": [],
+      "llm_metadata": null
+    },
+    {
+      "item_id": "PY2-002",
+      "response_type": "gate_abstain",
+      "cited_ids": [],
+      "llm_metadata": null
+    },
+    {
+      "item_id": "PY2-003",
+      "response_type": "answer",
+      "cited_ids": [
+        "pyref-tutorial-controlflow#s12-c01"
+      ],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "PY2-004",
+      "response_type": "answer",
+      "cited_ids": [
+        "pyref-tutorial-controlflow#s16-c01"
+      ],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "PY2-005",
+      "response_type": "gate_abstain",
+      "cited_ids": [],
+      "llm_metadata": null
+    },
+    {
+      "item_id": "PY2-006",
+      "response_type": "answer",
+      "cited_ids": [
+        "pyref-tutorial-controlflow#s21-c01"
+      ],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "PY2-007",
+      "response_type": "answer",
+      "cited_ids": [
+        "pyref-tutorial-datastructures#s05-c01"
+      ],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "PY2-008",
+      "response_type": "gate_abstain",
+      "cited_ids": [],
+      "llm_metadata": null
+    },
+    {
+      "item_id": "PY2-009",
+      "response_type": "gate_abstain",
+      "cited_ids": [],
+      "llm_metadata": null
+    },
+    {
+      "item_id": "PY2-010",
+      "response_type": "gate_abstain",
+      "cited_ids": [],
+      "llm_metadata": null
+    },
+    {
+      "item_id": "PY2-011",
+      "response_type": "answer",
+      "cited_ids": [
+        "pyref-tutorial-classes#s04-c02",
+        "pyref-tutorial-classes#s05-c01"
+      ],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "PY2-012",
+      "response_type": "gate_abstain",
+      "cited_ids": [],
+      "llm_metadata": null
+    },
+    {
+      "item_id": "PY2-013",
+      "response_type": "answer",
+      "cited_ids": [
+        "pyref-tutorial-classes#s15-c01"
+      ],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "PY2-014",
+      "response_type": "answer",
+      "cited_ids": [
+        "pyref-library-stdtypes#s18-c01"
+      ],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "PY2-015",
+      "response_type": "answer",
+      "cited_ids": [
+        "pyref-library-exceptions#s03-c01"
+      ],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "PY2-016",
+      "response_type": "answer",
+      "cited_ids": [
+        "pyref-tutorial-errors#s09-c01"
+      ],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "PY2-017",
+      "response_type": "gate_abstain",
+      "cited_ids": [],
+      "llm_metadata": null
+    },
+    {
+      "item_id": "PY2-018",
+      "response_type": "gate_abstain",
+      "cited_ids": [],
+      "llm_metadata": null
+    },
+    {
+      "item_id": "PY2-019",
+      "response_type": "answer",
+      "cited_ids": [
+        "pyref-tutorial-inputoutput#s09-c02"
+      ],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "PY2-020",
+      "response_type": "gate_abstain",
+      "cited_ids": [],
+      "llm_metadata": null
+    },
+    {
+      "item_id": "PY2-021",
+      "response_type": "gate_abstain",
+      "cited_ids": [],
+      "llm_metadata": null
+    },
+    {
+      "item_id": "PY2-022",
+      "response_type": "gate_abstain",
+      "cited_ids": [],
+      "llm_metadata": null
+    },
+    {
+      "item_id": "PY2-023",
+      "response_type": "gate_abstain",
+      "cited_ids": [],
+      "llm_metadata": null
+    },
+    {
+      "item_id": "PY2-024",
+      "response_type": "gate_abstain",
+      "cited_ids": [],
+      "llm_metadata": null
+    },
+    {
+      "item_id": "PY2-025",
+      "response_type": "gate_abstain",
+      "cited_ids": [],
+      "llm_metadata": null
+    },
+    {
+      "item_id": "PY2-026",
+      "response_type": "answer",
+      "cited_ids": [
+        "pyref-library-stdtypes#s43-c01"
+      ],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "PY2-027",
+      "response_type": "gate_abstain",
+      "cited_ids": [],
+      "llm_metadata": null
+    },
+    {
+      "item_id": "PY2-028",
+      "response_type": "gate_abstain",
+      "cited_ids": [],
+      "llm_metadata": null
+    },
+    {
+      "item_id": "PY2-029",
+      "response_type": "llm_abstain",
+      "cited_ids": [],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "PY2-030",
+      "response_type": "gate_abstain",
+      "cited_ids": [],
+      "llm_metadata": null
+    },
+    {
+      "item_id": "PY2-031",
+      "response_type": "answer",
+      "cited_ids": [
+        "pyref-library-stdtypes#s42-c03"
+      ],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "PY2-032",
+      "response_type": "answer",
+      "cited_ids": [
+        "pyref-library-stdtypes#s28-c06"
+      ],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "PY2-033",
+      "response_type": "gate_abstain",
+      "cited_ids": [],
+      "llm_metadata": null
+    },
+    {
+      "item_id": "PY2-034",
+      "response_type": "answer",
+      "cited_ids": [
+        "pyref-library-stdtypes#s40-c01"
+      ],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "PY2-035",
+      "response_type": "answer",
+      "cited_ids": [
+        "pyref-library-stdtypes#s25-c02"
+      ],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "PY2-036",
+      "response_type": "answer",
+      "cited_ids": [
+        "pyref-library-exceptions#s09-c01"
+      ],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "PY2-037",
+      "response_type": "answer",
+      "cited_ids": [
+        "pyref-library-stdtypes#s12-c01",
+        "pyref-library-functions#s02-c13"
+      ],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "PY2-038",
+      "response_type": "answer",
+      "cited_ids": [
+        "pyref-library-stdtypes#s28-c09"
+      ],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "PY2-039",
+      "response_type": "gate_abstain",
+      "cited_ids": [],
+      "llm_metadata": null
+    },
+    {
+      "item_id": "PY2-040",
+      "response_type": "gate_abstain",
+      "cited_ids": [],
+      "llm_metadata": null
+    },
+    {
+      "item_id": "PY2-041",
+      "response_type": "gate_abstain",
+      "cited_ids": [],
+      "llm_metadata": null
+    },
+    {
+      "item_id": "PY2-042",
+      "response_type": "gate_abstain",
+      "cited_ids": [],
+      "llm_metadata": null
+    },
+    {
+      "item_id": "PY2-043",
+      "response_type": "llm_abstain",
+      "cited_ids": [],
+      "llm_metadata": {
+        "provider": "openai-compatible",
+        "model": "gpt-5.6-sol",
+        "temperature_requested": 0
+      }
+    },
+    {
+      "item_id": "PY2-044",
+      "response_type": "gate_abstain",
+      "cited_ids": [],
+      "llm_metadata": null
+    },
+    {
+      "item_id": "PY2-045",
+      "response_type": "gate_abstain",
+      "cited_ids": [],
+      "llm_metadata": null
+    }
+  ]
+}
