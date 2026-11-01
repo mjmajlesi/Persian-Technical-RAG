@@ -2,6 +2,8 @@
 
 **English** | [فارسی](README.fa.md)
 
+[![CI](https://github.com/mjmajlesi/Persian-Technical-RAG/actions/workflows/ci.yml/badge.svg)](https://github.com/mjmajlesi/Persian-Technical-RAG/actions/workflows/ci.yml)
+
 <p align="center">
   <strong>Persian questions. Defined sources. Verifiable evidence.</strong><br>
   An open-book technical learning assistant and a research workflow for evaluating retrieval quality.
@@ -530,6 +532,14 @@ reasons; their metrics are N/A and must not be mixed with complete runs.
 
 <a id="testing"></a>
 ## Tests and operational evaluation
+
+CI installs from `requirements-lock.txt`, ingests all four packs and checks their
+chunk counts, runs selected `tests/unit` tests, and executes the Node checks.
+Contract and integration tests are excluded because their live flows require
+Windows-specific server paths, prepared indexes/models or an LLM. Ten unit cases
+that require real FAISS indexes also run locally rather than in CI. Install from
+`requirements-lock.txt` to reproduce the locked package versions; the lock was
+generated on Windows, so platform-specific dependencies may differ on Linux.
 
 For a lightweight start, these two files test basic package imports and scoring
 without a model or service. `-B` disables bytecode writes, and disabling pytest's

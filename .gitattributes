@@ -1,0 +1,3 @@
+# Provenance hashes depend on file bytes; Windows CRLF checkouts break them.
+* text=auto eol=lf
+*.woff2 binary
