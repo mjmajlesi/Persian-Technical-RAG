@@ -690,15 +690,11 @@ and training models from scratch are outside the current scope. See the
 
 ### Sources and licenses
 
-Sources are attributed to the note owner, cppreference, Python documentation,
-GNU C Library, and Oracle. License labels and dates are recorded in manifests and
-question provenance. The research models' MIT licenses **do not license the entire
-corpus**. In particular, review Oracle's terms separately before redistributing
-substantial text. Attribution or inclusion in this repository is not a blanket
-redistribution grant; this collection is not presented under one unified license.
-The [source inventory](docs/SOURCE-INVENTORY.md) lists every manifest entry and
-flags missing or ambiguous redistribution metadata for review without making a
-legal determination.
+Project code is licensed under the [MIT License](LICENSE); the owner's study
+notes, evaluation questions, and project documentation are licensed under CC BY
+4.0. Third-party corpus content retains its original terms and is not covered by
+either project license; see [LICENSES.md](LICENSES.md) for details and the
+[source inventory](docs/SOURCE-INVENTORY.md) for recorded per-source labels.
 
 ### Changes and issue reports
 
