@@ -557,7 +557,10 @@ This version has **known defects**. Important boundaries for use and interpretat
 Development priorities include broader independent measurement of prompt effects,
 cancelling in-flight requests and screen-reader testing,
 token-aware chunking and a corrected corpus version, and larger evaluation sets
-and other retrieval methods—**future work, not implemented features**.
+and weighted fusion tuned on a development set—**future work, not implemented features**.
+Pre-registered [BM25 + dense RRF evaluation on v2](docs/HYBRID-RETRIEVAL.md)
+found no significant improvement: six significant regressions and two
+inconclusive results across eight comparisons. It was not adopted operationally.
 
 Authentication, multi-user deployment, production scaling, live web crawling,
 and training models from scratch are outside the current scope. See the
@@ -575,7 +578,8 @@ and training models from scratch are outside the current scope. See the
 | [Final 003 validation](specs/003-compare-embedding-models/VALIDATION.md) | What the historical validation actually checked |
 | [Source and license inventory](docs/SOURCE-INVENTORY.md) | Manifest origin/license labels and metadata requiring review |
 | [C migration report](docs/MIGRATION-RESULTS.md) | What remained stable and what changed after adding packs |
-| [Specifications and tasks](specs/) | Decisions and evolution of features 001, 002, and 003 |
+| [Hybrid retrieval experiment](docs/HYBRID-RETRIEVAL.md) | Pre-registered BM25+dense RRF evaluation on v2; not adopted |
+| [Specifications and tasks](specs/) | Decisions and evolution of features 001–004 |
 
 ### Sources and licenses
 
